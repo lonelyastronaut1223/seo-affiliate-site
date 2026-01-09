@@ -1,51 +1,120 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SEO Affiliate 自动内容网站，提供高质量的产品推荐和比较。">
-    <title>SEO Affiliate 自动内容网站</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unabhängige Kamera-Reviews, Vergleiche und Kaufberatungen für Foto und Video.">
+  <title>CameraPick — Kamera-Reviews & Kaufberatungen</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <link rel="alternate" hreflang="de" href="https://YOURDOMAIN.com/de/" />
+  <link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://YOURDOMAIN.com/" />
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我们的SEO Affiliate 自动内容网站</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#products">产品推荐</a></li>
-                <li><a href="#blog">博客</a></li>
-                <li><a href="#contact">联系我们</a></li>
-            </ul>
+  <header class="site-header">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <a href="../" class="brand-link">CameraPick</a>
+          <span class="brand-tagline">Reviews & Kaufberatungen</span>
+        </div>
+
+        <nav class="lang-switch" aria-label="Sprachauswahl">
+          <a href="../">EN</a>
+          <span>·</span>
+          <a href="./" aria-current="page">DE</a>
         </nav>
-    </header>
-    
-    <main>
-        <section id="about">
-            <h2>关于我们</h2>
-            <p>我们专注于提供高质量的产品推荐，帮助用户做出明智的购买决策。</p>
-        </section>
-        
-        <section id="products">
-            <h2>产品推荐</h2>
-            <p>查看我们最新的产品推荐，获取最佳优惠。</p>
-            <!-- 在此处插入联盟链接 -->
-        </section>
-        
-        <section id="blog">
-            <h2>博客</h2>
-            <p>阅读我们的最新文章，获取行业资讯和购买指南。</p>
-            <!-- 在此处插入联盟链接 -->
-        </section>
-        
-        <section id="contact">
-            <h2>联系我们</h2>
-            <p>如有任何问题，请通过电子邮件与我们联系。</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2023 SEO Affiliate 自动内容网站. 保留所有权利。</p>
-    </footer>
+      </div>
+
+      <div class="hero">
+        <h1>Die richtige Kamera finden — schneller.</h1>
+        <p class="hero-sub">
+          Unabhängige Kamera-Reviews, Vergleiche und Kaufberatungen für Foto und Video.<br>
+          Praxisnah, objektiv und ohne Marketing-Blabla.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn primary" href="#kaufberatung">Top Kaufberatungen ansehen</a>
+          <a class="btn" href="#reviews">Neueste Reviews lesen</a>
+        </div>
+
+        <div class="hero-badges" aria-label="Highlights">
+          <span class="badge">Für Einsteiger</span>
+          <span class="badge">Reise & Vlog</span>
+          <span class="badge">Fokus: Spiegellos</span>
+          <span class="badge">EU & USA Empfehlungen</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="kaufberatung" class="section">
+      <h2>Kaufberatungen</h2>
+      <p class="section-sub">Starte hier, wenn du die beste Kamera für dein Budget und deinen Einsatzzweck suchst.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3><a href="../guides/best-camera-for-beginners.html">Beste Kamera für Einsteiger (2026)</a></h3>
+          <p>Unsere sichersten Empfehlungen für den Einstieg in Fotografie und Video.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="../guides/best-travel-camera.html">Beste Reisekamera</a></h3>
+          <p>Leicht, kompakt und dennoch hohe Bildqualität für unterwegs.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="../guides/best-vlog-camera.html">Beste Kamera für Vlogging</a></h3>
+          <p>Autofokus, Stabilisierung und Videoqualität im direkten Vergleich.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="reviews" class="section">
+      <h2>Neueste Reviews</h2>
+      <p class="section-sub">Praxisnahe Tests mit klaren Stärken, Schwächen und Kaufempfehlungen.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3><a href="../reviews/sony-a7-iv-review.html">Sony A7 IV Test</a></h3>
+          <p>Vielseitige Vollformatkamera für Foto & Video – aber nicht für jeden.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="../reviews/fujifilm-x-t5-review.html">Fujifilm X-T5 Test</a></h3>
+          <p>APS-C mit hoher Auflösung und klassischem Bedienkonzept.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="../reviews/canon-r8-review.html">Canon EOS R8 Test</a></h3>
+          <p>Leichte Vollformatkamera mit starkem Autofokus.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Über diese Seite</h2>
+      <div class="card">
+        <p>
+          CameraPick ist eine unabhängige Plattform für Kamera-Reviews und Kaufberatungen.
+          Einige Seiten enthalten Affiliate-Links. Wenn du über diese Links kaufst,
+          erhalten wir ggf. eine kleine Provision – ohne Mehrkosten für dich.
+          Unsere Empfehlungen basieren auf Praxistests und ehrlicher Einschätzung.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> CameraPick · Kamera-Reviews & Kaufberatungen</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

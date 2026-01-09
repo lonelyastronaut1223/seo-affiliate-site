@@ -1,53 +1,183 @@
-/* 网站的基本样式 */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Independent camera reviews, comparisons, and buying guides for photography and video.">
+  <title>CameraPick — Camera Reviews & Buying Guides</title>
+  <link rel="stylesheet" href="style.css">
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+  <link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/" />
+  <link rel="alternate" hreflang="de" href="https://YOURDOMAIN.com/de/" />
+  <link rel="alternate" hreflang="x-default" href="https://YOURDOMAIN.com/" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <a href="./" class="brand-link">CameraPick</a>
+          <span class="brand-tagline">Reviews & buying guides</span>
+        </div>
 
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
+        <nav class="lang-switch" aria-label="Language switch">
+          <a href="./" aria-current="page">EN</a>
+          <span>·</span>
+          <a href="./de/">DE</a>
+        </nav>
+      </div>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
+      <div class="hero">
+        <h1>Find the right camera — faster.</h1>
+        <p class="hero-sub">
+          Independent camera reviews, comparisons, and buying guides for photography and video.
+          Built for real-world use, not marketing hype.
+        </p>
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
+        <div class="hero-cta">
+          <a class="btn primary" href="#best-guides">See top buying guides</a>
+          <a class="btn" href="#latest">Read latest reviews</a>
+        </div>
 
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-}
+        <div class="hero-badges" aria-label="Highlights">
+          <span class="badge">Beginner-friendly</span>
+          <span class="badge">Travel & Vlog</span>
+          <span class="badge">Mirrorless focus</span>
+          <span class="badge">EU & US picks</span>
+        </div>
+      </div>
+    </div>
+  </header>
 
-main {
-    padding: 20px;
-}
+  <main class="container">
+    <div class="toolbar" aria-label="Site tools">
+      <div class="search" role="search">
+        <input id="siteSearch" type="search" placeholder="Search guides and reviews…" autocomplete="off" />
+        <span class="hint">Type to filter</span>
+      </div>
+    </div>
 
-section {
-    background: #ffffff;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+    <section id="best-guides" class="section">
+      <h2>Buying guides</h2>
+      <p class="section-sub">Start here if you want the best option for your budget and use case.</p>
 
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+      <div class="grid">
+        <article class="card">
+          <h3><a href="./guides/best-camera-for-beginners.html">Best camera for beginners (2026)</a></h3>
+          <p>Simple recommendations, key features to look for, and the safest picks to start with.</p>
+          <p class="meta">Updated regularly · Beginner</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./guides/best-travel-camera.html">Best travel camera (lightweight)</a></h3>
+          <p>Compact setups that still deliver great image quality — ideal for city trips and landscapes.</p>
+          <p class="meta">Travel · Photo</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./guides/best-vlog-camera.html">Best vlog camera (stabilization & AF)</a></h3>
+          <p>What matters for video: autofocus, stabilization, rolling shutter, microphones, and heat.</p>
+          <p class="meta">Vlog · Video</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="latest" class="section">
+      <h2>Latest reviews</h2>
+      <p class="section-sub">Hands-on impressions, pros & cons, and who each camera is actually for.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3><a href="./reviews/sony-a7-iv-review.html">Sony A7 IV review</a></h3>
+          <p>A balanced full-frame hybrid — great for photo and video, but not for everyone.</p>
+          <p class="meta">Full-frame · Hybrid</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./reviews/fujifilm-x-t5-review.html">Fujifilm X-T5 review</a></h3>
+          <p>High-resolution APS-C with strong image quality and classic controls.</p>
+          <p class="meta">APS-C · Photo-first</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./reviews/canon-r8-review.html">Canon EOS R8 review</a></h3>
+          <p>Lightweight full-frame with great AF — excellent value if you can manage battery life.</p>
+          <p class="meta">Full-frame · Value</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Compare cameras</h2>
+      <p class="section-sub">Quick comparison pages for the most common shopping decisions.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3><a href="./compare/a7-iv-vs-r6-ii.html">Sony A7 IV vs Canon R6 II</a></h3>
+          <p>Hybrid shooters: autofocus, stabilization, heat, lenses, and real-world handling.</p>
+          <p class="meta">Comparison</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./compare/zv-e10-vs-a6700.html">Sony ZV-E10 vs A6700</a></h3>
+          <p>For creators: what you gain with the upgrade and when it’s worth paying more.</p>
+          <p class="meta">Comparison</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./compare/x-s20-vs-x-t5.html">Fujifilm X-S20 vs X-T5</a></h3>
+          <p>Same ecosystem, different priorities: video features, controls, and shooting styles.</p>
+          <p class="meta">Comparison</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>About this site</h2>
+      <div class="card">
+        <p>
+          We publish independent camera reviews and buying guides. Some pages may include affiliate links.
+          If you buy through them, the site may earn a small commission at no extra cost to you.
+          We only recommend products we believe are genuinely good options for the use case.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> CameraPick · Reviews & buying guides</p>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" type="button" aria-label="Back to top">↑</button>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Back to top
+    const toTop = document.getElementById("toTop");
+    const toggleToTop = () => {
+      if (window.scrollY > 500) toTop.classList.add("show");
+      else toTop.classList.remove("show");
+    };
+    window.addEventListener("scroll", toggleToTop, { passive: true });
+    toggleToTop();
+    toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    // Search filter (filters homepage cards)
+    const input = document.getElementById("siteSearch");
+    const cards = Array.from(document.querySelectorAll(".card"));
+    const norm = (s) => (s || "").toLowerCase().trim();
+    const applyFilter = () => {
+      const q = norm(input.value);
+      cards.forEach((card) => {
+        const text = norm(card.innerText);
+        card.style.display = !q || text.includes(q) ? "" : "none";
+      });
+    };
+    input.addEventListener("input", applyFilter);
+  </script>
+</body>
+</html>

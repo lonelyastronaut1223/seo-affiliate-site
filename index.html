@@ -1,51 +1,149 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SEO Affiliate 自动内容网站，提供高质量的产品推荐和比较。">
-    <title>SEO Affiliate 自动内容网站</title>
+    <meta name="description" content="Independent camera reviews, comparisons, and buying guides for photography and video.">
+    <title>CameraPick — Camera Reviews & Buying Guides</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/" />
+    <link rel="alternate" hreflang="de" href="https://YOURDOMAIN.com/de/" />
+    <link rel="alternate" hreflang="x-default" href="https://YOURDOMAIN.com/" />
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我们的SEO Affiliate 自动内容网站</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#products">产品推荐</a></li>
-                <li><a href="#blog">博客</a></li>
-                <li><a href="#contact">联系我们</a></li>
-            </ul>
+  <header class="site-header">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <a href="./" class="brand-link">CameraPick</a>
+          <span class="brand-tagline">Reviews & buying guides</span>
+        </div>
+
+        <nav class="lang-switch" aria-label="Language switch">
+          <a href="./" aria-current="page">EN</a>
+          <span>·</span>
+          <a href="./de/">DE</a>
         </nav>
-    </header>
-    
-    <main>
-        <section id="about">
-            <h2>关于我们</h2>
-            <p>我们专注于提供高质量的产品推荐，帮助用户做出明智的购买决策。</p>
-        </section>
-        
-        <section id="products">
-            <h2>产品推荐</h2>
-            <p>查看我们最新的产品推荐，获取最佳优惠。</p>
-            <!-- 在此处插入联盟链接 -->
-        </section>
-        
-        <section id="blog">
-            <h2>博客</h2>
-            <p>阅读我们的最新文章，获取行业资讯和购买指南。</p>
-            <!-- 在此处插入联盟链接 -->
-        </section>
-        
-        <section id="contact">
-            <h2>联系我们</h2>
-            <p>如有任何问题，请通过电子邮件与我们联系。</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2023 SEO Affiliate 自动内容网站. 保留所有权利。</p>
-    </footer>
+      </div>
+
+      <div class="hero">
+        <h1>Find the right camera — faster.</h1>
+        <p class="hero-sub">
+          Independent camera reviews, comparisons, and buying guides for photography and video.
+          Built for real-world use, not marketing hype.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn primary" href="#best-guides">See top buying guides</a>
+          <a class="btn" href="#latest">Read latest reviews</a>
+        </div>
+
+        <div class="hero-badges" aria-label="Highlights">
+          <span class="badge">Beginner-friendly</span>
+          <span class="badge">Travel & Vlog</span>
+          <span class="badge">Mirrorless focus</span>
+          <span class="badge">EU & US picks</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="best-guides" class="section">
+      <h2>Buying guides</h2>
+      <p class="section-sub">Start here if you want the best option for your budget and use case.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3><a href="./guides/best-camera-for-beginners.html">Best camera for beginners (2026)</a></h3>
+          <p>Simple recommendations, key features to look for, and the safest picks to start with.</p>
+          <p class="meta">Updated regularly · Beginner</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./guides/best-travel-camera.html">Best travel camera (lightweight)</a></h3>
+          <p>Compact setups that still deliver great image quality — ideal for city trips and landscapes.</p>
+          <p class="meta">Travel · Photo</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./guides/best-vlog-camera.html">Best vlog camera (stabilization & AF)</a></h3>
+          <p>What matters for video: autofocus, stabilization, rolling shutter, microphones, and heat.</p>
+          <p class="meta">Vlog · Video</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="latest" class="section">
+      <h2>Latest reviews</h2>
+      <p class="section-sub">Hands-on impressions, pros & cons, and who each camera is actually for.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3><a href="./reviews/sony-a7-iv-review.html">Sony A7 IV review</a></h3>
+          <p>A balanced full-frame hybrid — great for photo and video, but not for everyone.</p>
+          <p class="meta">Full-frame · Hybrid</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./reviews/fujifilm-x-t5-review.html">Fujifilm X-T5 review</a></h3>
+          <p>High-resolution APS-C with strong image quality and classic controls.</p>
+          <p class="meta">APS-C · Photo-first</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./reviews/canon-r8-review.html">Canon EOS R8 review</a></h3>
+          <p>Lightweight full-frame with great AF — excellent value if you can manage battery life.</p>
+          <p class="meta">Full-frame · Value</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Compare cameras</h2>
+      <p class="section-sub">Quick comparison pages for the most common shopping decisions.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3><a href="./compare/a7-iv-vs-r6-ii.html">Sony A7 IV vs Canon R6 II</a></h3>
+          <p>Hybrid shooters: autofocus, stabilization, heat, lenses, and real-world handling.</p>
+          <p class="meta">Comparison</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./compare/zv-e10-vs-a6700.html">Sony ZV-E10 vs A6700</a></h3>
+          <p>For creators: what you gain with the upgrade and when it’s worth paying more.</p>
+          <p class="meta">Comparison</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="./compare/x-s20-vs-x-t5.html">Fujifilm X-S20 vs X-T5</a></h3>
+          <p>Same ecosystem, different priorities: video features, controls, and shooting styles.</p>
+          <p class="meta">Comparison</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>About this site</h2>
+      <div class="card">
+        <p>
+          We publish independent camera reviews and buying guides. Some pages may include affiliate links.
+          If you buy through them, the site may earn a small commission at no extra cost to you.
+          We only recommend products we believe are genuinely good options for the use case.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> CameraPick · Reviews & buying guides</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
