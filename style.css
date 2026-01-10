@@ -318,6 +318,58 @@ main {
   font-size: 13px;
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 22px;
+}
+
+.sidebar {
+  background: rgba(255, 255, 255, 0.04);
+  border: var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 20px;
+  align-self: start;
+}
+
+.sidebar h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f4f7ff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.filter-btn.active {
+  background: rgba(77, 163, 255, 0.2);
+  border-color: rgba(77, 163, 255, 0.6);
+}
+
+.filter-btn:hover {
+  transform: translateY(-1px);
+}
+
+.sidebar .compare-table {
+  font-size: 13px;
+}
+
 .quick-actions {
   display: flex;
   gap: 10px;
@@ -450,5 +502,14 @@ footer {
   .cta {
     padding: 18px;
     align-items: flex-start;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
   }
 }
