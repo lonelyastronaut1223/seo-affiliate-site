@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Hybrid Camera — CameraPick</title>
+  <meta name="description" content="Hybrid camera picks that balance photo and video with strong autofocus and reliability.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      CameraPick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Best Hybrid Camera</h1>
+        <p class="hero-sub">Balanced choices for creators who shoot both photos and video.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1400&q=80" alt="Hybrid camera">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Top hybrid picks</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Best midrange hybrid</h3>
+        <p><strong>Sony A7 IV</strong> — great AF, color, and video tools; versatile lens ecosystem.</p>
+        <div class="meta">Full-frame · Hybrid</div>
+      </article>
+      <article class="card">
+        <h3>Best compact hybrid</h3>
+        <p><strong>Fujifilm X-S20</strong> — strong IBIS, vlog mode, great JPEGs; lighter carry.</p>
+        <div class="meta">APS-C · Lightweight</div>
+      </article>
+      <article class="card">
+        <h3>Best value</h3>
+        <p><strong>Canon EOS R8</strong> — excellent AF and image quality; be mindful of rolling shutter.</p>
+        <div class="meta">Value</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Hybrid checklist</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>10-bit video & log profiles</h3>
+        <p>Needed for grading and matching footage; prefer models with usable 4K30/60.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Reliable autofocus</h3>
+        <p>Face/eye AF and tracking are key for run-and-gun video and portraits.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Thermals & stabilization</h3>
+        <p>Check overheating limits and IBIS/OIS performance for handheld shooting.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Lens kits we recommend</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>All-rounder</h3>
+        <p>24-70mm f/2.8 (or 18-55mm f/2.8 on APS-C) covers events, portraits, travel.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Creator two-lens kit</h3>
+        <p>Wide (16-35mm or 10-20mm) for video + fast prime (35mm/50mm) for A-roll and photos.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Lightweight hybrid</h3>
+        <p>24-105mm f/4 plus a 35mm f/1.8 — flexible, stabilized, and travel-friendly.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> CameraPick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

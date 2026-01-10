@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sony ZV-E10 Review — CameraPick</title>
+  <meta name="description" content="Sony ZV-E10 review: beginner-friendly vlog camera with strong autofocus and creator features.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      CameraPick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Sony ZV-E10 Review</h1>
+        <p class="hero-sub">Entry-level vlog camera with great autofocus and creator-friendly tools.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1519183071298-a2962be90b8e?auto=format&fit=crop&w=1400&q=80" alt="Sony ZV-E10">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Pros</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Autofocus</h3><p>Excellent face/eye tracking and Product Showcase mode.</p></article>
+      <article class="card card-plain"><h3>Creator features</h3><p>Flip screen, tally lamp, mic jack, digital audio through hotshoe.</p></article>
+      <article class="card card-plain"><h3>Value</h3><p>Low price leaves budget for lenses and audio.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Cons</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>No 4K60</h3><p>Capped at 4K30; 1080p slow motion available.</p></article>
+      <article class="card card-plain"><h3>No EVF</h3><p>LCD-only shooting in bright sun is tougher.</p></article>
+      <article class="card card-plain"><h3>Rolling shutter</h3><p>Fast pans can wobble; keep camera stable.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Who should buy it</h2>
+    <div class="card">
+      <p>Beginners and travel vloggers who want strong autofocus and a small setup. If you need 4K60 or an EVF, step up to the A6700.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Recommended add-ons</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Wide lens</h3><p>Sony 10-20mm PZ for handheld vlogs without heavy crop.</p></article>
+      <article class="card card-plain"><h3>Mic</h3><p>Small on-camera shotgun or wireless lav to fix windy audio.</p></article>
+      <article class="card card-plain"><h3>Support</h3><p>Mini tripod/grip with Bluetooth makes framing and run-and-gun easier.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> CameraPick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

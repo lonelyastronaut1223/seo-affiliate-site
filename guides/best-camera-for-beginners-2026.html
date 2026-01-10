@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Camera for Beginners (2026) — CameraPick</title>
+  <meta name="description" content="Beginner-friendly camera picks for 2026: simple recommendations, who each camera is for, and what to buy based on budget.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      CameraPick
+    </a>
+    <nav>
+      <a href="../">Home</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Best Camera for Beginners (2026)</h1>
+        <p class="hero-sub">
+          Shortlist-first buying guide: fast picks, who they’re for, and what to avoid.
+        </p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1508614999368-9260051291ea?auto=format&fit=crop&w=1400&q=80" alt="Camera for beginners">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>TL;DR (Quick Picks)</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Best overall for beginners</h3>
+        <p><strong>Sony ZV-E10</strong> — easy, great autofocus, strong value.</p>
+        <div class="meta">Best value</div>
+      </article>
+      <article class="card">
+        <h3>Best photo-first</h3>
+        <p><strong>Fujifilm X-T5</strong> — excellent image quality and color.</p>
+        <div class="meta">Photography</div>
+      </article>
+      <article class="card">
+        <h3>Best lightweight full-frame</h3>
+        <p><strong>Canon EOS R8</strong> — strong AF, compact full-frame option.</p>
+        <div class="meta">Full-frame</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>How to choose (Beginner checklist)</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Autofocus matters more than megapixels</h3>
+        <p>Face/eye AF and tracking makes learning easier and improves keeper rate.</p>
+      </article>
+      <article class="card">
+        <h3>Start with one good lens</h3>
+        <p>A kit lens is okay, but a simple prime (e.g., 35mm/50mm equivalent) teaches faster.</p>
+      </article>
+      <article class="card">
+        <h3>Don’t overpay for features you won’t use</h3>
+        <p>Prioritize usability, battery, menus, and stabilization over niche specs.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Starter kits by budget</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>$700–900</h3>
+        <ul>
+          <li>Sony ZV-E10 + 16-50mm kit — add a 35mm f/1.8 later.</li>
+          <li>Canon R10 + 18-45mm — light, great colors, easy menus.</li>
+        </ul>
+      </article>
+      <article class="card card-plain">
+        <h3>$1,200–1,600</h3>
+        <ul>
+          <li>Sony A6700 + 18-135mm — versatile travel zoom, excellent AF.</li>
+          <li>Fujifilm X-S20 + 18-55mm — IBIS and film sims for great JPEGs.</li>
+        </ul>
+      </article>
+      <article class="card card-plain">
+        <h3>$1,600–2,000</h3>
+        <ul>
+          <li>Sony A7 IV + 28-70mm — full-frame hybrid with deep lens options.</li>
+          <li>Canon EOS R8 + 24-105mm RF — lightweight full-frame starter.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Mistakes to avoid</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>Ignoring lenses</h3>
+        <p>Body matters, but lenses shape your look. Budget for at least one good prime.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Skipping audio</h3>
+        <p>If you film, set aside money for a simple on-camera mic; bad audio ruins video.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Overbuying specs</h3>
+        <p>4K120 and huge megapixels aren’t needed to learn. Focus on ergonomics and AF.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>
+        This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> CameraPick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

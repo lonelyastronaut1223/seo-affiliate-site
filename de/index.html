@@ -2,119 +2,186 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Unabhängige Kamera-Reviews, Vergleiche und Kaufberatungen für Foto und Video.">
-  <title>CameraPick — Kamera-Reviews & Kaufberatungen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Unabhängige Kamera-Reviews und Kaufberatungen.">
+  <title>CameraPick — Kamera Reviews & Kaufberatung</title>
   <link rel="stylesheet" href="../style.css">
-
-  <link rel="alternate" hreflang="de" href="https://YOURDOMAIN.com/de/" />
-  <link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/" />
-  <link rel="alternate" hreflang="x-default" href="https://YOURDOMAIN.com/" />
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="topbar">
-        <div class="brand">
-          <a href="../" class="brand-link">CameraPick</a>
-          <span class="brand-tagline">Reviews & Kaufberatungen</span>
-        </div>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      CameraPick
+    </a>
+    <nav>
+      <a href="../">EN</a> · <a href="./">DE</a>
+    </nav>
+  </div>
 
-        <nav class="lang-switch" aria-label="Sprachauswahl">
-          <a href="../">EN</a>
-          <span>·</span>
-          <a href="./" aria-current="page">DE</a>
-        </nav>
-      </div>
-
-      <div class="hero">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
         <h1>Die richtige Kamera finden — schneller.</h1>
         <p class="hero-sub">
-          Unabhängige Kamera-Reviews, Vergleiche und Kaufberatungen für Foto und Video.<br>
-          Praxisnah, objektiv und ohne Marketing-Blabla.
-        </p>
-
-        <div class="hero-cta">
-          <a class="btn primary" href="#kaufberatung">Top Kaufberatungen ansehen</a>
-          <a class="btn" href="#reviews">Neueste Reviews lesen</a>
-        </div>
-
-        <div class="hero-badges" aria-label="Highlights">
-          <span class="badge">Für Einsteiger</span>
-          <span class="badge">Reise & Vlog</span>
-          <span class="badge">Fokus: Spiegellos</span>
-          <span class="badge">EU & USA Empfehlungen</span>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section id="kaufberatung" class="section">
-      <h2>Kaufberatungen</h2>
-      <p class="section-sub">Starte hier, wenn du die beste Kamera für dein Budget und deinen Einsatzzweck suchst.</p>
-
-      <div class="grid">
-        <article class="card">
-          <h3><a href="../guides/best-camera-for-beginners.html">Beste Kamera für Einsteiger (2026)</a></h3>
-          <p>Unsere sichersten Empfehlungen für den Einstieg in Fotografie und Video.</p>
-        </article>
-
-        <article class="card">
-          <h3><a href="../guides/best-travel-camera.html">Beste Reisekamera</a></h3>
-          <p>Leicht, kompakt und dennoch hohe Bildqualität für unterwegs.</p>
-        </article>
-
-        <article class="card">
-          <h3><a href="../guides/best-vlog-camera.html">Beste Kamera für Vlogging</a></h3>
-          <p>Autofokus, Stabilisierung und Videoqualität im direkten Vergleich.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="reviews" class="section">
-      <h2>Neueste Reviews</h2>
-      <p class="section-sub">Praxisnahe Tests mit klaren Stärken, Schwächen und Kaufempfehlungen.</p>
-
-      <div class="grid">
-        <article class="card">
-          <h3><a href="../reviews/sony-a7-iv-review.html">Sony A7 IV Test</a></h3>
-          <p>Vielseitige Vollformatkamera für Foto & Video – aber nicht für jeden.</p>
-        </article>
-
-        <article class="card">
-          <h3><a href="../reviews/fujifilm-x-t5-review.html">Fujifilm X-T5 Test</a></h3>
-          <p>APS-C mit hoher Auflösung und klassischem Bedienkonzept.</p>
-        </article>
-
-        <article class="card">
-          <h3><a href="../reviews/canon-r8-review.html">Canon EOS R8 Test</a></h3>
-          <p>Leichte Vollformatkamera mit starkem Autofokus.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Über diese Seite</h2>
-      <div class="card">
-        <p>
-          CameraPick ist eine unabhängige Plattform für Kamera-Reviews und Kaufberatungen.
-          Einige Seiten enthalten Affiliate-Links. Wenn du über diese Links kaufst,
-          erhalten wir ggf. eine kleine Provision – ohne Mehrkosten für dich.
-          Unsere Empfehlungen basieren auf Praxistests und ehrlicher Einschätzung.
+          Ehrliche Kamera-Tests und Kaufberatungen ohne Marketing-Blabla.
         </p>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> CameraPick · Kamera-Reviews & Kaufberatungen</p>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1400&q=80" alt="Kamera">
+      </div>
     </div>
-  </footer>
+  </section>
+</header>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<main class="container">
+  <section class="section" id="guides">
+    <h2>Kaufberatungen</h2>
+    <p class="section-sub">Finde schnell die passenden Modelle für dein Budget und deinen Einsatzzweck.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1508614999368-9260051291ea?auto=format&fit=crop&w=900&q=80" alt="">
+        </div>
+        <h3><a href="../guides/best-camera-for-beginners-2026.html">Beste Kamera für Einsteiger (2026)</a></h3>
+        <p>Einfach startklar: sichere Empfehlungen und worauf du achten solltest.</p>
+        <div class="meta">Einsteiger</div>
+      </article>
+
+      <article class="card">
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=80" alt="">
+        </div>
+        <h3><a href="../guides/best-travel-camera.html">Beste Reisekamera</a></h3>
+        <p>Leicht, kompakt und trotzdem starke Bildqualität.</p>
+        <div class="meta">Reise</div>
+      </article>
+
+      <article class="card">
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1508615022045-46af0b4225f4?auto=format&fit=crop&w=900&q=80" alt="">
+        </div>
+        <h3><a href="../guides/best-vlog-camera.html">Beste Vlog-Kamera</a></h3>
+        <p>Autofokus, Stabilisierung und Ton für Creator.</p>
+        <div class="meta">Video</div>
+      </article>
+
+      <article class="card">
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" alt="">
+        </div>
+        <h3><a href="../guides/best-budget-camera-under-800.html">Beste Budget-Kamera unter 800 €</a></h3>
+        <p>Günstig, aber mit guter Bildqualität und sinnvollen Features.</p>
+        <div class="meta">Budget</div>
+      </article>
+
+      <article class="card">
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=900&q=80" alt="">
+        </div>
+        <h3><a href="../guides/best-hybrid-camera.html">Beste Hybrid-Kamera</a></h3>
+        <p>Ausgewogen für Foto und Video mit starkem Autofokus.</p>
+        <div class="meta">Hybrid</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <h2>Neueste Reviews</h2>
+    <p class="section-sub">Praxis-Tests mit Stärken, Schwächen und klaren Empfehlungen.</p>
+    <div class="grid">
+      <article class="card">
+        <h3><a href="../reviews/sony-a7-iv-review.html">Sony A7 IV Review</a></h3>
+        <p>Beliebter Hybrid mit starkem AF und Farbe; Menüs brauchen Einarbeitung.</p>
+        <div class="meta">Vollformat · Hybrid</div>
+      </article>
+      <article class="card">
+        <h3><a href="../reviews/fujifilm-x-t5-review.html">Fujifilm X-T5 Review</a></h3>
+        <p>Hochauflösendes APS-C mit klassischen Bedienrädern und Top-Fotoqualität.</p>
+        <div class="meta">APS-C · Foto</div>
+      </article>
+      <article class="card">
+        <h3><a href="../reviews/canon-eos-r8-review.html">Canon EOS R8 Review</a></h3>
+        <p>Leichtes Vollformat mit starkem AF; Achtung auf Akku und Rolling Shutter.</p>
+        <div class="meta">Preis-Leistung · Video-freundlich</div>
+      </article>
+      <article class="card">
+        <h3><a href="../reviews/sony-zv-e10-review.html">Sony ZV-E10 Review</a></h3>
+        <p>Beste Einsteiger-Vlogcam mit Klappdisplay und Mic-Eingang; kein 4K60.</p>
+        <div class="meta">Vlog · Budget</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="compare">
+    <h2>Vergleiche</h2>
+    <p class="section-sub">Direkte Gegenüberstellungen für häufige Kaufentscheidungen.</p>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3><a href="../compare/sony-a7-iv-vs-canon-r6-ii.html">Sony A7 IV vs Canon R6 II</a></h3>
+        <p>AF, Stabilisierung, Hitzeverhalten – welcher Hybrid passt besser.</p>
+        <div class="meta">Vergleich</div>
+      </article>
+      <article class="card card-plain">
+        <h3><a href="../compare/sony-zv-e10-vs-sony-a6700.html">Sony ZV-E10 vs A6700</a></h3>
+        <p>Creator-first vs. Enthusiast APS-C – wann lohnt das Upgrade.</p>
+        <div class="meta">Upgrade-Pfad</div>
+      </article>
+      <article class="card card-plain">
+        <h3><a href="../compare/fujifilm-x-s20-vs-fujifilm-x-t5.html">Fujifilm X-S20 vs X-T5</a></h3>
+        <p>Gleiche Objektive, andere Prioritäten: Video-Features vs. klassische Bedienung.</p>
+        <div class="meta">APS-C</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section highlight" id="affiliate">
+    <div class="cta">
+      <div>
+        <h2>Affiliate & Transparenz</h2>
+        <p>Wir nutzen Affiliate-Links, um den Inhalt kostenlos zu halten. Du zahlst nie extra, und wir empfehlen nur Produkte, die wir selbst nutzen würden.</p>
+        <div class="pill-row">
+          <span class="pill">Unabhängige Tests</span>
+          <span class="pill">Klare Vor- & Nachteile</span>
+          <span class="pill">Regelmäßig aktualisiert</span>
+        </div>
+      </div>
+      <a class="btn" href="#guides">Zu den Top-Picks</a>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>So testen wir</h2>
+    <p class="section-sub">Praxisnahe Reviews, die echte Nutzung abbilden.</p>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>Handling & Autofokus</h3>
+        <p>Wie schnell Kameras fokussieren, Gesichter tracken und im Video halten.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Video-Zuverlässigkeit</h3>
+        <p>Hitzegrenzen, Rolling Shutter, Stabilisierung, Audio und Log-Profile.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Objektive & System</h3>
+        <p>Welche Linsen sinnvoll sind für Einsteiger, Reisen und zukünftige Upgrades.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> CameraPick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
 </body>
 </html>

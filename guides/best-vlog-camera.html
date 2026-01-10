@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Vlog Camera — CameraPick</title>
+  <meta name="description" content="Vlogging camera picks with fast autofocus, stabilization, and strong audio options.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      CameraPick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Best Vlog Camera</h1>
+        <p class="hero-sub">Fast AF, stabilization, flip screens, and audio that keeps creators covered.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1400&q=80" alt="Vlogging camera">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Quick picks</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Best overall</h3>
+        <p><strong>Sony A6700</strong> — excellent AF, 4K60, reliable stabilization, great lens options.</p>
+        <div class="meta">APS-C · Hybrid</div>
+      </article>
+      <article class="card">
+        <h3>Best budget</h3>
+        <p><strong>Sony ZV-E10</strong> — flip screen, mic jack, strong AF; no 4K60 but best starter pick.</p>
+        <div class="meta">Budget · Vlog</div>
+      </article>
+      <article class="card">
+        <h3>Best lightweight full-frame</h3>
+        <p><strong>Canon EOS R8</strong> — great AF and color; watch rolling shutter and battery life.</p>
+        <div class="meta">Full-frame</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What matters for vlogging</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>Stabilization + wide lenses</h3>
+        <p>Active/IBIS plus a 10–20mm or 16–35mm keeps handheld video usable.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Autofocus & face priority</h3>
+        <p>Reliable eye tracking and product showcase modes reduce missed focus.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Audio inputs</h3>
+        <p>Mic jack, headphone monitoring, and hotshoe digital audio help avoid bad audio days.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Recommended setups</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>Lightweight walk-and-talk</h3>
+        <p>ZV-E10 + 10-20mm PZ + on-camera shotgun mic. Great for travel streets.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Hybrid creator</h3>
+        <p>A6700 + 16-55mm f/2.8 + compact wireless mic kit for interviews and B-roll.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Full-frame look</h3>
+        <p>EOS R8 + 16mm f/2.8 + 35mm f/1.8. Shallow depth for A-roll and product shots.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> CameraPick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Budget Camera Under $800 — CameraPick</title>
+  <meta name="description" content="Budget-friendly cameras under $800 that still deliver great image quality and autofocus.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      CameraPick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Best Budget Camera Under $800</h1>
+        <p class="hero-sub">Affordable bodies with the right autofocus, lenses, and reliability to start creating.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1400&q=80" alt="Budget camera">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Top picks under $800</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Best overall</h3>
+        <p><strong>Sony ZV-E10</strong> — superb AF, flip screen, strong value for both photo and video.</p>
+        <div class="meta">Hybrid</div>
+      </article>
+      <article class="card">
+        <h3>Best for photos</h3>
+        <p><strong>Fujifilm X-S10 (used)</strong> — IBIS, film sims, great JPEGs; find used to hit budget.</p>
+        <div class="meta">Photo-first</div>
+      </article>
+      <article class="card">
+        <h3>Best for travel</h3>
+        <p><strong>Canon R10</strong> — light, good colors, solid AF; budget-friendly starter lenses available.</p>
+        <div class="meta">Travel</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What to prioritize on a budget</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>Autofocus & battery</h3>
+        <p>Skipping good AF slows learning; also ensure one battery lasts a day of casual shooting.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Lenses you can grow with</h3>
+        <p>Plan for a sharp prime (35mm/50mm equiv) and an affordable travel zoom.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Skip unnecessary specs</h3>
+        <p>4K60, 10-bit, or ultra-high FPS can wait; usability and focus come first.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Stretch upgrades worth it</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>Spend $100 more</h3>
+        <p>Get a second battery and a fast SD card — you’ll use them every shoot.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Spend $200 more</h3>
+        <p>Add a small prime (e.g., 35mm f/1.8) for low light and portraits.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Spend $300 more</h3>
+        <p>Consider A6700 or X-S20 if video is a priority; you gain IBIS and better codecs.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> CameraPick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

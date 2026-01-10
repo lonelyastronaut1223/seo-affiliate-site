@@ -1,183 +1,454 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Independent camera reviews, comparisons, and buying guides for photography and video.">
-  <title>CameraPick — Camera Reviews & Buying Guides</title>
-  <link rel="stylesheet" href="style.css">
+:root {
+  --bg: #0d1322;
+  --bg-soft: #10182b;
+  --fg: #e9eef9;
+  --muted: #95a1bf;
+  --accent: #4da3ff;
+  --accent-strong: #2b7fe2;
+  --card: rgba(255, 255, 255, 0.03);
+  --shadow: 0 24px 70px rgba(6, 10, 22, 0.55);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --border: 1px solid rgba(255, 255, 255, 0.06);
+}
 
-  <link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/" />
-  <link rel="alternate" hreflang="de" href="https://YOURDOMAIN.com/de/" />
-  <link rel="alternate" hreflang="x-default" href="https://YOURDOMAIN.com/" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <div class="topbar">
-        <div class="brand">
-          <a href="./" class="brand-link">CameraPick</a>
-          <span class="brand-tagline">Reviews & buying guides</span>
-        </div>
+* {
+  box-sizing: border-box;
+}
 
-        <nav class="lang-switch" aria-label="Language switch">
-          <a href="./" aria-current="page">EN</a>
-          <span>·</span>
-          <a href="./de/">DE</a>
-        </nav>
-      </div>
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(77, 163, 255, 0.18), transparent 32%),
+              radial-gradient(circle at 80% 0%, rgba(95, 247, 255, 0.16), transparent 30%),
+              var(--bg);
+  color: var(--fg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
 
-      <div class="hero">
-        <h1>Find the right camera — faster.</h1>
-        <p class="hero-sub">
-          Independent camera reviews, comparisons, and buying guides for photography and video.
-          Built for real-world use, not marketing hype.
-        </p>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-        <div class="hero-cta">
-          <a class="btn primary" href="#best-guides">See top buying guides</a>
-          <a class="btn" href="#latest">Read latest reviews</a>
-        </div>
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: var(--radius);
+}
 
-        <div class="hero-badges" aria-label="Highlights">
-          <span class="badge">Beginner-friendly</span>
-          <span class="badge">Travel & Vlog</span>
-          <span class="badge">Mirrorless focus</span>
-          <span class="badge">EU & US picks</span>
-        </div>
-      </div>
-    </div>
-  </header>
+h1, h2, h3 {
+  margin: 0 0 10px;
+  line-height: 1.3;
+  color: #f4f7ff;
+}
 
-  <main class="container">
-    <div class="toolbar" aria-label="Site tools">
-      <div class="search" role="search">
-        <input id="siteSearch" type="search" placeholder="Search guides and reviews…" autocomplete="off" />
-        <span class="hint">Type to filter</span>
-      </div>
-    </div>
+p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
 
-    <section id="best-guides" class="section">
-      <h2>Buying guides</h2>
-      <p class="section-sub">Start here if you want the best option for your budget and use case.</p>
+ul {
+  padding-left: 18px;
+  margin: 8px 0 12px;
+  color: var(--muted);
+}
 
-      <div class="grid">
-        <article class="card">
-          <h3><a href="./guides/best-camera-for-beginners.html">Best camera for beginners (2026)</a></h3>
-          <p>Simple recommendations, key features to look for, and the safest picks to start with.</p>
-          <p class="meta">Updated regularly · Beginner</p>
-        </article>
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
 
-        <article class="card">
-          <h3><a href="./guides/best-travel-camera.html">Best travel camera (lightweight)</a></h3>
-          <p>Compact setups that still deliver great image quality — ideal for city trips and landscapes.</p>
-          <p class="meta">Travel · Photo</p>
-        </article>
+header {
+  padding: 28px 0 24px;
+}
 
-        <article class="card">
-          <h3><a href="./guides/best-vlog-camera.html">Best vlog camera (stabilization & AF)</a></h3>
-          <p>What matters for video: autofocus, stabilization, rolling shutter, microphones, and heat.</p>
-          <p class="meta">Vlog · Video</p>
-        </article>
-      </div>
-    </section>
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
 
-    <section id="latest" class="section">
-      <h2>Latest reviews</h2>
-      <p class="section-sub">Hands-on impressions, pros & cons, and who each camera is actually for.</p>
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(77, 163, 255, 0.14), rgba(95, 247, 255, 0.12));
+  border-radius: var(--radius-sm);
+  border: var(--border);
+  box-shadow: 0 8px 24px rgba(12, 18, 36, 0.4);
+}
 
-      <div class="grid">
-        <article class="card">
-          <h3><a href="./reviews/sony-a7-iv-review.html">Sony A7 IV review</a></h3>
-          <p>A balanced full-frame hybrid — great for photo and video, but not for everyone.</p>
-          <p class="meta">Full-frame · Hybrid</p>
-        </article>
+.brand-logo {
+  font-size: 20px;
+}
 
-        <article class="card">
-          <h3><a href="./reviews/fujifilm-x-t5-review.html">Fujifilm X-T5 review</a></h3>
-          <p>High-resolution APS-C with strong image quality and classic controls.</p>
-          <p class="meta">APS-C · Photo-first</p>
-        </article>
+nav a {
+  font-weight: 600;
+  color: var(--muted);
+}
 
-        <article class="card">
-          <h3><a href="./reviews/canon-r8-review.html">Canon EOS R8 review</a></h3>
-          <p>Lightweight full-frame with great AF — excellent value if you can manage battery life.</p>
-          <p class="meta">Full-frame · Value</p>
-        </article>
-      </div>
-    </section>
+nav a:hover {
+  color: var(--accent);
+}
 
-    <section class="section">
-      <h2>Compare cameras</h2>
-      <p class="section-sub">Quick comparison pages for the most common shopping decisions.</p>
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(77, 163, 255, 0.18), rgba(16, 24, 45, 0.9));
+  border-radius: 26px;
+  padding: 42px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
 
-      <div class="grid">
-        <article class="card">
-          <h3><a href="./compare/a7-iv-vs-r6-ii.html">Sony A7 IV vs Canon R6 II</a></h3>
-          <p>Hybrid shooters: autofocus, stabilization, heat, lenses, and real-world handling.</p>
-          <p class="meta">Comparison</p>
-        </article>
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 30% 30%, rgba(95, 247, 255, 0.2), transparent 45%),
+              radial-gradient(circle at 80% 20%, rgba(77, 163, 255, 0.25), transparent 35%);
+  filter: blur(24px);
+  opacity: 0.6;
+  z-index: 0;
+}
 
-        <article class="card">
-          <h3><a href="./compare/zv-e10-vs-a6700.html">Sony ZV-E10 vs A6700</a></h3>
-          <p>For creators: what you gain with the upgrade and when it’s worth paying more.</p>
-          <p class="meta">Comparison</p>
-        </article>
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
 
-        <article class="card">
-          <h3><a href="./compare/x-s20-vs-x-t5.html">Fujifilm X-S20 vs X-T5</a></h3>
-          <p>Same ecosystem, different priorities: video features, controls, and shooting styles.</p>
-          <p class="meta">Comparison</p>
-        </article>
-      </div>
-    </section>
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+}
 
-    <section class="section">
-      <h2>About this site</h2>
-      <div class="card">
-        <p>
-          We publish independent camera reviews and buying guides. Some pages may include affiliate links.
-          If you buy through them, the site may earn a small commission at no extra cost to you.
-          We only recommend products we believe are genuinely good options for the use case.
-        </p>
-      </div>
-    </section>
-  </main>
+.hero h1 {
+  font-size: clamp(30px, 4vw, 40px);
+}
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> CameraPick · Reviews & buying guides</p>
-    </div>
-  </footer>
+.hero-sub {
+  font-size: 16px;
+  max-width: 560px;
+}
 
-  <button id="toTop" class="to-top" type="button" aria-label="Back to top">↑</button>
+.hero-media img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  min-height: 260px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
 
-  <script>
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
+main {
+  margin-top: 22px;
+  padding-bottom: 80px;
+}
 
-    // Back to top
-    const toTop = document.getElementById("toTop");
-    const toggleToTop = () => {
-      if (window.scrollY > 500) toTop.classList.add("show");
-      else toTop.classList.remove("show");
-    };
-    window.addEventListener("scroll", toggleToTop, { passive: true });
-    toggleToTop();
-    toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+.section {
+  margin: 36px 0;
+}
 
-    // Search filter (filters homepage cards)
-    const input = document.getElementById("siteSearch");
-    const cards = Array.from(document.querySelectorAll(".card"));
-    const norm = (s) => (s || "").toLowerCase().trim();
-    const applyFilter = () => {
-      const q = norm(input.value);
-      cards.forEach((card) => {
-        const text = norm(card.innerText);
-        card.style.display = !q || text.includes(q) ? "" : "none";
-      });
-    };
-    input.addEventListener("input", applyFilter);
-  </script>
-</body>
-</html>
+.section-sub {
+  margin: -4px 0 14px;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  backdrop-filter: blur(6px);
+}
+
+.card-plain {
+  box-shadow: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 70px rgba(6, 10, 22, 0.6);
+  border-color: rgba(77, 163, 255, 0.35);
+}
+
+.card-thumb {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card h3 {
+  font-size: 18px;
+}
+
+.card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  color: var(--accent);
+}
+
+.meta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.highlight {
+  margin: 48px 0;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 24px;
+  background: linear-gradient(135deg, rgba(95, 247, 255, 0.12), rgba(77, 163, 255, 0.2));
+  color: #f3f5ff;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cta h2 {
+  color: #f3f5ff;
+  margin-bottom: 6px;
+}
+
+.cta p {
+  color: #c6cbe0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  background: #f3f5ff;
+  color: #0a0f1a;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(17, 24, 39, 0.14);
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(17, 24, 39, 0.16);
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(243, 245, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #dce2ff;
+  font-size: 13px;
+}
+
+.rating-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.score-card {
+  border-radius: var(--radius);
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.score {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.score-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.buy-btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(77, 163, 255, 0.4), rgba(95, 247, 255, 0.3));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #0a0f1a;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(6, 10, 22, 0.4);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.buy-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(6, 10, 22, 0.48);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--fg);
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.compare-table th {
+  text-align: left;
+  color: #f4f7ff;
+  background: rgba(77, 163, 255, 0.1);
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(77, 163, 255, 0.18);
+  color: #dce2ff;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+footer {
+  text-align: center;
+  padding: 32px 0;
+  color: var(--muted);
+  font-size: 14px;
+  border-top: var(--border);
+  background: #fff;
+}
+
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(26, 52, 200, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-3px);
+}
+
+.to-top:hover {
+  background: var(--accent-strong);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 28px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media img {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 620px) {
+  header {
+    padding-top: 22px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand-link {
+    padding: 10px 12px;
+  }
+
+  .hero {
+    padding: 22px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .cta {
+    padding: 18px;
+    align-items: flex-start;
+  }
+}

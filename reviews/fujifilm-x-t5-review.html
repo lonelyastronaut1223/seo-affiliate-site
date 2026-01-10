@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fujifilm X-T5 Review — CameraPick</title>
+  <meta name="description" content="Fujifilm X-T5 review: image quality, handling, strengths, weaknesses, and who it suits.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      CameraPick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Fujifilm X-T5 Review</h1>
+        <p class="hero-sub">High-resolution APS-C with classic dials and excellent photo quality.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1519183071298-a2962be90b8e?auto=format&fit=crop&w=1400&q=80" alt="Fujifilm X-T5 camera">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Pros</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Image quality</h3><p>40MP detail, great dynamic range, lovely color science.</p></article>
+      <article class="card card-plain"><h3>Handling</h3><p>Dedicated dials, lightweight body, weather-sealed.</p></article>
+      <article class="card card-plain"><h3>IBIS</h3><p>In-body stabilization helps handheld stills and video.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Cons</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Rolling shutter</h3><p>Not ideal for fast video pans in 6K/4K HQ.</p></article>
+      <article class="card card-plain"><h3>AF vs Sony/Canon</h3><p>Improved, but tracking still trails the best for video.</p></article>
+      <article class="card card-plain"><h3>Flip vs tilt</h3><p>Three-way tilt is great for photo, less ideal for selfie video.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Who should buy it</h2>
+    <div class="card">
+      <p>Photo-first shooters who value color and classic controls. If you prioritize heavy video work, consider X-S20 or a Sony/Canon hybrid instead.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Ideal lenses</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Everyday zoom</h3><p>XF 16-55mm f/2.8 — pro-level quality, pairs perfectly with 40MP sensor.</p></article>
+      <article class="card card-plain"><h3>Travel zoom</h3><p>XF 18-120mm f/4 PZ — video-friendly power zoom and good range.</p></article>
+      <article class="card card-plain"><h3>Primes for look</h3><p>XF 23mm f/1.4 LM WR or 33mm f/1.4 LM WR for shallow depth and great color.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> CameraPick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Travel Camera — CameraPick</title>
+  <meta name="description" content="Lightweight travel camera picks with great image quality and portability.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      CameraPick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Best Travel Camera</h1>
+        <p class="hero-sub">Carry-light setups that still deliver great photos and video on the road.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1400&q=80" alt="Travel camera">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Quick picks</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Best overall travel kit</h3>
+        <p><strong>Sony A6700 + 18-135mm</strong> — light body, versatile zoom, great AF.</p>
+        <div class="meta">APS-C · Hybrid</div>
+      </article>
+      <article class="card">
+        <h3>Best for video-first trips</h3>
+        <p><strong>Sony ZV-E10 + 10-20mm</strong> — ultra wide vlog setup with strong autofocus.</p>
+        <div class="meta">Vlog</div>
+      </article>
+      <article class="card">
+        <h3>Best budget option</h3>
+        <p><strong>Canon R10</strong> — good colors, compact, great starter for travel.</p>
+        <div class="meta">Budget</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Why these picks</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>Weight & size first</h3>
+        <p>Under 700g with a walkaround zoom; you should want to carry it all day.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Reliable autofocus</h3>
+        <p>Face/eye AF matters for quick moments and video clips while moving.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Lens flexibility</h3>
+        <p>18-135mm or 16-55mm covers landscapes to portraits without swapping lenses often.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Travel packing tips</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3>Keep it light</h3>
+        <p>One body, one zoom, one prime. Add a mini tripod and 2 spare batteries.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Backup footage daily</h3>
+        <p>Carry dual cards or a tiny SSD. Offload each night to avoid lost clips.</p>
+      </article>
+      <article class="card card-plain">
+        <h3>Weather prep</h3>
+        <p>Pack a rain cover and microfiber cloth; humidity and dust happen fast on trips.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> CameraPick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>
