@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://camerapick.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Guides -->
+  <url>
+    <loc>https://camerapick.com/guides/best-camera-for-beginners-2026.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://camerapick.com/guides/best-travel-camera.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://camerapick.com/guides/best-vlog-camera.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://camerapick.com/guides/best-budget-camera-under-800.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://camerapick.com/guides/best-hybrid-camera.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Comparisons -->
+  <url>
+    <loc>https://camerapick.com/compare/fujifilm-x-s20-vs-fujifilm-x-t5.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://camerapick.com/compare/sony-a7-iv-vs-canon-r6-ii.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://camerapick.com/compare/sony-zv-e10-vs-sony-a6700.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- German -->
+  <url>
+    <loc>https://camerapick.com/de/</loc>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
