@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panasonic S5 II Quick Take — cameraupick</title>
+  <meta name="description" content="Panasonic S5 II quick take: PDAF autofocus, strong IBIS, 6K open-gate, and great value for video-first creators.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      cameraupick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Panasonic S5 II Quick Take</h1>
+        <p class="hero-sub">PDAF fixes AF, strong IBIS, 6K open-gate — a value-packed full-frame hybrid for video-first creators.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1400&q=85" alt="Panasonic camera on table">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Pros</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>PDAF autofocus</h3><p>Big improvement over DFD; better face/eye tracking.</p></article>
+      <article class="card card-plain"><h3>IBIS</h3><p>Excellent stabilization; great for handheld video.</p></article>
+      <article class="card card-plain"><h3>Video formats</h3><p>6K open-gate, 4:2:2 10-bit, strong codecs for grading.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Cons</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>AF consistency</h3><p>Better than before, still trails Sony/Canon in erratic scenes.</p></article>
+      <article class="card card-plain"><h3>Rolling shutter</h3><p>Present in some modes; avoid fast pans in open-gate.</p></article>
+      <article class="card card-plain"><h3>Lens ecosystem</h3><p>L-mount growing, but fewer budget lenses than E-mount.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Who should buy it</h2>
+    <div class="card">
+      <p>Video-first creators who want strong IBIS, open-gate workflows, and now-decent AF at a fair price. Great for indie films, YouTube, and corporate video.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Real-world notes</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Stabilization</h3><p>IBIS + E-Stabilization is excellent; watch for wobble on ultra-wide lenses.</p></article>
+      <article class="card card-plain"><h3>Color</h3><p>V-Log grades well; skin tones are pleasant, especially with good WB.</p></article>
+      <article class="card card-plain"><h3>Thermals</h3><p>Handles long takes well; the active cooling design helps reliability.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> cameraupick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

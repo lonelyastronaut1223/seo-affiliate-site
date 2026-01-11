@@ -340,30 +340,25 @@ main {
   font-size: 16px;
 }
 
-.filter-buttons {
+.sidebar nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 8px;
 }
 
-.filter-btn {
-  padding: 7px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.04);
+.sidebar a {
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
   color: #f4f7ff;
-  cursor: pointer;
   font-weight: 600;
-  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+  text-decoration: none;
 }
 
-.filter-btn.active {
-  background: rgba(77, 163, 255, 0.2);
-  border-color: rgba(77, 163, 255, 0.6);
-}
-
-.filter-btn:hover {
-  transform: translateY(-1px);
+.sidebar a:hover {
+  border-color: rgba(77, 163, 255, 0.5);
+  background: rgba(77, 163, 255, 0.1);
 }
 
 .sidebar .compare-table {
@@ -413,6 +408,33 @@ main {
   text-align: left;
   color: #f4f7ff;
   background: rgba(77, 163, 255, 0.1);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.compare-col {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.compare-col h3 {
+  margin-bottom: 6px;
+}
+
+.spec {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 .tag {

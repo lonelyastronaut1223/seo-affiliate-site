@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Full-Frame for Video — cameraupick</title>
+  <meta name="description" content="Full-frame video-focused camera picks with strong codecs, low rolling shutter, and reliable autofocus.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      cameraupick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Best Full-Frame for Video</h1>
+        <p class="hero-sub">Full-frame hybrids with strong codecs, low rolling shutter, solid IBIS, and dependable AF.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?auto=format&fit=crop&w=1400&q=85" alt="Full-frame video camera">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Quick picks</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Best overall</h3>
+        <p><strong>Sony A7 V</strong> — big lens ecosystem, improved rolling shutter, 10-bit profiles.</p>
+        <div class="meta">Hybrid</div>
+      </article>
+      <article class="card">
+        <h3>Best handheld video</h3>
+        <p><strong>Canon R6 III</strong> — strong IBIS, clean motion, great AF for action.</p>
+        <div class="meta">Hybrid · IBIS</div>
+      </article>
+      <article class="card">
+        <h3>Value pick</h3>
+        <p><strong>Panasonic S5 II</strong> — PDAF fixed AF, strong IBIS, 6K open-gate.</p>
+        <div class="meta">Value</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What to prioritize</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Rolling shutter</h3><p>Avoid heavy skew in pans; better sensors help keep lines straight.</p></article>
+      <article class="card card-plain"><h3>Codecs & bit depth</h3><p>10-bit 4:2:2 and log profiles for grading; manageable file sizes.</p></article>
+      <article class="card card-plain"><h3>Stabilization</h3><p>IBIS + lens OIS for handheld; gyro data if you prefer post-stab.</p></article>
+      <article class="card card-plain"><h3>AF reliability</h3><p>Face/eye tracking that works in low light and with moving subjects.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> cameraupick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

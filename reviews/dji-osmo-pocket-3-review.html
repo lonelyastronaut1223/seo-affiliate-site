@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DJI Osmo Pocket 3 Quick Take — cameraupick</title>
+  <meta name="description" content="DJI Osmo Pocket 3 quick take: 1-inch gimbal camera with great stabilization, improved skin tones, and pocketable vlogging.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      cameraupick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>DJI Osmo Pocket 3 Quick Take</h1>
+        <p class="hero-sub">1-inch gimbal cam with excellent stabilization and improved skin tones — perfect for travel walk-and-talk.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=1400&q=85" alt="Action camera mounted">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Pros</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Stabilization</h3><p>Mechanical gimbal keeps footage smooth without heavy crops.</p></article>
+      <article class="card card-plain"><h3>Image quality</h3><p>1-inch sensor improves dynamic range and low light vs older Pockets.</p></article>
+      <article class="card card-plain"><h3>Portability</h3><p>Pocketable, flip screen, fast boot — ideal for quick vlog clips.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Cons</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Audio</h3><p>Better with external mic; onboard is decent but not perfect in wind.</p></article>
+      <article class="card card-plain"><h3>Sensor size limits</h3><p>Still smaller than APS-C/FF — shallow depth is limited.</p></article>
+      <article class="card card-plain"><h3>Accessories</h3><p>Extra batteries and handle add cost; budget accordingly.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Who should buy it</h2>
+    <div class="card">
+      <p>Travel vloggers and creators who want stabilized, pocketable video with minimal setup. Great as a B-cam for YouTube or social clips.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Real-world notes</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Skin tones</h3><p>Improved over previous gen; shoot in good light for best results.</p></article>
+      <article class="card card-plain"><h3>Workflow</h3><p>Quick wireless transfer and easy edits; vertical shooting for socials.</p></article>
+      <article class="card card-plain"><h3>Low light</h3><p>Usable, but keep ISO in check; add a small light if indoors.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> cameraupick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

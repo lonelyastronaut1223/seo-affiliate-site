@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Action & 360 Camera — cameraupick</title>
+  <meta name="description" content="Action and 360 cameras with great stabilization, horizon lock, and easy reframing for travel and creators.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="container">
+  <div class="topbar">
+    <a class="brand-link" href="../">
+      <span class="brand-logo">📷</span>
+      cameraupick
+    </a>
+    <nav><a href="../">Home</a></nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Best Action & 360 Camera</h1>
+        <p class="hero-sub">Stabilized cams with horizon lock, 360 reframing, and easy workflows for travel and creators.</p>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&w=1400&q=85" alt="Action camera on helmet">
+      </div>
+    </div>
+  </section>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Quick picks</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Best 360</h3>
+        <p><strong>Insta360 X3</strong> — excellent stabilization, easy reframing, great for creative shots.</p>
+        <div class="meta">360</div>
+      </article>
+      <article class="card">
+        <h3>Best action</h3>
+        <p><strong>DJI Osmo Action 4</strong> — great low light, RockSteady, horizon lock, solid audio.</p>
+        <div class="meta">Action</div>
+      </article>
+      <article class="card">
+        <h3>Pocket vlog</h3>
+        <p><strong>DJI Osmo Pocket 3</strong> — 1-inch sensor gimbal cam, best for walk-and-talk.</p>
+        <div class="meta">Pocket</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What to look for</h2>
+    <div class="grid">
+      <article class="card card-plain"><h3>Stabilization</h3><p>Horizon lock and strong EIS/IBIS for smooth footage.</p></article>
+      <article class="card card-plain"><h3>Workflow</h3><p>Easy mobile app edits, quick exports, and reliable audio.</p></article>
+      <article class="card card-plain"><h3>Durability</h3><p>Weather sealing, replaceable lens covers, good battery in cold.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affiliate note</h2>
+    <div class="card">
+      <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra cost to you.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> cameraupick
+</footer>
+
+<button id="toTop" class="to-top">↑</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const b=document.getElementById("toTop");
+window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
+b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>

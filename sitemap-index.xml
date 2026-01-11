@@ -27,19 +27,41 @@
     <loc>https://cameraupick.com/guides/best-hybrid-camera.html</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://cameraupick.com/guides/best-full-frame-for-video.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/guides/best-action-360-camera.html</loc>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Comparisons -->
+  <url>
+    <loc>https://cameraupick.com/compare/sony-a7-v-vs-canon-r6-iii.html</loc>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://cameraupick.com/compare/fujifilm-x-s20-vs-fujifilm-x-t5.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cameraupick.com/compare/sony-a7-iv-vs-canon-r6-ii.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://cameraupick.com/compare/sony-zv-e10-vs-sony-a6700.html</loc>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Reviews -->
+  <url>
+    <loc>https://cameraupick.com/reviews/nikon-z8-review.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/panasonic-s5-ii-review.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/dji-osmo-pocket-3-review.html</loc>
+    <priority>0.6</priority>
   </url>
 
   <!-- German -->
