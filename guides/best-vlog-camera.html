@@ -24,7 +24,15 @@
         <p class="hero-sub">Fast AF, stabilization, flip screens, and audio that keeps creators covered.</p>
       </div>
       <div class="hero-media">
-        <img src="https://images.unsplash.com/photo-1519183071298-a2962be90b8e?auto=format&fit=crop&w=1400&q=85" alt="Vlogging camera with microphone and flip screen">
+        <img
+          src="../assets/images/guides/vlog.jpg?v=20260111"
+          alt="Vlogging camera with microphone and flip screen"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1400"
+          height="900"
+        >
       </div>
     </div>
   </section>
@@ -103,10 +111,21 @@
 <button id="toTop" class="to-top">↑</button>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
-const b=document.getElementById("toTop");
-window.addEventListener("scroll",()=>b.classList.toggle("show",scrollY>400));
-b.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const toTopBtn = document.getElementById("toTop");
+  const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  window.addEventListener("scroll", () => {
+    toTopBtn.classList.toggle("show", window.scrollY > 400);
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth"
+    });
+  });
 </script>
 </body>
 </html>

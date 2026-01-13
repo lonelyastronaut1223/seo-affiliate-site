@@ -16,6 +16,12 @@
   box-sizing: border-box;
 }
 
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px var(--ring-offset);
+}
+
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -30,6 +36,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 img {
@@ -96,6 +106,7 @@ nav a {
 
 nav a:hover {
   color: var(--accent);
+  text-decoration: none;
 }
 
 .hero {
@@ -454,7 +465,7 @@ footer {
   color: var(--muted);
   font-size: 14px;
   border-top: var(--border);
-  background: #fff;
+  background: transparent;
 }
 
 .to-top {
