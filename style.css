@@ -10,6 +10,17 @@
   --radius: 18px;
   --radius-sm: 12px;
   --border: 1px solid rgba(255, 255, 255, 0.06);
+
+  /* Focus styles */
+  --ring: rgba(77, 163, 255, 0.6);
+  --ring-offset: rgba(13, 19, 34, 0.3);
+
+  /* Spacing system */
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
 }
 
 * {
@@ -26,8 +37,8 @@ body {
   margin: 0;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   background: radial-gradient(circle at 20% 20%, rgba(77, 163, 255, 0.18), transparent 32%),
-              radial-gradient(circle at 80% 0%, rgba(95, 247, 255, 0.16), transparent 30%),
-              var(--bg);
+    radial-gradient(circle at 80% 0%, rgba(95, 247, 255, 0.16), transparent 30%),
+    var(--bg);
   color: var(--fg);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -48,7 +59,9 @@ img {
   border-radius: var(--radius);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0 0 10px;
   line-height: 1.3;
   color: #f4f7ff;
@@ -63,6 +76,24 @@ ul {
   padding-left: 18px;
   margin: 8px 0 12px;
   color: var(--muted);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 .container {
@@ -104,9 +135,26 @@ nav a {
   color: var(--muted);
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   color: var(--accent);
   text-decoration: none;
+}
+
+nav a.active {
+  font-weight: 800;
+  position: relative;
+}
+
+nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
 }
 
 .hero {
@@ -125,13 +173,13 @@ nav a:hover {
   position: absolute;
   inset: -40%;
   background: radial-gradient(circle at 30% 30%, rgba(95, 247, 255, 0.2), transparent 45%),
-              radial-gradient(circle at 80% 20%, rgba(77, 163, 255, 0.25), transparent 35%);
+    radial-gradient(circle at 80% 20%, rgba(77, 163, 255, 0.25), transparent 35%);
   filter: blur(24px);
   opacity: 0.6;
   z-index: 0;
 }
 
-.hero > * {
+.hero>* {
   position: relative;
   z-index: 1;
 }
@@ -206,6 +254,22 @@ main {
   overflow: hidden;
   border-radius: var(--radius-sm);
   margin-bottom: 12px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.03) 75%);
+  background-size: 200% 100%;
+}
+
+.card-thumb.loading {
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .card-thumb img {
@@ -278,11 +342,16 @@ main {
   text-decoration: none;
   box-shadow: 0 12px 26px rgba(17, 24, 39, 0.14);
   transition: transform 140ms ease, box-shadow 140ms ease;
+  user-select: none;
 }
 
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 18px 36px rgba(17, 24, 39, 0.16);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .pill-row {
@@ -400,25 +469,69 @@ main {
   box-shadow: 0 14px 28px rgba(6, 10, 22, 0.48);
 }
 
+/* Comparison Table Styles */
 .compare-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  /* Changed for border-radius */
+  border-spacing: 0;
   margin-top: 12px;
-  font-size: 14px;
+  font-size: 15px;
+  /* Slightly larger */
   color: var(--fg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  /* For border-radius */
 }
 
 .compare-table th,
 .compare-table td {
-  padding: 10px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  /* Only bottom border */
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  /* Faint vertical divider */
   background: rgba(255, 255, 255, 0.02);
+  vertical-align: middle;
+}
+
+.compare-table th:last-child,
+.compare-table td:last-child {
+  border-right: none;
 }
 
 .compare-table th {
   text-align: left;
-  color: #f4f7ff;
-  background: rgba(77, 163, 255, 0.1);
+  color: #fff;
+  font-weight: 700;
+  background: rgba(77, 163, 255, 0.15);
+  /* Slightly stronger header */
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.compare-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.06);
+  /* Highlight on hover */
+}
+
+.compare-table .product-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.compare-table .product-name:hover {
+  text-decoration: underline;
+}
+
+.compare-table .price-check {
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
 }
 
 .compare-grid {
@@ -459,6 +572,280 @@ main {
   letter-spacing: 0.04em;
 }
 
+
+@media (max-width: 768px) {
+
+  .compare-table,
+  .compare-table tbody,
+  .compare-table tr,
+  .compare-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .compare-table thead {
+    display: none;
+    /* Hide headers on mobile */
+  }
+
+  .compare-table tr {
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .compare-table td {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 8px 0;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .compare-table td:last-child {
+    border-bottom: none;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 8px;
+  }
+
+  /* Add labels via CSS content for common columns if needed, 
+     but simpler to just stack content for this specific table structure */
+  .compare-table td {
+    padding-left: 0;
+    text-align: left;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  /* Specific tweaks for our table structure */
+  .compare-table td:first-child {
+    font-size: 18px;
+    border-bottom: 1px solid rgba(77, 163, 255, 0.2);
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+/* Detailed Review Styles */
+.product-review-card {
+  background: var(--card);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow);
+}
+
+.product-review-header {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.product-image-container {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.product-image-container img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.product-info {
+  flex: 1 1 300px;
+}
+
+.badge-best {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(77, 163, 255, 0.4);
+}
+
+.product-title {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.specs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 16px 0 24px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.spec-value {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.pros h4,
+.cons h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pros h4 {
+  color: #4ade80;
+}
+
+.cons h4 {
+  color: #f87171;
+}
+
+.pros ul,
+.cons ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.pros li::marker {
+  color: #4ade80;
+}
+
+.cons li::marker {
+  color: #f87171;
+}
+
+.btn-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  background: #f4f7ff;
+  color: #0b1220;
+  font-weight: 800;
+  padding: 14px 20px;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+.btn-buy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+/* Updated Table Styles */
+.comparison-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 32px;
+  border-radius: var(--radius);
+  border: var(--border);
+  box-shadow: var(--shadow);
+}
+
+table.comparison {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  background: var(--bg-soft);
+}
+
+table.comparison th,
+table.comparison td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+table.comparison th {
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+table.comparison td {
+  vertical-align: top;
+}
+
+table.comparison tr:last-child td {
+  border-bottom: none;
+}
+
+table.comparison .product-name {
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+table.comparison .price-check {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .product-review-header {
+    flex-direction: column;
+  }
+
+  .product-image-container,
+  .product-info {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: none;
+  }
+
+  .pros-cons {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 footer {
   text-align: center;
   padding: 32px 0;
@@ -472,8 +859,8 @@ footer {
   position: fixed;
   right: 20px;
   bottom: 24px;
-  width: 42px;
-  height: 42px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 50%;
   border: none;
   background: var(--accent);
