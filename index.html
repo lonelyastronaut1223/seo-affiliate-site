@@ -12,12 +12,12 @@
   <!-- Font preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
-    as="style">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link rel="preload" as="image" href="assets/images/guides/main-page-1280.jpg" type="image/jpeg">
 
   <!-- Favicon / App Icons -->
   <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -35,6 +35,9 @@
   <meta property="og:description" content="Honest camera reviews, comparisons, and beginner-friendly buying guides.">
   <meta property="og:url" content="https://cameraupick.com/">
   <meta property="og:image" content="https://cameraupick.com/assets/images/guides/vlog.jpg">
+  <meta property="og:image:alt" content="Vlog camera with microphone setup">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="cameraupick — Camera Reviews & Buying Guides">
   <meta name="twitter:description" content="Honest camera reviews, comparisons, and beginner-friendly buying guides.">
@@ -48,12 +51,7 @@
     "@type": "WebSite",
     "name": "cameraupick",
     "url": "https://cameraupick.com/",
-    "inLanguage": ["en", "de"],
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://cameraupick.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": ["en", "de"]
   }
   </script>
   <script type="application/ld+json">
@@ -159,7 +157,7 @@
         <span class="brand-text">cameraupick</span>
       </a>
       <nav aria-label="Language">
-        <a href="./">EN</a> · <a href="./de/">DE</a>
+        <a href="./" hreflang="en" aria-current="page">EN</a> · <a href="./de/" hreflang="de">DE</a>
       </nav>
     </div>
 
@@ -172,8 +170,13 @@
           </p>
         </div>
         <div class="hero-media">
-          <img src="assets/images/guides/main-page.avif" alt="Modern mirrorless camera camera buying guide hero image"
-            loading="eager" fetchpriority="high" decoding="async" width="1400" height="900" />
+          <img src="assets/images/guides/main-page-1280.jpg"
+            srcset="assets/images/guides/main-page-640.jpg 640w,
+                    assets/images/guides/main-page-960.jpg 960w,
+                    assets/images/guides/main-page-1280.jpg 1280w"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
+            alt="Modern mirrorless camera buying guide hero image" loading="eager" fetchpriority="high"
+            decoding="async" width="1280" height="1600" />
         </div>
       </div>
     </section>
@@ -186,7 +189,11 @@
       <div class="grid">
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="assets/images/guides/beginner.jpg?v=20260111"
+            <img loading="lazy" decoding="async" 
+              src="assets/images/guides/beginner.jpg?v=20260111"
+              srcset="assets/images/guides/beginner-sm.jpg?v=20260111 600w,
+                      assets/images/guides/beginner.jpg?v=20260111 1200w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt="Beginner mirrorless camera kit" width="1200" height="800">
           </div>
           <h3><a href="guides/best-camera-for-beginners-2026.html">Best Camera for Beginners (2026)</a></h3>
@@ -258,7 +265,7 @@
 
     <section class="section" id="reviews">
       <h2>Latest Reviews</h2>
-      <p class="section-sub">Hands-on impressions, pros/cons, and clear “who should buy” guidance.</p>
+      <p class="section-sub">Hands-on impressions, pros/cons, and clear "who should buy" guidance.</p>
       <div class="grid">
         <article class="card">
           <h3><a href="reviews/sony-a7-iv-review.html">Sony A7 IV Review</a></h3>
@@ -365,7 +372,7 @@
     © <span id="year"></span> cameraupick
   </footer>
 
-  <button id="toTop" class="to-top">↑</button>
+  <button id="toTop" class="to-top" type="button" aria-label="Back to top">↑</button>
 
   <script src="script.js"></script>
 </body>
