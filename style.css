@@ -288,21 +288,7 @@ main {
   border-color: rgba(77, 163, 255, 0.35);
 }
 
-.card-thumb {
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-  margin-bottom: 12px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.03) 75%);
-  background-size: 200% 100%;
-}
 
-.card-thumb img {
-  width: 100%;
-  height: auto;
-  max-height: 280px;
-  object-fit: contain;
-  display: block;
-}
 
 .card-thumb.loading {
   animation: loading 1.5s infinite;
@@ -1437,4 +1423,71 @@ nav a.active::before {
 .buy-btn:active,
 .btn-buy:active {
   transform: translateY(0) scale(0.98);
+}
+
+/* ===== Utility Classes for Deals & Image Gallery ===== */
+
+/* Deal card badge */
+.deal-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--accent);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Deal pricing */
+.deal-price {
+  color: #4ade80;
+}
+
+.deal-price-old {
+  color: var(--muted);
+  text-decoration: line-through;
+  font-size: 13px;
+}
+
+/* Image gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.image-gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+
+.image-gallery-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-gallery-caption {
+  padding: 12px 16px;
+}
+
+.image-gallery-title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: var(--accent);
+}
+
+.image-gallery-text {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Review card price badge */
+.review-price-badge {
+  margin-top: 20px;
+  color: var(--accent);
 }
