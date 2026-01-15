@@ -100,39 +100,39 @@ document.addEventListener('DOMContentLoaded', () => {
     function calculateResult() {
         let recommendation = {};
 
-        // Simple Decision Tree
+        // Simple Decision Tree - Translated
         if (userAnswers.type === 'video') {
             if (userAnswers.budget === 'low') {
-                recommendation = { name: 'Sony ZV-E10', desc: 'The undisputed king of budget vlogging.', link: 'reviews/sony-zv-e10-review.html' };
+                recommendation = { name: 'Sony ZV-E10', desc: 'Der unangefochtene König des Budget-Vloggings.', link: '../reviews/sony-zv-e10-review.html' };
             } else if (userAnswers.budget === 'mid') {
-                recommendation = { name: 'DJI Osmo Pocket 3', desc: 'The ultimate portable vlog camera.', link: 'reviews/dji-osmo-pocket-3-review.html' };
+                recommendation = { name: 'DJI Osmo Pocket 3', desc: 'Die ultimative tragbare Vlog-Kamera.', link: '../reviews/dji-osmo-pocket-3-review.html' };
             } else {
-                recommendation = { name: 'Sony ZV-E1', desc: 'Full-frame cinema quality in a tiny body.', link: 'guides/best-vlog-camera.html' };
+                recommendation = { name: 'Sony ZV-E1', desc: 'Vollformat-Kinoqualität in einem winzigen Gehäuse.', link: '../guides/best-vlog-camera.html' };
             }
         } else if (userAnswers.type === 'photo') {
             if (userAnswers.budget === 'low') {
-                recommendation = { name: 'Canon R100', desc: 'Super affordable entry into real photography.', link: 'guides/best-camera-for-beginners-2026.html' };
+                recommendation = { name: 'Canon R100', desc: 'Super günstiger Einstieg in die echte Fotografie.', link: '../guides/best-camera-for-beginners-2026.html' };
             } else if (userAnswers.budget === 'high') {
-                recommendation = { name: 'Sony A7R V', desc: 'The resolution monster for pros.', link: 'guides/best-full-frame-for-video.html' };
+                recommendation = { name: 'Sony A7R V', desc: 'Das Auflösungs-Monster für Profis.', link: '../guides/best-full-frame-for-video.html' };
             } else {
-                recommendation = { name: 'Fujifilm X-T5', desc: 'Pure photography joy with 40MP details.', link: 'reviews/fujifilm-x-t5-review.html' };
+                recommendation = { name: 'Fujifilm X-T5', desc: 'Reine Fotografiefreude mit 40MP Details.', link: '../reviews/fujifilm-x-t5-review.html' };
             }
         } else { // Hybrid
             if (userAnswers.budget === 'low') {
-                recommendation = { name: 'Canon R50', desc: 'Tiny but mighty hybrid for beginners.', link: 'guides/best-camera-for-beginners-2026.html' };
+                recommendation = { name: 'Canon R50', desc: 'Kleiner aber mächtiger Hybrid für Einsteiger.', link: '../guides/best-camera-for-beginners-2026.html' };
             } else if (userAnswers.exp === 'pro' || userAnswers.budget === 'high') {
-                recommendation = { name: 'Sony A7 IV', desc: 'The industry standard for do-it-all work.', link: 'reviews/sony-a7-iv-review.html' };
+                recommendation = { name: 'Sony A7 IV', desc: 'Der Industriestandard für Alles-Könner.', link: '../reviews/sony-a7-iv-review.html' };
             } else {
-                recommendation = { name: 'Panasonic S5 II', desc: 'Best value full-frame hybrid right now.', link: 'reviews/panasonic-s5-ii-review.html' };
+                recommendation = { name: 'Panasonic S5 II', desc: 'Bestes Preis-Leistungs-Verhältnis für Vollformat-Hybride.', link: '../reviews/panasonic-s5-ii-review.html' };
             }
         }
 
         recContent.innerHTML = `
             <div class="card" style="border:1px solid var(--accent); background:rgba(77,163,255,0.05);">
-                <div class="tag" style="background:var(--accent); color:#0a0f1a; font-weight:700; margin-bottom:12px; display:inline-block; padding:4px 8px; border-radius:4px; font-size:11px;">#1 RECOMMENDATION</div>
+                <div class="tag" style="background:var(--accent); color:#0a0f1a; font-weight:700; margin-bottom:12px; display:inline-block; padding:4px 8px; border-radius:4px; font-size:11px;">#1 EMPFEHLUNG</div>
                 <h3 style="margin-top:0; font-size:24px;">${recommendation.name}</h3>
                 <p style="font-size:15px; margin-bottom:16px; color:#c6cbe0;">${recommendation.desc}</p>
-                <a href="${recommendation.link}" class="buy-btn" style="width:100%; text-align:center; padding:12px;">View Details &rarr;</a>
+                <a href="${recommendation.link}" class="buy-btn" style="width:100%; text-align:center; padding:12px;">Details ansehen &rarr;</a>
             </div>`;
     }
 });

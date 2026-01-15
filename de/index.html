@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" prefix="og: https://ogp.me/ns#">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="description" content="Ehrliche Kamera-Reviews, Vergleiche und Kaufberatungen – für Einsteiger, Reisen, Vlogs, Budget- und Hybrid-Kameras.">
+  <meta name="description"
+    content="Ehrliche Kamera-Reviews, Vergleiche und Kaufberatungen. Aktuelle Empfehlungen für Reisen, Vlogs, Budget- und Hybrid-Kameras.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#0b1220">
 
+  <!-- Font preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link rel="preload" as="image" href="../assets/images/guides/main-page-1280.jpg" type="image/jpeg">
+
   <!-- Favicon / App Icons -->
   <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -24,29 +32,28 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="cameraupick">
   <meta property="og:title" content="cameraupick — Kamera Reviews & Kaufberatung">
-  <meta property="og:description" content="Ehrliche Kamera-Reviews, Vergleiche und Kaufberatungen für Einsteiger, Reisen und Creator.">
+  <meta property="og:description"
+    content="Ehrliche Kamera-Reviews, Vergleiche und Kaufberatungen für Einsteiger, Reisen und Creator.">
   <meta property="og:url" content="https://cameraupick.com/de/">
-  <meta property="og:image" content="https://cameraupick.com/assets/images/guides/budget.jpg">
+  <meta property="og:image" content="https://cameraupick.com/assets/images/guides/vlog.jpg">
+  <meta property="og:image:alt" content="Vlog-Kamera mit Mikrofon-Setup">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="cameraupick — Kamera Reviews & Kaufberatung">
-  <meta name="twitter:description" content="Ehrliche Kamera-Reviews, Vergleiche und Kaufberatungen für Einsteiger, Reisen und Creator.">
-  <meta name="twitter:image" content="https://cameraupick.com/assets/images/guides/budget.jpg">
+  <meta name="twitter:description"
+    content="Ehrliche Kamera-Reviews, Vergleiche und Kaufberatungen für Einsteiger, Reisen und Creator.">
+  <meta name="twitter:image" content="https://cameraupick.com/assets/images/guides/vlog.jpg">
 
   <title>cameraupick — Kamera Reviews, Vergleiche & Kaufberatung (2026)</title>
   <link rel="stylesheet" href="../style.css">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "cameraupick",
     "url": "https://cameraupick.com/de/",
-    "inLanguage": ["de"],
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://cameraupick.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": ["de"]
   }
   </script>
   <script type="application/ld+json">
@@ -61,246 +68,305 @@
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="container">
-  <div class="topbar">
-    <a class="brand-link" href="../">
-      <span class="brand-logo">📷</span>
-      cameraupick
-    </a>
-    <nav aria-label="Language">
-      <a href="../">EN</a> · <a href="./">DE</a>
-    </nav>
-  </div>
-
-  <section class="hero">
-    <div class="hero-grid">
-      <div>
-        <h1>Die richtige Kamera finden — schneller.</h1>
-        <p class="hero-sub">
-          Ehrliche Kamera-Tests und Kaufberatungen ohne Marketing-Blabla.
-        </p>
-      </div>
-      <div class="hero-media">
-        <img
-          src="../assets/images/guides/Main%20page.avif"
-          alt="Modern mirrorless camera close-up"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-          width="1400"
-          height="900"
-        />
-      </div>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="container">
+    <div class="topbar">
+      <a class="brand-link" href="./" aria-label="cameraupick startseite">
+        <img class="brand-logo" src="../android-chrome-512x512.png" alt="cameraupick logo" width="28" height="28"
+          loading="eager" decoding="async"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" />
+        <span class="brand-logo" style="display:none" aria-hidden="true">📷</span>
+        <span class="brand-text">cameraupick</span>
+      </a>
+      <nav aria-label="Sprache">
+        <a href="../deals.html" style="margin-right: 12px; color: var(--accent);">Angebote</a>
+        <a href="../" hreflang="en">EN</a> · <a href="./" hreflang="de" aria-current="page">DE</a>
+      </nav>
     </div>
-  </section>
-</header>
 
-<main id="main" class="container">
-  <section class="section" id="guides">
-    <h2>Kaufberatungen</h2>
-    <p class="section-sub">Finde schnell die passenden Modelle für dein Budget und deinen Einsatzzweck.</p>
-    <div class="grid">
-      <article class="card">
-        <div class="card-thumb">
-          <img loading="lazy" decoding="async"
-               src="../assets/images/guides/beginner.jpg?v=20260111"
-               alt="Einsteiger-Kamera" width="1200" height="800">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Finde die richtige Kamera — schneller.</h1>
+          <p class="hero-sub">
+            Ehrliche Kamera-Reviews und Kaufberatungen für Einsteiger, Reisende und Creator.
+          </p>
         </div>
-        <h3><a href="../guides/best-camera-for-beginners-2026.html">Beste Kamera für Einsteiger (2026)</a></h3>
-        <p>Einfach startklar: schnelle Empfehlungen mit gutem AF, einfachen Menüs und sinnvollem Akku.</p>
-        <div class="meta">Einsteiger</div>
-      </article>
-
-      <article class="card">
-        <div class="card-thumb">
-          <img loading="lazy" decoding="async"
-               src="../assets/images/guides/travel.jpg?v=20260111"
-               alt="Reisekamera unterwegs" width="1200" height="800">
-        </div>
-        <h3><a href="../guides/best-travel-camera.html">Beste Reisekamera</a></h3>
-        <p>Leicht, kompakt, stabilisiertes 4K und scharfe Reisefotos.</p>
-        <div class="meta">Reise</div>
-      </article>
-
-      <article class="card">
-        <div class="card-thumb">
-          <img loading="lazy" decoding="async"
-               src="../assets/images/guides/vlog.jpg?v=20260111"
-               alt="Vlog-Kamera mit Mikro und Klappdisplay" width="1200" height="800">
-        </div>
-        <h3><a href="../guides/best-vlog-camera.html">Beste Vlog-Kamera</a></h3>
-        <p>Schneller AF, Klappdisplay, Mikrofon-Setup und verlässlicher Ton.</p>
-        <div class="meta">Video</div>
-      </article>
-
-      <article class="card">
-        <div class="card-thumb">
-          <img loading="lazy" decoding="async"
-               src="../assets/images/guides/budget.jpg?v=20260111"
-               alt="Günstige spiegellose Kamera auf dem Tisch" width="1200" height="800">
-        </div>
-        <h3><a href="../guides/best-budget-camera-under-800.html">Beste Budget-Kamera unter 800 €</a></h3>
-        <p>Bezahlbar, mit solidem AF, ordentlichem Akku und günstigen Objektivwegen.</p>
-        <div class="meta">Budget</div>
-      </article>
-
-      <article class="card">
-        <div class="card-thumb">
-          <img loading="lazy" decoding="async"
-               src="../assets/images/guides/hybrid.jpg?v=20260111"
-               alt="Hybrid-Kamera-Body" width="1200" height="800">
-        </div>
-        <h3><a href="../guides/best-hybrid-camera.html">Beste Hybrid-Kamera</a></h3>
-        <p>Ausgewogen für Foto und Video mit 10-bit, verlässlichem AF und gutem System.</p>
-        <div class="meta">Hybrid</div>
-      </article>
-
-      <article class="card">
-        <div class="card-thumb">
-          <img loading="lazy" decoding="async"
-               src="../assets/images/guides/fullframe-video.jpg?v=20260111"
-               alt="Vollformat-Video-Rig" width="1200" height="800">
-        </div>
-        <h3><a href="../guides/best-full-frame-for-video.html">Beste Vollformat-Kamera für Video</a></h3>
-        <p>Vollformat-Hybriden mit starken Codecs, wenig Rolling Shutter und guter Stabilisierung.</p>
-        <div class="meta">Video · Vollformat</div>
-      </article>
-
-      <article class="card">
-        <div class="card-thumb">
-          <img loading="lazy" decoding="async"
-               src="../assets/images/guides/action-360.jpg?v=20260111"
-               alt="Action-Kamera draußen" width="1200" height="800">
-        </div>
-        <h3><a href="../guides/best-action-360-camera.html">Beste Action- & 360-Kamera</a></h3>
-        <p>Action/360-Cams mit starker Stabilisierung, Horizon Lock und einfacher Bedienung.</p>
-        <div class="meta">Action · 360</div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" id="reviews">
-    <h2>Neueste Reviews</h2>
-    <p class="section-sub">Praxis-Tests mit Stärken, Schwächen und klaren Empfehlungen.</p>
-    <div class="grid">
-      <article class="card">
-        <h3><a href="../reviews/sony-a7-iv-review.html">Sony A7 IV Review</a></h3>
-        <p>Beliebter Hybrid mit starkem AF und Farbe; 10-bit, solide Thermik, große Objektivwahl.</p>
-        <div class="meta">Vollformat · Hybrid</div>
-      </article>
-      <article class="card">
-        <h3><a href="../reviews/fujifilm-x-t5-review.html">Fujifilm X-T5 Review</a></h3>
-        <p>40 MP, Filmsimulationen, klassische Räder. Top für Foto, Video gut mit Blick auf Rolling Shutter.</p>
-        <div class="meta">APS-C · Foto</div>
-      </article>
-      <article class="card">
-        <h3><a href="../reviews/canon-eos-r8-review.html">Canon EOS R8 Review</a></h3>
-        <p>Leichtes Vollformat mit starkem AF und Canon-Farben; Akku/Rolling Shutter beachten.</p>
-        <div class="meta">Preis-Leistung · Video-freundlich</div>
-      </article>
-      <article class="card">
-        <h3><a href="../reviews/sony-zv-e10-review.html">Sony ZV-E10 Review</a></h3>
-        <p>Beste Einsteiger-Vlogcam mit Klappdisplay, Mic-Eingang, Tally; kein 4K60, sonst top für Budget.</p>
-        <div class="meta">Vlog · Budget</div>
-      </article>
-      <article class="card">
-        <h3><a href="../reviews/nikon-z8-review.html">Nikon Z8 Quick Take</a></h3>
-        <p>Pro-Level Foto/Video, 8K-Optionen, starkes AF; kleinere Z9-Alternative.</p>
-        <div class="meta">Pro · Hybrid</div>
-      </article>
-      <article class="card">
-        <h3><a href="../reviews/panasonic-s5-ii-review.html">Panasonic S5 II Quick Take</a></h3>
-        <p>PDAF fixiert AF, starke IBIS, 6K Open-Gate; top Wert für Video-Creator.</p>
-        <div class="meta">Vollformat · Hybrid</div>
-      </article>
-      <article class="card">
-        <h3><a href="../reviews/dji-osmo-pocket-3-review.html">DJI Osmo Pocket 3 Quick Take</a></h3>
-        <p>1-Zoll Gimbalcam, sehr stabil, bessere Hauttöne; perfekt für Travel-Vlogs.</p>
-        <div class="meta">Vlog · Pocket</div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" id="compare">
-    <h2>Vergleiche</h2>
-    <p class="section-sub">Direkte Gegenüberstellungen für häufige Kaufentscheidungen.</p>
-    <div class="grid">
-      <article class="card card-plain">
-        <h3><a href="../compare/sony-a7-v-vs-canon-r6-iii.html">Sony A7 V vs Canon R6 III</a></h3>
-        <p>AF, Stabilisierung, Rolling Shutter und Hitze im Hybrid-Flaggschiff-Vergleich.</p>
-        <div class="meta">Vergleich</div>
-      </article>
-      <article class="card card-plain">
-        <h3><a href="../compare/sony-zv-e10-vs-sony-a6700.html">Sony ZV-E10 vs A6700</a></h3>
-        <p>Creator-first vs. Enthusiast APS-C – wann lohnt das Upgrade.</p>
-        <div class="meta">Upgrade-Pfad</div>
-      </article>
-      <article class="card card-plain">
-        <h3><a href="../compare/fujifilm-x-s20-vs-fujifilm-x-t5.html">Fujifilm X-S20 vs X-T5</a></h3>
-        <p>Gleiche Objektive, andere Prioritäten: Video-Features vs. klassische Bedienung.</p>
-        <div class="meta">APS-C</div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section highlight" id="affiliate">
-    <div class="cta">
-      <div>
-        <h2>Affiliate & Transparenz</h2>
-        <p>Wir nutzen Affiliate-Links, um den Inhalt kostenlos zu halten. Du zahlst nie extra, und wir empfehlen nur Produkte, die wir selbst nutzen würden.</p>
-        <div class="pill-row">
-          <span class="pill">Unabhängige Tests</span>
-          <span class="pill">Klare Vor- & Nachteile</span>
-          <span class="pill">Regelmäßig aktualisiert</span>
+        <div class="hero-media">
+          <img src="../assets/images/guides/main-page-1280.jpg" alt="Moderne spiegellose Kamera Kaufberatung Hero-Bild"
+            loading="eager" fetchpriority="high" decoding="async" width="1280" height="600" />
         </div>
       </div>
-      <a class="btn" href="#guides">Zu den Top-Picks</a>
-    </div>
-  </section>
+    </section>
+  </header>
 
-  <section class="section" id="about">
-    <h2>So testen wir</h2>
-    <p class="section-sub">Praxisnahe Reviews, die echte Nutzung abbilden.</p>
-    <div class="grid">
-      <article class="card card-plain">
-        <h3>Handling & Autofokus</h3>
-        <p>Wie schnell Kameras fokussieren, Gesichter tracken und im Video halten.</p>
-      </article>
-      <article class="card card-plain">
-        <h3>Video-Zuverlässigkeit</h3>
-        <p>Hitzegrenzen, Rolling Shutter, Stabilisierung, Audio und Log-Profile.</p>
-      </article>
-      <article class="card card-plain">
-        <h3>Objektive & System</h3>
-        <p>Welche Linsen sinnvoll sind für Einsteiger, Reisen und zukünftige Upgrades.</p>
-      </article>
-    </div>
-  </section>
-</main>
+  <main id="main" class="container">
+    <section class="section highlight" id="camera-finder">
+      <div class="cta"
+        style="background: linear-gradient(135deg, rgba(43, 127, 226, 0.1), rgba(16, 24, 45, 0.6)); border: 1px solid rgba(77, 163, 255, 0.2);">
+        <div>
+          <h2 style="color: #e9eef9;">Entdecke deine perfekte Kamera</h2>
+          <p style="color: #b0b8d1;">Beantworte 3 kurze Fragen für eine persönliche Empfehlung.</p>
+        </div>
+        <button id="start-quiz" class="btn"
+          style="background: var(--accent-strong); color: white; border: none; box-shadow: 0 4px 14px rgba(43, 127, 226, 0.4);">
+          Guide starten
+        </button>
+      </div>
 
-<footer>
-  © <span id="year"></span> cameraupick
-</footer>
+      <!-- Quiz Modal -->
+      <div id="quiz-modal"
+        style="display:none; position:relative; margin-top: 20px; background: rgba(13, 19, 34, 0.95); padding: 32px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
 
-<button id="toTop" class="to-top">↑</button>
+        <!-- Close Button -->
+        <button id="close-quiz"
+          style="position:absolute; top:16px; right:16px; background:transparent; border:none; color:var(--muted); font-size:24px; cursor:pointer; padding:4px; line-height:1;">&times;</button>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+        <!-- Step 1: Content Type -->
+        <div id="quiz-step-1" class="quiz-step">
+          <h3 style="margin-bottom:8px; font-size:20px;">1. Was möchtest du hauptsächlich aufnehmen?</h3>
+          <p style="color:var(--muted); margin-bottom:20px; font-size:14px;">Wähle das Wichtigste aus.</p>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
+            <button class="btn quiz-option" data-type="video"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">🎥 Video / Vlogs</button>
+            <button class="btn quiz-option" data-type="photo"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">📸 Fotografie</button>
+            <button class="btn quiz-option" data-type="hybrid"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">⚖️ Beides (Hybrid)</button>
+          </div>
+        </div>
 
-  const toTopBtn = document.getElementById("toTop");
-  const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        <!-- Step 2: Experience -->
+        <div id="quiz-step-2" class="quiz-step" style="display:none;">
+          <h3 style="margin-bottom:8px; font-size:20px;">2. Wie viel Erfahrung hast du?</h3>
+          <p style="color:var(--muted); margin-bottom:20px; font-size:14px;">Sei ehrlich, wir urteilen nicht!</p>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
+            <button class="btn quiz-option" data-exp="beginner"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">Anfänger</button>
+            <button class="btn quiz-option" data-exp="enthusiast"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">Fortgeschritten</button>
+            <button class="btn quiz-option" data-exp="pro"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">Profi</button>
+          </div>
+        </div>
 
-  window.addEventListener("scroll", () => {
-    toTopBtn.classList.toggle("show", window.scrollY > 400);
-  });
+        <!-- Step 3: Budget -->
+        <div id="quiz-step-3" class="quiz-step" style="display:none;">
+          <h3 style="margin-bottom:8px; font-size:20px;">3. Wie hoch ist dein Budget?</h3>
+          <p style="color:var(--muted); margin-bottom:20px; font-size:14px;">Inklusive Objektiv.</p>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
+            <button class="btn quiz-option" data-budget="low"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">Unter 1.000 €</button>
+            <button class="btn quiz-option" data-budget="mid"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">1.000 € - 2.500 €</button>
+            <button class="btn quiz-option" data-budget="high"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">2.500 € +</button>
+          </div>
+        </div>
 
-  toTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: prefersReducedMotion ? "auto" : "smooth"
-    });
-  });
-</script>
+        <!-- Result -->
+        <div id="quiz-result" class="quiz-step" style="display:none; text-align:center;">
+          <h3 style="margin-bottom:4px;">Wir haben deinen Match gefunden!</h3>
+          <p style="color:var(--muted); margin-bottom:24px; font-size:14px;">Basierend auf deinen Antworten ist dies die
+            beste Wahl.</p>
+          <div id="recommendation-content" style="max-width:320px; margin:0 auto;"></div>
+          <button id="restart-quiz" class="btn"
+            style="margin-top:24px; font-size:13px; padding:8px 16px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);">Von
+            vorne beginnen ↺</button>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="guides">
+      <h2>Kaufberatungen</h2>
+      <p class="section-sub">Starte mit den Empfehlungen, die zu deinem Budget und Stil passen.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/beginner.jpg?v=20260111" srcset="../assets/images/guides/beginner-sm.jpg?v=20260111 600w,
+                      ../assets/images/guides/beginner.jpg?v=20260111 1200w" sizes="(max-width: 768px) 100vw, 50vw"
+              alt="Anfänger Spiegellose Kamera Kit" width="1200" height="800">
+          </div>
+          <h3><a href="../guides/best-camera-for-beginners-2026.html">Beste Kamera für Einsteiger (2026)</a></h3>
+          <p>Sichere, einfache Wahl mit schnellem AF, einfachen Menüs, gutem Akku und Objektiven zum Wachsen.</p>
+          <div class="meta">Einsteiger</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/travel.jpg?v=20260111"
+              alt="Kompakte Reisekamera für Street Photography" width="1200" height="800">
+          </div>
+          <h3><a href="../guides/best-travel-camera.html">Beste Reisekamera</a></h3>
+          <p>Leichte Ausrüstung, die dennoch stabilisiertes 4K und scharfe Reisefotos liefert.</p>
+          <div class="meta">Reise</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/vlog.jpg?v=20260111"
+              alt="Vlog-Kamera mit Mikrofon-Setup" width="1200" height="800">
+          </div>
+          <h3><a href="../guides/best-vlog-camera.html">Beste Vlog-Kamera</a></h3>
+          <p>Schneller AF, Klappbildschirm, Gyro-Daten oder IBIS und saubere Audio-Optionen.</p>
+          <div class="meta">Video</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/budget.jpg?v=20260111"
+              alt="Günstige spiegellose Kamera auf Holztisch" width="1200" height="800">
+          </div>
+          <h3><a href="../guides/best-budget-camera-under-800.html">Beste Budget-Kamera unter 800€</a></h3>
+          <p>Preiswerte Modelle mit zuverlässigem AF, gutem Akku und günstigem Objektiv-Pfad.</p>
+          <div class="meta">Budget</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/hybrid.jpg?v=20260111"
+              alt="Spiegelloses Kameragehäuse Nahaufnahme" width="1200" height="800">
+          </div>
+          <h3><a href="../guides/best-hybrid-camera.html">Beste Hybrid-Kamera</a></h3>
+          <p>Ausgewogene Foto-Video-Bodys mit 10-Bit, zuverlässigem AF und starken Ökosystemen.</p>
+          <div class="meta">Hybrid</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/fullframe-video.jpg?v=20260111"
+              alt="Vollformat-Kamera Video-Rig" width="1200" height="800">
+          </div>
+          <h3><a href="../guides/best-full-frame-for-video.html">Beste Vollformat-Kamera für Video</a></h3>
+          <p>Vollformat-Hybride mit starken Codecs, geringem Rolling Shutter und gutem IBIS.</p>
+          <div class="meta">Video · Vollformat</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/action-360.jpg?v=20260111"
+              alt="Action-Kamera draußen montiert" width="1200" height="800">
+          </div>
+          <h3><a href="../guides/best-action-360-camera.html">Beste Action- & 360-Kamera</a></h3>
+          <p>Action/360-Cams mit großartiger Stabilisierung, Horizontsperre und einfachem Reframing.</p>
+          <div class="meta">Action · 360</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <h2>Neueste Reviews</h2>
+      <p class="section-sub">Praxis-Eindrücke, Vor- und Nachteile sowie klare Kaufempfehlungen.</p>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="../reviews/sony-a7-iv-review.html">Sony A7 IV Review</a></h3>
+          <p>Hybrid-Favorit mit starkem AF und Farben; Menüs brauchen Gewöhnung. 10-Bit, solide Thermik, große
+            Objektivauswahl; Rolling Shutter beachten.</p>
+          <div class="meta">Vollformat · Hybrid</div>
+        </article>
+        <article class="card">
+          <h3><a href="../reviews/fujifilm-x-t5-review.html">Fujifilm X-T5 Review</a></h3>
+          <p>40MP Details, Filmsimulationen, klassische Einstellräder. Beste für Foto-Shooter; Video gut, aber Rolling
+            Shutter in HQ.</p>
+          <div class="meta">APS-C · Foto-First</div>
+        </article>
+        <article class="card">
+          <h3><a href="../reviews/canon-eos-r8-review.html">Canon EOS R8 Review</a></h3>
+          <p>Leichtes Vollformat mit Top-AF und Canon-Farben. Perfekter FF-Einstieg; extra Akkus einpacken und schnelle
+            Schwenks meiden.</p>
+          <div class="meta">Preis-Leistung · Video-freundlich</div>
+        </article>
+        <article class="card">
+          <h3><a href="../reviews/sony-zv-e10-review.html">Sony ZV-E10 Review</a></h3>
+          <p>Beste Einsteiger-Vlog-Cam mit Klappdisplay, Tally-Licht, Mikrofonbuchse; kein 4K60, aber unschlagbar für
+            Budget-Creator.</p>
+          <div class="meta">Vlog · Budget</div>
+        </article>
+        <article class="card">
+          <h3><a href="../reviews/nikon-z8-review.html">Nikon Z8 Quick Take</a></h3>
+          <p>Pro-Level Fotos/Video, 8K-Optionen, starker AF. Großartig für ernsthafte Hybrid-Shooter, die Pro-Ergonomie
+            im kleineren Gehäuse wollen.</p>
+          <div class="meta">Pro · Hybrid</div>
+        </article>
+        <article class="card">
+          <h3><a href="../reviews/panasonic-s5-ii-review.html">Panasonic S5 II Quick Take</a></h3>
+          <p>PDAF behebt AF-Probleme, starker IBIS, 6K Open-Gate, großartiges Preis-Leistungs-Verhältnis für
+            Video-Creator.</p>
+          <div class="meta">Vollformat · Hybrid</div>
+        </article>
+        <article class="card">
+          <h3><a href="../reviews/dji-osmo-pocket-3-review.html">DJI Osmo Pocket 3 Quick Take</a></h3>
+          <p>1-Zoll Gimbal-Kamera, tolle Stabilisierung, verbesserte Hauttöne. Perfekt für Travel Walk-and-Talk.</p>
+          <div class="meta">Vlog · Pocket</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="compare">
+      <h2>Vergleiche</h2>
+      <p class="section-sub">Seite-an-Seite-Analysen für die häufigsten Kaufentscheidungen.</p>
+      <div class="grid">
+        <article class="card card-plain">
+          <h3><a href="../compare/sony-a7-v-vs-canon-r6-iii.html">Sony A7 V vs Canon R6 III</a></h3>
+          <p>Flaggschiff-Hybrid-Showdown: AF, Rolling Shutter, Stabilisierung und Hitze.</p>
+          <div class="meta">Vergleich</div>
+        </article>
+        <article class="card card-plain">
+          <h3><a href="../compare/sony-zv-e10-vs-sony-a6700.html">Sony ZV-E10 vs A6700</a></h3>
+          <p>Creator-First vs Enthusiast APS-C — wann lohnt das Upgrade.</p>
+          <div class="meta">Upgrade-Pfad</div>
+        </article>
+        <article class="card card-plain">
+          <h3><a href="../compare/fujifilm-x-s20-vs-fujifilm-x-t5.html">Fujifilm X-S20 vs X-T5</a></h3>
+          <p>Gleiche Objektive, andere Prioritäten: Video-Features vs klassische Handhabung.</p>
+          <div class="meta">APS-C</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section highlight" id="affiliate">
+      <div class="cta">
+        <div>
+          <h2>Affiliate & Transparenz</h2>
+          <p>Wir nutzen Affiliate-Links, um die Seite kostenlos zu halten. Du zahlst nie extra und wir empfehlen nur
+            Ausrüstung, die wir selbst kaufen würden.</p>
+          <div class="pill-row">
+            <span class="pill">Unabhängige Tests</span>
+            <span class="pill">Transparente Vor- & Nachteile</span>
+            <span class="pill">Aktualisierte Auswahl</span>
+          </div>
+        </div>
+        <a class="btn" href="#guides">Unsere Top-Picks ansehen</a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>Wie wir testen</h2>
+      <p class="section-sub">Praxisnahe Reviews mit Fokus auf echte Nutzung.</p>
+      <div class="grid">
+        <article class="card card-plain">
+          <h3>Handling & Autofokus</h3>
+          <p>Wir prüfen, wie schnell Kameras fokussieren, Gesichter tracken und den Fokus im Video halten.</p>
+        </article>
+        <article class="card card-plain">
+          <h3>Video-Zuverlässigkeit</h3>
+          <p>Hitzegrenzen, Rolling Shutter, Stabilisierung, Audio-Optionen und Log-Profile.</p>
+        </article>
+        <article class="card card-plain">
+          <h3>Objektive & Ökosystem</h3>
+          <p>Welche Objektive machen Sinn für Einsteiger, Reisen und Wachstumspfade.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> cameraupick
+  </footer>
+
+  <button id="toTop" class="to-top" type="button" aria-label="Nach oben">↑</button>
+
+  <script src="../links.js"></script>
+  <script src="../script-de.js"></script>
 </body>
+
 </html>

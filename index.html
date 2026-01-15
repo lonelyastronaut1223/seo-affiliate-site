@@ -157,6 +157,7 @@
         <span class="brand-text">cameraupick</span>
       </a>
       <nav aria-label="Language">
+        <a href="deals.html" style="margin-right: 12px; color: var(--accent);">Deals</a>
         <a href="./" hreflang="en" aria-current="page">EN</a> · <a href="./de/" hreflang="de">DE</a>
       </nav>
     </div>
@@ -170,30 +171,98 @@
           </p>
         </div>
         <div class="hero-media">
-          <img src="assets/images/guides/main-page-1280.jpg"
-            srcset="assets/images/guides/main-page-640.jpg 640w,
-                    assets/images/guides/main-page-960.jpg 960w,
-                    assets/images/guides/main-page-1280.jpg 1280w"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
-            alt="Modern mirrorless camera buying guide hero image" loading="eager" fetchpriority="high"
-            decoding="async" width="1280" height="1600" />
+          <img src="assets/images/guides/main-page-1280.jpg" alt="Modern mirrorless camera buying guide hero image"
+            loading="eager" fetchpriority="high" decoding="async" width="1280" height="600" />
         </div>
       </div>
     </section>
   </header>
 
   <main id="main" class="container">
+    <section class="section highlight" id="camera-finder">
+      <div class="cta"
+        style="background: linear-gradient(135deg, rgba(43, 127, 226, 0.1), rgba(16, 24, 45, 0.6)); border: 1px solid rgba(77, 163, 255, 0.2);">
+        <div>
+          <h2 style="color: #e9eef9;">Discover Your Perfect Camera</h2>
+          <p style="color: #b0b8d1;">Answer 3 quick questions to get a personalized recommendation based on your needs.
+          </p>
+        </div>
+        <button id="start-quiz" class="btn"
+          style="background: var(--accent-strong); color: white; border: none; box-shadow: 0 4px 14px rgba(43, 127, 226, 0.4);">
+          Start the Guide
+        </button>
+      </div>
+
+      <!-- Quiz Modal -->
+      <div id="quiz-modal"
+        style="display:none; position:relative; margin-top: 20px; background: rgba(13, 19, 34, 0.95); padding: 32px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+
+        <!-- Close Button -->
+        <button id="close-quiz"
+          style="position:absolute; top:16px; right:16px; background:transparent; border:none; color:var(--muted); font-size:24px; cursor:pointer; padding:4px; line-height:1;">&times;</button>
+
+        <!-- Step 1: Content Type -->
+        <div id="quiz-step-1" class="quiz-step">
+          <h3 style="margin-bottom:8px; font-size:20px;">1. What will you primarily shoot?</h3>
+          <p style="color:var(--muted); margin-bottom:20px; font-size:14px;">Select the most important one.</p>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
+            <button class="btn quiz-option" data-type="video"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">🎥 Video / Vlogs</button>
+            <button class="btn quiz-option" data-type="photo"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">📸 Photography</button>
+            <button class="btn quiz-option" data-type="hybrid"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">⚖️ Both (Hybrid)</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Experience -->
+        <div id="quiz-step-2" class="quiz-step" style="display:none;">
+          <h3 style="margin-bottom:8px; font-size:20px;">2. What is your experience level?</h3>
+          <p style="color:var(--muted); margin-bottom:20px; font-size:14px;">Be honest, we won't judge!</p>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
+            <button class="btn quiz-option" data-exp="beginner"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">Beginner</button>
+            <button class="btn quiz-option" data-exp="enthusiast"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">Enthusiast</button>
+            <button class="btn quiz-option" data-exp="pro"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">Pro</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Budget -->
+        <div id="quiz-step-3" class="quiz-step" style="display:none;">
+          <h3 style="margin-bottom:8px; font-size:20px;">3. What is your budget?</h3>
+          <p style="color:var(--muted); margin-bottom:20px; font-size:14px;">Including a lens.</p>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:12px;">
+            <button class="btn quiz-option" data-budget="low"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">Under $1,000</button>
+            <button class="btn quiz-option" data-budget="mid"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">$1,000 - $2,500</button>
+            <button class="btn quiz-option" data-budget="high"
+              style="justify-content:center; background:rgba(255,255,255,0.05);">$2,500+</button>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="quiz-result" class="quiz-step" style="display:none; text-align:center;">
+          <h3 style="margin-bottom:4px;">We found your match!</h3>
+          <p style="color:var(--muted); margin-bottom:24px; font-size:14px;">Based on your answers, this is the best
+            choice.</p>
+          <div id="recommendation-content" style="max-width:320px; margin:0 auto;"></div>
+          <button id="restart-quiz" class="btn"
+            style="margin-top:24px; font-size:13px; padding:8px 16px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);">Start
+            Over ↺</button>
+        </div>
+      </div>
+    </section>
     <section class="section" id="guides">
       <h2>Buying Guides</h2>
       <p class="section-sub">Start with the picks that fit your budget and how you shoot.</p>
       <div class="grid">
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" 
-              src="assets/images/guides/beginner.jpg?v=20260111"
-              srcset="assets/images/guides/beginner-sm.jpg?v=20260111 600w,
-                      assets/images/guides/beginner.jpg?v=20260111 1200w"
-              sizes="(max-width: 768px) 100vw, 50vw"
+            <img loading="lazy" decoding="async" src="assets/images/guides/beginner.jpg?v=20260111" srcset="assets/images/guides/beginner-sm.jpg?v=20260111 600w,
+                      assets/images/guides/beginner.jpg?v=20260111 1200w" sizes="(max-width: 768px) 100vw, 50vw"
               alt="Beginner mirrorless camera kit" width="1200" height="800">
           </div>
           <h3><a href="guides/best-camera-for-beginners-2026.html">Best Camera for Beginners (2026)</a></h3>
@@ -374,6 +443,7 @@
 
   <button id="toTop" class="to-top" type="button" aria-label="Back to top">↑</button>
 
+  <script src="links.js"></script>
   <script src="script.js"></script>
 </body>
 
