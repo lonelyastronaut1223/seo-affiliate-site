@@ -217,60 +217,35 @@ nav a.active::after {
 /* ... skipped main/section ... */
 
 /* Professional & Rigorous Try-Buy Button */
-/* Ultra-Compact Professional Price Link */
+/* Unified Button Style - Used across all pages */
 .buy-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 4px 10px;
-  width: fit-content;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #8b9bb4;
-  font-size: 11px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  letter-spacing: 0.02em;
-  line-height: 1;
-}
-
-.buy-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(77, 163, 255, 0.3);
-  color: #e0e6f5;
-  transform: none;
-}
-
-/* ... skipped main/section ... */
-
-/* Softer Buy Button Style */
-.buy-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  gap: 6px;
   padding: 10px 18px;
-  border-radius: 12px;
-  /* Darker, softer background instead of bright gradient */
+  width: fit-content;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #e9eef9;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  backdrop-filter: blur(4px);
   transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .buy-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
   border-color: rgba(77, 163, 255, 0.4);
-  transform: translateY(-1px);
   color: #fff;
+  transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+
 
 main {
   margin-top: 22px;
@@ -319,6 +294,14 @@ main {
   margin-bottom: 12px;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.03) 75%);
   background-size: 200% 100%;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: contain;
+  display: block;
 }
 
 .card-thumb.loading {
@@ -519,41 +502,7 @@ main {
   margin-top: 10px;
 }
 
-/* Professional & Rigorous Try-Buy Button */
-/* Ultra-Compact Professional Price Link */
-.buy-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  /* Tighter gap */
-  padding: 4px 10px;
-  /* Very small padding */
-  width: fit-content;
-  border-radius: 4px;
-  /* Minimal radius */
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #8b9bb4;
-  /* Even more muted */
-  font-size: 11px;
-  /* Tiny, metadata-like font */
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  /* Force compactness */
-  height: auto;
-}
 
-.buy-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(77, 163, 255, 0.3);
-  color: #e0e6f5;
-  transform: none;
-  /* Remove movement for steadiness */
-}
 
 /* Comparison Table Styles */
 .compare-table {
@@ -897,19 +846,26 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 8px;
-  background: #f4f7ff;
-  color: #0b1220;
-  font-weight: 800;
-  padding: 14px 20px;
-  border-radius: 12px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  gap: 6px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e9eef9;
+  font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
   margin-top: 12px;
 }
 
 .btn-buy:hover {
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(77, 163, 255, 0.4);
+  color: #fff;
+  transform: translateY(-1px);
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
   text-decoration: none;
 }
@@ -1071,4 +1027,414 @@ footer {
     position: relative;
     top: 0;
   }
+}
+
+/* Rich Specs Table - Data Sheet Style */
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0 32px;
+  font-size: 14px;
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+}
+
+.specs-table th {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font-weight: 600;
+  width: 40%;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.specs-table td {
+  color: #fff;
+  font-weight: 500;
+}
+
+.specs-table tr:last-child th,
+.specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.specs-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.specs-group-header {
+  background: rgba(77, 163, 255, 0.1) !important;
+  color: var(--accent-light) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding: 8px 16px;
+}
+
+/* ========================================
+   ENHANCED UI INTERACTIVITY & ANIMATIONS
+   ======================================== */
+
+/* Smooth Card Hover Effects */
+.card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(77, 163, 255, 0.03), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  border-color: rgba(77, 163, 255, 0.3);
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+/* Image Zoom Effect */
+/* Image Zoom Effect */
+.card-thumb {
+  overflow: hidden;
+  border-radius: var(--radius);
+  position: relative;
+  aspect-ratio: 3/2;
+  /* Enforce uniform size for all cards (Guides & Deals) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-soft);
+  /* Neutral background default */
+}
+
+/* Default to cover for Lifestyle images (Guides) */
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  display: block;
+}
+
+/* Specific handling for Deal/Product images: Contain + White BG */
+#deals .card-thumb {
+  background: #ffffff;
+  /* White background for clean product shots */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#deals .card-thumb img {
+  object-fit: contain;
+  /* Show full product */
+  padding: 12px;
+  /* Breathing room for product */
+}
+
+/* Special case for "View All Deals" thumb */
+#deals .card:last-child .card-thumb {
+  background: var(--bg-soft);
+  /* Keep icon thumb dark/neutral */
+}
+
+.card:hover .card-thumb img {
+  transform: scale(1.05);
+}
+
+/* Ensure equal card heights */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  flex-grow: 1;
+  /* Pushes meta/footer to bottom */
+}
+
+/* Smooth Link Underline Animation */
+a {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.card h3 a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.card:hover h3 a::after {
+  width: 100%;
+}
+
+/* Button Ripple Effect Preparation */
+.buy-btn,
+.btn-buy {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.buy-btn::before,
+.btn-buy::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.buy-btn:hover::before,
+.btn-buy:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Badge Animations */
+.badge-best,
+.tag {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(77, 163, 255, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(77, 163, 255, 0);
+  }
+}
+
+/* Stagger Animation for Cards on Load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grid>.card {
+  animation: fadeInUp 0.5s ease backwards;
+}
+
+.grid>.card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.grid>.card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.grid>.card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.grid>.card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.grid>.card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.grid>.card:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+/* Enhanced Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading Skeleton Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 25%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.02) 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Interactive Spec Table Rows */
+.specs-table tr {
+  transition: background 0.2s ease;
+}
+
+.specs-table tr:hover {
+  background: rgba(77, 163, 255, 0.05) !important;
+}
+
+/* Smooth Number Counter Animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.meta,
+.spec-value {
+  animation: countUp 0.4s ease;
+}
+
+/* Hamburger Menu Animation (for future mobile menu) */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced Image Gallery Interaction */
+.product-image-container picture {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.product-image-container img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+}
+
+.product-image-container:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+/* Hero Animation */
+.hero {
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero h1 {
+  animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+.hero-sub {
+  animation: fadeInUp 1s ease 0.3s backwards;
+}
+
+/* Comparison Table Hover Enhancement */
+.compare-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.compare-table tbody tr:hover {
+  background: rgba(77, 163, 255, 0.04);
+  transform: scale(1.01);
+}
+
+/* Active State for Navigation */
+nav a {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::before,
+nav a.active::before {
+  width: 100%;
+}
+
+/* Tooltip-style Badges */
+.badge-best,
+.tag {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.badge-best:hover,
+.tag:hover {
+  transform: scale(1.05);
+}
+
+/* Improved Button States */
+.buy-btn:active,
+.btn-buy:active {
+  transform: translateY(0) scale(0.98);
 }

@@ -16,8 +16,8 @@
   <link rel="preload" as="image" href="assets/images/guides/main-page-1280.jpg" type="image/jpeg">
 
   <!-- Favicon / App Icons -->
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png?v=2">
   <link rel="manifest" href="site.webmanifest">
 
   <link rel="canonical" href="https://cameraupick.com/">
@@ -57,7 +57,7 @@
     "@type": "Organization",
     "name": "cameraupick",
     "url": "https://cameraupick.com/",
-    "logo": "https://cameraupick.com/android-chrome-512x512.png"
+    "logo": "https://cameraupick.com/assets/images/logo.png"
   }
   </script>
   <script type="application/ld+json">
@@ -147,9 +147,8 @@
   <header class="container">
     <div class="topbar">
       <a class="brand-link" href="./" aria-label="cameraupick home">
-        <img class="brand-logo" src="android-chrome-512x512.png" alt="cameraupick logo" width="28" height="28"
-          loading="eager" decoding="async"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" />
+        <img class="brand-logo" src="assets/images/logo.png" alt="cameraupick logo" width="28" height="28"
+          loading="eager" decoding="async" />
         <span class="brand-logo" style="display:none" aria-hidden="true">📷</span>
         <span class="brand-text">cameraupick</span>
       </a>
@@ -252,6 +251,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" id="guides">
       <h2>Buying Guides</h2>
       <p class="section-sub">Start with the picks that fit your budget and how you shoot.</p>
@@ -325,6 +325,55 @@
           <h3><a href="guides/best-action-360-camera.html">Best Action & 360 Camera</a></h3>
           <p>Rugged cams with horizon lock, invisible sticks, and easy reframing.</p>
           <div class="meta">Action · 360</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Deals Section - Integrated Style -->
+    <section class="section" id="deals">
+      <h2>Current Deals</h2>
+      <p class="section-sub">Limited-time price drops on gear we recommend.</p>
+      <div class="grid">
+        <article class="card">
+          <div
+            style="position: absolute; top: 12px; right: 12px; background: var(--accent); color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;">
+            -$100</div>
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="assets/images/guides/sony-zv-e10-original.png"
+              alt="Sony ZV-E10 deal" width="1200" height="800">
+          </div>
+          <h3><a href="reviews/sony-zv-e10-review.html">Sony ZV-E10 Kit</a>
+          </h3>
+          <p>Budget vlog camera with flip screen. Includes 16-50mm lens.</p>
+          <div class="meta" style="color: #4ade80;">$598 <span
+              style="color: var(--muted); text-decoration: line-through; font-size: 13px;">was $698</span></div>
+        </article>
+
+        <article class="card">
+          <div
+            style="position: absolute; top: 12px; right: 12px; background: var(--accent); color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;">
+            -$300</div>
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="assets/images/guides/panasonic-s5ii.png"
+              alt="Panasonic S5 II deal" width="1200" height="800">
+          </div>
+          <h3><a href="reviews/panasonic-s5-ii-review.html">Panasonic S5 II
+              Body</a></h3>
+          <p>Full-frame hybrid with phase-detect AF. Lowest price ever.</p>
+          <div class="meta" style="color: #4ade80;">$1,697</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb"
+            style="background: var(--bg-soft); display: flex; align-items: center; justify-content: center; min-height: 200px;">
+            <div style="text-align: center; padding: 24px;">
+              <div style="font-size: 48px; margin-bottom: 12px;">💰</div>
+              <p style="font-size: 14px; color: var(--muted); margin: 0;">SanDisk cards, batteries, and more</p>
+            </div>
+          </div>
+          <h3><a href="deals.html">View All Deals</a></h3>
+          <p>Accessories, storage, and gear on sale.</p>
+          <div class="meta">Updated Daily</div>
         </article>
       </div>
     </section>
