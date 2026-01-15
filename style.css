@@ -598,15 +598,7 @@ main {
   transform: translateY(-1px);
 }
 
-text-align: left;
-color: #fff;
-font-weight: 700;
-background: rgba(77, 163, 255, 0.15);
-/* Slightly stronger header */
-text-transform: uppercase;
-font-size: 12px;
-letter-spacing: 0.05em;
-}
+
 
 .compare-table tbody tr:hover td {
   background: rgba(255, 255, 255, 0.06);

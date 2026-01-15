@@ -9,11 +9,13 @@ The project is designed as a lightweight static website and optimized for SEO an
 
 ## Features
 
-- 📷 Independent camera reviews and comparisons
-- 🧭 Buying guides for beginners, travel, vlog, and hybrid use cases
-- 🌍 Multilingual structure (EN / DE)
-- ⚡ Static HTML & CSS (no framework, fast loading)
-- 🔍 SEO-friendly setup (clean URLs, hreflang support)
+- 📷 **Independent Reviews**: Unbiased camera reviews and direct comparisons.
+- 🧭 **Buying Guides**: Curated lists for Beginners, Travel, Vlogging, and Hybrid shooters.
+- 🛍️ **Camera Finder**: Interactive quiz (3-step logic) to recommend the perfect camera based on Usage, Experience, and Budget.
+- 🔥 **Daily Deals**: Dedicated page (`deals.html`) for curated price drops and discounts.
+- 🌍 **Multilingual**: Full English and German (DE) localization, including dynamic quiz content.
+- ⚡ **Performance**: Pure HTML/CSS/JS with optimized WebP images for fast loading.
+- 🎨 **Modern Design**: Dark mode aesthetic with glassmorphism elements and responsive layouts.
 
 ---
 
@@ -21,30 +23,36 @@ The project is designed as a lightweight static website and optimized for SEO an
 
 ```text
 /
-├── index.html          # English homepage
-├── style.css           # Global styles
-├── /de/                # German version
-│   └── index.html
+├── index.html              # English homepage (includes Camera Finder)
+├── deals.html              # Camera deals & discounts page
+├── style.css               # Global styles (Dark mode, Variables, Utilities)
+├── script.js               # Main logic (Quiz, UI interactions)
+├── links.js                # Affiliate link mapping (centralized)
+├── /de/                    # German localization
+│   ├── index.html          # German homepage (1:1 feature parity)
+│   └── script-de.js        # Localized quiz logic in German
+├── /guides/                # Buying guide articles
+├── /reviews/               # Individual camera reviews
+├── /compare/               # Direct camera comparisons
+└── /assets/                # Optimized images and icons
 ```
 
 ---
 
 ## Deployment
 
-This project is a static website and can be deployed using:
-
+This is a **static website** — no build process required.
+Simply deploy the root directory to:
 - GitHub Pages
-- Netlify
-- Any static hosting provider
-
-No build step, package manager, or server setup is required.
+- Netlify (drag & drop)
+- Vercel
 
 ---
 
-## Monetization
+## Monetization & Ethics
 
-Some pages may include affiliate links.
-If users purchase products through these links, the site may earn a commission at no additional cost to the user.
+This site is reader-supported via affiliate links (marked with `rel="sponsored"`).
+We only recommend gear based on performance and value, not commission rates.
 
 ---
 
