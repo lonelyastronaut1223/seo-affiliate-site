@@ -136,3 +136,32 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`;
     }
 });
+
+    // Newsletter Form
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            
+            // Show success message
+            const button = e.target.querySelector('button');
+            const originalText = button.textContent;
+            button.textContent = '✓ Subscribed!';
+            button.style.background = '#4ade80';
+            
+            // Reset form
+            e.target.reset();
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 3000);
+            
+            // TODO: In production, connect to your email service
+            // Examples: Mailchimp, ConvertKit, SendGrid, etc.
+            console.log('Newsletter subscription:', email);
+        });
+    }
+});
