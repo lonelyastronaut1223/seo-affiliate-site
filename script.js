@@ -165,3 +165,187 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ===== MODERN UI ENHANCEMENTS =====
+
+// 1. Smooth scroll for anchor links
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 2. Reading Progress Bar
+    const createProgressBar = () => {
+        const progressHTML = `
+            <div class="reading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('afterbegin', progressHTML);
+        
+        const progressBar = document.querySelector('.progress-bar');
+        
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+    };
+    
+    // Only add progress bar on article/review pages
+    if (document.querySelector('main article')) {
+        createProgressBar();
+    }
+
+    // 3. Interactive FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item, index) => {
+        const question = item.querySelector('h3');
+        const answer = item.querySelector('p');
+        
+        if (!question || !answer) return;
+        
+        // Wrap question in button for accessibility
+        const questionText = question.textContent;
+        question.innerHTML = `
+            <button class="faq-toggle" aria-expanded="false">
+                <span>${questionText}</span>
+                <span class="faq-icon">+</span>
+            </button>
+        `;
+        
+        // Wrap answer
+        answer.classList.add('faq-answer');
+        
+        // Close all by default except first one
+        if (index !== 0) {
+            answer.style.maxHeight = '0';
+            answer.style.overflow = 'hidden';
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            question.querySelector('.faq-toggle').classList.add('active');
+            question.querySelector('.faq-toggle').setAttribute('aria-expanded', 'true');
+            question.querySelector('.faq-icon').textContent = '−';
+        }
+        
+        // Toggle functionality
+        const toggleButton = question.querySelector('.faq-toggle');
+        toggleButton.addEventListener('click', () => {
+            const isActive = toggleButton.classList.contains('active');
+            
+            if (isActive) {
+                // Close
+                answer.style.maxHeight = '0';
+                toggleButton.classList.remove('active');
+                toggleButton.setAttribute('aria-expanded', 'false');
+                toggleButton.querySelector('.faq-icon').textContent = '+';
+            } else {
+                // Open
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                toggleButton.classList.add('active');
+                toggleButton.setAttribute('aria-expanded', 'true');
+                toggleButton.querySelector('.faq-icon').textContent = '−';
+            }
+        });
+    });
+
+    // 4. Enhanced "Back to Top" button with scroll visibility
+    const toTopButton = document.getElementById('toTop');
+    if (toTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                toTopButton.classList.add('visible');
+            } else {
+                toTopButton.classList.remove('visible');
+            }
+        });
+    }
+
+    // 5. Image Lightbox for product images
+    const createLightbox = (src, alt) => {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <img src="${src}" alt="${alt || 'Enlarged view'}">
+                <button class="lightbox-close" aria-label="Close lightbox">×</button>
+            </div>
+        `;
+        document.body.appendChild(lightbox);
+        document.body.style.overflow = 'hidden';
+        
+        // Close on click outside or close button
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
+                lightbox.remove();
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close on Escape key
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                lightbox.remove();
+                document.body.style.overflow = '';
+                document.removeEventListener('keydown', handleEscape);
+            }
+        };
+        document.addEventListener('keydown', handleEscape);
+    };
+    
+    // Add lightbox to product images and card images
+    document.querySelectorAll('.product-image, .card-thumb img, .hero-media img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+            createLightbox(img.src, img.alt);
+        });
+    });
+
+    // 6. Lazy load enhancement with fade-in
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    img.style.opacity = '1';
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        observer.observe(img);
+    });
+
+    // 7. Add copy button to code blocks (if any)
+    document.querySelectorAll('pre code').forEach(block => {
+        const button = document.createElement('button');
+        button.className = 'copy-code';
+        button.textContent = 'Copy';
+        button.addEventListener('click', () => {
+            navigator.clipboard.writeText(block.textContent);
+            button.textContent = 'Copied!';
+            setTimeout(() => button.textContent = 'Copy', 2000);
+        });
+        block.parentElement.style.position = 'relative';
+        block.parentElement.appendChild(button);
+    });
+});
+
+console.log('🎨 Modern UI enhancements loaded!');
