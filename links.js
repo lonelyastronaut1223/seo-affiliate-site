@@ -1,23 +1,28 @@
 // Affiliate Link Configuration
 const affiliateLinks = {
     // Sony
-    "sony-a6700": "https://amzn.to/49q42vK",
+    "sony-a6700": "https://amzn.to/3NpavhW",
+    "sony-a7c-ii": "https://amzn.to/49XHouC",
+    "sony-a7iv": "https://amzn.to/3Zmgs1u",
     "sony-zv-e10-ii": "https://amzn.to/49HqAH3",
-    "sony-zv-e10": "https://amzn.to/49HqAH3", // Alias for Budget Guide (assuming II link)
+    "sony-zv-e10": "https://amzn.to/3NqCxth",
     "sony-zv-e1": "https://amzn.to/3Le0oMc",
-    "sony-a7iv": "https://amzn.to/4qMgpYK", // HTML ID is sony-a7iv
     "sony-fx3": "https://amzn.to/4b0w6Ha",
 
     // Fujifilm
     "fuji-x100vi": "https://amzn.to/4pGFIdE",
     "fuji-x-t50": "https://amzn.to/4pJH5se",
     "fuji-x-t5": "https://amzn.to/4qSEPQj",
+    "fuji-xt5": "https://amzn.to/4qT3Laf", // Alternative key
+    "fuji-x-s20": "https://amzn.to/3YJrfTj",
+    "fuji-xs10": "", // Used only, no new link
 
     // Canon
     "canon-r50": "https://amzn.to/3YBJTwt",
     "canon-r100": "https://amzn.to/45FQ6eA",
     "canon-r8": "https://amzn.to/3Lvm06M",
-    "canon-r6ii": "https://amzn.to/4sHWE6q", // HTML ID is canon-r6ii
+    "canon-r6ii": "https://amzn.to/4sHWE6q",
+    "canon-r6-ii": "https://amzn.to/4sHWE6q", // Alternative key
 
     // Panasonic
     "panasonic-s5ii": "https://amzn.to/45FQbyU",
@@ -36,12 +41,9 @@ const affiliateLinks = {
     "gopro-13": "https://amzn.to/3Ne6SLE", // HTML ID is gopro-13
     "insta360-x4": "https://amzn.to/4aUs0jM",
 
-    // Comparison Specific (New)
-    "sony-a7-v": "https://amzn.to/4qMgpYK", // Placeholder (using A7 IV link)
-    "canon-r6-iii": "https://amzn.to/4sHWE6q", // Placeholder (using R6 II link)
-    "canon-r6-ii": "https://amzn.to/4sHWE6q",
-    "fuji-x-s20": "https://amzn.to/4pJH5se", // Placeholder (using X-T50 link)
-    "sony-a6700": "https://amzn.to/49q42vK" // Ensure explicit key exists
+    // Comparison Specific - New products not yet on Amazon
+    "sony-a7-v": "", // Not available yet
+    "canon-r6-iii": "" // Not available yet
 };
 
 // Main function to apply links
@@ -49,21 +51,30 @@ function applyAffiliateLinks() {
     console.log("Applying affiliate links...");
     let updatedCount = 0;
 
+    // Helper to apply attributes
+    const updateBtn = (btn, url) => {
+        if (btn) {
+            btn.href = url;
+            btn.target = "_blank";
+            btn.rel = "sponsored noopener noreferrer";
+        }
+    };
+
     for (const [id, link] of Object.entries(affiliateLinks)) {
         if (!link || link === "#" || link === "") continue;
 
-        // 1. Main Buy Buttons
+        // 1. Main Buy Buttons (Strategy A: Wrapper ID)
         const section = document.getElementById(id);
         if (section) {
             const btn = section.querySelector('.btn-buy');
-            if (btn) {
-                btn.href = link;
-                btn.target = "_blank";
-                btn.rel = "sponsored noopener noreferrer";
-            }
+            updateBtn(btn, link);
         }
 
-        // 2. Comparison Tables
+        // 2. Main Buy Buttons (Strategy B: Direct Data Attribute - More Robust)
+        const dataButtons = document.querySelectorAll(`.btn-buy[data-product="${id}"]`);
+        dataButtons.forEach(btn => updateBtn(btn, link));
+
+        // 3. Comparison Tables
         const selector = `a[href="#${id}"]`;
         const internalAnchors = document.querySelectorAll(selector);
 
@@ -84,7 +95,7 @@ function applyAffiliateLinks() {
             }
         });
     }
-    console.log(`Links applied. Updated ${updatedCount} table rows.`);
+    console.log(`Links applied. Updated ${updatedCount} comparisons/buttons.`);
 }
 
 // Run immediately if DOM is ready, otherwise wait

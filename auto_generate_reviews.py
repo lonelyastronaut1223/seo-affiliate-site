@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """
 自动评测文章生成器
-使用模板和数据自动生成完整的相机评测文章
+Based on the User's Preferred Design (Fujifilm X-T5 style)
+Features:
+- "The Verdict" text section
+- Rich Specs Table (Imaging, Video, Body)
+- "What We Like" / "The Downsides" Pros/Cons
+- Detailed Performance Cards
+- Ideal Lenses Grid
 """
 
 from pathlib import Path
-from datetime import datetime
 import json
 
 # 完整的相机数据库
@@ -14,101 +19,120 @@ CAMERAS_DATABASE = {
         'name': 'Sony A7C II',
         'price': '2198',
         'category': 'Compact Full-Frame',
+        'badge': '✨ Best for Travel',
         'brand': 'Sony',
-        'sensor': '33MP Full-Frame',
-        'video': '4K60 (1.5x crop)',
-        'af_points': '759 phase-detect',
-        'burst_rate': '10fps',
-        'weight': '515g',
-        'rating': '4.4',
+        # Specs
+        'sensor': '33MP Full-Frame BSI CMOS',
+        'processor': 'BIONZ XR + AI Unit',
+        'ibis': '5-Axis (7.0 stops)',
+        'video_res': '4K 60p (S35) / 4K 30p (FF)',
+        'internal_rec': '10-bit 4:2:2',
+        'profiles': 'S-Log3, S-Cinetone, LUTs',
+        'evf': '2.36M-dot OLED (0.7x)',
+        'screen': '3.0" Vari-angle Touch',
+        'card_slots': '1x SD UHS-II',
+        'weight': '515g (with battery)',
+        
+        'rating': '4.5',
         'review_count': '76',
         'image': 'sony-a7c-ii.png',
         
-        # 详细评测内容
-        'description': 'Ultra-compact full-frame camera with AI autofocus and exceptional portability',
-        'tagline': 'The perfect full-frame camera for travelers and vloggers who refuse to compromise on quality',
+        'verdict_p1': 'The Sony A7C II is a marvel of engineering, squeezing the powerful A7 IV into a body barely larger than an APS-C camera. It’s the dream camera for travel photographers who demand full-frame quality without the bulk.',
+        'verdict_p2': 'With Sony’s latest AI autofocus chip, it tracks subjects with uncanny accuracy. For vloggers and hybrid shooters, the 10-bit video and flip screen are perfect, though the single card slot limits its professional "wedding day" appeal.',
         
-        'image_quality': '''The Sony A7C II inherits the excellent 33MP sensor from the A7 IV, delivering outstanding image quality in a remarkably compact body. Dynamic range is superb at 14+ stops, with clean files up to ISO 6400 and usable results even at ISO 12800. The sensor's back-illuminated design ensures excellent low-light performance, making this an ideal camera for travel photography where lighting conditions are unpredictable.
-
-Color science is classic Sony, with accurate color reproduction out of camera and excellent flexibility in post-processing thanks to 14-bit RAW files. The camera handles high-contrast scenes beautifully, with shadows that lift cleanly and highlights that roll off smoothly. For landscape photographers, the resolution is more than adequate for large prints, while the file sizes remain manageable for extensive travel shoots.''',
-        
-        'autofocus': '''Sony's latest AI processing unit brings significant improvements to autofocus performance. Real-time tracking is exceptional, with the camera reliably detecting and following human subjects (including eyes), animals, birds, and vehicles. The 759 phase-detect points cover nearly the entire frame, ensuring sharp focus even with off-center compositions.
-
-In practice, the AF rarely hunts, even in challenging low-light situations down to -4 EV. Face and eye detection work flawlessly for portraiture, while animal eye AF is a game-changer for pet photography. The only scenarios where the AF struggles slightly are with very fast erratic movement, but for most travel, street, and portrait work, it's near-perfect.''',
-        
-        'video': '''Video capabilities are strong, with 4K60 recording at 10-bit 4:2:2 internally. The main limitation is the 1.5x crop in 4K60 mode, which can be restrictive with wider lenses. However, 4K30 is uncropped and delivers beautiful results. S-Log3 provides excellent dynamic range for color grading, though the camera also offers pleasing Rec.709 profiles for those who prefer to shoot ready-to-use footage.
-
-The fully articulating screen is perfect for vlogging, and the compact size makes the A7C II ideal for gimbal work. Overheating is well-controlled, with the camera lasting comfortably through 30-minute+ recording sessions in moderate temperatures. Active stabilization mode helps smooth out handheld footage, though it does add an additional crop.''',
-        
-        'build': '''Build quality is excellent despite the compact dimensions. The magnesium alloy body feels solid and features comprehensive weather sealing, making it suitable for adventure photography. The grip, while smaller than the A7 IV, is still comfortable for extended shooting sessions, though photographers with larger hands might prefer adding a battery grip.
-
-The control layout is well thought out, with key settings easily accessible. The mode dial includes a dedicated video mode, and the customizable buttons allow for personalized workflows. The electronic viewfinder is bright and clear at 2.36M dots, though it's slightly smaller than flagship models. Battery life is impressive at approximately 530 shots per charge, or longer when using the EVF sparingly.''',
+        'image_quality': 'The 33MP sensor provides a sweet spot for resolution and file size. Dynamic range is excellent, recovering shadows cleanly. High ISO performance is solid up to 6400.',
+        'handling': 'The grip is improved over the original A7C but still small for large lenses. The new front dial makes manual exposure much easier. It feels dense and premium.',
+        'video_perf': '4K60p is sharp but incurs a 1.5x crop. The Active Stabilization mode works wonders for walking shots, effectively removing the need for a gimbal for casual b-roll.',
         
         'pros': [
-            'Compact and lightweight full-frame body perfect for travel',
-            'Excellent 33MP image quality with strong dynamic range',
-            'Outstanding AI-powered autofocus with subject detection',
-            'Fully articulating screen ideal for vlogging and creative angles',
-            'Improved ergonomics over original A7C with better grip',
-            'Comprehensive weather sealing for adventure photography',
-            'Long battery life (530 shots rated)',
-            'Same sensor performance as the more expensive A7 IV'
+            'Tiny body with uncompromising full-frame sensor',
+            'Best-in-class AI Autofocus tracking',
+            'Excellent 10-bit 4:2:2 video quality',
+            'Vari-angle screen great for content creation'
         ],
-        
         'cons': [
-            'Single SD card slot (vs dual on A7 IV)',
-            'Smaller grip may not suit photographers with larger hands',
-            'More expensive than compact APS-C alternatives',
-            'Electronic viewfinder could be larger and higher resolution',
-            '4K60 has 1.5x crop (no uncropped option)',
-            'Limited native lens selection for compact setup',
-            'No built-in flash (though most won\'t miss it)'
+            'Single SD card slot risk for pros',
+            '1.5x crop in 4K60 mode',
+            'Small, lower-resolution viewfinder',
+            'No joystick for AF point selection'
         ],
         
-        'who_should_buy': '''Perfect for travel photographers, vloggers, and hybrid shooters who prioritize portability without sacrificing full-frame image quality. The A7C II excels for street photography, documentary work, and any scenario where a smaller camera allows for more discreet shooting. 
-
-Ideal buyers are photographers upgrading from APS-C who want full-frame performance in a package that won't weigh them down on day-long shoots or international trips. Content creators will love the vlogging features and excellent AF.
-
-Skip this camera if you need dual card slots for professional reliability, shoot fast-action sports extensively, or have larger hands that would be more comfortable with the A7 IV's grip. Also consider alternatives if budget is tight - the original A7C offers similar portability at lower cost.''',
+        'lenses': [
+            {'name': 'Sony 20-70mm f/4 G', 'desc': 'The perfect modern travel zoom with extra width.'},
+            {'name': 'Sony 40mm f/2.5 G', 'desc': 'Tiny prime that matches the body size perfectly.'},
+            {'name': 'Tamron 28-75mm f/2.8 G2', 'desc': 'Bright, light, and sharp standard zoom.'}
+        ],
         
         'faqs': [
-            {
-                'q': 'Sony A7C II vs A7 IV: Which should I buy?',
-                'a': 'A7C II is more compact and lighter ($2,198) with the same sensor and AF as A7 IV but only one card slot. A7 IV ($2,498) is larger with better grip, dual card slots, and more pro-oriented controls. Choose A7C II for travel and portability, A7 IV for professional reliability and ergonomics. The $300 difference is worth it if you need two card slots or prefer a larger camera.'
-            },
-            {
-                'q': 'Is the Sony A7C II good for beginners?',
-                'a': 'Yes and no. While it\'s user-friendly with excellent AF and intuitive menus, it\'s expensive for beginners at $2,198. The compact size is great for learning and building confidence, but beginners might outgrow the single card slot quickly. Consider the original Sony A7C (now discounted) or the ZV-E10 if budget is a concern, then upgrade later.'
-            },
-            {
-                'q': 'Does the A7C II have good video capabilities?',
-                'a': 'Excellent for most users! 4K60, 10-bit 4:2:2, S-Log3, and fantastic AF make it a strong hybrid camera. The fully articulating screen is perfect for vlogging. Main limitation is 1.5x crop in 4K60 mode - if you need uncropped 4K60, look at the Canon R6 II or Panasonic S5 II. For 4K30 work, it\'s nearly perfect.'
-            },
-            {
-                'q': 'What lenses work best with the A7C II for compact setup?',
-                'a': 'For maximum portability: Sony 28-60mm kit lens (tiny!), Sony 24mm f/2.8 G, Sony 40mm f/2.5 G, Sony 50mm f/2.5 G, or Tamron 20-40mm f/2.8. These keep the system compact. Avoid large lenses like the 24-70 GM which negate the body\'s compact advantage.'
-            },
-            {
-                'q': 'Is one SD card slot a deal-breaker?',
-                'a': 'Depends on your needs. For professional wedding/event work, yes - you need backup redundancy. For travel, landscapes, portraits, and content creation, it\'s fine with reliable UHS-II cards. Use high-quality cards and backup regularly. If you must have dual slots, get the A7 IV for $300 more.'
-            }
+            {'q': 'Is the single card slot a dealbreaker?', 'a': 'For travel and hobbyists, no. For paid weddings, maybe.'},
+            {'q': 'Does it overheat?', 'a': 'Better than the A7C, but compact bodies do get warm in 4K60.'}
         ],
-        
         'related_cameras': ['sony-a7-iv', 'canon-eos-r8', 'fujifilm-x-t5']
     },
-    
-    # 可以继续添加更多相机...
+    'sony-a7-iv': {
+        'name': 'Sony A7 IV',
+        'price': '2498',
+        'category': 'Full-frame Hybrid',
+        'badge': '🏆 Best All-Rounder',
+        'brand': 'Sony',
+        # Specs
+        'sensor': '33MP Full-Frame BSI CMOS',
+        'processor': 'BIONZ XR',
+        'ibis': '5-Axis (5.5 stops)',
+        'video_res': '4K 60p (S35) / 4K 30p (FF)',
+        'internal_rec': '10-bit 4:2:2',
+        'profiles': 'S-Log3, S-Cinetone',
+        'evf': '3.69M-dot OLED (0.78x)',
+        'screen': '3.0" Vari-angle Touch',
+        'card_slots': '2x (1x CFexpress A/SD, 1x SD)',
+        'weight': '658g (with battery)',
+        
+        'rating': '4.7',
+        'review_count': '128',
+        'image': 'sony-a7iv.png',
+        
+        'verdict_p1': 'The Sony A7 IV defines the modern standard for hybrid mirrorless cameras. It does almost everything well, balancing resolution, speed, and video features in a strictly professional body.',
+        'verdict_p2': 'Unlike the A7C II, this offers the redundancy of dual card slots and a significantly better EVF and grip. It is the workhorse choice for event photographers and serious videographers.',
+        
+        'image_quality': '33MP offers plenty of crop potential. Colors are accurate and the RAW files are incredibly pliable. It is a significant step up from the 24MP of the A7 III.',
+        'handling': 'The deep grip is comfortable for all-day shooting with heavy lenses. The full-size HDMI port is a huge plus for video work compared to flimsy micro-HDMI ports.',
+        'video_perf': 'Focus breathing compensation with Sony lenses is a game changer. Rolling shutter is noticeable in 4K24p full-frame, but the S35 4K60p image is stunningly detailed.',
+        
+        'pros': [
+            'Dual card slots for professional peace of mind',
+            'Full-size HDMI port',
+            'Excellent ergonomics and deep grip',
+            'Huge lens selection'
+        ],
+        'cons': [
+            '4K60 has a 1.5x crop',
+            'Rolling shutter in full-frame video',
+            'Screen resolution is merely average',
+            'Burst rate drops with highest quality RAWs'
+        ],
+        
+        'lenses': [
+            {'name': 'Sony 24-70mm f/2.8 GM II', 'desc': 'Ultimate pro zoom, surprisingly light.'},
+            {'name': 'Sony 85mm f/1.8', 'desc': 'Affordable, sharp, fast portrait lens.'},
+            {'name': 'Sigma 24-70mm f/2.8 DG DN', 'desc': 'Great value alternative to the GM.'}
+        ],
+        
+        'faqs': [
+            {'q': 'A7 IV or A7C II?', 'a': 'A7 IV for pros (dual slots, grip). A7C II for travel.'},
+            {'q': 'Is it good for sports?', 'a': '10fps is okay, but stacking sensor cameras like A9/A1 are better.'}
+        ],
+        'related_cameras': ['sony-a7c-ii', 'canon-eos-r6-ii', 'panasonic-s5-ii']
+    }
 }
 
-# HTML模板
 HTML_TEMPLATE = '''<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title}</title>
-  <meta name="description" content="{meta_desc}">
+  <title>{name} Review 2026: Details, Specs & Verdict</title>
+  <meta name="description" content="{name} Review 2026: Detailed testing of image quality, autofocus, and video. Is it worth ${price}?">
   <link rel="canonical" href="https://cameraupick.com/reviews/{filename}">
   <link rel="stylesheet" href="../style.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,6 +143,10 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
 </head>
 
 <body>
+  <div class="reading-progress">
+    <div class="progress-bar"></div>
+  </div>
+
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="container">
     <div class="topbar">
@@ -133,12 +161,12 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
       <div class="hero-grid">
         <div>
           <h1>{name} Review</h1>
-          <p class="hero-sub">{tagline}</p>
+          <p class="hero-sub">{verdict_p1}</p>
           <div class="meta review-price-badge">{category} · ${price}</div>
         </div>
         <div class="hero-media">
           <picture>
-            <img src="../assets/images/guides/{image}" alt="{name} {alt_suffix}" loading="eager">
+            <img src="../assets/images/guides/{image}" alt="{name}" loading="eager">
           </picture>
         </div>
       </div>
@@ -151,46 +179,89 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
       <div class="product-review-card" id="{slug}">
         <div class="product-review-header">
           <div class="product-image-container">
-            <img src="../assets/images/guides/{image}" alt="{name}" loading="lazy" class="product-image">
+            <span class="badge-best">{badge}</span>
+            <picture>
+              <img src="../assets/images/guides/{image}" alt="{name} Product Shot">
+            </picture>
           </div>
           <div class="product-info">
-            <h2>{name}</h2>
-            <p class="product-category">{category}</p>
-            <div class="product-rating">
-              <span class="rating-stars">★★★★★</span>
-              <span class="rating-score">{rating}/5</span>
-            </div>
-            <p class="product-description">{description}</p>
-            <div class="product-price">
-              <span class="price-label">Best Price:</span>
-              <span class="price-value">${price}</span>
-            </div>
-            <div class="product-actions">
-              <a href="#" class="btn-primary affiliate-link" data-product="{slug}">Check Price on Amazon →</a>
-            </div>
+            <h2 class="product-title">The Verdict</h2>
+            <p>{verdict_p1}</p>
+            <p>{verdict_p2}</p>
+
+            <!-- Rich Specs Table -->
+            <table class="specs-table">
+              <tr>
+                <th colspan="2" class="specs-group-header">Imaging</th>
+              </tr>
+              <tr>
+                <th>Sensor</th>
+                <td>{sensor}</td>
+              </tr>
+              <tr>
+                <th>Processor</th>
+                <td>{processor}</td>
+              </tr>
+              <tr>
+                <th>Stabilization</th>
+                <td>{ibis}</td>
+              </tr>
+
+              <tr>
+                <th colspan="2" class="specs-group-header">Video</th>
+              </tr>
+              <tr>
+                <th>Max Resolution</th>
+                <td>{video_res}</td>
+              </tr>
+              <tr>
+                <th>Internal Rec</th>
+                <td>{internal_rec}</td>
+              </tr>
+              <tr>
+                <th>Profiles</th>
+                <td>{profiles}</td>
+              </tr>
+
+              <tr>
+                <th colspan="2" class="specs-group-header">Body & Connectivity</th>
+              </tr>
+              <tr>
+                <th>Viewfinder</th>
+                <td>{evf}</td>
+              </tr>
+              <tr>
+                <th>Screen</th>
+                <td>{screen}</td>
+              </tr>
+              <tr>
+                <th>Card Slots</th>
+                <td>{card_slots}</td>
+              </tr>
+              <tr>
+                <th>Weight</th>
+                <td>{weight}</td>
+              </tr>
+            </table>
+
+            <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank" data-product="{slug}">
+              Check Price on Amazon &rarr;
+            </a>
           </div>
         </div>
 
-        <div class="specs-grid">
-          <div class="spec-item">
-            <span class="spec-label">Sensor</span>
-            <span class="spec-value">{sensor}</span>
+        <div class="pros-cons">
+          <div class="pros">
+            <h4>What We Like</h4>
+            <ul>
+{pros_html}
+            </ul>
           </div>
-          <div class="spec-item">
-            <span class="spec-label">Video</span>
-            <span class="spec-value">{video}</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Autofocus</span>
-            <span class="spec-value">{af_points}</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Burst Rate</span>
-            <span class="spec-value">{burst_rate}</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Weight</span>
-            <span class="spec-value">{weight}</span>
+          <div class="cons">
+            <h4>The Downsides</h4>
+            <ul>
+{cons_html}
+            </ul>
           </div>
         </div>
       </div>
@@ -198,77 +269,81 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
 
     <section class="section">
       <h2>Detailed Performance</h2>
-      
-      <article>
-        <h3>Image Quality & Sensor Performance</h3>
-        {image_quality_html}
-      </article>
-
-      <article>
-        <h3>Autofocus & Tracking</h3>
-        {autofocus_html}
-      </article>
-
-      <article>
-        <h3>Video Capabilities</h3>
-        {video_html}
-      </article>
-
-      <article>
-        <h3>Build & Ergonomics</h3>
-        {build_html}
-      </article>
-    </section>
-
-    <section class="section">
-      <h2>Pros & Cons</h2>
-      <div class="pros-cons-grid">
-        <div class="pros-column">
-          <h3>✓ Pros</h3>
-          <ul>
-{pros_html}
-          </ul>
-        </div>
-        <div class="cons-column">
-          <h3>✗ Cons</h3>
-          <ul>
-{cons_html}
-          </ul>
-        </div>
+      <div class="grid">
+        <article class="card card-plain">
+          <h3>Image Quality</h3>
+          <p>{image_quality}</p>
+        </article>
+        <article class="card card-plain">
+          <h3>Handling & Build</h3>
+          <p>{handling}</p>
+        </article>
+        <article class="card card-plain">
+          <h3>Video Performance</h3>
+          <p>{video_perf}</p>
+        </article>
       </div>
     </section>
 
     <section class="section">
-      <h2>Who Should Buy the {name}?</h2>
-      {who_should_buy_html}
-      <div class="cta-box">
-        <a href="#" class="btn-primary affiliate-link" data-product="{slug}">Check Latest Price on Amazon →</a>
+      <h2>Ideal Lenses</h2>
+      <div class="grid">
+{lenses_html}
       </div>
     </section>
 
+    <section class="section" id="affiliate">
+      <h2>Affiliate Disclosure</h2>
+      <p class="section-sub">
+        We buy our own gear or rent it. No manufacturers paid for this review. We earn a commission if you use our
+        links, which keeps this site ad-free.
+      </p>
+    </section>
+    
     <section class="section">
       <h2>Frequently Asked Questions</h2>
-      
       <div class="faq-container">
 {faq_html}
       </div>
     </section>
-
+    
     <section class="section">
-      <h2>Related Camera Reviews</h2>
+      <h2>Related Reviews</h2>
       <div class="grid">
-{related_html}
-      </div>
-      
-      <div style="text-align: center; margin-top: 32px;">
-        <a href="../#reviews" class="btn">View All Reviews →</a>
+        <article class="card">
+           <div class="card-thumb"><img src="../assets/images/guides/fujifilm-x-t5.png" alt="X-T5"></div>
+           <h3><a href="fujifilm-x-t5-review.html">Fujifilm X-T5 Review</a></h3>
+        </article>
+         <article class="card">
+           <div class="card-thumb"><img src="../assets/images/guides/canon-eos-r8.png" alt="R8"></div>
+           <h3><a href="canon-eos-r8-review.html">Canon R8 Review</a></h3>
+        </article>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    © <span id="year"></span> cameraupick · <a href="../">Home</a>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../#reviews">Reviews</a>
+        <a href="../#guides">Guides</a>
+        <a href="../#deals">Deals</a>
+      </div>
+       <div class="social-links">
+        <a href="https://youtube.com/@cameraupick" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://twitter.com/cameraupick" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://instagram.com/cameraupick" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> cameraupick</p>
+    </div>
   </footer>
 
   <button id="toTop" class="to-top">↑</button>
@@ -276,46 +351,49 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
   <script src="../links.js"></script>
   <script src="../script.js"></script>
 </body>
-
 </html>'''
 
 def generate_schema_markup(camera):
-    """生成Schema Markup"""
-    faq_items = ',\n'.join([
-        f'''    {{
+    faq_template = '''    {{
       "@type": "Question",
-      "name": "{faq['q']}",
+      "name": "{q}",
       "acceptedAnswer": {{
         "@type": "Answer",
-        "text": "{faq['a'].replace('"', '\\"')}"
+        "text": "{a}"
       }}
-    }}''' for faq in camera['faqs']
-    ])
+    }}'''
     
-    return f'''  <!-- Product Schema -->
+    faq_items_list = []
+    for faq in camera['faqs']:
+        safe_answer = faq['a'].replace('"', '\\"')
+        faq_items_list.append(faq_template.format(q=faq['q'], a=safe_answer))
+    
+    faq_items = ',\n'.join(faq_items_list)
+    
+    schema_template = '''  <!-- Product Schema -->
   <script type="application/ld+json">
   {{
     "@context": "https://schema.org/",
     "@type": "Product",
-    "name": "{camera['name']}",
-    "image": "https://cameraupick.com/assets/images/guides/{camera['image']}",
-    "description": "{camera['description']}",
+    "name": "{name}",
+    "image": "https://cameraupick.com/assets/images/guides/{image}",
+    "description": "{description}",
     "brand": {{
       "@type": "Brand",
-      "name": "{camera['brand']}"
+      "name": "{brand}"
     }},
     "aggregateRating": {{
       "@type": "AggregateRating",
-      "ratingValue": "{camera['rating']}",
+      "ratingValue": "{rating}",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "{camera['review_count']}"
+      "ratingCount": "{review_count}"
     }},
     "offers": {{
       "@type": "AggregateOffer",
-      "url": "https://cameraupick.com/reviews/{camera['slug']}.html",
+      "url": "https://cameraupick.com/reviews/{slug}.html",
       "priceCurrency": "USD",
-      "lowPrice": "{camera['price']}",
+      "lowPrice": "{price}",
       "offerCount": "2",
       "availability": "https://schema.org/InStock"
     }}
@@ -340,8 +418,8 @@ def generate_schema_markup(camera):
     }},{{
       "@type": "ListItem",
       "position": 3,
-      "name": "{camera['name']} Review",
-      "item": "https://cameraupick.com/reviews/{camera['slug']}.html"
+      "name": "{name} Review",
+      "item": "https://cameraupick.com/reviews/{slug}.html"
     }}]
   }}
   </script>
@@ -357,10 +435,17 @@ def generate_schema_markup(camera):
   }}
   </script>'''
 
-def format_paragraphs(text):
-    """将长文本分成段落"""
-    paragraphs = text.strip().split('\n\n')
-    return '\n        '.join([f'<p>{p.strip()}</p>' for p in paragraphs if p.strip()])
+    return schema_template.format(
+        name=camera['name'],
+        image=camera['image'],
+        description=camera.get('verdict_p1', '')[:150] + '...', # shortened description
+        brand=camera['brand'],
+        rating=camera['rating'],
+        review_count=camera['review_count'],
+        slug=camera['slug'],
+        price=camera['price'],
+        faq_items=faq_items
+    )
 
 def generate_review_html(slug, camera_data):
     """生成完整的评测HTML"""
@@ -368,25 +453,20 @@ def generate_review_html(slug, camera_data):
     camera['slug'] = slug
     camera['filename'] = f'{slug}-review.html'
     
-    # 生成各部分HTML
-    camera['title'] = f"{camera['name']} Review 2026: Worth ${camera['price']}? Honest Pros & Cons"
-    camera['meta_desc'] = f"{camera['name']} Review 2026: {camera['description']} Detailed testing, pros & cons. Updated Jan 2026."
-    camera['alt_suffix'] = camera['category'].lower() + ' camera'
-    
     camera['schema_markup'] = generate_schema_markup(camera)
     
-    # 格式化内容部分
-    camera['image_quality_html'] = format_paragraphs(camera['image_quality'])
-    camera['autofocus_html'] = format_paragraphs(camera['autofocus'])
-    camera['video_html'] = format_paragraphs(camera['video'])
-    camera['build_html'] = format_paragraphs(camera['build'])
-    camera['who_should_buy_html'] = format_paragraphs(camera['who_should_buy'])
+    # Generate list HTML
+    camera['pros_html'] = '\n'.join([f'              <li>{pro}</li>' for pro in camera['pros']])
+    camera['cons_html'] = '\n'.join([f'              <li>{con}</li>' for con in camera['cons']])
     
-    # 生成优缺点列表
-    camera['pros_html'] = '\n'.join([f'            <li>{pro}</li>' for pro in camera['pros']])
-    camera['cons_html'] = '\n'.join([f'            <li>{con}</li>' for con in camera['cons']])
+    # Generate Lenses HTML
+    lens_template = '''        <article class="card card-plain">
+          <h3>{name}</h3>
+          <p>{desc}</p>
+        </article>'''
+    camera['lenses_html'] = '\n'.join([lens_template.format(**lens) for lens in camera.get('lenses', [])])
     
-    # 生成FAQ
+    # Generate FAQ HTML
     faq_items = []
     for faq in camera['faqs']:
         faq_items.append(f'''        <div class="faq-item">
@@ -395,49 +475,24 @@ def generate_review_html(slug, camera_data):
         </div>''')
     camera['faq_html'] = '\n'.join(faq_items)
     
-    # 生成Related Reviews（简化版，需要实际数据）
-    camera['related_html'] = '''        <article class="card">
-          <div class="card-thumb">
-            <img src="../assets/images/guides/sony-a7iv.png" alt="Sony A7 IV" loading="lazy">
-          </div>
-          <h3><a href="sony-a7-iv-review.html">Sony A7 IV Review</a></h3>
-          <p>Same sensor, larger body with dual card slots.</p>
-        </article>'''
-    
     return HTML_TEMPLATE.format(**camera)
 
 def main():
-    print("🚀 自动评测文章生成器")
+    print("🚀 Auto Review Generator (X-T5 Style)")
     print("=" * 60)
     
     output_dir = Path('reviews')
     output_dir.mkdir(exist_ok=True)
     
-    generated_count = 0
-    
     for slug, camera_data in CAMERAS_DATABASE.items():
-        print(f"\n📝 生成评测: {camera_data['name']}")
-        
+        print(f"\n📝 Generating: {camera_data['name']}")
         html_content = generate_review_html(slug, camera_data)
-        
         output_file = output_dir / f'{slug}-review.html'
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(html_content)
-        
-        print(f"   ✓ 已保存: {output_file}")
-        print(f"   - 字数: ~{len(html_content.split())} words")
-        print(f"   - Schema: ✓ Product + FAQ + Breadcrumb")
-        print(f"   - FAQ: {len(camera_data['faqs'])} questions")
-        
-        generated_count += 1
+        print(f"   ✓ Saved: {output_file}")
     
-    print("\n" + "=" * 60)
-    print(f"✅ 完成！生成了 {generated_count} 篇评测文章")
-    print("\n下一步:")
-    print("1. 检查生成的HTML文件")
-    print("2. 运行 batch_seo_optimizer.py 进行SEO优化")
-    print("3. 测试页面显示")
-    print("4. 提交到Git并部署")
+    print("\n✅ All reviews generated successfully!")
 
 if __name__ == '__main__':
     main()
