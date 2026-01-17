@@ -215,34 +215,17 @@ const initApp = () => {
 
     // Interactive FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach((item, index) => {
-        const question = item.querySelector('h3, summary'); // Support both standard and details/summary
-        // If it's details/summary, native behavior handles it found in standard FAQ section
-        // If it's custom div-based FAQ (like in reviews)
-        if (!question || item.tagName === 'DETAILS') return;
+    faqItems.forEach((item) => {
+        // Skip details/summary elements (homepage FAQ)
+        if (item.tagName === 'DETAILS') return;
 
-        const answer = item.querySelector('p');
+        // For div-based FAQ (review pages with pre-existing buttons)
+        const toggleButton = item.querySelector('.faq-toggle');
+        const answer = item.querySelector('.faq-answer');
 
-        if (!question || !answer) return;
+        if (!toggleButton || !answer) return;
 
-        // Wrap question in button for accessibility
-        const questionText = question.textContent;
-        question.innerHTML = `
-            <button class="faq-toggle" aria-expanded="false">
-                <span>${questionText}</span>
-                <span class="faq-icon">+</span>
-            </button>
-        `;
-
-        // Wrap answer
-        answer.classList.add('faq-answer');
-
-        // Close all by default
-        answer.style.maxHeight = '0';
-        answer.style.overflow = 'hidden';
-
-        // Toggle functionality
-        const toggleButton = question.querySelector('.faq-toggle');
+        // Add click handler
         toggleButton.addEventListener('click', () => {
             const isActive = toggleButton.classList.contains('active');
 
