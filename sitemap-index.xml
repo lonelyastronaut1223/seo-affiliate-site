@@ -1,73 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://cameraupick.com/</loc>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Guides -->
-  <url>
-    <loc>https://cameraupick.com/guides/best-camera-for-beginners-2026.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://cameraupick.com/guides/best-travel-camera.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cameraupick.com/guides/best-vlog-camera.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cameraupick.com/guides/best-budget-camera-under-800.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cameraupick.com/guides/best-hybrid-camera.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cameraupick.com/guides/best-full-frame-for-video.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cameraupick.com/guides/best-action-360-camera.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Comparisons -->
-  <url>
-    <loc>https://cameraupick.com/compare/sony-a7-v-vs-canon-r6-iii.html</loc>
+    <loc>https://cameraupick.com/compare/fujifilm-x-s20-vs-fujifilm-x-t5.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cameraupick.com/compare/fujifilm-x-s20-vs-fujifilm-x-t5.html</loc>
+    <loc>https://cameraupick.com/compare/sony-a7-iv-vs-canon-r6-ii.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/compare/sony-a7-v-vs-canon-r6-iii.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cameraupick.com/compare/sony-zv-e10-vs-sony-a6700.html</loc>
     <priority>0.7</priority>
   </url>
-
-  <!-- Reviews -->
-  <url>
-    <loc>https://cameraupick.com/reviews/nikon-z8-review.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cameraupick.com/reviews/panasonic-s5-ii-review.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cameraupick.com/reviews/dji-osmo-pocket-3-review.html</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- German -->
   <url>
     <loc>https://cameraupick.com/de/</loc>
     <priority>0.6</priority>
   </url>
-
+  <url>
+    <loc>https://cameraupick.com/deals.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/guides/best-action-360-camera.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/guides/best-budget-camera-under-800.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/guides/best-camera-for-beginners-2026.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/guides/best-full-frame-for-video.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/guides/best-hybrid-camera.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/guides/best-travel-camera.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/guides/best-vlog-camera.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/canon-eos-r8-review.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/dji-osmo-pocket-3-review.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/fujifilm-x-t5-review.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/nikon-z8-review.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/panasonic-s5-ii-review.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/sony-a7-iv-review.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/sony-a7c-ii-review.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cameraupick.com/reviews/sony-zv-e10-review.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
