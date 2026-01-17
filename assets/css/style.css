@@ -2121,40 +2121,7 @@ details.faq-item p {
   transition: width 0.1s ease;
 }
 
-/* Enhanced FAQ Accordion */
-.faq-toggle {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: none;
-  border: none;
-  color: var(--accent);
-  cursor: pointer;
-  padding: 0;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: left;
-  transition: color 0.2s ease;
-  font-family: inherit;
-}
-
-.faq-toggle:hover {
-  color: var(--link);
-}
-
-.faq-answer {
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.faq-icon {
-  font-size: 28px;
-  font-weight: 300;
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-  margin-left: 16px;
-}
+/* Duplicate rules removed - using definitions from line 1968-2067 */
 
 /* Enhanced Back to Top Button */
 .to-top {
