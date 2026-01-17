@@ -269,6 +269,7 @@ def translate_html_file(input_path, output_path, file_type='review'):
 
 def main():
     """Main execution"""
+    # Resolves to project root (since we are in scripts/i18n/)
     base_dir = Path(__file__).parent.parent.parent
     
     # Define translation tasks (prioritized order)
