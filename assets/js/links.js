@@ -51,6 +51,10 @@ function applyAffiliateLinks() {
     console.log("Applying affiliate links...");
     let updatedCount = 0;
 
+    // Check language
+    const isGerman = document.documentElement.lang === 'de';
+    const checkPriceText = isGerman ? 'Preis prüfen' : 'Check Price';
+
     // Helper to apply attributes
     const updateBtn = (btn, url) => {
         if (btn) {
@@ -87,7 +91,7 @@ function applyAffiliateLinks() {
                     priceCell.innerHTML = `
                         <a href="${link}" target="_blank" rel="sponsored noopener noreferrer" 
                            style="color: #10b981; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 4px;">
-                           Check Price <span style="font-size: 1.2em;">&rarr;</span>
+                           ${checkPriceText} <span style="font-size: 1.2em;">&rarr;</span>
                         </a>
                     `;
                     updatedCount++;
