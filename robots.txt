@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cameraupick.com/sitemap-index.xml
+Sitemap: https://cameraupick.com/sitemap.xml

@@ -2,7 +2,7 @@ import os
 import datetime
 
 BASE_URL = "https://cameraupick.com"
-SITEMAP_FILE = "sitemap-index.xml"
+SITEMAP_FILE = "sitemap.xml"
 
 # Priority rules
 PRIORITIES = {
