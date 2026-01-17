@@ -167,8 +167,8 @@ nav a.active::after {
   background: linear-gradient(135deg, rgba(77, 163, 255, 0.1), rgba(16, 24, 45, 0.8));
   background-size: 200% 200%;
   animation: heroPulse 8s ease infinite;
-  border-radius: 20px;
-  padding: 32px;
+  border-radius: 16px;
+  padding: 28px 28px;
   border: var(--border);
   box-shadow: var(--shadow);
   isolation: isolate;
@@ -193,35 +193,35 @@ nav a.active::after {
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 20px;
   align-items: center;
 }
 
 .hero h1 {
-  font-size: clamp(24px, 3.5vw, 36px);
-  margin-bottom: 12px;
+  font-size: clamp(22px, 3vw, 32px);
+  margin-bottom: 10px;
+  line-height: 1.2;
 }
 
 .hero-sub {
-  font-size: 15px;
-  max-width: 500px;
+  font-size: 14px;
+  max-width: 480px;
   color: #b0b8d1;
+  line-height: 1.5;
 }
 
 .hero-media img {
   width: 100%;
   object-fit: contain;
-  /* Shows full image without cropping */
   height: auto;
-  max-height: 480px;
-  /* Allow it to be taller if needed, but bounded */
-  border-radius: 16px;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+  max-height: 340px;
+  border-radius: 14px;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.4));
   transition: transform 0.5s ease;
 }
 
 .hero:hover .hero-media img {
-  transform: scale(1.02) translateY(-5px);
+  transform: scale(1.02) translateY(-4px);
 }
 
 /* Professional & Rigorous Try-Buy Button */
@@ -1808,30 +1808,263 @@ nav a.active::before {
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
+  padding: 8px 0;
 }
 
+/* Premium FAQ Card Design - Unified for Homepage & Reviews */
 .faq-item {
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.03) 50%,
+      rgba(255, 255, 255, 0.04) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+/* Subtle accent line on left */
+.faq-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.faq-item:hover::before {
+  opacity: 1;
+}
+
+.faq-item:hover {
+  background: linear-gradient(135deg,
+      rgba(77, 163, 255, 0.12) 0%,
+      rgba(77, 163, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0.05) 100%);
+  border-color: rgba(77, 163, 255, 0.4);
+  box-shadow:
+    0 6px 24px rgba(77, 163, 255, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .faq-item:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
-.faq-item h3 {
+/* ===== HOMEPAGE FAQ (<details> elements) ===== */
+
+/* Summary (Question) - Icon on LEFT */
+details.faq-item summary {
+  list-style: none;
+  padding: 20px 24px 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+  outline: none;
+  position: relative;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+}
+
+/* Hide default markers */
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-item summary::marker {
+  display: none;
+}
+
+/* Icon Container - LEFT SIDE */
+details.faq-item summary::before {
+  content: "▶";
+  font-size: 11px;
   color: var(--accent);
-  font-size: 18px;
-  margin-bottom: 12px;
-  line-height: 1.4;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: rgba(77, 163, 255, 0.12);
+  border-radius: 8px;
+  border: 1px solid rgba(77, 163, 255, 0.2);
 }
 
-.faq-item p {
-  color: var(--fg);
+/* Rotate chevron when open */
+details.faq-item[open] summary::before {
+  transform: rotate(90deg);
+  background: rgba(77, 163, 255, 0.18);
+  border-color: rgba(77, 163, 255, 0.3);
+}
+
+/* Hover state */
+details.faq-item summary:hover {
+  color: var(--accent);
+}
+
+details.faq-item summary:hover::before {
+  background: rgba(77, 163, 255, 0.2);
+  border-color: rgba(77, 163, 255, 0.35);
+}
+
+/* Padding adjustment when open */
+details.faq-item[open] summary {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 4px;
+}
+
+/* Answer content */
+details.faq-item .faq-answer {
+  padding: 12px 24px 20px 62px;
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+details.faq-item p {
+  color: rgba(201, 209, 231, 0.9);
   line-height: 1.7;
   margin: 0;
+  font-size: 15px;
 }
+
+/* ===== REVIEW PAGES FAQ (div.faq-item with JS buttons) ===== */
+
+/* Reset h3 wrapper */
+.faq-item h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Toggle button - matching homepage design */
+.faq-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 20px 24px 20px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  transition: color 0.25s ease;
+  font-family: inherit;
+  outline: none;
+  letter-spacing: 0.01em;
+}
+
+.faq-toggle:hover {
+  color: var(--accent);
+}
+
+/* Icon with container background - force to LEFT using order */
+.faq-icon {
+  order: -1;
+  font-size: 0;
+  /* Hide default content */
+  color: var(--accent);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: rgba(77, 163, 255, 0.12);
+  border-radius: 8px;
+  border: 1px solid rgba(77, 163, 255, 0.2);
+}
+
+.faq-toggle:hover .faq-icon {
+  background: rgba(77, 163, 255, 0.2);
+  border-color: rgba(77, 163, 255, 0.35);
+}
+
+/* Icon content using ::before */
+.faq-icon::before {
+  content: "▶";
+  font-size: 11px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+/* Rotate when active */
+.faq-toggle.active .faq-icon {
+  background: rgba(77, 163, 255, 0.18);
+  border-color: rgba(77, 163, 255, 0.3);
+}
+
+.faq-toggle.active .faq-icon::before {
+  transform: rotate(90deg);
+}
+
+/* Answer styling for review pages */
+.faq-item .faq-answer {
+  padding: 12px 24px 0 62px;
+  overflow: hidden;
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease,
+    padding 0.35s ease;
+}
+
+.faq-item .faq-answer p {
+  color: rgba(201, 209, 231, 0.9);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* Closed state */
+.faq-item .faq-answer[style*="max-height: 0"] {
+  padding-bottom: 0;
+  opacity: 0;
+}
+
+/* Open state */
+.faq-item:has(.faq-toggle.active) .faq-answer {
+  padding-bottom: 20px;
+  opacity: 1;
+}
+
+/* Border when open (matching homepage) */
+.faq-toggle.active {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 4px;
+}
+
 
 /* Related reviews grid */
 .grid .card-thumb img {
