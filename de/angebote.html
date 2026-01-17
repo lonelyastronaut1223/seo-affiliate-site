@@ -106,6 +106,17 @@
     <script>
         document.getElementById('date-today').textContent = new Date().toLocaleDateString();
     </script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('SW registered'))
+          .catch(err => console.log('SW registration failed'));
+      });
+    }
+  </script>
 </body>
 
 </html>

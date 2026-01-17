@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 - Seite nicht gefunden | cameraupick</title>
+    <meta name="description" content="Die gesuchte Seite existiert nicht.">
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLCVQGNSW4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-DLCVQGNSW4');
+    </script>
+
+</head>
+
+<body>
+    <div class="container" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center; max-width: 600px; padding: 40px 20px;">
+            <h1 style="font-size: 72px; margin: 0; color: var(--accent);">404</h1>
+            <h2 style="font-size: 32px; margin: 20px 0;">Seite nicht gefunden</h2>
+            <p style="font-size: 18px; color: var(--muted); margin-bottom: 32px;">
+                Entschuldigung, die gesuchte Seite existiert nicht oder wurde verschoben.
+            </p>
+
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="/de/" class="buy-btn" style="text-decoration: none;">
+                    ← Zur Startseite
+                </a>
+                <a href="/de/#testberichte" class="buy-btn"
+                    style="text-decoration: none; background: rgba(255,255,255,0.1);">
+                    Testberichte ansehen
+                </a>
+            </div>
+
+            <div style="margin-top: 48px;">
+                <p style="color: var(--muted); font-size: 14px;">
+                    Suchen Sie etwas Bestimmtes?
+                </p>
+                <div style="display: flex; gap: 12px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
+                    <a href="/de/#testberichte" style="color: var(--accent); text-decoration: none;">Testberichte</a>
+                    <span style="color: var(--muted);">·</span>
+                    <a href="/de/#ratgeber" style="color: var(--accent); text-decoration: none;">Ratgeber</a>
+                    <span style="color: var(--muted);">·</span>
+                    <a href="/de/kontakt.html" style="color: var(--accent); text-decoration: none;">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW registration failed'));
+            });
+        }
+    </script>
+</body>
+
+</html>

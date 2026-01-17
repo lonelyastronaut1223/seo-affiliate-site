@@ -178,6 +178,17 @@
 
     <script src="../assets/js/links.js"></script>
     <script src="../assets/js/script.min.js"></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('SW registered'))
+          .catch(err => console.log('SW registration failed'));
+      });
+    }
+  </script>
 </body>
 
 </html>
