@@ -114,6 +114,13 @@ def fix_relative_paths(html_content, file_type):
     # Correcting common mis-mappings:
     html_content = html_content.replace('href="../de/"', 'href="../"') # Points to de/ index from subdirs
     
+    # 3. Fix Broken Image Paths
+    # The URL mapping /guides/ -> /de/ratgeber/ incorrectly renamed asset folders
+    # We must revert them for images
+    html_content = html_content.replace('assets/images/de/ratgeber/', 'assets/images/guides/')
+    html_content = html_content.replace('assets/images/de/bewertungen/', 'assets/images/reviews/')
+    html_content = html_content.replace('assets/images/de/vergleiche/', 'assets/images/compare/')
+    
     return html_content
 
 def convert_currency(text):
