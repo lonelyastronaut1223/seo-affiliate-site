@@ -1565,6 +1565,7 @@ nav a.active::before {
 .quiz-modal {
   display: none;
   position: relative;
+  z-index: 100;
   margin-top: 20px;
   background: rgba(13, 19, 34, 0.95);
   padding: 32px;

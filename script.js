@@ -1,4 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Main App Logic
+const initApp = () => {
+    console.log('🚀 App Initializing...');
+
     // Current year updater
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
@@ -42,8 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (startQuizBtn && quizModal) {
+        console.log('✅ Quiz elements found. Attaching listeners.');
         // Open
         startQuizBtn.addEventListener('click', () => {
+            console.log('🔘 Start Quiz clicked');
             quizModal.style.display = 'block';
             startQuizBtn.parentElement.style.display = 'none'; // Hide CTA
             showStep(0);
@@ -82,6 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
             restartBtn.addEventListener('click', () => {
                 showStep(0);
             });
+        }
+    } else {
+        // Only log warning if we are on homepage
+        if (document.getElementById('camera-finder')) {
+            console.warn('⚠️ Quiz elements (start-quiz or quiz-modal) NOT found.');
         }
     }
 
@@ -135,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="${recommendation.link}" class="buy-btn" style="width:100%; text-align:center; padding:12px;">View Details &rarr;</a>
             </div>`;
     }
-});
 
     // Newsletter Form
     const newsletterForm = document.getElementById('newsletter-form');
@@ -143,39 +152,32 @@ document.addEventListener('DOMContentLoaded', () => {
         newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;
-            
+
             // Show success message
             const button = e.target.querySelector('button');
             const originalText = button.textContent;
             button.textContent = '✓ Subscribed!';
             button.style.background = '#4ade80';
-            
+
             // Reset form
             e.target.reset();
-            
+
             // Reset button after 3 seconds
             setTimeout(() => {
                 button.textContent = originalText;
                 button.style.background = '';
             }, 3000);
-            
-            // TODO: In production, connect to your email service
-            // Examples: Mailchimp, ConvertKit, SendGrid, etc.
+
             console.log('Newsletter subscription:', email);
         });
     }
-});
 
-// ===== MODERN UI ENHANCEMENTS =====
-
-// 1. Smooth scroll for anchor links
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for all internal links
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-            
+
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
@@ -187,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Reading Progress Bar
+    // Reading Progress Bar
     const createProgressBar = () => {
         const progressHTML = `
             <div class="reading-progress">
@@ -195,9 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         document.body.insertAdjacentHTML('afterbegin', progressHTML);
-        
+
         const progressBar = document.querySelector('.progress-bar');
-        
+
         window.addEventListener('scroll', () => {
             const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -205,20 +207,24 @@ document.addEventListener('DOMContentLoaded', () => {
             progressBar.style.width = scrolled + '%';
         });
     };
-    
+
     // Only add progress bar on article/review pages
     if (document.querySelector('main article')) {
         createProgressBar();
     }
 
-    // 3. Interactive FAQ Accordion
+    // Interactive FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach((item, index) => {
-        const question = item.querySelector('h3');
+        const question = item.querySelector('h3, summary'); // Support both standard and details/summary
+        // If it's details/summary, native behavior handles it found in standard FAQ section
+        // If it's custom div-based FAQ (like in reviews)
+        if (!question || item.tagName === 'DETAILS') return;
+
         const answer = item.querySelector('p');
-        
+
         if (!question || !answer) return;
-        
+
         // Wrap question in button for accessibility
         const questionText = question.textContent;
         question.innerHTML = `
@@ -227,26 +233,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="faq-icon">+</span>
             </button>
         `;
-        
+
         // Wrap answer
         answer.classList.add('faq-answer');
-        
-        // Close all by default except first one
-        if (index !== 0) {
-            answer.style.maxHeight = '0';
-            answer.style.overflow = 'hidden';
-        } else {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-            question.querySelector('.faq-toggle').classList.add('active');
-            question.querySelector('.faq-toggle').setAttribute('aria-expanded', 'true');
-            question.querySelector('.faq-icon').textContent = '−';
-        }
-        
+
+        // Close all by default
+        answer.style.maxHeight = '0';
+        answer.style.overflow = 'hidden';
+
         // Toggle functionality
         const toggleButton = question.querySelector('.faq-toggle');
         toggleButton.addEventListener('click', () => {
             const isActive = toggleButton.classList.contains('active');
-            
+
             if (isActive) {
                 // Close
                 answer.style.maxHeight = '0';
@@ -263,19 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Enhanced "Back to Top" button with scroll visibility
-    const toTopButton = document.getElementById('toTop');
-    if (toTopButton) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                toTopButton.classList.add('visible');
-            } else {
-                toTopButton.classList.remove('visible');
-            }
-        });
-    }
-
-    // 5. Image Lightbox for product images
+    // Image Lightbox for product images
     const createLightbox = (src, alt) => {
         const lightbox = document.createElement('div');
         lightbox.className = 'lightbox';
@@ -287,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.body.appendChild(lightbox);
         document.body.style.overflow = 'hidden';
-        
+
         // Close on click outside or close button
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
@@ -295,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = '';
             }
         });
-        
+
         // Close on Escape key
         const handleEscape = (e) => {
             if (e.key === 'Escape') {
@@ -306,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         document.addEventListener('keydown', handleEscape);
     };
-    
+
     // Add lightbox to product images and card images
     document.querySelectorAll('.product-image, .card-thumb img, .hero-media img').forEach(img => {
         img.style.cursor = 'zoom-in';
@@ -315,12 +302,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Lazy load enhancement with fade-in
+    // Lazy load enhancement with fade-in
     const images = document.querySelectorAll('img[loading="lazy"]');
     images.forEach(img => {
         img.style.opacity = '0';
         img.style.transition = 'opacity 0.3s ease';
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -329,23 +316,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
-        
+
         observer.observe(img);
     });
 
-    // 7. Add copy button to code blocks (if any)
-    document.querySelectorAll('pre code').forEach(block => {
-        const button = document.createElement('button');
-        button.className = 'copy-code';
-        button.textContent = 'Copy';
-        button.addEventListener('click', () => {
-            navigator.clipboard.writeText(block.textContent);
-            button.textContent = 'Copied!';
-            setTimeout(() => button.textContent = 'Copy', 2000);
-        });
-        block.parentElement.style.position = 'relative';
-        block.parentElement.appendChild(button);
-    });
-});
+    console.log('✅ App initialized successfully.');
+};
 
-console.log('🎨 Modern UI enhancements loaded!');
+// Check if DOM is already loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}
+
