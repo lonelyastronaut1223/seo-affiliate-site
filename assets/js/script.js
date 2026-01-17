@@ -251,13 +251,11 @@ const initApp = () => {
                 answer.style.maxHeight = '0';
                 toggleButton.classList.remove('active');
                 toggleButton.setAttribute('aria-expanded', 'false');
-                toggleButton.querySelector('.faq-icon').textContent = '+';
             } else {
                 // Open
                 answer.style.maxHeight = answer.scrollHeight + 'px';
                 toggleButton.classList.add('active');
                 toggleButton.setAttribute('aria-expanded', 'true');
-                toggleButton.querySelector('.faq-icon').textContent = '−';
             }
         });
     });
