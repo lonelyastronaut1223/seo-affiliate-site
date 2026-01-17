@@ -90,6 +90,32 @@ URL_MAPPINGS = {
     '/compare/': '/de/vergleiche/',
 }
 
+# Fix paths by shifting depth +1
+def fix_relative_paths(html_content, file_type):
+    """Adjust relative paths for deeper German directory structure"""
+    
+    # 1. Fix asset paths (CSS, JS, Images)
+    # Move ../assets to ../../assets (for reviews/guides)
+    html_content = html_content.replace('href="../assets/', 'href="../../assets/')
+    html_content = html_content.replace('src="../assets/', 'src="../../assets/')
+    html_content = html_content.replace('srcset="../assets/', 'srcset="../../assets/')
+    
+    # Move assets/ to ../assets/ (for info pages moving from root to de/)
+    html_content = html_content.replace('href="assets/', 'href="../assets/')
+    html_content = html_content.replace('src="assets/', 'src="../assets/')
+    html_content = html_content.replace('srcset="assets/', 'srcset="../assets/')
+    
+    # 2. Fix Home Link
+    # If original was "../" (root), it becomes "../" (de/ root) from de/subdir/ directories
+    # But for info pages (de/), it was "./" or "/" -> needs "../" to go to de/? 
+    
+    # Actually, simpler URL mappings usually handled this, but let's correct some specific issues
+    # If we created href="../de/" in mapping, it might be wrong for deep files
+    # Correcting common mis-mappings:
+    html_content = html_content.replace('href="../de/"', 'href="../"') # Points to de/ index from subdirs
+    
+    return html_content
+
 def convert_currency(text):
     """Convert USD to EUR with German formatting"""
     # Pattern: $1,299 -> 1.299 €
@@ -145,6 +171,9 @@ def translate_html_file(input_path, output_path, file_type='review'):
     
     # Update internal links
     html_content = update_internal_links(html_content)
+    
+    # Fix relative paths (CSS/Images)
+    html_content = fix_relative_paths(html_content, file_type)
     
     # Update canonical URL and add hreflang
     if file_type == 'review':
@@ -236,25 +265,22 @@ def main():
     base_dir = Path(__file__).parent.parent.parent
     
     # Define translation tasks (prioritized order)
+    # Manual high-priority files (Sony A7 IV, Beginner Guide, About, Contact) removed to prevent overwrite
     tasks = [
-        # High-priority reviews (Phase 1)
-        ('reviews/sony-a7-iv-review.html', 'de/bewertungen/sony-a7-iv-testbericht.html', 'review'),
+        # Reviews
+        # ('reviews/sony-a7-iv-review.html', 'de/bewertungen/sony-a7-iv-testbericht.html', 'review'), # Manual
         ('reviews/sony-a7c-ii-review.html', 'de/bewertungen/sony-a7c-ii-testbericht.html', 'review'),
         ('reviews/sony-zv-e10-review.html', 'de/bewertungen/sony-zv-e10-testbericht.html', 'review'),
         ('reviews/panasonic-s5-ii-review.html', 'de/bewertungen/panasonic-s5-ii-testbericht.html', 'review'),
         ('reviews/fujifilm-x-t5-review.html', 'de/bewertungen/fujifilm-x-t5-testbericht.html', 'review'),
-        
-        # High-priority guides
-        ('guides/best-vlog-camera.html', 'de/ratgeber/beste-vlog-kamera.html', 'guide'),
-        ('guides/best-hybrid-camera.html', 'de/ratgeber/beste-hybrid-kamera.html', 'guide'),
-        ('guides/best-camera-for-beginners-2026.html', 'de/ratgeber/beste-kamera-fuer-anfaenger-2026.html', 'guide'),
-        
-        # Remaining reviews
         ('reviews/canon-eos-r8-review.html', 'de/bewertungen/canon-eos-r8-testbericht.html', 'review'),
         ('reviews/nikon-z8-review.html', 'de/bewertungen/nikon-z8-testbericht.html', 'review'),
         ('reviews/dji-osmo-pocket-3-review.html', 'de/bewertungen/dji-osmo-pocket-3-testbericht.html', 'review'),
         
-        # Remaining guides
+        # Guides
+        ('guides/best-vlog-camera.html', 'de/ratgeber/beste-vlog-kamera.html', 'guide'),
+        ('guides/best-hybrid-camera.html', 'de/ratgeber/beste-hybrid-kamera.html', 'guide'),
+        # ('guides/best-camera-for-beginners-2026.html', 'de/ratgeber/beste-kamera-fuer-anfaenger-2026.html', 'guide'), # Manual
         ('guides/best-travel-camera.html', 'de/ratgeber/beste-reisekamera.html', 'guide'),
         ('guides/best-full-frame-for-video.html', 'de/ratgeber/beste-vollformat-fuer-video.html', 'guide'),
         ('guides/best-budget-camera-under-800.html', 'de/ratgeber/beste-budget-kamera-unter-800.html', 'guide'),
@@ -267,8 +293,8 @@ def main():
         ('compare/fujifilm-x-s20-vs-fujifilm-x-t5.html', 'de/vergleiche/fujifilm-x-s20-vs-fujifilm-x-t5.html', 'compare'),
         
         # Info pages
-        ('about.html', 'de/uber-uns.html', 'info'),
-        ('contact.html', 'de/kontakt.html', 'info'),
+        # ('about.html', 'de/uber-uns.html', 'info'), # Manual
+        # ('contact.html', 'de/kontakt.html', 'info'), # Manual
         ('privacy.html', 'de/datenschutz.html', 'info'),
         ('deals.html', 'de/angebote.html', 'info'),
     ]
