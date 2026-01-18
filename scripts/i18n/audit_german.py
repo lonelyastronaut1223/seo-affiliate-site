@@ -41,6 +41,9 @@ def audit_file(file_path: Path) -> list:
     for word in ENGLISH_INDICATORS:
         # Check for word with word boundaries
         if re.search(r'\b' + re.escape(word) + r'\b', text_content, re.IGNORECASE):
+            # Skip if it's part of a product name like "Max Lens Mod"
+            if word.lower() == 'lens' and 'Max Lens Mod' in content:
+                continue
             issues.append(word)
             
     return issues
