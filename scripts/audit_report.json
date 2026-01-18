@@ -1,0 +1,81 @@
+{
+  "stats": {
+    "total_html": 52,
+    "total_images": 88,
+    "total_image_size_mb": 46.619879722595215
+  },
+  "issues": {
+    "excessive_inline_styles": [
+      "index.html (11 instances)",
+      "deals.html (12 instances)",
+      "404.html (16 instances)",
+      "compare/sony-a7-iv-vs-canon-r6-ii.html (20 instances)",
+      "de/index.html (13 instances)",
+      "de/404.html (16 instances)",
+      "de/angebote.html (12 instances)",
+      "reviews/sony-zv-e10-review.html (11 instances)",
+      "reviews/canon-eos-r8-review.html (11 instances)",
+      "reviews/sony-a7-iv-review.html (11 instances)",
+      "reviews/sony-a7c-ii-review.html (11 instances)",
+      "reviews/dji-osmo-pocket-3-review.html (11 instances)",
+      "reviews/nikon-z8-review.html (11 instances)",
+      "reviews/fujifilm-x-t5-review.html (11 instances)",
+      "reviews/panasonic-s5-ii-review.html (11 instances)",
+      "de/bewertungen/nikon-z8-testbericht.html (11 instances)",
+      "de/bewertungen/sony-a7c-ii-testbericht.html (11 instances)",
+      "de/bewertungen/dji-osmo-pocket-3-testbericht.html (11 instances)",
+      "de/bewertungen/panasonic-s5-ii-testbericht.html (11 instances)",
+      "de/bewertungen/canon-eos-r8-testbericht.html (11 instances)",
+      "de/bewertungen/sony-zv-e10-testbericht.html (11 instances)",
+      "de/bewertungen/fujifilm-x-t5-testbericht.html (11 instances)",
+      "de/bewertungen/sony-a7-iv-testbericht.html (11 instances)",
+      "de/vergleiche/sony-a7-iv-vs-canon-r6-ii.html (20 instances)"
+    ],
+    "missing_meta_description": [
+      "includes/ga-snippet.html",
+      "includes/index_finder_fragment.html"
+    ],
+    "missing_og_tags": [
+      "includes/ga-snippet.html",
+      "includes/index_finder_fragment.html"
+    ],
+    "large_images": [
+      "assets/images/pexels-huysuzkadraj-19239809.jpg (1.06MB)",
+      "assets/images/Vlog.webp (1.47MB)",
+      "assets/images/team-avatar.png (0.53MB)",
+      "assets/images/pexels-robert-nagy-512974-4083514.jpg (0.96MB)",
+      "assets/images/favicon.png (0.56MB)",
+      "assets/images/logo.png (0.56MB)",
+      "assets/images/Vlog.jpg (1.87MB)",
+      "assets/images/guides/sony-zv-e10-original.png (0.55MB)",
+      "assets/images/guides/beginner.jpg (2.82MB)",
+      "assets/images/guides/gopro-hero-13.png (0.50MB)",
+      "assets/images/guides/travel.jpg (1.27MB)",
+      "assets/images/guides/vlog.webp (2.77MB)",
+      "assets/images/guides/beginner.webp (1.50MB)",
+      "assets/images/guides/fujifilm-x-t5.png (0.59MB)",
+      "assets/images/guides/dji-osmo-pocket-3.png (0.51MB)",
+      "assets/images/guides/action-360.jpg (1.34MB)",
+      "assets/images/guides/om-5.png (0.54MB)",
+      "assets/images/guides/sony-a7iv.png (0.53MB)",
+      "assets/images/guides/budget.webp (0.96MB)",
+      "assets/images/guides/sony-zv-e10-ii.png (0.53MB)",
+      "assets/images/guides/panasonic-s5iix.png (0.62MB)",
+      "assets/images/guides/canon-r7.png (0.51MB)",
+      "assets/images/guides/fullframe-video.jpg (1.93MB)",
+      "assets/images/guides/vlog.jpg (3.73MB)",
+      "assets/images/guides/canon-r100.png (0.71MB)",
+      "assets/images/guides/fullframe-video.webp (1.46MB)",
+      "assets/images/guides/sony-fx3.png (0.73MB)",
+      "assets/images/guides/nikon-z8.png (0.54MB)",
+      "assets/images/guides/sony-zv-e1.png (0.64MB)",
+      "assets/images/guides/canon-eos-r8.png (0.53MB)",
+      "assets/images/guides/panasonic-g100d.png (0.74MB)",
+      "assets/images/guides/fujifilm-x100vi.png (0.63MB)",
+      "assets/images/guides/budget.jpg (2.77MB)",
+      "assets/images/guides/canon-r6ii.png (0.59MB)",
+      "assets/images/guides/fujifilm-x-t50.png (0.68MB)",
+      "assets/images/guides/travel.webp (0.53MB)"
+    ]
+  }
+}
