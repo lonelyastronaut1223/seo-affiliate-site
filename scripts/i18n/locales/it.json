@@ -1,0 +1,46 @@
+{
+    "meta": {
+        "language": "it",
+        "name": "Italiano",
+        "locale": "it_IT",
+        "direction": "ltr"
+    },
+    "navigation": {
+        "Home": "Home",
+        "Reviews": "Recensioni",
+        "Guides": "Guide",
+        "Compare": "Confronti",
+        "Deals": "Offerte",
+        "Contact": "Contatti",
+        "About": "Chi siamo",
+        "Privacy": "Privacy",
+        "Skip to content": "Vai al contenuto"
+    },
+    "buttons": {
+        "Check Price": "Verifica prezzo",
+        "Check Price on Amazon": "Verifica prezzo su Amazon",
+        "Buy Now": "Acquista ora",
+        "Learn More": "Scopri di più",
+        "Read Full Review": "Leggi recensione completa",
+        "See Deals": "Vedi offerte"
+    },
+    "headings": {
+        "At a Glance: Top 3 Picks": "In sintesi: Le 3 migliori scelte",
+        "Pros": "Pro",
+        "Cons": "Contro",
+        "Overview": "Panoramica",
+        "Conclusion": "Conclusione"
+    },
+    "table_headers": {
+        "Model": "Modello",
+        "Best For": "Ideale per",
+        "Megapixels": "Megapixel",
+        "Price": "Prezzo"
+    },
+    "badges": {
+        "The Standard": "Lo standard",
+        "Best Value": "Miglior rapporto qualità-prezzo",
+        "Budget Pick": "Scelta economica"
+    },
+    "_comment": "This is a placeholder file. Add full translations when implementing Italian version."
+}

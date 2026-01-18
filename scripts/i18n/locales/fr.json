@@ -1,0 +1,46 @@
+{
+    "meta": {
+        "language": "fr",
+        "name": "Français",
+        "locale": "fr_FR",
+        "direction": "ltr"
+    },
+    "navigation": {
+        "Home": "Accueil",
+        "Reviews": "Tests",
+        "Guides": "Guides",
+        "Compare": "Comparatifs",
+        "Deals": "Offres",
+        "Contact": "Contact",
+        "About": "À propos",
+        "Privacy": "Confidentialité",
+        "Skip to content": "Aller au contenu"
+    },
+    "buttons": {
+        "Check Price": "Voir le prix",
+        "Check Price on Amazon": "Voir le prix sur Amazon",
+        "Buy Now": "Acheter maintenant",
+        "Learn More": "En savoir plus",
+        "Read Full Review": "Lire le test complet",
+        "See Deals": "Voir les offres"
+    },
+    "headings": {
+        "At a Glance: Top 3 Picks": "En bref: Top 3 des choix",
+        "Pros": "Avantages",
+        "Cons": "Inconvénients",
+        "Overview": "Aperçu",
+        "Conclusion": "Conclusion"
+    },
+    "table_headers": {
+        "Model": "Modèle",
+        "Best For": "Idéal pour",
+        "Megapixels": "Mégapixels",
+        "Price": "Prix"
+    },
+    "badges": {
+        "The Standard": "La référence",
+        "Best Value": "Meilleur rapport qualité-prix",
+        "Budget Pick": "Choix économique"
+    },
+    "_comment": "This is a placeholder file. Add full translations when implementing French version."
+}
