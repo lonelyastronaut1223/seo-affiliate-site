@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Advanced Quiz Logic
+    // Advanced Quiz Logic - German Version
     const startQuizBtn = document.getElementById('start-quiz');
     const closeQuizBtn = document.getElementById('close-quiz');
     const quizModal = document.getElementById('quiz-modal');
@@ -42,8 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (startQuizBtn && quizModal) {
+        console.log('✅ Quiz (DE): Elemente gefunden. Listener werden hinzugefügt.');
+
         // Open
         startQuizBtn.addEventListener('click', () => {
+            console.log('🔘 Quiz gestartet');
             quizModal.style.display = 'block';
             startQuizBtn.parentElement.style.display = 'none'; // Hide CTA
             showStep(0);
@@ -83,6 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 showStep(0);
             });
         }
+    } else {
+        if (document.getElementById('camera-finder')) {
+            console.warn('⚠️ Quiz (DE): Elemente nicht gefunden.');
+        }
     }
 
     function showStep(index) {
@@ -100,30 +107,66 @@ document.addEventListener('DOMContentLoaded', () => {
     function calculateResult() {
         let recommendation = {};
 
-        // Simple Decision Tree - Translated
+        // Decision Tree - German Links to German Pages
         if (userAnswers.type === 'video') {
             if (userAnswers.budget === 'low') {
-                recommendation = { name: 'Sony ZV-E10', desc: 'Der unangefochtene König des Budget-Vloggings.', link: '../reviews/sony-zv-e10-review.html' };
+                recommendation = {
+                    name: 'Sony ZV-E10',
+                    desc: 'Der unangefochtene König des Budget-Vloggings.',
+                    link: 'bewertungen/sony-zv-e10-testbericht.html'
+                };
             } else if (userAnswers.budget === 'mid') {
-                recommendation = { name: 'DJI Osmo Pocket 3', desc: 'Die ultimative tragbare Vlog-Kamera.', link: '../reviews/dji-osmo-pocket-3-review.html' };
+                recommendation = {
+                    name: 'DJI Osmo Pocket 3',
+                    desc: 'Die ultimative tragbare Vlog-Kamera.',
+                    link: 'bewertungen/dji-osmo-pocket-3-testbericht.html'
+                };
             } else {
-                recommendation = { name: 'Sony ZV-E1', desc: 'Vollformat-Kinoqualität in einem winzigen Gehäuse.', link: '../guides/best-vlog-camera.html' };
+                recommendation = {
+                    name: 'Sony FX3',
+                    desc: 'Vollformat-Kinoqualität in einem kompakten Gehäuse.',
+                    link: 'ratgeber/beste-vollformat-fuer-video.html'
+                };
             }
         } else if (userAnswers.type === 'photo') {
             if (userAnswers.budget === 'low') {
-                recommendation = { name: 'Canon R100', desc: 'Super günstiger Einstieg in die echte Fotografie.', link: '../guides/best-camera-for-beginners-2026.html' };
+                recommendation = {
+                    name: 'Canon EOS R8',
+                    desc: 'Günstiger Einstieg in die Vollformat-Fotografie.',
+                    link: 'ratgeber/beste-kamera-fuer-anfaenger-2026.html'
+                };
             } else if (userAnswers.budget === 'high') {
-                recommendation = { name: 'Sony A7R V', desc: 'Das Auflösungs-Monster für Profis.', link: '../guides/best-full-frame-for-video.html' };
+                recommendation = {
+                    name: 'Nikon Z8',
+                    desc: 'Das Auflösungs-Monster für Profis.',
+                    link: 'bewertungen/nikon-z8-testbericht.html'
+                };
             } else {
-                recommendation = { name: 'Fujifilm X-T5', desc: 'Reine Fotografiefreude mit 40MP Details.', link: '../reviews/fujifilm-x-t5-review.html' };
+                recommendation = {
+                    name: 'Fujifilm X-T5',
+                    desc: 'Reine Fotografiefreude mit 40MP Details.',
+                    link: 'bewertungen/fujifilm-x-t5-testbericht.html'
+                };
             }
         } else { // Hybrid
             if (userAnswers.budget === 'low') {
-                recommendation = { name: 'Canon R50', desc: 'Kleiner aber mächtiger Hybrid für Einsteiger.', link: '../guides/best-camera-for-beginners-2026.html' };
+                recommendation = {
+                    name: 'Sony ZV-E10',
+                    desc: 'Kompakter Hybrid für Einsteiger mit tollem AF.',
+                    link: 'bewertungen/sony-zv-e10-testbericht.html'
+                };
             } else if (userAnswers.exp === 'pro' || userAnswers.budget === 'high') {
-                recommendation = { name: 'Sony A7 IV', desc: 'Der Industriestandard für Alles-Könner.', link: '../reviews/sony-a7-iv-review.html' };
+                recommendation = {
+                    name: 'Sony A7 IV',
+                    desc: 'Der Industriestandard für Alles-Könner.',
+                    link: 'bewertungen/sony-a7-iv-testbericht.html'
+                };
             } else {
-                recommendation = { name: 'Panasonic S5 II', desc: 'Bestes Preis-Leistungs-Verhältnis für Vollformat-Hybride.', link: '../reviews/panasonic-s5-ii-review.html' };
+                recommendation = {
+                    name: 'Panasonic S5 II',
+                    desc: 'Bestes Preis-Leistungs-Verhältnis für Vollformat-Hybride.',
+                    link: 'bewertungen/panasonic-s5-ii-testbericht.html'
+                };
             }
         }
 
@@ -135,4 +178,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="${recommendation.link}" class="buy-btn" style="width:100%; text-align:center; padding:12px;">Details ansehen &rarr;</a>
             </div>`;
     }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
