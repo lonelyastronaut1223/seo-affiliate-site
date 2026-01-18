@@ -9,7 +9,7 @@ import io
 from pathlib import Path
 from PIL import Image
 
-BASE_DIR = Path(__file__).parent.parent
+BASE_DIR = Path(__file__).parent.parent.parent
 IMAGE_DIR = BASE_DIR / 'assets' / 'images'
 
 # Quality settings

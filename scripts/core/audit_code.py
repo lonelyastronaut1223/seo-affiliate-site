@@ -11,7 +11,7 @@ from pathlib import Path
 from collections import defaultdict
 import mimetypes
 
-BASE_DIR = Path(__file__).parent.parent
+BASE_DIR = Path(__file__).parent.parent.parent
 IGNORE_DIRS = {'.git', '.venv', 'node_modules', '.github', '__pycache__', '.gemini'}
 
 class CodeAuditor:
@@ -228,7 +228,7 @@ class CodeAuditor:
         print("="*80)
         
         # Save detailed report
-        report_file = BASE_DIR / 'scripts' / 'audit_report.json'
+        report_file = BASE_DIR / 'scripts' / 'core' / 'audit_report.json'
         with open(report_file, 'w') as f:
             json.dump({
                 'stats': dict(self.stats),
