@@ -37,6 +37,16 @@ The project is designed as a lightweight static website and optimized for SEO an
 └── /assets/                # Optimized images and icons
 ```
 
+## 🛠️ Development Workflows
+
+We use standardized workflows to maintain quality:
+
+- **📄 [Publish New Guide](.agent/workflows/publish_new_guide.md)**: Steps for creating, translating, and verifying new content.
+- **🔧 [Run Maintenance](.agent/workflows/run_maintenance.md)**: Weekly health check (Code Audit, SEO, Sitemap).
+- **🖼️ [Optimize Assets](.agent/workflows/optimize_assets.md)**: Procedures for handling images.
+
+> See **[WORKFLOWS.md](WORKFLOWS.md)** for more details and **[scripts/README.md](scripts/README.md)** for tool documentation.
+
 ---
 
 ## Deployment
