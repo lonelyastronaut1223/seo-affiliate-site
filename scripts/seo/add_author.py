@@ -92,7 +92,8 @@ def add_author_info(file_path: Path) -> bool:
     
     # Add visible author box before </main>
     if '</main>' in content:
-        if 'lang="de"' in content:
+        # Strict check for HTML lang attribute
+        if '<html lang="de"' in content:
             content = content.replace('</main>', f'{AUTHOR_BOX_DE}\n  </main>')
         else:
             content = content.replace('</main>', f'{AUTHOR_BOX_EN}\n  </main>')

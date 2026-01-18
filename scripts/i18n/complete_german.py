@@ -167,7 +167,7 @@ UI_TRANSLATIONS = {
 
 
 def translate_page(file_path: Path) -> bool:
-    """Translate a page using UI translations."""
+    """Translate a page using UI translations and Page-Specific Content."""
     print(f"Processing: {file_path.name}")
     
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -175,11 +175,94 @@ def translate_page(file_path: Path) -> bool:
     
     modified = False
     
-    # Apply all UI translations
+    # 1. Determine which page this is to apply specific content
+    page_key = None
+    if "hybrid" in file_path.name: page_key = "hybrid"
+    elif "vlog" in file_path.name: page_key = "vlog"
+    elif "reise" in file_path.name or "travel" in file_path.name: page_key = "travel"
+    
+    # 2. Apply Page-Specific Content if found
+    if page_key and page_key in GERMAN_CONTENT:
+        print(f"  → Found specific content for '{page_key}'")
+        data = GERMAN_CONTENT[page_key]
+        
+        # Replace Title
+        if "title" in data:
+            content = re.sub(r'<title>.*?</title>', f'<title>{data["title"]}</title>', content)
+            modified = True
+            
+        # Replace Meta Description
+        if "meta_desc" in data:
+            content = re.sub(r'name="description"\s+content="[^"]*"', f'name="description" content="{data["meta_desc"]}"', content)
+            modified = True
+            
+        # Replace H1
+        if "h1" in data:
+            content = re.sub(r'<h1>.*?</h1>', f'<h1>{data["h1"]}</h1>', content)
+            modified = True
+            
+        # Replace Hero Sub
+        if "hero_sub" in data:
+            content = re.sub(r'<p class="hero-sub">.*?</p>', f'<p class="hero-sub">{data["hero_sub"]}</p>', content)
+            modified = True
+            
+        # Replace Schema Headline/Desc
+        if "schema_headline" in data:
+            content = re.sub(r'"headline": "[^"]*"', f'"headline": "{data["schema_headline"]}"', content)
+        if "schema_desc" in data:
+            content = re.sub(r'"description": "[^"]*"', f'"description": "{data["schema_desc"]}"', content)
+            
+        # Replace Product Badges and Descriptions (Specific logic for guides)
+        # This is tricky without IDs. We'll try to match by structure or index if possible,
+        # but for now let's rely on the unique English text if we had it, or just the structural containers.
+        # Given the complexity, we'll focus on the main metadata and hero first, 
+        # but for p1_badge etc query selectors would be better.
+        # Let's try to find specific unique English strings if they exist in the file.
+        # But we don't have the English strings in the dict.
+        # We will iterate the keys and if they match a pattern we can use regex.
+        
+        # For now, let's Stick to the Metadata + UI Translations which is a huge win.
+        # And we will expand GERMAN_CONTENT to include "en_match" keys if we want precise replacement.
+        
+    # 3. Apply all UI translations (Global)
+    # Sort by length to avoid partial matches
     for en, de in sorted(UI_TRANSLATIONS.items(), key=lambda x: -len(x[0])):
         if en in content:
             content = content.replace(en, de)
             modified = True
+            
+    # 4. Additional cleanup for common missed words
+    common_misses = {
+        "Reviews": "Testberichte",
+        "Guides": "Ratgeber",
+        "Comparisons": "Vergleiche",
+        "Written by": "Geschrieben von",
+        "Updated": "Aktualisiert",
+        "Price": "Preis",
+        "Weight": "Gewicht",
+        "Battery": "Akku",
+        "Lens": "Objektiv",
+        "Sensor": "Sensor", # Safe
+        "Type": "Typ",
+        "Megapixels": "Megapixel",
+        "Pros": "Vorteile",
+        "Cons": "Nachteile",
+        "Verdict": "Urteil",
+        "Buy": "Kaufen",
+        "Camera": "Kamera",
+        "Best": "Beste"
+    }
+    
+    for en, de in common_misses.items():
+        # Use simple replace for these common UI terms often found in tables/lists
+        # But be careful with "Best" -> "Beste" (Bestand -> Besteand)
+        # So we use regex for short words
+        if len(en) < 5:
+            content = re.sub(r'\b' + re.escape(en) + r'\b', de, content)
+        else:
+            if en in content:
+                content = content.replace(en, de)
+                modified = True
     
     if modified:
         with open(file_path, 'w', encoding='utf-8') as f:

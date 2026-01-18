@@ -374,6 +374,21 @@ PHRASE_TRANSLATIONS: List[Tuple[str, str]] = [
      "24MP reicht völlig für 4K-Video und Social Media. Zahle nur extra für die 33MP der Sony A7 IV, wenn du stark beschneidest oder riesige Plakate druckst."),
     
     ("Do you need 33MP?", "Brauchst du 33MP?"),
+    
+    # Disclaimer / Footer
+    ("We buy our own gear or rent it. No manufacturers paid for this review. We earn a commission if you use our",
+     "Wir kaufen unsere eigene Ausrüstung oder mieten sie. Kein Hersteller hat für diesen Testbericht bezahlt. Wir erhalten eine Provision, wenn Sie unsere"),
+    ("We buy our own gear and provide honest, unbiased reviews.", 
+     "Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Testberichte."),
+     
+    # Specific Product Phrases (genericized if possible)
+    ("The Profi Choice", "Die Profi-Wahl"),
+    ("The Z8 is arguably the best spiegellos Kamera for Wildlife.", "Die Z8 ist wohl die beste spiegellose Kamera für Wildlife."),
+    ("The Z8 is one of the best Wildlife Kameras", "Die Z8 ist eine der besten Wildlife-Kameras"),
+    ("The only potential downside is", "Der einzige potenzielle Nachteil ist"),
+    ("Professionell-grade hybrid Kamera with", "Professionelle Hybrid-Kamera mit"),
+    ("blazing fast Autofokus", "rasend schnellem Autofokus"),
+    ("and robust Verarbeitungsqualität", "und robuster Verarbeitungsqualität"),
 ]
 
 
@@ -404,12 +419,40 @@ def translate_file(file_path: Path) -> bool:
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Check if already translated (look for German-specific words)
-    german_indicators = ["Vorteile", "Nachteile", "Preis prüfen", "Auf einen Blick"]
-    if any(indicator in content for indicator in german_indicators):
-        print(f"  ⚠ Already translated (skipping)")
-        return False
+    # TRANSLATIONS update for missing terms
+    ADDITIONAL_TERMS = {
+        "Lens": "Objektiv",
+        "lens": "Objektiv",
+        "Camera": "Kamera",
+        "camera": "Kamera",
+        "Sensor": "Sensor", # Identity but good for completeness
+        "Type": "Typ",
+        "Review": "Testbericht",
+        "Guide": "Ratgeber",
+        "Best": "Beste",
+        "Price": "Preis",
+        "Buy": "Kaufen",
+        "Overview": "Überblick",
+        "Performance": "Leistung",
+        "Design": "Design",
+        "Verdict": "Urteil",
+        "megapixels": "Megapixel",
+    }
     
+    # Merge additional terms
+    for k, v in ADDITIONAL_TERMS.items():
+        if k not in TRANSLATIONS:
+            TRANSLATIONS[k] = v
+
+    # Check if already translated - STRICTER CHECK
+    # Only skip if we see NO English indicators
+    english_indicators = ["Review", "Guide", "Best", "Camera", "Lens", "Pros", "Cons"]
+    has_english = any(ind in content for ind in english_indicators)
+    
+    if not has_english:
+        print(f"  - No English keywords found (skipping)")
+        return False
+        
     translated = translate_content(content)
     
     if translated != content:
