@@ -11,9 +11,12 @@ BASE_DIR = Path(__file__).parent.parent.parent
 DE_DIR = BASE_DIR / 'de'
 
 # Words to look for that indicate untranslated content
+# Excluding words that are the same in German (Sensor, Video, etc.)
 ENGLISH_INDICATORS = [
-    "Review", "Guide", "Best", "Camera", "Sensor", "Lens", "Pros", "Cons",
-    "Verdict", "Buy", "Price", "Weight", "Type", "Battery", "Autofocus"
+    "Review", "Guide", "Camera", "Pros", "Cons",
+    "Verdict", "Battery", "Autofocus", "Weight", "Lens",
+    "Buy", "Check Price", "Best For", "Overview", "Summary",
+    "Features", "Specifications", "Who Should", "Bottom Line"
 ]
 
 # Allow-list for words that might be the same or are technical terms
@@ -32,13 +35,11 @@ def audit_file(file_path: Path) -> list:
     content = re.sub(r'<style[^>]*>.*?</style>', ' ', content, flags=re.DOTALL)
     # Remove HTML comments
     content = re.sub(r'<!--.*?-->', ' ', content, flags=re.DOTALL)
-    # Remove HTML tags to scan text content only
-    text_content = re.sub('<[^<]+?>', ' ', content)
+    # Remove ALL HTML tags (including attributes like class="pros")
+    text_content = re.sub(r'<[^>]+>', ' ', content)
     
     for word in ENGLISH_INDICATORS:
         # Check for word with word boundaries
-        # "Camera" might be okay if it's "Camera Control" (proper noun?) No.
-        # "Best" might be "Best of" (brand?)
         if re.search(r'\b' + re.escape(word) + r'\b', text_content, re.IGNORECASE):
             issues.append(word)
             
