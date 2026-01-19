@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Offline - Kameraupick</title>
+    <style>
+        :root {
+            --bg: #0d1322;
+            --fg: #e9eef9;
+            --accent: #4da3ff;
+            --muted: #95a1bf;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .offline-icon {
+            font-size: 80px;
+            margin-bottom: 24px;
+            opacity: 0.8;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: var(--muted);
+            max-width: 400px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .retry-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .retry-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .brand {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="brand">📷 Kameraupick</div>
+
+    <div class="offline-icon">📡</div>
+    <h1>Du bist offline</h1>
+    <p>
+        Es sieht so aus, als hättest du keine Internetverbindung.
+        Bitte überprüfe deine Verbindung und versuche es erneut.
+    </p>
+    <a href="/" class="retry-btn" onclick="location.reload(); return false;">
+        Erneut versuchen
+    </a>
+</body>
+
+</html>

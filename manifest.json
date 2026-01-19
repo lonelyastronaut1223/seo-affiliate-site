@@ -1,0 +1,49 @@
+{
+    "name": "Kameraupick - Kamera Kaufberatung",
+    "short_name": "Kameraupick",
+    "description": "Die besten Kameras für Video, Vlogging und Fotografie. Unabhängige Tests und Vergleiche.",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#0d1322",
+    "background_color": "#0d1322",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "de",
+    "categories": [
+        "shopping",
+        "photography",
+        "lifestyle"
+    ],
+    "icons": [
+        {
+            "src": "/assets/images/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [],
+    "shortcuts": [
+        {
+            "name": "Testberichte",
+            "url": "/de/#testberichte",
+            "description": "Kamera Testberichte"
+        },
+        {
+            "name": "Ratgeber",
+            "url": "/de/#ratgeber",
+            "description": "Kaufratgeber"
+        },
+        {
+            "name": "Angebote",
+            "url": "/de/angebote.html",
+            "description": "Aktuelle Deals"
+        }
+    ]
+}

@@ -1,15 +1,18 @@
 // Service Worker for cameraupick
-const CACHE_VERSION = 'cameraupick-v1.0';
+const CACHE_VERSION = 'cameraupick-v2.0';
 const CACHE_NAME = `${CACHE_VERSION}`;
 
 // Resources to cache immediately on install
 const PRECACHE_URLS = [
     '/',
     '/index.html',
+    '/offline.html',
+    '/de/index.html',
     '/assets/css/style.min.css',
     '/assets/js/script.min.js',
-    '/assets/js/links.js',
-    '/assets/images/favicon.png'
+    '/assets/js/links.min.js',
+    '/assets/images/favicon.png',
+    '/manifest.json'
 ];
 
 // Install event - cache essential resources
@@ -84,7 +87,7 @@ self.addEventListener('fetch', event => {
                     .catch(() => {
                         // Return offline page for navigations
                         if (event.request.mode === 'navigate') {
-                            return caches.match('/index.html');
+                            return caches.match('/offline.html');
                         }
                     });
             })

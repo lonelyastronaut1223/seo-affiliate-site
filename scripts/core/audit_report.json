@@ -2,7 +2,7 @@
   "stats": {
     "total_html": 52,
     "total_images": 88,
-    "total_image_size_mb": 46.619879722595215
+    "total_image_size_mb": 46.46576499938965
   },
   "issues": {
     "excessive_inline_styles": [
@@ -52,7 +52,7 @@
       "assets/images/guides/gopro-hero-13.png (0.50MB)",
       "assets/images/guides/travel.jpg (1.27MB)",
       "assets/images/guides/vlog.webp (2.77MB)",
-      "assets/images/guides/beginner.webp (1.50MB)",
+      "assets/images/guides/beginner.webp (1.45MB)",
       "assets/images/guides/fujifilm-x-t5.png (0.59MB)",
       "assets/images/guides/dji-osmo-pocket-3.png (0.51MB)",
       "assets/images/guides/action-360.jpg (1.34MB)",
@@ -75,7 +75,7 @@
       "assets/images/guides/budget.jpg (2.77MB)",
       "assets/images/guides/canon-r6ii.png (0.59MB)",
       "assets/images/guides/fujifilm-x-t50.png (0.68MB)",
-      "assets/images/guides/travel.webp (0.53MB)"
+      "assets/images/guides/travel.webp (0.50MB)"
     ]
   }
 }
