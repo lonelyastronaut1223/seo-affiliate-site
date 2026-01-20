@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_html": 57,
-    "total_images": 88,
-    "total_image_size_mb": 52.491485595703125
+    "total_html": 73,
+    "total_images": 94,
+    "total_image_size_mb": 56.02020835876465
   },
   "issues": {
     "missing_meta_description": [
@@ -17,9 +17,34 @@
       "includes/schema-global.html",
       "includes/index_finder_fragment.html"
     ],
+    "broken_links": [
+      "gear/best-tripods.html \u2192 ../assets/images/gear/peak-travel-tripod.jpg",
+      "gear/best-tripods.html \u2192 ../assets/images/gear/manfrotto-befree.jpg",
+      "gear/best-tripods.html \u2192 ../assets/images/gear/ulanzi-mt79.jpg",
+      "gear/index.html \u2192 ../assets/images/gear/gear-hero.jpg",
+      "gear/best-sd-cards.html \u2192 ../assets/images/gear/sandisk-extreme-pro.jpg",
+      "gear/best-sd-cards.html \u2192 ../assets/images/gear/sony-tough.jpg",
+      "gear/best-sd-cards.html \u2192 ../assets/images/gear/sandisk-extreme.jpg",
+      "gear/best-camera-bags.html \u2192 ../assets/images/gear/peak-everyday.jpg",
+      "gear/best-camera-bags.html \u2192 ../assets/images/gear/lowepro-protactic.jpg",
+      "gear/best-camera-bags.html \u2192 ../assets/images/gear/wandrd-prvke.jpg",
+      "lenses/index.html \u2192 ../assets/images/guides/lenses-hero.jpg",
+      "lenses/best-fujifilm-x-mount-lenses.html \u2192 ../assets/images/lenses/fuji-23mm.jpg",
+      "lenses/best-fujifilm-x-mount-lenses.html \u2192 ../assets/images/lenses/fuji-56mm.jpg",
+      "lenses/best-fujifilm-x-mount-lenses.html \u2192 ../assets/images/lenses/sigma-18-50.jpg",
+      "lenses/best-fujifilm-x-mount-lenses.html \u2192 ../assets/images/lenses/fuji-18-55.jpg",
+      "lenses/best-canon-rf-lenses.html \u2192 ../assets/images/lenses/canon-rf-50.jpg",
+      "lenses/best-canon-rf-lenses.html \u2192 ../assets/images/lenses/canon-rfs-18-150.jpg",
+      "lenses/best-canon-rf-lenses.html \u2192 ../assets/images/lenses/canon-rf-85.jpg",
+      "lenses/best-canon-rf-lenses.html \u2192 ../assets/images/lenses/canon-rf-24-105.jpg",
+      "lenses/best-sony-e-mount-lenses.html \u2192 ../assets/images/lenses/sigma-56mm.jpg",
+      "lenses/best-sony-e-mount-lenses.html \u2192 ../assets/images/lenses/tamron-17-70.jpg",
+      "lenses/best-sony-e-mount-lenses.html \u2192 ../assets/images/lenses/sony-35mm.jpg",
+      "lenses/best-sony-e-mount-lenses.html \u2192 ../assets/images/lenses/sony-70-350.jpg"
+    ],
     "excessive_inline_styles": [
       "compare/sony-a7-iv-vs-canon-r6-ii.html (20 instances)",
-      "de/index.html (13 instances)",
+      "de/index.html (16 instances)",
       "de/404.html (16 instances)",
       "de/angebote.html (12 instances)",
       "reviews/sony-zv-e10-review.html (11 instances)",
@@ -40,6 +65,14 @@
       "de/bewertungen/sony-a7-iv-testbericht.html (11 instances)",
       "de/vergleiche/sony-a7-iv-vs-canon-r6-ii.html (20 instances)"
     ],
+    "png_without_webp": [
+      "assets/images/gear/tripods.png",
+      "assets/images/gear/bags.png",
+      "assets/images/gear/sd-cards.png",
+      "assets/images/lenses/sony-e-mount.png",
+      "assets/images/lenses/canon-rf.png",
+      "assets/images/lenses/fujifilm-x.png"
+    ],
     "large_images": [
       "assets/images/pexels-huysuzkadraj-19239809.jpg (1.52MB)",
       "assets/images/Vlog.webp (1.30MB)",
@@ -48,6 +81,9 @@
       "assets/images/favicon.png (0.56MB)",
       "assets/images/logo.png (0.56MB)",
       "assets/images/Vlog.jpg (2.39MB)",
+      "assets/images/gear/tripods.png (0.50MB)",
+      "assets/images/gear/bags.png (0.66MB)",
+      "assets/images/gear/sd-cards.png (0.63MB)",
       "assets/images/guides/sony-zv-e10-original.png (0.55MB)",
       "assets/images/guides/beginner.jpg (3.59MB)",
       "assets/images/guides/gopro-hero-13.png (0.50MB)",
@@ -76,10 +112,14 @@
       "assets/images/guides/budget.jpg (3.28MB)",
       "assets/images/guides/canon-r6ii.png (0.59MB)",
       "assets/images/guides/fujifilm-x-t50.png (0.68MB)",
-      "assets/images/guides/travel.webp (0.50MB)"
+      "assets/images/guides/travel.webp (0.50MB)",
+      "assets/images/lenses/sony-e-mount.png (0.57MB)",
+      "assets/images/lenses/canon-rf.png (0.62MB)",
+      "assets/images/lenses/fujifilm-x.png (0.55MB)"
     ],
     "css_not_minified": [
-      "assets/css/footer-enhancements.css"
+      "assets/css/footer-enhancements.css",
+      "assets/css/loaders.css"
     ]
   }
 }
