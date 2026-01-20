@@ -15,7 +15,6 @@ const affiliateLinks = {
     "fuji-x-t5": "https://amzn.to/4qSEPQj",
     "fuji-xt5": "https://amzn.to/4qT3Laf", // Alternative key
     "fuji-x-s20": "https://amzn.to/3YJrfTj",
-    "fuji-xs10": "", // Used only, no new link
 
     // Canon
     "canon-r50": "https://amzn.to/3YBJTwt",
@@ -41,14 +40,10 @@ const affiliateLinks = {
     "gopro-13": "https://amzn.to/3Ne6SLE", // HTML ID is gopro-13
     "insta360-x4": "https://amzn.to/4aUs0jM",
 
-    // Comparison Specific - New products not yet on Amazon
-    "sony-a7-v": "", // Not available yet
-    "canon-r6-iii": "" // Not available yet
 };
 
 // Main function to apply links
 function applyAffiliateLinks() {
-    console.log("Applying affiliate links...");
     let updatedCount = 0;
 
     // Check language
@@ -99,7 +94,6 @@ function applyAffiliateLinks() {
             }
         });
     }
-    console.log(`Links applied. Updated ${updatedCount} comparisons/buttons.`);
 }
 
 // Run immediately if DOM is ready, otherwise wait
