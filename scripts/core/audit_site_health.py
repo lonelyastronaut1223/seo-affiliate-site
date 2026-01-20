@@ -76,6 +76,10 @@ def check_affiliate_links(root_dir):
     pages_without_links = []
     
     for html_file in html_files:
+        # Skip deals pages as they use hardcoded affiliate links
+        if 'deals.html' in str(html_file) or 'angebote.html' in str(html_file):
+            continue
+            
         content = html_file.read_text()
         if 'links.min.js' not in content:
             # Only flag pages that have btn-buy buttons
