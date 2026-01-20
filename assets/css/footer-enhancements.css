@@ -263,3 +263,53 @@
 .btn-wrap {
   margin-top: 12px;
 }
+
+/* Quiz Component */
+.quiz-card {
+  background: linear-gradient(135deg, rgba(43, 127, 226, 0.1), rgba(16, 24, 45, 0.6));
+  border: 1px solid rgba(77, 163, 255, 0.2);
+}
+
+.quiz-title {
+  color: #e9eef9;
+}
+
+.quiz-desc {
+  color: #b0b8d1;
+}
+
+.quiz-btn-start {
+  background: var(--accent-strong);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 14px rgba(43, 127, 226, 0.4);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Card Placeholder */
+.card-placeholder {
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.card-placeholder-inner {
+  text-align: center;
+  padding: 24px;
+}
+
+.card-placeholder-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.card-placeholder-text {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}

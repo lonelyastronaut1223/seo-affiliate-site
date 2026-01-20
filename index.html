@@ -250,16 +250,14 @@
 
   <main id="main" class="container">
     <section class="section highlight" id="camera-finder">
-      <div class="cta"
-        style="background: linear-gradient(135deg, rgba(43, 127, 226, 0.1), rgba(16, 24, 45, 0.6)); border: 1px solid rgba(77, 163, 255, 0.2);">
+      <div class="cta quiz-card">
         <div>
-          <h2 style="color: #e9eef9;">Discover Your Perfect Camera</h2>
-          <p style="color: #b0b8d1;">Answer 3 quick questions to get a personalized recommendation based on your
+          <h2 class="quiz-title">Discover Your Perfect Camera</h2>
+          <p class="quiz-desc">Answer 3 quick questions to get a personalized recommendation based on your
             needs.
           </p>
         </div>
-        <button id="start-quiz" class="btn"
-          style="background: var(--accent-strong); color: white; border: none; box-shadow: 0 4px 14px rgba(43, 127, 226, 0.4);">
+        <button id="start-quiz" class="btn quiz-btn-start">
           Start the Guide
         </button>
       </div>
@@ -282,7 +280,7 @@
         </div>
 
         <!-- Step 2: Experience -->
-        <div id="quiz-step-2" class="quiz-step" style="display:none;">
+        <div id="quiz-step-2" class="quiz-step hidden">
           <h3>2. What is your experience level?</h3>
           <p>Be honest, we won't judge!</p>
           <div class="quiz-grid">
@@ -293,7 +291,7 @@
         </div>
 
         <!-- Step 3: Budget -->
-        <div id="quiz-step-3" class="quiz-step" style="display:none;">
+        <div id="quiz-step-3" class="quiz-step hidden">
           <h3>3. What is your budget?</h3>
           <p>Including a lens.</p>
           <div class="quiz-grid">
@@ -304,7 +302,7 @@
         </div>
 
         <!-- Result -->
-        <div id="quiz-result" class="quiz-step quiz-result" style="display:none;">
+        <div id="quiz-result" class="quiz-step quiz-result hidden">
           <h3>We found your match!</h3>
           <p>Based on your answers, this is the best choice.</p>
           <div id="recommendation-content" class="quiz-recommendation"></div>
@@ -440,11 +438,10 @@
         </article>
 
         <article class="card">
-          <div class="card-thumb"
-            style="background: var(--bg-soft); display: flex; align-items: center; justify-content: center; min-height: 200px;">
-            <div style="text-align: center; padding: 24px;">
-              <div style="font-size: 48px; margin-bottom: 12px;">💰</div>
-              <p style="font-size: 14px; color: var(--muted); margin: 0;">SanDisk cards, batteries, and more</p>
+          <div class="card-thumb card-placeholder">
+            <div class="card-placeholder-inner">
+              <div class="card-placeholder-icon">💰</div>
+              <p class="card-placeholder-text">SanDisk cards, batteries, and more</p>
             </div>
           </div>
           <h3><a href="deals.html">View All Deals</a></h3>
