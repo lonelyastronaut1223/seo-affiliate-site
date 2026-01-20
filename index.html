@@ -208,6 +208,7 @@
   <meta property="article:modified_time" content="2026-01-18T12:00:00+01:00">
   <link rel="stylesheet" href="assets/css/footer-enhancements.css">
   <link rel="stylesheet" href="assets/css/loaders.css">
+  <link rel="stylesheet" href="assets/css/mega-menu.css">
 </head>
 
 <body>
@@ -217,19 +218,157 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="container">
-    <div class="topbar">
+    <div class="topbar topbar-enhanced">
       <a class="brand-link" href="./" aria-label="cameraupick home">
         <img class="brand-logo" src="assets/images/logo.png" alt="cameraupick logo" width="28" height="28"
           loading="eager" decoding="async" />
         <span class="brand-logo brand-logo-fallback" aria-hidden="true">📷</span>
         <span class="brand-text">cameraupick</span>
       </a>
-      <nav aria-label="Language">
-        <a href="lenses/">Lenses</a>
-        <a href="gear/">Gear</a>
-        <a href="deals.html" class="nav-deals-link">Deals</a>
-        <a href="./" hreflang="en" aria-current="page">EN</a> · <a href="./de/" hreflang="de">DE</a>
+
+      <!-- Search Bar -->
+      <div class="header-search">
+        <input type="search" placeholder="Search guides, reviews, gear..." aria-label="Search site">
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" aria-label="Main navigation">
+        <!-- Guides Dropdown -->
+        <div class="nav-item">
+          <span class="nav-link">
+            📚 Guides
+            <span class="nav-arrow">▾</span>
+          </span>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-menu-column">
+                <h4>📷 Camera Guides</h4>
+                <ul>
+                  <li><a href="guides/best-camera-for-beginners-2026.html">Best for Beginners</a></li>
+                  <li><a href="guides/best-travel-camera.html">Best Travel Camera</a></li>
+                  <li><a href="guides/best-vlog-camera.html">Best Vlog Camera</a></li>
+                  <li><a href="guides/best-budget-camera-under-800.html">Best Budget Camera</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu-column">
+                <h4>🎬 Advanced Guides</h4>
+                <ul>
+                  <li><a href="guides/best-hybrid-camera.html">Best Hybrid Camera</a></li>
+                  <li><a href="guides/best-full-frame-for-video.html">Best Full-Frame Video</a></li>
+                  <li><a href="guides/best-action-360-camera.html">Action & 360 Cameras</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lenses Dropdown -->
+        <div class="nav-item">
+          <span class="nav-link">
+            📸 Lenses
+            <span class="nav-arrow">▾</span>
+          </span>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-menu-column">
+                <h4>🔶 By Mount</h4>
+                <ul>
+                  <li><a href="lenses/best-sony-e-mount-lenses.html">Sony E-Mount</a></li>
+                  <li><a href="lenses/best-canon-rf-lenses.html">Canon RF & RF-S</a></li>
+                  <li><a href="lenses/best-fujifilm-x-mount-lenses.html">Fujifilm X-Mount</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gear Dropdown -->
+        <div class="nav-item">
+          <span class="nav-link">
+            🎒 Gear
+            <span class="nav-arrow">▾</span>
+          </span>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-menu-column">
+                <h4>🛠️ Accessories</h4>
+                <ul>
+                  <li><a href="gear/best-tripods.html">Best Tripods</a></li>
+                  <li><a href="gear/best-camera-bags.html">Best Camera Bags</a></li>
+                  <li><a href="gear/best-sd-cards.html">Best SD Cards</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deals Link (Special) -->
+        <a href="deals.html" class="nav-link deals-link">💰 Deals</a>
       </nav>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <a href="./" hreflang="en" aria-current="page">EN</a>
+        <span>·</span>
+        <a href="./de/" hreflang="de">DE</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-item">
+        <div class="mobile-menu-header">
+          📚 Buying Guides
+          <span class="mobile-menu-arrow">+</span>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="guides/best-camera-for-beginners-2026.html">Best for Beginners</a>
+          <a href="guides/best-travel-camera.html">Best Travel Camera</a>
+          <a href="guides/best-vlog-camera.html">Best Vlog Camera</a>
+          <a href="guides/best-budget-camera-under-800.html">Best Budget Camera</a>
+          <a href="guides/best-hybrid-camera.html">Best Hybrid Camera</a>
+          <a href="guides/best-full-frame-for-video.html">Best Full-Frame Video</a>
+          <a href="guides/best-action-360-camera.html">Action & 360 Cameras</a>
+        </div>
+      </div>
+
+      <div class="mobile-menu-item">
+        <div class="mobile-menu-header">
+          📸 Lenses
+          <span class="mobile-menu-arrow">+</span>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="lenses/best-sony-e-mount-lenses.html">Sony E-Mount</a>
+          <a href="lenses/best-canon-rf-lenses.html">Canon RF & RF-S</a>
+          <a href="lenses/best-fujifilm-x-mount-lenses.html">Fujifilm X-Mount</a>
+        </div>
+      </div>
+
+      <div class="mobile-menu-item">
+        <div class="mobile-menu-header">
+          🎒 Gear & Accessories
+          <span class="mobile-menu-arrow">+</span>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="gear/best-tripods.html">Best Tripods</a>
+          <a href="gear/best-camera-bags.html">Best Camera Bags</a>
+          <a href="gear/best-sd-cards.html">Best SD Cards</a>
+        </div>
+      </div>
+
+      <div class="mobile-menu-item">
+        <a href="deals.html" style="display: block; padding: 1rem; color: var(--accent-strong); font-weight: 700;">
+          💰 Current Deals
+        </a>
+      </div>
     </div>
 
     <section class="hero">
@@ -831,6 +970,7 @@
 
   <script src="assets/js/links.min.js?v=20260120"></script>
   <script src="assets/js/script.min.js"></script>
+  <script src="assets/js/mega-menu.js"></script>
 
   <!-- Service Worker Registration -->
   <script>

@@ -121,23 +121,162 @@
 
   <meta property="article:modified_time" content="2026-01-18T12:00:00+01:00">
   <link rel="stylesheet" href="../assets/css/footer-enhancements.css">
+  <link rel="stylesheet" href="../assets/css/mega-menu.css">
 </head>
 
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <header class="container">
-    <div class="topbar">
+    <div class="topbar topbar-enhanced">
       <a class="brand-link" href="./" aria-label="Kameraupick startseite">
         <img class="brand-logo" src="../assets/images/logo.png" alt="Kameraupick logo" width="32" height="32"
           style="border-radius: 6px; object-fit: contain;" />
         <span class="brand-text" style="font-weight: 800; letter-spacing: -0.02em;">Kameraupick</span>
       </a>
-      <nav aria-label="Sprache">
-        <a href="objektive/">Objektive</a>
-        <a href="zubehoer/">Zubehör</a>
-        <a href="../deals.html" class="nav-deals-link">Angebote</a>
-        <a href="../" hreflang="en">EN</a> · <a href="./" hreflang="de" aria-current="page">DE</a>
+
+      <!-- Search Bar -->
+      <div class="header-search">
+        <input type="search" placeholder="Ratgeber, Testberichte, Ausrüstung suchen..." aria-label="Seite durchsuchen">
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" aria-label="Hauptnavigation">
+        <!-- Ratgeber Dropdown -->
+        <div class="nav-item">
+          <span class="nav-link">
+            📚 Ratgeber
+            <span class="nav-arrow">▾</span>
+          </span>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-menu-column">
+                <h4>📷 Kamera-Ratgeber</h4>
+                <ul>
+                  <li><a href="ratgeber/beste-kamera-fuer-anfaenger-2026.html">Beste für Einsteiger</a></li>
+                  <li><a href="ratgeber/beste-reisekamera.html">Beste Reisekamera</a></li>
+                  <li><a href="ratgeber/beste-vlog-kamera.html">Beste Vlog-Kamera</a></li>
+                  <li><a href="ratgeber/beste-budget-kamera-unter-800.html">Beste Budget-Kamera</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu-column">
+                <h4>🎬 Erweiterte Ratgeber</h4>
+                <ul>
+                  <li><a href="ratgeber/beste-hybrid-kamera.html">Beste Hybrid-Kamera</a></li>
+                  <li><a href="ratgeber/beste-vollformat-fuer-video.html">Beste Vollformat Video</a></li>
+                  <li><a href="ratgeber/beste-action-360-kamera.html">Action & 360 Kameras</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Objektive Dropdown -->
+        <div class="nav-item">
+          <span class="nav-link">
+            📸 Objektive
+            <span class="nav-arrow">▾</span>
+          </span>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-menu-column">
+                <h4>🔶 Nach Bajonett</h4>
+                <ul>
+                  <li><a href="objektive/beste-sony-e-mount-objektive.html">Sony E-Mount</a></li>
+                  <li><a href="objektive/beste-canon-rf-objektive.html">Canon RF & RF-S</a></li>
+                  <li><a href="objektive/beste-fujifilm-x-mount-objektive.html">Fujifilm X-Mount</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zubehör Dropdown -->
+        <div class="nav-item">
+          <span class="nav-link">
+            🎒 Zubehör
+            <span class="nav-arrow">▾</span>
+          </span>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-menu-column">
+                <h4>🛠️ Ausrüstung</h4>
+                <ul>
+                  <li><a href="zubehoer/beste-stative.html">Beste Stative</a></li>
+                  <li><a href="zubehoer/beste-kamerataschen.html">Beste Kamerataschen</a></li>
+                  <li><a href="zubehoer/beste-sd-karten.html">Beste SD-Karten</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Angebote Link (Special) -->
+        <a href="angebote.html" class="nav-link deals-link">💰 Angebote</a>
       </nav>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <a href="../" hreflang="en">EN</a>
+        <span>·</span>
+        <a href="./" hreflang="de" aria-current="page">DE</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-item">
+        <div class="mobile-menu-header">
+          📚 Kaufberatungen
+          <span class="mobile-menu-arrow">+</span>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="ratgeber/beste-kamera-fuer-anfaenger-2026.html">Beste für Einsteiger</a>
+          <a href="ratgeber/beste-reisekamera.html">Beste Reisekamera</a>
+          <a href="ratgeber/beste-vlog-kamera.html">Beste Vlog-Kamera</a>
+          <a href="ratgeber/beste-budget-kamera-unter-800.html">Beste Budget-Kamera</a>
+          <a href="ratgeber/beste-hybrid-kamera.html">Beste Hybrid-Kamera</a>
+          <a href="ratgeber/beste-vollformat-fuer-video.html">Beste Vollformat Video</a>
+          <a href="ratgeber/beste-action-360-kamera.html">Action & 360 Kameras</a>
+        </div>
+      </div>
+
+      <div class="mobile-menu-item">
+        <div class="mobile-menu-header">
+          📸 Objektive
+          <span class="mobile-menu-arrow">+</span>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="objektive/beste-sony-e-mount-objektive.html">Sony E-Mount</a>
+          <a href="objektive/beste-canon-rf-objektive.html">Canon RF & RF-S</a>
+          <a href="objektive/beste-fujifilm-x-mount-objektive.html">Fujifilm X-Mount</a>
+        </div>
+      </div>
+
+      <div class="mobile-menu-item">
+        <div class="mobile-menu-header">
+          🎒 Zubehör & Ausrüstung
+          <span class="mobile-menu-arrow">+</span>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="zubehoer/beste-stative.html">Beste Stative</a>
+          <a href="zubehoer/beste-kamerataschen.html">Beste Kamerataschen</a>
+          <a href="zubehoer/beste-sd-karten.html">Beste SD-Karten</a>
+        </div>
+      </div>
+
+      <div class="mobile-menu-item">
+        <a href="angebote.html" style="display: block; padding: 1rem; color: var(--accent-strong); font-weight: 700;">
+          💰 Aktuelle Angebote
+        </a>
+      </div>
     </div>
 
     <section class="hero">
@@ -630,6 +769,7 @@
 
   <script src="../assets/js/links.min.js?v=20260120"></script>
   <script src="../assets/js/script-de.min.js"></script>
+  <script src="../assets/js/mega-menu.js"></script>
 
   <!-- Service Worker Registration -->
   <script>
