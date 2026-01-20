@@ -1,10 +1,22 @@
 {
   "stats": {
-    "total_html": 52,
+    "total_html": 57,
     "total_images": 88,
     "total_image_size_mb": 46.46576499938965
   },
   "issues": {
+    "missing_meta_description": [
+      "offline.html",
+      "includes/ga-snippet.html",
+      "includes/schema-global.html",
+      "includes/index_finder_fragment.html"
+    ],
+    "missing_og_tags": [
+      "offline.html",
+      "includes/ga-snippet.html",
+      "includes/schema-global.html",
+      "includes/index_finder_fragment.html"
+    ],
     "excessive_inline_styles": [
       "index.html (11 instances)",
       "deals.html (12 instances)",
@@ -30,14 +42,6 @@
       "de/bewertungen/fujifilm-x-t5-testbericht.html (11 instances)",
       "de/bewertungen/sony-a7-iv-testbericht.html (11 instances)",
       "de/vergleiche/sony-a7-iv-vs-canon-r6-ii.html (20 instances)"
-    ],
-    "missing_meta_description": [
-      "includes/ga-snippet.html",
-      "includes/index_finder_fragment.html"
-    ],
-    "missing_og_tags": [
-      "includes/ga-snippet.html",
-      "includes/index_finder_fragment.html"
     ],
     "large_images": [
       "assets/images/pexels-huysuzkadraj-19239809.jpg (1.06MB)",
@@ -76,6 +80,9 @@
       "assets/images/guides/canon-r6ii.png (0.59MB)",
       "assets/images/guides/fujifilm-x-t50.png (0.68MB)",
       "assets/images/guides/travel.webp (0.50MB)"
+    ],
+    "css_not_minified": [
+      "assets/css/footer-enhancements.css"
     ]
   }
 }

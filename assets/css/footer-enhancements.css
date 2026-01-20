@@ -76,3 +76,155 @@
     height: 14px;
   }
 }
+
+/* Utility Classes */
+
+/* Layout */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-sm {
+  gap: 12px;
+}
+
+.gap-md {
+  gap: 16px;
+}
+
+.gap-lg {
+  gap: 24px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.max-w-600 {
+  max-width: 600px;
+}
+
+.p-lg {
+  padding: 40px 20px;
+}
+
+.mt-sm {
+  margin-top: 16px;
+}
+
+.mt-md {
+  margin-top: 32px;
+}
+
+.mt-lg {
+  margin-top: 48px;
+}
+
+.mb-md {
+  margin-bottom: 32px;
+}
+
+/* Typography */
+.text-xxl {
+  font-size: 72px;
+  margin: 0;
+  color: var(--accent);
+}
+
+.text-xl {
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+/* Backgrounds */
+.bg-soft {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Error Page Specific */
+.error-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px 20px;
+}
+
+.error-code {
+  font-size: 72px;
+  margin: 0;
+  color: var(--accent);
+}
+
+.error-title {
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.error-message {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.error-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-links {
+  margin-top: 48px;
+}
+
+.error-links-inner {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.link-separator {
+  color: var(--muted);
+}
