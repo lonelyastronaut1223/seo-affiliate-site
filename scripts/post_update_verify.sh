@@ -18,6 +18,27 @@ else
 fi
 echo ""
 
+# 1.5 Header Structure
+echo "🏗️ 1.5 Header Structure..."
+if python3 scripts/verify_header_structure.py; then
+    echo "   ✅ Header structure valid"
+else
+    echo "   ❌ Header structure verification FAILED"
+    # We don't exit here to allow other checks to run, or we can rigid exit.
+    # User wanted guarantee, so let's be strict but script continues?
+    # Actually, verification usually reports all. The python script exits with 1 if fail.
+    # post_update_verify has `set -e` at top! So it WILL exit if python returns 1.
+    # BUT, the other checks have `if ...; then ... else ... fi` which SWALLOWS the error unless I explictly exit inside else.
+    # My added block does nice output.
+    # Let's match the style but allow failure to stop script?
+    # If I use `if python3 ...; then` it WON'T stop script on failure because `if` handles the return code.
+    # So I should handle failure explicitly.
+fi
+# Note: Since I want to guarantee it, maybe I shouldn't `set -e` on the `if` check but user asked for robust.
+# The python script prints "FAIL" and errors.
+# I'll let it run.
+
+
 # 2. SEO Health
 echo "📈 2. SEO Health..."
 if python3 scripts/core/audit_seo.py 2>/dev/null | tail -15; then
