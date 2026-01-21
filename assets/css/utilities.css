@@ -322,3 +322,42 @@
     margin: 12px 0;
     padding-left: 20px;
 }
+
+/* ============================================
+   Readability & Typography (UI Best Practices)
+   ============================================ */
+
+/* Prose container - optimal reading width */
+.prose {
+    max-width: 65ch !important;
+}
+
+.prose-sm {
+    max-width: 50ch !important;
+}
+
+.prose-lg {
+    max-width: 75ch !important;
+}
+
+/* Line height for readability */
+.leading-relaxed {
+    line-height: 1.7 !important;
+}
+
+.leading-loose {
+    line-height: 1.8 !important;
+}
+
+/* Screen reader only - for icon labels */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
