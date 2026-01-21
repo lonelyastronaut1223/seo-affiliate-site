@@ -143,29 +143,101 @@
             }, 200);
         });
 
+        // Keyboard navigation for search results
+        let selectedIndex = -1;
+        searchInput.addEventListener('keydown', (e) => {
+            const resultLinks = resultsContainer.querySelectorAll('a');
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                selectedIndex = Math.min(selectedIndex + 1, resultLinks.length - 1);
+                updateSearchSelection(resultLinks, selectedIndex);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectedIndex = Math.max(selectedIndex - 1, -1);
+                if (selectedIndex === -1) {
+                    searchInput.focus();
+                    removeSearchSelection(resultLinks);
+                } else {
+                    updateSearchSelection(resultLinks, selectedIndex);
+                }
+            } else if (e.key === 'Enter' && selectedIndex >= 0) {
+                e.preventDefault();
+                resultLinks[selectedIndex].click();
+            } else if (e.key === 'Escape') {
+                resultsContainer.style.display = 'none';
+                searchInput.blur();
+                selectedIndex = -1;
+            }
+        });
+
+        // Reset selection when new search
+        searchInput.addEventListener('input', () => {
+            selectedIndex = -1;
+        });
+
         // Close on click outside
         document.addEventListener('click', (e) => {
             if (!searchInput.parentElement.contains(e.target)) {
                 resultsContainer.style.display = 'none';
+                selectedIndex = -1;
             }
         });
+    }
 
-        // Close on ESC key
-        searchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                resultsContainer.style.display = 'none';
-                searchInput.blur();
+    function updateSearchSelection(links, index) {
+        links.forEach((link, i) => {
+            if (i === index) {
+                link.style.background = 'rgba(77, 163, 255, 0.15)';
+                link.style.outline = '2px solid rgba(77, 163, 255, 0.4)';
+                link.style.outlineOffset = '-2px';
+                link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            } else {
+                link.style.background = 'transparent';
+                link.style.outline = 'none';
             }
+        });
+    }
+
+    function removeSearchSelection(links) {
+        links.forEach(link => {
+            link.style.background = 'transparent';
+            link.style.outline = 'none';
         });
     }
 
     function displaySearchResults(results, container, query) {
         if (results.length === 0) {
             container.innerHTML = `
-        <div style="padding: 1.5rem; text-align: center; color: #8b9eb0;">
-          No results found for "${query}"
-          <div style="margin-top: 0.5rem; font-size: 0.875rem;">
-            Try: "Sony", "Canon", "Vlog", "Tripod"
+        <div class="search-empty-state" style="padding: 2rem 1.5rem; text-align: center;">
+          <div style="font-size: 3rem; opacity: 0.2; margin-bottom: 1rem;">🔍</div>
+          <h4 style="margin: 0 0 0.5rem; font-size: 1rem; color: var(--fg);">No results for "${query}"</h4>
+          <p style="color: var(--muted); margin-bottom: 1.25rem; font-size: 0.875rem;">
+            Try these popular searches:
+          </p>
+          <div class="suggestion-pills" style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+            ${['Sony', 'Canon', 'Fuji', 'Vlog', 'Lenses', 'Tripod'].map(term => `
+              <button class="suggestion-pill" data-search="${term}" style="
+                padding: 0.375rem 0.875rem;
+                background: rgba(77, 163, 255, 0.12);
+                border: 1px solid rgba(77, 163, 255, 0.25);
+                border-radius: 999px;
+                color: var(--fg);
+                cursor: pointer;
+                font-size: 0.875rem;
+                font-family: inherit;
+                transition: all 200ms ease;
+              " onmouseover="this.style.background='rgba(77,163,255,0.2)'; this.style.borderColor='rgba(77,163,255,0.4)'" 
+                 onmouseout="this.style.background='rgba(77,163,255,0.12)'; this.style.borderColor='rgba(77,163,255,0.25)'"
+                 onclick="
+                   const input = document.querySelector('.header-search input');
+                   input.value = '${term}';
+                   input.focus();
+                   input.dispatchEvent(new Event('input', { bubbles: true }));
+                 ">
+                ${term}
+              </button>
+            `).join('')}
           </div>
         </div>
       `;
