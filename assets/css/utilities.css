@@ -361,3 +361,154 @@
     white-space: nowrap !important;
     border: 0 !important;
 }
+
+/* ============================================
+   Form Validation States
+   ============================================ */
+
+/* Input validation states */
+input.valid,
+.input-valid {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+}
+
+input.invalid,
+.input-invalid {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+/* Error message styling */
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.error-message::before {
+    content: '⚠';
+    font-size: 0.75rem;
+}
+
+/* Success message styling */
+.success-message {
+    color: #10b981;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.success-message::before {
+    content: '✓';
+}
+
+/* ============================================
+   Button Variants
+   ============================================ */
+
+/* Secondary button - ghost/outline style */
+.btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--fg);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 200ms ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* Tertiary button - text only */
+.btn-tertiary {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 200ms ease;
+}
+
+.btn-tertiary:hover {
+    background: rgba(77, 163, 255, 0.1);
+    border-radius: var(--radius-sm);
+}
+
+/* ============================================
+   Visual Enhancements
+   ============================================ */
+
+/* Focus ring for accessibility */
+.focus-ring:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Subtle hover effect */
+.hover-lift:hover {
+    transform: translateY(-2px);
+    transition: transform 200ms ease;
+}
+
+/* Card hover enhancement */
+.card-interactive:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    border-color: rgba(77, 163, 255, 0.5);
+}
+
+/* Pill/Tag styling */
+.pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background: rgba(77, 163, 255, 0.12);
+    border: 1px solid rgba(77, 163, 255, 0.25);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    color: var(--fg);
+    transition: all 200ms ease;
+}
+
+.pill:hover {
+    background: rgba(77, 163, 255, 0.2);
+    border-color: rgba(77, 163, 255, 0.4);
+}
+
+/* Truncate text with ellipsis */
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Line clamp for multi-line truncation */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
