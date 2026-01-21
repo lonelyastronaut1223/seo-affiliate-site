@@ -6,7 +6,7 @@ const affiliateLinks = {
     "sony-a6700": "https://amzn.to/3NpavhW",
     "sony-a7c-ii": "https://amzn.to/49XHouC",
     "sony-a7iv": "https://amzn.to/3Zmgs1u",
-    "sony-a7-v": "NEED_LINK",          // Sony A7 V (新机型)
+    "sony-a7-v": "https://www.amazon.com/s?k=Sony+A7+IV",          // Sony A7 V (Using A7 IV as fallback or exact search)
     "sony-zv-e10": "https://amzn.to/3NqCxth",
     "sony-zv-e10-ii": "https://amzn.to/49HqAH3",
     "sony-zv-e1": "https://amzn.to/3Le0oMc",
@@ -27,7 +27,7 @@ const affiliateLinks = {
     "canon-r8": "https://amzn.to/3Lvm06M",
     "canon-r6ii": "https://amzn.to/4sHWE6q",
     "canon-r6-ii": "https://amzn.to/4sHWE6q", // Alternative key
-    "canon-r6-iii": "NEED_LINK",       // Canon R6 III (新机型)
+    "canon-r6-iii": "https://www.amazon.com/s?k=Canon+R6+Mark+II",       // Canon R6 III (Using R6 II as fallback or exact search)
 
     // CAMERAS - Panasonic / Lumix
 
@@ -95,6 +95,7 @@ const affiliateLinks = {
     "lowepro-protactic": "https://amzn.to/3LsLstI",       // Lowepro ProTactic
     "lowepro": "https://amzn.to/3LsLstI",                 // Alternative key
     "wandrd-prvke": "https://amzn.to/4pZZFfW",            // WANDRD PRVKE
+    "wandrd": "https://amzn.to/4pZZFfW",                  // Alternative key for table anchors
 
     // GEAR - Tripods
     "peak-travel-tripod": "https://amzn.to/4qw0vBR",      // Peak Design Travel Tripod
@@ -102,6 +103,7 @@ const affiliateLinks = {
     "manfrotto-befree": "https://amzn.to/4a26V5Y",        // Manfrotto Befree
     "manfrotto": "https://amzn.to/4a26V5Y",               // Alternative key
     "ulanzi-mt79": "https://amzn.to/3YPknE6",             // Ulanzi MT-79
+    "ulanzi": "https://amzn.to/3YPknE6",                  // Alternative key for table anchors
 
 };
 
