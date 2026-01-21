@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Offline - Kameraupick" description="Camera reviews and buying guides.">
+<div class="brand">📷 Kameraupick</div>
+
+    <div class="offline-icon">📡</div>
+    <h1>Du bist offline</h1>
+    <p>
+        Es sieht so aus, als hättest du keine Internetverbindung.
+        Bitte überprüfe deine Verbindung und versuche es erneut.
+    </p>
+    <a href="/" class="retry-btn" onclick="location.reload(); return false;">
+        Erneut versuchen
+    </a>
+</BaseLayout>

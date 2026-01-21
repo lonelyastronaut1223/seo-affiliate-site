@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Kameraupick — Kamera Testberichte, Vergleiche & Kaufberatung (2026)" description="Ehrliche Kamera-Testberichte, Vergleiche und Kaufberatungen. Aktuelle Empfehlungen für Reisen, Vlogs, Budget- und Hybrid-Kameras.">
+<section class="section highlight" id="Kamera-finder">
+      <div class="cta"
+        style="background: linear-gradient(135deg, rgba(43, 127, 226, 0.1), rgba(16, 24, 45, 0.6)); border: 1px solid rgba(77, 163, 255, 0.2);">
+        <div>
+          <h2 style="color: #e9eef9;">Entdecke deine perfekte Kamera</h2>
+          <p style="color: #b0b8d1;">Beantworte 3 kurze Fragen für eine persönliche Empfehlung.</p>
+        </div>
+        <button id="start-quiz" class="btn"
+          style="background: var(--accent-strong); color: white; border: none; box-shadow: 0 4px 14px rgba(43, 127, 226, 0.4);">
+          Ratgeber starten
+        </button>
+      </div>
+
+      <!-- Quiz Modal -->
+      <div id="quiz-modal" class="quiz-modal">
+
+        <!-- Close Button -->
+        <button id="close-quiz" class="quiz-close-btn">&times;</button>
+
+        <!-- Step 1: Content Typ -->
+        <div id="quiz-step-1" class="quiz-step">
+          <h3>1. Was möchtest du hauptsächlich aufnehmen?</h3>
+          <p>Wähle das Wichtigste aus.</p>
+          <div class="quiz-grid">
+            <button class="btn quiz-option" data-type="Video">🎥 Video / Vlogs</button>
+            <button class="btn quiz-option" data-type="photo">Fotografie</button>
+            <button class="btn quiz-option" data-type="hybrid">⚖️ Beides (Hybrid)</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Experience -->
+        <div id="quiz-step-2" class="quiz-step" style="display:none;">
+          <h3>2. Wie viel Erfahrung hast du?</h3>
+          <p>Sei ehrlich, wir urteilen nicht!</p>
+          <div class="quiz-grid">
+            <button class="btn quiz-option" data-exp="beginner">Anfänger</button>
+            <button class="btn quiz-option" data-exp="enthusiast">Fortgeschritten</button>
+            <button class="btn quiz-option" data-exp="pro">Profi</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Budget -->
+        <div id="quiz-step-3" class="quiz-step" style="display:none;">
+          <h3>3. Wie hoch ist dein Budget?</h3>
+          <p>Inklusive Objektiv.</p>
+          <div class="quiz-grid">
+            <button class="btn quiz-option" data-Budget="low">Unter 1.000 €</button>
+            <button class="btn quiz-option" data-Budget="mid">1.000 € - 2.500 €</button>
+            <button class="btn quiz-option" data-Budget="high">2.500 € +</button>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="quiz-result" class="quiz-step quiz-result" style="display:none;">
+          <h3>Wir haben deinen Match gefunden!</h3>
+          <p>Basierend auf deinen Antworten ist dies die beste Wahl.</p>
+          <div id="recommendation-content" class="quiz-recommendation"></div>
+          <button id="restart-quiz" class="btn quiz-restart-btn">Von vorne beginnen ↺</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Angebote Section - Integrated Style (German) -->
+    <section class="section" id="deals">
+      <h2>Aktuelle Angebote</h2>
+      <p class="section-sub">Zeitlich begrenzte Preissenkungen für Ausrüstung, die wir empfehlen.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="deal-badge">100 € Rabatt</div>
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/sony-zv-e10-original.webp"
+              alt="Sony ZV-E10 Deal" width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/sony-zv-e10-testbericht.html">Sony ZV-E10 Set</a></h3>
+          <p>Budget-Vlog-Kamera mit Klappbildschirm. Inklusive 16-50mm Objektiv.</p>
+          <div class="meta deal-price">598 € <span class="deal-price-old">statt 698 €</span></div>
+        </article>
+
+        <article class="card">
+          <div class="deal-badge">300 € Rabatt</div>
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/panasonic-s5ii.webp"
+              alt="Panasonic S5 II Deal" width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/panasonic-s5-ii-testbericht.html">Panasonic S5 II Gehäuse</a></h3>
+          <p>Vollformat-Hybrid mit Phasen-AF. Niedrigster Preis aller Zeiten.</p>
+          <div class="meta deal-price">1.697 €</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb"
+            style="background: var(--bg-soft); display: flex; align-items: center; justify-content: center; min-height: 200px;">
+            <div style="text-align: center; padding: 24px;">
+              <div style="font-size: 48px; margin-bottom: 12px;">💰</div>
+              <p style="font-size: 14px; color: var(--muted); margin: 0;">SanDisk-Karten, Akkus und mehr</p>
+            </div>
+          </div>
+          <h3><a href="angebote.html">Alle Angebote ansehen</a></h3>
+          <p>Zubehör, Speicher und Ausrüstung im Angebot.</p>
+          <div class="meta">Täglich aktualisiert</div>
+        </article>
+      </div>
+    </section>
+    <section class="section" id="guides">
+      <h2>Kaufberatungen</h2>
+      <p class="section-sub">Starte mit den Empfehlungen, die zu deinem Budget und Stil passen.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/beginner.jpg?v=20260111" srcset="../assets/images/guides/beginner-sm.jpg?v=20260111 600w,
+                      ../assets/images/guides/beginner.jpg?v=20260111 1200w" sizes="(max-width: 768px) 100vw, 50vw"
+              alt="Anfänger Spiegellose Kamera Kit" width="1200" height="800">
+          </div>
+          <h3><a href="ratgeber/beste-kamera-fuer-anfaenger-2026.html">Beste Kamera für Einsteiger (2026)</a></h3>
+          <p>Sichere, einfache Wahl mit schnellem AF, einfachen Menüs, gutem Akku und Objektiven zum Wachsen.</p>
+          <div class="meta">Einsteiger</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <picture>
+              <source srcset="../assets/images/guides/travel.webp" type="image/webp">
+              <img loading="lazy" decoding="async" src="../assets/images/guides/travel.jpg?v=20260118"
+                alt="Kompakte Reisekamera für Street Photography" width="1200" height="800">
+            </picture>
+          </div>
+          <h3><a href="ratgeber/beste-reisekamera.html">Beste Reisekamera</a></h3>
+          <p>Leichte Ausrüstung, die dennoch stabilisiertes 4K und scharfe Reisefotos liefert.</p>
+          <div class="meta">Reise</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/Vlog.jpg?v=20260111"
+              alt="Vlog-Kamera mit Mikrofon-Setup" width="1200" height="800">
+          </div>
+          <h3><a href="ratgeber/beste-Vlog-kamera.html">Beste Vlog-Kamera</a></h3>
+          <p>Schneller AF, Klappbildschirm, Gyro-Daten oder IBIS und saubere Audio-Optionen.</p>
+          <div class="meta">Video</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/Budget.jpg?v=20260111"
+              alt="Günstige spiegellose Kamera auf Holztisch" width="1200" height="800">
+          </div>
+          <h3><a href="ratgeber/beste-Budget-kamera-unter-800.html">Beste Budget-Kamera unter 800€</a></h3>
+          <p>Preiswerte Modelle mit zuverlässigem AF, gutem Akku und günstigem Objektiv-Pfad.</p>
+          <div class="meta">Budget</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/hybrid.jpg?v=20260111"
+              alt="Spiegelloses Kameragehäuse Nahaufnahme" width="1200" height="800">
+          </div>
+          <h3><a href="ratgeber/beste-hybrid-kamera.html">Beste Hybrid-Kamera</a></h3>
+          <p>Ausgewogene Foto-Video-Bodys mit 10-Bit, zuverlässigem AF und starken Ökosystemen.</p>
+          <div class="meta">Hybrid</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/fullframe-Video.jpg?v=20260111"
+              alt="Vollformat-Kamera Video-Rig" width="1200" height="800">
+          </div>
+          <h3><a href="ratgeber/beste-vollformat-fuer-Video.html">Beste Vollformat-Kamera für Video</a></h3>
+          <p>Vollformat-Hybride mit starken Codecs, geringem Rolling Shutter und gutem IBIS.</p>
+          <div class="meta">Video · Vollformat</div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/action-360.jpg?v=20260111"
+              alt="Action-Kamera draußen montiert" width="1200" height="800">
+          </div>
+          <h3><a href="ratgeber/beste-action-360-kamera.html">Beste Action- & 360-Kamera</a></h3>
+          <p>Action/360-Cams mit großartiger Stabilisierung, Horizontsperre und einfachem Zuschneiden.</p>
+          <div class="meta">Action · 360</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <h2>Neueste Testberichte</h2>
+      <p class="section-sub">Praxis-Eindrücke, Vor- und Nachteile sowie klare Kaufempfehlungen.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/sony-a7c-ii.webp"
+              alt="Sony A7C II kompakte Vollformatkamera" width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/sony-a7c-ii-testbericht.html">Sony A7C II Testbericht</a></h3>
+          <p>Ultra-kompakte Vollformat mit KI-Autofokus. Perfekt für Reisen; gleicher Sensor wie A7 IV in kleinerem
+            Gehäuse. Einzelkartenslot, aber hervorragende Portabilität.</p>
+          <div class="meta">Kompakte Vollformat · Hybrid</div>
+        </article>
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/sony-a7iv.webp"
+              alt="Sony A7 IV Hybrid-Kamera" width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/sony-a7-iv-testbericht.html">Sony A7 IV Testbericht</a></h3>
+          <p>Hybrid-Favorit mit starkem AF und Farben; Menüs brauchen Gewöhnung. 10-Bit, solide Thermik, große
+            Objektivauswahl; Rolling Shutter beachten.</p>
+          <div class="meta">Vollformat · Hybrid</div>
+        </article>
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/fujifilm-x-t5.webp"
+              alt="Fujifilm X-T5 spiegellose Kamera" width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/fujifilm-x-t5-testbericht.html">Fujifilm X-T5 Testbericht</a></h3>
+          <p>40MP Details, Filmsimulationen, klassische Einstellräder. Beste für Foto-Shooter; Video gut, aber Rolling
+            Shutter in HQ.</p>
+          <div class="meta">APS-C · Foto-First</div>
+        </article>
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/canon-eos-r8.webp"
+              alt="Canon EOS R8 Vollformatkamera" width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/canon-eos-r8-testbericht.html">Canon EOS R8 Testbericht</a></h3>
+          <p>Leichtes Vollformat mit Top-AF und Canon-Farben. Perfekter FF-Einstieg; extra Akkus einpacken und schnelle
+            Schwenks meiden.</p>
+          <div class="meta">Preis-Leistung · Video-freundlich</div>
+        </article>
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/sony-zv-e10-original.webp"
+              alt="Sony ZV-E10 Vlog-Kamera" width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/sony-zv-e10-testbericht.html">Sony ZV-E10 Testbericht</a></h3>
+          <p>Beste Einsteiger-Vlog-Cam mit Klappdisplay, Tally-Licht, Mikrofonbuchse; kein 4K60, aber unschlagbar für
+            Budget-Creator.</p>
+          <div class="meta">Vlog · Budget</div>
+        </article>
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/nikon-z8.webp" alt="Nikon Z8 Profi-Kamera"
+              width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/nikon-z8-testbericht.html">Nikon Z8 Kurz-Test</a></h3>
+          <p>Profi-Level Fotos/Video, 8K-Optionen, starker AF. Großartig für ernsthafte Hybrid-Shooter, die
+            Profi-Ergonomie
+            im kleineren Gehäuse wollen.</p>
+          <div class="meta">Profi · Hybrid</div>
+        </article>
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/panasonic-s5ii.webp"
+              alt="Panasonic S5 II Hybrid-Kamera" width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/panasonic-s5-ii-testbericht.html">Panasonic S5 II Kurz-Test</a></h3>
+          <p>PDAF behebt AF-Probleme, starker IBIS, 6K Open-Gate, großartiges Preis-Leistungs-Verhältnis für
+            Video-Creator.</p>
+          <div class="meta">Vollformat · Hybrid</div>
+        </article>
+        <article class="card">
+          <div class="card-thumb">
+            <img loading="lazy" decoding="async" src="../assets/images/guides/dji-osmo-pocket-3.webp"
+              alt="DJI Osmo Pocket 3 Gimbal-Kamera" width="1200" height="800">
+          </div>
+          <h3><a href="bewertungen/dji-osmo-pocket-3-testbericht.html">DJI Osmo Pocket 3 Kurz-Test</a></h3>
+          <p>1-Zoll Gimbal-Kamera, tolle Stabilisierung, verbesserte Hauttöne. Perfekt für Travel Walk-and-Talk.</p>
+          <div class="meta">Vlog · Pocket</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="compare">
+      <h2>Vergleiche</h2>
+      <p class="section-sub">Seite-an-Seite-Analysen für die häufigsten Kaufentscheidungen.</p>
+      <div class="grid">
+        <article class="card card-plain">
+          <h3><a href="vergleiche/sony-a7-iv-vs-canon-r6-ii.html">Sony A7 IV vs Canon R6 II</a></h3>
+          <p>Zwei Hybrid-Favoriten im Vergleich: AF, Stabilisierung, Rolling Shutter und Objektive.</p>
+          <div class="meta">Hybrid-Vergleich</div>
+        </article>
+        <article class="card card-plain">
+          <h3><a href="vergleiche/sony-a7-v-vs-canon-r6-iii.html">Sony A7 V vs Canon R6 III</a></h3>
+          <p>Flaggschiff-Hybrid-Showdown: AF, Rolling Shutter, Stabilisierung und Hitze.</p>
+          <div class="meta">Vergleich</div>
+        </article>
+        <article class="card card-plain">
+          <h3><a href="vergleiche/sony-zv-e10-vs-sony-a6700.html">Sony ZV-E10 vs A6700</a></h3>
+          <p>Creator-First vs Enthusiast APS-C — wann lohnt das Upgrade.</p>
+          <div class="meta">Upgrade-Pfad</div>
+        </article>
+        <article class="card card-plain">
+          <h3><a href="vergleiche/fujifilm-x-s20-vs-fujifilm-x-t5.html">Fujifilm X-S20 vs X-T5</a></h3>
+          <p>Gleiche Objektive, andere Prioritäten: Video-Merkmale vs klassische Handhabung.</p>
+          <div class="meta">APS-C</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section highlight" id="affiliate">
+      <div class="cta">
+        <div>
+          <h2>Affiliate & Transparenz</h2>
+          <p>Wir nutzen Affiliate-Links, um die Seite kostenlos zu halten. Du zahlst nie extra und wir empfehlen nur
+            Ausrüstung, die wir selbst kaufen würden.</p>
+          <div class="pill-row">
+            <span class="pill">Unabhängige Tests</span>
+            <span class="pill">Transparente Vor- & Nachteile</span>
+            <span class="pill">Aktualisierte Auswahl</span>
+          </div>
+        </div>
+        <a class="btn" href="#guides">Unsere Top-Picks ansehen</a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>Wie wir testen</h2>
+      <p class="section-sub">Praxisnahe Testberichte mit Fokus auf echte Nutzung.</p>
+      <div class="grid">
+        <article class="card card-plain">
+          <h3>Handling & Autofokus</h3>
+          <p>Wir prüfen, wie schnell Kameras fokussieren, Gesichter tracken und den Fokus im Video halten.</p>
+        </article>
+        <article class="card card-plain">
+          <h3>Video-Zuverlässigkeit</h3>
+          <p>Hitzegrenzen, Rolling Shutter, Stabilisierung, Audio-Optionen und Log-Profile.</p>
+        </article>
+        <article class="card card-plain">
+          <h3>Objektive & Ökosystem</h3>
+          <p>Welche Objektive machen Sinn für Einsteiger, Reisen und Wachstumspfade.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+      <div class="newsletter-container">
+        <h3>Bleib auf dem Laufenden</h3>
+        <p>Neue Testberichte, Angebote und Kaufberatung — direkt in dein Postfach.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="deine@email.de" required aria-label="E-Mail Adresse">
+          <button type="submit">Abonnieren</button>
+        </form>
+        <p class="newsletter-note">Kein Spam. Jederzeit abbestellbar.</p>
+      </div>
+    </section>
+</BaseLayout>
