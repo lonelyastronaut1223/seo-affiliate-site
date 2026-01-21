@@ -49,33 +49,57 @@
         const searchInput = document.querySelector('.header-search input');
         if (!searchInput) return;
 
-        // Search data
-        const searchData = [
-            // Guides
-            { title: 'Best Camera for Beginners', url: 'guides/best-camera-for-beginners-2026.html', category: 'Guides' },
-            { title: 'Best Travel Camera', url: 'guides/best-travel-camera.html', category: 'Guides' },
-            { title: 'Best Vlog Camera', url: 'guides/best-vlog-camera.html', category: 'Guides' },
-            { title: 'Best Budget Camera', url: 'guides/best-budget-camera-under-800.html', category: 'Guides' },
-            { title: 'Best Hybrid Camera', url: 'guides/best-hybrid-camera.html', category: 'Guides' },
-            { title: 'Best Full-Frame for Video', url: 'guides/best-full-frame-for-video.html', category: 'Guides' },
-            { title: 'Best Action & 360 Camera', url: 'guides/best-action-360-camera.html', category: 'Guides' },
+        // Detect base path - improved logic
+        const currentPath = window.location.pathname;
+        const pathSegments = currentPath.split('/').filter(segment => segment.length > 0);
+        const basePath = pathSegments.length > 1 && pathSegments[pathSegments.length - 1].includes('.html') ? '../' : '';
 
-            // Reviews
-            { title: 'Sony A7C II Review', url: 'reviews/sony-a7c-ii-review.html', category: 'Reviews' },
-            { title: 'Sony A7 IV Review', url: 'reviews/sony-a7-iv-review.html', category: 'Reviews' },
-            { title: 'Fujifilm X-T5 Review', url: 'reviews/fujifilm-x-t5-review.html', category: 'Reviews' },
-            { title: 'Canon EOS R8 Review', url: 'reviews/canon-eos-r8-review.html', category: 'Reviews' },
-            { title: 'Sony ZV-E10 Review', url: 'reviews/sony-zv-e10-review.html', category: 'Reviews' },
+        // Comprehensive search data with keywords
+        const searchData = [
+            // Camera Guides
+            { title: 'Best Camera for Beginners 2026', url: basePath + 'guides/best-camera-for-beginners-2026.html', category: 'Guides', keywords: 'beginner starter entry level first camera' },
+            { title: 'Best Travel Camera', url: basePath + 'guides/best-travel-camera.html', category: 'Guides', keywords: 'travel compact lightweight portable vacation' },
+            { title: 'Best Vlog Camera', url: basePath + 'guides/best-vlog-camera.html', category: 'Guides', keywords: 'vlog youtube creator content flip screen' },
+            { title: 'Best Budget Camera Under $800', url: basePath + 'guides/best-budget-camera-under-800.html', category: 'Guides', keywords: 'budget cheap affordable value under 800' },
+            { title: 'Best Hybrid Camera', url: basePath + 'guides/best-hybrid-camera.html', category: 'Guides', keywords: 'hybrid photo video both stills' },
+            { title: 'Best Full-Frame for Video', url: basePath + 'guides/best-full-frame-for-video.html', category: 'Guides', keywords: 'full frame video filmmaker cinema 4k 8k' },
+            { title: 'Best Action & 360 Camera', url: basePath + 'guides/best-action-360-camera.html', category: 'Guides', keywords: 'action 360 gopro insta360 dji sports adventure' },
+
+            // Camera Reviews - Sony
+            { title: 'Sony A7C II Review', url: basePath + 'reviews/sony-a7c-ii-review.html', category: 'Reviews', keywords: 'sony a7c a7cii compact full frame travel' },
+            { title: 'Sony A7 IV Review', url: basePath + 'reviews/sony-a7-iv-review.html', category: 'Reviews', keywords: 'sony a7iv a7 4 hybrid bestseller popular' },
+            { title: 'Sony ZV-E10 Review', url: basePath + 'reviews/sony-zv-e10-review.html', category: 'Reviews', keywords: 'sony zv e10 vlog budget aps-c creator' },
+
+            // Camera Reviews - Canon
+            { title: 'Canon EOS R8 Review', url: basePath + 'reviews/canon-eos-r8-review.html', category: 'Reviews', keywords: 'canon r8 full frame budget value entry' },
+
+            // Camera Reviews - Fujifilm
+            { title: 'Fujifilm X-T5 Review', url: basePath + 'reviews/fujifilm-x-t5-review.html', category: 'Reviews', keywords: 'fuji fujifilm xt5 x-t5 40mp film simulation retro' },
+
+            // Camera Reviews - Panasonic
+            { title: 'Panasonic S5 II Review', url: basePath + 'reviews/panasonic-s5-ii-review.html', category: 'Reviews', keywords: 'panasonic s5ii s5 2 lumix full frame video' },
+
+            // Camera Reviews - Nikon
+            { title: 'Nikon Z8 Review', url: basePath + 'reviews/nikon-z8-review.html', category: 'Reviews', keywords: 'nikon z8 professional 8k flagship hybrid' },
+
+            // Camera Reviews - DJI
+            { title: 'DJI Osmo Pocket 3 Review', url: basePath + 'reviews/dji-osmo-pocket-3-review.html', category: 'Reviews', keywords: 'dji osmo pocket 3 gimbal compact travel vlog' },
 
             // Lenses
-            { title: 'Sony E-Mount Lenses', url: 'lenses/best-sony-e-mount-lenses.html', category: 'Lenses' },
-            { title: 'Canon RF Lenses', url: 'lenses/best-canon-rf-lenses.html', category: 'Lenses' },
-            { title: 'Fujifilm X-Mount Lenses', url: 'lenses/best-fujifilm-x-mount-lenses.html', category: 'Lenses' },
+            { title: 'Best Sony E-Mount Lenses', url: basePath + 'lenses/best-sony-e-mount-lenses.html', category: 'Lenses', keywords: 'sony e mount lens sigma tamron gmaster fe' },
+            { title: 'Best Canon RF Lenses', url: basePath + 'lenses/best-canon-rf-lenses.html', category: 'Lenses', keywords: 'canon rf lens rf-s l-series' },
+            { title: 'Best Fujifilm X-Mount Lenses', url: basePath + 'lenses/best-fujifilm-x-mount-lenses.html', category: 'Lenses', keywords: 'fuji fujifilm x mount xf lens' },
 
-            // Gear
-            { title: 'Best Tripods', url: 'gear/best-tripods.html', category: 'Gear' },
-            { title: 'Best Camera Bags', url: 'gear/best-camera-bags.html', category: 'Gear' },
-            { title: 'Best SD Cards', url: 'gear/best-sd-cards.html', category: 'Gear' }
+            // Gear & Accessories
+            { title: 'Best Tripods', url: basePath + 'gear/best-tripods.html', category: 'Gear', keywords: 'tripod manfrotto peak design ulanzi carbon fiber travel' },
+            { title: 'Best Camera Bags', url: basePath + 'gear/best-camera-bags.html', category: 'Gear', keywords: 'bag backpack peak design lowepro wandrd camera bag' },
+            { title: 'Best SD Cards', url: basePath + 'gear/best-sd-cards.html', category: 'Gear', keywords: 'sd card memory sandisk sony storage cfexpress' },
+
+            // Comparisons
+            { title: 'Sony A7 IV vs Canon R6 II', url: basePath + 'compare/sony-a7-iv-vs-canon-r6-ii.html', category: 'Compare', keywords: 'sony canon a7iv r6 comparison versus' },
+            { title: 'Sony A7 V vs Canon R6 III', url: basePath + 'compare/sony-a7-v-vs-canon-r6-iii.html', category: 'Compare', keywords: 'sony canon a7v r6iii comparison versus' },
+            { title: 'Sony ZV-E10 vs Sony A6700', url: basePath + 'compare/sony-zv-e10-vs-sony-a6700.html', category: 'Compare', keywords: 'sony zv e10 a6700 comparison upgrade' },
+            { title: 'Fujifilm X-S20 vs X-T5', url: basePath + 'compare/fujifilm-x-s20-vs-fujifilm-x-t5.html', category: 'Compare', keywords: 'fuji xs20 xt5 comparison versus' }
         ];
 
         // Create search results container
@@ -111,7 +135,8 @@
             searchTimeout = setTimeout(() => {
                 const results = searchData.filter(item =>
                     item.title.toLowerCase().includes(query) ||
-                    item.category.toLowerCase().includes(query)
+                    item.category.toLowerCase().includes(query) ||
+                    item.keywords.toLowerCase().includes(query)
                 );
 
                 displaySearchResults(results, resultsContainer, query);
@@ -124,6 +149,14 @@
                 resultsContainer.style.display = 'none';
             }
         });
+
+        // Close on ESC key
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                resultsContainer.style.display = 'none';
+                searchInput.blur();
+            }
+        });
     }
 
     function displaySearchResults(results, container, query) {
@@ -131,6 +164,9 @@
             container.innerHTML = `
         <div style="padding: 1.5rem; text-align: center; color: #8b9eb0;">
           No results found for "${query}"
+          <div style="margin-top: 0.5rem; font-size: 0.875rem;">
+            Try: "Sony", "Canon", "Vlog", "Tripod"
+          </div>
         </div>
       `;
             container.style.display = 'block';

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Affiliate Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #0d1322;
+            color: #e9eef9;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4da3ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .test-section {
+            border: 2px solid #4da3ff;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .result {
+            background: #10182b;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Affiliate Links Test Page</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Strategy A - Section with ID</h2>
+        <div id="nikon-z8">
+            <a href="#" class="btn-buy">Check Price (should update)</a>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Strategy B - Data Product Attribute</h2>
+        <a href="#" class="btn-buy" data-product="sony-a7iv">Check Price (should update)</a>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Comparison Table</h2>
+        <table>
+            <tr>
+                <td><a href="#sony-a7c-ii">Sony A7C II</a></td>
+                <td class="price-check">Original text</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="result" id="test-results">
+        <h3>Test Results:</h3>
+        <div id="results-content">Running tests...</div>
+    </div>
+
+    <script src="/assets/js/links.js"></script>
+    <script>
+        // Wait for links to be applied, then check results
+        setTimeout(() => {
+            const results = [];
+
+            // Test 1
+            const btn1 = document.querySelector('#nikon-z8 .btn-buy');
+            results.push(`Test 1 (Strategy A): href="${btn1.href}"`);
+            results.push(`  - Should be: https://amzn.to/4sMa95c`);
+            results.push(`  - ✅ PASS` + (btn1.href.includes('amzn.to') ? ' ✅' : ' ❌ FAIL'));
+
+            // Test 2
+            const btn2 = document.querySelector('[data-product="sony-a7iv"]');
+            results.push(`Test 2 (Strategy B): href="${btn2.href}"`);
+            results.push(`  - Should be: https://amzn.to/3Zmgs1u`);
+            results.push(`  - ${btn2.href.includes('amzn.to') ? '✅ PASS' : '❌ FAIL'}`);
+
+            // Test 3
+            const priceCell = document.querySelector('.price-check');
+            results.push(`Test 3 (Strategy C): innerHTML="${priceCell.innerHTML.substring(0, 50)}..."`);
+            results.push(`  - ${priceCell.innerHTML.includes('amzn.to') ? '✅ PASS' : '❌ FAIL'}`);
+
+            document.getElementById('results-content').innerHTML = results.join('<br>');
+        }, 1000);
+    </script>
+</body>
+
+</html>
