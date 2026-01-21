@@ -26,12 +26,13 @@ body {
 .header-sticky .container {
     display: flex;
     align-items: center;
-    height: 70px;
-    /* Fixed height for consistency */
+    height: 60px;
+    /* Reduced specific height for compact look */
 }
 
 .header-scrolled {
-    padding: 0.5rem 0;
+    padding: 0;
+    /* Remove padding as height is controlled by container */
 }
 
 .header-scrolled .brand-text {
@@ -51,13 +52,21 @@ body {
 /* Search Bar */
 .header-search {
     flex: 1;
-    max-width: 400px;
+    max-width: 320px;
+    /* Reduced from 400px for better aesthetic */
     position: relative;
+    transition: max-width 300ms ease;
+}
+
+.header-search:focus-within {
+    max-width: 400px;
+    /* Expand on focus */
 }
 
 .header-search input {
     width: 100%;
-    padding: 0.625rem 2.5rem 0.625rem 1rem;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    /* Slimmer padding */
     background: rgba(0, 10, 25, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 6px;
