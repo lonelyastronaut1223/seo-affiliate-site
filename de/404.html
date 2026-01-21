@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>404 - Seite nicht gefunden | Kameraupick</title>
     <meta name="description" content="Die gesuchte Seite existiert nicht.">
-    
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Kameraupick">
-  <meta property="og:title" content="Seite nicht gefunden — Cameraupick">
-  <meta property="og:description" content="Hoppla! Die gesuchte Seite scheint verschoben worden zu sein oder existiert nicht.">
-  <meta property="og:url" content="https://cameraupick.com/de/404.html">
-  <meta property="og:image" content="https://cameraupick.com/assets/images/logo.png">
-  <meta property="og:locale" content="de_DE">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Seite nicht gefunden — Cameraupick">
-  <meta name="twitter:description" content="Hoppla! Die gesuchte Seite scheint verschoben worden zu sein oder existiert nicht.">
-  <meta name="twitter:image" content="https://cameraupick.com/assets/images/logo.png">
-<link rel="stylesheet" href="../assets/css/style.min.css">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kameraupick">
+    <meta property="og:title" content="Seite nicht gefunden — Cameraupick">
+    <meta property="og:description"
+        content="Hoppla! Die gesuchte Seite scheint verschoben worden zu sein oder existiert nicht.">
+    <meta property="og:url" content="https://cameraupick.com/de/404.html">
+    <meta property="og:image" content="https://cameraupick.com/assets/images/logo.png">
+    <meta property="og:locale" content="de_DE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Seite nicht gefunden — Cameraupick">
+    <meta name="twitter:description"
+        content="Hoppla! Die gesuchte Seite scheint verschoben worden zu sein oder existiert nicht.">
+    <meta name="twitter:image" content="https://cameraupick.com/assets/images/logo.png">
+    <link rel="stylesheet" href="../assets/css/style.min.css">
+    <link rel="stylesheet" href="../assets/css/utilities.min.css">
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLCVQGNSW4"></script>
@@ -30,38 +33,37 @@
         gtag('config', 'G-DLCVQGNSW4');
     </script>
 
-  <meta property="article:modified_time" content="2026-01-18T12:00:00+01:00">
+    <meta property="article:modified_time" content="2026-01-21T12:00:00+01:00">
 </head>
 
 <body>
-    <div class="container" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
-        <div style="text-align: center; max-width: 600px; padding: 40px 20px;">
-            <h1 style="font-size: 72px; margin: 0; color: var(--accent);">404</h1>
-            <h2 style="font-size: 32px; margin: 20px 0;">Seite nicht gefunden</h2>
-            <p style="font-size: 18px; color: var(--muted); margin-bottom: 32px;">
+    <div class="container error-page">
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Seite nicht gefunden</h2>
+            <p class="error-desc">
                 Entschuldigung, die gesuchte Seite existiert nicht oder wurde verschoben.
             </p>
 
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="/de/" class="buy-btn" style="text-decoration: none;">
+            <div class="btn-row">
+                <a href="/de/" class="buy-btn no-underline">
                     ← Zur Startseite
                 </a>
-                <a href="/de/#testberichte" class="buy-btn"
-                    style="text-decoration: none; background: rgba(255,255,255,0.1);">
+                <a href="/de/#testberichte" class="buy-btn no-underline bg-glass">
                     Testberichte ansehen
                 </a>
             </div>
 
-            <div style="margin-top: 48px;">
-                <p style="color: var(--muted); font-size: 14px;">
+            <div class="mt-48">
+                <p class="text-muted text-sm">
                     Suchen Sie etwas Bestimmtes?
                 </p>
-                <div style="display: flex; gap: 12px; justify-content: center; margin-top: 16px; flex-wrap: wrap;">
-                    <a href="/de/#testberichte" style="color: var(--accent); text-decoration: none;">Testberichte</a>
-                    <span style="color: var(--muted);">·</span>
-                    <a href="/de/#ratgeber" style="color: var(--accent); text-decoration: none;">Ratgeber</a>
-                    <span style="color: var(--muted);">·</span>
-                    <a href="kontakt.html" style="color: var(--accent); text-decoration: none;">Kontakt</a>
+                <div class="link-row">
+                    <a href="/de/#testberichte" class="text-accent no-underline">Testberichte</a>
+                    <span class="text-muted">·</span>
+                    <a href="/de/#ratgeber" class="text-accent no-underline">Ratgeber</a>
+                    <span class="text-muted">·</span>
+                    <a href="kontakt.html" class="text-accent no-underline">Kontakt</a>
                 </div>
             </div>
         </div>
@@ -78,9 +80,9 @@
         }
     </script>
 
-  <!-- Anime.js Animation Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
-  <script src="../assets/js/animations.min.js" defer></script>
+    <!-- Anime.js Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+    <script src="../assets/js/animations.min.js" defer></script>
 </body>
 
 </html>
