@@ -30,6 +30,13 @@ body {
     /* Reduced specific height for compact look */
 }
 
+/* Fix vertical centering by removing inherited margin */
+.header-sticky .topbar {
+    margin-bottom: 0 !important;
+    width: 100%;
+    /* Ensure it spans the container */
+}
+
 .header-scrolled {
     padding: 0;
     /* Remove padding as height is controlled by container */

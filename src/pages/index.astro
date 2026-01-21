@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="Camera Reviews, Guides & Deals — cameraupick"
+	description="Find the best camera for your needs. Honest reviews, in-depth buying guides, and curated deals for photographers and vloggers."
+>
+	<!-- Hero Section -->
+	<section
+		class="hero"
+		style="padding: 24px; min-height: auto; margin-top: 0;"
+	>
+		<div
+			class="hero-grid"
+			style="grid-template-columns: 1fr; text-align: center;"
+		>
+			<div style="padding: 40px 0;">
+				<h1 style="font-size: 3rem; margin-bottom: 1rem;">
+					Find the right camera — faster.
+				</h1>
+				<p class="hero-sub" style="margin: 0 auto; max-width: 600px;">
+					Honest camera reviews and buying guides for beginners,
+					travelers and creators.
+				</p>
+			</div>
+			<!-- Optional Hero Image -->
+			<!-- <div class="hero-media">...</div> -->
+		</div>
+	</section>
+
+	<!-- Quiz Teaser -->
+	<section
+		class="section"
+		style="background: var(--bg-soft); padding: 40px 0; margin: 40px 0; border-y: 1px solid var(--border);"
+	>
+		<div class="container">
+			<div
+				class="cta"
+				style="flex-direction: row; justify-content: space-between; text-align: left;"
+			>
+				<div>
+					<h2>Discover Your Perfect Camera</h2>
+					<p>
+						Answer 3 quick questions to get a personalized
+						recommendation based on your needs.
+					</p>
+				</div>
+				<a href="#quiz" class="btn btn-primary">Start the Guide</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Guides Grid -->
+	<section class="container section">
+		<h2>Buying Guides</h2>
+		<p class="section-sub">
+			Start with the picks that fit your budget and how you shoot.
+		</p>
+
+		<div class="grid">
+			<a href="/guides/best-camera-for-beginners-2026.html" class="card">
+				<div class="card-thumb">
+					<img
+						src="/assets/images/guides/Vlog.webp"
+						alt="Camera on table"
+						loading="lazy"
+					/>
+				</div>
+				<h3>Best for Beginners</h3>
+				<p>Easy to use, affordable, and great upgrade paths.</p>
+				<div class="meta">UPDATED 2026</div>
+			</a>
+
+			<a href="/guides/best-vlog-camera.html" class="card">
+				<div class="card-thumb">
+					<img
+						src="/assets/images/guides/osmo-pocket-3.webp"
+						alt="Vlogging camera"
+						loading="lazy"
+					/>
+				</div>
+				<h3>Best for Vlogging</h3>
+				<p>Flip screens, great autofocus, and mic inputs.</p>
+				<div class="meta">TOP PICK: POCKET 3</div>
+			</a>
+
+			<a href="/guides/best-travel-camera.html" class="card">
+				<div class="card-thumb">
+					<img
+						src="/assets/images/guides/fuji-xt5.webp"
+						alt="Travel camera"
+						loading="lazy"
+					/>
+				</div>
+				<h3>Best for Travel</h3>
+				<p>Lightweight, durable, and stunning image quality.</p>
+				<div class="meta">COMPACT</div>
+			</a>
+		</div>
+	</section>
+</BaseLayout>

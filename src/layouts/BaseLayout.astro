@@ -1,0 +1,56 @@
+---
+import Header from "../components/Header.astro";
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <!-- CSS (Linking to public assets) -->
+        <link rel="stylesheet" href="/assets/css/style.min.css" />
+        <link rel="stylesheet" href="/assets/css/mega-menu.css" />
+        <link rel="stylesheet" href="/assets/css/utilities.min.css" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+        />
+
+        <!-- Analytics (Optional: Keep commented or migrate) -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLCVQGNSW4"></script> -->
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    </head>
+    <body>
+        <Header />
+
+        <main>
+            <slot />
+            <!-- Page content goes here -->
+        </main>
+
+        <footer>
+            <div
+                class="container"
+                style="text-align: center; padding: 32px 0; color: var(--muted, #888);"
+            >
+                © {new Date().getFullYear()} cameraupick
+            </div>
+        </footer>
+
+        <!-- Global Scripts -->
+        <script is:inline src="/assets/js/mega-menu.js"></script>
+        <script is:inline src="/assets/js/links.min.js"></script>
+        <script is:inline src="/assets/js/script.min.js"></script>
+    </body>
+</html>

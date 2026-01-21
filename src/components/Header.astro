@@ -1,0 +1,82 @@
+---
+---
+<header class="header-sticky">
+    <div class="container">
+        <div class="topbar">
+            <a class="brand-link" href="/">
+                <span class="brand-logo">📷</span>
+                cameraupick
+            </a>
+            <nav>
+                <a href="/">Home</a> ·
+                <a href="/#guides">Guides</a> ·
+                <a href="/lenses/">Lenses</a> ·
+                <a href="/gear/">Gear</a> ·
+                <a href="/deals.html" class="deals-link">Deals</a>
+
+                <div class="lang-switcher">
+                    <a href="/" aria-current="page">EN</a> · <a href="/de/">DE</a>
+                </div>
+            </nav>
+
+             <!-- Search Bar -->
+             <div class="header-search">
+                <input type="text" placeholder="Try 'best vlog camera' or 'Sony A7C'..." aria-label="Search">
+                <span class="search-icon">🔍</span>
+            </div>
+
+             <!-- Mobile Hamburger -->
+             <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu">
+    <div class="mobile-menu-header">
+        Menu
+        <button class="hamburger active" style="pointer-events: none;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="mobile-menu-item">
+        <a href="/" class="mobile-menu-header">Home</a>
+    </div>
+    <div class="mobile-menu-item">
+        <div class="mobile-menu-header">
+            Guides
+            <span class="mobile-menu-arrow">+</span>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="/guides/best-camera-for-beginners-2026.html">Beginners</a>
+            <a href="/guides/best-travel-camera.html">Travel</a>
+            <a href="/guides/best-vlog-camera.html">Vlogging</a>
+        </div>
+    </div>
+    <div class="mobile-menu-item">
+        <div class="mobile-menu-header">
+            Lenses
+            <span class="mobile-menu-arrow">+</span>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="/lenses/best-sony-e-mount-lenses.html">Sony E-Mount</a>
+            <a href="/lenses/best-canon-rf-lenses.html">Canon RF</a>
+            <a href="/lenses/best-fujifilm-x-mount-lenses.html">Fujifilm X</a>
+        </div>
+    </div>
+    <div class="mobile-menu-item">
+         <a href="/deals.html" style="color: var(--accent);">Deals & Offers</a>
+    </div>
+</div>
+
+<style>
+/* Scoped styles can go here, but since we have mega-menu.css, 
+   we will import it in the Layout to keep it global or import here.
+   For now, we rely on global CSS. */
+</style>
