@@ -14,8 +14,20 @@ body {
     left: 0 !important;
     right: 0 !important;
     z-index: 1000 !important;
-    background: var(--bg-primary);
+    background: var(--bg-primary, #0d1322);
+    /* Fallback to dark hex if var missing */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 0 !important;
+    /* Override style.css padding */
+    width: 100% !important;
+}
+
+/* Ensure the container inside sticky header behaves */
+.header-sticky .container {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    /* Fixed height for consistency */
 }
 
 .header-scrolled {
