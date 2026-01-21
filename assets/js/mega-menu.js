@@ -86,10 +86,10 @@
       top: calc(100% + 0.5rem);
       left: 0;
       right: 0;
-      background: var(--bg-elevated);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #0f1a2b;
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 8px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
       max-height: 400px;
       overflow-y: auto;
       display: none;
@@ -129,7 +129,7 @@
     function displaySearchResults(results, container, query) {
         if (results.length === 0) {
             container.innerHTML = `
-        <div style="padding: 1.5rem; text-align: center; color: var(--muted);">
+        <div style="padding: 1.5rem; text-align: center; color: #8b9eb0;">
           No results found for "${query}"
         </div>
       `;
@@ -143,15 +143,15 @@
         justify-content: space-between;
         align-items: center;
         padding: 0.875rem 1.25rem;
-        color: var(--text-primary);
+        color: #f0f4f8;
         text-decoration: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         transition: all 200ms ease;
-      " onmouseover="this.style.background='var(--bg-soft)'" onmouseout="this.style.background='transparent'">
+      " onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='transparent'">
         <span style="font-weight: 500;">${item.title}</span>
         <span style="
           font-size: 0.75rem;
-          color: var(--muted);
+          color: #8b9eb0;
           background: rgba(77, 163, 255, 0.15);
           padding: 0.25rem 0.625rem;
           border-radius: 4px;

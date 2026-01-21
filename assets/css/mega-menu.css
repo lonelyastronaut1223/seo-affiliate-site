@@ -84,6 +84,22 @@ body {
     position: relative;
 }
 
+/* Bridge the gap when dropdown is hovered */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.5rem;
+    height: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-item:hover::after {
+    pointer-events: auto;
+}
+
 .nav-link {
     display: flex;
     align-items: center;
