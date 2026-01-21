@@ -1,21 +1,26 @@
 {
   "stats": {
-    "total_html": 73,
+    "total_html": 74,
     "total_images": 161,
     "total_image_size_mb": 56.86034870147705
   },
   "issues": {
     "missing_meta_description": [
+      "test-affiliate-links.html",
       "offline.html",
       "includes/ga-snippet.html",
       "includes/schema-global.html",
       "includes/index_finder_fragment.html"
     ],
     "missing_og_tags": [
+      "test-affiliate-links.html",
       "offline.html",
       "includes/ga-snippet.html",
       "includes/schema-global.html",
       "includes/index_finder_fragment.html"
+    ],
+    "broken_links": [
+      "test-affiliate-links.html \u2192 /assets/js/links.js"
     ],
     "excessive_inline_styles": [
       "compare/sony-a7-iv-vs-canon-r6-ii.html (20 instances)",
