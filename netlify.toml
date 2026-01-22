@@ -2,7 +2,8 @@
 # https://docs.netlify.com/configure-builds/file-based-configuration/
 
 [build]
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
 
 # Security Headers
 [[headers]]

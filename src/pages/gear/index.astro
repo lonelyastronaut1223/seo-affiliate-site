@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Photography Gear & Accessories (2026) — cameraupick" description="Essential photography gear: tripods, camera bags, SD cards, and accessories. We test and recommend gear that we actually use every day.">
+<section class="hero">
+            <div class="hero-grid">
+                <div>
+                    <h1>Photography Gear & Accessories</h1>
+                    <p class="hero-sub">
+                        The right accessories make all the difference. We test tripods, bags, storage, and more —
+                        recommending only what we actually use.
+                    </p>
+                </div>
+                <div class="hero-media">
+                    <picture>
+                        <source srcset="../assets/images/gear/gear-hero.webp" type="image/webp">
+                        <img src="../assets/images/gear/gear-hero.jpg" alt="Camera gear and accessories" loading="eager"
+                            fetchpriority="high" decoding="async" width="1400" height="900"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+    <main class="container">
+
+        <section class="section">
+            <h2>Gear Guides by Category</h2>
+            <p class="section-sub">Find the best accessories for your photography and video needs</p>
+
+            <div class="grid">
+                <article class="card" style="border-left: 4px solid #8b5cf6;">
+                    <h3>📐 Tripods</h3>
+                    <p>From ultralight travel tripods to professional video sticks. We test stability, weight, and ease
+                        of use for real-world shooting.</p>
+                    <div class="meta">For: Landscapes, video, long exposures</div>
+                    <div style="margin-top: 16px;">
+                        <a href="best-tripods.html" class="btn-buy">View Tripod Guide →</a>
+                    </div>
+                </article>
+
+                <article class="card" style="border-left: 4px solid #ec4899;">
+                    <h3>🎒 Camera Bags</h3>
+                    <p>Backpacks, slings, and messenger bags that protect your gear while looking good. Comfort and
+                        organization matter.</p>
+                    <div class="meta">For: Travel, everyday carry, studio</div>
+                    <div style="margin-top: 16px;">
+                        <a href="best-camera-bags.html" class="btn-buy">View Bag Guide →</a>
+                    </div>
+                </article>
+
+                <article class="card" style="border-left: 4px solid #f59e0b;">
+                    <h3>💾 SD Cards</h3>
+                    <p>Speed matters — especially for 4K video and burst photos. We test real-world write speeds, not
+                        just marketing claims.</p>
+                    <div class="meta">For: 4K/8K video, high-speed burst</div>
+                    <div style="margin-top: 16px;">
+                        <a href="best-sd-cards.html" class="btn-buy">View SD Card Guide →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Essential Gear Checklist</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>🔋 Extra Batteries</h3>
+                    <p>Always carry at least 2 spare batteries. For Sony cameras, get the NP-FZ100. For Fuji, the
+                        NP-W126S or NP-W235.</p>
+                </article>
+
+                <article class="card">
+                    <h3>🔌 Fast USB-C Charger</h3>
+                    <p>Most modern cameras charge via USB-C. A 65W GaN charger can power your camera, laptop, and phone
+                        from one adapter.</p>
+                </article>
+
+                <article class="card">
+                    <h3>🧹 Cleaning Kit</h3>
+                    <p>Lens cloth, blower, and sensor swabs. Dust is inevitable — be prepared to clean your gear in the
+                        field.</p>
+                </article>
+
+                <article class="card">
+                    <h3>🎤 External Mic</h3>
+                    <p>For video creators, an external mic is essential. The Rode VideoMicro II is compact and sounds
+                        great.</p>
+                </article>
+
+                <article class="card">
+                    <h3>☀️ ND Filters</h3>
+                    <p>Control exposure in bright light. Variable ND filters (2-5 stops) are versatile for video work.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>📱 Remote Trigger</h3>
+                    <p>For long exposures and timelapse. Most cameras support smartphone apps or cheap Bluetooth
+                        remotes.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Quick Recommendations</h2>
+            <div class="comparison-table-wrapper">
+                <table class="comparison">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Budget Pick</th>
+                            <th>Best Overall</th>
+                            <th>Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tripod</strong></td>
+                            <td>Ulanzi MT-79</td>
+                            <td>Peak Design Travel</td>
+                            <td>Really Right Stuff</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Camera Bag</strong></td>
+                            <td>Lowepro Tahoe</td>
+                            <td>Peak Design Everyday</td>
+                            <td>Wandrd Prvke</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SD Card</strong></td>
+                            <td>SanDisk Extreme</td>
+                            <td>SanDisk Extreme Pro</td>
+                            <td>Sony Tough</td>
+                        </tr>
+                        <tr>
+                            <td><strong>External Mic</strong></td>
+                            <td>Rode VideoMicro II</td>
+                            <td>Rode Wireless GO II</td>
+                            <td>DJI Mic 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="affiliate">
+            <h2>Why Trust Our Gear Picks?</h2>
+            <p class="section-sub">
+                We actually use everything we recommend. No paid placements or "sent for review" items that we felt
+                obligated to promote.
+                Our gear goes with us on real shoots, travels, and video productions.
+            </p>
+        </section>
+
+    </main>
+</BaseLayout>

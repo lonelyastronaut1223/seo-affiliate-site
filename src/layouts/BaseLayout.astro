@@ -1,23 +1,31 @@
 ---
+/**
+ * Base Layout - EXACT structure from original index.html
+ * Includes all CSS, meta tags, scripts in the same order
+ */
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
-const { title, description } = Astro.props;
+interface Props {
+    title: string;
+    description: string;
+    canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="robots" content="index,follow,max-image-preview:large" />
+        <meta name="theme-color" content="#0b1220" />
 
-        <!-- CSS (Linking to public assets) -->
-        <link rel="stylesheet" href="/assets/css/style.min.css" />
-        <link rel="stylesheet" href="/assets/css/mega-menu.css" />
-        <link rel="stylesheet" href="/assets/css/utilities.min.css" />
-
-        <!-- Fonts -->
+        <!-- Font preload -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -25,32 +33,82 @@ const { title, description } = Astro.props;
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
         />
 
-        <!-- Analytics (Optional: Keep commented or migrate) -->
-        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLCVQGNSW4"></script> -->
+        <!-- Favicon / App Icons -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="/assets/images/favicon.png?v=2"
+        />
+        <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=2" />
+        <link rel="manifest" href="/site.webmanifest" />
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        {canonical && <link rel="canonical" href={canonical} />}
+
+        <!-- Open Graph / Twitter -->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="cameraupick" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+
+        <title>{title}</title>
+
+        <!-- CSS - SAME ORDER AS ORIGINAL -->
+        <link rel="stylesheet" href="/assets/css/style.min.css" />
+        <link rel="stylesheet" href="/assets/css/footer-enhancements.min.css" />
+        <link rel="stylesheet" href="/assets/css/loaders.min.css" />
+        <link rel="stylesheet" href="/assets/css/mega-menu.min.css" />
+
+        <!-- Google Analytics -->
+        <script
+            is:inline
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-DLCVQGNSW4"
+        ></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-DLCVQGNSW4");
+        </script>
     </head>
+
     <body>
+        <div class="reading-progress">
+            <div class="progress-bar"></div>
+        </div>
+
+        <a class="skip-link" href="#main">Skip to content</a>
+
         <Header />
 
-        <main>
-            <slot />
-            <!-- Page content goes here -->
-        </main>
+        <slot />
 
-        <footer>
-            <div
-                class="container"
-                style="text-align: center; padding: 32px 0; color: var(--muted, #888);"
-            >
-                © {new Date().getFullYear()} cameraupick
-            </div>
-        </footer>
+        <Footer />
 
-        <!-- Global Scripts -->
-        <script is:inline src="/assets/js/mega-menu.js"></script>
-        <script is:inline src="/assets/js/links.min.js"></script>
+        <!-- Scripts - SAME ORDER AS ORIGINAL -->
+        <script is:inline src="/assets/js/links.min.js?v=20260120"></script>
         <script is:inline src="/assets/js/script.min.js"></script>
+        <script is:inline src="/assets/js/mega-menu.min.js" defer></script>
+
+        <!-- Service Worker Registration -->
+        <script is:inline>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker
+                        .register("/sw.js")
+                        .then((reg) => console.log("SW registered"))
+                        .catch((err) => console.log("SW registration failed"));
+                });
+            }
+        </script>
+
+        <!-- Anime.js Animation Library -->
+        <script
+            is:inline
+            src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+            defer></script>
+        <script is:inline src="/assets/js/animations.min.js" defer></script>
     </body>
 </html>
