@@ -366,18 +366,50 @@ body {
 
 @media (max-width: 768px) {
 
-    .nav-menu,
+    /* Hide desktop navigation on mobile */
+    .nav-menu {
+        display: none !important;
+    }
+
+    /* Hide search bar on mobile */
     .header-search {
-        display: none;
+        display: none !important;
     }
 
-    .hamburger,
+    /* Show hamburger menu on mobile */
+    .hamburger {
+        display: flex !important;
+    }
+
     .mobile-menu {
-        display: flex;
+        display: flex !important;
+        flex-direction: column;
     }
 
+    /* Simplify header on mobile */
     .topbar-enhanced {
-        padding: 0.875rem 0;
+        padding: 0.75rem 0 !important;
+        gap: 1rem !important;
+    }
+
+    .header-sticky .container {
+        height: 56px !important;
+        padding: 0 1rem !important;
+    }
+
+    /* Hide language switcher in main header on mobile (move to mobile menu) */
+    .lang-switcher {
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.75rem;
+    }
+
+    /* Reduce body padding on mobile */
+    body {
+        padding-top: 56px !important;
     }
 }
 
