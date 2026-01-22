@@ -14,6 +14,48 @@ interface Props {
 
 const { title, description, canonical } = Astro.props;
 const currentYear = new Date().getFullYear();
+
+// Generate JSON-LD structured data
+const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    url: canonical || "https://cameraupick.com",
+    description: description,
+    inLanguage: "en",
+    isPartOf: {
+        "@type": "WebSite",
+        name: "cameraupick",
+        url: "https://cameraupick.com",
+        description: "Camera reviews, comparisons, and buying guides",
+        publisher: {
+            "@type": "Organization",
+            name: "cameraupick",
+            url: "https://cameraupick.com",
+            logo: {
+                "@type": "ImageObject",
+                url: "https://cameraupick.com/assets/images/logo.webp",
+                width: 28,
+                height: 28,
+            },
+            sameAs: [
+                "https://youtube.com/@Taylor-hv8bj",
+                "https://www.instagram.com/astronaut_taylor",
+            ],
+        },
+    },
+    breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://cameraupick.com",
+            },
+        ],
+    },
+});
 ---
 
 <!doctype html>
@@ -49,64 +91,38 @@ const currentYear = new Date().getFullYear();
         <meta property="og:site_name" content="cameraupick" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://cameraupick.com/og-image.png" />
+        <meta
+            property="og:image"
+            content="https://cameraupick.com/og-image.png"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="cameraupick - Camera Reviews, Comparisons & Buying Guides" />
-        <meta property="og:url" content={canonical || "https://cameraupick.com"} />
+        <meta
+            property="og:image:alt"
+            content="cameraupick - Camera Reviews, Comparisons & Buying Guides"
+        />
+        <meta
+            property="og:url"
+            content={canonical || "https://cameraupick.com"}
+        />
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://cameraupick.com/og-image.png" />
-        <meta name="twitter:image:alt" content="cameraupick - Camera Reviews, Comparisons & Buying Guides" />
+        <meta
+            name="twitter:image"
+            content="https://cameraupick.com/og-image.png"
+        />
+        <meta
+            name="twitter:image:alt"
+            content="cameraupick - Camera Reviews, Comparisons & Buying Guides"
+        />
 
         <title>{title}</title>
 
         <!-- Structured Data (Schema.org JSON-LD) -->
-        <script type="application/ld+json" is:inline>
-            {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": title,
-                "url": canonical || "https://cameraupick.com",
-                "description": description,
-                "inLanguage": "en",
-                "isPartOf": {
-                    "@type": "WebSite",
-                    "name": "cameraupick",
-                    "url": "https://cameraupick.com",
-                    "description": "Camera reviews, comparisons, and buying guides",
-                    "publisher": {
-                        "@type": "Organization",
-                        "name": "cameraupick",
-                        "url": "https://cameraupick.com",
-                        "logo": {
-                            "@type": "ImageObject",
-                            "url": "https://cameraupick.com/assets/images/logo.webp",
-                            "width": 28,
-                            "height": 28
-                        },
-                        "sameAs": [
-                            "https://youtube.com/@Taylor-hv8bj",
-                            "https://www.instagram.com/astronaut_taylor"
-                        ]
-                    }
-                },
-                "breadcrumb": {
-                    "@type": "BreadcrumbList",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": "Home",
-                            "item": "https://cameraupick.com"
-                        }
-                    ]
-                }
-            })}
-        </script>
+        <script type="application/ld+json" set:html={jsonLd} />
 
         <!-- CSS - SAME ORDER AS ORIGINAL -->
         <link rel="stylesheet" href="/assets/css/style.min.css" />
