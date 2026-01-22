@@ -7,7 +7,7 @@ body {
     padding-top: 70px !important;
 }
 
-/* Sticky Header */
+/* Sticky Header - Complete Rewrite for Perfect Alignment */
 .header-sticky {
     position: fixed !important;
     top: 0 !important;
@@ -15,100 +15,102 @@ body {
     right: 0 !important;
     z-index: 1000 !important;
     background: var(--bg-primary, #0d1322);
-    /* Fallback to dark hex if var missing */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     padding: 0 !important;
-    /* Override style.css padding */
+    margin: 0 !important;
     width: 100% !important;
 }
 
-/* Ensure the container inside sticky header behaves */
+/* Container - Fixed Height and Padding */
 .header-sticky .container {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    /* Reduced specific height for compact look */
-    padding: 0 1.5rem;
-    /* Consistent horizontal padding */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 60px !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
 }
 
-/* Fix vertical centering by removing inherited margin */
+/* Topbar - Perfect Flex Alignment */
 .header-sticky .topbar {
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-    width: 100%;
-    /* Ensure it spans the container */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
     padding: 0 !important;
-    /* Remove all padding - container handles spacing */
+    gap: 1.5rem !important;
 }
 
-.header-scrolled {
-    padding: 0;
-    /* Remove padding as height is controlled by container */
-}
-
-.header-scrolled .brand-text {
-    font-size: 1.1rem;
-}
-
-/* Enhanced Topbar */
+/* Topbar Enhanced - Remove ALL conflicting styles */
 .topbar-enhanced {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 100% !important;
+    gap: 1.5rem !important;
     padding: 0 !important;
-    /* Remove padding - let container handle it */
+    margin: 0 !important;
 }
 
-/* Search Bar */
+/* Brand Link - Flex Item */
+.brand-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex-shrink: 0 !important;
+}
+
+/* Search Bar - Centered Flex Item */
 .header-search {
-    flex: 1;
-    max-width: 320px;
-    /* Reduced from 400px for better aesthetic */
-    position: relative;
+    flex: 1 !important;
+    max-width: 350px !important;
+    min-width: 250px !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
 }
-
 
 .header-search input {
-    width: 100%;
-    padding: 0.5rem 2.5rem 0.5rem 1rem;
-    /* Slimmer padding */
-    background: rgba(0, 10, 25, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-    color: var(--text-primary);
-    font-size: 0.9rem;
-    transition: all 300ms ease;
+    width: 100% !important;
+    height: 38px !important;
+    padding: 0 2.5rem 0 1rem !important;
+    background: rgba(0, 10, 25, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 6px !important;
+    color: var(--text-primary) !important;
+    font-size: 0.9rem !important;
+    transition: all 300ms ease !important;
 }
 
 .header-search input:focus {
-    outline: none;
-    border-color: var(--accent-strong);
-    box-shadow: 0 0 0 3px rgba(77, 163, 255, 0.15);
+    outline: none !important;
+    border-color: var(--accent-strong) !important;
+    box-shadow: 0 0 0 3px rgba(77, 163, 255, 0.15) !important;
 }
 
 .header-search input::placeholder {
-    color: var(--muted);
+    color: var(--muted) !important;
 }
 
 .search-icon {
-    position: absolute;
-    right: 0.875rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted);
-    pointer-events: none;
+    position: absolute !important;
+    right: 0.875rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: var(--muted) !important;
+    pointer-events: none !important;
 }
 
-/* Navigation Menu */
+/* Navigation Menu - Flex Container */
 .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    flex-shrink: 0 !important;
 }
 
 .nav-item {
