@@ -87,7 +87,8 @@ const jsonLd = JSON.stringify({
         <link
             rel="preload"
             as="image"
-            imagesrcset="/assets/images/guides/main-page-640.webp 640w, /assets/images/guides/main-page-960.webp 960w, /assets/images/guides/main-page-1280.webp 1280w" imagesizes="(max-width: 768px) 100vw, 1280px"
+            imagesrcset="/assets/images/guides/main-page-640.webp 640w, /assets/images/guides/main-page-960.webp 960w, /assets/images/guides/main-page-1280.webp 1280w"
+            imagesizes="(max-width: 768px) 100vw, 1280px"
             type="image/webp"
         />
         <link rel="preload" as="style" href="/assets/css/bundle.min.css" />
@@ -223,11 +224,25 @@ const jsonLd = JSON.stringify({
             }
         </script>
 
-        <!-- Anime.js Animation Library -->
-        <script
-            is:inline
-            src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
-            defer></script>
-        <script is:inline src="/assets/js/animations.min.js" defer></script>
+        <!-- Anime.js Animation Library - Idle loaded to avoid blocking LCP -->
+        <script is:inline>
+            // Load animations after page is interactive (avoid forced reflow)
+            function loadAnimations() {
+                var anime = document.createElement("script");
+                anime.src =
+                    "https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js";
+                anime.onload = function () {
+                    var anim = document.createElement("script");
+                    anim.src = "/assets/js/animations.min.js";
+                    document.body.appendChild(anim);
+                };
+                document.body.appendChild(anime);
+            }
+            if (window.requestIdleCallback) {
+                requestIdleCallback(loadAnimations, { timeout: 3000 });
+            } else {
+                setTimeout(loadAnimations, 2000);
+            }
+        </script>
     </body>
 </html>
