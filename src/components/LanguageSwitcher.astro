@@ -1,0 +1,153 @@
+---
+/**
+ * Language Switcher Component
+ * Dynamically switches between EN and DE versions of the current page
+ */
+
+// Get current URL path
+const currentPath = Astro.url.pathname;
+
+// Define language mappings for all pages
+const languageMappings: Record<string, string> = {
+    // Home
+    "/": "/de/",
+    "/de/": "/",
+
+    // Guides
+    "/guides/best-camera-for-beginners-2026":
+        "/de/ratgeber/beste-kamera-fuer-anfaenger-2026",
+    "/guides/best-travel-camera": "/de/ratgeber/beste-reisekamera",
+    "/guides/best-vlog-camera": "/de/ratgeber/beste-vlog-kamera",
+    "/guides/best-budget-camera-under-800":
+        "/de/ratgeber/beste-budget-kamera-unter-800",
+    "/guides/best-hybrid-camera": "/de/ratgeber/beste-hybrid-kamera",
+    "/guides/best-full-frame-for-video":
+        "/de/ratgeber/beste-vollformat-fuer-video",
+    "/guides/best-action-360-camera": "/de/ratgeber/beste-action-360-kamera",
+
+    // DE Guides -> EN
+    "/de/ratgeber/beste-kamera-fuer-anfaenger-2026":
+        "/guides/best-camera-for-beginners-2026",
+    "/de/ratgeber/beste-reisekamera": "/guides/best-travel-camera",
+    "/de/ratgeber/beste-vlog-kamera": "/guides/best-vlog-camera",
+    "/de/ratgeber/beste-budget-kamera-unter-800":
+        "/guides/best-budget-camera-under-800",
+    "/de/ratgeber/beste-hybrid-kamera": "/guides/best-hybrid-camera",
+    "/de/ratgeber/beste-vollformat-fuer-video":
+        "/guides/best-full-frame-for-video",
+    "/de/ratgeber/beste-action-360-kamera": "/guides/best-action-360-camera",
+
+    // Reviews
+    "/reviews/sony-a7c-ii-review": "/de/bewertungen/sony-a7c-ii-testbericht",
+    "/reviews/sony-a7-iv-review": "/de/bewertungen/sony-a7-iv-testbericht",
+    "/reviews/fujifilm-x-t5-review":
+        "/de/bewertungen/fujifilm-x-t5-testbericht",
+    "/reviews/canon-eos-r8-review": "/de/bewertungen/canon-eos-r8-testbericht",
+    "/reviews/sony-zv-e10-review": "/de/bewertungen/sony-zv-e10-testbericht",
+    "/reviews/nikon-z8-review": "/de/bewertungen/nikon-z8-testbericht",
+    "/reviews/panasonic-s5-ii-review":
+        "/de/bewertungen/panasonic-s5-ii-testbericht",
+    "/reviews/dji-osmo-pocket-3-review":
+        "/de/bewertungen/dji-osmo-pocket-3-testbericht",
+
+    // DE Reviews -> EN
+    "/de/bewertungen/sony-a7c-ii-testbericht": "/reviews/sony-a7c-ii-review",
+    "/de/bewertungen/sony-a7-iv-testbericht": "/reviews/sony-a7-iv-review",
+    "/de/bewertungen/fujifilm-x-t5-testbericht":
+        "/reviews/fujifilm-x-t5-review",
+    "/de/bewertungen/canon-eos-r8-testbericht": "/reviews/canon-eos-r8-review",
+    "/de/bewertungen/sony-zv-e10-testbericht": "/reviews/sony-zv-e10-review",
+    "/de/bewertungen/nikon-z8-testbericht": "/reviews/nikon-z8-review",
+    "/de/bewertungen/panasonic-s5-ii-testbericht":
+        "/reviews/panasonic-s5-ii-review",
+    "/de/bewertungen/dji-osmo-pocket-3-testbericht":
+        "/reviews/dji-osmo-pocket-3-review",
+
+    // Lenses
+    "/lenses/best-sony-e-mount-lenses":
+        "/de/objektive/beste-sony-e-mount-objektive",
+    "/lenses/best-canon-rf-lenses": "/de/objektive/beste-canon-rf-objektive",
+    "/lenses/best-fujifilm-x-mount-lenses":
+        "/de/objektive/beste-fujifilm-x-mount-objektive",
+
+    // DE Lenses -> EN
+    "/de/objektive/beste-sony-e-mount-objektive":
+        "/lenses/best-sony-e-mount-lenses",
+    "/de/objektive/beste-canon-rf-objektive": "/lenses/best-canon-rf-lenses",
+    "/de/objektive/beste-fujifilm-x-mount-objektive":
+        "/lenses/best-fujifilm-x-mount-lenses",
+
+    // Gear
+    "/gear/best-tripods": "/de/zubehoer/beste-stative",
+    "/gear/best-camera-bags": "/de/zubehoer/beste-kamerataschen",
+    "/gear/best-sd-cards": "/de/zubehoer/beste-sd-karten",
+
+    // DE Gear -> EN
+    "/de/zubehoer/beste-stative": "/gear/best-tripods",
+    "/de/zubehoer/beste-kamerataschen": "/gear/best-camera-bags",
+    "/de/zubehoer/beste-sd-karten": "/gear/best-sd-cards",
+
+    // Comparisons
+    "/compare/sony-a7-iv-vs-canon-r6-ii":
+        "/de/vergleiche/sony-a7-iv-vs-canon-r6-ii",
+    "/compare/sony-a7-v-vs-canon-r6-iii":
+        "/de/vergleiche/sony-a7-v-vs-canon-r6-iii",
+    "/compare/sony-zv-e10-vs-sony-a6700":
+        "/de/vergleiche/sony-zv-e10-vs-sony-a6700",
+    "/compare/fujifilm-x-s20-vs-fujifilm-x-t5":
+        "/de/vergleiche/fujifilm-x-s20-vs-fujifilm-x-t5",
+
+    // DE Comparisons -> EN
+    "/de/vergleiche/sony-a7-iv-vs-canon-r6-ii":
+        "/compare/sony-a7-iv-vs-canon-r6-ii",
+    "/de/vergleiche/sony-a7-v-vs-canon-r6-iii":
+        "/compare/sony-a7-v-vs-canon-r6-iii",
+    "/de/vergleiche/sony-zv-e10-vs-sony-a6700":
+        "/compare/sony-zv-e10-vs-sony-a6700",
+    "/de/vergleiche/fujifilm-x-s20-vs-fujifilm-x-t5":
+        "/compare/fujifilm-x-s20-vs-fujifilm-x-t5",
+
+    // Static pages
+    "/about": "/de/ueber-uns",
+    "/contact": "/de/kontakt",
+    "/privacy": "/de/datenschutz",
+    "/deals": "/de/angebote",
+
+    // DE Static -> EN
+    "/de/ueber-uns": "/about",
+    "/de/kontakt": "/contact",
+    "/de/datenschutz": "/privacy",
+    "/de/angebote": "/deals",
+};
+
+// Normalize path (remove trailing slash for comparison, except for root)
+function normalizePath(path: string): string {
+    if (path === "/" || path === "/de/") return path;
+    return path.replace(/\/$/, "");
+}
+
+const normalizedPath = normalizePath(currentPath);
+
+// Determine current language and get alternate path
+const isGerman = currentPath.startsWith("/de");
+const alternatePath =
+    languageMappings[normalizedPath] || (isGerman ? "/" : "/de/");
+
+// Current language for aria-current
+const enPath = isGerman ? alternatePath : currentPath;
+const dePath = isGerman ? currentPath : alternatePath;
+---
+
+<div class="lang-switcher">
+    <a
+        href={isGerman ? alternatePath : normalizedPath}
+        hreflang="en"
+        aria-current={!isGerman ? "page" : undefined}>EN</a
+    >
+    <span>·</span>
+    <a
+        href={isGerman ? normalizedPath : alternatePath}
+        hreflang="de"
+        aria-current={isGerman ? "page" : undefined}>DE</a
+    >
+</div>

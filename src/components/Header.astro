@@ -1,8 +1,9 @@
 ---
 /**
- * Header Component - EXACT COPY from original index.html (lines 220-377)
- * DO NOT MODIFY - This is a verbatim copy to ensure design consistency
+ * Header Component
+ * Updated to use dynamic LanguageSwitcher for proper page-specific language switching
  */
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 ---
 
 <header class="header-sticky">
@@ -166,12 +167,8 @@
                 <a href="/deals" class="nav-link deals-link">Deals</a>
             </nav>
 
-            <!-- Language Switcher -->
-            <div class="lang-switcher">
-                <a href="/" hreflang="en" aria-current="page">EN</a>
-                <span>·</span>
-                <a href="/de/" hreflang="de">DE</a>
-            </div>
+            <!-- Language Switcher (Dynamic) -->
+            <LanguageSwitcher />
 
             <!-- Mobile Hamburger -->
             <button
