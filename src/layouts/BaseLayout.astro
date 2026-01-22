@@ -130,20 +130,9 @@ const jsonLd = JSON.stringify({
         <link rel="stylesheet" href="/assets/css/loaders.min.css" />
         <link rel="stylesheet" href="/assets/css/mega-menu.min.css" />
 
-        <!-- Google Analytics -->
-        <script
-            is:inline
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-DLCVQGNSW4"
-        ></script>
-        <script is:inline>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", "G-DLCVQGNSW4");
-        </script>
+        <!-- Google Analytics - Deferred for performance -->
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     </head>
 
     <body>
@@ -164,8 +153,9 @@ const jsonLd = JSON.stringify({
         <script is:inline src="/assets/js/script.min.js"></script>
         <script is:inline src="/assets/js/mega-menu.min.js" defer></script>
 
-        <!-- Service Worker Registration -->
+        <!-- Service Worker Registration & Deferred Analytics -->
         <script is:inline>
+            // Service Worker
             if ("serviceWorker" in navigator) {
                 window.addEventListener("load", () => {
                     navigator.serviceWorker
@@ -173,6 +163,29 @@ const jsonLd = JSON.stringify({
                         .then((reg) => console.log("SW registered"))
                         .catch((err) => console.log("SW registration failed"));
                 });
+            }
+
+            // Deferred Google Analytics - loads after page is interactive
+            function loadGA() {
+                var s = document.createElement("script");
+                s.async = true;
+                s.src =
+                    "https://www.googletagmanager.com/gtag/js?id=G-DLCVQGNSW4";
+                document.head.appendChild(s);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag("js", new Date());
+                gtag("config", "G-DLCVQGNSW4");
+            }
+
+            // Load GA after page is fully loaded and idle
+            if (window.requestIdleCallback) {
+                requestIdleCallback(loadGA);
+            } else {
+                setTimeout(loadGA, 2000);
             }
         </script>
 
