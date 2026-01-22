@@ -1,22 +1,50 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="cameraupick — Camera Reviews, Comparisons & Buying Guides (2026)" description="Honest camera reviews, comparisons, and beginner-friendly buying guides. Updated picks for travel, vlog, budget, and hybrid cameras.">
-<main id="main" class="container">
+<BaseLayout
+  title="cameraupick — Camera Reviews, Comparisons & Buying Guides (2026)"
+  description="Honest camera reviews, comparisons, and beginner-friendly buying guides. Updated picks for travel, vlog, budget, and hybrid cameras."
+>
+  <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">
         <div>
           <h1>Find the right camera — faster.</h1>
           <p class="hero-sub">
-            Honest camera reviews and buying guides for beginners, travelers and creators.
+            Honest camera reviews and buying guides for beginners, travelers and
+            creators.
           </p>
         </div>
         <div class="hero-media">
           <picture>
-            <source srcset="/assets/images/guides/main-page-1280.webp" type="image/webp">
-            <img src="/assets/images/guides/main-page-1280.jpg" alt="Modern mirrorless camera buying guide hero image"
-              loading="eager" fetchpriority="high" decoding="async" width="1280" height="600" />
+            <!-- WebP with responsive sizes -->
+            <source
+              srcset="/assets/images/guides/main-page-640.webp 640w,
+                      /assets/images/guides/main-page-960.webp 960w,
+                      /assets/images/guides/main-page-1280.webp 1280w"
+              sizes="(max-width: 768px) 100vw, 
+                     (max-width: 1200px) 80vw, 
+                     1280px"
+              type="image/webp"
+            />
+
+            <!-- JPEG fallback with responsive sizes -->
+            <img
+              src="/assets/images/guides/main-page-1280.jpg"
+              srcset="/assets/images/guides/main-page-640.jpg 640w,
+                      /assets/images/guides/main-page-960.jpg 960w,
+                      /assets/images/guides/main-page-1280.jpg 1280w"
+              sizes="(max-width: 768px) 100vw, 
+                     (max-width: 1200px) 80vw, 
+                     1280px"
+              alt="Modern mirrorless camera buying guide hero image"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              width="1280"
+              height="600"
+            />
           </picture>
         </div>
       </div>
@@ -25,8 +53,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="cta quiz-card">
         <div>
           <h2 class="quiz-title">Discover Your Perfect Camera</h2>
-          <p class="quiz-desc">Answer 3 quick questions to get a personalized recommendation based on your
-            needs.
+          <p class="quiz-desc">
+            Answer 3 quick questions to get a personalized recommendation based
+            on your needs.
           </p>
         </div>
         <button id="start-quiz" class="btn quiz-btn-start">
@@ -36,7 +65,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- Quiz Modal -->
       <div id="quiz-modal" class="quiz-modal">
-
         <!-- Close Button -->
         <button id="close-quiz" class="quiz-close-btn">&times;</button>
 
@@ -45,9 +73,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>1. What will you primarily shoot?</h3>
           <p>Select the most important one.</p>
           <div class="quiz-grid">
-            <button class="btn quiz-option" data-type="video">🎥 Video / Vlogs</button>
-            <button class="btn quiz-option" data-type="photo">📸 Photography</button>
-            <button class="btn quiz-option" data-type="hybrid">⚖️ Both (Hybrid)</button>
+            <button class="btn quiz-option" data-type="video"
+              >🎥 Video / Vlogs</button
+            >
+            <button class="btn quiz-option" data-type="photo"
+              >📸 Photography</button
+            >
+            <button class="btn quiz-option" data-type="hybrid"
+              >⚖️ Both (Hybrid)</button
+            >
           </div>
         </div>
 
@@ -56,8 +90,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>2. What is your experience level?</h3>
           <p>Be honest, we won't judge!</p>
           <div class="quiz-grid">
-            <button class="btn quiz-option" data-exp="beginner">Beginner</button>
-            <button class="btn quiz-option" data-exp="enthusiast">Enthusiast</button>
+            <button class="btn quiz-option" data-exp="beginner">Beginner</button
+            >
+            <button class="btn quiz-option" data-exp="enthusiast"
+              >Enthusiast</button
+            >
             <button class="btn quiz-option" data-exp="pro">Pro</button>
           </div>
         </div>
@@ -67,8 +104,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>3. What is your budget?</h3>
           <p>Including a lens.</p>
           <div class="quiz-grid">
-            <button class="btn quiz-option" data-budget="low">Under $1,000</button>
-            <button class="btn quiz-option" data-budget="mid">$1,000 - $2,500</button>
+            <button class="btn quiz-option" data-budget="low"
+              >Under $1,000</button
+            >
+            <button class="btn quiz-option" data-budget="mid"
+              >$1,000 - $2,500</button
+            >
             <button class="btn quiz-option" data-budget="high">$2,500+</button>
           </div>
         </div>
@@ -78,104 +119,204 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>We found your match!</h3>
           <p>Based on your answers, this is the best choice.</p>
           <div id="recommendation-content" class="quiz-recommendation"></div>
-          <button id="restart-quiz" class="btn quiz-restart-btn">Start Over ↺</button>
+          <button id="restart-quiz" class="btn quiz-restart-btn"
+            >Start Over ↺</button
+          >
         </div>
       </div>
     </section>
     <section class="section" id="guides">
       <h2>Buying Guides</h2>
-      <p class="section-sub">Start with the picks that fit your budget and how you shoot.</p>
+      <p class="section-sub">
+        Start with the picks that fit your budget and how you shoot.
+      </p>
       <div class="grid">
         <article class="card">
           <div class="card-thumb">
             <picture>
-              <source srcset="/assets/images/guides/beginner-sm.webp 600w, assets/images/guides/beginner.webp 1200w"
-                sizes="(max-width: 768px) 100vw, 50vw" type="image/webp">
-              <img loading="lazy" decoding="async" src="/assets/images/guides/beginner.jpg?v=20260111" srcset="/assets/images/guides/beginner-sm.jpg?v=20260111 600w,
-                        assets/images/guides/beginner.jpg?v=20260111 1200w" sizes="(max-width: 768px) 100vw, 50vw"
-                alt="Beginner mirrorless camera kit" width="1200" height="800">
+              <source
+                srcset="/assets/images/guides/beginner-sm.webp 600w, assets/images/guides/beginner.webp 1200w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                type="image/webp"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/guides/beginner.jpg?v=20260111"
+                srcset="/assets/images/guides/beginner-sm.jpg?v=20260111 600w,
+                        assets/images/guides/beginner.jpg?v=20260111 1200w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                alt="Beginner mirrorless camera kit"
+                width="1200"
+                height="800"
+              />
             </picture>
           </div>
-          <h3><a href="/guides/best-camera-for-beginners-2026">Best Camera for Beginners (2026)</a></h3>
-          <p>Safe, easy picks with fast AF, simple menus, solid battery, and lenses you can grow with.</p>
+          <h3>
+            <a href="/guides/best-camera-for-beginners-2026"
+              >Best Camera for Beginners (2026)</a>
+          </h3>
+          <p>
+            Safe, easy picks with fast AF, simple menus, solid battery, and
+            lenses you can grow with.
+          </p>
           <div class="meta">Beginner</div>
         </article>
 
         <article class="card">
           <div class="card-thumb">
             <picture>
-              <source srcset="/assets/images/guides/travel.webp" type="image/webp">
-              <img loading="lazy" decoding="async" src="/assets/images/guides/travel.jpg?v=20260111"
-                alt="Compact travel camera used on the street" width="1200" height="800">
+              <source
+                srcset="/assets/images/guides/travel.webp"
+                type="image/webp"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/guides/travel.jpg?v=20260111"
+                alt="Compact travel camera used on the street"
+                width="1200"
+                height="800"
+              />
             </picture>
           </div>
           <h3><a href="/guides/best-travel-camera">Best Travel Camera</a></h3>
-          <p>Carry-light kits that still deliver stabilized 4K and sharp travel photos.</p>
+          <p>
+            Carry-light kits that still deliver stabilized 4K and sharp travel
+            photos.
+          </p>
           <div class="meta">Travel</div>
         </article>
 
         <article class="card">
           <div class="card-thumb">
             <picture>
-              <source srcset="/assets/images/guides/vlog.webp" type="image/webp">
-              <img loading="lazy" decoding="async" src="/assets/images/guides/vlog.jpg?v=20260111"
-                alt="Vlog camera with microphone setup" width="1200" height="800">
+              <source
+                srcset="/assets/images/guides/vlog.webp"
+                type="image/webp"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/guides/vlog.jpg?v=20260111"
+                alt="Vlog camera with microphone setup"
+                width="1200"
+                height="800"
+              />
             </picture>
           </div>
           <h3><a href="/guides/best-vlog-camera">Best Vlog Camera</a></h3>
-          <p>Fast AF, flip screens, gyro data or IBIS, and clean audio options.</p>
+          <p>
+            Fast AF, flip screens, gyro data or IBIS, and clean audio options.
+          </p>
           <div class="meta">Video</div>
         </article>
 
         <article class="card">
           <div class="card-thumb">
             <picture>
-              <source srcset="/assets/images/guides/budget.webp" type="image/webp">
-              <img loading="lazy" decoding="async" src="/assets/images/guides/budget.jpg?v=20260111"
-                alt="Affordable mirrorless camera on a wooden desk" width="1200" height="800">
+              <source
+                srcset="/assets/images/guides/budget.webp"
+                type="image/webp"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/guides/budget.jpg?v=20260111"
+                alt="Affordable mirrorless camera on a wooden desk"
+                width="1200"
+                height="800"
+              />
             </picture>
           </div>
-          <h3><a href="/guides/best-budget-camera-under-800">Best Budget Camera Under $800</a></h3>
-          <p>Value picks with reliable AF, decent battery, and affordable lens paths.</p>
+          <h3>
+            <a href="/guides/best-budget-camera-under-800"
+              >Best Budget Camera Under $800</a>
+          </h3>
+          <p>
+            Value picks with reliable AF, decent battery, and affordable lens
+            paths.
+          </p>
           <div class="meta">Budget</div>
         </article>
 
         <article class="card">
           <div class="card-thumb">
             <picture>
-              <source srcset="/assets/images/guides/hybrid.webp" type="image/webp">
-              <img loading="lazy" decoding="async" src="/assets/images/guides/hybrid.jpg?v=20260111"
-                alt="Mirrorless camera body close up" width="1200" height="800">
+              <source
+                srcset="/assets/images/guides/hybrid.webp"
+                type="image/webp"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/guides/hybrid.jpg?v=20260111"
+                alt="Mirrorless camera body close up"
+                width="1200"
+                height="800"
+              />
             </picture>
           </div>
           <h3><a href="/guides/best-hybrid-camera">Best Hybrid Camera</a></h3>
-          <p>Balanced photo-video bodies with 10-bit, dependable AF, and strong ecosystems.</p>
+          <p>
+            Balanced photo-video bodies with 10-bit, dependable AF, and strong
+            ecosystems.
+          </p>
           <div class="meta">Hybrid</div>
         </article>
 
         <article class="card">
           <div class="card-thumb">
             <picture>
-              <source srcset="/assets/images/guides/fullframe-video.webp" type="image/webp">
-              <img loading="lazy" decoding="async" src="/assets/images/guides/fullframe-video.jpg?v=20260111"
-                alt="Full frame camera video rig" width="1200" height="800">
+              <source
+                srcset="/assets/images/guides/fullframe-video.webp"
+                type="image/webp"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/guides/fullframe-video.jpg?v=20260111"
+                alt="Full frame camera video rig"
+                width="1200"
+                height="800"
+              />
             </picture>
           </div>
-          <h3><a href="/guides/best-full-frame-for-video">Best Full-Frame for Video</a></h3>
-          <p>Full-frame hybrids with strong codecs, low rolling shutter, and good IBIS.</p>
+          <h3>
+            <a href="/guides/best-full-frame-for-video"
+              >Best Full-Frame for Video</a>
+          </h3>
+          <p>
+            Full-frame hybrids with strong codecs, low rolling shutter, and good
+            IBIS.
+          </p>
           <div class="meta">Video · Full-frame</div>
         </article>
 
         <article class="card">
           <div class="card-thumb">
             <picture>
-              <source srcset="/assets/images/guides/action-360.webp" type="image/webp">
-              <img loading="lazy" decoding="async" src="/assets/images/guides/action-360.jpg?v=20260111"
-                alt="Action camera mounted outdoors" width="1200" height="800">
+              <source
+                srcset="/assets/images/guides/action-360.webp"
+                type="image/webp"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/guides/action-360.jpg?v=20260111"
+                alt="Action camera mounted outdoors"
+                width="1200"
+                height="800"
+              />
             </picture>
           </div>
-          <h3><a href="/guides/best-action-360-camera">Best Action & 360 Camera</a></h3>
-          <p>Rugged cams with horizon lock, invisible sticks, and easy reframing.</p>
+          <h3>
+            <a href="/guides/best-action-360-camera"
+              >Best Action & 360 Camera</a>
+          </h3>
+          <p>
+            Rugged cams with horizon lock, invisible sticks, and easy reframing.
+          </p>
           <div class="meta">Action · 360</div>
         </article>
       </div>
@@ -183,12 +324,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <section class="section" id="reviews">
       <h2>Latest Reviews</h2>
-      <p class="section-sub">Hands-on impressions, pros/cons, and clear "who should buy" guidance.</p>
+      <p class="section-sub">
+        Hands-on impressions, pros/cons, and clear "who should buy" guidance.
+      </p>
       <div class="grid">
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/sony-a7c-ii.webp"
-              alt="Sony A7C II compact full-frame camera" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/sony-a7c-ii.webp"
+              alt="Sony A7C II compact full-frame camera"
+              width="1200"
+              height="800"
+            />
           </div>
           <h3><a href="/reviews/sony-a7c-ii-review">Sony A7C II Review</a></h3>
           <div class="rating-display">
@@ -196,14 +345,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="rating-score">4.5</span>
             <span class="review-count">(76 reviews)</span>
           </div>
-          <p>Ultra-compact full-frame with AI autofocus. Perfect for travel; same sensor as A7 IV in smaller body.
-            Single card slot but excellent portability.</p>
+          <p>
+            Ultra-compact full-frame with AI autofocus. Perfect for travel; same
+            sensor as A7 IV in smaller body. Single card slot but excellent
+            portability.
+          </p>
           <div class="meta">Compact Full-Frame · Hybrid</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/sony-a7iv.webp" alt="Sony A7 IV hybrid camera"
-              width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/sony-a7iv.webp"
+              alt="Sony A7 IV hybrid camera"
+              width="1200"
+              height="800"
+            />
           </div>
           <h3><a href="/reviews/sony-a7-iv-review">Sony A7 IV Review</a></h3>
           <div class="rating-display">
@@ -211,75 +369,134 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="rating-score">4.7</span>
             <span class="review-count">(142 reviews)</span>
           </div>
-          <p>Hybrid favorite with strong AF and color; menus need learning. 10-bit, solid thermals, great lens
-            options;
-            rolling shutter still to mind.</p>
+          <p>
+            Hybrid favorite with strong AF and color; menus need learning.
+            10-bit, solid thermals, great lens options; rolling shutter still to
+            mind.
+          </p>
           <div class="meta">Full-frame · Hybrid</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/fujifilm-x-t5.webp"
-              alt="Fujifilm X-T5 mirrorless camera" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/fujifilm-x-t5.webp"
+              alt="Fujifilm X-T5 mirrorless camera"
+              width="1200"
+              height="800"
+            />
           </div>
-          <h3><a href="/reviews/fujifilm-x-t5-review">Fujifilm X-T5 Review</a></h3>
+          <h3>
+            <a href="/reviews/fujifilm-x-t5-review">Fujifilm X-T5 Review</a>
+          </h3>
           <div class="rating-display">
             <span class="stars">★★★★★</span>
             <span class="rating-score">4.6</span>
             <span class="review-count">(89 reviews)</span>
           </div>
-          <p>40MP detail, film sims, classic dials. Best for photo-first shooters; video good but rolling shutter in
-            HQ
-            needs care.</p>
+          <p>
+            40MP detail, film sims, classic dials. Best for photo-first
+            shooters; video good but rolling shutter in HQ needs care.
+          </p>
           <div class="meta">APS-C · Photo-first</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/canon-eos-r8.webp"
-              alt="Canon EOS R8 full-frame camera" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/canon-eos-r8.webp"
+              alt="Canon EOS R8 full-frame camera"
+              width="1200"
+              height="800"
+            />
           </div>
-          <h3><a href="/reviews/canon-eos-r8-review">Canon EOS R8 Review</a></h3>
-          <p>Lightweight full-frame with top AF and Canon color. Perfect FF starter; add batteries and avoid fast pans
-            for rolling shutter.</p>
+          <h3>
+            <a href="/reviews/canon-eos-r8-review">Canon EOS R8 Review</a>
+          </h3>
+          <p>
+            Lightweight full-frame with top AF and Canon color. Perfect FF
+            starter; add batteries and avoid fast pans for rolling shutter.
+          </p>
           <div class="meta">Value · Video-friendly</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/sony-zv-e10-original.webp"
-              alt="Sony ZV-E10 vlog camera" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/sony-zv-e10-original.webp"
+              alt="Sony ZV-E10 vlog camera"
+              width="1200"
+              height="800"
+            />
           </div>
           <h3><a href="/reviews/sony-zv-e10-review">Sony ZV-E10 Review</a></h3>
-          <p>Best entry vlog cam with flip screen, tally light, mic jack; lacks 4K60 but unbeatable for budget
-            creators.
+          <p>
+            Best entry vlog cam with flip screen, tally light, mic jack; lacks
+            4K60 but unbeatable for budget creators.
           </p>
           <div class="meta">Vlog · Budget</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/nikon-z8.webp"
-              alt="Nikon Z8 professional camera" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/nikon-z8.webp"
+              alt="Nikon Z8 professional camera"
+              width="1200"
+              height="800"
+            />
           </div>
           <h3><a href="/reviews/nikon-z8-review">Nikon Z8 Quick Take</a></h3>
-          <p>Pro-level stills/video, 8K options, strong AF. Great for serious hybrid shooters wanting pro ergonomics
-            in
-            a smaller body.</p>
+          <p>
+            Pro-level stills/video, 8K options, strong AF. Great for serious
+            hybrid shooters wanting pro ergonomics in a smaller body.
+          </p>
           <div class="meta">Pro · Hybrid</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/panasonic-s5ii.webp"
-              alt="Panasonic S5 II hybrid camera" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/panasonic-s5ii.webp"
+              alt="Panasonic S5 II hybrid camera"
+              width="1200"
+              height="800"
+            />
           </div>
-          <h3><a href="/reviews/panasonic-s5-ii-review">Panasonic S5 II Quick Take</a></h3>
-          <p>PDAF fixes AF, strong IBIS, 6K open-gate, great value for video-first creators.</p>
+          <h3>
+            <a href="/reviews/panasonic-s5-ii-review"
+              >Panasonic S5 II Quick Take</a>
+          </h3>
+          <p>
+            PDAF fixes AF, strong IBIS, 6K open-gate, great value for
+            video-first creators.
+          </p>
           <div class="meta">Full-frame · Hybrid</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/dji-osmo-pocket-3.webp"
-              alt="DJI Osmo Pocket 3 gimbal camera" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/dji-osmo-pocket-3.webp"
+              alt="DJI Osmo Pocket 3 gimbal camera"
+              width="1200"
+              height="800"
+            />
           </div>
-          <h3><a href="/reviews/dji-osmo-pocket-3-review">DJI Osmo Pocket 3 Quick Take</a></h3>
-          <p>1-inch gimbal cam, great stabilization, improved skin tones. Perfect for travel walk-and-talk.</p>
+          <h3>
+            <a href="/reviews/dji-osmo-pocket-3-review"
+              >DJI Osmo Pocket 3 Quick Take</a>
+          </h3>
+          <p>
+            1-inch gimbal cam, great stabilization, improved skin tones. Perfect
+            for travel walk-and-talk.
+          </p>
           <div class="meta">Vlog · Pocket</div>
         </article>
       </div>
@@ -293,21 +510,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <article class="card">
           <div class="deal-badge">-$100</div>
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/sony-zv-e10-original.webp"
-              alt="Sony ZV-E10 deal" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/sony-zv-e10-original.webp"
+              alt="Sony ZV-E10 deal"
+              width="1200"
+              height="800"
+            />
           </div>
           <h3><a href="/reviews/sony-zv-e10-review">Sony ZV-E10 Kit</a></h3>
           <p>Budget vlog camera with flip screen. Includes 16-50mm lens.</p>
-          <div class="meta deal-price">$598 <span class="deal-price-old">was $698</span></div>
+          <div class="meta deal-price">
+            $598 <span class="deal-price-old">was $698</span>
+          </div>
         </article>
 
         <article class="card">
           <div class="deal-badge">-$300</div>
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/guides/panasonic-s5ii.webp"
-              alt="Panasonic S5 II deal" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/guides/panasonic-s5ii.webp"
+              alt="Panasonic S5 II deal"
+              width="1200"
+              height="800"
+            />
           </div>
-          <h3><a href="/reviews/panasonic-s5-ii-review">Panasonic S5 II Body</a></h3>
+          <h3>
+            <a href="/reviews/panasonic-s5-ii-review">Panasonic S5 II Body</a>
+          </h3>
           <p>Full-frame hybrid with phase-detect AF. Lowest price ever.</p>
           <div class="meta deal-price">$1,697</div>
         </article>
@@ -316,7 +549,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="card-thumb card-placeholder">
             <div class="card-placeholder-inner">
               <div class="card-placeholder-icon">💰</div>
-              <p class="card-placeholder-text">SanDisk cards, batteries, and more</p>
+              <p class="card-placeholder-text">
+                SanDisk cards, batteries, and more
+              </p>
             </div>
           </div>
           <h3><a href="/deals">View All Deals</a></h3>
@@ -328,26 +563,49 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <section class="section" id="compare">
       <h2>Comparisons</h2>
-      <p class="section-sub">Side-by-side breakdowns for the most common shopping choices.</p>
+      <p class="section-sub">
+        Side-by-side breakdowns for the most common shopping choices.
+      </p>
       <div class="grid">
         <article class="card card-plain">
-          <h3><a href="/compare/sony-a7-iv-vs-canon-r6-ii">Sony A7 IV vs Canon R6 II</a></h3>
-          <p>Two hybrid favorites compared: AF, stabilization, rolling shutter, and lenses.</p>
+          <h3>
+            <a href="/compare/sony-a7-iv-vs-canon-r6-ii"
+              >Sony A7 IV vs Canon R6 II</a>
+          </h3>
+          <p>
+            Two hybrid favorites compared: AF, stabilization, rolling shutter,
+            and lenses.
+          </p>
           <div class="meta">Hybrid Comparison</div>
         </article>
         <article class="card card-plain">
-          <h3><a href="/compare/sony-a7-v-vs-canon-r6-iii">Sony A7 V vs Canon R6 III</a></h3>
-          <p>Flagship hybrid showdown: AF, rolling shutter, stabilization, and heat.</p>
+          <h3>
+            <a href="/compare/sony-a7-v-vs-canon-r6-iii"
+              >Sony A7 V vs Canon R6 III</a>
+          </h3>
+          <p>
+            Flagship hybrid showdown: AF, rolling shutter, stabilization, and
+            heat.
+          </p>
           <div class="meta">Comparison</div>
         </article>
         <article class="card card-plain">
-          <h3><a href="/compare/sony-zv-e10-vs-sony-a6700">Sony ZV-E10 vs A6700</a></h3>
+          <h3>
+            <a href="/compare/sony-zv-e10-vs-sony-a6700"
+              >Sony ZV-E10 vs A6700</a>
+          </h3>
           <p>Creator-first vs enthusiast APS-C — when to upgrade.</p>
           <div class="meta">Upgrade path</div>
         </article>
         <article class="card card-plain">
-          <h3><a href="/compare/fujifilm-x-s20-vs-fujifilm-x-t5">Fujifilm X-S20 vs X-T5</a></h3>
-          <p>Same lenses, different priorities: video features vs classic handling.</p>
+          <h3>
+            <a href="/compare/fujifilm-x-s20-vs-fujifilm-x-t5"
+              >Fujifilm X-S20 vs X-T5</a>
+          </h3>
+          <p>
+            Same lenses, different priorities: video features vs classic
+            handling.
+          </p>
           <div class="meta">APS-C</div>
         </article>
       </div>
@@ -360,29 +618,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="grid">
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/lenses/sony-e-mount.webp"
-              alt="Sony E-mount G Master lens" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/lenses/sony-e-mount.webp"
+              alt="Sony E-mount G Master lens"
+              width="1200"
+              height="800"
+            />
           </div>
-          <h3><a href="/lenses/best-sony-e-mount-lenses">Sony E-Mount Lenses</a></h3>
-          <p>The largest lens ecosystem. Budget Sigma primes to premium G Master glass.</p>
+          <h3>
+            <a href="/lenses/best-sony-e-mount-lenses">Sony E-Mount Lenses</a>
+          </h3>
+          <p>
+            The largest lens ecosystem. Budget Sigma primes to premium G Master
+            glass.
+          </p>
           <div class="meta">Sony · APS-C & Full-Frame</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/lenses/canon-rf.webp"
-              alt="Canon RF lens with red ring" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/lenses/canon-rf.webp"
+              alt="Canon RF lens with red ring"
+              width="1200"
+              height="800"
+            />
           </div>
           <h3><a href="/lenses/best-canon-rf-lenses">Canon RF Lenses</a></h3>
-          <p>Premium optics with excellent autofocus. Budget picks and L-series glass.</p>
+          <p>
+            Premium optics with excellent autofocus. Budget picks and L-series
+            glass.
+          </p>
           <div class="meta">Canon · RF & RF-S</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/lenses/fujifilm-x.webp"
-              alt="Silver Fujifilm X-mount lens" width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/lenses/fujifilm-x.webp"
+              alt="Silver Fujifilm X-mount lens"
+              width="1200"
+              height="800"
+            />
           </div>
-          <h3><a href="/lenses/best-fujifilm-x-mount-lenses">Fujifilm X-Mount Lenses</a></h3>
-          <p>Compact, sharp, and stylish. Perfect match for Fuji's retro bodies.</p>
+          <h3>
+            <a href="/lenses/best-fujifilm-x-mount-lenses"
+              >Fujifilm X-Mount Lenses</a>
+          </h3>
+          <p>
+            Compact, sharp, and stylish. Perfect match for Fuji's retro bodies.
+          </p>
           <div class="meta">Fujifilm · APS-C</div>
         </article>
       </div>
@@ -391,21 +680,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Gear Section -->
     <section class="section" id="gear">
       <h2>Gear & Accessories</h2>
-      <p class="section-sub">Essential accessories we actually use every day.</p>
+      <p class="section-sub">
+        Essential accessories we actually use every day.
+      </p>
       <div class="grid">
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/gear/tripods.webp" alt="Carbon fiber travel tripod"
-              width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/gear/tripods.webp"
+              alt="Carbon fiber travel tripod"
+              width="1200"
+              height="800"
+            />
           </div>
           <h3><a href="/gear/best-tripods">Best Tripods</a></h3>
-          <p>From ultralight travel tripods to pro video sticks. Stability tested.</p>
+          <p>
+            From ultralight travel tripods to pro video sticks. Stability
+            tested.
+          </p>
           <div class="meta">Travel · Video · Landscape</div>
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/gear/bags.webp" alt="Camera backpack and sling bag"
-              width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/gear/bags.webp"
+              alt="Camera backpack and sling bag"
+              width="1200"
+              height="800"
+            />
           </div>
           <h3><a href="/gear/best-camera-bags">Best Camera Bags</a></h3>
           <p>Backpacks, slings, and messenger bags. Protection meets style.</p>
@@ -413,8 +719,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </article>
         <article class="card">
           <div class="card-thumb">
-            <img loading="lazy" decoding="async" src="/assets/images/gear/sd-cards.webp" alt="High speed SD cards"
-              width="1200" height="800">
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/assets/images/gear/sd-cards.webp"
+              alt="High speed SD cards"
+              width="1200"
+              height="800"
+            />
           </div>
           <h3><a href="/gear/best-sd-cards">Best SD Cards</a></h3>
           <p>Speed matters for 4K video and burst photos. Real-world tested.</p>
@@ -427,9 +739,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="cta">
         <div>
           <h2>Affiliate & Ethics</h2>
-          <p>We use affiliate links to keep the site free. You never pay extra, and we only recommend gear we would
-            buy
-            ourselves.</p>
+          <p>
+            We use affiliate links to keep the site free. You never pay extra,
+            and we only recommend gear we would buy ourselves.
+          </p>
           <div class="pill-row">
             <span class="pill">Independent testing</span>
             <span class="pill">Transparent pros & cons</span>
@@ -442,19 +755,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <section class="section" id="about">
       <h2>How We Test</h2>
-      <p class="section-sub">Practical reviews focused on real-world shooting.</p>
+      <p class="section-sub">
+        Practical reviews focused on real-world shooting.
+      </p>
       <div class="grid">
         <article class="card card-plain">
           <h3>Handling & Autofocus</h3>
-          <p>We check how quickly cameras lock on, track faces, and hold focus in video.</p>
+          <p>
+            We check how quickly cameras lock on, track faces, and hold focus in
+            video.
+          </p>
         </article>
         <article class="card card-plain">
           <h3>Video Reliability</h3>
-          <p>Heat limits, rolling shutter, stabilization, audio options, and log profiles.</p>
+          <p>
+            Heat limits, rolling shutter, stabilization, audio options, and log
+            profiles.
+          </p>
         </article>
         <article class="card card-plain">
           <h3>Lenses & Ecosystem</h3>
-          <p>Which lenses make sense for beginners, travel, and growth paths.</p>
+          <p>
+            Which lenses make sense for beginners, travel, and growth paths.
+          </p>
         </article>
       </div>
     </section>
@@ -462,67 +785,157 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- FAQ Section - SEO Optimization -->
     <section class="section" id="faq">
       <h2>Frequently Asked Questions</h2>
-      <p class="section-sub">Common questions about choosing the right camera</p>
+      <p class="section-sub">
+        Common questions about choosing the right camera
+      </p>
       <div class="faq-container">
-        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary itemprop="name">What is the best camera for beginners?</summary>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">For beginners, we recommend the Sony ZV-E10 or Canon EOS R8. These cameras feature fast
-              autofocus, simple menus, good battery life, and lens options that you can grow with. The Sony ZV-E10 is
-              particularly good for budget vloggers ($698), while the Canon R8 is an excellent value full-frame entry
-              ($1,499).</p>
+        <details
+          class="faq-item"
+          itemscope
+          itemprop="mainEntity"
+          itemtype="https://schema.org/Question"
+        >
+          <summary itemprop="name"
+            >What is the best camera for beginners?</summary
+          >
+          <div
+            class="faq-answer"
+            itemscope
+            itemprop="acceptedAnswer"
+            itemtype="https://schema.org/Answer"
+          >
+            <p itemprop="text">
+              For beginners, we recommend the Sony ZV-E10 or Canon EOS R8. These
+              cameras feature fast autofocus, simple menus, good battery life,
+              and lens options that you can grow with. The Sony ZV-E10 is
+              particularly good for budget vloggers ($698), while the Canon R8
+              is an excellent value full-frame entry ($1,499).
+            </p>
           </div>
         </details>
 
-        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <details
+          class="faq-item"
+          itemscope
+          itemprop="mainEntity"
+          itemtype="https://schema.org/Question"
+        >
           <summary itemprop="name">Do I need a full-frame camera?</summary>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Not necessarily. APS-C cameras (like the Fujifilm X-T5 or Sony A6700) offer an excellent
-              balance of image quality, low-light performance, and price. Full-frame cameras excel in extreme low light
-              and shallow depth of field, but APS-C cameras are lighter, cheaper, and have smaller lenses. Unless you
-              shoot professional weddings or need extreme low-light performance, APS-C is perfectly adequate.</p>
+          <div
+            class="faq-answer"
+            itemscope
+            itemprop="acceptedAnswer"
+            itemtype="https://schema.org/Answer"
+          >
+            <p itemprop="text">
+              Not necessarily. APS-C cameras (like the Fujifilm X-T5 or Sony
+              A6700) offer an excellent balance of image quality, low-light
+              performance, and price. Full-frame cameras excel in extreme low
+              light and shallow depth of field, but APS-C cameras are lighter,
+              cheaper, and have smaller lenses. Unless you shoot professional
+              weddings or need extreme low-light performance, APS-C is perfectly
+              adequate.
+            </p>
           </div>
         </details>
 
-        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <details
+          class="faq-item"
+          itemscope
+          itemprop="mainEntity"
+          itemtype="https://schema.org/Question"
+        >
           <summary itemprop="name">How do I choose my first lens?</summary>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Start with a kit lens or a 24-70mm f/4 zoom. This gives you flexibility to explore your
-              photographic style. Once you know what you shoot most, you can invest in dedicated lenses: wide-angle for
-              travel (16-35mm), bright prime for portraits (50mm f/1.8), or telephoto for wildlife (70-200mm). Don't buy
-              expensive f/1.4 primes right away—learn to use light first.</p>
+          <div
+            class="faq-answer"
+            itemscope
+            itemprop="acceptedAnswer"
+            itemtype="https://schema.org/Answer"
+          >
+            <p itemprop="text">
+              Start with a kit lens or a 24-70mm f/4 zoom. This gives you
+              flexibility to explore your photographic style. Once you know what
+              you shoot most, you can invest in dedicated lenses: wide-angle for
+              travel (16-35mm), bright prime for portraits (50mm f/1.8), or
+              telephoto for wildlife (70-200mm). Don't buy expensive f/1.4
+              primes right away—learn to use light first.
+            </p>
           </div>
         </details>
 
-        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary itemprop="name">What's the difference between mirrorless and DSLR?</summary>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Mirrorless cameras use an electronic viewfinder instead of an optical one, making them
-              smaller, lighter, and offering better video features and real-time preview. All major manufacturers
-              (Canon, Sony, Nikon, Fujifilm) have transitioned to mirrorless systems. New lens releases, better
-              autofocus, and video features are all concentrated on mirrorless. Unless you have a large DSLR lens
-              collection, buy mirrorless.</p>
+        <details
+          class="faq-item"
+          itemscope
+          itemprop="mainEntity"
+          itemtype="https://schema.org/Question"
+        >
+          <summary itemprop="name"
+            >What's the difference between mirrorless and DSLR?</summary
+          >
+          <div
+            class="faq-answer"
+            itemscope
+            itemprop="acceptedAnswer"
+            itemtype="https://schema.org/Answer"
+          >
+            <p itemprop="text">
+              Mirrorless cameras use an electronic viewfinder instead of an
+              optical one, making them smaller, lighter, and offering better
+              video features and real-time preview. All major manufacturers
+              (Canon, Sony, Nikon, Fujifilm) have transitioned to mirrorless
+              systems. New lens releases, better autofocus, and video features
+              are all concentrated on mirrorless. Unless you have a large DSLR
+              lens collection, buy mirrorless.
+            </p>
           </div>
         </details>
 
-        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <details
+          class="faq-item"
+          itemscope
+          itemprop="mainEntity"
+          itemtype="https://schema.org/Question"
+        >
           <summary itemprop="name">What specs do I need for video?</summary>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Look for a camera with 4K 30fps (minimum), 10-bit internal recording (for color grading),
-              a flip screen, good in-body image stabilization (IBIS) or lens stabilization, and clean HDMI output. For
-              serious vlogging, prioritize fast autofocus (Sony / Canon), overheating management, and at least 60
-              minutes of recording limits. Hybrid cameras like the Sony A7C II or Panasonic S5 II strike a good balance
-              between video and stills.</p>
+          <div
+            class="faq-answer"
+            itemscope
+            itemprop="acceptedAnswer"
+            itemtype="https://schema.org/Answer"
+          >
+            <p itemprop="text">
+              Look for a camera with 4K 30fps (minimum), 10-bit internal
+              recording (for color grading), a flip screen, good in-body image
+              stabilization (IBIS) or lens stabilization, and clean HDMI output.
+              For serious vlogging, prioritize fast autofocus (Sony / Canon),
+              overheating management, and at least 60 minutes of recording
+              limits. Hybrid cameras like the Sony A7C II or Panasonic S5 II
+              strike a good balance between video and stills.
+            </p>
           </div>
         </details>
 
-        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <details
+          class="faq-item"
+          itemscope
+          itemprop="mainEntity"
+          itemtype="https://schema.org/Question"
+        >
           <summary itemprop="name">What can I get for $1,000?</summary>
-          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">For $1,000 you can get excellent entry-level kits. Sony ZV-E10 + 16-50mm ($798), Canon
-              EOS M50 Mark II ($699), or Fujifilm X-S10 + lens ($999) are all solid options. Prioritize reliable
-              autofocus and good lens ecosystems over chasing maximum megapixels or 8K video. At this price point, body
-              + lens + memory card + spare battery should all fit within budget.</p>
+          <div
+            class="faq-answer"
+            itemscope
+            itemprop="acceptedAnswer"
+            itemtype="https://schema.org/Answer"
+          >
+            <p itemprop="text">
+              For $1,000 you can get excellent entry-level kits. Sony ZV-E10 +
+              16-50mm ($798), Canon EOS M50 Mark II ($699), or Fujifilm X-S10 +
+              lens ($999) are all solid options. Prioritize reliable autofocus
+              and good lens ecosystems over chasing maximum megapixels or 8K
+              video. At this price point, body + lens + memory card + spare
+              battery should all fit within budget.
+            </p>
           </div>
         </details>
       </div>
@@ -534,7 +947,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h3>Stay in the Loop</h3>
         <p>New reviews, deals, and buying guides — straight to your inbox.</p>
         <form class="newsletter-form" id="newsletter-form">
-          <input type="email" placeholder="your@email.com" required aria-label="Email address">
+          <input
+            type="email"
+            placeholder="your@email.com"
+            required
+            aria-label="Email address"
+          />
           <button type="submit">Subscribe</button>
         </form>
         <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
