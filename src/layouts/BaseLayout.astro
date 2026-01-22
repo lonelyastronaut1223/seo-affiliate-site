@@ -67,13 +67,34 @@ const jsonLd = JSON.stringify({
         <meta name="robots" content="index,follow,max-image-preview:large" />
         <meta name="theme-color" content="#0b1220" />
 
-        <!-- Font preload -->
+        <!-- Font preload with optimized loading -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            rel="stylesheet"
+            rel="preload"
+            as="style"
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+            onload="this.onload=null;this.rel='stylesheet'"
         />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+            />
+        </noscript>
+
+        <!-- Preload critical resources for LCP -->
+        <link
+            rel="preload"
+            as="image"
+            href="/assets/images/guides/main-page-1280.webp"
+            type="image/webp"
+        />
+        <link rel="preload" as="style" href="/assets/css/style.min.css" />
+
+        <!-- CDN preconnect for Anime.js -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
         <!-- Favicon / App Icons -->
         <link
@@ -148,10 +169,26 @@ const jsonLd = JSON.stringify({
 
         <Footer />
 
-        <!-- Scripts - SAME ORDER AS ORIGINAL -->
-        <script is:inline src="/assets/js/links.min.js?v=20260120"></script>
-        <script is:inline src="/assets/js/script.min.js"></script>
+        <!-- Scripts - Optimized for performance -->
+        <script is:inline src="/assets/js/links.min.js?v=20260120" defer
+        ></script>
         <script is:inline src="/assets/js/mega-menu.min.js" defer></script>
+
+        <!-- Main script - deferred and idle-loaded for minimal TBT -->
+        <script is:inline>
+            // Load main script after page is interactive
+            function loadMainScript() {
+                var s = document.createElement("script");
+                s.src = "/assets/js/script.min.js";
+                s.defer = true;
+                document.body.appendChild(s);
+            }
+            if (window.requestIdleCallback) {
+                requestIdleCallback(loadMainScript, { timeout: 1000 });
+            } else {
+                setTimeout(loadMainScript, 100);
+            }
+        </script>
 
         <!-- Service Worker Registration & Deferred Analytics -->
         <script is:inline>
