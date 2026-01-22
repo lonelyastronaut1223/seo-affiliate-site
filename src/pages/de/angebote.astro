@@ -3,7 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Kamera Angebote & Discounts (Aktualisiert Daily) — cameraupick" description="Die besten aktuellen Angebote für spiegellose Kameras, Objektive und Vlogging-Equipment. Täglich aktualisiert.">
-<section class="hero" style="padding: 24px; min-height: auto;">
+<main class="container">
+    <section class="hero" style="padding: 24px; min-height: auto;">
         <div class="hero-grid" style="grid-template-columns: 1fr; text-align: center;">
             <div>
                 <h1>Kamera Angebote & Preis Drops</h1>
@@ -11,8 +12,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
         </div>
     </section>
-
-    <main class="container">
         <section class="section">
             <p class="section-sub">Last Aktualisiert: <span id="date-today"></span></p>
 
