@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Camera Deals & Discounts (Updated Daily) — cameraupick</title>
+    <meta name="description"
+        content="The best current deals on mirrorless cameras, lenses, and vlogging gear. Updated daily.">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kameraupick">
+    <meta property="og:title" content="Camera Deals & Discounts — Cameraupick">
+    <meta property="og:description"
+        content="The best current deals on cameras, lenses, and accessories. Updated daily.">
+    <meta property="og:url" content="https://cameraupick.com/deals.html">
+    <meta property="og:image" content="https://cameraupick.com/assets/images/guides/Vlog.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Camera Deals & Discounts — Cameraupick">
+    <meta name="twitter:description"
+        content="The best current deals on cameras, lenses, and accessories. Updated daily.">
+    <meta name="twitter:image" content="https://cameraupick.com/assets/images/guides/Vlog.jpg">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/footer-enhancements.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLCVQGNSW4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-DLCVQGNSW4');
+    </script>
+
+    <meta property="article:modified_time" content="2026-01-18T12:00:00+01:00">
+</head>
+
+<body>
+    <header class="header-sticky">
+    <div class="container">
+        <div class="topbar">
+            <a class="brand-link" href="./">
+                <span class="brand-logo">📷</span>
+                cameraupick
+            </a>
+            <nav>
+                <a href="./">Home</a> ·
+                <a href="./#guides">Guides</a> ·
+                <a href="deals.html" class="active">Deals</a>
+
+                <a href="./" hreflang="en" aria-current="page">EN</a> · <a href="de/angebote.html" hreflang="de">DE</a>
+            </nav>
+        </div>
+
+        
+        </div>
+</header>
+<section class="hero hero-compact">
+            <div class="hero-grid hero-centered">
+                <div>
+                    <h1>Camera Deals & Price Drops</h1>
+                    <p class="hero-sub hero-sub-centered">Curated discounts on gear we actually recommend.</p>
+                </div>
+            </div>
+        </section>
+
+    <main class="container">
+        <section class="section">
+            <p class="section-sub">Last Updated: <span id="date-today"></span></p>
+
+            <div class="grid">
+                <!-- Deal 1 -->
+                <article class="card">
+                    <div class="tag tag-hot">🔥 Hot Deal
+                    </div>
+                    <h3>Sony ZV-E10</h3>
+                    <p>The best budget vlog camera just dropped in price. Includes 16-50mm lens.</p>
+                    <div class="meta price-savings">Save $100</div>
+                    <div class="btn-wrap">
+                        <a href="https://amzn.to/49HqAH3" class="buy-btn" target="_blank" rel="noopener"
+                            rel="sponsored">Check Price on
+                            Amazon &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Deal 2 -->
+                <article class="card">
+                    <div class="tag tag-lowest">Lowest Price</div>
+                    <h3>Panasonic S5 II</h3>
+                    <p>Full-frame powerhouse with phase detect AF. incredible value for hybrids.</p>
+                    <div class="meta price-savings">$300 Off Coupon</div>
+                    <div class="btn-wrap">
+                        <a href="https://amzn.to/45FQbyU" class="buy-btn" target="_blank" rel="noopener"
+                            rel="sponsored">Check Price on
+                            Amazon &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Deal 3 -->
+                <article class="card">
+                    <h3>SanDisk Extreme Pro 256GB</h3>
+                    <p>Essential for 4K video. Reliable V30 speed class.</p>
+                    <div class="meta price-savings">34% Off</div>
+                    <div class="btn-wrap">
+                        <a href="https://amzn.to/4sPSPMl" class="buy-btn" target="_blank" rel="noopener"
+                            rel="sponsored">Check Price on
+                            Amazon &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Why trust our deals?</h2>
+            <p class="text-muted">We don't use automated scrapers. These are hand-picked price drops on gear we
+                have tested and verified.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        © <span id="year"></span> cameraupick
+    </footer>
+
+    <script src="assets/js/script.min.js"></script>
+    <script>
+        document.getElementById('date-today').textContent = new Date().toLocaleDateString();
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW registration failed'));
+            });
+        }
+    </script>
+
+    <!-- Anime.js Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+    <script src="assets/js/animations.min.js" defer></script>
+</body>
+
+</html>

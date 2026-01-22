@@ -1,8 +1,6 @@
 # Netlify Build Configuration
 # https://docs.netlify.com/configure-builds/file-based-configuration/
 
-# TEMPORARILY deploying root folder to restore original layout
-# TODO: Fix Astro components to match original design, then switch back to dist
 [build]
   publish = "."
 
