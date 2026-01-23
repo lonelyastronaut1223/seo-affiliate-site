@@ -352,11 +352,66 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <!-- Filter Tabs -->
       <div class="filter-tabs" id="review-filters">
         <button class="filter-tab active" data-filter="all">All</button>
-        <button class="filter-tab" data-filter="sony">Sony</button>
-        <button class="filter-tab" data-filter="canon">Canon</button>
-        <button class="filter-tab" data-filter="nikon">Nikon</button>
-        <button class="filter-tab" data-filter="fujifilm">Fujifilm</button>
-        <button class="filter-tab" data-filter="panasonic">Panasonic</button>
+        <button
+          class="filter-tab filter-tab-logo"
+          data-filter="sony"
+          aria-label="Sony"
+        >
+          <img
+            src="/assets/images/brands/sony.svg"
+            alt="Sony"
+            width="60"
+            height="20"
+          />
+        </button>
+        <button
+          class="filter-tab filter-tab-logo"
+          data-filter="canon"
+          aria-label="Canon"
+        >
+          <img
+            src="/assets/images/brands/canon.svg"
+            alt="Canon"
+            width="60"
+            height="20"
+          />
+        </button>
+        <button
+          class="filter-tab filter-tab-logo"
+          data-filter="nikon"
+          aria-label="Nikon"
+        >
+          <img
+            src="/assets/images/brands/nikon.svg"
+            alt="Nikon"
+            width="60"
+            height="20"
+          />
+        </button>
+        <button
+          class="filter-tab filter-tab-logo"
+          data-filter="fujifilm"
+          aria-label="Fujifilm"
+        >
+          <img
+            src="/assets/images/brands/fujifilm.svg"
+            alt="Fujifilm"
+            width="70"
+            height="20"
+          />
+        </button>
+        <button
+          class="filter-tab filter-tab-logo"
+          data-filter="panasonic"
+          aria-label="Panasonic"
+        >
+          <img
+            src="/assets/images/brands/panasonic.svg"
+            alt="Panasonic"
+            width="75"
+            height="20"
+          />
+        </button>
         <button class="filter-tab" data-filter="other">Other</button>
       </div>
 
@@ -1299,6 +1354,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       font-weight: 500;
       color: #6b7280;
       transition: all 0.2s ease;
+    }
+    .filter-tab-logo {
+      padding: 0.4rem 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .filter-tab-logo img {
+      height: 16px;
+      width: auto;
+      opacity: 0.6;
+      transition: opacity 0.2s ease;
+    }
+    .filter-tab-logo:hover img {
+      opacity: 1;
+    }
+    .filter-tab-logo.active img {
+      opacity: 1;
+      filter: brightness(10);
     }
     .filter-tab:hover {
       border-color: #10b981;
