@@ -8,6 +8,8 @@
  * ├── 镜头 Lenses: 12
  * └── 配件 Accessories: 9
  * 
+ * ✅ 已有链接: 45  |  ❌ 待添加: 4
+ * 
  * 📅 最后更新 / Last Updated: 2026-01-23
  * 
  * ═══════════════════════════════════════════════════════════════════════════
@@ -262,25 +264,25 @@ export const affiliateLinks = {
         name: 'Sigma 56mm f/1.4 DC DN (Sony E)',
         price: 449,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/49QDK4N',
     },
     'tamron-17-70': {
         name: 'Tamron 17-70mm f/2.8 Di III-A VC RXD',
         price: 799,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/49y4Izb',
     },
     'sony-35-18': {
         name: 'Sony 35mm f/1.8',
         price: 748,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4qDP3EE',
     },
     'sony-70-350': {
         name: 'Sony 70-350mm f/4.5-6.3 G OSS',
         price: 998,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/45jpD6t',
     },
 
     // ─────────────────────────────────────────────────────────────────────
@@ -290,41 +292,41 @@ export const affiliateLinks = {
         name: 'Canon RF 50mm f/1.8 STM',
         price: 199,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/3NTbneE',
     },
     'canon-rfs-18-150': {
         name: 'Canon RF-S 18-150mm f/3.5-6.3 IS STM',
         price: 499,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/49vdOg1',
     },
     'canon-rf-85': {
         name: 'Canon RF 85mm f/2 Macro IS STM',
         price: 599,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4a9hpQ7',
     },
     'canon-rf-24-105': {
         name: 'Canon RF 24-105mm f/4 L IS USM',
         price: 1099,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4baLpgA',
     },
 
     // ─────────────────────────────────────────────────────────────────────
-    // FUJIFILM X卡口镜头 (4款)
+    // FUJIFILM X卡口镜头 (5款)
     // ─────────────────────────────────────────────────────────────────────
     'fuji-xf-16-50': {
         name: 'Fujifilm XF 16-50mm f/2.8-4.8 R LM WR',
         price: 499,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4qC3qJq',
     },
     'fuji-xf56-f12': {
         name: 'Fujifilm XF 56mm f/1.2 R',
         price: 999,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4pPtlfw',
     },
     'fuji-xf23-f2': {
         name: 'Fujifilm XF 23mm f/2 R WR',
@@ -336,13 +338,13 @@ export const affiliateLinks = {
         name: 'Fujifilm XF 33mm f/1.4 R LM WR',
         price: 799,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4pSIEE1',
     },
     'sigma-18-50-fuji': {
         name: 'Sigma 18-50mm f/2.8 DC DN (Fuji X)',
         price: 549,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4jQ9xHz',
     },
 
 
@@ -357,19 +359,19 @@ export const affiliateLinks = {
         name: 'Peak Design Travel Tripod',
         price: 599,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4qw0vBR',
     },
     'manfrotto-befree': {
         name: 'Manfrotto BeFree Advanced',
         price: 249,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4a26V5Y',
     },
     'ulanzi-mt79': {
         name: 'Ulanzi MT-79',
         price: 39,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/3YPknE6',
     },
 
     // ─────────────────────────────────────────────────────────────────────
@@ -379,19 +381,19 @@ export const affiliateLinks = {
         name: 'Peak Design Everyday Backpack 30L',
         price: 289,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4b5V9IV',
     },
     'lowepro-protactic': {
         name: 'Lowepro ProTactic BP 450 AW II',
         price: 249,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/3LsLstI',
     },
     'wandrd-prvke': {
         name: 'WANDRD PRVKE 31L',
         price: 264,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4pZZFfW',
     },
 
     // ─────────────────────────────────────────────────────────────────────
@@ -407,13 +409,13 @@ export const affiliateLinks = {
         name: 'Sony TOUGH V90 128GB',
         price: 199,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4r2T84M',
     },
     'sandisk-extreme-256': {
         name: 'SanDisk Extreme 256GB V30',
         price: 39,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/49yP9qQ',
     },
 };
 

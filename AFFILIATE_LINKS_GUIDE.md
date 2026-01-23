@@ -7,10 +7,10 @@ Affiliate Links Management Guide
 
 | 类别 | 数量 | 有链接 | 待添加 |
 |------|------|--------|--------|
-| **相机 Cameras** | 28 | 21 | 7 |
-| **镜头 Lenses** | 12 | 0 | 12 |
-| **配件 Accessories** | 9 | 1 | 8 |
-| **总计 Total** | **49** | **22** | **27** |
+| **相机 Cameras** | 28 | 24 | 4 |
+| **镜头 Lenses** | 13 | 12 | 1 |
+| **配件 Accessories** | 9 | 9 | 0 |
+| **总计 Total** | **50** | **45** | **5** |
 
 ---
 
@@ -65,7 +65,7 @@ Affiliate Links Management Guide
 | **Sony** | `sony-a6700` | ✅ |
 | | `sony-a7c-ii` | ✅ |
 | | `sony-a7-iv` / `sony-a7iv` | ✅ |
-| | `sony-a7-v` | ❌ |
+| | `sony-a7-v` | ❌ 预售 |
 | | `sony-zv-e10` | ✅ |
 | | `sony-zv-e10-ii` | ✅ |
 | | `sony-zv-e1` | ✅ |
@@ -74,10 +74,10 @@ Affiliate Links Management Guide
 | | `canon-r50` | ✅ |
 | | `canon-r100` | ✅ |
 | | `canon-r6-ii` | ✅ |
-| | `canon-r5-ii` | ❌ |
-| | `canon-r6-iii` | ❌ |
+| | `canon-r5-ii` | ❌ 新品 |
+| | `canon-r6-iii` | ❌ 新品 |
 | **Nikon** | `nikon-z8` | ✅ |
-| | `nikon-z6-iii` | ❌ |
+| | `nikon-z6-iii` | ❌ 新品 |
 | **Fujifilm** | `fujifilm-x-t5` | ✅ |
 | | `fujifilm-x-s20` | ✅ |
 | | `fujifilm-x100vi` | ✅ |
@@ -92,37 +92,37 @@ Affiliate Links Management Guide
 | | `gopro-13` | ✅ |
 | | `insta360-x4` | ✅ |
 
-### 镜头 Lenses (12款)
+### 镜头 Lenses (13款)
 
 | 卡口 | 产品ID | 有链接 |
 |------|--------|--------|
-| **Sony E** | `sigma-56-14` | ❌ |
-| | `tamron-17-70` | ❌ |
-| | `sony-35-18` | ❌ |
-| | `sony-70-350` | ❌ |
-| **Canon RF** | `canon-rf-50` | ❌ |
-| | `canon-rfs-18-150` | ❌ |
-| | `canon-rf-85` | ❌ |
-| | `canon-rf-24-105` | ❌ |
-| **Fuji X** | `fuji-xf-16-50` | ❌ |
-| | `fuji-xf56-f12` | ❌ |
+| **Sony E** | `sigma-56-14` | ✅ |
+| | `tamron-17-70` | ✅ |
+| | `sony-35-18` | ✅ |
+| | `sony-70-350` | ✅ |
+| **Canon RF** | `canon-rf-50` | ✅ |
+| | `canon-rfs-18-150` | ✅ |
+| | `canon-rf-85` | ✅ |
+| | `canon-rf-24-105` | ✅ |
+| **Fuji X** | `fuji-xf-16-50` | ✅ |
+| | `fuji-xf56-f12` | ✅ |
 | | `fuji-xf23-f2` | ❌ |
-| | `fuji-xf-33` | ❌ |
-| | `sigma-18-50-fuji` | ❌ |
+| | `fuji-xf-33` | ✅ |
+| | `sigma-18-50-fuji` | ✅ |
 
 ### 配件 Accessories (9款)
 
 | 类别 | 产品ID | 有链接 |
 |------|--------|--------|
-| **三脚架** | `peak-travel-tripod` | ❌ |
-| | `manfrotto-befree` | ❌ |
-| | `ulanzi-mt79` | ❌ |
-| **相机包** | `peak-everyday-30` | ❌ |
-| | `lowepro-protactic` | ❌ |
-| | `wandrd-prvke` | ❌ |
+| **三脚架** | `peak-travel-tripod` | ✅ |
+| | `manfrotto-befree` | ✅ |
+| | `ulanzi-mt79` | ✅ |
+| **相机包** | `peak-everyday-30` | ✅ |
+| | `lowepro-protactic` | ✅ |
+| | `wandrd-prvke` | ✅ |
 | **SD卡** | `sandisk-extreme-pro-256` | ✅ |
-| | `sony-tough-v90` | ❌ |
-| | `sandisk-extreme-256` | ❌ |
+| | `sony-tough-v90` | ✅ |
+| | `sandisk-extreme-256` | ✅ |
 
 ---
 
