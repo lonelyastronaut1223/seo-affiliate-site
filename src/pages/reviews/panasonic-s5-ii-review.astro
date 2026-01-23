@@ -1,22 +1,35 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Panasonic S5 II Review 2026: Best Value Full-Frame at $1,997?" description="Panasonic S5 II Review 2026: Phase-detect AF finally here! Full-frame hybrid tested. Is it the best value at $1,997? Honest review. Updated Jan 2026.">
-<main id="main" class="container">
+<BaseLayout
+  title="Panasonic S5 II Review 2026: Best Value Full-Frame at $1,997?"
+  description="Panasonic S5 II Review 2026: Phase-detect AF finally here! Full-frame hybrid tested. Is it the best value at $1,997? Honest review. Updated Jan 2026."
+>
+  <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">
         <div>
           <h1>Panasonic S5 II Review</h1>
-          <p class="hero-sub">The camera that fixed Panasonic's biggest flaw. Finally with reliable autofocus, plus
-            class-leading stabilization and video features.</p>
+          <p class="hero-sub">
+            The camera that fixed Panasonic's biggest flaw. Finally with
+            reliable autofocus, plus class-leading stabilization and video
+            features.
+          </p>
           <div class="meta review-price-badge">Full-Frame Hybrid · $1,997</div>
         </div>
         <div class="hero-media">
           <picture>
-  <source srcset="/assets/images/guides/panasonic-s5ii.webp" type="image/webp">
-  <img src="/assets/images/guides/panasonic-s5ii.webp" alt="Panasonic Lumix S5 II full-frame camera with phase-detect autofocus" loading="eager">
-</picture>
+            <source
+              srcset="/assets/images/guides/panasonic-s5ii.webp"
+              type="image/webp"
+            />
+            <img
+              src="/assets/images/guides/panasonic-s5ii.webp"
+              alt="Panasonic Lumix S5 II full-frame camera with phase-detect autofocus"
+              loading="eager"
+            />
+          </picture>
         </div>
       </div>
     </section>
@@ -30,35 +43,80 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <div class="product-info">
             <h2 class="product-title">The Verdict</h2>
             <p>
-              For years, Panasonic cameras had amazing video specs but terrible autofocus. The S5 II changed everything
-              by adding **Phase Detect AF**.
+              For years, Panasonic cameras had amazing video specs but terrible
+              autofocus. The S5 II changed everything by adding **Phase Detect
+              AF**.
             </p>
             <p>
-              It combines this new customized AF with the best In-Body Image Stabilization (IBIS) in the business. You
-              can walk and talk without a gimbal, and shoot 6K video that looks like a cinema camera. For solo
-              filmmakers, this is the one to beat.
+              It combines this new customized AF with the best In-Body Image
+              Stabilization (IBIS) in the business. You can walk and talk
+              without a gimbal, and shoot 6K video that looks like a cinema
+              camera. For solo filmmakers, this is the one to beat.
             </p>
 
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">24MP Full-Frame</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">6K Open Gate</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Stabilization</span>
-                <span class="spec-value">Active I.S.</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Fan</span>
-                <span class="spec-value">Built-in (Unlimited)</span>
-              </div>
-            </div>
+            <!-- Rich Specs Table -->
+            <table class="specs-table">
+              <tr>
+                <th colspan="2" class="specs-group-header">Imaging</th>
+              </tr>
+              <tr>
+                <th>Sensor</th>
+                <td>24MP Full-Frame CMOS</td>
+              </tr>
+              <tr>
+                <th>Processor</th>
+                <td>Venus Engine</td>
+              </tr>
+              <tr>
+                <th>Stabilization</th>
+                <td>5-Axis IBIS (8.0 stops)</td>
+              </tr>
 
-            <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank">
+              <tr>
+                <th colspan="2" class="specs-group-header">Video</th>
+              </tr>
+              <tr>
+                <th>Max Resolution</th>
+                <td>6K 30p Open Gate</td>
+              </tr>
+              <tr>
+                <th>Internal Rec</th>
+                <td>10-bit 4:2:2</td>
+              </tr>
+              <tr>
+                <th>Profiles</th>
+                <td>V-Log, V-Gamut</td>
+              </tr>
+
+              <tr>
+                <th colspan="2" class="specs-group-header"
+                  >Body & Connectivity</th
+                >
+              </tr>
+              <tr>
+                <th>Viewfinder</th>
+                <td>2.36M-dot OLED (0.78x)</td>
+              </tr>
+              <tr>
+                <th>Screen</th>
+                <td>3.0" Free-angle Touch</td>
+              </tr>
+              <tr>
+                <th>Card Slots</th>
+                <td>2x SD UHS-II</td>
+              </tr>
+              <tr>
+                <th>Weight</th>
+                <td>740g (with battery)</td>
+              </tr>
+            </table>
+
+            <a
+              href="#"
+              class="btn-buy"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+            >
               Check Price on Amazon &rarr;
             </a>
           </div>
@@ -80,6 +138,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <li>L-mount lens selection is smaller than Sony's</li>
               <li>Battery life drains fast in high-res modes</li>
               <li>Slightly heavier than the competition</li>
+              <li>Slower burst speed than sports-focused cameras</li>
             </ul>
           </div>
         </div>
@@ -91,18 +150,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="grid">
         <article class="card card-plain">
           <h3>Autofocus</h3>
-          <p>The "pulsing" background of older DFD focus is gone. The S5 II tracks subjects smoothly and reliably. It's
-            not *quite* as predictive as Sony for sports, but for 99% of video work, it's perfect.</p>
+          <p>
+            The "pulsing" background of older DFD focus is gone. The S5 II
+            tracks subjects smoothly and reliably. It's not *quite* as
+            predictive as Sony for sports, but for 99% of video work, it's
+            perfect.
+          </p>
         </article>
         <article class="card card-plain">
           <h3>Open Gate Video</h3>
-          <p>Most cameras shoot 16:9. The S5 II shoots 3:2 "Open Gate," using the whole sensor height. This lets you
-            crop a vertical (9:16) short AND a horizontal (16:9) video from the same clip.</p>
+          <p>
+            Most cameras shoot 16:9. The S5 II shoots 3:2 "Open Gate," using the
+            whole sensor height. This lets you crop a vertical (9:16) short AND
+            a horizontal (16:9) video from the same clip.
+          </p>
         </article>
         <article class="card card-plain">
           <h3>Stabilization</h3>
-          <p>Panasonic's "Active I.S." is black magic. It smooths out walking tremors so well that you can often leave
-            the gimbal at home, making your setup lighter and faster.</p>
+          <p>
+            Panasonic's "Active I.S." is black magic. It smooths out walking
+            tremors so well that you can often leave the gimbal at home, making
+            your setup lighter and faster.
+          </p>
         </article>
       </div>
     </section>
@@ -112,7 +181,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="grid">
         <article class="card card-plain">
           <h3>Kit Lens</h3>
-          <p>Lumix S 20-60mm f/3.5-5.6 — weird range, but amazing for wide vlogging.</p>
+          <p>
+            Lumix S 20-60mm f/3.5-5.6 — weird range, but amazing for wide
+            vlogging.
+          </p>
         </article>
         <article class="card card-plain">
           <h3>Prime</h3>
@@ -128,14 +200,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <section class="section" id="affiliate">
       <h2>Affiliate Disclosure</h2>
       <p class="section-sub">
-        We buy our own gear or rent it. No manufacturers paid for this review. We earn a commission if you use our
-        links, which keeps this site ad-free.
+        We buy our own gear or rent it. No manufacturers paid for this review.
+        We earn a commission if you use our links, which keeps this site
+        ad-free.
       </p>
     </section>
     <!-- FAQ Section -->
     <section class="section">
       <h2>Frequently Asked Questions</h2>
-      
+
       <div class="faq-container">
         <div class="faq-item">
           <h3>
@@ -145,7 +218,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>The biggest upgrade is phase-detect autofocus—the original S5 had slow contrast-detect AF. The S5 II also adds USB-C recording, improved IBIS (8 stops), and better heat management. It's a completely different camera in terms of usability.</p>
+            <p>
+              The biggest upgrade is phase-detect autofocus—the original S5 had
+              slow contrast-detect AF. The S5 II also adds USB-C recording,
+              improved IBIS (8 stops), and better heat management. It's a
+              completely different camera in terms of usability.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -156,7 +234,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Not anymore. Sigma, Leica, and Panasonic all make L-mount lenses. You have access to affordable Sigma Art lenses and high-end Leica glass. Third-party options from TTArtisan and Viltrox expand choices further. L-mount is smaller than Sony E or Canon RF, but growing steadily.</p>
+            <p>
+              Not anymore. Sigma, Leica, and Panasonic all make L-mount lenses.
+              You have access to affordable Sigma Art lenses and high-end Leica
+              glass. Third-party options from TTArtisan and Viltrox expand
+              choices further. L-mount is smaller than Sony E or Canon RF, but
+              growing steadily.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -167,7 +251,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>The IIX is identical hardware with unlocked video features: ProRes RAW, waveforms, and USB-C RAW output. If you're a serious video creator, the IIX is worth the extra $500. For hybrid shooters or photo-focused users, the standard S5 II is plenty.</p>
+            <p>
+              The IIX is identical hardware with unlocked video features: ProRes
+              RAW, waveforms, and USB-C RAW output. If you're a serious video
+              creator, the IIX is worth the extra $500. For hybrid shooters or
+              photo-focused users, the standard S5 II is plenty.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -178,7 +267,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Slightly better. The S5 II maxes at ISO 204,800 (vs 102,400 on A7 IV) and produces cleaner files at high ISOs. The dual native ISO design (ISO 640 and 4000) means noise is minimal at common video ISOs. For nighttime event shooting, the S5 II has an edge.</p>
+            <p>
+              Slightly better. The S5 II maxes at ISO 204,800 (vs 102,400 on A7
+              IV) and produces cleaner files at high ISOs. The dual native ISO
+              design (ISO 640 and 4000) means noise is minimal at common video
+              ISOs. For nighttime event shooting, the S5 II has an edge.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -189,47 +283,81 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>For many creators, yes. Unlimited 6K recording, 10-bit 4:2:2 internal, and V-Log make it a legitimate cinema tool. It lacks built-in ND filters and XLR inputs (requires DMW-XLR1 adapter), but the image quality rivals cameras 3-4x the price. Pair it with a Ninja V for ProRes recording.</p>
+            <p>
+              For many creators, yes. Unlimited 6K recording, 10-bit 4:2:2
+              internal, and V-Log make it a legitimate cinema tool. It lacks
+              built-in ND filters and XLR inputs (requires DMW-XLR1 adapter),
+              but the image quality rivals cameras 3-4x the price. Pair it with
+              a Ninja V for ProRes recording.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-
-  
     <section class="section">
       <h2>Related Reviews</h2>
       <div class="grid">
         <article class="card">
-          <div class="card-thumb"><img src="/assets/images/guides/sony-a7c-ii.webp" alt="Sony A7C II" loading="lazy"></div>
+          <div class="card-thumb">
+            <img
+              src="/assets/images/guides/sony-a7c-ii.webp"
+              alt="Sony A7C II"
+              loading="lazy"
+            />
+          </div>
           <h3><a href="sony-a7c-ii-review.html">Sony A7C II Review</a></h3>
         </article>
         <article class="card">
-          <div class="card-thumb"><img src="/assets/images/guides/fujifilm-x-t5.webp" alt="Fujifilm X-T5" loading="lazy"></div>
+          <div class="card-thumb">
+            <img
+              src="/assets/images/guides/fujifilm-x-t5.webp"
+              alt="Fujifilm X-T5"
+              loading="lazy"
+            />
+          </div>
           <h3><a href="fujifilm-x-t5-review.html">Fujifilm X-T5 Review</a></h3>
         </article>
         <article class="card">
-          <div class="card-thumb"><img src="/assets/images/guides/sony-a7iv.webp" alt="Sony A7 IV" loading="lazy"></div>
+          <div class="card-thumb">
+            <img
+              src="/assets/images/guides/sony-a7iv.webp"
+              alt="Sony A7 IV"
+              loading="lazy"
+            />
+          </div>
           <h3><a href="sony-a7-iv-review.html">Sony A7 IV Review</a></h3>
         </article>
       </div>
     </section>
 
-  
     <!-- Author Box -->
-    <section class="section author-box" style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;">
+    <section
+      class="section author-box"
+      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;"
+    >
       <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="cameraupick Editorial Team" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+        <img
+          src="/assets/images/team-avatar.webp"
+          alt="cameraupick Editorial Team"
+          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;"
+        />
         <div>
-          <h4 style="margin: 0 0 8px 0;">Written by cameraupick Editorial Team</h4>
+          <h4 style="margin: 0 0 8px 0;">
+            Written by cameraupick Editorial Team
+          </h4>
           <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Our team of professional photographers and videographers has 10+ years of experience testing cameras. 
-            We buy our own gear and provide honest, unbiased reviews.
+            Our team of professional photographers and videographers has 10+
+            years of experience testing cameras. We buy our own gear and provide
+            honest, unbiased reviews.
           </p>
-          <a href="/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Learn more about our testing process →</a>
+          <a
+            href="/about"
+            style="font-size: 14px; margin-top: 8px; display: inline-block;"
+            >Learn more about our testing process →</a
+          >
         </div>
       </div>
     </section>
-
   </main>
 </BaseLayout>
