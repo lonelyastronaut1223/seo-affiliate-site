@@ -7,6 +7,52 @@ body {
     padding-top: 70px !important;
 }
 
+/* Review page hero card background - matches A7C II design */
+.hero-grid {
+    background: rgba(20, 30, 50, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.hero-grid>div:first-child {
+    padding-right: 16px;
+}
+
+.hero-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-media img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .hero-grid>div:first-child {
+        padding-right: 0;
+        order: 1;
+    }
+
+    .hero-media {
+        order: 0;
+    }
+}
+
 /* Sticky Header - Complete Rewrite for Perfect Alignment */
 .header-sticky {
     position: fixed !important;
