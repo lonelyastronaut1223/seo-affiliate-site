@@ -1434,11 +1434,73 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         padding: 0.4rem 0.9rem;
         font-size: 0.8rem;
       }
+
+      /* Carousel for Mobile */
+      #reviews-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding-bottom: 2rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        /* Hide scrollbar */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      #reviews-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      #reviews-grid .card {
+        min-width: 280px;
+        max-width: 280px;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+      }
+
+      /* Scroll Hint Animation */
+      .reviews-section {
+        position: relative;
+      }
+      .scroll-hint {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 8px;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0;
+        animation: hintFade 3s ease-in-out;
+        z-index: 10;
+      }
+      @keyframes hintFade {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        20%,
+        80% {
+          opacity: 1;
+          transform: translateY(-50%) translateX(0);
+        }
+        50% {
+          transform: translateY(-50%) translateX(10px);
+        }
+      }
     }
   </style>
 
   <!-- Filter Tabs Script -->
   <script>
+    import { animate, stagger } from "animejs";
+
     document.addEventListener("DOMContentLoaded", () => {
       const filterContainer = document.getElementById("review-filters");
       const grid = document.getElementById("reviews-grid");
@@ -1449,13 +1511,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       const buttons = filterContainer.querySelectorAll(".filter-tab");
       const cards = grid.querySelectorAll(".card[data-brand]");
-      const INITIAL_LIMIT = 6;
+
+      // Responsive Limit Logic
+      const isMobile = window.innerWidth <= 640;
+      const INITIAL_LIMIT = isMobile ? 12 : 6;
       let currentLimit = INITIAL_LIMIT;
       let activeFilter = "all";
 
-      function render() {
+      // Mobile Scroll Hint
+      if (isMobile) {
+        const hint = document.createElement("div");
+        hint.className = "scroll-hint";
+        hint.innerHTML = "➜";
+        grid.parentElement.style.position = "relative";
+        grid.parentElement.appendChild(hint);
+      }
+
+      function animateCards(elements) {
+        animate(elements, {
+          opacity: [0, 1],
+          translateY: [20, 0],
+          delay: stagger(100),
+          easing: "outQuad",
+          duration: 600,
+        });
+      }
+
+      function render(animate = true) {
         let visibleCount = 0;
         let matchingCount = 0;
+        const cardsToShow = [];
 
         cards.forEach((card) => {
           const brand = card.dataset.brand;
@@ -1464,7 +1549,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           if (matches) {
             matchingCount++;
             if (matchingCount <= currentLimit) {
-              card.classList.remove("hidden");
+              if (card.classList.contains("hidden")) {
+                card.classList.remove("hidden");
+                cardsToShow.push(card);
+              }
               visibleCount++;
             } else {
               card.classList.add("hidden");
@@ -1473,6 +1561,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             card.classList.add("hidden");
           }
         });
+
+        // Animate new cards
+        if (animate && cardsToShow.length > 0) {
+          animateCards(cardsToShow);
+        }
 
         // Handle No Results
         const existingMsg = grid.querySelector(".no-results");
@@ -1496,33 +1589,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       }
 
       // Initial Render
-      render();
+      const initialVisible = Array.from(cards).slice(0, currentLimit);
+      animateCards(initialVisible);
+      render(false);
 
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
-          // Update active state
           buttons.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
-
           activeFilter = btn.dataset.filter;
 
-          // Reset limit logic:
-          // If 'all', reset to initial limit.
-          // If clear brand filter, show all (users expect to see all Sony cameras if they click Sony)
           if (activeFilter === "all") {
             currentLimit = INITIAL_LIMIT;
           } else {
-            currentLimit = 100; // Show all for specific brands
+            currentLimit = 100;
           }
 
-          render();
+          // Reset opacity for re-animation
+          cards.forEach((c) => (c.style.opacity = "0"));
+          render(true);
         });
       });
 
       if (loadMoreBtn) {
         loadMoreBtn.addEventListener("click", () => {
           currentLimit += 6;
-          render();
+          render(true);
         });
       }
     });
