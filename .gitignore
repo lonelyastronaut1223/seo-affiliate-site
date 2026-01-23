@@ -8,3 +8,4 @@ dist/
 
 # Archive folder
 _archive/
+.DS_Store
