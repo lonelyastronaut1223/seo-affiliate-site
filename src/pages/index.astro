@@ -1345,67 +1345,79 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .filter-tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
       justify-content: center;
+      padding: 0.5rem;
     }
     .filter-tab {
-      padding: 0.5rem 1.25rem;
-      border: 2px solid #e5e7eb;
-      background: transparent;
+      padding: 0.6rem 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-radius: 50px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 500;
-      color: #6b7280;
-      transition: all 0.2s ease;
+      color: #9ca3af;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
+    .filter-tab:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      color: white;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    }
+    .filter-tab.active {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+      transform: translateY(-1px);
+    }
+
     .filter-tab-logo {
-      padding: 0.4rem 0.75rem;
+      padding: 0.5rem 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
+      min-width: 80px;
     }
     .filter-tab-logo img {
-      height: 22px;
+      height: 24px;
       width: auto;
-      opacity: 0.85;
-      transition: opacity 0.2s ease;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+      filter: grayscale(1);
     }
     .filter-tab-logo:hover img {
       opacity: 1;
+      filter: grayscale(0);
+      transform: scale(1.05);
     }
     .filter-tab-logo.active img {
       opacity: 1;
-      filter: brightness(1.5);
+      filter: brightness(2) grayscale(0);
     }
-    .filter-tab:hover {
-      border-color: #10b981;
-      color: #10b981;
-    }
-    .filter-tab.active {
-      background: #10b981;
-      border-color: #10b981;
-      color: white;
-    }
-    #reviews-grid .card {
-      transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
-    }
-    #reviews-grid .card.hidden {
-      display: none;
-    }
+
     .no-results {
       text-align: center;
-      padding: 3rem;
+      padding: 4rem 2rem;
       color: #6b7280;
       grid-column: 1 / -1;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 1rem;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
     }
     .load-more-container {
       display: flex;
       justify-content: center;
-      margin-top: 2rem;
+      margin-top: 3rem;
       width: 100%;
     }
     .load-more-container.hidden {
@@ -1413,26 +1425,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
     .btn-outline {
       background: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      padding: 0.75rem 2rem;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+      padding: 0.8rem 2.5rem;
       border-radius: 50px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
     }
     .btn-outline:hover {
-      background: var(--accent);
-      color: white;
+      background: rgba(16, 185, 129, 0.1);
+      border-color: #10b981;
+      color: #34d399;
       transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
     }
     @media (max-width: 640px) {
       .filter-tabs {
-        gap: 0.4rem;
+        gap: 0.5rem;
+        justify-content: flex-start; /* Align start for scrolling */
+        flex-wrap: nowrap; /* Reset wrap for carousel */
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .filter-tabs::-webkit-scrollbar {
+        display: none;
       }
       .filter-tab {
-        padding: 0.4rem 0.9rem;
-        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        flex-shrink: 0; /* Prevent shrinking */
       }
 
       /* Carousel for Mobile */
