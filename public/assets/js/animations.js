@@ -153,6 +153,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // ============================================
+        // Spec Value Number Animation
+        // Animates numbers in spec-value elements (e.g., 33MP, 4K60, 5.5 stops)
+        // ============================================
+        const specValueObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    entry.target.classList.add('counted');
+                    const originalText = entry.target.textContent.trim();
+
+                    // Extract leading number (supports decimals)
+                    const numMatch = originalText.match(/^([\d.]+)/);
+                    if (numMatch) {
+                        const targetValue = parseFloat(numMatch[1]);
+                        const suffix = originalText.slice(numMatch[1].length); // e.g., "MP FF", "fps", " stops"
+                        const isDecimal = numMatch[1].includes('.');
+
+                        if (!isNaN(targetValue) && targetValue > 0) {
+                            const obj = { value: 0 };
+                            anime({
+                                targets: obj,
+                                value: targetValue,
+                                round: isDecimal ? 10 : 1,
+                                duration: 1200,
+                                easing: 'easeOutExpo',
+                                update: () => {
+                                    if (isDecimal) {
+                                        entry.target.textContent = obj.value.toFixed(1) + suffix;
+                                    } else {
+                                        entry.target.textContent = Math.round(obj.value) + suffix;
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.spec-value').forEach(specValue => {
+            specValueObserver.observe(specValue);
+        });
+
+        // ============================================
         // Navigation Link Hover Effect
         // ============================================
         document.querySelectorAll('.topbar nav a').forEach(link => {
