@@ -348,9 +348,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p class="section-sub">
         Hands-on impressions, pros/cons, and clear "who should buy" guidance.
       </p>
-      <div class="grid">
-        <!-- NEW: Nikon Z6 III -->
-        <article class="card">
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="review-filters">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="sony">Sony</button>
+        <button class="filter-tab" data-filter="canon">Canon</button>
+        <button class="filter-tab" data-filter="nikon">Nikon</button>
+        <button class="filter-tab" data-filter="fujifilm">Fujifilm</button>
+        <button class="filter-tab" data-filter="other">Other</button>
+      </div>
+
+      <div class="grid" id="reviews-grid">
+        <!-- Nikon Z6 III -->
+        <article class="card" data-brand="nikon">
           <div class="card-thumb">
             <picture>
               <source
@@ -384,8 +395,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="meta">Full-Frame Hybrid · $2,499</div>
         </article>
 
-        <!-- NEW: Canon R5 Mark II -->
-        <article class="card">
+        <!-- Canon R5 Mark II -->
+        <article class="card" data-brand="canon">
           <div class="card-thumb">
             <picture>
               <source
@@ -419,8 +430,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="meta">Professional Flagship · $4,299</div>
         </article>
 
-        <!-- NEW: Fujifilm X-S20 -->
-        <article class="card">
+        <!-- Fujifilm X-S20 -->
+        <article class="card" data-brand="fujifilm">
           <div class="card-thumb">
             <picture>
               <source
@@ -453,8 +464,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="meta">APS-C Hybrid · $1,299</div>
         </article>
 
-        <!-- NEW: OM System OM-1 Mark II -->
-        <article class="card">
+        <!-- OM System OM-1 Mark II -->
+        <article class="card" data-brand="other">
           <div class="card-thumb">
             <picture>
               <source
@@ -474,7 +485,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
           <h3>
             <a href="/reviews/om-system-om-1-ii-review"
-              >OM System OM-1 Mark II Review</a>
+              >OM System OM-1 Mark II Review</a
+            >
           </h3>
           <div class="rating-display">
             <span class="stars">★★★★★</span>
@@ -489,7 +501,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="meta">Pro MFT · $2,199</div>
         </article>
 
-        <article class="card">
+        <article class="card" data-brand="sony">
           <div class="card-thumb">
             <picture>
               <source
@@ -523,7 +535,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Compact Full-Frame · Hybrid</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="sony">
           <div class="card-thumb">
             <picture>
               <source
@@ -557,7 +569,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Full-frame · Hybrid</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="fujifilm">
           <div class="card-thumb">
             <picture>
               <source
@@ -592,7 +604,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
           <div class="meta">APS-C · Photo-first</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="canon">
           <div class="card-thumb">
             <picture>
               <source
@@ -622,7 +634,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Value · Video-friendly</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="sony">
           <div class="card-thumb">
             <picture>
               <source
@@ -650,7 +662,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Vlog · Budget</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="nikon">
           <div class="card-thumb">
             <picture>
               <source
@@ -678,7 +690,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Pro · Hybrid</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="other">
           <div class="card-thumb">
             <picture>
               <source
@@ -710,7 +722,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Full-frame · Hybrid</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="other">
           <div class="card-thumb">
             <picture>
               <source
@@ -1266,4 +1278,106 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </section>
   </main>
+
+  <!-- Filter Tabs Styles -->
+  <style>
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+    .filter-tab {
+      padding: 0.5rem 1.25rem;
+      border: 2px solid #e5e7eb;
+      background: transparent;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #6b7280;
+      transition: all 0.2s ease;
+    }
+    .filter-tab:hover {
+      border-color: #10b981;
+      color: #10b981;
+    }
+    .filter-tab.active {
+      background: #10b981;
+      border-color: #10b981;
+      color: white;
+    }
+    #reviews-grid .card {
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+    #reviews-grid .card.hidden {
+      display: none;
+    }
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: #6b7280;
+      grid-column: 1 / -1;
+    }
+    @media (max-width: 640px) {
+      .filter-tabs {
+        gap: 0.4rem;
+      }
+      .filter-tab {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+
+  <!-- Filter Tabs Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const filterContainer = document.getElementById("review-filters");
+      const grid = document.getElementById("reviews-grid");
+
+      if (!filterContainer || !grid) return;
+
+      const buttons = filterContainer.querySelectorAll(".filter-tab");
+      const cards = grid.querySelectorAll(".card[data-brand]");
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Update active state
+          buttons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filter = btn.dataset.filter;
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const brand = card.dataset.brand;
+            const shouldShow = filter === "all" || brand === filter;
+
+            if (shouldShow) {
+              card.classList.remove("hidden");
+              visibleCount++;
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+
+          // Remove existing no-results message
+          const existingMsg = grid.querySelector(".no-results");
+          if (existingMsg) existingMsg.remove();
+
+          // Show message if no results
+          if (visibleCount === 0) {
+            const msg = document.createElement("div");
+            msg.className = "no-results";
+            msg.textContent = "No reviews found for this brand yet.";
+            grid.appendChild(msg);
+          }
+        });
+      });
+    });
+  </script>
 </BaseLayout>
