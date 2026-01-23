@@ -1,15 +1,124 @@
 ---
 /**
  * Header Component
- * Updated to use dynamic LanguageSwitcher for proper page-specific language switching
+ * Internationalized version - detects language from URL and shows appropriate content
  */
 import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+const currentPath = Astro.url.pathname;
+const isGerman = currentPath.startsWith("/de");
+
+// Navigation links
+const links = isGerman
+    ? {
+          home: "/de/",
+          // Guides
+          beginners: "/de/ratgeber/beste-kamera-fuer-anfaenger-2026",
+          travel: "/de/ratgeber/beste-reisekamera",
+          vlog: "/de/ratgeber/beste-vlog-kamera",
+          budget: "/de/ratgeber/beste-budget-kamera-unter-800",
+          hybrid: "/de/ratgeber/beste-hybrid-kamera",
+          fullFrame: "/de/ratgeber/beste-vollformat-fuer-video",
+          action360: "/de/ratgeber/beste-action-360-kamera",
+          // Lenses
+          sonyLenses: "/de/objektive/beste-sony-e-mount-objektive",
+          canonLenses: "/de/objektive/beste-canon-rf-objektive",
+          fujiLenses: "/de/objektive/beste-fujifilm-x-mount-objektive",
+          // Gear
+          tripods: "/de/zubehoer/beste-stative",
+          bags: "/de/zubehoer/beste-kamerataschen",
+          sdCards: "/de/zubehoer/beste-sd-karten",
+          // Other
+          deals: "/de/angebote",
+      }
+    : {
+          home: "/",
+          // Guides
+          beginners: "/guides/best-camera-for-beginners-2026",
+          travel: "/guides/best-travel-camera",
+          vlog: "/guides/best-vlog-camera",
+          budget: "/guides/best-budget-camera-under-800",
+          hybrid: "/guides/best-hybrid-camera",
+          fullFrame: "/guides/best-full-frame-for-video",
+          action360: "/guides/best-action-360-camera",
+          // Lenses
+          sonyLenses: "/lenses/best-sony-e-mount-lenses",
+          canonLenses: "/lenses/best-canon-rf-lenses",
+          fujiLenses: "/lenses/best-fujifilm-x-mount-lenses",
+          // Gear
+          tripods: "/gear/best-tripods",
+          bags: "/gear/best-camera-bags",
+          sdCards: "/gear/best-sd-cards",
+          // Other
+          deals: "/deals",
+      };
+
+// Text translations
+const texts = isGerman
+    ? {
+          searchPlaceholder: "Suche nach 'beste Vlog-Kamera' oder 'Sony A7C'",
+          guides: "Ratgeber",
+          cameraGuides: "Kamera-Ratgeber",
+          advancedGuides: "Fortgeschritten",
+          bestBeginners: "Beste für Einsteiger",
+          bestTravel: "Beste Reisekamera",
+          bestVlog: "Beste Vlog-Kamera",
+          bestBudget: "Beste Budget-Kamera",
+          bestHybrid: "Beste Hybrid-Kamera",
+          bestFullFrame: "Beste Vollformat Video",
+          action360: "Action- & 360-Kameras",
+          lenses: "Objektive",
+          byMount: "Nach Anschluss",
+          sonyMount: "Sony E-Mount",
+          canonMount: "Canon RF & RF-S",
+          fujiMount: "Fujifilm X-Mount",
+          gear: "Zubehör",
+          accessories: "Zubehör",
+          tripods: "Beste Stative",
+          bags: "Beste Kamerataschen",
+          sdCards: "Beste SD-Karten",
+          deals: "Angebote",
+          buyingGuides: "Kaufratgeber",
+          gearAccessories: "Zubehör",
+          currentDeals: "Aktuelle Angebote",
+      }
+    : {
+          searchPlaceholder: "Try 'best vlog camera' or 'Sony A7C'",
+          guides: "Guides",
+          cameraGuides: "Camera Guides",
+          advancedGuides: "Advanced Guides",
+          bestBeginners: "Best for Beginners",
+          bestTravel: "Best Travel Camera",
+          bestVlog: "Best Vlog Camera",
+          bestBudget: "Best Budget Camera",
+          bestHybrid: "Best Hybrid Camera",
+          bestFullFrame: "Best Full-Frame Video",
+          action360: "Action & 360 Cameras",
+          lenses: "Lenses",
+          byMount: "By Mount",
+          sonyMount: "Sony E-Mount",
+          canonMount: "Canon RF & RF-S",
+          fujiMount: "Fujifilm X-Mount",
+          gear: "Gear",
+          accessories: "Accessories",
+          tripods: "Best Tripods",
+          bags: "Best Camera Bags",
+          sdCards: "Best SD Cards",
+          deals: "Deals",
+          buyingGuides: "Buying Guides",
+          gearAccessories: "Gear & Accessories",
+          currentDeals: "Current Deals",
+      };
 ---
 
 <header class="header-sticky">
     <div class="container">
         <div class="topbar topbar-enhanced">
-            <a class="brand-link" href="/" aria-label="cameraupick home">
+            <a
+                class="brand-link"
+                href={links.home}
+                aria-label="cameraupick home"
+            >
                 <img
                     class="brand-logo"
                     src="/assets/images/logo.webp"
@@ -29,7 +138,7 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
             <div class="header-search">
                 <input
                     type="search"
-                    placeholder="Try 'best vlog camera' or 'Sony A7C'"
+                    placeholder={texts.searchPlaceholder}
                     aria-label="Search site"
                 />
                 <span class="search-icon" aria-hidden="true">🔍</span>
@@ -40,55 +149,51 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
                 <!-- Guides Dropdown -->
                 <div class="nav-item">
                     <span class="nav-link">
-                        Guides
+                        {texts.guides}
                         <span class="nav-arrow">▾</span>
                     </span>
                     <div class="mega-menu">
                         <div class="mega-menu-content">
                             <div class="mega-menu-column">
-                                <h4>Camera Guides</h4>
+                                <h4>{texts.cameraGuides}</h4>
                                 <ul>
                                     <li>
-                                        <a
-                                            href="/guides/best-camera-for-beginners-2026"
-                                            >Best for Beginners</a
+                                        <a href={links.beginners}
+                                            >{texts.bestBeginners}</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="/guides/best-travel-camera"
-                                            >Best Travel Camera</a
+                                        <a href={links.travel}
+                                            >{texts.bestTravel}</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="/guides/best-vlog-camera"
-                                            >Best Vlog Camera</a
+                                        <a href={links.vlog}>{texts.bestVlog}</a
                                         >
                                     </li>
                                     <li>
-                                        <a
-                                            href="/guides/best-budget-camera-under-800"
-                                            >Best Budget Camera</a
+                                        <a href={links.budget}
+                                            >{texts.bestBudget}</a
                                         >
                                     </li>
                                 </ul>
                             </div>
                             <div class="mega-menu-column">
-                                <h4>Advanced Guides</h4>
+                                <h4>{texts.advancedGuides}</h4>
                                 <ul>
                                     <li>
-                                        <a href="/guides/best-hybrid-camera"
-                                            >Best Hybrid Camera</a
+                                        <a href={links.hybrid}
+                                            >{texts.bestHybrid}</a
                                         >
                                     </li>
                                     <li>
-                                        <a
-                                            href="/guides/best-full-frame-for-video"
-                                            >Best Full-Frame Video</a
+                                        <a href={links.fullFrame}
+                                            >{texts.bestFullFrame}</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="/guides/best-action-360-camera"
-                                            >Action & 360 Cameras</a
+                                        <a href={links.action360}
+                                            >{texts.action360}</a
                                         >
                                     </li>
                                 </ul>
@@ -100,29 +205,27 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
                 <!-- Lenses Dropdown -->
                 <div class="nav-item">
                     <span class="nav-link">
-                        Lenses
+                        {texts.lenses}
                         <span class="nav-arrow">▾</span>
                     </span>
                     <div class="mega-menu">
                         <div class="mega-menu-content">
                             <div class="mega-menu-column">
-                                <h4>By Mount</h4>
+                                <h4>{texts.byMount}</h4>
                                 <ul>
                                     <li>
-                                        <a
-                                            href="/lenses/best-sony-e-mount-lenses"
-                                            >Sony E-Mount</a
+                                        <a href={links.sonyLenses}
+                                            >{texts.sonyMount}</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="/lenses/best-canon-rf-lenses"
-                                            >Canon RF & RF-S</a
+                                        <a href={links.canonLenses}
+                                            >{texts.canonMount}</a
                                         >
                                     </li>
                                     <li>
-                                        <a
-                                            href="/lenses/best-fujifilm-x-mount-lenses"
-                                            >Fujifilm X-Mount</a
+                                        <a href={links.fujiLenses}
+                                            >{texts.fujiMount}</a
                                         >
                                     </li>
                                 </ul>
@@ -134,27 +237,25 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
                 <!-- Gear Dropdown -->
                 <div class="nav-item">
                     <span class="nav-link">
-                        Gear
+                        {texts.gear}
                         <span class="nav-arrow">▾</span>
                     </span>
                     <div class="mega-menu">
                         <div class="mega-menu-content">
                             <div class="mega-menu-column">
-                                <h4>Accessories</h4>
+                                <h4>{texts.accessories}</h4>
                                 <ul>
                                     <li>
-                                        <a href="/gear/best-tripods"
-                                            >Best Tripods</a
+                                        <a href={links.tripods}
+                                            >{texts.tripods}</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="/gear/best-camera-bags"
-                                            >Best Camera Bags</a
-                                        >
+                                        <a href={links.bags}>{texts.bags}</a>
                                     </li>
                                     <li>
-                                        <a href="/gear/best-sd-cards"
-                                            >Best SD Cards</a
+                                        <a href={links.sdCards}
+                                            >{texts.sdCards}</a
                                         >
                                     </li>
                                 </ul>
@@ -164,7 +265,9 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
                 </div>
 
                 <!-- Deals Link (Special) -->
-                <a href="/deals" class="nav-link deals-link">Deals</a>
+                <a href={links.deals} class="nav-link deals-link"
+                    >{texts.deals}</a
+                >
             </nav>
 
             <!-- Language Switcher (Dynamic) -->
@@ -186,60 +289,50 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
         <div class="mobile-menu">
             <div class="mobile-menu-item">
                 <div class="mobile-menu-header">
-                    Buying Guides
+                    {texts.buyingGuides}
                     <span class="mobile-menu-arrow">+</span>
                 </div>
                 <div class="mobile-menu-links">
-                    <a href="/guides/best-camera-for-beginners-2026"
-                        >Best for Beginners</a
-                    >
-                    <a href="/guides/best-travel-camera">Best Travel Camera</a>
-                    <a href="/guides/best-vlog-camera">Best Vlog Camera</a>
-                    <a href="/guides/best-budget-camera-under-800"
-                        >Best Budget Camera</a
-                    >
-                    <a href="/guides/best-hybrid-camera">Best Hybrid Camera</a>
-                    <a href="/guides/best-full-frame-for-video"
-                        >Best Full-Frame Video</a
-                    >
-                    <a href="/guides/best-action-360-camera"
-                        >Action & 360 Cameras</a
-                    >
+                    <a href={links.beginners}>{texts.bestBeginners}</a>
+                    <a href={links.travel}>{texts.bestTravel}</a>
+                    <a href={links.vlog}>{texts.bestVlog}</a>
+                    <a href={links.budget}>{texts.bestBudget}</a>
+                    <a href={links.hybrid}>{texts.bestHybrid}</a>
+                    <a href={links.fullFrame}>{texts.bestFullFrame}</a>
+                    <a href={links.action360}>{texts.action360}</a>
                 </div>
             </div>
 
             <div class="mobile-menu-item">
                 <div class="mobile-menu-header">
-                    Lenses
+                    {texts.lenses}
                     <span class="mobile-menu-arrow">+</span>
                 </div>
                 <div class="mobile-menu-links">
-                    <a href="/lenses/best-sony-e-mount-lenses">Sony E-Mount</a>
-                    <a href="/lenses/best-canon-rf-lenses">Canon RF & RF-S</a>
-                    <a href="/lenses/best-fujifilm-x-mount-lenses"
-                        >Fujifilm X-Mount</a
-                    >
+                    <a href={links.sonyLenses}>{texts.sonyMount}</a>
+                    <a href={links.canonLenses}>{texts.canonMount}</a>
+                    <a href={links.fujiLenses}>{texts.fujiMount}</a>
                 </div>
             </div>
 
             <div class="mobile-menu-item">
                 <div class="mobile-menu-header">
-                    Gear & Accessories
+                    {texts.gearAccessories}
                     <span class="mobile-menu-arrow">+</span>
                 </div>
                 <div class="mobile-menu-links">
-                    <a href="/gear/best-tripods">Best Tripods</a>
-                    <a href="/gear/best-camera-bags">Best Camera Bags</a>
-                    <a href="/gear/best-sd-cards">Best SD Cards</a>
+                    <a href={links.tripods}>{texts.tripods}</a>
+                    <a href={links.bags}>{texts.bags}</a>
+                    <a href={links.sdCards}>{texts.sdCards}</a>
                 </div>
             </div>
 
             <div class="mobile-menu-item">
                 <a
-                    href="/deals"
+                    href={links.deals}
                     style="display: block; padding: 1rem; color: var(--accent-strong); font-weight: 700;"
                 >
-                    Current Deals
+                    {texts.currentDeals}
                 </a>
             </div>
         </div>
