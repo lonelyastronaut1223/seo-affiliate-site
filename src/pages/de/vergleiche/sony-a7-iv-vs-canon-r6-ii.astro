@@ -1,20 +1,31 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Sony A7 IV vs Canon R6 II (2026): Vollständiger Vergleich — Kameraupick" description="Ausführlicher Sony A7 IV vs Canon R6 II Vergleich: Wir testen Autofokus, Videoqualität, IBIS, Rolling Shutter und Objektivsysteme.">
-<main class="container">
+<BaseLayout
+  title="Sony A7 IV vs Canon R6 II (2026): Vollständiger Vergleich — Kameraupick"
+  description="Ausführlicher Sony A7 IV vs Canon R6 II Vergleich: Wir testen Autofokus, Videoqualität, IBIS, Rolling Shutter und Objektivsysteme."
+>
+  <main class="container">
     <section class="hero">
       <div class="hero-grid">
         <div>
           <h1>Sony A7 IV vs Canon R6 II</h1>
-          <p class="hero-sub">Zwei Flaggschiff-Hybride im Duell. Wir vergleichen Autofokus, Videoqualität,
-            Stabilisierung und das Ökosystem, das am meisten zählt.</p>
+          <p class="hero-sub">
+            Zwei Flaggschiff-Hybride im Duell. Wir vergleichen Autofokus,
+            Videoqualität, Stabilisierung und das Ökosystem, das am meisten
+            zählt.
+          </p>
           <p class="mt-12 text-sm text-muted">Aktualisiert: Januar 2026</p>
         </div>
         <div class="hero-media">
-          <img src="/assets/images/compare/sony-a7iv-vs-canon-r6ii.webp"
-            alt="Sony A7 IV vs Canon R6 II Seite-an-Seite Vergleich" loading="eager" width="1400" height="900">
+          <img
+            src="/assets/images/compare/sony-a7iv-vs-canon-r6ii.webp"
+            alt="Sony A7 IV vs Canon R6 II Seite-an-Seite Vergleich"
+            loading="eager"
+            width="1400"
+            height="900"
+          />
         </div>
       </div>
     </section>
@@ -26,31 +37,72 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         <article class="card" id="sony-a7iv">
           <div class="tag">🏆 Beste für Foto/Hybrid</div>
           <h3>Sony A7 IV</h3>
-          <p><strong>Wähle, wenn:</strong> Du Objektivauswahl, Farbwiedergabe und Vielseitigkeit priorisierst. Beste für
-            Talking-Head-Videos, Porträts und kontrollierte Aufnahmen.</p>
-          <ul class="styled-list">
-            <li>33MP Sensor (mehr Beschnittspielraum)</li>
-            <li>Riesiges E-Halterung Objektiv-Ökosystem</li>
-            <li>Besser für foto-fokussierte Hybride</li>
-          </ul>
+          <p>
+            <strong>Wähle, wenn:</strong> Du Objektivauswahl, Farbwiedergabe und Vielseitigkeit
+            priorisierst. Beste für Talking-Head-Videos, Porträts und kontrollierte
+            Aufnahmen.
+          </p>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">33MP VF</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K60 (Crop)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">IBIS</span>
+              <span class="spec-value">5,5 Stufen</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Serie</span>
+              <span class="spec-value">10fps</span>
+            </div>
+          </div>
           <div class="quick-actions">
-            <a class="btn-buy" href="#" rel="sponsored noopener noreferrer" target="_blank">Preis auf Amazon prüfen
-              →</a>
+            <a
+              class="btn-buy"
+              href="#"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+              data-product="sony-a7iv">Preis auf Amazon prüfen →</a
+            >
           </div>
         </article>
         <article class="card" id="canon-r6-ii">
           <div class="tag">🎬 Beste für Action/Video</div>
           <h3>Canon R6 Mark II</h3>
-          <p><strong>Wähle, wenn:</strong> Du schnelle Action, Sport oder Gimbal-freies Handheld-Video aufnimmst. Beste
-            für Hochzeits-Videografen und Run-and-Gun-Creator.</p>
-          <ul class="styled-list">
-            <li>4K60 volle Breite (kein Crop)</li>
-            <li>Überlegener IBIS für Handheld</li>
-            <li>40fps Serienbildgeschwindigkeit</li>
-          </ul>
+          <p>
+            <strong>Wähle, wenn:</strong> Du schnelle Action, Sport oder Gimbal-freies
+            Handheld-Video aufnimmst. Beste für Hochzeits-Videografen und Run-and-Gun-Creator.
+          </p>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24,2MP VF</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K60 Voll</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">IBIS</span>
+              <span class="spec-value">8 Stufen</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Serie</span>
+              <span class="spec-value">40fps</span>
+            </div>
+          </div>
           <div class="quick-actions">
-            <a class="btn-buy" href="#" rel="sponsored noopener noreferrer" target="_blank">Preis auf Amazon prüfen
-              →</a>
+            <a
+              class="btn-buy"
+              href="#"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+              data-product="canon-r6-ii">Preis auf Amazon prüfen →</a
+            >
           </div>
         </article>
       </div>
@@ -138,7 +190,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <section class="section">
       <h2>Autofokus: Kopf-an-Kopf</h2>
       <div class="card">
-        <p>Beide Kameras bieten <strong>klassenführenden Autofokus</strong>, aber mit unterschiedlichen Stärken:</p>
+        <p>
+          Beide Kameras bieten <strong>klassenführenden Autofokus</strong>, aber
+          mit unterschiedlichen Stärken:
+        </p>
         <div class="grid" class="mt-16">
           <div>
             <h4>Sony A7 IV</h4>
@@ -159,8 +214,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </ul>
           </div>
         </div>
-        <p class="mt-16"><strong>Gewinner:</strong> Unentschieden. Wähle Canon für Menschen, Sony für
-          Wildlife-Vielfalt.</p>
+        <p class="mt-16">
+          <strong>Gewinner:</strong> Unentschieden. Wähle Canon für Menschen, Sony
+          für Wildlife-Vielfalt.
+        </p>
       </div>
     </section>
 
@@ -188,8 +245,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </ul>
           </div>
         </div>
-        <p class="mt-16"><strong>Gewinner:</strong> Canon R6 II für Video-First-Creator. Der
-          Rolling-Shutter-Vorteil ist signifikant.</p>
+        <p class="mt-16">
+          <strong>Gewinner:</strong> Canon R6 II für Video-First-Creator. Der Rolling-Shutter-Vorteil
+          ist signifikant.
+        </p>
       </div>
     </section>
 
@@ -198,10 +257,17 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <div class="card">
         <p>Canons 8-Stufen-IBIS ist spürbar besser für Handheld-Aufnahmen:</p>
         <ul class="styled-list mt-16">
-          <li><strong>R6 II:</strong> Flüssige Handheld-Gehaufnahmen ohne Gimbal möglich</li>
-          <li><strong>A7 IV:</strong> Gut, aber Active-Modus fügt Crop hinzu; weniger effektiv bei Bewegung</li>
+          <li>
+            <strong>R6 II:</strong> Flüssige Handheld-Gehaufnahmen ohne Gimbal möglich
+          </li>
+          <li>
+            <strong>A7 IV:</strong> Gut, aber Active-Modus fügt Crop hinzu; weniger
+            effektiv bei Bewegung
+          </li>
         </ul>
-        <p><strong>Gewinner:</strong> Canon R6 II. Gimbal-freies Vloggen ist praktischer.</p>
+        <p>
+          <strong>Gewinner:</strong> Canon R6 II. Gimbal-freies Vloggen ist praktischer.
+        </p>
       </div>
     </section>
 
@@ -227,8 +293,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </ul>
           </div>
         </div>
-        <p class="mt-16"><strong>Gewinner:</strong> Sony A7 IV. Langfristige Objektivinvestition ist
-          deutlich günstiger.</p>
+        <p class="mt-16">
+          <strong>Gewinner:</strong> Sony A7 IV. Langfristige Objektivinvestition
+          ist deutlich günstiger.
+        </p>
       </div>
     </section>
 
@@ -236,13 +304,31 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <section class="section">
       <h2>Unsere Bewertungen</h2>
       <div class="rating-grid">
-        <div class="score-card"><span class="score">8.8</span><span class="score-label">Sony A7 IV Gesamt</span></div>
-        <div class="score-card"><span class="score">8.9</span><span class="score-label">Canon R6 II Gesamt</span></div>
-        <div class="score-card"><span class="score">9.0</span><span class="score-label">A7 IV Foto</span></div>
-        <div class="score-card"><span class="score">9.2</span><span class="score-label">R6 II Video</span></div>
-        <div class="score-card"><span class="score">9.5</span><span class="score-label">A7 IV Preis-Leistung</span>
+        <div class="score-card">
+          <span class="score">8.8</span><span class="score-label"
+            >Sony A7 IV Gesamt</span>
         </div>
-        <div class="score-card"><span class="score">8.5</span><span class="score-label">R6 II Preis-Leistung</span>
+        <div class="score-card">
+          <span class="score">8.9</span><span class="score-label"
+            >Canon R6 II Gesamt</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.0</span><span class="score-label"
+            >A7 IV Foto</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.2</span><span class="score-label"
+            >R6 II Video</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.5</span><span class="score-label"
+            >A7 IV Preis-Leistung</span
+          >
+        </div>
+        <div class="score-card">
+          <span class="score">8.5</span><span class="score-label"
+            >R6 II Preis-Leistung</span
+          >
         </div>
       </div>
     </section>
@@ -277,17 +363,24 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <!-- Fazit -->
     <section class="section">
       <h2>Fazit</h2>
-      <div class="card" style="background: var(--bg-soft); border-left: 4px solid var(--accent);">
+      <div
+        class="card"
+        style="background: var(--bg-soft); border-left: 4px solid var(--accent);"
+      >
         <p style="font-size: 1.1em;">
-          <strong>Für die meisten Hybrid-Creator:</strong> Die <strong>Sony A7 IV</strong> bietet dank ihres
-          Objektiv-Ökosystems und ihrer Vielseitigkeit den besseren Langzeitwert.
+          <strong>Für die meisten Hybrid-Creator:</strong> Die <strong
+            >Sony A7 IV</strong
+          > bietet dank ihres Objektiv-Ökosystems und ihrer Vielseitigkeit den besseren
+          Langzeitwert.
         </p>
         <p style="margin-top: 12px;">
-          <strong>Für Video-First-Shooter:</strong> Die <strong>Canon R6 II</strong> gewinnt mit überlegener
-          Bewegungsverarbeitung, IBIS und 4K60-Qualität.
+          <strong>Für Video-First-Shooter:</strong> Die <strong
+            >Canon R6 II</strong
+          > gewinnt mit überlegener Bewegungsverarbeitung, IBIS und 4K60-Qualität.
         </p>
         <p style="margin-top: 12px; color: var(--muted);">
-          Beide sind ausgezeichnete Kameras. Die "falsche" Wahl produziert immer noch Profi-Qualitätsergebnisse.
+          Beide sind ausgezeichnete Kameras. Die "falsche" Wahl produziert immer
+          noch Profi-Qualitätsergebnisse.
         </p>
       </div>
     </section>
@@ -297,15 +390,24 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <h2>Verwandte Vergleiche</h2>
       <div class="grid">
         <article class="card card-plain">
-          <h3><a href="sony-a7-v-vs-canon-r6-iii.html">Sony A7 V vs Canon R6 III</a></h3>
+          <h3>
+            <a href="sony-a7-v-vs-canon-r6-iii.html"
+              >Sony A7 V vs Canon R6 III</a>
+          </h3>
           <p>Die Next-Gen-Flaggschiffe im Vergleich.</p>
         </article>
         <article class="card card-plain">
-          <h3><a href="/bewertungen/sony-a7-iv-testbericht">Sony A7 IV Vollständiger Test</a></h3>
+          <h3>
+            <a href="/bewertungen/sony-a7-iv-testbericht"
+              >Sony A7 IV Vollständiger Test</a>
+          </h3>
           <p>Tiefgehender Blick auf die A7 IV.</p>
         </article>
         <article class="card card-plain">
-          <h3><a href="/ratgeber/beste-hybrid-kamera">Beste Hybrid-Kameras 2026</a></h3>
+          <h3>
+            <a href="/ratgeber/beste-hybrid-kamera"
+              >Beste Hybrid-Kameras 2026</a>
+          </h3>
           <p>Alle Top-Hybride im Ranking.</p>
         </article>
       </div>
@@ -314,25 +416,42 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <section class="section">
       <h2>Affiliate-Hinweis</h2>
       <div class="card">
-        <p>Diese Seite enthält Affiliate-Links. Wenn du über unsere Links kaufst, verdienen wir möglicherweise eine
-          kleine Provision ohne zusätzliche Kosten für dich. Dies hilft, unsere unabhängigen Tests zu unterstützen.</p>
-      </div>
-    </section>
-  
-    <!-- Author Box -->
-    <section class="section author-box" style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;">
-      <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
-        <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
-          <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras. 
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
-          </p>
-          <a href="/uber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren Testprozess erfahren →</a>
-        </div>
+        <p>
+          Diese Seite enthält Affiliate-Links. Wenn du über unsere Links kaufst,
+          verdienen wir möglicherweise eine kleine Provision ohne zusätzliche
+          Kosten für dich. Dies hilft, unsere unabhängigen Tests zu
+          unterstützen.
+        </p>
       </div>
     </section>
 
+    <!-- Author Box -->
+    <section
+      class="section author-box"
+      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;"
+    >
+      <div style="display: flex; gap: 16px; align-items: flex-start;">
+        <img
+          src="/assets/images/team-avatar.webp"
+          alt="Kameraupick Editorial Team"
+          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;"
+        />
+        <div>
+          <h4 style="margin: 0 0 8px 0;">
+            Geschrieben vom Kameraupick Redaktionsteam
+          </h4>
+          <p style="margin: 0; color: var(--muted); font-size: 14px;">
+            Unser Team aus professionellen Fotografen und Videografen hat über
+            10 Jahre Erfahrung im Testen von Kameras. Wir kaufen unsere eigene
+            Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+          </p>
+          <a
+            href="/uber-uns"
+            style="font-size: 14px; margin-top: 8px; display: inline-block;"
+            >Mehr über unseren Testprozess erfahren →</a
+          >
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>

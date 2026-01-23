@@ -1,170 +1,466 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Sony ZV-E10 vs Sony A6700 — Kameraupick" description="Vergleiche Sony ZV-E10 vs Sony A6700: Autofokus, Video features, Stabilisierung, and upgrade reasons for creators.">
-<main class="container">
+<BaseLayout
+  title="Sony ZV-E10 vs A6700 (2026): Lohnt sich das Upgrade? — Kameraupick"
+  description="Sony ZV-E10 vs A6700 Vergleich: Autofokus, IBIS, Videoqualität und wann sich der Umstieg lohnt – für Creator und Hybrid-Fotografen."
+>
+  <main class="container">
     <section class="hero">
       <div class="hero-grid">
         <div>
           <h1>Sony ZV-E10 vs Sony A6700</h1>
-          <p class="hero-sub">Creator-Einstieg vs Enthusiast-Hybrid: wann sich ein Upgrade lohnt.</p>
+          <p class="hero-sub">
+            Einsteiger-Vlogger gegen Hybrid-Profi: Wann lohnt sich der Umstieg?
+            Wir vergleichen Autofokus, Video-Specs, Stabilisierung und
+            Preis-Leistung.
+          </p>
+          <p class="mt-12 text-sm text-muted">Aktualisiert: Januar 2026</p>
         </div>
         <div class="hero-media">
-          <img src="/assets/images/compare/sony-zve10-vs-a6700.webp" alt="Sony ZV-E10 vs Sony A6700 comparison"
-            loading="eager">
+          <img
+            src="/assets/images/compare/sony-zve10-vs-a6700.webp"
+            alt="Sony ZV-E10 vs A6700 Vergleich"
+            loading="eager"
+            width="1400"
+            height="900"
+          />
         </div>
       </div>
     </section>
+
+    <!-- Schnelles Urteil -->
     <section class="section">
-      <h2>Kurz & Knapp</h2>
+      <h2>Schnelles Urteil</h2>
       <div class="grid">
         <article class="card" id="sony-a6700">
-          <div class="tag">Pick</div>
+          <div class="tag">🏆 Langfristig die bessere Wahl</div>
           <h3>Sony A6700</h3>
-          <p>IBIS, 4K60 10-Bit, EVF. Beste langfristige Hybrid-Lösung für Creator.</p>
+          <p>
+            <strong>Geeignet für:</strong> Wer eine zukunftssichere Hybrid-Kamera
+            mit IBIS, 4K60 10-Bit und elektronischem Sucher sucht. Ideal für Creator,
+            die ihre Fähigkeiten ausbauen möchten.
+          </p>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">26MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K60 10-Bit</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">IBIS</span>
+              <span class="spec-value">5-Achsen</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">493g</span>
+            </div>
+          </div>
           <div class="quick-actions">
-            <a class="buy-btn" href="https://example.com/affiliate/a6700" rel="nofollow">Shop A6700</a>
+            <a
+              class="btn-buy"
+              href="#"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+              data-product="sony-a6700">Preis prüfen →</a
+            >
           </div>
         </article>
         <article class="card" id="sony-zv-e10">
-          <div class="tag">Budget</div>
+          <div class="tag">💰 Preis-Leistungs-Tipp</div>
           <h3>Sony ZV-E10</h3>
-          <p>Großartiger AF, Klappbildschirm, günstig. Perfekter Einstieg für 4K30 Vlog.</p>
+          <p>
+            <strong>Geeignet für:</strong> Einsteiger mit begrenztem Budget, die dennoch
+            leistungsstarken Autofokus wollen. Perfekt für 4K30-Vlogging und erste
+            Schritte.
+          </p>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K30</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">IBIS</span>
+              <span class="spec-value">Keiner</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">343g</span>
+            </div>
+          </div>
           <div class="quick-actions">
-            <a class="buy-btn" href="https://example.com/affiliate/zv-e10" rel="nofollow">Bestes Angebot</a>
+            <a
+              class="btn-buy"
+              href="#"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+              data-product="sony-zv-e10">Preis prüfen →</a
+            >
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- Detaillierte Specs -->
+    <section class="section">
+      <h2>Technische Daten im Überblick</h2>
+      <div class="comparison-table-wrapper">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>Merkmal</th>
+              <th>Sony ZV-E10</th>
+              <th>Sony A6700</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sensor</strong></td>
+              <td>24,2MP APS-C CMOS</td>
+              <td>26MP APS-C Exmor R CMOS</td>
+            </tr>
+            <tr>
+              <td><strong>Prozessor</strong></td>
+              <td>BIONZ X</td>
+              <td>BIONZ XR + KI-Einheit</td>
+            </tr>
+            <tr>
+              <td><strong>Video (Max)</strong></td>
+              <td>4K30 (kein 10-Bit), 1080p120</td>
+              <td>4K60 10-Bit 4:2:2, 4K120</td>
+            </tr>
+            <tr>
+              <td><strong>Stabilisierung</strong></td>
+              <td>Nur digital + Objektiv-OSS</td>
+              <td>5-Achsen IBIS + Active-Modus</td>
+            </tr>
+            <tr>
+              <td><strong>Autofokus</strong></td>
+              <td>425 Punkte, Augen/Tier AF</td>
+              <td>759 Punkte, Augen/Tier/Vogel/Insekt AF</td>
+            </tr>
+            <tr>
+              <td><strong>Rolling Shutter</strong></td>
+              <td>Moderat (sichtbar bei Schwenks)</td>
+              <td>Verbessert (weniger sichtbar)</td>
+            </tr>
+            <tr>
+              <td><strong>Sucher</strong></td>
+              <td>Keiner (nur LCD)</td>
+              <td>2,36M-Punkt OLED EVF</td>
+            </tr>
+            <tr>
+              <td><strong>Display</strong></td>
+              <td>3" schwenkbar (Klapp)</td>
+              <td>3" schwenkbar (Klapp)</td>
+            </tr>
+            <tr>
+              <td><strong>Log-Profile</strong></td>
+              <td>S-Log2 (eingeschränkt)</td>
+              <td>S-Log3, S-Cinetone, LUT-Unterstützung</td>
+            </tr>
+            <tr>
+              <td><strong>Objektivbajonett</strong></td>
+              <td>Sony E-Bajonett (APS-C)</td>
+              <td>Sony E-Bajonett (APS-C)</td>
+            </tr>
+            <tr>
+              <td><strong>Akkulaufzeit</strong></td>
+              <td>~440 Aufnahmen (LCD)</td>
+              <td>~550 Aufnahmen (LCD)</td>
+            </tr>
+            <tr>
+              <td><strong>Gewicht</strong></td>
+              <td>343g (nur Gehäuse)</td>
+              <td>493g (nur Gehäuse)</td>
+            </tr>
+            <tr>
+              <td><strong>Preis (Gehäuse)</strong></td>
+              <td>~699€</td>
+              <td>~1.499€</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Tiefgehender Vergleich: Video -->
+    <section class="section">
+      <h2>Videoqualität: Eine Generation Unterschied</h2>
+      <div class="card">
+        <p>Die <strong>A6700 ist technisch eine Generation voraus</strong>:</p>
+        <div class="grid" style="margin-top: 16px;">
+          <div>
+            <h4>Sony ZV-E10</h4>
+            <ul>
+              <li>4K30: Scharf, für die meisten Inhalte ausreichend</li>
+              <li>⚠️ Kein 4K60 verfügbar</li>
+              <li>⚠️ Nur 8-Bit (eingeschränktes Grading)</li>
+              <li>S-Log2 verfügbar (nicht optimal)</li>
+              <li>Moderater Rolling Shutter</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Sony A6700</h4>
+            <ul>
+              <li>✅ 4K60 10-Bit 4:2:2 intern</li>
+              <li>✅ 4K120 für Zeitlupe</li>
+              <li>✅ S-Log3, S-Cinetone, LUT-Unterstützung</li>
+              <li>✅ Besserer Rolling-Shutter-Umgang</li>
+              <li>Professionelle Ausgabequalität</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 16px;">
+          <strong>Fazit:</strong> Die Sony A6700 ist deutlich überlegen. Wenn Videoqualität
+          für deine Arbeit wichtig ist, lohnt sich das Upgrade.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tiefgehender Vergleich: IBIS -->
+    <section class="section">
+      <h2>Stabilisierung: IBIS verändert alles</h2>
+      <div class="card">
+        <p>
+          Dies ist der <strong>größte praktische Unterschied</strong> zwischen beiden
+          Kameras:
+        </p>
+        <ul class="styled-list" style="margin-top: 16px;">
+          <li>
+            <strong>ZV-E10:</strong> Verlässt sich auf Objektiv-OSS (optische Stabilisierung)
+            + digitale Stabilisierung. Handheld-Aufnahmen können wackelig sein, besonders
+            mit nicht-stabilisierten Objektiven.
+          </li>
+          <li>
+            <strong>A6700:</strong> 5-Achsen-IBIS funktioniert mit JEDEM Objektiv.
+            Der Active-Modus fügt einen zusätzlichen Crop hinzu, bietet aber Gimbal-ähnliche
+            Stabilität beim Gehen.
+          </li>
+        </ul>
+        <p>
+          <strong>Fazit:</strong> Die Sony A6700 überzeugt. IBIS ist für Handheld-Creator
+          ein Gamechanger.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tiefgehender Vergleich: Autofokus -->
+    <section class="section">
+      <h2>Autofokus: Beide stark, A6700 besser</h2>
+      <div class="card">
+        <p>
+          Sonys Autofokus ist bei beiden Kameras hervorragend, aber die A6700
+          hat das neuere KI-System:
+        </p>
+        <div class="grid" style="margin-top: 16px;">
+          <div>
+            <h4>Sony ZV-E10</h4>
+            <ul>
+              <li>✅ Ausgezeichnete Augenverfolgung bei Personen</li>
+              <li>✅ Zuverlässige Tiererkennung</li>
+              <li>Schneller Produkt-Showcase-Modus</li>
+              <li>425 Phasendetektions-Punkte</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Sony A6700</h4>
+            <ul>
+              <li>✅ KI-gestützte Motiverkennung</li>
+              <li>✅ Vogel-, Insekten-, Fahrzeugerkennung</li>
+              <li>✅ Mehr Anpassungsmöglichkeiten</li>
+              <li>759 Phasendetektions-Punkte</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 16px;">
+          <strong>Fazit:</strong> Die Sony A6700 ist besser, aber der AF der ZV-E10
+          reicht für 90% der Content-Creator.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tiefgehender Vergleich: EVF -->
+    <section class="section">
+      <h2>Sucher: Flexibilität beim Fotografieren</h2>
+      <div class="card">
+        <p>Der EVF der A6700 eröffnet Möglichkeiten für die Fotografie:</p>
+        <ul class="styled-list" style="margin-top: 16px;">
+          <li>
+            <strong>ZV-E10:</strong> Nur LCD. Funktioniert für Video, aber bei hellem
+            Sonnenlicht und präziser Bildkomposition herausfordernd.
+          </li>
+          <li>
+            <strong>A6700:</strong> 2,36M-Punkt OLED-EVF für Aufnahmen auf Augenhöhe.
+            Unerlässlich für Outdoor-Fotografie, Street und jede Situation, bei der
+            das LCD auswäscht.
+          </li>
+        </ul>
+        <p>
+          <strong>Fazit:</strong> Die Sony A6700 überzeugt. Wer auch fotografiert,
+          profitiert enorm vom EVF.
+        </p>
+      </div>
+    </section>
+
+    <!-- Bewertungen -->
+    <section class="section">
+      <h2>Unsere Bewertungen</h2>
+      <div class="rating-grid">
+        <div class="score-card">
+          <span class="score">8.2</span><span class="score-label"
+            >ZV-E10 Gesamt</span>
+        </div>
+        <div class="score-card">
+          <span class="score">8.8</span><span class="score-label"
+            >A6700 Gesamt</span>
+        </div>
+        <div class="score-card">
+          <span class="score">8.0</span><span class="score-label"
+            >ZV-E10 Video</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.0</span><span class="score-label"
+            >A6700 Video</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.2</span><span class="score-label"
+            >ZV-E10 Preis-Leistung</span>
+        </div>
+        <div class="score-card">
+          <span class="score">8.4</span><span class="score-label"
+            >A6700 Preis-Leistung</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anwendungsfall-Empfehlungen -->
+    <section class="section">
+      <h2>Welche Kamera passt zu dir?</h2>
+      <div class="grid">
         <article class="card">
-          <div class="tag">Runner-up</div>
-          <h3>Used A6600</h3>
-          <p>IBIS + EVF zum kleinen Preis, ältere Menüs/Codecs.</p>
-          <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank"
-            style="margin-top:10px; display:inline-block; font-size:14px;">Preis bei Amazon prüfen &rarr;</a>
+          <h3>💰 Bei der ZV-E10 bleiben, wenn du...</h3>
+          <ul>
+            <li>Hauptsächlich in 4K30 oder 1080p vloggst</li>
+            <li>Ein begrenztes Budget hast (unter 1.000€ gesamt)</li>
+            <li>Lieber in Objektive/Audio investieren möchtest</li>
+            <li>Kein IBIS brauchst (stabilisierte Objektive nutzt)</li>
+            <li>Selten Standbilder fotografierst</li>
+            <li>Das leichteste Setup bevorzugst</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>🚀 Auf A6700 upgraden, wenn du...</h3>
+          <ul>
+            <li>4K60 oder 4K120 für deine Inhalte brauchst</li>
+            <li>IBIS für ruhige Handheld-Aufnahmen möchtest</li>
+            <li>Planst, mit S-Log3 zu graden</li>
+            <li>Auch fotografierst, nicht nur filmst</li>
+            <li>Eine Kamera willst, die mit dir wächst</li>
+            <li>~1.500€+ in ein Gehäuse investieren kannst</li>
+          </ul>
         </article>
       </div>
     </section>
 
+    <!-- Fazit -->
     <section class="section">
-      <h2>Schnellvergleich</h2>
-      <table class="compare-table">
-        <tr>
-          <th>Kategorie</th>
-          <th>ZV-E10</th>
-          <th>A6700</th>
-        </tr>
-        <tr>
-          <td>Ideal für</td>
-          <td>Einstiegs-Vlog, leichte Reise</td>
-          <td>Hybrid-Creator, langfristig</td>
-        </tr>
-        <tr>
-          <td>Video</td>
-          <td>4K30, no 10-Bit, digital stab</td>
-          <td>4K60 10-Bit, IBIS, better Rolling Shutter</td>
-        </tr>
-        <tr>
-          <td>Sucher</td>
-          <td>Keiner (nur LCD)</td>
-          <td>Ja</td>
-        </tr>
-        <tr>
-          <td>Stabilisierung</td>
-          <td>Objektiv OSS + digital</td>
-          <td>IBIS + Active</td>
-        </tr>
-        <tr>
-          <td>Objektiv Ökosystem</td>
-          <td>Same E-mount APS-C</td>
-          <td>Same E-mount APS-C</td>
-        </tr>
-        <tr>
-          <td>Gewicht</td>
-          <td>Leichter</td>
-          <td>Immer noch kompakt</td>
-        </tr>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Bewertungen</h2>
-      <div class="rating-grid">
-        <div class="score-card"><span class="score">8.2</span><span class="score-label">Overall (ZV-E10)</span></div>
-        <div class="score-card"><span class="score">8.7</span><span class="score-label">Overall (A6700)</span></div>
-        <div class="score-card"><span class="score">8.0</span><span class="score-label">Video (ZV-E10)</span></div>
-        <div class="score-card"><span class="score">8.8</span><span class="score-label">Video (A6700)</span></div>
+      <h2>Fazit</h2>
+      <div
+        class="card"
+        style="background: var(--bg-soft); border-left: 4px solid var(--accent);"
+      >
+        <p style="font-size: 1.1em;">
+          <strong>Für Budget-Creator:</strong> Die <strong>ZV-E10</strong> bleibt
+          eine ausgezeichnete Einsteigerkamera. Investiere die Ersparnis in gute Objektive
+          (wie das Sigma 16mm f/1.4) und Audio-Equipment.
+        </p>
+        <p style="margin-top: 12px;">
+          <strong>Für ernsthafte Hybrid-Shooter:</strong> Die <strong
+            >A6700</strong
+          > ist in jeder Hinsicht ein signifikantes Upgrade. IBIS, 4K60 und der EVF
+          rechtfertigen den Preisunterschied für langfristige Nutzung.
+        </p>
+        <p style="margin-top: 12px; color: var(--muted);">
+          Beide nutzen das gleiche E-Bajonett-Objektivsystem – deine Objektive
+          sind beim späteren Upgrade übertragbar.
+        </p>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Warum upgraden</h2>
+    <!-- Verwandte Inhalte -->
+    <section class="section related-posts">
+      <h2>Verwandte Beiträge</h2>
       <div class="grid">
         <article class="card card-plain">
-          <h3>4K60 & 10-Bit</h3>
-          <p>Die A6700 bringt 4K60, 10-Bit Log und bessere Rolling-Shutter-Kontrolle.</p>
+          <h3>
+            <a href="/de/bewertungen/sony-zv-e10-testbericht"
+              >Sony ZV-E10 Testbericht</a>
+          </h3>
+          <p>Ausführlicher Blick auf den Budget-Vlog-König.</p>
         </article>
         <article class="card card-plain">
-          <h3>Stabilisierung</h3>
-          <p>Sensorstabilisierung bei der A6700 für ruhigere Aufnahmen aus der Hand; die ZV-E10 nutzt digital +
-            Objektiv-OSS.</p>
+          <h3>
+            <a href="/de/bewertungen/sony-a6700-testbericht"
+              >Sony A6700 Testbericht</a>
+          </h3>
+          <p>Die Flaggschiff APS-C Hybrid-Kamera im Test.</p>
         </article>
         <article class="card card-plain">
-          <h3>Sucher</h3>
-          <p>EVF bei der A6700 hilft bei hellem Licht und präzisem Bildaufbau; die ZV-E10 hat nur LCD.</p>
+          <h3>
+            <a href="/de/ratgeber/beste-vlog-kamera">Beste Vlog-Kameras 2026</a>
+          </h3>
+          <p>Alle Top-Vlogging-Optionen im Ranking.</p>
         </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Bleib bei der ZV-E10, wenn…</h2>
-      <div class="card">
-        <p>Du hauptsächlich in 4K30/1080p vloggst, ein leichtes Setup brauchst und zuerst in Objektive und Audio
-          investieren willst.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Wähle die A6700, wenn…</h2>
-      <div class="card">
-        <p>Du eine langfristige Hybrid-Kamera mit IBIS, besseren Codecs und EVF-Flexibilität für Fotos willst.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Upgrade-Zusammenfassung</h2>
-      <div class="card">
-        <p>Wenn du Videos bearbeitest und farbkorrigierst oder stabiles Handmaterial brauchst, lohnt sich der Umstieg
-          auf die A6700. Wenn du hauptsächlich in 4K30 vloggst und ein leichtes Setup bevorzugst, bleib bei der ZV-E10
-          und investiere in Objektive und Audio.</p>
       </div>
     </section>
 
     <section class="section">
       <h2>Affiliate-Hinweis</h2>
       <div class="card">
-        <p>Diese Seite kann Affiliate-Links enthalten. Wenn Sie über diese kaufen, erhalten wir möglicherweise eine
-          kleine Provision ohne zusätzliche
-          Kosten für Sie.</p>
+        <p>
+          Diese Seite enthält Affiliate-Links. Bei einem Kauf über unsere Links
+          erhalten wir möglicherweise eine kleine Provision – ohne Mehrkosten
+          für dich. Dies unterstützt unsere unabhängigen Tests.
+        </p>
       </div>
     </section>
 
     <!-- Author Box -->
-    <section class="section author-box"
-      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;">
+    <section
+      class="section author-box"
+      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;"
+    >
       <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team"
-          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+        <img
+          src="/assets/images/team-avatar.webp"
+          alt="Kameraupick Redaktionsteam"
+          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;"
+        />
         <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
+          <h4 style="margin: 0 0 8px 0;">
+            Geschrieben vom Kameraupick Redaktionsteam
+          </h4>
           <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras.
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+            Unser Team aus professionellen Fotografen und Videografen testet
+            seit über 10 Jahren Kameras. Wir kaufen unsere Ausrüstung selbst und
+            liefern ehrliche, unvoreingenommene Bewertungen.
           </p>
-          <a href="/uber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren
-            Testprozess erfahren →</a>
+          <a
+            href="/de/ueber-uns"
+            style="font-size: 14px; margin-top: 8px; display: inline-block;"
+            >Mehr über unseren Testprozess →</a
+          >
         </div>
       </div>
     </section>
-
   </main>
 </BaseLayout>

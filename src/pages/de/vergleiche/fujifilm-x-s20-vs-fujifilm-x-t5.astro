@@ -1,193 +1,482 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Fujifilm X-S20 vs X-T5 — Kameraupick" description="Vergleiche Fujifilm X-S20 vs X-T5: Video features vs classic handling, Stabilisierung, and which shooter each suits.">
-<main class="container">
+<BaseLayout
+  title="Fujifilm X-S20 vs X-T5 (2026): Vergleich für Foto- und Videografen — Kameraupick"
+  description="Fujifilm X-S20 vs X-T5 im direkten Vergleich: Video-Features, 40MP-Sensor, Wärmemanagement und welche Kamera für wen geeignet ist."
+>
+  <main class="container">
     <section class="hero">
       <div class="hero-grid">
         <div>
           <h1>Fujifilm X-S20 vs X-T5</h1>
-          <p class="hero-sub">Gleiche Objektive, unterschiedliche Prioritäten: Video-Werkzeuge vs klassische
-            Foto-Handhabung.</p>
+          <p class="hero-sub">
+            Gleiche Objektive, unterschiedliche Stärken. Video-Tools gegen
+            klassisches Foto-Handling, Auflösung und Zielgruppe – wir klären
+            auf.
+          </p>
+          <p class="mt-12 text-sm text-muted">Aktualisiert: Januar 2026</p>
         </div>
         <div class="hero-media">
-          <img src="/assets/images/compare/fuji-xs20-vs-xt5.webp" alt="Fujifilm X-S20 vs X-T5 comparison"
-            loading="eager">
+          <img
+            src="/assets/images/compare/fuji-xs20-vs-xt5.webp"
+            alt="Fujifilm X-S20 vs X-T5 Vergleich"
+            loading="eager"
+            width="1400"
+            height="900"
+          />
         </div>
       </div>
     </section>
+
+    <!-- Schnelles Urteil -->
     <section class="section">
-      <h2>Auf einen Blick</h2>
+      <h2>Schnelles Urteil</h2>
       <div class="grid">
         <article class="card" id="fuji-x-s20">
-          <div class="tag">Empfehlung</div>
-          <h3>X-S20</h3>
-          <p>Beste für Video/Vlog und Reisen. Klappbildschirm, bessere Wärmeableitung, Vlog-Modus.</p>
+          <div class="tag">🎬 Ideal für Video/Reise</div>
+          <h3>Fujifilm X-S20</h3>
+          <p>
+            <strong>Geeignet für:</strong> Wer häufig filmt, ein Klapp-Display braucht
+            und lange Aufnahmen ohne Überhitzung machen möchte. Perfekt für Reise-Vlogger
+            und Hybrid-Fotografen.
+          </p>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">26MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">6,2K/4K60</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Display</span>
+              <span class="spec-value">Klappbar</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">491g</span>
+            </div>
+          </div>
           <div class="quick-actions">
-            <a class="buy-btn" href="https://example.com/affiliate/x-s20" rel="nofollow">Bestes Angebot</a>
+            <a
+              class="btn-buy"
+              href="#"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+              data-product="fujifilm-x-s20">Preis prüfen →</a
+            >
           </div>
         </article>
         <article class="card" id="fuji-x-t5">
-          <div class="tag">Foto-fokussiert</div>
-          <h3>X-T5</h3>
-          <p>40MP-Fotos, klassische Drehregler, Neigungsbildschirm. Großartig für foto-fokussierte Fotografen.</p>
-          <div class="quick-actions">
-            <a class="buy-btn" href="https://example.com/affiliate/x-t5" rel="nofollow">X-T5 kaufen</a>
+          <div class="tag">📸 Ideal für Fotografie</div>
+          <h3>Fujifilm X-T5</h3>
+          <p>
+            <strong>Geeignet für:</strong> Wer vorwiegend fotografiert, klassische
+            Drehräder liebt und 40MP-Details mit Fujis legendärer Farbwiedergabe schätzt.
+          </p>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">40MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">6,2K Open</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Display</span>
+              <span class="spec-value">3-Wege-Neige</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">557g</span>
+            </div>
           </div>
-        </article>
-        <article class="card">
-          <div class="tag">Budget</div>
-          <h3>X-S10 (used)</h3>
-          <p>Günstigeres Gehäuse mit IBIS und solidem Video, wenn du einen guten Gebrauchtpreis findest.</p>
-          <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank"
-            style="margin-top:10px; display:inline-block; font-size:14px;">Preis bei Amazon prüfen &rarr;</a>
+          <div class="quick-actions">
+            <a
+              class="btn-buy"
+              href="#"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+              data-product="fujifilm-x-t5">Preis prüfen →</a
+            >
+          </div>
         </article>
       </div>
     </section>
 
+    <!-- Detaillierte Specs Vergleichstabelle -->
     <section class="section">
-      <h2>Schnellvergleich</h2>
-      <table class="compare-table">
-        <tr>
-          <th>Kategorie</th>
-          <th>X-S20</th>
-          <th>X-T5</th>
-        </tr>
-        <tr>
-          <td>Beste für</td>
-          <td>Video, Vlogging, Reisen</td>
-          <td>Foto-fokussiert, hochauflösende Fotos</td>
-        </tr>
-        <tr>
-          <td>Bildschirm</td>
-          <td>Voll schwenkbar</td>
-          <td>3-way tilt</td>
-        </tr>
-        <tr>
-          <td>Auflösung</td>
-          <td>26MP</td>
-          <td>40MP</td>
-        </tr>
-        <tr>
-          <td>Video</td>
-          <td>4K60, bessere Wärmeableitung, Vlog-Modus</td>
-          <td>6.2K Open-Gate, mehr Rolling Shutter</td>
-        </tr>
-        <tr>
-          <td>Stabilisierung</td>
-          <td>IBIS optimiert für freihand Video</td>
-          <td>IBIS optimiert für Fotos</td>
-        </tr>
-        <tr>
-          <td>Ergonomie</td>
-          <td>PASM dial, leichteres Gehäuse</td>
-          <td>Klassische Verschluss-/ISO-Drehregler</td>
-        </tr>
-      </table>
+      <h2>Technische Daten im Überblick</h2>
+      <div class="comparison-table-wrapper">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>Merkmal</th>
+              <th>Fujifilm X-S20</th>
+              <th>Fujifilm X-T5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sensor</strong></td>
+              <td>26,1MP X-Trans CMOS 4</td>
+              <td>40,2MP X-Trans CMOS 5 HR</td>
+            </tr>
+            <tr>
+              <td><strong>Prozessor</strong></td>
+              <td>X-Processor 5</td>
+              <td>X-Processor 5</td>
+            </tr>
+            <tr>
+              <td><strong>Video (Max)</strong></td>
+              <td>6,2K 30p, 4K60, besseres Wärmemanagement</td>
+              <td>6,2K 30p Open-Gate, 4K60 (mit Crop)</td>
+            </tr>
+            <tr>
+              <td><strong>Aufnahmelimits</strong></td>
+              <td>Unbegrenzt 4K30, 30min 4K60</td>
+              <td>Durch Wärme begrenzt (~10-15min 4K60)</td>
+            </tr>
+            <tr>
+              <td><strong>Display</strong></td>
+              <td>3" voll schwenkbar (Klapp)</td>
+              <td>3" 3-Wege-Neigedisplay</td>
+            </tr>
+            <tr>
+              <td><strong>IBIS</strong></td>
+              <td>7 Stufen (für Video optimiert)</td>
+              <td>7 Stufen (für Foto optimiert)</td>
+            </tr>
+            <tr>
+              <td><strong>Autofokus</strong></td>
+              <td>425 Punkte, Augen/Tier/Vogel AF</td>
+              <td>425 Punkte, Augen/Tier/Vogel AF</td>
+            </tr>
+            <tr>
+              <td><strong>Filmsimulationen</strong></td>
+              <td>19 Modi (inkl. Nostalgic Neg)</td>
+              <td>19 Modi (inkl. Reala Ace)</td>
+            </tr>
+            <tr>
+              <td><strong>Sucher</strong></td>
+              <td>2,36M-Punkt OLED, 0,62x</td>
+              <td>3,69M-Punkt OLED, 0,8x</td>
+            </tr>
+            <tr>
+              <td><strong>Bedienung</strong></td>
+              <td>PASM-Rad, modernes Layout</td>
+              <td>Klassische Zeit/ISO-Drehräder</td>
+            </tr>
+            <tr>
+              <td><strong>Akkulaufzeit</strong></td>
+              <td>~750 Aufnahmen (LCD)</td>
+              <td>~580 Aufnahmen (LCD)</td>
+            </tr>
+            <tr>
+              <td><strong>Gewicht</strong></td>
+              <td>491g (nur Gehäuse)</td>
+              <td>557g (nur Gehäuse)</td>
+            </tr>
+            <tr>
+              <td><strong>Preis (Gehäuse)</strong></td>
+              <td>~1.349€</td>
+              <td>~1.799€</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
+    <!-- Tiefgehender Vergleich: Bildqualität -->
     <section class="section">
-      <h2>Scores</h2>
+      <h2>Bildqualität: Auflösung macht den Unterschied</h2>
+      <div class="card">
+        <p>
+          Der <strong>40MP-Sensor der X-T5</strong> liefert spürbar mehr Details als
+          die 26MP der X-S20:
+        </p>
+        <div class="grid" style="margin-top: 16px;">
+          <div>
+            <h4>Fujifilm X-S20</h4>
+            <ul>
+              <li>26MP: Ideal für Web, Social Media, Drucke bis A3</li>
+              <li>Gleicher Sensor wie X-H2S (bewährte Qualität)</li>
+              <li>⚠️ Weniger Spielraum beim Beschneiden</li>
+              <li>Kleinere Dateien (einfachere Bearbeitung)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Fujifilm X-T5</h4>
+            <ul>
+              <li>✅ 40MP: Beeindruckende Details für Großdrucke</li>
+              <li>✅ Erheblicher Beschnittspielraum</li>
+              <li>✅ Zeigt Objektivschwächen (qualitatives Glas empfohlen)</li>
+              <li>Größere Dateien (~50-70MB RAW)</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 16px;">
+          <strong>Empfehlung:</strong> Fujifilm X-T5 für Bildqualität. Die Auflösung
+          ist für Landschaft, Produkt und Druck signifikant besser.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tiefgehender Vergleich: Video -->
+    <section class="section">
+      <h2>Videoqualität: Wo die X-S20 punktet</h2>
+      <div class="card">
+        <p>
+          Trotz niedrigerer Auflösung <strong
+            >überzeugt die X-S20 im Videobereich</strong
+          >:
+        </p>
+        <div class="grid" style="margin-top: 16px;">
+          <div>
+            <h4>Fujifilm X-S20</h4>
+            <ul>
+              <li>
+                ✅ <strong>Deutlich besseres Wärmemanagement</strong> für Langaufnahmen
+              </li>
+              <li>✅ Unbegrenzte 4K30-Aufnahme</li>
+              <li>✅ Vlog-Modus mit Hintergrund-Defokus</li>
+              <li>✅ Produkt-Showcase-AF-Modus</li>
+              <li>Klapp-Display für Selbstaufnahmen</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Fujifilm X-T5</h4>
+            <ul>
+              <li>6,2K Open-Gate (schönes B-Roll)</li>
+              <li>⚠️ Wärmelimit bei 4K60 (~10-15min)</li>
+              <li>⚠️ Mehr Rolling Shutter als X-S20</li>
+              <li>Neigedisplay (weniger ideal zum Vloggen)</li>
+              <li>Besser für kurze, kontrollierte Videos</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 16px;">
+          <strong>Empfehlung:</strong> Fujifilm X-S20 für Videoarbeit. Das Wärmemanagement
+          ist für Vlogger und Event-Filmer entscheidend.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tiefgehender Vergleich: Handling -->
+    <section class="section">
+      <h2>Handhabung und Ergonomie</h2>
+      <div class="card">
+        <p>Komplett unterschiedliche Design-Philosophien:</p>
+        <ul class="styled-list" style="margin-top: 16px;">
+          <li>
+            <strong>X-S20:</strong> Modernes PASM-Rad, kompakteres Gehäuse, Klapp-Display.
+            Fühlt sich wie eine moderne Systemkamera an. Ideal für Einsteiger und
+            Videografen, die schnellen Zugriff suchen.
+          </li>
+          <li>
+            <strong>X-T5:</strong> Klassische Drehräder für Zeit, ISO und Belichtungskorrektur.
+            Fühlt sich an wie eine digitalisierte Filmkamera. Freude beim Fotografieren
+            für Puristen.
+          </li>
+        </ul>
+        <p>
+          <strong>Empfehlung:</strong> Persönliche Präferenz. X-S20 für Geschwindigkeit,
+          X-T5 für taktiles Erlebnis.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tiefgehender Vergleich: Filmsimulationen -->
+    <section class="section">
+      <h2>Filmsimulationen</h2>
+      <div class="card">
+        <p>
+          Beide Kameras teilen Fujis legendäre Farbwissenschaft mit <strong
+            >19 Filmsimulationen</strong
+          >:
+        </p>
+        <div class="grid" style="margin-top: 16px;">
+          <div>
+            <h4>Beliebte Simulationen</h4>
+            <ul>
+              <li>
+                <strong>Classic Chrome:</strong> Zeitloser Dokumentar-Look
+              </li>
+              <li><strong>Nostalgic Neg:</strong> Vintage-Film-Ästhetik</li>
+              <li><strong>Velvia:</strong> Lebendige Landschaften</li>
+              <li><strong>Reala Ace:</strong> Natürliche, ausgewogene Töne</li>
+            </ul>
+          </div>
+          <div>
+            <h4>In der Praxis</h4>
+            <ul>
+              <li>40MP der X-T5 zeigen mehr Farbdetails</li>
+              <li>X-S20 nutzt Simulationen im Video hervorragend</li>
+              <li>Beide liefern veröffentlichungsfertige JPEGs</li>
+              <li>Identische Farbwissenschaft-Engine</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 16px;">
+          <strong>Empfehlung:</strong> Unentschieden. Beide überzeugen bei Fuji-Farben.
+          X-T5 hat mehr Auflösung für subtile Töne.
+        </p>
+      </div>
+    </section>
+
+    <!-- Bewertungen -->
+    <section class="section">
+      <h2>Unsere Bewertungen</h2>
       <div class="rating-grid">
-        <div class="score-card"><span class="score">8.6</span><span class="score-label">Overall (X-S20)</span></div>
-        <div class="score-card"><span class="score">8.9</span><span class="score-label">Photo (X-T5)</span></div>
-        <div class="score-card"><span class="score">8.4</span><span class="score-label">Video (X-S20)</span></div>
-        <div class="score-card"><span class="score">8.1</span><span class="score-label">Preis-Leistung (X-S20)</span>
+        <div class="score-card">
+          <span class="score">8.6</span><span class="score-label"
+            >X-S20 Gesamt</span>
+        </div>
+        <div class="score-card">
+          <span class="score">8.9</span><span class="score-label"
+            >X-T5 Gesamt</span>
+        </div>
+        <div class="score-card">
+          <span class="score">8.4</span><span class="score-label"
+            >X-S20 Video</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.2</span><span class="score-label"
+            >X-T5 Foto</span>
+        </div>
+        <div class="score-card">
+          <span class="score">8.5</span><span class="score-label"
+            >X-S20 Preis-Leistung</span>
+        </div>
+        <div class="score-card">
+          <span class="score">8.3</span><span class="score-label"
+            >X-T5 Preis-Leistung</span>
         </div>
       </div>
     </section>
 
+    <!-- Anwendungsfall-Empfehlungen -->
     <section class="section">
-      <h2>Wer sollte welche kaufen</h2>
+      <h2>Welche Kamera passt zu dir?</h2>
       <div class="grid">
         <article class="card">
-          <h3>Wähle die X-S20 wenn…</h3>
-          <p>Du oft filmst, einen Klappbildschirm brauchst und einfacheres freihand Video mit verzeihender
-            Wärmeableitung willst. Großartig für Reise-Vlogger und Hybrid-Fotografen mit APS-C.</p>
-          <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank"
-            style="margin-top:10px; display:inline-block; font-size:14px;">Preis bei Amazon prüfen &rarr;</a>
+          <h3>🎬 X-S20 empfohlen, wenn du...</h3>
+          <ul>
+            <li>Häufig filmst und zuverlässiges Wärmemanagement brauchst</li>
+            <li>Ein Klapp-Display zum Vloggen benötigst</li>
+            <li>Ein leichteres Reise-Setup bevorzugst</li>
+            <li>Moderne PASM-Bedienung schätzt</li>
+            <li>Produkt-Showcase-AF für Reviews brauchst</li>
+            <li>Ein Budget unter 1.500€ hast</li>
+          </ul>
         </article>
         <article class="card">
-          <h3>Wähle die X-T5 wenn…</h3>
-          <p>Du hauptsächlich Fotos machst, klassische Drehregler liebst und 40MP-Details mit Fuji-Farben willst. Video
-            ist sekundär und
-            du bist mit einem Neigungsbildschirm einverstanden.</p>
-          <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank"
-            style="margin-top:10px; display:inline-block; font-size:14px;">Preis bei Amazon prüfen &rarr;</a>
+          <h3>📸 X-T5 empfohlen, wenn du...</h3>
+          <ul>
+            <li>Hauptsächlich fotografierst</li>
+            <li>Klassische analoge Drehräder liebst</li>
+            <li>40MP zum Beschneiden oder Drucken brauchst</li>
+            <li>Ein Neigedisplay bevorzugst (Straße/Landschaft)</li>
+            <li>Die beste Fuji-Fotob-Bildqualität willst</li>
+            <li>Video nur gelegentlich nutzt</li>
+          </ul>
         </article>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Hauptunterschiede</h2>
-      <div class="grid">
-        <article class="card card-plain">
-          <h3>Gehäuse & Handhabung</h3>
-          <p>X-T5 hat klassische Drehregler und 3-Wege-Neigung; X-S20 hat PASM-Drehrad und Klappbildschirm für Video.
-          </p>
-        </article>
-        <article class="card card-plain">
-          <h3>Video</h3>
-          <p>X-S20: Vlog-Modus, längere Aufnahmelimits, bessere Wärmeableitung. X-T5: 6.2K Open-Gate aber mehr
-            Rolling-Shutter-Wärmeempfindlichkeit.</p>
-        </article>
-        <article class="card card-plain">
-          <h3>Stabilisierung</h3>
-          <p>Beide haben IBIS; X-S20-Abstimmung ist verzeihender für freihand Video, X-T5 für Fotos.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Wähle die X-S20 wenn…</h2>
-      <div class="card">
-        <p>You shoot lots of Video, need a Klappbildschirm, and want a leichteres Gehäuse for Reise vlogs.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Wähle die X-T5 wenn…</h2>
-      <div class="card">
-        <p>Du foto-fokussiert bist, klassische Bedienung bevorzugst und höher auflösende Fotos willst.</p>
-      </div>
-    </section>
-
+    <!-- Fazit -->
     <section class="section">
       <h2>Fazit</h2>
-      <div class="card">
-        <p>X-S20 ist das videofreundliche Reise-Gehäuse; X-T5 ist die höher auflösende, foto-zentrierte Option. Wähle
-          danach, ob du einen Klappbildschirm und lange Videoaufnahmen brauchst, oder das Gefühl von Drehreglern und
-          40MP-Dateien.</p>
+      <div
+        class="card"
+        style="background: var(--bg-soft); border-left: 4px solid var(--accent);"
+      >
+        <p style="font-size: 1.1em;">
+          <strong>Für Video-Creator und Reisende:</strong> Die <strong
+            >X-S20</strong
+          > ist die klügere Wahl mit besserem Wärmemanagement, Klapp-Display und Vlog-Modus
+          – und das zu einem günstigeren Preis.
+        </p>
+        <p style="margin-top: 12px;">
+          <strong>Für Foto-fokussierte Anwender:</strong> Die <strong
+            >X-T5</strong
+          > liefert herausragende 40MP-Auflösung und das klassische Fuji-Erlebnis.
+        </p>
+        <p style="margin-top: 12px; color: var(--muted);">
+          Beide teilen die gleichen Filmsimulationen und das Objektiv-Ökosystem.
+          Eine Fehlentscheidung gibt es nicht.
+        </p>
+      </div>
+    </section>
+
+    <!-- Verwandte Inhalte -->
+    <section class="section related-posts">
+      <h2>Verwandte Beiträge</h2>
+      <div class="grid">
+        <article class="card card-plain">
+          <h3>
+            <a href="/de/bewertungen/fujifilm-x-t5-testbericht"
+              >Fujifilm X-T5 Testbericht</a>
+          </h3>
+          <p>Ausführlicher Blick auf die X-T5.</p>
+        </article>
+        <article class="card card-plain">
+          <h3>
+            <a href="/de/ratgeber/beste-reisekamera">Beste Reisekameras 2026</a>
+          </h3>
+          <p>Alle Top-Reisekameras im Ranking.</p>
+        </article>
+        <article class="card card-plain">
+          <h3>
+            <a href="/de/ratgeber/beste-vlog-kamera">Beste Vlog-Kameras 2026</a>
+          </h3>
+          <p>Top-Empfehlungen für Content-Creator.</p>
+        </article>
       </div>
     </section>
 
     <section class="section">
       <h2>Affiliate-Hinweis</h2>
       <div class="card">
-        <p>Diese Seite kann Affiliate-Links enthalten. Wenn Sie über diese kaufen, erhalten wir möglicherweise eine
-          kleine Provision ohne zusätzliche
-          Kosten für Sie.</p>
+        <p>
+          Diese Seite enthält Affiliate-Links. Bei einem Kauf über unsere Links
+          erhalten wir möglicherweise eine kleine Provision – ohne Mehrkosten
+          für dich. Dies unterstützt unsere unabhängigen Tests.
+        </p>
       </div>
     </section>
 
     <!-- Author Box -->
-    <section class="section author-box"
-      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;">
+    <section
+      class="section author-box"
+      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;"
+    >
       <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team"
-          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+        <img
+          src="/assets/images/team-avatar.webp"
+          alt="Kameraupick Redaktionsteam"
+          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;"
+        />
         <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
+          <h4 style="margin: 0 0 8px 0;">
+            Geschrieben vom Kameraupick Redaktionsteam
+          </h4>
           <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras.
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+            Unser Team aus professionellen Fotografen und Videografen testet
+            seit über 10 Jahren Kameras. Wir kaufen unsere Ausrüstung selbst und
+            liefern ehrliche, unvoreingenommene Bewertungen.
           </p>
-          <a href="/uber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren
-            Testprozess erfahren →</a>
+          <a
+            href="/de/ueber-uns"
+            style="font-size: 14px; margin-top: 8px; display: inline-block;"
+            >Mehr über unseren Testprozess →</a
+          >
         </div>
       </div>
     </section>
-
   </main>
 </BaseLayout>
