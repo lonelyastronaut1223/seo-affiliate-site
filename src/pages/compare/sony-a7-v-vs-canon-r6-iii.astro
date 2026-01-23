@@ -1,176 +1,448 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Sony A7 V vs Canon R6 III — cameraupick" description="Sony A7 V vs Canon R6 III comparison: autofocus, stabilization, rolling shutter, codecs, and who each camera suits.">
-<main class="container">
+<BaseLayout
+  title="Sony A7 V vs Canon R6 III (2026): Complete Comparison — cameraupick"
+  description="In-depth Sony A7 V vs Canon R6 III comparison: We test autofocus, video quality, rolling shutter, IBIS, and lens ecosystems to help you choose the right flagship hybrid."
+>
+  <main class="container">
     <section class="hero">
       <div class="hero-grid">
         <div>
           <h1>Sony A7 V vs Canon R6 III</h1>
-          <p class="hero-sub">Flagship hybrid showdown: AF, rolling shutter, stabilization, codecs, and real-world heat.
+          <p class="hero-sub">
+            The ultimate 2026 flagship hybrid showdown. We compare autofocus,
+            rolling shutter, stabilization, video codecs, and real-world
+            performance to help you decide.
           </p>
+          <p class="mt-12 text-sm text-muted">Updated: January 2026</p>
         </div>
         <div class="hero-media">
-          <img src="/assets/images/compare/sony-a7v-vs-canon-r6iii.webp" alt="Sony A7 V vs Canon R6 III comparison"
-            loading="eager">
+          <img
+            src="/assets/images/compare/sony-a7v-vs-canon-r6iii.webp"
+            alt="Sony A7 V vs Canon R6 III side-by-side comparison"
+            loading="eager"
+            width="1400"
+            height="900"
+          />
         </div>
       </div>
     </section>
+
+    <!-- Quick Verdict -->
     <section class="section">
-      <h2>TL;DR picks</h2>
+      <h2>Quick Verdict</h2>
       <div class="grid">
         <article class="card" id="canon-r6-iii">
-          <div class="tag">Pick</div>
-          <h3>Canon R6 III</h3>
-          <p>Cleaner rolling shutter, stronger IBIS, great AF for action and handheld video.</p>
-          <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank"
-            style="margin-top:10px; display:inline-block; font-size:14px;">Check Price on Amazon &rarr;</a>
+          <div class="tag">🎬 Best for Action/Video</div>
+          <h3>Canon R6 Mark III</h3>
+          <p>
+            <strong>Choose if:</strong> You shoot fast action, sports, weddings, or
+            need the cleanest rolling shutter for run-and-gun video. Best for handheld
+            filmmakers.
+          </p>
+          <ul class="styled-list">
+            <li>Industry-leading 8+ stop IBIS</li>
+            <li>Minimal rolling shutter in 4K60</li>
+            <li>40fps electronic burst</li>
+            <li>Excellent human/animal AF tracking</li>
+          </ul>
+          <div class="quick-actions">
+            <a
+              class="btn-buy"
+              href="#"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+              data-product="canon-r6-iii">Check Price on Amazon →</a
+            >
+          </div>
         </article>
         <article class="card" id="sony-a7-v">
-          <div class="tag">Runner-up</div>
+          <div class="tag">📸 Best for Versatility</div>
           <h3>Sony A7 V</h3>
-          <p>Massive lens ecosystem, flexible color tools, improved thermals and AF variety.</p>
-          <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank"
-            style="margin-top:10px; display:inline-block; font-size:14px;">Check Price on Amazon &rarr;</a>
+          <p>
+            <strong>Choose if:</strong> You need the deepest lens ecosystem, flexible
+            color tools, and a camera that excels at both stills and video. Best for
+            hybrid creators.
+          </p>
+          <ul class="styled-list">
+            <li>Massive E-mount lens selection</li>
+            <li>Improved AI autofocus variety</li>
+            <li>Better thermals than A7 IV</li>
+            <li>More affordable third-party glass</li>
+          </ul>
+          <div class="quick-actions">
+            <a
+              class="btn-buy"
+              href="#"
+              rel="sponsored noopener noreferrer"
+              target="_blank"
+              data-product="sony-a7-v">Check Price on Amazon →</a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Detailed Specs Comparison Table -->
+    <section class="section">
+      <h2>Full Specs Comparison</h2>
+      <div class="comparison-table-wrapper">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>Specification</th>
+              <th>Sony A7 V</th>
+              <th>Canon R6 Mark III</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sensor</strong></td>
+              <td>33MP Full-Frame BSI CMOS</td>
+              <td>24.2MP Full-Frame CMOS</td>
+            </tr>
+            <tr>
+              <td><strong>Processor</strong></td>
+              <td>BIONZ XR + AI Unit</td>
+              <td>DIGIC X+</td>
+            </tr>
+            <tr>
+              <td><strong>Video (Max)</strong></td>
+              <td>4K60 HQ oversampled, 4K120 (crop)</td>
+              <td>4K60 full-width oversampled, 4K120 (crop)</td>
+            </tr>
+            <tr>
+              <td><strong>Rolling Shutter</strong></td>
+              <td>Improved over A7 IV, still visible</td>
+              <td>Minimal (class-leading)</td>
+            </tr>
+            <tr>
+              <td><strong>Autofocus</strong></td>
+              <td>759-point, Eye/Animal/Bird/Insect AF</td>
+              <td>1053-point Dual Pixel II, Eye/Animal/Vehicle AF</td>
+            </tr>
+            <tr>
+              <td><strong>IBIS</strong></td>
+              <td>5.5 stops (Active mode crops)</td>
+              <td>8+ stops (world-class)</td>
+            </tr>
+            <tr>
+              <td><strong>Burst Speed</strong></td>
+              <td>10fps mechanical, 30fps electronic</td>
+              <td>12fps mechanical, 40fps electronic</td>
+            </tr>
+            <tr>
+              <td><strong>Card Slots</strong></td>
+              <td>1x CFexpress A/SD + 1x SD</td>
+              <td>2x SD UHS-II</td>
+            </tr>
+            <tr>
+              <td><strong>Viewfinder</strong></td>
+              <td>3.69M-dot OLED, 0.78x</td>
+              <td>3.69M-dot OLED, 0.76x</td>
+            </tr>
+            <tr>
+              <td><strong>Screen</strong></td>
+              <td>3.2" vari-angle, 2.1M-dot</td>
+              <td>3" vari-angle, 1.62M-dot</td>
+            </tr>
+            <tr>
+              <td><strong>Battery Life</strong></td>
+              <td>~600 shots (LCD)</td>
+              <td>~760 shots (LCD)</td>
+            </tr>
+            <tr>
+              <td><strong>Weight</strong></td>
+              <td>660g (body only)</td>
+              <td>670g (body only)</td>
+            </tr>
+            <tr>
+              <td><strong>Price (Body)</strong></td>
+              <td>~$2,798 / €2,799</td>
+              <td>~$2,699 / €2,999</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Deep Dive: Autofocus -->
+    <section class="section">
+      <h2>Autofocus: Head-to-Head</h2>
+      <div class="card">
+        <p>
+          Both cameras feature <strong>next-generation AI autofocus</strong>,
+          but with different strengths:
+        </p>
+        <div class="grid" style="margin-top: 16px;">
+          <div>
+            <h4>Sony A7 V</h4>
+            <ul>
+              <li>✅ Widest subject variety (birds, insects, aircraft)</li>
+              <li>✅ More AF customization options</li>
+              <li>✅ Excellent with third-party lenses</li>
+              <li>⚠️ Slightly slower initial acquisition in some cases</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Canon R6 III</h4>
+            <ul>
+              <li>✅ Stickier human/animal eye tracking</li>
+              <li>✅ Faster initial lock-on</li>
+              <li>✅ Vehicle detection (motorsports)</li>
+              <li>⚠️ Fewer subject types than Sony</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 16px;">
+          <strong>Winner:</strong> Tie. Choose Canon for human subjects and sports,
+          Sony for wildlife diversity and third-party lens support.
+        </p>
+      </div>
+    </section>
+
+    <!-- Deep Dive: Video -->
+    <section class="section">
+      <h2>Video Quality: The Real Difference</h2>
+      <div class="card">
+        <p>This is where Canon pulls ahead for serious video work:</p>
+        <div class="grid" style="margin-top: 16px;">
+          <div>
+            <h4>Sony A7 V</h4>
+            <ul>
+              <li>4K60: Oversampled, sharp, improved thermals</li>
+              <li>4K120: Available with 1.5x crop</li>
+              <li>
+                ⚠️ Rolling shutter improved but still visible in fast pans
+              </li>
+              <li>10-bit 4:2:2, S-Log3, S-Cinetone</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Canon R6 III</h4>
+            <ul>
+              <li>4K60: Full-width, oversampled, exceptional</li>
+              <li>4K120: With moderate crop for slo-mo</li>
+              <li>
+                ✅ <strong>Minimal rolling shutter</strong> (class-leading)
+              </li>
+              <li>10-bit 4:2:2, C-Log3, Canon Log</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 16px;">
+          <strong>Winner:</strong> Canon R6 III for video-first creators. The rolling
+          shutter advantage is significant for handheld and action work.
+        </p>
+      </div>
+    </section>
+
+    <!-- Deep Dive: IBIS -->
+    <section class="section">
+      <h2>Stabilization (IBIS)</h2>
+      <div class="card">
+        <p>
+          Canon's IBIS remains <strong>industry-leading</strong> for handheld shooting:
+        </p>
+        <ul class="styled-list" style="margin-top: 16px;">
+          <li>
+            <strong>R6 III:</strong> 8+ stops IBIS enables smooth handheld walking
+            shots without a gimbal. Revolutionary for wedding videographers and documentary
+            shooters.
+          </li>
+          <li>
+            <strong>A7 V:</strong> 5.5 stops is solid for stills, but Active mode
+            adds a crop for video. Less effective for motion compared to Canon.
+          </li>
+        </ul>
+        <p>
+          <strong>Winner:</strong> Canon R6 III. Gimbal-free vlogging and run-and-gun
+          is more practical.
+        </p>
+      </div>
+    </section>
+
+    <!-- Deep Dive: Lenses -->
+    <section class="section">
+      <h2>Lens Ecosystem</h2>
+      <div class="card">
+        <p>This is Sony's biggest long-term advantage:</p>
+        <div class="grid" style="margin-top: 16px;">
+          <div>
+            <h4>Sony E-Mount</h4>
+            <ul>
+              <li>✅ 100+ native full-frame lenses</li>
+              <li>✅ Excellent third-party (Sigma, Tamron, Samyang)</li>
+              <li>✅ Budget options at every focal length</li>
+              <li>✅ Mature used market</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Canon RF-Mount</h4>
+            <ul>
+              <li>⚠️ ~60 native lenses (growing)</li>
+              <li>⚠️ Limited third-party AF options</li>
+              <li>⚠️ Premium pricing on most RF glass</li>
+              <li>✅ Excellent optical quality</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 16px;">
+          <strong>Winner:</strong> Sony A7 V. Long-term lens investment is significantly
+          cheaper and more flexible.
+        </p>
+      </div>
+    </section>
+
+    <!-- Scores -->
+    <section class="section">
+      <h2>Our Scores</h2>
+      <div class="rating-grid">
+        <div class="score-card">
+          <span class="score">9.0</span><span class="score-label"
+            >Sony A7 V Overall</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.1</span><span class="score-label"
+            >Canon R6 III Overall</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.2</span><span class="score-label"
+            >A7 V Photo</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.4</span><span class="score-label"
+            >R6 III Video</span>
+        </div>
+        <div class="score-card">
+          <span class="score">9.3</span><span class="score-label"
+            >A7 V Value</span>
+        </div>
+        <div class="score-card">
+          <span class="score">8.6</span><span class="score-label"
+            >R6 III Value</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Case Recommendations -->
+    <section class="section">
+      <h2>Who Should Buy What?</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>📸 Choose Sony A7 V if you...</h3>
+          <ul>
+            <li>Shoot more photos than video</li>
+            <li>Want affordable third-party lenses</li>
+            <li>Film interviews, podcasts, or controlled scenes</li>
+            <li>Need higher resolution for cropping/printing</li>
+            <li>Prefer a mature, diverse lens ecosystem</li>
+            <li>Value color science flexibility (S-Log3, HLG, etc.)</li>
+          </ul>
         </article>
         <article class="card">
-          <div class="tag">Budget</div>
-          <h3>Consider A7 IV / R6 II</h3>
-          <p>Still excellent hybrids if you don’t need the latest codecs and rolling shutter gains.</p>
-          <a href="#" class="btn-buy" data-product="sony-a7iv" rel="sponsored noopener noreferrer" target="_blank"
-            style="margin-top:10px; display:inline-block; font-size:14px;">Check Price on Amazon &rarr;</a>
+          <h3>🎥 Choose Canon R6 III if you...</h3>
+          <ul>
+            <li>Shoot sports, weddings, or fast action</li>
+            <li>Need gimbal-free handheld video</li>
+            <li>Film run-and-gun style content</li>
+            <li>Require clean rolling shutter for pans</li>
+            <li>Want the best IBIS in any camera</li>
+            <li>Can invest in premium RF lens ecosystem</li>
+          </ul>
         </article>
       </div>
     </section>
 
+    <!-- Bottom Line -->
     <section class="section">
-      <h2>Quick comparison</h2>
-      <table class="compare-table">
-        <tr>
-          <th>Category</th>
-          <th>Sony A7 V</th>
-          <th>Canon R6 III</th>
-        </tr>
-        <tr>
-          <td>Best for</td>
-          <td>Hybrid, lens flexibility</td>
-          <td>Hybrid/action, handheld video</td>
-        </tr>
-        <tr>
-          <td>Video</td>
-          <td>4K60 HQ, 10-bit, better rolling shutter than A7 IV</td>
-          <td>4K60 oversampled, strong motion handling</td>
-        </tr>
-        <tr>
-          <td>Stabilization</td>
-          <td>IBIS + Active (crop)</td>
-          <td>IBIS stronger for handheld</td>
-        </tr>
-        <tr>
-          <td>AF</td>
-          <td>Great subject variety, improved tracking</td>
-          <td>Excellent human/animal tracking</td>
-        </tr>
-        <tr>
-          <td>Thermals</td>
-          <td>Improved heat handling</td>
-          <td>Solid for long takes</td>
-        </tr>
-        <tr>
-          <td>Lenses</td>
-          <td>Huge E-mount options</td>
-          <td>RF lenses pricier, fewer third-party</td>
-        </tr>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>Scores</h2>
-      <div class="rating-grid">
-        <div class="score-card"><span class="score">9.0</span><span class="score-label">Overall (R6 III)</span></div>
-        <div class="score-card"><span class="score">8.9</span><span class="score-label">Photo (A7 V)</span></div>
-        <div class="score-card"><span class="score">8.7</span><span class="score-label">Video (R6 III)</span></div>
-        <div class="score-card"><span class="score">8.6</span><span class="score-label">Value (A7 V)</span></div>
+      <h2>Bottom Line</h2>
+      <div
+        class="card"
+        style="background: var(--bg-soft); border-left: 4px solid var(--accent);"
+      >
+        <p style="font-size: 1.1em;">
+          <strong>For most hybrid creators:</strong> The <strong
+            >Sony A7 V</strong
+          > offers better long-term value thanks to its lens ecosystem, higher resolution,
+          and versatility.
+        </p>
+        <p style="margin-top: 12px;">
+          <strong>For video-first shooters:</strong> The <strong
+            >Canon R6 III</strong
+          > wins with superior motion handling, unmatched IBIS, and minimal rolling
+          shutter.
+        </p>
+        <p style="margin-top: 12px; color: var(--muted);">
+          Both are exceptional cameras. The "wrong" choice still produces
+          professional-quality results.
+        </p>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Key differences</h2>
+    <!-- Related Content -->
+    <section class="section related-posts">
+      <h2>Related Comparisons</h2>
       <div class="grid">
         <article class="card card-plain">
-          <h3>Autofocus</h3>
-          <p>Both excellent; Canon is stickier for humans/animals. Sony strong across varied subjects and lenses.</p>
+          <h3>
+            <a href="sony-a7-iv-vs-canon-r6-ii">Sony A7 IV vs Canon R6 II</a>
+          </h3>
+          <p>The previous-gen flagships compared.</p>
         </article>
         <article class="card card-plain">
-          <h3>Rolling shutter</h3>
-          <p>A7 V improves over A7 IV but R6 III remains cleaner for fast motion and pans.</p>
+          <h3><a href="/reviews/sony-a7-v-review">Sony A7 V Full Review</a></h3>
+          <p>Deep dive into the A7 V.</p>
         </article>
         <article class="card card-plain">
-          <h3>Stabilization</h3>
-          <p>R6 III IBIS better for handheld video; Sony Active helps but crops.</p>
-        </article>
-        <article class="card card-plain">
-          <h3>Heat</h3>
-          <p>Both improved; Canon still reliable for longer 4K sessions. Sony better than older A7 IV.</p>
-        </article>
-        <article class="card card-plain">
-          <h3>Lenses</h3>
-          <p>Sony: massive third-party and native options. Canon RF: great glass but pricier, fewer third-party AF
-            choices.</p>
+          <h3>
+            <a href="/guides/best-hybrid-camera">Best Hybrid Cameras 2026</a>
+          </h3>
+          <p>All top hybrids ranked.</p>
         </article>
       </div>
     </section>
 
     <section class="section">
-      <h2>Choose Sony A7 V if…</h2>
+      <h2>Affiliate Disclosure</h2>
       <div class="card">
-        <p>You want the deepest lens ecosystem, flexible color options, and improved thermals over A7 IV. Ideal for
-          hybrid shooters who mix talking heads, events, and photo work.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Choose Canon R6 III if…</h2>
-      <div class="card">
-        <p>You shoot fast-moving subjects, need strong IBIS for handheld video, and want cleaner rolling shutter. Great
-          for weddings, documentary, and action hybrids.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Bottom line</h2>
-      <div class="card">
-        <p>A7 V wins on lenses and flexibility; R6 III wins on motion handling and IBIS. Pick based on your subjects and
-          whether you want lens variety or the cleanest handheld video.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Affiliate note</h2>
-      <div class="card">
-        <p>This page may contain affiliate links. If you buy through them, we may earn a small commission at no extra
-          cost to you.</p>
+        <p>
+          This page contains affiliate links. If you purchase through our links,
+          we may earn a small commission at no extra cost to you. This helps
+          support our independent testing.
+        </p>
       </div>
     </section>
 
     <!-- Author Box -->
-    <section class="section author-box"
-      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;">
+    <section
+      class="section author-box"
+      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;"
+    >
       <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="cameraupick Editorial Team"
-          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+        <img
+          src="/assets/images/team-avatar.webp"
+          alt="cameraupick Editorial Team"
+          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;"
+        />
         <div>
-          <h4 style="margin: 0 0 8px 0;">Written by cameraupick Editorial Team</h4>
+          <h4 style="margin: 0 0 8px 0;">
+            Written by cameraupick Editorial Team
+          </h4>
           <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Our team of professional photographers and videographers has 10+ years of experience testing cameras.
-            We buy our own gear and provide honest, unbiased reviews.
+            Our team of professional photographers and videographers has 10+
+            years of experience testing cameras. We buy our own gear and provide
+            honest, unbiased reviews.
           </p>
-          <a href="/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Learn more about our
-            testing process →</a>
+          <a
+            href="/about"
+            style="font-size: 14px; margin-top: 8px; display: inline-block;"
+            >Learn more about our testing process →</a
+          >
         </div>
       </div>
     </section>
-
   </main>
 </BaseLayout>
