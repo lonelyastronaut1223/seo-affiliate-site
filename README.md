@@ -1,4 +1,4 @@
-# Kameraupick — Camera Reviews, Comparisons & Buying Guides
+# Cameraupick — Camera Reviews, Comparisons & Buying Guides
 
 <p align="center">
   <img src="public/assets/images/logo.webp" alt="Kameraupick Logo" width="120">
