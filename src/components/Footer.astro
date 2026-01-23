@@ -1,17 +1,61 @@
 ---
 /**
- * Footer Component - EXACT COPY from original index.html (lines 919-969)
- * DO NOT MODIFY - This is a verbatim copy to ensure design consistency
+ * Footer Component - Internationalized version
+ * Automatically detects language from URL and shows appropriate links and text
  */
+const currentPath = Astro.url.pathname;
+const isGerman = currentPath.startsWith("/de");
+
+// Link mappings
+const links = isGerman
+    ? {
+          about: "/de/ueber-uns",
+          contact: "/de/kontakt",
+          privacy: "/de/datenschutz",
+          terms: "/de/agb",
+          impressum: "/de/impressum",
+      }
+    : {
+          about: "/about",
+          contact: "/contact",
+          privacy: "/privacy",
+          terms: "/terms",
+      };
+
+// Text translations
+const texts = isGerman
+    ? {
+          independentTesting: "✓ Unabhängige Tests",
+          noSponsoredReviews: "✓ Keine gesponserten Testberichte",
+          realWorldExperience: "✓ Praxiserfahrung",
+          about: "Über uns",
+          contact: "Kontakt",
+          privacy: "Datenschutz",
+          terms: "Nutzungsbedingungen",
+          impressum: "Impressum",
+          sitemap: "Sitemap",
+          copyright: "Alle Rechte vorbehalten.",
+      }
+    : {
+          independentTesting: "✓ Independent Testing",
+          noSponsoredReviews: "✓ No Sponsored Reviews",
+          realWorldExperience: "✓ Real-World Experience",
+          about: "About",
+          contact: "Contact",
+          privacy: "Privacy",
+          terms: "Terms",
+          sitemap: "Sitemap",
+          copyright: "All rights reserved.",
+      };
 ---
 
 <footer class="site-footer">
     <div class="container">
         <!-- Trust Badges -->
         <div class="trust-badges">
-            <span class="trust-badge">✓ Independent Testing</span>
-            <span class="trust-badge">✓ No Sponsored Reviews</span>
-            <span class="trust-badge">✓ Real-World Experience</span>
+            <span class="trust-badge">{texts.independentTesting}</span>
+            <span class="trust-badge">{texts.noSponsoredReviews}</span>
+            <span class="trust-badge">{texts.realWorldExperience}</span>
         </div>
 
         <!-- Brand Partners -->
@@ -26,11 +70,12 @@
 
         <div class="footer-content">
             <div class="footer-links">
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/terms">Terms</a>
-                <a href="/sitemap.xml">Sitemap</a>
+                <a href={links.about}>{texts.about}</a>
+                <a href={links.contact}>{texts.contact}</a>
+                <a href={links.privacy}>{texts.privacy}</a>
+                <a href={links.terms}>{texts.terms}</a>
+                {isGerman && <a href={links.impressum}>{texts.impressum}</a>}
+                <a href="/sitemap.xml">{texts.sitemap}</a>
             </div>
             <div class="social-links">
                 <a
@@ -86,7 +131,7 @@
                 </a>
             </div>
             <p class="footer-copy">
-                &copy; <span id="year"></span> cameraupick. All rights reserved.
+                &copy; <span id="year"></span> cameraupick. {texts.copyright}
             </p>
         </div>
     </div>
