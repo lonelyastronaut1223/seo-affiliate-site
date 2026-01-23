@@ -1543,7 +1543,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       // Responsive Limit Logic
       const isMobile = window.innerWidth <= 640;
-      const INITIAL_LIMIT = isMobile ? 12 : 6;
+      // Show 8 items on desktop (2 rows of 4), 12 on mobile carousel
+      const INITIAL_LIMIT = isMobile ? 12 : 8;
       let currentLimit = INITIAL_LIMIT;
       let activeFilter = "all";
 
