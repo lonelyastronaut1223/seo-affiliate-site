@@ -1,205 +1,142 @@
-# 联盟链接管理系统使用说明
+# 联盟链接管理指南
 Affiliate Links Management Guide
 
 ---
 
-## 📍 系统概述
+## 📊 产品总数统计
 
-### 当前系统架构
-
-**配置文件**: `src/config/affiliateLinks.js`  
-**功能**: 集中管理所有Amazon联盟链接
-
-### 历史迁移
-- ❌ **旧系统**: `assets/js/links.js` (前端JavaScript动态注入) - 已废弃
-- ✅ **新系统**: `src/config/affiliateLinks.js` (Astro编译时注入) - 当前使用
+| 类别 | 数量 | 有链接 | 待添加 |
+|------|------|--------|--------|
+| **相机 Cameras** | 28 | 21 | 7 |
+| **镜头 Lenses** | 12 | 0 | 12 |
+| **配件 Accessories** | 9 | 1 | 8 |
+| **总计 Total** | **49** | **22** | **27** |
 
 ---
 
-## 🔗 当前可用的联盟链接
+## 📍 配置文件位置
 
-### Sony 索尼
-- `sony-a6700`: https://amzn.to/3NpavhW
-- `sony-a7c-ii`: https://amzn.to/49XHouC
-- `sony-a7-iv`: https://amzn.to/3Zmgs1u
-- `sony-zv-e10`: https://amzn.to/3NqCxth
-- `sony-zv-e10-ii`: https://amzn.to/49HqAH3
-- `sony-zv-e1`: https://amzn.to/3Le0oMc
-- `sony-fx3`: https://amzn.to/4b0w6Ha
-
-### Canon 佳能
-- `canon-eos-r8`: https://amzn.to/3Lvm06M
-- `canon-r50`: https://amzn.to/3YBJTwt
-- `canon-r100`: https://amzn.to/45FQ6eA
-- `canon-r6-ii`: https://amzn.to/4sHWE6q
-
-### Nikon 尼康
-- `nikon-z8`: https://amzn.to/4sMa95c
-
-### Fujifilm 富士
-- `fujifilm-x-t5`: https://amzn.to/4qSEPQj
-- `fujifilm-x-s20`: https://amzn.to/3YJrfTj
-- `fujifilm-x100vi`: https://amzn.to/4pGFIdE
-- `fujifilm-x-t50`: https://amzn.to/4pJH5se
-
-### Panasonic 松下
-- `panasonic-s5-ii`: https://amzn.to/45FQbyU
-- `panasonic-s5-iix`: https://amzn.to/49nmk0t
-- `panasonic-g100d`: https://amzn.to/4sHwgtm
-
-### OM System 奥林巴斯
-- `om-system-om-5`: https://amzn.to/49TF1cd
-
-### DJI & Action Cameras 运动相机
-- `dji-osmo-pocket-3`: https://amzn.to/3NlCOOg
-- `dji-action-5`: https://amzn.to/4jHiYc3
-- `gopro-13`: https://amzn.to/3Ne6SLE
-- `insta360-x4`: https://amzn.to/4aUs0jM
-
-### Accessories 配件
-- `sandisk-extreme-pro-256gb`: https://amzn.to/4sPSPMl
-
-### 🚧 待添加链接的产品
-以下产品在配置文件中已定义，但联盟链接为空（需要后续添加）：
-- `sony-a7-v` (预售产品)
-- `canon-r5-ii` (新品)
-- `nikon-z6-iii` (待添加)
-- `om-system-om-1-ii` (待添加)
+**文件路径**: `src/config/affiliateLinks.js`
 
 ---
 
-## 📖 使用方法
+## 🔧 如何维护
 
-### 1. 在新的评论页面中使用
+### 1. 添加新产品联盟链接
 
-```astro
----
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getAffiliateLink } from '../../config/affiliateLinks';
-
-// 获取联盟链接
-const affiliateUrl = getAffiliateLink('sony-a7c-ii');
----
-
-<BaseLayout title="Sony A7C II Review" description="...">
-  <a href={affiliateUrl} 
-     class="btn-buy" 
-     rel="sponsored noopener noreferrer" 
-     target="_blank">
-    Check Price on Amazon &rarr;
-  </a>
-</BaseLayout>
-```
-
-### 2. 添加新产品联盟链接
-
-在 `src/config/affiliateLinks.js` 中添加：
+1. 打开 `src/config/affiliateLinks.js`
+2. 找到对应的品牌分类区域（如 SONY 索尼相机）
+3. 添加新产品条目：
 
 ```javascript
-export const affiliateLinks = {
-    // ... 现有产品 ...
-
-    'your-new-product': {
-        name: 'Product Full Name',
-        price: 1999,
-        currency: 'USD',
-        url: 'https://amzn.to/XXXXXXX',  // ✅ 在这里填入你的Amazon联盟链接
-        asin: 'B0XXXXXXX',  // Amazon产品ASIN码
-    },
-};
+'your-product-id': {
+    name: '产品名称',
+    price: 1999,
+    currency: 'USD',
+    url: 'https://amzn.to/XXXXXXX',  // 你的联盟链接
+},
 ```
 
-### 3. 查找Amazon ASIN码
+### 2. 更新现有产品链接
 
-1. 访问Amazon产品页面
-2. 在URL中查找ASIN码：
-   - URL格式：`amazon.com/dp/B09JZT6YK5`
-   - ASIN = `B09JZT6YK5`
+搜索产品ID，修改 `url` 字段：
+
+```javascript
+'sony-a7c-ii': {
+    ...
+    url: 'https://amzn.to/新链接',  // 修改这里
+},
+```
+
+### 3. 获取Amazon联盟链接
+
+1. 登录 Amazon Associates
+2. 搜索产品
+3. 点击 "Get Link" → "Text" → 复制短链接（amzn.to格式）
 
 ---
 
-## ⚠️ 当前状态和待办事项
+## 📋 产品ID速查表
 
-### ❌ 当前问题
-**所有评论页面仍在使用占位符 `href="#"`，没有连接到配置文件！**
+### 相机 Cameras (28款)
 
-### ✅ 已完成
-- [x] 创建集中配置文件 `src/config/affiliateLinks.js`
-- [x] 从旧的 `assets/js/links.js` 提取所有真实联盟链接
-- [x] 整合所有链接到新配置文件
+| 品牌 | 产品ID | 有链接 |
+|------|--------|--------|
+| **Sony** | `sony-a6700` | ✅ |
+| | `sony-a7c-ii` | ✅ |
+| | `sony-a7-iv` / `sony-a7iv` | ✅ |
+| | `sony-a7-v` | ❌ |
+| | `sony-zv-e10` | ✅ |
+| | `sony-zv-e10-ii` | ✅ |
+| | `sony-zv-e1` | ✅ |
+| | `sony-fx3` | ✅ |
+| **Canon** | `canon-eos-r8` | ✅ |
+| | `canon-r50` | ✅ |
+| | `canon-r100` | ✅ |
+| | `canon-r6-ii` | ✅ |
+| | `canon-r5-ii` | ❌ |
+| | `canon-r6-iii` | ❌ |
+| **Nikon** | `nikon-z8` | ✅ |
+| | `nikon-z6-iii` | ❌ |
+| **Fujifilm** | `fujifilm-x-t5` | ✅ |
+| | `fujifilm-x-s20` | ✅ |
+| | `fujifilm-x100vi` | ✅ |
+| | `fujifilm-x-t50` | ✅ |
+| **Panasonic** | `panasonic-s5-ii` | ✅ |
+| | `panasonic-s5-iix` | ✅ |
+| | `panasonic-g100d` | ✅ |
+| **OM System** | `om-system-om-1-ii` | ❌ |
+| | `om-system-om-5` | ✅ |
+| **Action** | `dji-osmo-pocket-3` | ✅ |
+| | `dji-action-5` | ✅ |
+| | `gopro-13` | ✅ |
+| | `insta360-x4` | ✅ |
 
-### 🔧 待完成 (下一步)
-- [ ] 修改所有评论页面，将硬编码的 `href="#"` 替换为 `getAffiliateLink()` 动态调用
-- [ ] 为新产品（Nikon Z6 III, Canon R5 II, Fujifilm X-S20, OM-1 II）添加真实联盟链接
-- [ ] 测试所有页面的联盟链接是否正常工作
+### 镜头 Lenses (12款)
+
+| 卡口 | 产品ID | 有链接 |
+|------|--------|--------|
+| **Sony E** | `sigma-56-14` | ❌ |
+| | `tamron-17-70` | ❌ |
+| | `sony-35-18` | ❌ |
+| | `sony-70-350` | ❌ |
+| **Canon RF** | `canon-rf-50` | ❌ |
+| | `canon-rfs-18-150` | ❌ |
+| | `canon-rf-85` | ❌ |
+| | `canon-rf-24-105` | ❌ |
+| **Fuji X** | `fuji-xf-16-50` | ❌ |
+| | `fuji-xf56-f12` | ❌ |
+| | `fuji-xf23-f2` | ❌ |
+| | `fuji-xf-33` | ❌ |
+| | `sigma-18-50-fuji` | ❌ |
+
+### 配件 Accessories (9款)
+
+| 类别 | 产品ID | 有链接 |
+|------|--------|--------|
+| **三脚架** | `peak-travel-tripod` | ❌ |
+| | `manfrotto-befree` | ❌ |
+| | `ulanzi-mt79` | ❌ |
+| **相机包** | `peak-everyday-30` | ❌ |
+| | `lowepro-protactic` | ❌ |
+| | `wandrd-prvke` | ❌ |
+| **SD卡** | `sandisk-extreme-pro-256` | ✅ |
+| | `sony-tough-v90` | ❌ |
+| | `sandisk-extreme-256` | ❌ |
 
 ---
 
-## 🎯 集成示例
+## 🚀 在页面中使用
 
-### 修改前（硬编码占位符）
-```astro
-<a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank">
-  Check Price on Amazon &rarr;
-</a>
-```
-
-### 修改后（动态从配置获取）
 ```astro
 ---
 import { getAffiliateLink } from '../../config/affiliateLinks';
-const productId = 'sony-a7c-ii';
-const affiliateUrl = getAffiliateLink(productId);
+const url = getAffiliateLink('sony-a7c-ii');
 ---
 
-<a href={affiliateUrl} class="btn-buy" rel="sponsored noopener noreferrer" target="_blank">
-  Check Price on Amazon &rarr;
+<a href={url} class="btn-buy" rel="sponsored noopener noreferrer" target="_blank">
+  Check Price on Amazon →
 </a>
-```
-
----
-
-## 📝 维护注意事项
-
-1. **所有联盟链接统一在 `src/config/affiliateLinks.js` 中管理**
-2. **添加新产品时，记得同时添加英文和德语页面的链接**
-3. **空链接会返回 `#`，不会破坏页面**
-4. **确保所有链接包含 `rel="sponsored noopener noreferrer"` 属性**
-
----
-
-## 🛠️ 技术细节
-
-### 辅助函数
-
-#### `getAffiliateLink(productId)`
-返回指定产品的Amazon联盟链接URL
-
-**参数**: 
-- `productId` (string): 产品ID，如 `'sony-a7c-ii'`
-
-**返回值**: 
-- (string): Amazon联盟链接URL，如果未找到返回 `'#'`
-
-**示例**:
-```javascript
-getAffiliateLink('sony-a7c-ii')  // 返回: 'https://amzn.to/49XHouC'
-getAffiliateLink('invalid-id')   // 返回: '#'
-```
-
-#### `getProductInfo(productId)`
-返回指定产品的完整信息对象
-
-**参数**: 
-- `productId` (string): 产品ID
-
-**返回值**: 
-- (object|null): 包含 name, price, currency, url, asin 的对象，如果未找到返回 `null`
-
-**示例**:
-```javascript
-getProductInfo('sony-a7c-ii')
-// 返回: { name: 'Sony A7C II Camera Body', price: 2199, currency: 'USD', url: '...', asin: '...' }
 ```
 
 ---
