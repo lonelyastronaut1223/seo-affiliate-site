@@ -1,11 +1,27 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
 ---
 
 <BaseLayout
   title="Fujifilm X-T5 Review 2026: Is 40MP APS-C Worth $1,699?"
   description="Fujifilm X-T5 Review 2026: 40MP sensor, classic design & film simulations tested. Honest pros & cons, sample images. Is it worth $1,699? Updated Jan 2026."
 >
+  <ProductSchema
+    slot="head"
+    productName="Fujifilm X-T5"
+    brand="Fujifilm"
+    image="/assets/images/guides/fujifilm-x-t5.webp"
+    description="Retro-styled APS-C camera with 40MP sensor, in-body stabilization, and legendary Fujifilm color science."
+    price={1699}
+    priceCurrency="USD"
+    rating={4.6}
+    reviewCount={1}
+    url="/reviews/fujifilm-x-t5-review"
+    breadcrumbs={[
+      { name: "Fujifilm X-T5", url: "/reviews/fujifilm-x-t5-review" }
+    ]}
+  />
   <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

@@ -146,6 +146,9 @@ const jsonLd = JSON.stringify({
         <!-- Structured Data (Schema.org JSON-LD) -->
         <script type="application/ld+json" set:html={jsonLd} />
 
+        <!-- Additional head content slot (for page-specific schemas) -->
+        <slot name="head" />
+
         <!-- CSS - Single bundled file for fewer HTTP requests -->
         <link rel="stylesheet" href="/assets/css/bundle.min.css" />
 

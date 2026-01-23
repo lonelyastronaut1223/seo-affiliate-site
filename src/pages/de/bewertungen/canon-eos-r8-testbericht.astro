@@ -1,11 +1,27 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductSchema from "../../../components/ProductSchema.astro";
 ---
 
 <BaseLayout
   title="Canon EOS R8 Testbericht 2026: Beste Entry-Vollformat für 1.299 €?"
   description="Canon EOS R8 Testbericht 2026: Günstigstes Vollformat mit Flaggschiff-AF für 1.299 €. Lohnt es sich oder zu viele Kompromisse? Ehrlicher Test. Aktualisiert Jan 2026."
 >
+  <ProductSchema
+    slot="head"
+    productName="Canon EOS R8"
+    brand="Canon"
+    image="/assets/images/guides/canon-eos-r8.webp"
+    description="Die Canon EOS R8 bietet professionelle Vollformat-Bildqualität und Autofokus in einem kompakten, erschwinglichen Gehäuse. Perfekt für Enthusiasten."
+    price={1499}
+    priceCurrency="EUR"
+    rating={4.6}
+    reviewCount={1}
+    url="/de/bewertungen/canon-eos-r8-testbericht"
+    breadcrumbs={[
+      { name: "Canon EOS R8", url: "/de/bewertungen/canon-eos-r8-testbericht" }
+    ]}
+  />
   <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

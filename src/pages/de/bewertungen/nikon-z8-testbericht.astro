@@ -1,8 +1,24 @@
 ---
+import ProductSchema from '../../../components/ProductSchema.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Nikon Z8 Testbericht 2026: Mini-Z9 — Lohnt sich der Preis von 3.996 €?" description="Nikon Z8 Testbericht 2026: Flaggschiff-Z9-Funktionen in kleinerem Gehäuse. 45MP, 8K-Video, Profi-AF getestet. Lohnt sich der Preis von 3.996 €? Ausführlicher Test. Aktualisiert Jan 2026.">
+  <ProductSchema
+    slot="head"
+    productName="Nikon Z8"
+    brand="Nikon"
+    image="/assets/images/guides/nikon-z8.webp"
+    description="Die Nikon Z8 liefert Flaggschiff-Leistung mit 45MP Stacked-Sensor und 8K-Video in einem kompakten Profi-Gehäuse."
+    price={3999}
+    priceCurrency="EUR"
+    rating={4.8}
+    reviewCount={1}
+    url="/de/bewertungen/nikon-z8-testbericht"
+    breadcrumbs={[
+      { name: "Nikon Z8", url: "/de/bewertungen/nikon-z8-testbericht" }
+    ]}
+  />
 <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

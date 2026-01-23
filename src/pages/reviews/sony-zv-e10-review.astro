@@ -1,11 +1,27 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
 ---
 
 <BaseLayout
   title="Sony ZV-E10 Review 2026: Best Budget Vlog Camera Under $700?"
   description="Sony ZV-E10 Review 2026: Best vlogging camera for $698? Flip screen, excellent AF, compact design tested. Honest pros & cons. Updated Jan 2026."
 >
+  <ProductSchema
+    slot="head"
+    productName="Sony ZV-E10"
+    brand="Sony"
+    image="/assets/images/guides/sony-zv-e10.webp"
+    description="The Sony ZV-E10 is designed for vloggers with excellent autofocus, flip screen, and E-mount lens compatibility at an affordable price."
+    price={698}
+    priceCurrency="USD"
+    rating={4.4}
+    reviewCount={1}
+    url="/reviews/sony-zv-e10-review"
+    breadcrumbs={[
+      { name: "Sony ZV-E10", url: "/reviews/sony-zv-e10-review" }
+    ]}
+  />
   <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

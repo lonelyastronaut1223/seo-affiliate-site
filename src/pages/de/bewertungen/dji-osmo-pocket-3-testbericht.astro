@@ -1,8 +1,24 @@
 ---
+import ProductSchema from '../../../components/ProductSchema.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="DJI Osmo Pocket 3 Testbericht 2026: Beste Vlog-Kamera unter 550 €?" description="DJI Osmo Pocket 3 Testbericht 2026: Kompakte Gimbal-Kamera mit 1-Zoll-Sensor. Perfekt für Vlogs, beeindruckende Stabilisierung. Ehrlicher Test.">
+  <ProductSchema
+    slot="head"
+    productName="DJI Osmo Pocket 3"
+    brand="DJI"
+    image="/assets/images/guides/dji-osmo-pocket-3.webp"
+    description="Ultra-kompakte Gimbal-Kamera mit 1-Zoll-Sensor und mechanischer Stabilisierung für müheloses Vlogging."
+    price={519}
+    priceCurrency="EUR"
+    rating={4.7}
+    reviewCount={1}
+    url="/de/bewertungen/dji-osmo-pocket-3-testbericht"
+    breadcrumbs={[
+      { name: "DJI Osmo Pocket 3", url: "/de/bewertungen/dji-osmo-pocket-3-testbericht" }
+    ]}
+  />
 <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

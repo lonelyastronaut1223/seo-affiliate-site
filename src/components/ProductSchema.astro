@@ -1,0 +1,149 @@
+---
+/**
+ * Product Schema Component
+ * Generates Product and Review structured data for SEO
+ * Used in all review pages
+ */
+
+interface Props {
+    productName: string;
+    brand: string;
+    image: string;
+    description: string;
+    price?: number;
+    priceCurrency?: string;
+    rating?: number;
+    reviewCount?: number;
+    availability?: string;
+    sku?: string;
+    url: string;
+    breadcrumbs?: Array<{ name: string; url: string }>;
+}
+
+const {
+    productName,
+    brand,
+    image,
+    description,
+    price = 1499,
+    priceCurrency = "USD",
+    rating = 4.5,
+    reviewCount = 1,
+    availability = "https://schema.org/InStock",
+    sku,
+    url,
+    breadcrumbs = [],
+} = Astro.props;
+
+// Full image URL
+const fullImageUrl = image.startsWith("http")
+    ? image
+    : `https://cameraupick.com${image}`;
+
+// Product Schema
+const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: productName,
+    image: fullImageUrl,
+    description: description,
+    brand: {
+        "@type": "Brand",
+        name: brand,
+    },
+    aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: rating.toString(),
+        bestRating: "5",
+        worstRating: "1",
+        reviewCount: reviewCount.toString(),
+    },
+    offers: {
+        "@type": "Offer",
+        url: `https://cameraupick.com${url}`,
+        priceCurrency: priceCurrency,
+        price: price.toString(),
+        availability: availability,
+        priceValidUntil: new Date(
+            new Date().setFullYear(new Date().getFullYear() + 1),
+        )
+            .toISOString()
+            .split("T")[0],
+    },
+};
+
+if (sku) {
+    (productSchema as any).sku = sku;
+}
+
+// Review Schema
+const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+        "@type": "Product",
+        name: productName,
+        image: fullImageUrl,
+        brand: {
+            "@type": "Brand",
+            name: brand,
+        },
+    },
+    author: {
+        "@type": "Organization",
+        name: "CameraUpick",
+    },
+    reviewRating: {
+        "@type": "Rating",
+        ratingValue: rating.toString(),
+        bestRating: "5",
+        worstRating: "1",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "CameraUpick",
+        url: "https://cameraupick.com",
+    },
+    datePublished: new Date().toISOString().split("T")[0],
+    reviewBody: description,
+};
+
+// Enhanced Breadcrumb Schema
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://cameraupick.com",
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Reviews",
+            item: "https://cameraupick.com/reviews",
+        },
+        ...breadcrumbs.map((crumb, index) => ({
+            "@type": "ListItem",
+            position: index + 3,
+            name: crumb.name,
+            item: `https://cameraupick.com${crumb.url}`,
+        })),
+    ],
+};
+
+const productJsonLd = JSON.stringify(productSchema);
+const reviewJsonLd = JSON.stringify(reviewSchema);
+const breadcrumbJsonLd = JSON.stringify(breadcrumbSchema);
+---
+
+<!-- Product Schema -->
+<script type="application/ld+json" set:html={productJsonLd} />
+
+<!-- Review Schema -->
+<script type="application/ld+json" set:html={reviewJsonLd} />
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json" set:html={breadcrumbJsonLd} />

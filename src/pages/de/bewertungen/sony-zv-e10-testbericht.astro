@@ -1,8 +1,24 @@
 ---
+import ProductSchema from '../../../components/ProductSchema.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Sony ZV-E10 Testbericht 2026: Beste Budget Vlog Kamera unter 700 €?" description="Sony ZV-E10 Testbericht 2026: Beste Vlogging-Kamera für 698 €? Klappbildschirm, ausgezeichneter AF, kompaktes Design getestet. Ehrliche Vor- & Nachteile. Aktualisiert Jan 2026.">
+  <ProductSchema
+    slot="head"
+    productName="Sony ZV-E10"
+    brand="Sony"
+    image="/assets/images/guides/sony-zv-e10.webp"
+    description="Die Sony ZV-E10 ist für Vlogger konzipiert mit exzellentem Autofokus, Flip-Screen und E-Mount Objektiv-Kompatibilität."
+    price={698}
+    priceCurrency="EUR"
+    rating={4.4}
+    reviewCount={1}
+    url="/de/bewertungen/sony-zv-e10-testbericht"
+    breadcrumbs={[
+      { name: "Sony ZV-E10", url: "/de/bewertungen/sony-zv-e10-testbericht" }
+    ]}
+  />
 <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

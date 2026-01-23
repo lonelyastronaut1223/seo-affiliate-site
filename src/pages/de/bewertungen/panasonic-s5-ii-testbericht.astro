@@ -1,8 +1,24 @@
 ---
+import ProductSchema from '../../../components/ProductSchema.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Panasonic S5 II Testbericht 2026: Bestes Preis-Leistungs-Vollformat für 1.997 €?" description="Panasonic S5 II Testbericht 2026: Endlich Phasen-AF! Vollformat-Hybrid im Test. Das beste Preis-Leistungs-Verhältnis für 1.997 €? Ehrlicher Test. Aktualisiert Jan 2026.">
+  <ProductSchema
+    slot="head"
+    productName="Panasonic Lumix S5 II"
+    brand="Panasonic"
+    image="/assets/images/guides/panasonic-s5-ii.webp"
+    description="Die Panasonic S5 II kombiniert Phasen-Detektion-Autofokus mit branchenführenden Video-Specs und 5-Achsen IBIS."
+    price={1999}
+    priceCurrency="EUR"
+    rating={4.5}
+    reviewCount={1}
+    url="/de/bewertungen/panasonic-s5-ii-testbericht"
+    breadcrumbs={[
+      { name: "Panasonic Lumix S5 II", url: "/de/bewertungen/panasonic-s5-ii-testbericht" }
+    ]}
+  />
 <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

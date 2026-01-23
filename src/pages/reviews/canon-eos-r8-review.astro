@@ -1,11 +1,27 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
 ---
 
 <BaseLayout
   title="Canon EOS R8 Review 2026: Best Entry Full-Frame for $1,299?"
   description="Canon EOS R8 Review 2026: Cheapest full-frame with flagship AF for $1,299. Worth it or too compromised? Honest testing. Updated Jan 2026."
 >
+  <ProductSchema
+    slot="head"
+    productName="Canon EOS R8"
+    brand="Canon"
+    image="/assets/images/guides/canon-eos-r8.webp"
+    description="The Canon EOS R8 offers professional-level full-frame image quality and autofocus in a compact, affordable body. Perfect for enthusiasts upgrading from APS-C."
+    price={1499}
+    priceCurrency="USD"
+    rating={4.6}
+    reviewCount={1}
+    url="/reviews/canon-eos-r8-review"
+    breadcrumbs={[
+      { name: "Canon EOS R8", url: "/reviews/canon-eos-r8-review" },
+    ]}
+  />
   <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

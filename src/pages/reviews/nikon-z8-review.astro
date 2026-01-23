@@ -1,11 +1,27 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
 ---
 
 <BaseLayout
   title="Nikon Z8 Review 2026: Mini Z9 Worth $3,996 for Pros?"
   description="Nikon Z8 Review 2026: Flagship Z9 features in smaller body. 45MP, 8K video, pro AF tested. Is it worth $3,996? Detailed review. Updated Jan 2026."
 >
+  <ProductSchema
+    slot="head"
+    productName="Nikon Z8"
+    brand="Nikon"
+    image="/assets/images/guides/nikon-z8.webp"
+    description="The Nikon Z8 delivers flagship performance with 45MP stacked sensor and 8K video in a compact pro body."
+    price={3999}
+    priceCurrency="USD"
+    rating={4.8}
+    reviewCount={1}
+    url="/reviews/nikon-z8-review"
+    breadcrumbs={[
+      { name: "Nikon Z8", url: "/reviews/nikon-z8-review" }
+    ]}
+  />
   <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

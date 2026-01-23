@@ -1,11 +1,27 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductSchema from "../../../components/ProductSchema.astro";
 ---
 
 <BaseLayout
   title="Sony A7C II Testbericht 2026: Details, Specs & Urteil"
   description="Sony A7C II Testbericht 2026: Ausführliche Tests zu Bildqualität, Autofokus und Video. Lohnt sich der Preis von 2198 €?"
 >
+  <ProductSchema
+    slot="head"
+    productName="Sony A7C II"
+    brand="Sony"
+    image="/assets/images/guides/sony-a7c-ii.webp"
+    description="Die Sony A7C II bietet fortschrittlichen KI-Autofokus und Vollformat-Leistung im kleinsten verfügbaren Gehäuse."
+    price={2199}
+    priceCurrency="EUR"
+    rating={4.5}
+    reviewCount={1}
+    url="/de/bewertungen/sony-a7c-ii-testbericht"
+    breadcrumbs={[
+      { name: "Sony A7C II", url: "/de/bewertungen/sony-a7c-ii-testbericht" }
+    ]}
+  />
   <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

@@ -1,11 +1,27 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
 ---
 
 <BaseLayout
   title="Sony A7C II Review 2026: Details, Specs & Verdict"
   description="Sony A7C II Review 2026: Detailed testing of image quality, autofocus, and video. Is it worth $2198?"
 >
+  <ProductSchema
+    slot="head"
+    productName="Sony A7C II"
+    brand="Sony"
+    image="/assets/images/guides/sony-a7c-ii.webp"
+    description="The Sony A7C II offers advanced AI autofocus and full-frame performance in the smallest body available."
+    price={2199}
+    priceCurrency="USD"
+    rating={4.5}
+    reviewCount={1}
+    url="/reviews/sony-a7c-ii-review"
+    breadcrumbs={[
+      { name: "Sony A7C II", url: "/reviews/sony-a7c-ii-review" }
+    ]}
+  />
   <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

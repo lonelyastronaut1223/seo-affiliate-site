@@ -1,8 +1,24 @@
 ---
+import ProductSchema from '../../../components/ProductSchema.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Sony A7 IV Testbericht 2026: Details, Daten & Urteil" description="Sony A7 IV Test 2026: Detaillierter Test von Bildqualität, Autofokus und Video. Ist sie 2.498 € wert? Erfahre es hier.">
+  <ProductSchema
+    slot="head"
+    productName="Sony A7 IV"
+    brand="Sony"
+    image="/assets/images/guides/sony-a7-iv.webp"
+    description="Die ultimative Hybrid-Kamera mit 33MP-Sensor, 4K 60p und professionellen Features für Foto und Video."
+    price={2499}
+    priceCurrency="EUR"
+    rating={4.7}
+    reviewCount={1}
+    url="/de/bewertungen/sony-a7-iv-testbericht"
+    breadcrumbs={[
+      { name: "Sony A7 IV", url: "/de/bewertungen/sony-a7-iv-testbericht" }
+    ]}
+  />
 <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

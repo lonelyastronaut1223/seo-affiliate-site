@@ -1,11 +1,27 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
 ---
 
 <BaseLayout
   title="DJI Osmo Pocket 3 Review 2026: Best Vlog Camera Under $550?"
   description="DJI Osmo Pocket 3 Review 2026: Tiny gimbal camera with 1"
 >
+  <ProductSchema
+    slot="head"
+    productName="DJI Osmo Pocket 3"
+    brand="DJI"
+    image="/assets/images/guides/dji-osmo-pocket-3.webp"
+    description="Ultra-compact gimbal camera with 1-inch sensor and mechanical stabilization for effortless vlogging."
+    price={519}
+    priceCurrency="USD"
+    rating={4.7}
+    reviewCount={1}
+    url="/reviews/dji-osmo-pocket-3-review"
+    breadcrumbs={[
+      { name: "DJI Osmo Pocket 3", url: "/reviews/dji-osmo-pocket-3-review" }
+    ]}
+  />
   <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">

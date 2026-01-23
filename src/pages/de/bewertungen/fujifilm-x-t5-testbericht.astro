@@ -1,8 +1,24 @@
 ---
+import ProductSchema from '../../../components/ProductSchema.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Fujifilm X-T5 Testbericht 2026: Lohnt sich der 40MP APS-C-Sensor für 1.699 €?" description="Fujifilm X-T5 Testbericht 2026: 40MP-Sensor, klassisches Design und Filmsimulationen im Test. Ehrliche Vor- und Nachteile. Lohnt sich der Preis von 1.699 €? Aktualisiert Jan 2026.">
+  <ProductSchema
+    slot="head"
+    productName="Fujifilm X-T5"
+    brand="Fujifilm"
+    image="/assets/images/guides/fujifilm-x-t5.webp"
+    description="Retro-gestylte APS-C-Kamera mit 40MP-Sensor, Bildstabilisierung und legendärer Fujifilm Farbwissenschaft."
+    price={1699}
+    priceCurrency="EUR"
+    rating={4.6}
+    reviewCount={1}
+    url="/de/bewertungen/fujifilm-x-t5-testbericht"
+    breadcrumbs={[
+      { name: "Fujifilm X-T5", url: "/de/bewertungen/fujifilm-x-t5-testbericht" }
+    ]}
+  />
 <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">
