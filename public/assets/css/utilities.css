@@ -512,3 +512,46 @@ input.invalid,
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+/* ============================================
+   Verdict Section V2 - Compact Modern Layout
+   ============================================ */
+
+/* New compact verdict header - centered, no empty image container */
+.product-review-header-v2 {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 32px;
+    padding: 0 24px;
+}
+
+.product-review-header-v2 .badge-best {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.product-review-header-v2 .product-title {
+    font-size: 28px;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.product-review-header-v2 p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-review-header-v2 {
+        padding: 0 16px;
+        margin-bottom: 24px;
+    }
+
+    .product-review-header-v2 .product-title {
+        font-size: 24px;
+    }
+}

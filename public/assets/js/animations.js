@@ -86,16 +86,105 @@ document.addEventListener('DOMContentLoaded', () => {
                             easing: 'easeOutQuad'
                         });
                     }
+
+                    // ============================================
+                    // Verdict Section V2 Timeline Animation
+                    // ============================================
+                    const verdictHeader = entry.target.querySelector('.product-review-header-v2');
+                    if (verdictHeader) {
+                        const badge = verdictHeader.querySelector('.badge-best');
+                        const title = verdictHeader.querySelector('.product-title');
+                        const paragraphs = verdictHeader.querySelectorAll('p');
+
+                        // Create elegant timeline sequence
+                        const tl = anime.timeline({
+                            easing: 'easeOutExpo'
+                        });
+
+                        // 1. Badge appears with gentle pulse
+                        tl.add({
+                            targets: badge,
+                            scale: [0, 1],
+                            opacity: [0, 1],
+                            duration: 500,
+                            easing: 'spring(1, 80, 10, 0)'
+                        })
+                            // 2. Title slides in from top
+                            .add({
+                                targets: title,
+                                translateY: [-30, 0],
+                                opacity: [0, 1],
+                                duration: 600
+                            }, '-=300') // overlap by 300ms
+                            // 3. Paragraphs fade in with stagger
+                            .add({
+                                targets: paragraphs,
+                                translateY: [-20, 0],
+                                opacity: [0, 1],
+                                duration: 500,
+                                delay: anime.stagger(100)
+                            }, '-=400');
+                    }
+
+                    // Specs table row stagger animation
+                    const specsTable = entry.target.querySelector('.specs-table');
+                    if (specsTable) {
+                        const rows = specsTable.querySelectorAll('tr');
+                        anime({
+                            targets: rows,
+                            translateX: [-30, 0],
+                            opacity: [0, 1],
+                            duration: 500,
+                            delay: anime.stagger(50, { start: 400 }), // start after verdict
+                            easing: 'easeOutQuad'
+                        });
+                    }
+
+                    // Pros/Cons list items stagger
+                    const prosItems = entry.target.querySelectorAll('.pros li');
+                    const consItems = entry.target.querySelectorAll('.cons li');
+                    if (prosItems.length > 0 || consItems.length > 0) {
+                        anime({
+                            targets: [...prosItems, ...consItems],
+                            translateX: [-20, 0],
+                            opacity: [0, 1],
+                            duration: 400,
+                            delay: anime.stagger(80, { start: 800 }),
+                            easing: 'easeOutQuad'
+                        });
+                    }
                 }
             });
         }, observerOptions);
 
         // Observe all sections
         document.querySelectorAll('.section').forEach(section => {
-            // Set initial state
+            // Set initial state for elements
             section.querySelectorAll('.card, .card-plain, .score-card').forEach(el => {
                 el.style.opacity = '0';
             });
+
+            // Set initial state for verdict section v2
+            const verdictHeader = section.querySelector('.product-review-header-v2');
+            if (verdictHeader) {
+                verdictHeader.querySelectorAll('.badge-best, .product-title, p').forEach(el => {
+                    el.style.opacity = '0';
+                });
+            }
+
+            // Set initial state for specs table
+            const specsTable = section.querySelector('.specs-table');
+            if (specsTable) {
+                specsTable.querySelectorAll('tr').forEach(row => {
+                    row.style.opacity = '0';
+                });
+            }
+
+            // Set initial state for pros/cons
+            section.querySelectorAll('.pros li, .cons li').forEach(item => {
+                item.style.opacity = '0';
+            });
+
             animateOnScroll.observe(section);
         });
 
