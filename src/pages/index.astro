@@ -811,6 +811,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="meta">Vlog · Pocket</div>
         </article>
       </div>
+
+      <div id="load-more-container" class="load-more-container hidden">
+        <button id="load-more-btn" class="btn-outline">Show More Reviews</button
+        >
+      </div>
     </section>
 
     <!-- Deals Section - Integrated Style -->
@@ -1397,6 +1402,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       color: #6b7280;
       grid-column: 1 / -1;
     }
+    .load-more-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      width: 100%;
+    }
+    .load-more-container.hidden {
+      display: none;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
     @media (max-width: 640px) {
       .filter-tabs {
         gap: 0.4rem;
@@ -1413,11 +1442,61 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     document.addEventListener("DOMContentLoaded", () => {
       const filterContainer = document.getElementById("review-filters");
       const grid = document.getElementById("reviews-grid");
+      const loadMoreBtn = document.getElementById("load-more-btn");
+      const loadMoreContainer = document.getElementById("load-more-container");
 
       if (!filterContainer || !grid) return;
 
       const buttons = filterContainer.querySelectorAll(".filter-tab");
       const cards = grid.querySelectorAll(".card[data-brand]");
+      const INITIAL_LIMIT = 6;
+      let currentLimit = INITIAL_LIMIT;
+      let activeFilter = "all";
+
+      function render() {
+        let visibleCount = 0;
+        let matchingCount = 0;
+
+        cards.forEach((card) => {
+          const brand = card.dataset.brand;
+          const matches = activeFilter === "all" || brand === activeFilter;
+
+          if (matches) {
+            matchingCount++;
+            if (matchingCount <= currentLimit) {
+              card.classList.remove("hidden");
+              visibleCount++;
+            } else {
+              card.classList.add("hidden");
+            }
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+
+        // Handle No Results
+        const existingMsg = grid.querySelector(".no-results");
+        if (existingMsg) existingMsg.remove();
+
+        if (visibleCount === 0) {
+          const msg = document.createElement("div");
+          msg.className = "no-results";
+          msg.textContent = "No reviews found for this brand yet.";
+          grid.appendChild(msg);
+        }
+
+        // Handle Load More Button
+        if (loadMoreContainer) {
+          if (matchingCount > currentLimit) {
+            loadMoreContainer.classList.remove("hidden");
+          } else {
+            loadMoreContainer.classList.add("hidden");
+          }
+        }
+      }
+
+      // Initial Render
+      render();
 
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -1425,34 +1504,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           buttons.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
 
-          const filter = btn.dataset.filter;
-          let visibleCount = 0;
+          activeFilter = btn.dataset.filter;
 
-          cards.forEach((card) => {
-            const brand = card.dataset.brand;
-            const shouldShow = filter === "all" || brand === filter;
-
-            if (shouldShow) {
-              card.classList.remove("hidden");
-              visibleCount++;
-            } else {
-              card.classList.add("hidden");
-            }
-          });
-
-          // Remove existing no-results message
-          const existingMsg = grid.querySelector(".no-results");
-          if (existingMsg) existingMsg.remove();
-
-          // Show message if no results
-          if (visibleCount === 0) {
-            const msg = document.createElement("div");
-            msg.className = "no-results";
-            msg.textContent = "No reviews found for this brand yet.";
-            grid.appendChild(msg);
+          // Reset limit logic:
+          // If 'all', reset to initial limit.
+          // If clear brand filter, show all (users expect to see all Sony cameras if they click Sony)
+          if (activeFilter === "all") {
+            currentLimit = INITIAL_LIMIT;
+          } else {
+            currentLimit = 100; // Show all for specific brands
           }
+
+          render();
         });
       });
+
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+          currentLimit += 6;
+          render();
+        });
+      }
     });
   </script>
 </BaseLayout>
