@@ -106,7 +106,12 @@ const jsonLd = JSON.stringify({
         <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=2" />
         <link rel="manifest" href="/site.webmanifest" />
 
-        {canonical && <link rel="canonical" href={canonical} />}
+        {/* Auto-generate canonical URL if not provided */}
+        <link
+            rel="canonical"
+            href={canonical ||
+                `https://cameraupick.com${Astro.url.pathname.replace(/\/$/, "") || "/"}`}
+        />
 
         <!-- Hreflang tags for multilingual SEO -->
         {
