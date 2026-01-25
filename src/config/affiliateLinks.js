@@ -133,13 +133,13 @@ export const affiliateLinks = {
         name: 'Canon EOS R5 Mark II',
         price: 4299,
         currency: 'USD',
-        url: '',  // 新品待添加
+        url: 'https://amzn.to/49Qljgl',
     },
     'canon-r6-iii': {
         name: 'Canon EOS R6 Mark III',
         price: 2799,
         currency: 'USD',
-        url: '',  // 新品待添加
+        url: 'https://amzn.to/49XgbqW',
     },
 
     // ─────────────────────────────────────────────────────────────────────
@@ -155,7 +155,7 @@ export const affiliateLinks = {
         name: 'Nikon Z6 III',
         price: 2499,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/4biylFP',
     },
 
     // ─────────────────────────────────────────────────────────────────────
@@ -215,7 +215,7 @@ export const affiliateLinks = {
         name: 'OM System OM-1 Mark II',
         price: 2199,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/3NFML9c',
     },
     'om-system-om-5': {
         name: 'OM System OM-5',

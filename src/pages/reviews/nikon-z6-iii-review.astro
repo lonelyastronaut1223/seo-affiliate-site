@@ -11,7 +11,7 @@ import ProductSchema from '../../components/ProductSchema.astro';
     slot="head"
     productName="Nikon Z6 III"
     brand="Nikon"
-    image="/assets/images/guides/nikon-z8.webp"
+    image="/assets/images/guides/nikon-z6-iii.webp"
     description="The Nikon Z6 III delivers professional hybrid performance with a 24MP partially stacked sensor, 6K video capabilities, and refined autofocus in an ergonomic body."
     price={2499}
     priceCurrency="USD"
@@ -40,7 +40,7 @@ import ProductSchema from '../../components/ProductSchema.astro';
         <div class="hero-media">
           <picture>
             <img
-              src="/assets/images/guides/nikon-z8.webp"
+              src="/assets/images/guides/nikon-z6-iii.webp"
               alt="Nikon Z6 III full-frame hybrid camera"
               loading="eager"
             />
@@ -428,57 +428,5 @@ import ProductSchema from '../../components/ProductSchema.astro';
       </div>
     </section>
   </main>
+<script is:inline src="/assets/js/faq-accordion.js"></script>
 </BaseLayout>
-
-<style>
-  .recommendations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-top: 24px;
-  }
-
-  .recommendation-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    padding: 24px;
-  }
-
-  .recommendation-card h4 {
-    color: var(--text-primary);
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-  }
-
-  .recommendation-card p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-
-  .final-verdict {
-    background: linear-gradient(
-      135deg,
-      var(--accent-subtle) 0%,
-      var(--card-bg) 100%
-    );
-    border: 2px solid var(--accent);
-    border-radius: 16px;
-    padding: 32px;
-  }
-
-  .final-verdict h2 {
-    color: var(--accent-strong);
-    margin-bottom: 16px;
-  }
-
-  .final-verdict p {
-    margin-bottom: 16px;
-    line-height: 1.7;
-  }
-
-  .final-verdict strong {
-    color: var(--accent-strong);
-  }
-</style>
