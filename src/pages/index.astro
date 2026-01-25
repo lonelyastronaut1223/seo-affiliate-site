@@ -1571,10 +1571,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         });
       }
 
-      function render(animate = true) {
+      function render(shouldAnimate = true) {
         let visibleCount = 0;
         let matchingCount = 0;
-        const cardsToShow = [];
+        const cardsToShow: HTMLElement[] = [];
 
         cards.forEach((card) => {
           const brand = card.dataset.brand;
@@ -1597,7 +1597,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         });
 
         // Animate new cards
-        if (animate && cardsToShow.length > 0) {
+        if (shouldAnimate && cardsToShow.length > 0) {
           animateCards(cardsToShow);
         }
 
@@ -1631,7 +1631,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         btn.addEventListener("click", () => {
           buttons.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
-          activeFilter = btn.dataset.filter;
+          activeFilter = btn.dataset.filter || "all";
 
           if (activeFilter === "all") {
             currentLimit = INITIAL_LIMIT;
