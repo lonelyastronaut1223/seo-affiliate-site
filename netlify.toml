@@ -72,3 +72,49 @@
   to = "https://cameraupick.com/:splat"
   status = 301
   force = true
+
+# German URL consolidation - redirect old paths to new unified structure
+[[redirects]]
+  from = "/de/bewertungen/canon-eos-r8-testbericht"
+  to = "/de/reviews/canon-eos-r8-review"
+  status = 301
+
+[[redirects]]
+  from = "/de/bewertungen/dji-osmo-pocket-3-testbericht"
+  to = "/de/reviews/dji-osmo-pocket-3-review"
+  status = 301
+
+[[redirects]]
+  from = "/de/bewertungen/fujifilm-x-t5-testbericht"
+  to = "/de/reviews/fujifilm-x-t5-review"
+  status = 301
+
+[[redirects]]
+  from = "/de/bewertungen/nikon-z8-testbericht"
+  to = "/de/reviews/nikon-z8-review"
+  status = 301
+
+[[redirects]]
+  from = "/de/bewertungen/panasonic-s5-ii-testbericht"
+  to = "/de/reviews/panasonic-s5-ii-review"
+  status = 301
+
+[[redirects]]
+  from = "/de/bewertungen/sony-a7-iv-testbericht"
+  to = "/de/reviews/sony-a7-iv-review"
+  status = 301
+
+[[redirects]]
+  from = "/de/bewertungen/sony-a7-v-testbericht"
+  to = "/de/reviews/sony-a7-v-review"
+  status = 301
+
+[[redirects]]
+  from = "/de/bewertungen/sony-a7c-ii-testbericht"
+  to = "/de/reviews/sony-a7c-ii-review"
+  status = 301
+
+[[redirects]]
+  from = "/de/bewertungen/sony-zv-e10-testbericht"
+  to = "/de/reviews/sony-zv-e10-review"
+  status = 301
