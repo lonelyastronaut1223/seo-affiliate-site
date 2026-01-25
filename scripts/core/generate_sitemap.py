@@ -70,6 +70,10 @@ def generate_sitemap(files):
         if "404" in url_path:
             continue
 
+        # Clean URL: remove /index.html suffix for cleaner URLs
+        if url_full.endswith("/index.html"):
+            url_full = url_full[:-11] + "/"  # Remove 'index.html', keep trailing slash
+
         sitemap_content.append('  <url>')
         sitemap_content.append(f'    <loc>{url_full}</loc>')
         # sitemap_content.append(f'    <lastmod>{today}</lastmod>') # Optional: enable if desired
