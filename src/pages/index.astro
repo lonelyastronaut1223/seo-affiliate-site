@@ -1572,6 +1572,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       }
 
       function render(shouldAnimate = true) {
+        if (!grid) return;
         let visibleCount = 0;
         let matchingCount = 0;
         const cardsToShow: HTMLElement[] = [];
