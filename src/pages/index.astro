@@ -1538,8 +1538,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       if (!filterContainer || !grid) return;
 
-      const buttons = filterContainer.querySelectorAll(".filter-tab");
-      const cards = grid.querySelectorAll(".card[data-brand]");
+      const buttons = filterContainer.querySelectorAll(
+        ".filter-tab",
+      ) as NodeListOf<HTMLElement>;
+      const cards = grid.querySelectorAll(
+        ".card[data-brand]",
+      ) as NodeListOf<HTMLElement>;
 
       // Responsive Limit Logic
       const isMobile = window.innerWidth <= 640;
@@ -1549,7 +1553,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       let activeFilter = "all";
 
       // Mobile Scroll Hint
-      if (isMobile) {
+      if (isMobile && grid.parentElement) {
         const hint = document.createElement("div");
         hint.className = "scroll-hint";
         hint.innerHTML = "➜";
