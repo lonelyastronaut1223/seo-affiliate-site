@@ -108,6 +108,47 @@ const jsonLd = JSON.stringify({
 
         {canonical && <link rel="canonical" href={canonical} />}
 
+        <!-- Hreflang tags for multilingual SEO -->
+        {
+            Astro.url.pathname.startsWith("/de/") ? (
+                <>
+                    <link
+                        rel="alternate"
+                        hreflang="de"
+                        href={`https://cameraupick.com${Astro.url.pathname}`}
+                    />
+                    <link
+                        rel="alternate"
+                        hreflang="en"
+                        href={`https://cameraupick.com${Astro.url.pathname.replace("/de/", "/").replace("/bewertungen/", "/reviews/").replace("/vergleiche/", "/compare/").replace("/ratgeber/", "/guides/").replace("/objektive/", "/lenses/")}`}
+                    />
+                    <link
+                        rel="alternate"
+                        hreflang="x-default"
+                        href={`https://cameraupick.com${Astro.url.pathname.replace("/de/", "/").replace("/bewertungen/", "/reviews/").replace("/vergleiche/", "/compare/").replace("/ratgeber/", "/guides/").replace("/objektive/", "/lenses/")}`}
+                    />
+                </>
+            ) : (
+                <>
+                    <link
+                        rel="alternate"
+                        hreflang="en"
+                        href={`https://cameraupick.com${Astro.url.pathname}`}
+                    />
+                    <link
+                        rel="alternate"
+                        hreflang="de"
+                        href={`https://cameraupick.com/de${Astro.url.pathname}`}
+                    />
+                    <link
+                        rel="alternate"
+                        hreflang="x-default"
+                        href={`https://cameraupick.com${Astro.url.pathname}`}
+                    />
+                </>
+            )
+        }
+
         <!-- Open Graph / Twitter -->
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="cameraupick" />
