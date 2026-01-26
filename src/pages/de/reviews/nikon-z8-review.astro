@@ -1,9 +1,12 @@
 ---
-import ProductSchema from '../../../components/ProductSchema.astro';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProductSchema from "../../../components/ProductSchema.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Nikon Z8 Testbericht 2026: Mini-Z9 — Lohnt sich der Preis von 3.996 €?" description="Nikon Z8 Testbericht 2026: Flaggschiff-Z9-Funktionen in kleinerem Gehäuse. 45MP, 8K-Video, Profi-AF getestet. Lohnt sich der Preis von 3.996 €? Ausführlicher Test. Aktualisiert Jan 2026.">
+<BaseLayout
+  title="Nikon Z8 Testbericht 2026: Mini-Z9 — Lohnt sich der Preis von 3.996 €?"
+  description="Nikon Z8 Testbericht 2026: Flaggschiff-Z9-Funktionen in kleinerem Gehäuse. 45MP, 8K-Video, Profi-AF getestet. Lohnt sich der Preis von 3.996 €? Ausführlicher Test. Aktualisiert Jan 2026."
+>
   <ProductSchema
     slot="head"
     productName="Nikon Z8"
@@ -15,24 +18,30 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     rating={4.8}
     reviewCount={1}
     url="/de/reviews/nikon-z8-review"
-    breadcrumbs={[
-      { name: "Nikon Z8", url: "/de/reviews/nikon-z8-review" }
-    ]}
+    breadcrumbs={[{ name: "Nikon Z8", url: "/de/reviews/nikon-z8-review" }]}
   />
-<main id="main" class="container">
+  <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">
         <div>
           <h1>Nikon Z8 Testbericht</h1>
-          <p class="hero-sub">Der Flaggschiff-Killer. Er bringt alles Großartige der massiven Z9 in ein handliches
-            Format.</p>
+          <p class="hero-sub">
+            Der Flaggschiff-Killer. Er bringt alles Großartige der massiven Z9
+            in ein handliches Format.
+          </p>
           <div class="meta review-price-badge">Profi Hybrid · 3.996 €</div>
         </div>
         <div class="hero-media">
           <picture>
-            <source srcset="/assets/images/guides/nikon-z8.webp" type="image/webp">
-            <img src="/assets/images/guides/nikon-z8.webp"
-              alt="Nikon Z8 professionell Vollformat Kamera with 45MP sensor and 8K Video" loading="eager">
+            <source
+              srcset="/assets/images/guides/nikon-z8.webp"
+              type="image/webp"
+            />
+            <img
+              src="/assets/images/guides/nikon-z8.webp"
+              alt="Nikon Z8 professionell Vollformat Kamera with 45MP sensor and 8K Video"
+              loading="eager"
+            />
           </picture>
         </div>
       </div>
@@ -42,49 +51,58 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <div class="product-review-card" id="nikon-z8">
         <div class="product-review-header-v2">
           <span class="badge-best">⚡ Professionelles Kraftpaket</span>
-            <h2 class="product-title">Das Urteil</h2>
-            <p>
-              Die Nikon Z8 ist im Wesentlichen eine "kleine Z9". Sie hat keinen mechanischen Verschluss – der Sensor ist
-              blitzschnell.
-            </p>
-            <p>
-              Für Profis, die zwischen hochauflösenden Hochzeitsporträts und 8K-Video wechseln, ist dies die ultimative
-              Hybrid-Kamera. Sie ist größer als eine Sony A7 IV, fühlt sich aber mit Profi-Objektiven unglaublich
-              ausgewogen an.
-            </p>
+          <h2 class="product-title">Das Urteil</h2>
+          <p>
+            Die Nikon Z8 ist im Wesentlichen eine "kleine Z9". Sie hat keinen
+            mechanischen Verschluss – der Sensor ist blitzschnell.
+          </p>
+          <p>
+            Für Profis, die zwischen hochauflösenden Hochzeitsporträts und
+            8K-Video wechseln, ist dies die ultimative Hybrid-Kamera. Sie ist
+            größer als eine Sony A7 IV, fühlt sich aber mit Profi-Objektiven
+            unglaublich ausgewogen an.
+          </p>
 
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">45MP Stacked-CMOS</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">8K60 RAW</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Gewicht</span>
-                <span class="spec-value">910g</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Karte</span>
-                <span class="spec-value">CFexpress B</span>
-              </div>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">45MP Stacked-CMOS</span>
             </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">8K60 RAW</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">910g</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Karte</span>
+              <span class="spec-value">CFexpress B</span>
+            </div>
+          </div>
 
-            <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-      </div>
+          <a
+            href="#"
+            class="btn-buy"
+            data-product="nikon-z8"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+          >
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
 
-      <div class="pros-cons">
+        <div class="pros-cons">
           <div class="pros">
             <h4>Was uns gefällt</h4>
             <ul>
               <li>Kein Rolling Shutter (dank Stacked-Sensor)</li>
               <li>Interne 12-Bit RAW-Videoaufnahme (N-RAW)</li>
               <li>Unglaubliche 45,7MP Standbildqualität</li>
-              <li>Vorab-Aufnahme stellt sicher, dass Sie keinen Moment verpassen</li>
+              <li>
+                Vorab-Aufnahme stellt sicher, dass Sie keinen Moment verpassen
+              </li>
             </ul>
           </div>
           <div class="cons">
@@ -104,19 +122,28 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <div class="grid">
         <article class="card card-plain">
           <h3>Autofokus</h3>
-          <p>Nikon hat aufgeholt. Das 3D-Tracking ist präzise und zuverlässig für schnellen Sport und Wildlife. Es
-            erkennt Menschen, Hunde, Katzen, Vögel, Flugzeuge, Züge und Autos sofort.</p>
+          <p>
+            Nikon hat aufgeholt. Das 3D-Tracking ist präzise und zuverlässig für
+            schnellen Sport und Wildlife. Es erkennt Menschen, Hunde, Katzen,
+            Vögel, Flugzeuge, Züge und Autos sofort.
+          </p>
         </article>
         <article class="card card-plain">
           <h3>Video Powerhouse</h3>
-          <p>Dies ist eine der wenigen Kameras, die intern 8K 60p N-RAW aufnimmt. Das Material ist flexibel und
-            atemberaubend. Für die meisten Nutzer ist 4K 120p der Sweet Spot für butterweiche Zeitlupe.</p>
+          <p>
+            Dies ist eine der wenigen Kameras, die intern 8K 60p N-RAW aufnimmt.
+            Das Material ist flexibel und atemberaubend. Für die meisten Nutzer
+            ist 4K 120p der Sweet Spot für butterweiche Zeitlupe.
+          </p>
         </article>
         <article class="card card-plain">
           <h3>Ergonomie</h3>
-          <p>Dies ist eine Kamera für arbeitende Profis. Der Griff passt in die ganze Hand, die Tasten sind für
-            Nachtarbeit beleuchtet, und der Bildschirm neigt sich in 4 Richtungen (inkl. vertikaler Neigung), was
-            Porträtfotografen lieben.</p>
+          <p>
+            Dies ist eine Kamera für arbeitende Profis. Der Griff passt in die
+            ganze Hand, die Tasten sind für Nachtarbeit beleuchtet, und der
+            Bildschirm neigt sich in 4 Richtungen (inkl. vertikaler Neigung),
+            was Porträtfotografen lieben.
+          </p>
         </article>
       </div>
     </section>
@@ -124,9 +151,9 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <section class="section">
       <h2>Partner-Hinweis</h2>
       <p class="section-sub">
-        Wir kaufen unsere eigene Ausrüstung oder mieten sie. Kein Hersteller hat für diesen Testbericht bezahlt. Wir
-        erhalten eine Provision, wenn Sie unsere
-        Links nutzen, was diese Website werbefrei hält.
+        Wir kaufen unsere eigene Ausrüstung oder mieten sie. Kein Hersteller hat
+        für diesen Testbericht bezahlt. Wir erhalten eine Provision, wenn Sie
+        unsere Links nutzen, was diese Website werbefrei hält.
       </p>
     </section>
     <!-- FAQ Section -->
@@ -142,10 +169,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Wenn Sie professionell Sport, Wildlife oder Events fotografieren – ja. Die Z8 hat 45MP (vs 24MP),
-              schnellere Serienbildgeschwindigkeit, 8K-Video und duale CFexpress-Slots. Die Z6 III ist ausgezeichnet für
-              die meisten Nutzer, aber die Auflösung und Geschwindigkeit der Z8 rechtfertigen den Preis für
-              anspruchsvolle Arbeit.</p>
+            <p>
+              Wenn Sie professionell Sport, Wildlife oder Events fotografieren –
+              ja. Die Z8 hat 45MP (vs 24MP), schnellere
+              Serienbildgeschwindigkeit, 8K-Video und duale CFexpress-Slots. Die
+              Z6 III ist ausgezeichnet für die meisten Nutzer, aber die
+              Auflösung und Geschwindigkeit der Z8 rechtfertigen den Preis für
+              anspruchsvolle Arbeit.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -156,10 +187,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Sie sind extrem nah beieinander. Die Z8 ist 1500 € günstiger, hat bessere Ergonomie und längere
-              Akkulaufzeit. Die A1 hat einen leichten Vorteil bei Autofokus-Feinheit und Objektivauswahl. Beide sind
-              klassenführende Hybrid-Kameras – wählen Sie nach Objektiv-Ökosystem. Wenn Sie bereits Nikon-Glas haben,
-              ist die Z8 die klare Wahl.</p>
+            <p>
+              Sie sind extrem nah beieinander. Die Z8 ist 1500 € günstiger, hat
+              bessere Ergonomie und längere Akkulaufzeit. Die A1 hat einen
+              leichten Vorteil bei Autofokus-Feinheit und Objektivauswahl. Beide
+              sind klassenführende Hybrid-Kameras – wählen Sie nach
+              Objektiv-Ökosystem. Wenn Sie bereits Nikon-Glas haben, ist die Z8
+              die klare Wahl.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -170,10 +205,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Starten Sie mit dem 24-120mm f/4 S für Vielseitigkeit, oder dem 24-70mm f/2.8 S wenn Sie f/2.8 brauchen.
-              Für Sport/Wildlife ist das 100-400mm f/4.5-5.6 VR S phänomenal. Das 50mm f/1.8 S ist günstig und
-              messerscharf. Vermeiden Sie adaptierte F-Mount-Objektive – native Z-Optik erschließt das volle Potenzial
-              der Kamera.</p>
+            <p>
+              Starten Sie mit dem 24-120mm f/4 S für Vielseitigkeit, oder dem
+              24-70mm f/2.8 S wenn Sie f/2.8 brauchen. Für Sport/Wildlife ist
+              das 100-400mm f/4.5-5.6 VR S phänomenal. Das 50mm f/1.8 S ist
+              günstig und messerscharf. Vermeiden Sie adaptierte
+              F-Mount-Objektive – native Z-Optik erschließt das volle Potenzial
+              der Kamera.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -184,9 +223,12 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Nikon hat exzellente Wärmeableitung konstruiert. Mit der neuesten Firmware können Sie 8K über 90 Minuten
-              durchgehend aufnehmen. In 4K60 ist Überhitzung praktisch kein Thema. Das lüfterlose Design bleibt leise –
-              perfekt für Interviews und ruhige Umgebungen.</p>
+            <p>
+              Nikon hat exzellente Wärmeableitung konstruiert. Mit der neuesten
+              Firmware können Sie 8K über 90 Minuten durchgehend aufnehmen. In
+              4K60 ist Überhitzung praktisch kein Thema. Das lüfterlose Design
+              bleibt leise – perfekt für Interviews und ruhige Umgebungen.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -197,56 +239,91 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Die Z8 ist wohl die beste spiegellose Kamera für Wildlife. Der 20fps RAW-Burst, die Vorab-Aufnahme und
-              die Motiverkennung (Vögel, Tiere) sind unglaublich. Kombinieren Sie sie mit dem 180-600mm f/5.6-6.3 VR
-              oder dem 400mm f/4.5 S für Reichweite. Datei-Management ist entscheidend – investieren Sie in mindestens
-              zwei 256GB CFexpress-Karten.</p>
+            <p>
+              Die Z8 ist wohl die beste spiegellose Kamera für Wildlife. Der
+              20fps RAW-Burst, die Vorab-Aufnahme und die Motiverkennung (Vögel,
+              Tiere) sind unglaublich. Kombinieren Sie sie mit dem 180-600mm
+              f/5.6-6.3 VR oder dem 400mm f/4.5 S für Reichweite.
+              Datei-Management ist entscheidend – investieren Sie in mindestens
+              zwei 256GB CFexpress-Karten.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-
-
     <section class="section">
       <h2>Verwandte Testberichte</h2>
       <div class="grid">
         <article class="card">
-          <div class="card-thumb"><img src="/assets/images/guides/dji-osmo-pocket-3.webp" alt="DJI Osmo Pocket 3"
-              loading="lazy"></div>
-          <h3><a href="/de/reviews/dji-osmo-pocket-3-testbericht">DJI Osmo Pocket 3 Testbericht</a></h3>
+          <div class="card-thumb">
+            <img
+              src="/assets/images/guides/dji-osmo-pocket-3.webp"
+              alt="DJI Osmo Pocket 3"
+              loading="lazy"
+            />
+          </div>
+          <h3>
+            <a href="/de/reviews/dji-osmo-pocket-3-testbericht"
+              >DJI Osmo Pocket 3 Testbericht</a>
+          </h3>
         </article>
         <article class="card">
-          <div class="card-thumb"><img src="/assets/images/guides/sony-a7c-ii.webp" alt="Sony A7C II"
-              loading="lazy"></div>
-          <h3><a href="/de/reviews/sony-a7c-ii-testbericht">Sony A7C II Testbericht</a></h3>
+          <div class="card-thumb">
+            <img
+              src="/assets/images/guides/sony-a7c-ii.webp"
+              alt="Sony A7C II"
+              loading="lazy"
+            />
+          </div>
+          <h3>
+            <a href="/de/reviews/sony-a7c-ii-testbericht"
+              >Sony A7C II Testbericht</a>
+          </h3>
         </article>
         <article class="card">
-          <div class="card-thumb"><img src="/assets/images/guides/panasonic-s5ii.webp" alt="Panasonic S5 II"
-              loading="lazy"></div>
-          <h3><a href="/de/reviews/panasonic-s5-ii-testbericht">Panasonic S5 II Testbericht</a></h3>
+          <div class="card-thumb">
+            <img
+              src="/assets/images/guides/panasonic-s5ii.webp"
+              alt="Panasonic S5 II"
+              loading="lazy"
+            />
+          </div>
+          <h3>
+            <a href="/de/reviews/panasonic-s5-ii-testbericht"
+              >Panasonic S5 II Testbericht</a>
+          </h3>
         </article>
       </div>
     </section>
 
-
     <!-- Author Box -->
-    <section class="section author-box"
-      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;">
+    <section
+      class="section author-box"
+      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;"
+    >
       <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team"
-          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+        <img
+          src="/assets/images/team-avatar.webp"
+          alt="Kameraupick Editorial Team"
+          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;"
+        />
         <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
+          <h4 style="margin: 0 0 8px 0;">
+            Geschrieben vom Kameraupick Redaktionsteam
+          </h4>
           <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras.
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+            Unser Team aus professionellen Fotografen und Videografen hat über
+            10 Jahre Erfahrung im Testen von Kameras. Wir kaufen unsere eigene
+            Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
           </p>
-          <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren
-            Testprozess erfahren →</a>
+          <a
+            href="/de/ueber-uns"
+            style="font-size: 14px; margin-top: 8px; display: inline-block;"
+            >Mehr über unseren Testprozess erfahren →</a
+          >
         </div>
       </div>
     </section>
-
   </main>
 </BaseLayout>

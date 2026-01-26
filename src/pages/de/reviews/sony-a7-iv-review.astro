@@ -1,9 +1,12 @@
 ---
-import ProductSchema from '../../../components/ProductSchema.astro';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProductSchema from "../../../components/ProductSchema.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Sony A7 IV Testbericht 2026: Details, Daten & Urteil" description="Sony A7 IV Test 2026: Detaillierter Test von Bildqualität, Autofokus und Video. Ist sie 2.498 € wert? Erfahre es hier.">
+<BaseLayout
+  title="Sony A7 IV Testbericht 2026: Details, Daten & Urteil"
+  description="Sony A7 IV Test 2026: Detaillierter Test von Bildqualität, Autofokus und Video. Ist sie 2.498 € wert? Erfahre es hier."
+>
   <ProductSchema
     slot="head"
     productName="Sony A7 IV"
@@ -15,103 +18,120 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     rating={4.7}
     reviewCount={1}
     url="/de/reviews/sony-a7-iv-review"
-    breadcrumbs={[
-      { name: "Sony A7 IV", url: "/de/reviews/sony-a7-iv-review" }
-    ]}
+    breadcrumbs={[{ name: "Sony A7 IV", url: "/de/reviews/sony-a7-iv-review" }]}
   />
-<main id="main" class="container">
+  <main id="main" class="container">
     <section class="hero">
       <div class="hero-grid">
         <div>
           <h1>Sony A7 IV Testbericht</h1>
-          <p class="hero-sub">Die Sony A7 IV definiert den modernen Standard für hybride spiegellose Kameras. Sie macht
-            fast alles
-            gut und balanciert Auflösung, Geschwindigkeit und Videofunktionen in einem strikt professionellen Gehäuse.
+          <p class="hero-sub">
+            Die Sony A7 IV definiert den modernen Standard für hybride
+            spiegellose Kameras. Sie macht fast alles gut und balanciert
+            Auflösung, Geschwindigkeit und Videofunktionen in einem strikt
+            professionellen Gehäuse.
           </p>
           <div class="meta review-price-badge">Vollformat Hybrid · 2.498 €</div>
         </div>
         <div class="hero-media">
           <picture>
-            <img src="/assets/images/guides/sony-a7iv.webp" alt="Sony A7 IV" loading="eager">
+            <img
+              src="/assets/images/guides/sony-a7iv.webp"
+              alt="Sony A7 IV"
+              loading="eager"
+            />
           </picture>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="product-review-card" id="sony-a7iv">
+      <div class="product-review-card" id="sony-a7-iv">
         <div class="product-review-header-v2">
           <span class="badge-best">📸 Allround-Champion</span>
-            <h2 class="product-title">Das Urteil</h2>
-            <p>Die Sony A7 IV definiert den Massstab für moderne Hybridkameras. Sie leistet in fast allen Bereichen
-              Hervorragendes
-              und bietet eine perfekte Balance aus Auflösung, Geschwindigkeit und Video-Merkmale in einem
-              professionellen Body.</p>
-            <p>Im Gegensatz zur A7C II bietet sie die Sicherheit von zwei Kartensteckplätzen und einen deutlich besseren
-              elektronischen Sucher sowie einen besseren Griff.
-              Sie ist das Arbeitspferd der Wahl für Eventfotografen und ernsthafte Videografen.</p>
+          <h2 class="product-title">Das Urteil</h2>
+          <p>
+            Die Sony A7 IV definiert den Massstab für moderne Hybridkameras. Sie
+            leistet in fast allen Bereichen Hervorragendes und bietet eine
+            perfekte Balance aus Auflösung, Geschwindigkeit und Video-Merkmale
+            in einem professionellen Body.
+          </p>
+          <p>
+            Im Gegensatz zur A7C II bietet sie die Sicherheit von zwei
+            Kartensteckplätzen und einen deutlich besseren elektronischen Sucher
+            sowie einen besseren Griff. Sie ist das Arbeitspferd der Wahl für
+            Eventfotografen und ernsthafte Videografen.
+          </p>
 
-            <!-- Rich Specs Table -->
-            <table class="specs-table">
-              <tr>
-                <th colspan="2" class="specs-group-header">Bildgebung</th>
-              </tr>
-              <tr>
-                <th>Sensor</th>
-                <td>33MP Vollformat BSI CMOS</td>
-              </tr>
-              <tr>
-                <th>Prozessor</th>
-                <td>BIONZ XR</td>
-              </tr>
-              <tr>
-                <th>Stabilisierung</th>
-                <td>5 Achsen (5.5 Blenden)</td>
-              </tr>
+          <!-- Rich Specs Table -->
+          <table class="specs-table">
+            <tr>
+              <th colspan="2" class="specs-group-header">Bildgebung</th>
+            </tr>
+            <tr>
+              <th>Sensor</th>
+              <td>33MP Vollformat BSI CMOS</td>
+            </tr>
+            <tr>
+              <th>Prozessor</th>
+              <td>BIONZ XR</td>
+            </tr>
+            <tr>
+              <th>Stabilisierung</th>
+              <td>5 Achsen (5.5 Blenden)</td>
+            </tr>
 
-              <tr>
-                <th colspan="2" class="specs-group-header">Video</th>
-              </tr>
-              <tr>
-                <th>Max. Auflösung</th>
-                <td>4K 60p (S35) / 4K 30p (FF)</td>
-              </tr>
-              <tr>
-                <th>Interne Aufnahme</th>
-                <td>10-Bit 4:2:2</td>
-              </tr>
-              <tr>
-                <th>Profile</th>
-                <td>S-Log3, S-Cinetone</td>
-              </tr>
+            <tr>
+              <th colspan="2" class="specs-group-header">Video</th>
+            </tr>
+            <tr>
+              <th>Max. Auflösung</th>
+              <td>4K 60p (S35) / 4K 30p (FF)</td>
+            </tr>
+            <tr>
+              <th>Interne Aufnahme</th>
+              <td>10-Bit 4:2:2</td>
+            </tr>
+            <tr>
+              <th>Profile</th>
+              <td>S-Log3, S-Cinetone</td>
+            </tr>
 
-              <tr>
-                <th colspan="2" class="specs-group-header">Gehäuse & Konnektivität</th>
-              </tr>
-              <tr>
-                <th>Sucher</th>
-                <td>3.69M-dot OLED (0.78x)</td>
-              </tr>
-              <tr>
-                <th>Bildschirm</th>
-                <td>3.0" frei beweglicher Touch</td>
-              </tr>
-              <tr>
-                <th>Karten-Slots</th>
-                <td>2x (1x CFexpress A/SD, 1x SD)</td>
-              </tr>
-              <tr>
-                <th>Gewicht</th>
-                <td>658g (mit Akku)</td>
-              </tr>
-            </table>
+            <tr>
+              <th colspan="2" class="specs-group-header"
+                >Gehäuse & Konnektivität</th
+              >
+            </tr>
+            <tr>
+              <th>Sucher</th>
+              <td>3.69M-dot OLED (0.78x)</td>
+            </tr>
+            <tr>
+              <th>Bildschirm</th>
+              <td>3.0" frei beweglicher Touch</td>
+            </tr>
+            <tr>
+              <th>Karten-Slots</th>
+              <td>2x (1x CFexpress A/SD, 1x SD)</td>
+            </tr>
+            <tr>
+              <th>Gewicht</th>
+              <td>658g (mit Akku)</td>
+            </tr>
+          </table>
 
-            <a href="#" class="btn-buy" rel="sponsored noopener noreferrer" target="_blank" data-product="sony-a7iv">
-              Preis bei Amazon prüfen &rarr;
-            </a>
-      </div>
+          <a
+            href="#"
+            class="btn-buy"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+            data-product="sony-a7-iv"
+          >
+            Preis bei Amazon prüfen &rarr;
+          </a>
+        </div>
 
-      <div class="pros-cons">
+        <div class="pros-cons">
           <div class="pros">
             <h4>Was uns gefällt</h4>
             <ul>
@@ -139,20 +159,27 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <div class="grid">
         <article class="card card-plain">
           <h3>Bildqualität</h3>
-          <p>33MP bieten viel Potenzial zum Zuschneiden. Farben sind akkurat und die RAW-Dateien sind unglaublich
-            flexibel. Es ist ein
-            deutlicher Schritt nach vorne gegenüber den 24MP der A7 III.</p>
+          <p>
+            33MP bieten viel Potenzial zum Zuschneiden. Farben sind akkurat und
+            die RAW-Dateien sind unglaublich flexibel. Es ist ein deutlicher
+            Schritt nach vorne gegenüber den 24MP der A7 III.
+          </p>
         </article>
         <article class="card card-plain">
           <h3>Handhabung & Verarbeitung</h3>
-          <p>Der tiefe Griff ist bequem für ganztägige Shootings mit schweren Objektiven. Der Full-Size HDMI-Anschluss
-            ist ein riesiger Vorteil
-            für Videoarbeit im Vergleich zu wackeligen Micro-HDMI-Anschlüssen.</p>
+          <p>
+            Der tiefe Griff ist bequem für ganztägige Shootings mit schweren
+            Objektiven. Der Full-Size HDMI-Anschluss ist ein riesiger Vorteil
+            für Videoarbeit im Vergleich zu wackeligen Micro-HDMI-Anschlüssen.
+          </p>
         </article>
         <article class="card card-plain">
           <h3>Video-Leistung</h3>
-          <p>Die Fokus-Breathing-Kompensation mit Sony-Objektiven ist ein Gamechanger. Rolling Shutter ist in 4K24p
-            Vollformat spürbar, aber das S35 4K60p Bild ist atemberaubend detailliert.</p>
+          <p>
+            Die Fokus-Breathing-Kompensation mit Sony-Objektiven ist ein
+            Gamechanger. Rolling Shutter ist in 4K24p Vollformat spürbar, aber
+            das S35 4K60p Bild ist atemberaubend detailliert.
+          </p>
         </article>
       </div>
     </section>
@@ -178,8 +205,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <section class="section" id="affiliate">
       <h2>Partner-Hinweis</h2>
       <p class="section-sub">
-        Wir kaufen unsere Ausrüstung selbst oder mieten sie. Kein Hersteller hat für diesen Test bezahlt. Wir erhalten
-        eine Provision, wenn du unsere
+        Wir kaufen unsere Ausrüstung selbst oder mieten sie. Kein Hersteller hat
+        für diesen Test bezahlt. Wir erhalten eine Provision, wenn du unsere
         Links nutzt, was diese Seite werbefrei hält.
       </p>
     </section>
@@ -195,10 +222,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Wähle die A7 IV, wenn du den professionellen Griff, zwei Kartensteckplätze und das bessere Tastenlayout
-              für schnelles Arbeiten benötigst. Die A7C II ist besser, wenn Portabilität an erster Stelle steht und du
-              hauptsächlich Reisen oder alltägliche Inhalte aufnimmst. Beide teilen sich denselben Sensor und das
-              gleiche AF-System, also ist die Bildqualität identisch.</p>
+            <p>
+              Wähle die A7 IV, wenn du den professionellen Griff, zwei
+              Kartensteckplätze und das bessere Tastenlayout für schnelles
+              Arbeiten benötigst. Die A7C II ist besser, wenn Portabilität an
+              erster Stelle steht und du hauptsächlich Reisen oder alltägliche
+              Inhalte aufnimmst. Beide teilen sich denselben Sensor und das
+              gleiche AF-System, also ist die Bildqualität identisch.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -209,10 +240,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Sie ist fähig für Gelegenheitssport mit 10 Bildern/s und exzellentem Augen-AF, aber sie ist nicht ideal
-              für professionellen Sport. Der Puffer leert sich langsamer als bei dedizierten Sportkameras, und der
-              mechanische Verschluss kann Blackouts verursachen. Für ernsthafte Sportarbeit ziehe die A9 III oder A1 in
-              Betracht, die 30fps+ ohne Blackout bieten.</p>
+            <p>
+              Sie ist fähig für Gelegenheitssport mit 10 Bildern/s und
+              exzellentem Augen-AF, aber sie ist nicht ideal für professionellen
+              Sport. Der Puffer leert sich langsamer als bei dedizierten
+              Sportkameras, und der mechanische Verschluss kann Blackouts
+              verursachen. Für ernsthafte Sportarbeit ziehe die A9 III oder A1
+              in Betracht, die 30fps+ ohne Blackout bieten.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -223,10 +258,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Mit der neuesten Firmware ist Überhitzung gut unter Kontrolle. Du kannst 4K60 für 45-60 Minuten
-              kontinuierlich unter den meisten Bedingungen aufnehmen. Der S35 Crop-Modus läuft kühler als Vollformat.
-              Bei heißem Wetter (30°C+) aktiviere den "Hoch"-Temperaturmodus in den Einstellungen, um die Aufnahmezeit
-              zu verlängern.</p>
+            <p>
+              Mit der neuesten Firmware ist Überhitzung gut unter Kontrolle. Du
+              kannst 4K60 für 45-60 Minuten kontinuierlich unter den meisten
+              Bedingungen aufnehmen. Der S35 Crop-Modus läuft kühler als
+              Vollformat. Bei heißem Wetter (30°C+) aktiviere den
+              "Hoch"-Temperaturmodus in den Einstellungen, um die Aufnahmezeit
+              zu verlängern.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -237,10 +276,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Für 4K60 10-Bit verwende mindestens UHS-II V60 Karten (wie Sony SF-G oder ProGrade Digital). Für 4K30
-              funktionieren V30 Karten gut. Der CFexpress Typ A Slot ist Overkill, es sei denn, du nimmst (nicht
-              unterstützt bei A7IV) extrem hohe Datenraten auf oder brauchst schnellere Pufferleerung für Serienbilder.
-              Spar dir das Geld und bleib bei UHS-II Karten.</p>
+            <p>
+              Für 4K60 10-Bit verwende mindestens UHS-II V60 Karten (wie Sony
+              SF-G oder ProGrade Digital). Für 4K30 funktionieren V30 Karten
+              gut. Der CFexpress Typ A Slot ist Overkill, es sei denn, du nimmst
+              (nicht unterstützt bei A7IV) extrem hohe Datenraten auf oder
+              brauchst schnellere Pufferleerung für Serienbilder. Spar dir das
+              Geld und bleib bei UHS-II Karten.
+            </p>
           </div>
         </div>
         <div class="faq-item">
@@ -251,10 +294,14 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
             </button>
           </h3>
           <div class="faq-answer" style="max-height: 0; overflow: hidden;">
-            <p>Ja, alle Sony E-Halterung Objektive funktionieren perfekt, einschließlich älterer FE und sogar APS-C
-              Objektive (die automatisch croppen). Dritthersteller-Objektive von Sigma, Tamron und Samyang funktionieren
-              ebenfalls gut, obwohl einige ältere Modelle Firmware-Updates für volle Kompatibilität mit dem
-              fortschrittlichen AF-System benötigen könnten.</p>
+            <p>
+              Ja, alle Sony E-Halterung Objektive funktionieren perfekt,
+              einschließlich älterer FE und sogar APS-C Objektive (die
+              automatisch croppen). Dritthersteller-Objektive von Sigma, Tamron
+              und Samyang funktionieren ebenfalls gut, obwohl einige ältere
+              Modelle Firmware-Updates für volle Kompatibilität mit dem
+              fortschrittlichen AF-System benötigen könnten.
+            </p>
           </div>
         </div>
       </div>
@@ -264,38 +311,74 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <h2>Verwandte Testberichte</h2>
       <div class="grid">
         <article class="card">
-          <div class="card-thumb"><img src="/assets/images/guides/fujifilm-x-t5.webp" alt="Fujifilm X-T5"
-              loading="lazy"></div>
-          <h3><a href="/de/reviews/fujifilm-x-t5-testbericht">Fujifilm X-T5 Testbericht</a></h3>
+          <div class="card-thumb">
+            <img
+              src="/assets/images/guides/fujifilm-x-t5.webp"
+              alt="Fujifilm X-T5"
+              loading="lazy"
+            />
+          </div>
+          <h3>
+            <a href="/de/reviews/fujifilm-x-t5-testbericht"
+              >Fujifilm X-T5 Testbericht</a>
+          </h3>
         </article>
         <article class="card">
-          <div class="card-thumb"><img src="/assets/images/guides/sony-zv-e10-original.webp" alt="Sony ZV-E10"
-              loading="lazy"></div>
-          <h3><a href="/de/reviews/sony-zv-e10-testbericht">Sony ZV-E10 Testbericht</a></h3>
+          <div class="card-thumb">
+            <img
+              src="/assets/images/guides/sony-zv-e10-original.webp"
+              alt="Sony ZV-E10"
+              loading="lazy"
+            />
+          </div>
+          <h3>
+            <a href="/de/reviews/sony-zv-e10-testbericht"
+              >Sony ZV-E10 Testbericht</a>
+          </h3>
         </article>
         <article class="card">
-          <div class="card-thumb"><img src="/assets/images/guides/dji-osmo-pocket-3.webp" alt="DJI Osmo Pocket 3"
-              loading="lazy"></div>
-          <h3><a href="/de/reviews/dji-osmo-pocket-3-testbericht">DJI Osmo Pocket 3 Testbericht</a></h3>
+          <div class="card-thumb">
+            <img
+              src="/assets/images/guides/dji-osmo-pocket-3.webp"
+              alt="DJI Osmo Pocket 3"
+              loading="lazy"
+            />
+          </div>
+          <h3>
+            <a href="/de/reviews/dji-osmo-pocket-3-testbericht"
+              >DJI Osmo Pocket 3 Testbericht</a>
+          </h3>
         </article>
       </div>
     </section>
 
-  
     <!-- Author Box -->
-    <section class="section author-box" style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;">
+    <section
+      class="section author-box"
+      style="background: var(--bg-soft); border-radius: 12px; padding: 24px; margin-top: 32px;"
+    >
       <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+        <img
+          src="/assets/images/team-avatar.webp"
+          alt="Kameraupick Editorial Team"
+          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;"
+        />
         <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
+          <h4 style="margin: 0 0 8px 0;">
+            Geschrieben vom Kameraupick Redaktionsteam
+          </h4>
           <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras. 
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+            Unser Team aus professionellen Fotografen und Videografen hat über
+            10 Jahre Erfahrung im Testen von Kameras. Wir kaufen unsere eigene
+            Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
           </p>
-          <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren Testprozess erfahren →</a>
+          <a
+            href="/de/ueber-uns"
+            style="font-size: 14px; margin-top: 8px; display: inline-block;"
+            >Mehr über unseren Testprozess erfahren →</a
+          >
         </div>
       </div>
     </section>
-
   </main>
 </BaseLayout>

@@ -19,7 +19,7 @@ import ProductSchema from "../../../components/ProductSchema.astro";
     reviewCount={1}
     url="/de/reviews/canon-eos-r8-review"
     breadcrumbs={[
-      { name: "Canon EOS R8", url: "/de/reviews/canon-eos-r8-review" }
+      { name: "Canon EOS R8", url: "/de/reviews/canon-eos-r8-review" },
     ]}
   />
   <main id="main" class="container">
@@ -50,53 +50,53 @@ import ProductSchema from "../../../components/ProductSchema.astro";
     </section>
 
     <section class="section">
-      <div class="product-review-card" id="canon-r8">
+      <div class="product-review-card" id="canon-eos-r8">
         <div class="product-review-header-v2">
           <span class="badge-best">🚀 Bestes Preis-Leistungs-Verhältnis</span>
-            <h2 class="product-title">Das Urteil</h2>
-            <p>
-              Die Canon EOS R8 ist ein Wolf im Schafspelz. Sie packt den
-              gleichen leistungsstarken Sensor und das Autofokus-System wie die
-              Profi-Kamera R6 Mark II, aber in ein winziges, leichtes Gehäuse.
-            </p>
-            <p>
-              Sie ist der einfachste Weg zum "professionellen Look" (unscharfer
-              Hintergrund) ohne schweres Equipment zu tragen. Der einzige
-              Kompromiss ist der kleinere Akku und fehlende IBIS, aber für
-              Reisen und Porträts ist sie ein unschlagbares
-              Preis-Leistungs-Verhältnis.
-            </p>
+          <h2 class="product-title">Das Urteil</h2>
+          <p>
+            Die Canon EOS R8 ist ein Wolf im Schafspelz. Sie packt den gleichen
+            leistungsstarken Sensor und das Autofokus-System wie die
+            Profi-Kamera R6 Mark II, aber in ein winziges, leichtes Gehäuse.
+          </p>
+          <p>
+            Sie ist der einfachste Weg zum "professionellen Look" (unscharfer
+            Hintergrund) ohne schweres Equipment zu tragen. Der einzige
+            Kompromiss ist der kleinere Akku und fehlende IBIS, aber für Reisen
+            und Porträts ist sie ein unschlagbares Preis-Leistungs-Verhältnis.
+          </p>
 
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">24MP Vollformat</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">4K60 (unbeschnitten)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Gewicht</span>
-                <span class="spec-value">461g</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Akku</span>
-                <span class="spec-value">LP-E17 (klein)</span>
-              </div>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP Vollformat</span>
             </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K60 (unbeschnitten)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">461g</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Akku</span>
+              <span class="spec-value">LP-E17 (klein)</span>
+            </div>
+          </div>
 
-            <a
-              href="#"
-              class="btn-buy"
-              rel="sponsored noopener noreferrer"
-              target="_blank"
-            >
-              Preis auf Amazon prüfen &rarr;
-            </a>
-      </div>
+          <a
+            href="#"
+            class="btn-buy"
+            data-product="canon-eos-r8"
+            rel="sponsored noopener noreferrer"
+            target="_blank"
+          >
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
 
-      <div class="pros-cons">
+        <div class="pros-cons">
           <div class="pros">
             <h4>Was uns gefällt</h4>
             <ul>
@@ -286,7 +286,10 @@ import ProductSchema from "../../../components/ProductSchema.astro";
               loading="lazy"
             />
           </div>
-          <h3><a href="/de/reviews/sony-a7-iv-testbericht">Sony A7 IV Testbericht</a></h3>
+          <h3>
+            <a href="/de/reviews/sony-a7-iv-testbericht"
+              >Sony A7 IV Testbericht</a>
+          </h3>
         </article>
         <article class="card">
           <div class="card-thumb">
@@ -296,7 +299,10 @@ import ProductSchema from "../../../components/ProductSchema.astro";
               loading="lazy"
             />
           </div>
-          <h3><a href="/de/reviews/sony-zv-e10-testbericht">Sony ZV-E10 Testbericht</a></h3>
+          <h3>
+            <a href="/de/reviews/sony-zv-e10-testbericht"
+              >Sony ZV-E10 Testbericht</a>
+          </h3>
         </article>
         <article class="card">
           <div class="card-thumb">
@@ -308,7 +314,8 @@ import ProductSchema from "../../../components/ProductSchema.astro";
           </div>
           <h3>
             <a href="/de/reviews/panasonic-s5-ii-testbericht"
-              >Panasonic S5 II Testbericht</a>
+              >Panasonic S5 II Testbericht</a
+            >
           </h3>
         </article>
       </div>
