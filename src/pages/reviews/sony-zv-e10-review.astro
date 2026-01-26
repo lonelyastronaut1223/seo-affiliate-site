@@ -18,9 +18,7 @@ import ProductSchema from "../../components/ProductSchema.astro";
     rating={4.4}
     reviewCount={1}
     url="/reviews/sony-zv-e10-review"
-    breadcrumbs={[
-      { name: "Sony ZV-E10", url: "/reviews/sony-zv-e10-review" }
-    ]}
+    breadcrumbs={[{ name: "Sony ZV-E10", url: "/reviews/sony-zv-e10-review" }]}
   />
   <main id="main" class="container">
     <section class="hero">
@@ -124,6 +122,7 @@ import ProductSchema from "../../components/ProductSchema.astro";
           <a
             href="#"
             class="btn-buy"
+            data-product="sony-zv-e10"
             rel="sponsored noopener noreferrer"
             target="_blank"
           >
@@ -370,5 +369,5 @@ import ProductSchema from "../../components/ProductSchema.astro";
       </div>
     </section>
   </main>
-<script is:inline src="/assets/js/faq-accordion.js"></script>
+  <script is:inline src="/assets/js/faq-accordion.js"></script>
 </BaseLayout>

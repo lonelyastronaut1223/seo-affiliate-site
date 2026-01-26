@@ -1,7 +1,7 @@
 /**
  * AUTO-GENERATED FILE - DO NOT MODIFY DIRECTLY
  * This file is generated from src/config/affiliateLinks.js by scripts/core/sync_links.js
- * Last Updated: 2026-01-26T18:23:08.811Z
+ * Last Updated: 2026-01-26T18:44:48.258Z
  */
 
 const affiliateLinks = {

@@ -19,7 +19,7 @@ import ProductSchema from "../../components/ProductSchema.astro";
     reviewCount={1}
     url="/reviews/dji-osmo-pocket-3-review"
     breadcrumbs={[
-      { name: "DJI Osmo Pocket 3", url: "/reviews/dji-osmo-pocket-3-review" }
+      { name: "DJI Osmo Pocket 3", url: "/reviews/dji-osmo-pocket-3-review" },
     ]}
   />
   <main id="main" class="container">
@@ -50,7 +50,7 @@ import ProductSchema from "../../components/ProductSchema.astro";
     </section>
 
     <section class="section">
-      <div class="product-review-card" id="dji-pocket-3">
+      <div class="product-review-card" id="dji-osmo-pocket-3">
         <div class="product-review-header-v2">
           <span class="badge-best">📱 Ultra-Compact Creator</span>
           <h2 class="product-title">The Verdict</h2>
@@ -125,6 +125,7 @@ import ProductSchema from "../../components/ProductSchema.astro";
           <a
             href="#"
             class="btn-buy"
+            data-product="dji-osmo-pocket-3"
             rel="sponsored noopener noreferrer"
             target="_blank"
           >
@@ -350,5 +351,5 @@ import ProductSchema from "../../components/ProductSchema.astro";
       </div>
     </section>
   </main>
-<script is:inline src="/assets/js/faq-accordion.js"></script>
+  <script is:inline src="/assets/js/faq-accordion.js"></script>
 </BaseLayout>
