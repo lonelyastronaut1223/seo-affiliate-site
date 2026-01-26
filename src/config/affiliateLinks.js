@@ -157,6 +157,12 @@ export const affiliateLinks = {
         currency: 'USD',
         url: 'https://amzn.to/4biylFP',
     },
+    'nikon-z6iii': { // Alias for backward compatibility
+        name: 'Nikon Z6 III',
+        price: 2499,
+        currency: 'USD',
+        url: 'https://amzn.to/4biylFP',
+    },
 
     // ─────────────────────────────────────────────────────────────────────
     // FUJIFILM 富士相机 (4款)
@@ -228,6 +234,12 @@ export const affiliateLinks = {
     // DJI / GOPRO / INSTA360 运动相机 (4款)
     // ─────────────────────────────────────────────────────────────────────
     'dji-osmo-pocket-3': {
+        name: 'DJI Osmo Pocket 3',
+        price: 519,
+        currency: 'USD',
+        url: 'https://amzn.to/3NlCOOg',
+    },
+    'dji-pocket-3': { // Alias for backward compatibility
         name: 'DJI Osmo Pocket 3',
         price: 519,
         currency: 'USD',

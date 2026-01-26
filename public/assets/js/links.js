@@ -1,7 +1,7 @@
 /**
  * AUTO-GENERATED FILE - DO NOT MODIFY DIRECTLY
  * This file is generated from src/config/affiliateLinks.js by scripts/core/sync_links.js
- * Last Updated: 2026-01-26T21:50:51.495Z
+ * Last Updated: 2026-01-26T22:13:32.272Z
  */
 
 const affiliateLinks = {
@@ -21,6 +21,7 @@ const affiliateLinks = {
     "canon-r6-iii": "https://amzn.to/49XgbqW",
     "nikon-z8": "https://amzn.to/4sMa95c",
     "nikon-z6-iii": "https://amzn.to/4biylFP",
+    "nikon-z6iii": "https://amzn.to/4biylFP",
     "fujifilm-x-t5": "https://amzn.to/4qSEPQj",
     "fujifilm-x-s20": "https://amzn.to/3YJrfTj",
     "fujifilm-x100vi": "https://amzn.to/4pGFIdE",
@@ -31,6 +32,7 @@ const affiliateLinks = {
     "om-system-om-1-ii": "https://amzn.to/3NFML9c",
     "om-system-om-5": "https://amzn.to/49TF1cd",
     "dji-osmo-pocket-3": "https://amzn.to/3NlCOOg",
+    "dji-pocket-3": "https://amzn.to/3NlCOOg",
     "dji-action-5": "https://amzn.to/4jHiYc3",
     "gopro-13": "https://amzn.to/3Ne6SLE",
     "insta360-x4": "https://amzn.to/4aUs0jM",
