@@ -26,7 +26,7 @@ def main():
     print(f"📅 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
     # 1. Check links.min.js
-    links_file = root_dir / 'assets' / 'js' / 'links.min.js'
+    links_file = root_dir / 'public' / 'assets' / 'js' / 'links.min.js'
     
     if not links_file.exists():
         print(f"{Colors.RED}✗ CRITICAL: links.min.js is MISSING!{Colors.END}")

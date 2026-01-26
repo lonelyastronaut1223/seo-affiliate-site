@@ -34,10 +34,11 @@ if ! command -v npx &> /dev/null; then
     exit 1
 fi
 
-# Step 2: Minify links.js
-echo -e "${YELLOW}[2/4] Minifying links.js...${NC}"
-npx -y terser assets/js/links.js -o assets/js/links.min.js -c -m
-echo -e "${GREEN}✅ Created links.min.js${NC}"
+# Step 2: Sync and Minify links.js
+echo -e "${YELLOW}[2/4] Syncing and Minifying links.js...${NC}"
+node scripts/core/sync_links.js
+npx -y terser public/assets/js/links.js -o public/assets/js/links.min.js -c -m
+echo -e "${GREEN}✅ Synced and Created links.min.js${NC}"
 
 # Step 3: Update version parameter in all HTML files
 echo -e "${YELLOW}[3/4] Updating cache-busting version...${NC}"
