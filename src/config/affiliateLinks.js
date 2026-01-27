@@ -8,7 +8,7 @@
  * ├── 镜头 Lenses: 12
  * └── 配件 Accessories: 9
  * 
- * ✅ 已有链接: 45  |  ❌ 待添加: 4
+ * ✅ 已有链接: 48  |  ❌ 待添加: 1
  * 
  * 📅 最后更新 / Last Updated: 2026-01-23
  * 
@@ -344,7 +344,7 @@ export const affiliateLinks = {
         name: 'Fujifilm XF 23mm f/2 R WR',
         price: 449,
         currency: 'USD',
-        url: '',  // 待添加
+        url: 'https://amzn.to/3kl4Gyb',
     },
     'fuji-xf-33': {
         name: 'Fujifilm XF 33mm f/1.4 R LM WR',

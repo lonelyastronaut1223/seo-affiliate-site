@@ -5,6 +5,7 @@
  */
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { getAlternatePath, normalizeUrl } from "../utils/i18n";
 
 interface Props {
     title: string;
@@ -13,28 +14,38 @@ interface Props {
 }
 
 const { title, description, canonical } = Astro.props;
-const currentYear = new Date().getFullYear();
+const currentPath = Astro.url.pathname;
+const isGerman = currentPath.startsWith("/de/");
+const lang = isGerman ? "de" : "en";
+
+// Canonical URL normalization
+const baseUrl = "https://cameraupick.com";
+const fullCanonical = canonical || normalizeUrl(currentPath);
+
+// Language metadata
+const alternatePath = getAlternatePath(currentPath);
+const alternateUrl = `${baseUrl}${alternatePath === "/" ? "" : alternatePath}`;
 
 // Generate JSON-LD structured data
 const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: title,
-    url: canonical || "https://cameraupick.com",
+    url: fullCanonical,
     description: description,
-    inLanguage: "en",
+    inLanguage: lang,
     isPartOf: {
         "@type": "WebSite",
         name: "cameraupick",
-        url: "https://cameraupick.com",
+        url: baseUrl,
         description: "Camera reviews, comparisons, and buying guides",
         publisher: {
             "@type": "Organization",
             name: "cameraupick",
-            url: "https://cameraupick.com",
+            url: baseUrl,
             logo: {
                 "@type": "ImageObject",
-                url: "https://cameraupick.com/assets/images/logo.webp",
+                url: `${baseUrl}/assets/images/logo.webp`,
                 width: 28,
                 height: 28,
             },
@@ -50,8 +61,8 @@ const jsonLd = JSON.stringify({
             {
                 "@type": "ListItem",
                 position: 1,
-                name: "Home",
-                item: "https://cameraupick.com",
+                name: isGerman ? "Startseite" : "Home",
+                item: isGerman ? `${baseUrl}/de/` : baseUrl,
             },
         ],
     },
@@ -59,7 +70,7 @@ const jsonLd = JSON.stringify({
 ---
 
 <!doctype html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
+<html lang={lang} prefix="og: https://ogp.me/ns#">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -106,53 +117,24 @@ const jsonLd = JSON.stringify({
         <link rel="apple-touch-icon" href="/assets/images/favicon.png?v=2" />
         <link rel="manifest" href="/site.webmanifest" />
 
-        {/* Auto-generate canonical URL if not provided */}
-        <link
-            rel="canonical"
-            href={canonical ||
-                `https://cameraupick.com${Astro.url.pathname.replace(/\/$/, "") || "/"}`}
-        />
+        <link rel="canonical" href={fullCanonical} />
 
         <!-- Hreflang tags for multilingual SEO -->
-        {
-            Astro.url.pathname.startsWith("/de/") ? (
-                <>
-                    <link
-                        rel="alternate"
-                        hreflang="de"
-                        href={`https://cameraupick.com${Astro.url.pathname}`}
-                    />
-                    <link
-                        rel="alternate"
-                        hreflang="en"
-                        href={`https://cameraupick.com${Astro.url.pathname.replace("/de/", "/").replace("/bewertungen/", "/reviews/").replace("/vergleiche/", "/compare/").replace("/ratgeber/", "/guides/").replace("/objektive/", "/lenses/")}`}
-                    />
-                    <link
-                        rel="alternate"
-                        hreflang="x-default"
-                        href={`https://cameraupick.com${Astro.url.pathname.replace("/de/", "/").replace("/bewertungen/", "/reviews/").replace("/vergleiche/", "/compare/").replace("/ratgeber/", "/guides/").replace("/objektive/", "/lenses/")}`}
-                    />
-                </>
-            ) : (
-                <>
-                    <link
-                        rel="alternate"
-                        hreflang="en"
-                        href={`https://cameraupick.com${Astro.url.pathname}`}
-                    />
-                    <link
-                        rel="alternate"
-                        hreflang="de"
-                        href={`https://cameraupick.com/de${Astro.url.pathname}`}
-                    />
-                    <link
-                        rel="alternate"
-                        hreflang="x-default"
-                        href={`https://cameraupick.com${Astro.url.pathname}`}
-                    />
-                </>
-            )
-        }
+        <link
+            rel="alternate"
+            hreflang="en"
+            href={isGerman ? alternateUrl : fullCanonical}
+        />
+        <link
+            rel="alternate"
+            hreflang="de"
+            href={isGerman ? fullCanonical : alternateUrl}
+        />
+        <link
+            rel="alternate"
+            hreflang="x-default"
+            href={isGerman ? alternateUrl : fullCanonical}
+        />
 
         <!-- Open Graph / Twitter -->
         <meta property="og:type" content="website" />
