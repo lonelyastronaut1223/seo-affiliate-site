@@ -9,7 +9,7 @@ import subprocess
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent.parent
-IMAGES_DIR = BASE_DIR / 'assets' / 'images'
+IMAGES_DIR = BASE_DIR / 'public' / 'assets' / 'images'
 
 def get_file_size_mb(path):
     return os.path.getsize(path) / (1024 * 1024)

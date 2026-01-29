@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found — cameraupick" description="The page you're looking for doesn't exist. Explore our camera guides, reviews, and comparisons.">
+  <main class="container">
+    <section class="hero" style="text-align: center; padding: 80px 20px;">
+      <h1 style="font-size: 4rem; margin-bottom: 16px;">404</h1>
+      <p class="hero-sub" style="font-size: 1.5rem; margin-bottom: 32px;">
+        Oops! This page doesn't exist.
+      </p>
+      <p style="color: var(--muted); margin-bottom: 40px;">
+        The page you're looking for may have been moved, deleted, or never existed.
+      </p>
+      
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn-buy" style="display: inline-flex; align-items: center; gap: 8px;">
+          ← Back to Home
+        </a>
+        <a href="/guides/best-camera-for-beginners-2026" class="btn-buy" style="background: var(--bg-soft); color: var(--text-primary);">
+          Browse Guides
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 style="text-align: center; margin-bottom: 32px;">Popular Pages</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="/guides/best-camera-for-beginners-2026">Best Camera for Beginners</a></h3>
+          <p>Our top picks for your first camera in 2026.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/guides/best-vlog-camera">Best Vlog Camera</a></h3>
+          <p>Cameras that make content creation effortless.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/reviews/sony-a7-iv-review">Sony A7 IV Review</a></h3>
+          <p>The hybrid workhorse that does it all.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
