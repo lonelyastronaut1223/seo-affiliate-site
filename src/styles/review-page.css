@@ -1,5 +1,42 @@
 /* Review Page Shared Styles */
 
+/* Content Blocks - Paragraph Styling */
+.content-block {
+    margin-bottom: 32px;
+}
+
+.content-block h3 {
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.content-block p {
+    margin-bottom: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.content-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* Override global FAQ button styling for smaller font */
+.faq-item button.faq-toggle {
+    font-size: 15px !important;
+    padding: 16px 20px 16px 16px !important;
+}
+
+.faq-item .faq-icon {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.faq-item .faq-icon::before {
+    font-size: 10px !important;
+}
+
 /* Lens/Accessory Recommendations Grid */
 .recommendations-grid {
     display: grid;
