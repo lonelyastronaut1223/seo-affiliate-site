@@ -1,7 +1,7 @@
 /**
  * AUTO-GENERATED FILE - DO NOT MODIFY DIRECTLY
  * This file is generated from src/config/affiliateLinks.js by scripts/core/sync_links.js
- * Last Updated: 2026-01-26T22:13:32.272Z
+ * Last Updated: 2026-01-29T12:48:36.347Z
  */
 
 const affiliateLinks = {
@@ -46,6 +46,7 @@ const affiliateLinks = {
     "canon-rf-24-105": "https://amzn.to/4baLpgA",
     "fuji-xf-16-50": "https://amzn.to/4qC3qJq",
     "fuji-xf56-f12": "https://amzn.to/4pPtlfw",
+    "fuji-xf23-f2": "https://amzn.to/3kl4Gyb",
     "fuji-xf-33": "https://amzn.to/4pSIEE1",
     "sigma-18-50-fuji": "https://amzn.to/4jQ9xHz",
     "peak-travel-tripod": "https://amzn.to/4qw0vBR",
