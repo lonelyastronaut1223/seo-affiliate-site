@@ -194,3 +194,11 @@
         padding: 0 20px 16px 20px;
     }
 }
+
+/* Author Box - shared across reviews, guides, comparisons */
+.author-box {
+    background: var(--bg-soft);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 32px;
+}
