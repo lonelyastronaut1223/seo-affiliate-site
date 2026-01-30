@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import OrganizationSchema from '../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "What's the best compact camera for travel?",
+    answer: "Fujifilm X100VI is the best compact travel camera. It has a fixed 23mm lens, gorgeous film simulations, excellent image quality, and fits in a jacket pocket. At $1,599, it's premium but eliminates lens-changing hassles."
+  },
+  {
+    question: "Should I bring multiple lenses when traveling?",
+    answer: "Bring one versatile zoom lens (18-135mm or 24-105mm) instead of multiple primes. It covers landscapes, portraits, and street photography without constant lens changes. Saves weight and reduces sensor dust risk."
+  },
+  {
+    question: "Do I need weather sealing for travel photography?",
+    answer: "Highly recommended but not mandatory. Weather-sealed cameras (OM System OM-5, Sony A6700) handle rain and dust better. If traveling to tropical or dusty regions, weather sealing provides peace of mind. Otherwise, a rain cover works."
+  },
+  {
+    question: "What's better for travel: mirrorless or smartphone?",
+    answer: "Mirrorless cameras offer better zoom, low-light performance, and image quality. Modern smartphones (iPhone 15 Pro) are incredibly capable for casual travel. Upgrade to mirrorless if you want creative control, better telephoto reach (100mm+), or plan to print large."
+  }
+];
 ---
 
 <BaseLayout title="Best Travel Camera (2026) — cameraupick" description="The best lightweight travel cameras for 2026. We tested portable options from Sony, Fujifilm, and OM System for street, landscape, and vacation photos.">

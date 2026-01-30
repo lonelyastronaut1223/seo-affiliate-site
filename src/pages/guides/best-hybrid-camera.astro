@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import OrganizationSchema from '../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "What makes a camera good for both photo and video?",
+    answer: "Hybrid cameras excel with: (1) Fast continuous autofocus for video, (2) In-body stabilization (IBIS) for handheld shots, (3) High-resolution sensor for detailed photos, (4) 4K video at 60fps minimum, (5) Good rolling shutter performance."
+  },
+  {
+    question: "Do I need full-frame for hybrid shooting?",
+    answer: "Not necessarily. APS-C hybrids like Sony A6700 deliver excellent results for both. Full-frame (Sony A7 IV, Panasonic S5 II) offers better low-light and background blur but costs more. Start with APS-C unless you shoot professionally."
+  },
+  {
+    question: "What's more important: IBIS or lens stabilization?",
+    answer: "IBIS is better for hybrid work. It stabilizes any lens (including vintage glass) and works for both photo and video. Lens stabilization only helps with that specific lens. Canon R6 II and Panasonic S5 II have excellent IBIS systems."
+  },
+  {
+    question: "Can mirrorless cameras overheat during long video recordings?",
+    answer: "Some can, especially in 4K 60p. Panasonic S5 II and Sony A7 IV rarely overheat thanks to active cooling and efficient processors. Canon R6 II improved over R6 but can still limit recording in hot conditions. Check specific camera reviews for thermal performance."
+  }
+];
 ---
 
 <BaseLayout title="Best Hybrid Camera for Photo & Video (2026) — cameraupick" description="The true do-it-all cameras. We review the top hybrid full-frame mirrorless cameras from Sony, Canon, and Panasonic for creators who shoot everything.">

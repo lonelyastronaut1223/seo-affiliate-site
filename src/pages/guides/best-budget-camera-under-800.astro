@@ -1,8 +1,31 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import OrganizationSchema from '../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "What's the best camera under $800?",
+    answer: "Sony ZV-E10 offers the best value under $800. It has excellent autofocus, 4K video, a large lens selection, and is designed for content creators. At $698, it leaves budget for a lens."
+  },
+  {
+    question: "Can I get a full-frame camera under $800?",
+    answer: "No, new full-frame cameras start around $1,500. At the $800 budget, APS-C or Micro Four Thirds sensors provide better value with smaller, lighter lenses and bodies."
+  },
+  {
+    question: "Should I buy new or used at this budget?",
+    answer: "Buy new for warranty and latest autofocus. Used cameras from 2-3 years ago can offer great value, but check shutter count and sensor condition. For beginners, new cameras like Canon R100 or Sony ZV-E10 are safer choices."
+  },
+  {
+    question: "What features should I prioritize in a budget camera?",
+    answer: "Prioritize: (1) Reliable autofocus with face detection, (2) Decent battery life, (3) Available affordable lenses, (4) Good viewfinder or flip screen. Megapixels and video specs matter less for learning photography."
+  }
+];
 ---
 
 <BaseLayout title="Best Cheap Camera Under $800 (2026) — cameraupick" description="You don">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
     <section class="hero">
       <div class="hero-grid">
