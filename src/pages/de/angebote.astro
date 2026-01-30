@@ -1,71 +1,144 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getActiveDeals, getLastUpdated, getDaysUntilExpiration } from '../../config/deals.config.js';
+
+const deals = getActiveDeals('de');
+const lastUpdated = getLastUpdated();
 ---
 
-<BaseLayout title="Kamera-Angebote & Rabatte (Täglich aktualisiert) — Kameraupick" description="Die besten aktuellen Angebote für spiegellose Kameras, Objektive und Vlogging-Equipment. Täglich aktualisiert.">
+<BaseLayout title="Kamera-Angebote & Rabatte (Wöchentlich aktualisiert) — Kameraupick" description="Die besten aktuellen Angebote für spiegellose Kameras, Objektive und Vlogging-Ausrüstung. Handverlesene Ersparnisse, wöchentlich verifiziert.">
+<section class="hero hero-compact">
+  <div class="hero-grid hero-centered">
+    <div>
+      <h1>Kamera-Angebote & Preissenkungen</h1>
+      <p class="hero-sub hero-sub-centered">Kuratierte Rabatte auf Ausrüstung, die wir tatsächlich empfehlen.</p>
+    </div>
+  </div>
+</section>
+
 <main class="container">
-    <section class="hero" style="padding: 24px; min-height: auto;">
-        <div class="hero-grid" style="grid-template-columns: 1fr; text-align: center;">
-            <div>
-                <h1>Kamera Angebote & Preis Drops</h1>
-                <p class="hero-sub" style="margin: 0 auto;">Curated discounts on gear we actually recommend.</p>
+  <section class="section">
+    <div class="deals-header">
+      <p class="section-sub">Zuletzt aktualisiert: <strong>{lastUpdated}</strong></p>
+      <div class="deal-filters">
+        <button class="filter-btn active" data-filter="all">Alle Angebote</button>
+        <button class="filter-btn" data-filter="camera">Kameras</button>
+        <button class="filter-btn" data-filter="lens">Objektive</button>
+        <button class="filter-btn" data-filter="accessory">Zubehör</button>
+      </div>
+    </div>
+
+    <div class="deals-grid">
+      {deals.map((deal) => {
+        const daysLeft = getDaysUntilExpiration(deal.expiresAt);
+        return (
+          <article class={`deal-card ${deal.category}`} data-category={deal.category}>
+            <div class="deal-badges">
+              {deal.isHot && <span class="badge badge-hot">🔥 Top-Angebot</span>}
+              {deal.isLowest && <span class="badge badge-lowest">📉 Tiefstpreis</span>}
+              {deal.isNew && <span class="badge badge-new">✨ Neu</span>}
+              {daysLeft && daysLeft <= 7 && (
+                <span class="badge badge-expires">⏰ Noch {daysLeft} Tage</span>
+              )}
             </div>
+
+            <h3>{deal.name}</h3>
+            <p class="deal-description">{deal.description}</p>
+
+            <div class="deal-pricing">
+              <span class="original-price">{deal.currencySymbol}{deal.originalPrice}</span>
+              <span class="deal-price">{deal.currencySymbol}{deal.dealPrice}</span>
+              <span class="savings-badge">Spare {deal.currencySymbol}{deal.savingsAmount} ({deal.savingsPercent}%)</span>
+            </div>
+
+            <div class="deal-cta">
+              <a href={deal.amazonUrl} class="btn-deal" target="_blank" rel="noopener sponsored">
+                Preis bei Amazon prüfen →
+              </a>
+              {deal.reviewUrl && (
+                <a href={deal.reviewUrl} class="btn-review">Test lesen</a>
+              )}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Warum unseren Angeboten vertrauen?</h2>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        <div>
+          <strong>Handverlesen</strong>
+          <p>Keine automatischen Scraper. Wir verifizieren jedes Angebot manuell.</p>
         </div>
-    </section>
-        <section class="section">
-            <p class="section-sub">Last Aktualisiert: <span id="date-today"></span></p>
-
-            <div class="grid">
-                <!-- Deal 1 -->
-                <article class="card">
-                    <div class="tag" style="background: var(--accent); color: white; margin-bottom: 8px;">🔥 Hot Deal
-                    </div>
-                    <h3>Sony ZV-E10</h3>
-                    <p>Die beste Budget-Vlog-Kamera ist gerade im Preis gefallen. Inklusive 16-50mm Objektiv.</p>
-                    <div class="meta" style="color: #4ade80;">Save 100 €</div>
-                    <div style="margin-top: 12px;">
-                        <a href="https://amzn.to/49HqAH3" class="buy-btn" target="_blank" rel="noopener"
-                            rel="sponsored">Preis prüfen
-                            on
-                            Amazon &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Deal 2 -->
-                <article class="card">
-                    <div class="tag" style="background: #ef4444; color: white; margin-bottom: 8px;">Lowest Preis</div>
-                    <h3>Panasonic S5 II</h3>
-                    <p>Vollformat powerhouse with phase detect AF. unglaublich Preis-Leistungs-Verhältnis for hybrids.
-                    </p>
-                    <div class="meta" style="color: #4ade80;">300 € Off Coupon</div>
-                    <div style="margin-top: 12px;">
-                        <a href="https://amzn.to/45FQbyU" class="buy-btn" target="_blank" rel="noopener"
-                            rel="sponsored">Preis prüfen
-                            on
-                            Amazon &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Deal 3 -->
-                <article class="card">
-                    <h3>SanDisk Extreme Pro 256GB</h3>
-                    <p>Essential for 4K Video. Zuverlässig V30 speed class.</p>
-                    <div class="meta" style="color: #4ade80;">34% Off</div>
-                    <div style="margin-top: 12px;">
-                        <a href="https://amzn.to/4sPSPMl" class="buy-btn" target="_blank" rel="noopener"
-                            rel="sponsored">Preis prüfen
-                            on
-                            Amazon &rarr;</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Warum unseren Deals vertrauen?</h2>
-            <p style="color:var(--muted)">We don't use automated scrapers. These are hand-picked price drops on gear we
-                haben getestet und verifiziert.</p>
-        </section>
-
-    </main>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        <div>
+          <strong>Getestete Produkte</strong>
+          <p>Wir empfehlen nur Ausrüstung, die wir tatsächlich getestet haben.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">✓</span>
+        <div>
+          <strong>Wöchentlich aktualisiert</strong>
+          <p>Preise jeden Montag verifiziert. Abgelaufene Angebote entfernt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 </BaseLayout>
+
+<style>
+.deals-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+.deal-filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-btn { padding: 8px 16px; border: 1px solid var(--border); background: var(--surface); color: var(--foreground); border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.2s; }
+.filter-btn:hover, .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+.deals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.deal-card { background: var(--surface); border-radius: 16px; padding: 24px; border: 2px solid transparent; transition: all 0.3s; display: flex; flex-direction: column; }
+.deal-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); }
+.deal-card.hidden { display: none; }
+.deal-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.badge { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 4px; }
+.badge-hot { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
+.badge-lowest { background: linear-gradient(135deg, #27ae60, #1e8449); color: white; }
+.badge-new { background: linear-gradient(135deg, #3498db, #2980b9); color: white; }
+.badge-expires { background: #f39c12; color: #000; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+.deal-card h3 { margin: 0 0 8px 0; font-size: 22px; color: var(--foreground); }
+.deal-description { color: var(--muted); font-size: 14px; line-height: 1.5; margin-bottom: 16px; flex-grow: 1; }
+.deal-pricing { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.original-price { text-decoration: line-through; color: var(--muted); font-size: 16px; }
+.deal-price { font-size: 28px; font-weight: 800; color: var(--accent); }
+.savings-badge { background: rgba(39, 174, 96, 0.2); color: #27ae60; padding: 4px 12px; border-radius: 4px; font-size: 13px; font-weight: 700; }
+.deal-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-deal { flex: 1; padding: 14px 20px; background: var(--accent); color: white; text-decoration: none; text-align: center; border-radius: 8px; font-weight: 700; transition: all 0.2s; }
+.btn-deal:hover { background: #c0392b; transform: scale(1.02); }
+.btn-review { padding: 14px 20px; background: transparent; border: 2px solid var(--border); color: var(--foreground); text-decoration: none; text-align: center; border-radius: 8px; font-weight: 600; transition: all 0.2s; }
+.btn-review:hover { border-color: var(--accent); color: var(--accent); }
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+.trust-item { display: flex; gap: 16px; align-items: flex-start; }
+.trust-icon { width: 32px; height: 32px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+.trust-item strong { display: block; margin-bottom: 4px; }
+.trust-item p { margin: 0; color: var(--muted); font-size: 14px; }
+@media (max-width: 768px) { .deals-header { flex-direction: column; align-items: flex-start; } .deals-grid { grid-template-columns: 1fr; } .deal-cta { flex-direction: column; } }
+</style>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.deal-card').forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) { card.classList.remove('hidden'); }
+      else { card.classList.add('hidden'); }
+    });
+  });
+});
+</script>
