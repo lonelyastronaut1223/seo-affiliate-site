@@ -1,0 +1,38 @@
+---
+/**
+ * Organization Schema Component
+ * Defines brand identity for Google Knowledge Graph
+ * 
+ * Usage:
+ * <OrganizationSchema slot="head" />
+ */
+
+interface Props {
+  name?: string;
+  url?: string;
+  logo?: string;
+}
+
+const {
+  name = "cameraupick",
+  url = "https://www.cameraupick.com",
+  logo = "https://www.cameraupick.com/assets/images/logo.png"
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": name,
+  "url": url,
+  "logo": logo,
+  "description": "Expert camera reviews and buying guides for photographers and content creators",
+  "foundingDate": "2024",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "availableLanguage": ["en", "de"]
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

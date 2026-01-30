@@ -1,11 +1,34 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import OrganizationSchema from '../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Should I buy a vlog camera or use my smartphone?",
+    answer: "Modern smartphones (iPhone 15 Pro, Samsung S24) produce excellent video quality. Upgrade to a dedicated camera when you need: (1) Better autofocus for moving subjects, (2) Interchangeable lenses for creative control, (3) Superior low-light performance, or (4) Professional audio inputs. If you're just starting, use your phone and invest in lighting and audio first."
+  },
+  {
+    question: "What's more important: 4K resolution or frame rate?",
+    answer: "For YouTube, 4K 30p is the sweet spot. It looks sharp on modern displays and is easy to edit. 4K 60p is useful if you create slow-motion content or want extra-smooth motion. Most viewers won't notice the difference between 30p and 60p for talking-head content. Prioritize good autofocus and stabilization over chasing higher frame rates."
+  },
+  {
+    question: "Do I need full-frame or is APS-C enough?",
+    answer: "APS-C is sufficient for 95% of YouTubers. Full-frame advantages include better low-light performance, shallower depth of field for cinematic look, and wider field of view with same lens. But full-frame cameras and lenses cost significantly more. Start with APS-C (Sony ZV-E10 II, Canon R50) and upgrade to full-frame (Canon R8, Sony ZV-E1) when low-light or aesthetic becomes limiting."
+  },
+  {
+    question: "What's the best camera under $500 for YouTube?",
+    answer: "DJI Osmo Pocket 3 ($520) is slightly over budget but worth it for the mechanical gimbal stabilization and 1-inch sensor. No other camera in this price range offers comparable video quality and stabilization. If you need interchangeable lenses on a tighter budget, look for used Sony ZV-E10 (Gen 1) around $500-600."
+  }
+];
 ---
 
 <BaseLayout 
   title="Best Camera for YouTube & Vlogging 2026 | Expert Guide" 
   description="Compare top YouTube cameras by budget. DJI Pocket 3, Sony ZV-E10 II, Canon R50 reviewed. Click for detailed specs, video tests & buying advice."
 >
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
   <section class="hero">
     <div class="hero-grid">
