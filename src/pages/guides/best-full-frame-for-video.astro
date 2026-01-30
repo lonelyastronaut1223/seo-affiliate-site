@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import OrganizationSchema from '../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Why choose full-frame over APS-C for video?",
+    answer: "Full-frame offers superior low-light performance (critical for indoor/evening shoots), shallower depth of field for cinematic bokeh, and wider field of view. However, APS-C is often sufficient. Choose full-frame if you shoot professionally or need extreme low-light capability (ISO 6400+)."
+  },
+  {
+    question: "What's the best full-frame camera for video under $3000?",
+    answer: "Panasonic Lumix S5 IIX ($1,999) offers the best value. It has unlimited recording, excellent IBIS, HDMI output, and professional codecs. Sony FX3 ($3,898) is better but exceeds budget. Canon R6 II is great for hybrid work but can overheat."
+  },
+  {
+    question: "Do I need LOG profiles for professional video?",
+    answer: "LOG profiles (S-Log, V-Log) provide maximum editing flexibility and dynamic range but require color grading skills. Beginners should use standard profiles or cinema modes (S-Cinetone). Upgrade to LOG when you understand exposure and have a color grading workflow."
+  },
+  {
+    question: "Can full-frame cameras overheat during long takes?",
+    answer: "Some do, especially in 4K 60p. Panasonic S5 IIX and Sony FX3 have active cooling and rarely overheat. Canon R6 II improved over R6 but still has thermal limits in hot weather. Check specific reviews for your shooting conditions."
+  }
+];
 ---
 
 <BaseLayout title="Best Full-Frame Camera for Video (2026) — cameraupick" description="Cinema quality in your backpack. We review the best full-frame mirrorless cameras for filmmakers, including the Sony FX3, Lumix S5IIX, and Canon R6II.">

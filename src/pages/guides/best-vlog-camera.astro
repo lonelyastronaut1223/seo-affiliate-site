@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import OrganizationSchema from '../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "What's the most important feature for vlogging?",
+    answer: "Reliable autofocus with face/eye tracking is essential. Solo vloggers need the camera to automatically keep them sharp while they move and talk. Sony ZV-E1 and DJI Pocket 3 excel here with AI-powered subject tracking."
+  },
+  {
+    question: "Do I need a gimbal for vlogging?",
+    answer: "Not necessarily. DJI Pocket 3 has a built-in mechanical gimbal. Cameras with good IBIS (Sony ZV-E1, OM-1 Mark II) provide smooth handheld footage. For walk-and-talk, IBIS or gimbal is highly recommended. Tripod vlogs don't need stabilization."
+  },
+  {
+    question: "Should vlog cameras have a flip screen?",
+    answer: "Absolutely essential. A fully articulating flip screen (not just tilting) lets you monitor framing while recording yourself. All our recommended vlog cameras have flip screens except action cameras, which use companion apps."
+  },
+  {
+    question: "Is 4K necessary for YouTube vlogs?",
+    answer: "1080p is acceptable for YouTube, but 4K is recommended. It allows cropping in post for better framing, provides sharper details on modern displays, and future-proofs your content. Most viewers watch in 1080p, but 4K gives editing flexibility."
+  }
+];
 ---
 
 <BaseLayout title="Best Vlog Camera for YouTube (2026) — cameraupick" description="Top vlogging cameras for 2026 rated by video quality, stabilization, and ease of use. From DJI Pocket to full-frame Sony cameras.">
