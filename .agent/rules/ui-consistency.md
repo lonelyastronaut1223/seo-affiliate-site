@@ -1,9 +1,18 @@
 # UI Consistency Rules
 
-## Purpose
-Ensure all new pages maintain visual and structural consistency with existing pages.
+## ⚠️ CRITICAL PRINCIPLE — READ FIRST
+
+> **设计一致性是绝对原则，不可违反。**
+
+1. **禁止擅自修改界面设计** — 在没有用户明确批准的情况下，绝不修改任何现有的UI/UX设计、布局、颜色、间距或交互模式。
+2. **新内容必须保持一致** — 创建新页面或新组件时，必须完全遵循现有页面的设计模式，不得引入任何视觉差异。
+3. **复制而非创新** — 当不确定时，直接复制现有组件的结构和样式，而不是尝试创建新的设计。
+4. **修改前必须确认** — 如果任何更改可能影响页面外观，必须先询问用户确认。
 
 ---
+
+## Purpose
+Ensure all new pages maintain visual and structural consistency with existing pages.
 
 ## Review Pages Rules
 
