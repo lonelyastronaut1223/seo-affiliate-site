@@ -1,8 +1,31 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import OrganizationSchema from '../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "What's the best camera for a complete beginner?",
+    answer: "Canon EOS R50 is the best choice for complete beginners. It has the most intuitive interface with Creative Assist mode that explains settings in plain English, excellent straight-out-of-camera colors, and a viewfinder for sunny outdoor shooting."
+  },
+  {
+    question: "Do I need full-frame as a beginner?",
+    answer: "No, full-frame is unnecessary for beginners. APS-C cameras like the Sony ZV-E10 II, Canon R50, and Fujifilm X-T50 are lighter, cheaper, and have smaller lenses. They produce professional-quality results. Save full-frame for when you have specific needs like extreme low-light performance."
+  },
+  {
+    question: "Should I buy a camera kit or body only?",
+    answer: "Buy the kit lens version. Kit lenses (usually 16-50mm or 18-55mm) are affordable, lightweight, and perfect for learning. They cover the most useful focal lengths and let you discover what type of photography you enjoy before investing in specialized lenses."
+  },
+  {
+    question: "How many megapixels do I need?",
+    answer: "24MP is plenty for beginners. It allows large prints up to 20x30 inches and gives room to crop. More megapixels (like Fujifilm X-T50's 40MP) are nice but not necessary. Prioritize autofocus performance and ease of use over megapixel count."
+  }
+];
 ---
 
 <BaseLayout title="Best Camera for Beginners (2026) — cameraupick" description="Beginner-friendly camera picks for 2026: we tested the best easy-to-use cameras from Sony, Canon, and Fujifilm. See our top picks.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
     <section class="hero">
       <div class="hero-grid">
@@ -298,6 +321,65 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <p>If you shoot outdoors in bright sun, you NEED a viewfinder (EVF) like on the Canon R50 or Fuji X-T50. If
             you mostly shoot video or indoors, a screen-only camera like the ZV-E10 II is fine.</p>
         </article>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+      <h2>Common Questions</h2>
+      <div class="faq-container">
+        <details class="faq-item">
+          <summary>
+            <h3>What's the best camera for a complete beginner?</h3>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              <strong>Canon EOS R50</strong> is the best choice for complete beginners. It has the most 
+              intuitive interface with "Creative Assist" mode that explains settings in plain English, 
+              excellent straight-out-of-camera colors, and a viewfinder for sunny outdoor shooting.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <h3>Do I need full-frame as a beginner?</h3>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              No, full-frame is unnecessary for beginners. APS-C cameras like the Sony ZV-E10 II, 
+              Canon R50, and Fujifilm X-T50 are lighter, cheaper, and have smaller lenses. They produce 
+              professional-quality results. Save full-frame for when you have specific needs like extreme 
+              low-light performance.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <h3>Should I buy a camera kit or body only?</h3>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              Buy the kit lens version. Kit lenses (usually 16-50mm or 18-55mm) are affordable, lightweight, 
+              and perfect for learning. They cover the most useful focal lengths and let you discover what 
+              type of photography you enjoy before investing in specialized lenses.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <h3>How many megapixels do I need?</h3>
+          </summary>
+          <div class="faq-answer">
+            <p>
+              24MP is plenty for beginners. It allows large prints up to 20×30 inches and gives room to crop. 
+              More megapixels (like Fujifilm X-T50's 40MP) are nice but not necessary. Prioritize autofocus 
+              performance and ease of use over megapixel count.
+            </p>
+          </div>
+        </details>
       </div>
     </section>
 
