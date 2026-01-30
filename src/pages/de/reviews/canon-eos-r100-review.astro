@@ -1,0 +1,195 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductSchema from "../../../components/ProductSchema.astro";
+import "../../../styles/review-page.css";
+---
+
+<BaseLayout
+    title="Canon EOS R100 Testbericht 2026: Beste Budget-Einsteigerkamera"
+    description="Canon EOS R100 im Test: 24MP APS-C, 4K Video, Canon Farben. Die günstigste Systemkamera. Specs & Urteil."
+>
+    <ProductSchema
+        slot="head"
+        productName="Canon EOS R100"
+        brand="Canon"
+        image="/assets/images/guides/canon-r100.webp"
+        description="Canon EOS R100 Einsteiger-Systemkamera mit 24MP APS-C-Sensor und 4K-Video."
+        price={499}
+        priceCurrency="EUR"
+        rating={4.3}
+        reviewCount={1}
+        url="/de/reviews/canon-eos-r100-review"
+        breadcrumbs={[
+            { name: "Canon EOS R100", url: "/de/reviews/canon-eos-r100-review" },
+        ]}
+    />
+    <main id="main" class="container">
+        <section class="hero">
+            <div class="hero-grid">
+                <div>
+                    <h1>Canon EOS R100 Testbericht</h1>
+                    <p class="hero-sub">
+                        Die R100 ist Canons günstigste Systemkamera. Sie verzichtet auf Extras, um Canons legendäre Farbwissenschaft zu einem Einstiegspreis zu liefern. Perfekt für Erstkäufer mit knappem Budget.
+                    </p>
+                    <div class="meta review-price-badge">Ultra Budget · 499 €</div>
+                </div>
+                <div class="hero-media">
+                    <picture>
+                        <img src="/assets/images/guides/canon-r100.webp" alt="Canon EOS R100" loading="eager" />
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="product-review-card" id="canon-r100">
+                <div class="product-review-header-v2">
+                    <span class="badge-best">💰 Beste unter 500 €</span>
+                    <h2 class="product-title">Das Urteil</h2>
+                    <p>
+                        Die Canon EOS R100 ist alles, was du brauchst, um Fotografie zu starten, und nichts, was du nicht brauchst. Sie nutzt Canons bewährten 24,1MP-Sensor und liefert die wunderschönen Canon-Farben in jedem Bild. Keine Schnickschnack, keine Komplexität – nur solide Grundlagen zum niedrigsten Preis.
+                    </p>
+                    <p>
+                        Sie macht Kompromisse, um diesen Preis zu erreichen: kein Sucher, begrenzte Video-Specs und kein Touchscreen. Aber wenn du von einem Smartphone upgradest und eine echte Kamera willst, ohne die Bank zu sprengen, liefert die R100.
+                    </p>
+                </div>
+
+                <table class="specs-table">
+                    <tr><th colspan="2" class="specs-group-header">Bildgebung</th></tr>
+                    <tr><th>Sensor</th><td>24,1MP APS-C CMOS</td></tr>
+                    <tr><th>Prozessor</th><td>DIGIC 8</td></tr>
+                    <tr><th>Stabilisierung</th><td>Elektronisch (Movie Digital IS)</td></tr>
+                    <tr><th>ISO-Bereich</th><td>100-12.800 (erweiterbar bis 25.600)</td></tr>
+                    <tr><th colspan="2" class="specs-group-header">Autofokus</th></tr>
+                    <tr><th>AF-Punkte</th><td>Dual Pixel CMOS AF (143 Zonen)</td></tr>
+                    <tr><th>AF-System</th><td>Gesichts-/Augenerkennung</td></tr>
+                    <tr><th>Serienbildgeschwindigkeit</th><td>6,5 fps (mechanisch) / 3,5 fps (mit AF)</td></tr>
+                    <tr><th colspan="2" class="specs-group-header">Video</th></tr>
+                    <tr><th>Max. Auflösung</th><td>4K24 (1,6x Crop) / 1080p60</td></tr>
+                    <tr><th>Interne Aufnahme</th><td>4:2:0 8-Bit MP4</td></tr>
+                    <tr><th>Profile</th><td>Nur Standard Picture Styles</td></tr>
+                    <tr><th colspan="2" class="specs-group-header">Gehäuse & Anschlüsse</th></tr>
+                    <tr><th>Sucher</th><td>Keiner</td></tr>
+                    <tr><th>Bildschirm</th><td>3" fest (kein Touch, 1,04M Punkte)</td></tr>
+                    <tr><th>Kartenslots</th><td>1x SD (UHS-I)</td></tr>
+                    <tr><th>Gewicht</th><td>356g (nur Gehäuse)</td></tr>
+                </table>
+
+                <a href="#" class="btn-buy" data-product="canon-r100" rel="sponsored noopener noreferrer" target="_blank">
+                    Preis auf Amazon prüfen &rarr;
+                </a>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>Was uns gefällt</h4>
+                    <ul>
+                        <li>Niedrigster Preis für eine Canon-Systemkamera</li>
+                        <li>Canons wunderschöne JPEG-Farben</li>
+                        <li>Ultraleicht (356g Gehäuse)</li>
+                        <li>Einfache, unkomplizierte Bedienung</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>Die Nachteile</h4>
+                    <ul>
+                        <li>Kein elektronischer Sucher (EVF)</li>
+                        <li>Fester Bildschirm (nicht klapp- oder neigbar)</li>
+                        <li>Keine Touchscreen-Funktionalität</li>
+                        <li>4K-Video croppt stark (1,6x)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Detaillierte Leistung</h2>
+            <div class="content-block">
+                <h3>Bildqualität & Sensorleistung</h3>
+                <p>Der 24,1MP-Sensor liefert solide Bildqualität mit Canons exzellenter Farbwissenschaft. JPEGs sehen ansprechend aus mit akkuraten Hauttönen und gut gesättigten Farben. 12 Blendenstufen Dynamikumfang bedeutet, dass du Schatten und Lichter bei Bedarf retten kannst.</p>
+                <p>Die ISO-Leistung ist bis ISO 3200 für saubere Bilder nutzbar, mit 6400 akzeptabel für Web-Nutzung. Darüber hinaus steigt das Rauschen merklich. Für Tageslicht und gut beleuchtete Szenen produziert die R100 Bilder, die mit teureren Kameras mithalten.</p>
+            </div>
+            <div class="content-block">
+                <h3>Autofokus-System</h3>
+                <p>Dual Pixel CMOS AF bietet zuverlässige Fokussierung mit 143 Zonen, die den Großteil des Bildes abdecken. Gesichts- und Augenerkennung funktioniert gut bei gutem Licht, was Porträtfotografie unkompliziert macht. Das System ist eine Generation hinter neueren Canon-Kameras, aber für Einsteiger ausreichend.</p>
+            </div>
+            <div class="content-block">
+                <h3>Videofähigkeiten</h3>
+                <p>Video ist der schwächste Bereich der R100. 4K ist auf 24fps mit 1,6x Crop limitiert, was Weitwinkelaufnahmen erschwert. 1080p60 ist für flüssigere Bewegung verfügbar. Es gibt kein Log-Profil oder erweiterte Videofunktionen – was du auf dem Bildschirm siehst, ist was du bekommst.</p>
+            </div>
+            <div class="content-block">
+                <h3>Ergonomie & Verarbeitung</h3>
+                <p>Die R100 ist mit 356g extrem leicht. Sie fühlt sich fast zu leicht an – wie eine Spielzeugkamera – aber die Verarbeitung ist für vorsichtige Nutzung ausreichend. Der Griff ist minimal, also finden größere Hände sie möglicherweise beengt. Der feste, nicht-Touch-Bildschirm ist die auffälligste Kostensparmaßnahme.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Ideale Objektive für die Canon EOS R100</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <h4>Canon RF-S 18-45mm f/4.5-6.3 IS STM (Kit)</h4>
+                    <p>Kaufe die Kit-Version. Das Objektiv ist kompakt, stabilisiert und deckt nützliche Brennweiten ab. Perfekte Ergänzung zum Portabilitäts-Fokus der R100.</p>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Canon EF 50mm f/1.8 STM + Adapter</h4>
+                    <p>Das klassische "Nifty Fifty" mit EF-RF-Adapter gibt dir f/1.8 für schöne Porträts. Günstig und fröhlich – es transformiert deine Fotografie für unter 150 € total.</p>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Canon RF-S 55-210mm f/5-7.1 IS STM</h4>
+                    <p>Erschwingliches Teleobjektiv für Wildlife- und Sport-Grundlagen. Stabilisierung hilft, die langsamere Blende zu kompensieren. Gutes Preis-Leistungs-Verhältnis für die Reichweite.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Canon EOS R100 FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Ist die R100 besser als mein Smartphone?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Für kontrollierte Tageslicht-Fotografie – ja. Der größere Sensor fängt mehr Licht und Details ein. Du bekommst echte optische Unschärfe und Wechselobjektive. Aber Smartphones brillieren bei computergestützter Fotografie, Low-Light und Bequemlichkeit.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Soll ich die R100 oder R50 nehmen?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>R50, wenn du es dir leisten kannst. Der Sucher, Touchscreen und bessere Video-Specs machen sie deutlich vielseitiger. Die R100 macht nur Sinn, wenn Budget die primäre Einschränkung ist.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Kann ich ältere Canon-Objektive verwenden?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Ja! Mit Canons EF-RF-Adapter kannst du alle EF- und EF-S-Objektive nutzen. Das gibt dir Zugang zu Jahrzehnten von Canon-Glas, einschließlich vieler exzellenter Budget-Optionen auf dem Gebrauchtmarkt.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Für wen ist die Canon EOS R100 geeignet?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Budgetbewusste Einsteiger, die Fotos über Video priorisieren. Eltern, die bessere Familienfotos als mit dem Smartphone wollen. Jeder, der Canon-Qualität zum absolut niedrigsten Preis will.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="final-verdict">
+                <h2>Abschließende Empfehlung</h2>
+                <p>Die Canon EOS R100 ist ehrlich darüber, was sie ist: ein erschwinglicher Einstieg in die Systemkamera-Fotografie. Sie wird dich nicht mit Features beeindrucken, aber sie liefert Canons legendäre Bildqualität zu einem zugänglichen Preis.</p>
+                <p><strong>Kauf sie wenn:</strong> Budget deine primäre Sorge ist, Fotos über Video priorisierst und Canon-Farben ohne Canon-Flaggschiff-Preise willst.</p>
+                <p><strong>Lass sie stehen wenn:</strong> Du Videofähigkeiten brauchst, einen Sucher willst oder dich zur R50 strecken kannst für ein viel besseres Gesamterlebnis.</p>
+            </div>
+        </section>
+
+        <section class="section author-box">
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+                <div>
+                    <h4 style="margin: 0 0 8px 0;">Geschrieben vom cameraupick Redaktionsteam</h4>
+                    <p style="margin: 0; color: var(--muted); font-size: 14px;">Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras.</p>
+                    <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren Testprozess erfahren →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+<script is:inline src="/assets/js/faq-accordion.js"></script>
+</BaseLayout>

@@ -1,0 +1,195 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductSchema from "../../../components/ProductSchema.astro";
+import "../../../styles/review-page.css";
+---
+
+<BaseLayout
+    title="Fujifilm X-T50 Testbericht 2026: Die stilvolle Einsteigerkamera"
+    description="Fujifilm X-T50 im Test: 40MP APS-C, Filmsimulation-Wahlrad, IBIS. Die inspirierendste Kamera. Specs & Urteil."
+>
+    <ProductSchema
+        slot="head"
+        productName="Fujifilm X-T50"
+        brand="Fujifilm"
+        image="/assets/images/guides/fujifilm-x-t50.webp"
+        description="Fujifilm X-T50 Systemkamera mit 40MP-Sensor, Filmsimulation-Wahlrad und 7-Stufen-IBIS."
+        price={1499}
+        priceCurrency="EUR"
+        rating={4.7}
+        reviewCount={1}
+        url="/de/reviews/fujifilm-x-t50-review"
+        breadcrumbs={[
+            { name: "Fujifilm X-T50", url: "/de/reviews/fujifilm-x-t50-review" },
+        ]}
+    />
+    <main id="main" class="container">
+        <section class="hero">
+            <div class="hero-grid">
+                <div>
+                    <h1>Fujifilm X-T50 Testbericht</h1>
+                    <p class="hero-sub">
+                        Die X-T50 ist die Kamera, die Fotografie wieder wie eine Kunstform anfühlen lässt. Mit einem dedizierten Filmsimulation-Wahlrad wechselst du mit einem physischen Klick zwischen klassischen Looks wie "Kodak Gold" und "Provia".
+                    </p>
+                    <div class="meta review-price-badge">Lifestyle-Kamera · 1.499 €</div>
+                </div>
+                <div class="hero-media">
+                    <picture>
+                        <img src="/assets/images/guides/fujifilm-x-t50.webp" alt="Fujifilm X-T50" loading="eager" />
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="product-review-card" id="fujifilm-x-t50">
+                <div class="product-review-header-v2">
+                    <span class="badge-best">✨ Bester Stil & Vibes</span>
+                    <h2 class="product-title">Das Urteil</h2>
+                    <p>
+                        Die Fujifilm X-T50 packt den Flaggschiff-40MP-Sensor der X-T5 in ein kleineres, günstigeres Gehäuse. Aber die wahre Magie ist das Filmsimulation-Wahlrad oben – ein physisches Bedienelement, das deine Bilder sofort mit Fujis legendären Film-Looks transformiert.
+                    </p>
+                    <p>
+                        Sie kostet mehr als andere Einsteigerkameras, aber du sparst Zeit beim Bearbeiten. Fotos von der X-T50 sehen in dem Moment fertig aus, wenn du den Auslöser drückst. Sie ist die Kamera für Menschen, die wollen, dass Fotografie sich besonders anfühlt.
+                    </p>
+                </div>
+
+                <table class="specs-table">
+                    <tr><th colspan="2" class="specs-group-header">Bildgebung</th></tr>
+                    <tr><th>Sensor</th><td>40,2MP APS-C X-Trans CMOS 5 HR</td></tr>
+                    <tr><th>Prozessor</th><td>X-Processor 5</td></tr>
+                    <tr><th>Stabilisierung</th><td>5-Achsen IBIS (7 Blenden)</td></tr>
+                    <tr><th>ISO-Bereich</th><td>125-12.800 (erweiterbar bis 51.200)</td></tr>
+                    <tr><th colspan="2" class="specs-group-header">Autofokus</th></tr>
+                    <tr><th>AF-Punkte</th><td>425 Punkte (Phasendetektion)</td></tr>
+                    <tr><th>AF-System</th><td>Gesichts-/Augenerkennung (Mensch, Tier, Vogel, Fahrzeug)</td></tr>
+                    <tr><th>Serienbildgeschwindigkeit</th><td>20 fps (elektronisch) / 8 fps (mechanisch)</td></tr>
+                    <tr><th colspan="2" class="specs-group-header">Video</th></tr>
+                    <tr><th>Max. Auflösung</th><td>6,2K Open Gate / 4K60</td></tr>
+                    <tr><th>Interne Aufnahme</th><td>10-Bit 4:2:2 H.265</td></tr>
+                    <tr><th>Profile</th><td>F-Log2, Filmsimulationen, HLG</td></tr>
+                    <tr><th colspan="2" class="specs-group-header">Gehäuse & Anschlüsse</th></tr>
+                    <tr><th>Sucher</th><td>0,39" OLED EVF (2,36M Punkte)</td></tr>
+                    <tr><th>Bildschirm</th><td>3" Neige-Touchscreen (1,84M Punkte)</td></tr>
+                    <tr><th>Kartenslots</th><td>1x SD (UHS-II)</td></tr>
+                    <tr><th>Gewicht</th><td>438g (nur Gehäuse)</td></tr>
+                </table>
+
+                <a href="#" class="btn-buy" data-product="fujifilm-x-t50" rel="sponsored noopener noreferrer" target="_blank">
+                    Preis auf Amazon prüfen &rarr;
+                </a>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>Was uns gefällt</h4>
+                    <ul>
+                        <li>40MP-Sensor mit atemberaubenden Details und Dynamikumfang</li>
+                        <li>Dediziertes Filmsimulation-Wahlrad für sofortige Looks</li>
+                        <li>7-Stufen-IBIS für scharfe Freihandaufnahmen bei wenig Licht</li>
+                        <li>20 einzigartige Filmsimulationen inklusive Reala Ace</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>Die Nachteile</h4>
+                    <ul>
+                        <li>Teuerste Option in der Einsteiger-Kategorie</li>
+                        <li>Durchschnittliche Akkulaufzeit (305 Aufnahmen)</li>
+                        <li>Autofokus gut, aber nicht so klebrig wie Sony</li>
+                        <li>Neigebildschirm statt vollständig artikulierend</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Detaillierte Leistung</h2>
+            <div class="content-block">
+                <h3>Bildqualität & Sensorleistung</h3>
+                <p>Der 40,2MP X-Trans-Sensor ist derselbe wie in der Flaggschiff X-T5, und die Bildqualität ist außergewöhnlich. Du bekommst unglaubliche Details zum Beschneiden, 14+ Blendenstufen Dynamikumfang und Fujis einzigartigen X-Trans-Farbfilter-Array, der Moiré ohne Tiefpassfilter eliminiert.</p>
+                <p>Wo Fujifilm wirklich brilliert, ist die Farbwissenschaft. Die Filmsimulationen wurden entwickelt, um klassische Filmbestände nachzuahmen, und sie sehen authentisch aus. Provia, Velvia, Classic Negative und das neue Reala Ace haben jeweils einen ausgeprägten Charakter.</p>
+            </div>
+            <div class="content-block">
+                <h3>Autofokus-System</h3>
+                <p>Fujifilm hat mit dem X-Processor 5 enorme Fortschritte gemacht. Motiverkennung deckt jetzt Menschen, Tiere, Vögel, Autos, Motorräder, Fahrräder, Flugzeuge und Züge ab. Augen-AF funktioniert in den meisten Bedingungen zuverlässig, und Gesichtserkennung ist auch in Winkeln genau.</p>
+            </div>
+            <div class="content-block">
+                <h3>Videofähigkeiten</h3>
+                <p>Video-Specs sind beeindruckend: 6,2K Open Gate für maximale Flexibilität, 4K60 für flüssige Bewegung und 10-Bit 4:2:2 interne Aufnahme. Die Kamera nimmt sogar ProRes intern auf. Filmsimulationen funktionieren im Video für wunderschönes Footage direkt aus der Kamera.</p>
+            </div>
+            <div class="content-block">
+                <h3>Ergonomie & Verarbeitung</h3>
+                <p>Das Retro-Design mit physischen Wahlrädern ist Teil von Fujis Identität. Das dedizierte Filmsimulation-Wahlrad oben ist das Signature-Feature der X-T50 – drehe es, um ohne Menüs zwischen Looks zu wechseln. ISO- und Verschlusszeit-Wahlräder verstärken das analoge Aufnahmeerlebnis.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Ideale Objektive für die Fujifilm X-T50</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <h4>Fujifilm XF 27mm f/2.8 R WR</h4>
+                    <p>Das Pancake-Objektiv macht die X-T50 ultraleicht und hosentaschentauglich. An APS-C ergibt 27mm ein 40mm-Äquivalent – ideal für Street und Alltag.</p>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Fujifilm XF 35mm f/2 R WR</h4>
+                    <p>Klassische Brennweite (53mm Äquivalent) mit schneller Blende und Wetterschutz. Scharf, kompakt und großartig für Porträts.</p>
+                </div>
+                <div class="recommendation-card">
+                    <h4>Fujifilm XF 18-55mm f/2.8-4 R LM OIS</h4>
+                    <p>Fujis "Kit"-Objektiv ist tatsächlich exzellent. Schneller Blendenbereich, optische Stabilisierung und Schärfe, die mit Festbrennweiten konkurriert.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Fujifilm X-T50 FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Was ist der Unterschied zwischen X-T50 und X-T5?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Gleicher 40MP-Sensor und Prozessor. Die X-T5 hat einen größeren EVF, Dual-Kartenslots und klassisches Drei-Wahlrad-Design. Die X-T50 fügt das Filmsimulation-Wahlrad hinzu und ist kleiner/leichter. Für die meisten Nutzer reicht die X-T50.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Sind Filmsimulationen besser als Lightroom-Presets?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Sie sind unterschiedlich. Filmsimulationen werden bei der Aufnahme angewendet und beeinflussen die RAW-Daten, was dir authentische Fuji-Farben selbst in RAW-Dateien gibt. Lightroom-Presets sind Nachbearbeitungseffekte. Viele Fotografen bevorzugen JPEGs auf Fuji-Kameras, weil die Filmsimulationen so gut aussehen.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Sind 40MP zu viel für Einsteiger?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Nein, hohe Auflösung ist immer ein Vorteil. Du bekommst mehr Spielraum zum Beschneiden, größere Druckmöglichkeiten und bessere Details. Dateigrößen sind größer (etwa 80MB RAW), also besorge eine schnelle SD-Karte. Der 40MP-Sensor bietet reine Vorteile.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Für wen ist die Fujifilm X-T50 geeignet?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Kreative Fotografen, die wollen, dass Fotografie sich künstlerisch anfühlt. Street-Fotografen, Reisende und Lifestyle-Content-Creator, die Ästhetik über Specs schätzen. Jeder, der schöne Bilder mit minimalem Bearbeitungsaufwand will.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="final-verdict">
+                <h2>Abschließende Empfehlung</h2>
+                <p>Die Fujifilm X-T50 ist die inspirierendste Kamera auf dieser Liste. Sie belohnt dich mit wunderschönen Bildern direkt aus der Kamera und lässt den kreativen Prozess sich haptisch und absichtsvoll anfühlen.</p>
+                <p><strong>Kauf sie wenn:</strong> Du willst, dass Fotografie sich besonders anfühlt, ästhetische Ergebnisse über technische Specs schätzt und bereit bist, extra für das Erlebnis zu zahlen.</p>
+                <p><strong>Lass sie stehen wenn:</strong> Budget eine primäre Rolle spielt, du den absolut schnellsten Autofokus brauchst oder einen vollständig artikulierenden Bildschirm für Vlogging bevorzugst.</p>
+            </div>
+        </section>
+
+        <section class="section author-box">
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+                <div>
+                    <h4 style="margin: 0 0 8px 0;">Geschrieben vom cameraupick Redaktionsteam</h4>
+                    <p style="margin: 0; color: var(--muted); font-size: 14px;">Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras.</p>
+                    <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren Testprozess erfahren →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+<script is:inline src="/assets/js/faq-accordion.js"></script>
+</BaseLayout>

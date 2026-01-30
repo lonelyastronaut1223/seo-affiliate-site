@@ -1,0 +1,193 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductSchema from "../../../components/ProductSchema.astro";
+import "../../../styles/review-page.css";
+---
+
+<BaseLayout
+    title="Fujifilm X100VI Testbericht 2026: Die beste Reisekompaktkamera"
+    description="Fujifilm X100VI im Test: 40MP, festes 23mm f/2 Objektiv, IBIS. Die ultimative Premium-Kompaktkamera. Specs & Urteil."
+>
+    <ProductSchema
+        slot="head"
+        productName="Fujifilm X100VI"
+        brand="Fujifilm"
+        image="/assets/images/guides/fujifilm-x100vi.webp"
+        description="Fujifilm X100VI Premium-Kompaktkamera mit 40MP-Sensor, festem 23mm f/2 Objektiv und eingebautem IBIS."
+        price={1699}
+        priceCurrency="EUR"
+        rating={4.8}
+        reviewCount={1}
+        url="/de/reviews/fujifilm-x100vi-review"
+        breadcrumbs={[
+            { name: "Fujifilm X100VI", url: "/de/reviews/fujifilm-x100vi-review" },
+        ]}
+    />
+    <main id="main" class="container">
+        <section class="hero">
+            <div class="hero-grid">
+                <div>
+                    <h1>Fujifilm X100VI Testbericht</h1>
+                    <p class="hero-sub">
+                        Die X100VI ist die meistbegehrte Kamera von 2026. Mit 40MP Auflösung, eingebautem IBIS und dem legendären 23mm f/2 Objektiv liefert sie unübertroffene Bildqualität in einem hosentaschentauglichen Formfaktor.
+                    </p>
+                    <div class="meta review-price-badge">Premium-Kompakte · 1.699 €</div>
+                </div>
+                <div class="hero-media">
+                    <picture>
+                        <img src="/assets/images/guides/fujifilm-x100vi.webp" alt="Fujifilm X100VI" loading="eager" />
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="product-review-card" id="fujifilm-x100vi">
+                <div class="product-review-header-v2">
+                    <span class="badge-best">🌍 Beste Reisekompaktkamera</span>
+                    <h2 class="product-title">Das Urteil</h2>
+                    <p>
+                        Die X100VI nimmt alles, was an der X100-Serie geliebt wird – ikonisches Design, festes 23mm-Objektiv, Hybrid-OVF/EVF – und fügt den 40MP-Sensor der X-T5 plus eingebauten IBIS hinzu. Es ist die bedeutendste Upgrade der Reihe.
+                    </p>
+                    <p>
+                        Sie ist nicht perfekt: Verfügbarkeit ist begrenzt, der Preis ist Premium, und das feste Objektiv bedeutet keine Zoom-Flexibilität. Aber wenn du weißt, dass du 35mm Äquivalent willst (hervorragend für Street, Reisen und Dokumentation), ist keine andere Kompaktkamera näher dran.
+                    </p>
+                </div>
+
+                <table class="specs-table">
+                    <tr><th colspan="2" class="specs-group-header">Bildgebung</th></tr>
+                    <tr><th>Sensor</th><td>40,2MP APS-C X-Trans CMOS 5 HR</td></tr>
+                    <tr><th>Prozessor</th><td>X-Processor 5</td></tr>
+                    <tr><th>Objektiv</th><td>Fest 23mm f/2 (35mm Äquivalent)</td></tr>
+                    <tr><th>Stabilisierung</th><td>5-Achsen IBIS (bis 6 Blenden)</td></tr>
+                    <tr><th>ISO-Bereich</th><td>125-12.800 (erweiterbar bis 51.200)</td></tr>
+                    <tr><th colspan="2" class="specs-group-header">Autofokus</th></tr>
+                    <tr><th>AF-Punkte</th><td>425 Punkte (Phasendetektion)</td></tr>
+                    <tr><th>AF-System</th><td>Gesichts-/Augenerkennung, Motiverkennung</td></tr>
+                    <tr><th colspan="2" class="specs-group-header">Video</th></tr>
+                    <tr><th>Max. Auflösung</th><td>6,2K Open Gate / 4K60</td></tr>
+                    <tr><th>Interne Aufnahme</th><td>10-Bit 4:2:2 H.265</td></tr>
+                    <tr><th>Profile</th><td>F-Log2, alle Filmsimulationen</td></tr>
+                    <tr><th colspan="2" class="specs-group-header">Gehäuse & Anschlüsse</th></tr>
+                    <tr><th>Sucher</th><td>Hybrid OVF/EVF (0,66x OLED, 3,69M Punkte)</td></tr>
+                    <tr><th>Bildschirm</th><td>3" Neige-Touchscreen (1,62M Punkte)</td></tr>
+                    <tr><th>Gewicht</th><td>521g (mit Akku)</td></tr>
+                </table>
+
+                <a href="#" class="btn-buy" data-product="fujifilm-x100vi" rel="sponsored noopener noreferrer" target="_blank">
+                    Preis auf Amazon prüfen &rarr;
+                </a>
+            </div>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>Was uns gefällt</h4>
+                    <ul>
+                        <li>Außergewöhnlicher 40MP-Sensor in einem kompakten Gehäuse</li>
+                        <li>Eingebauter IBIS (erstmals in der X100-Serie!)</li>
+                        <li>Einzigartiger Hybrid-OVF/EVF mit blitzschnellem Wechsel</li>
+                        <li>Alle 20 Filmsimulationen inklusive Reala Ace</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>Die Nachteile</h4>
+                    <ul>
+                        <li>Begrenzte Verfügbarkeit und überhöhte Straßenpreise</li>
+                        <li>Festobjektiv – keine Zoom-Flexibilität</li>
+                        <li>Premium-Preis (ab 1.699 € UVP)</li>
+                        <li>Durchschnittliche Akkulaufzeit (310 Aufnahmen)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Detaillierte Leistung</h2>
+            <div class="content-block">
+                <h3>Bildqualität & Sensorleistung</h3>
+                <p>Die Kombination aus 40MP X-Trans-Sensor und dem legendären 23mm f/2 Objektiv liefert atemberaubende Schärfe und Details. Das Objektiv, das über fünf Generationen verfeinert wurde, ist perfekt für diesen Sensor abgestimmt. Du bekommst Edge-to-Edge-Schärfe, kontrollierte Streulichtneigung und schönes Bokeh bei f/2.</p>
+            </div>
+            <div class="content-block">
+                <h3>Hybrid-Sucher</h3>
+                <p>Das einzigartige Merkmal der X100-Serie. Ein Hebel wechselt sofort zwischen optischem Sucher (OVF) und elektronischem Sucher (EVF). Der OVF zeigt die reale Welt mit überlagertem digitalem Rahmen. Der EVF ist ein hochauflösendes 3,69M-Punkte-OLED. Street-Fotografen lieben diese Flexibilität.</p>
+            </div>
+            <div class="content-block">
+                <h3>Videofähigkeiten</h3>
+                <p>Überraschend leistungsfähig für eine Kompaktkamera. 6,2K Open Gate gibt dir massiven Spielraum zum Beschneiden und Stabilisieren in der Nachbearbeitung. 4K60 ist verfügbar, und alle Filmsimulationen funktionieren im Video. Der eingebaute IBIS verbessert Video drastisch gegenüber früheren Modellen.</p>
+            </div>
+            <div class="content-block">
+                <h3>Design & Ergonomie</h3>
+                <p>Das Retro-Messsucher-Design ist ikonisch und zeitlos. Die Bedienelemente sind absichtsvoll: Verschlusszeitrad oben, Blendenring am Objektiv, Belichtungskorrekturrad. Es fühlt sich an, eine Kamera wie in den 60ern zu bedienen, aber mit moderner Technik im Inneren.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Ideales Zubehör für die Fujifilm X100VI</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <h4>WCL-X100 II Weitwinkelkonverter</h4>
+                    <p>Macht aus 23mm effektiv 19mm (28mm Äquivalent). Perfekt für Landschaften und Architektur ohne das charakteristische Design zu ruinieren.</p>
+                </div>
+                <div class="recommendation-card">
+                    <h4>TCL-X100 II Telekonverter</h4>
+                    <p>Erweitert auf 33mm (50mm Äquivalent). Ideal für Porträts mit mehr Motivseparation und Hintergrundkompression.</p>
+                </div>
+                <div class="recommendation-card">
+                    <h4>NP-W126S Ersatzakkus</h4>
+                    <p>Mit nur 310 Aufnahmen pro Ladung sind Ersatzakkus essentiell. Nimm 2-3 für einen ganzen Tag Streetfotografie mit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Fujifilm X100VI FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Warum ist die X100VI so schwer zu kaufen?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Die Nachfrage übersteigt bei weitem das Angebot. Social Media (besonders TikTok und Instagram) haben die X100-Serie viral gemacht. Fujifilm erhöht die Produktion, aber die Wartezeiten können Monate betragen. Trag dich in Wartelisten von autorisierten Händlern ein, anstatt überhöhte Preise zu zahlen.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Ist ein Festobjektiv einschränkend?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Es ist eine bewusste Entscheidung. Die 35mm-Äquivalent-Brennweite ist vielseitig für Street, Dokumentation, Reisen und Umgebungsporträts. Viele Fotografen finden, dass ein festes Objektiv die Kreativität verbessert, indem es zwingt, mit den Füßen zu zoomen. Für Tele oder Ultra-Weitwinkel ist eine Wechselobjektiv-Kamera besser.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Lohnt sich das Upgrade von der X100V?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Wenn du oft bei wenig Licht fotografierst: ja. Der eingebaute IBIS ist ein Gamechanger für Freihandaufnahmen bei niedrigen Verschlusszeiten. Der 40MP-Sensor bietet mehr Beschnittspielraum. Wenn du mit der X100V zufrieden bist, ist sie nach wie vor eine exzellente Kamera.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3><button class="faq-toggle" aria-expanded="false"><span class="faq-icon"></span>Für wen ist die Fujifilm X100VI geeignet?</button></h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>Street-Fotografen, Reisende und Dokumentaristen, die eine kompakte, dezente Kamera mit Profi-Bildqualität wollen. Menschen, die das analoge Aufnahmeerlebnis mit physischen Bedienelementen schätzen. Enthusiasten, die wissen, dass 35mm ihre Brennweite ist.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="final-verdict">
+                <h2>Abschließende Empfehlung</h2>
+                <p>Die Fujifilm X100VI ist die ultimative Premium-Kompaktkamera. Sie kombiniert Spitzen-Bildqualität, ikonisches Design und einzigartige Features wie den Hybrid-OVF/EVF zu einem Erlebnis, das keine andere Kamera bietet.</p>
+                <p><strong>Kauf sie wenn:</strong> Du die beste Kompaktkamera für Reisen und Street willst, weißt dass 35mm deine Brennweite ist, und bereit bist für Premium-Qualität zu zahlen.</p>
+                <p><strong>Lass sie stehen wenn:</strong> Du Zoom-Flexibilität brauchst, auf ein Budget achten musst oder Wechselobjektive bevorzugst.</p>
+            </div>
+        </section>
+
+        <section class="section author-box">
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+                <div>
+                    <h4 style="margin: 0 0 8px 0;">Geschrieben vom cameraupick Redaktionsteam</h4>
+                    <p style="margin: 0; color: var(--muted); font-size: 14px;">Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras.</p>
+                    <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren Testprozess erfahren →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+<script is:inline src="/assets/js/faq-accordion.js"></script>
+</BaseLayout>

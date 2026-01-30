@@ -1,0 +1,351 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
+import "../../styles/review-page.css";
+---
+
+<BaseLayout
+    title="Canon EOS R50 Review 2026: Best Camera for Beginners"
+    description="Canon EOS R50 Review: 24MP APS-C, 4K30 video, Creative Assist mode. The easiest mirrorless camera to learn. Full specs & verdict."
+>
+    <ProductSchema
+        slot="head"
+        productName="Canon EOS R50"
+        brand="Canon"
+        image="/assets/images/guides/canon-r50.webp"
+        description="Canon EOS R50 mirrorless camera with 24MP APS-C sensor, EVF, and beginner-friendly interface."
+        price={679}
+        priceCurrency="USD"
+        rating={4.6}
+        reviewCount={1}
+        url="/reviews/canon-eos-r50-review"
+        breadcrumbs={[
+            { name: "Canon EOS R50", url: "/reviews/canon-eos-r50-review" },
+        ]}
+    />
+    <main id="main" class="container">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div>
+                    <h1>Canon EOS R50 Review</h1>
+                    <p class="hero-sub">
+                        Canon designed the R50 specifically for smartphone users stepping up to a real camera. With Creative Assist and the easiest menu system in the industry, it removes every barrier to learning photography.
+                    </p>
+                    <div class="meta review-price-badge">Entry-Level Mirrorless · $679</div>
+                </div>
+                <div class="hero-media">
+                    <picture>
+                        <img
+                            src="/assets/images/guides/canon-r50.webp"
+                            alt="Canon EOS R50 camera"
+                            loading="eager"
+                        />
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT CARD -->
+        <section class="section">
+            <div class="product-review-card" id="canon-r50">
+                <div class="product-review-header-v2">
+                    <span class="badge-best">💡 Easiest to Use</span>
+                    <h2 class="product-title">The Verdict</h2>
+                    <p>
+                        The Canon EOS R50 is the most beginner-friendly mirrorless camera on the market. Its "Creative Assist" mode explains technical terms in plain language - "Background Blur" instead of "Aperture" - making the learning curve practically non-existent.
+                    </p>
+                    <p>
+                        What sets the R50 apart is Canon's legendary color science. Skin tones look natural and pleasing straight out of camera, so you spend less time editing. It's the camera we recommend to anyone who just wants great photos without the complexity.
+                    </p>
+                </div>
+
+                <!-- Specs Table -->
+                <table class="specs-table">
+                    <tr>
+                        <th colspan="2" class="specs-group-header">Imaging</th>
+                    </tr>
+                    <tr>
+                        <th>Sensor</th>
+                        <td>24.2MP APS-C CMOS</td>
+                    </tr>
+                    <tr>
+                        <th>Processor</th>
+                        <td>DIGIC X</td>
+                    </tr>
+                    <tr>
+                        <th>Stabilization</th>
+                        <td>Electronic + Movie Digital IS</td>
+                    </tr>
+                    <tr>
+                        <th>ISO Range</th>
+                        <td>100-32,000 (expandable to 51,200)</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2" class="specs-group-header">Autofocus</th>
+                    </tr>
+                    <tr>
+                        <th>AF Points</th>
+                        <td>651 Dual Pixel CMOS AF II zones</td>
+                    </tr>
+                    <tr>
+                        <th>AF System</th>
+                        <td>Eye/Face/Animal Detection</td>
+                    </tr>
+                    <tr>
+                        <th>Burst Speed</th>
+                        <td>15 fps (electronic) / 12 fps (mechanical)</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2" class="specs-group-header">Video</th>
+                    </tr>
+                    <tr>
+                        <th>Max Resolution</th>
+                        <td>4K30 Uncropped / 4K60 1.6x crop</td>
+                    </tr>
+                    <tr>
+                        <th>Internal Rec</th>
+                        <td>4:2:0 8-bit MP4</td>
+                    </tr>
+                    <tr>
+                        <th>Profiles</th>
+                        <td>Canon Log 3, C-Log Off, HDR PQ</td>
+                    </tr>
+                    <tr>
+                        <th>Video Features</th>
+                        <td>Movie IS, Auto Slow Shutter, Product Review Mode</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2" class="specs-group-header">Build & Connectivity</th>
+                    </tr>
+                    <tr>
+                        <th>Viewfinder</th>
+                        <td>0.39" OLED EVF (2.36M dots)</td>
+                    </tr>
+                    <tr>
+                        <th>Screen</th>
+                        <td>3" vari-angle touchscreen (1.04M dots)</td>
+                    </tr>
+                    <tr>
+                        <th>Card Slots</th>
+                        <td>1x SD (UHS-I)</td>
+                    </tr>
+                    <tr>
+                        <th>Ports</th>
+                        <td>USB-C, Micro HDMI, 3.5mm Mic/Remote</td>
+                    </tr>
+                    <tr>
+                        <th>Weather Sealing</th>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <th>Weight</th>
+                        <td>375g (body only)</td>
+                    </tr>
+                </table>
+
+                <a
+                    href="#"
+                    class="btn-buy"
+                    data-product="canon-r50"
+                    rel="sponsored noopener noreferrer"
+                    target="_blank"
+                >
+                    Check Price on Amazon &rarr;
+                </a>
+            </div>
+
+            <!-- PROS/CONS -->
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>What We Like</h4>
+                    <ul>
+                        <li>Industry-best beginner interface with Creative Assist</li>
+                        <li>Gorgeous JPEG colors with Canon's skin tone rendering</li>
+                        <li>Built-in EVF for sunny outdoor shooting</li>
+                        <li>Compact and lightweight (375g body)</li>
+                    </ul>
+                </div>
+
+                <div class="cons">
+                    <h4>Trade-offs</h4>
+                    <ul>
+                        <li>Limited third-party lens options (RF-S mount)</li>
+                        <li>8-bit video only (no 10-bit internal)</li>
+                        <li>Single SD card slot (UHS-I only)</li>
+                        <li>Battery life is average (310 shots)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- IN-DEPTH PERFORMANCE -->
+        <section class="section">
+            <h2 class="section-title">In-Depth Performance</h2>
+
+            <div class="content-block">
+                <h3>Image Quality & Sensor Performance</h3>
+                <p>
+                    The 24.2MP sensor produces clean, detailed images with Canon's characteristic warmth. Dynamic range is competitive with other APS-C cameras at around 12.5 stops. Where Canon excels is color: skin tones are natural, and the "Portrait" and "Standard" Picture Styles produce images that look finished without editing.
+                </p>
+                <p>
+                    ISO performance is solid up to ISO 6400 for everyday use. Beyond that, noise reduction kicks in aggressively, which softens details but keeps images very clean. For social media and web use, ISO 12800 is still very usable.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Autofocus System</h3>
+                <p>
+                    Canon's Dual Pixel CMOS AF II provides 651 selectable points covering the full frame. Eye detection works reliably for both humans and animals, making it great for portraits and pet photography. The system prioritizes faces intelligently, switching between subjects smoothly.
+                </p>
+                <p>
+                    Tracking is good but not quite at Sony's level - fast, erratic subjects can sometimes lose lock. For typical beginner scenarios like family photos and travel, it performs flawlessly. Low-light AF is reliable down to -4 EV.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Video Capabilities</h3>
+                <p>
+                    The R50 offers 4K30 recording without crop, which is excellent for an entry-level camera. There's also 4K60 available with a 1.6x crop. Video quality is clean and sharp, with good color straight from the camera. Canon Log 3 is available for those who want to grade footage.
+                </p>
+                <p>
+                    The main limitation is 8-bit recording internally - there's no 10-bit option even via HDMI. For YouTube and social media, 8-bit is perfectly fine. The Movie IS provides good stabilization, though a gimbal is recommended for walking videos.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Ergonomics & Build</h3>
+                <p>
+                    Canon nailed the form factor. At 375g, it's one of the lightest interchangeable lens cameras available. The grip is shallow but comfortable for smaller hands. The vari-angle touchscreen is responsive and makes selfie shooting easy.
+                </p>
+                <p>
+                    The EVF is a major advantage over screen-only competitors like the ZV-E10 II. On bright sunny days, you'll appreciate being able to compose through the viewfinder. Battery life at 310 shots is average - carry a spare for long outings.
+                </p>
+            </div>
+        </section>
+
+        <!-- IDEAL LENSES -->
+        <section class="section">
+            <h2 class="section-title">Ideal Lenses for the Canon EOS R50</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <h4>Canon RF-S 18-45mm f/4.5-6.3 IS STM (Kit Lens)</h4>
+                    <p>
+                        The kit lens is incredibly compact and has built-in IS. It's a great match for the R50's portability and covers the most common focal lengths for beginners.
+                    </p>
+                </div>
+
+                <div class="recommendation-card">
+                    <h4>Canon RF-S 55-210mm f/5-7.1 IS STM</h4>
+                    <p>
+                        An affordable telephoto for wildlife and sports. The stabilization is excellent, and it pairs well with the kit lens for a complete two-lens kit.
+                    </p>
+                </div>
+
+                <div class="recommendation-card">
+                    <h4>Canon RF 50mm f/1.8 STM</h4>
+                    <p>
+                        The "Nifty Fifty" for Canon RF mount. On APS-C it gives you an 80mm equivalent - perfect for portraits with creamy background blur. Amazing value for the price.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="section">
+            <h2>Canon EOS R50 FAQ</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-icon"></span>
+                            Is the Canon R50 better than a smartphone?
+                        </button>
+                    </h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>
+                            Absolutely. The larger sensor captures more light and detail, interchangeable lenses give you creative flexibility, and background blur is real - not computational. For anything beyond casual snapshots, the R50 is a major upgrade.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-icon"></span>
+                            Should I get the R50 or R100?
+                        </button>
+                    </h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>
+                            Get the R50 unless budget is extremely tight. The R50 has a viewfinder (EVF), faster burst speed, and better video specs. The R100 saves money but lacks features that make learning photography easier.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-icon"></span>
+                            Can I use full-frame RF lenses on the R50?
+                        </button>
+                    </h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>
+                            Yes! All RF lenses work on the R50. You get a 1.6x crop factor, so a 50mm RF lens becomes equivalent to 80mm. This is actually useful for telephoto reach but less ideal for ultra-wide shots.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>
+                        <button class="faq-toggle" aria-expanded="false">
+                            <span class="faq-icon"></span>
+                            Who should buy the Canon EOS R50?
+                        </button>
+                    </h3>
+                    <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+                        <p>
+                            Complete beginners who want to learn photography without frustration. Families who want better photos of kids and pets. Anyone who values great color and simplicity over maximum specs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL RECOMMENDATION -->
+        <section class="section">
+            <div class="final-verdict">
+                <h2>Final Recommendation</h2>
+                <p>
+                    The Canon EOS R50 is the most approachable mirrorless camera we've tested. It won't overwhelm you with menus or features - it just helps you take great photos from day one.
+                </p>
+                <p>
+                    <strong>Buy it if:</strong> You're new to cameras and want the easiest learning curve, or you prioritize beautiful JPEGs and Canon's colors over video specs.
+                </p>
+                <p>
+                    <strong>Skip it if:</strong> You need 10-bit video, want the largest lens ecosystem (choose Sony), or plan to shoot professionally and need dual card slots.
+                </p>
+            </div>
+        </section>
+
+        <!-- AUTHOR BOX -->
+        <section class="section author-box">
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <img src="/assets/images/team-avatar.webp" alt="cameraupick Editorial Team" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+                <div>
+                    <h4 style="margin: 0 0 8px 0;">Written by cameraupick Editorial Team</h4>
+                    <p style="margin: 0; color: var(--muted); font-size: 14px;">
+                        Our team of professional photographers and videographers has 10+ years of experience testing cameras. We buy our own gear and provide honest, unbiased reviews.
+                    </p>
+                    <a href="/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Learn more about our testing process →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+<script is:inline src="/assets/js/faq-accordion.js"></script>
+</BaseLayout>
