@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FAQSchema from '../../../components/FAQSchema.astro';
+import OrganizationSchema from '../../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Warum Vollformat statt APS-C für Video wählen?",
+    answer: "Vollformat bietet überlegene Low-Light-Performance (kritisch für Innen-/Abend-Aufnahmen), geringere Schärfentiefe für kinematisches Bokeh und weiteren Bildwinkel. Jedoch ist APS-C oft ausreichend. Wählen Sie Vollformat, wenn Sie professionell drehen oder extreme Low-Light-Fähigkeit (ISO 6400+) benötigen."
+  },
+  {
+    question: "Was ist die beste Vollformat-Kamera für Video unter 3000 Euro?",
+    answer: "Panasonic Lumix S5 IIX (1.999 Euro) bietet das beste Preis-Leistungs-Verhältnis. Sie hat unbegrenzte Aufnahme, exzellentes IBIS, HDMI-Ausgang und professionelle Codecs. Sony FX3 (3.898 Euro) ist besser, überschreitet aber das Budget. Canon R6 II ist gut für Hybrid-Arbeit, kann aber überhitzen."
+  },
+  {
+    question: "Brauche ich LOG-Profile für professionelles Video?",
+    answer: "LOG-Profile (S-Log, V-Log) bieten maximale Bearbeitungsflexibilität und Dynamikbereich, erfordern aber Color-Grading-Kenntnisse. Anfänger sollten Standard-Profile oder Cinema-Modi (S-Cinetone) nutzen. Upgraden Sie zu LOG, wenn Sie Belichtung verstehen und einen Color-Grading-Workflow haben."
+  },
+  {
+    question: "Können Vollformat-Kameras bei langen Takes überhitzen?",
+    answer: "Einige schon, besonders in 4K 60p. Panasonic S5 IIX und Sony FX3 haben aktive Kühlung und überhitzen selten. Canon R6 II hat sich gegenüber R6 verbessert, hat aber bei heißem Wetter noch thermische Limits. Prüfen Sie spezifische Reviews für Ihre Aufnahmebedingungen."
+  }
+];
 ---
 
 <BaseLayout title="Beste Vollformat-Kamera für Video (2026) — Kameraupick" description="Kino-Qualität im Rucksack. Wir testen die besten Vollformat-Kameras für Filmemacher: Sony FX3, Lumix S5IIX und Canon R6II.">

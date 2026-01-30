@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FAQSchema from '../../../components/FAQSchema.astro';
+import OrganizationSchema from '../../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Was ist die beste Kamera unter 800 Euro?",
+    answer: "Sony ZV-E10 bietet das beste Preis-Leistungs-Verhältnis unter 800 Euro. Sie hat exzellenten Autofokus, 4K-Video, eine große Objektivauswahl und ist für Content Creator konzipiert. Für 698 Euro bleibt Budget für ein Objektiv."
+  },
+  {
+    question: "Kann ich eine Vollformat-Kamera unter 800 Euro bekommen?",
+    answer: "Nein, neue Vollformat-Kameras starten bei ca. 1.500 Euro. Mit 800 Euro Budget bieten APS-C- oder Micro-Four-Thirds-Sensoren besseren Wert mit kleineren, leichteren Objektiven und Gehäusen."
+  },
+  {
+    question: "Soll ich in diesem Budget neu oder gebraucht kaufen?",
+    answer: "Kaufen Sie neu für Garantie und neuesten Autofokus. Gebrauchte Kameras von vor 2-3 Jahren können guten Wert bieten, aber prüfen Sie Auslösezähler und Sensorzustand. Für Anfänger sind neue Kameras wie Canon R100 oder Sony ZV-E10 die sicherere Wahl."
+  },
+  {
+    question: "Welche Funktionen sollte ich bei einer Budget-Kamera priorisieren?",
+    answer: "Priorisieren Sie: (1) Zuverlässigen Autofokus mit Gesichtserkennung, (2) Gute Akkulaufzeit, (3) Verfügbare günstige Objektive, (4) Guten Sucher oder Klappbildschirm. Megapixel und Video-Specs sind weniger wichtig zum Lernen der Fotografie."
+  }
+];
 ---
 
 <BaseLayout title="Beste Kamera unter 800 € (2026) – Kameraupick" description="Die besten Budget-Kameras unter 800 € im Test 2026. Profi-Bildqualität zum kleinen Preis. Canon R100, Sony ZV-E10, Panasonic G100D im Vergleich.">

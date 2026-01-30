@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FAQSchema from '../../../components/FAQSchema.astro';
+import OrganizationSchema from '../../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Sollte ich eine Vlog-Kamera kaufen oder mein Smartphone nutzen?",
+    answer: "Moderne Smartphones (iPhone 15 Pro, Samsung S24) produzieren exzellente Videoqualität. Ein Upgrade zur Kamera lohnt sich, wenn Sie benötigen: (1) Besseren Autofokus für bewegte Motive, (2) Wechselobjektive für kreative Kontrolle, (3) Überlegene Low-Light-Performance, oder (4) Professionelle Audio-Eingänge. Für Anfänger: Nutzen Sie Ihr Smartphone und investieren Sie zuerst in Licht und Audio."
+  },
+  {
+    question: "Was ist wichtiger: 4K-Auflösung oder Bildrate?",
+    answer: "Für YouTube ist 4K mit 30p der Sweet Spot. Es sieht auf modernen Displays scharf aus und lässt sich gut bearbeiten. 4K 60p ist sinnvoll für Zeitlupen-Content oder extra-flüssige Bewegungen. Die meisten Zuschauer bemerken keinen Unterschied zwischen 30p und 60p bei Talking-Head-Content. Priorisieren Sie guten Autofokus und Stabilisierung vor höheren Bildraten."
+  },
+  {
+    question: "Brauche ich Vollformat oder reicht APS-C?",
+    answer: "APS-C reicht für 95% aller YouTuber. Vollformat-Vorteile: (1) Bessere Low-Light-Performance, (2) Geringere Schärfentiefe für kinematischen Look, (3) Weiterer Bildwinkel mit gleichem Objektiv. Aber Vollformat-Kameras und -Objektive kosten deutlich mehr. Starten Sie mit APS-C (Sony ZV-E10 II, Canon R50) und upgraden Sie zu Vollformat (Canon R8, Sony ZV-E1), wenn Low-Light oder Ästhetik limitierend wird."
+  },
+  {
+    question: "Was ist die beste Kamera unter 500 Euro für YouTube?",
+    answer: "DJI Osmo Pocket 3 (520€) ist knapp über Budget, aber lohnenswert für die mechanische Gimbal-Stabilisierung und den 1-Zoll-Sensor. Keine andere Kamera in dieser Preisklasse bietet vergleichbare Videoqualität und Stabilisierung. Für Wechselobjektive mit kleinerem Budget suchen Sie nach gebrauchter Sony ZV-E10 (Gen 1) um 500-600€."
+  }
+];
 ---
 
 <BaseLayout 

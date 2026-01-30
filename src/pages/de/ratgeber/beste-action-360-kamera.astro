@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FAQSchema from '../../../components/FAQSchema.astro';
+import OrganizationSchema from '../../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Was ist besser: Action-Kamera oder 360-Kamera?",
+    answer: "Action-Kameras (GoPro Hero 13) sind besser für traditionelles POV-Material mit überlegener Stabilisierung. 360-Kameras (Insta360 X4) erfassen alles um Sie herum und lassen Sie in der Nachbearbeitung neu framen – perfekt für Extremsport, wo Sie die Action nicht vorhersagen können. Wählen Sie basierend auf Bearbeitungs-Workflow-Präferenz."
+  },
+  {
+    question: "Brauche ich Wasserdichtigkeit für Action-Kameras?",
+    answer: "Sehr empfohlen. Die meisten Action-Kameras (GoPro Hero 13, DJI Action 5 Pro) sind ohne Gehäuse bis 10-18m wasserdicht – perfekt für Surfen, Schwimmen oder Regen. 360-Kameras brauchen oft separate wasserdichte Gehäuse. Prüfen Sie Tiefenangaben für Ihre spezifische Nutzung."
+  },
+  {
+    question: "Wie funktioniert 360-Kamera-Reframing?",
+    answer: "360-Kameras erfassen simultan alles in alle Richtungen. In Bearbeitungssoftware (Insta360 Studio, kostenlos) wählen Sie virtuelle Kamerawinkle nach der Aufnahme. Dies ermöglicht dynamische Perspektiven, die mit traditionellen Kameras unmöglich sind – perfekt für Skateboarding, Mountainbiking oder Reisen."
+  },
+  {
+    question: "Was ist die beste Action-Kamera für Low Light?",
+    answer: "DJI Osmo Action 5 Pro hat den größten Sensor (1/1.3-Zoll) unter Action-Kameras und bietet beste Low-Light-Performance. GoPro Hero 13 ist gut, aber nicht so sauber in Schatten. Für nächtlichen Action-Sport erwägen Sie zusätzliche Beleuchtung."
+  }
+];
 ---
 
 <BaseLayout title="Beste Action- & 360-Kamera (2026) — Kameraupick" description="Alles erfassen. Die besten Action- und 360-Kameras für Sport, Reisen und kreatives Zuschneiden von GoPro, Insta360 und DJI.">

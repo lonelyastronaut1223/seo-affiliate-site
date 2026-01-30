@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FAQSchema from '../../../components/FAQSchema.astro';
+import OrganizationSchema from '../../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Was ist die wichtigste Eigenschaft für Vlogging?",
+    answer: "Zuverlässiger Autofokus mit Gesichts-/Augenerkennung ist essentiell. Solo-Vlogger brauchen eine Kamera, die sie automatisch scharf hält während sie sich bewegen und sprechen. Sony ZV-E1 und DJI Pocket 3 sind hier mit KI-gestütztem Subject Tracking hervorragend."
+  },
+  {
+    question: "Brauche ich einen Gimbal zum Vloggen?",
+    answer: "Nicht unbedingt. DJI Pocket 3 hat einen eingebauten mechanischen Gimbal. Kameras mit gutem IBIS (Sony ZV-E1, OM-1 Mark II) liefern ruhiges Handheld-Material. Für Walk-and-Talk ist IBIS oder Gimbal sehr empfehlenswert. Stativ-Vlogs brauchen keine Stabilisierung."
+  },
+  {
+    question: "Sollten Vlog-Kameras einen Klappbildschirm haben?",
+    answer: "Absolut essentiell. Ein voll schwenkbarer Klappbildschirm (nicht nur neigbar) lässt Sie das Framing während der Aufnahme kontrollieren. Alle von uns empfohlenen Vlog-Kameras haben Klappbildschirme, außer Action-Kameras, die Companion-Apps nutzen."
+  },
+  {
+    question: "Ist 4K notwendig für YouTube-Vlogs?",
+    answer: "1080p ist für YouTube akzeptabel, aber 4K ist empfohlen. Es erlaubt Cropping in der Nachbearbeitung für besseres Framing, liefert schärfere Details auf modernen Displays und macht Ihren Content zukunftssicher. Die meisten Zuschauer sehen in 1080p, aber 4K gibt Bearbeitungsflexibilität."
+  }
+];
 ---
 
 <BaseLayout title="Beste Vlog-Kamera (2026) — Kameraupick" description="Beste Vlog-Kamera 2026: DJI Pocket 3 für perfekte Stabilisierung, Sony ZV-E1 für Profi-Qualität. Mit Kaufberatung für YouTube, TikTok & Instagram Creator.">

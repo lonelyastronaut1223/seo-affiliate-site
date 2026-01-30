@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FAQSchema from '../../../components/FAQSchema.astro';
+import OrganizationSchema from '../../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Was macht eine Kamera gut für Foto und Video?",
+    answer: "Hybrid-Kameras zeichnen sich aus durch: (1) Schnellen kontinuierlichen Autofokus für Video, (2) Gehäusestabilisierung (IBIS) für Handheld-Aufnahmen, (3) Hochauflösender Sensor für detaillierte Fotos, (4) 4K-Video mit mindestens 60fps, (5) Gute Rolling-Shutter-Performance."
+  },
+  {
+    question: "Brauche ich Vollformat für Hybrid-Fotografie?",
+    answer: "Nicht zwingend. APS-C-Hybriden wie Sony A6700 liefern exzellente Ergebnisse für beides. Vollformat (Sony A7 IV, Panasonic S5 II) bietet besseres Low-Light und Hintergrundunschärfe, kostet aber mehr. Starten Sie mit APS-C, außer Sie fotografieren professionell."
+  },
+  {
+    question: "Was ist wichtiger: IBIS oder Objektivstabilisierung?",
+    answer: "IBIS ist besser für Hybrid-Arbeit. Es stabilisiert jedes Objektiv (auch Vintage-Glas) und funktioniert für Foto und Video. Objektivstabilisierung hilft nur bei diesem spezifischen Objektiv. Canon R6 II und Panasonic S5 II haben exzellente IBIS-Systeme."
+  },
+  {
+    question: "Können Spiegellose bei langen Videoaufnahmen überhitzen?",
+    answer: "Einige schon, besonders in 4K 60p. Panasonic S5 II und Sony A7 IV überhitzen dank aktiver Kühlung und effizienter Prozessoren selten. Canon R6 II hat sich gegenüber R6 verbessert, kann aber bei heißen Bedingungen noch Aufnahmen limitieren. Prüfen Sie spezifische Reviews für Ihre Aufnahmebedingungen."
+  }
+];
 ---
 
 <BaseLayout title="Beste Hybrid-Kamera für Foto & Video (2026) — Kameraupick" description="Die wahren Alleskönner. Wir testen die besten Hybrid-Vollformat-Kameras von Sony, Canon und Panasonic für Creator, die alles fotografieren.">

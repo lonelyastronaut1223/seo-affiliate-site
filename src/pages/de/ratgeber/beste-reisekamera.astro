@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FAQSchema from '../../../components/FAQSchema.astro';
+import OrganizationSchema from '../../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Was ist die beste Kompaktkamera für Reisen?",
+    answer: "Fujifilm X100VI ist die beste kompakte Reisekamera. Sie hat ein festes 23mm-Objektiv, wunderschöne Film-Simulationen, exzellente Bildqualität und passt in eine Jackentasche. Für 1.599 Euro ist sie Premium, eliminiert aber Objektivwechsel-Probleme."
+  },
+  {
+    question: "Soll ich mehrere Objektive auf Reisen mitnehmen?",
+    answer: "Nehmen Sie ein vielseitiges Zoom-Objektiv (18-135mm oder 24-105mm) statt mehrerer Festbrennweiten. Es deckt Landschaften, Porträts und Straßenfotografie ab ohne ständige Objektivwechsel. Spart Gewicht und reduziert Sensor-Staub-Risiko."
+  },
+  {
+    question: "Brauche ich Wetterschutz für Reisefotografie?",
+    answer: "Sehr empfohlen, aber nicht zwingend. Wetter-versiegelte Kameras (OM System OM-5, Sony A6700) handhaben Regen und Staub besser. Bei Reisen in tropische oder staubige Regionen gibt Wetterschutz Sicherheit. Sonst funktioniert eine Regenhülle."
+  },
+  {
+    question: "Was ist besser für Reisen: Spiegellose oder Smartphone?",
+    answer: "Spiegellose Kameras bieten besseren Zoom, Low-Light-Performance und Bildqualität. Moderne Smartphones (iPhone 15 Pro) sind für Gelegenheitsreisen unglaublich fähig. Upgraden Sie zu Spiegellos, wenn Sie kreative Kontrolle, bessere Tele-Reichweite (100mm+) oder große Drucke möchten."
+  }
+];
 ---
 
 <BaseLayout title="Beste Reisekamera (2026) — Kameraupick" description="Die besten Reisekameras 2026: Kompakt, leicht, mit stabilisiertem 4K und scharfen Fotos für unterwegs.">

@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import FAQSchema from '../../../components/FAQSchema.astro';
+import OrganizationSchema from '../../../components/OrganizationSchema.astro';
+
+const faqs = [
+  {
+    question: "Welche Kamera ist die beste für absolute Anfänger?",
+    answer: "Die Canon EOS R50 ist die beste Wahl für Einsteiger. Sie hat die intuitivste Benutzeroberfläche mit Creative Assist-Modus, der Einstellungen auf Deutsch erklärt, exzellente Farben direkt aus der Kamera und einen Sucher für sonnige Außenaufnahmen."
+  },
+  {
+    question: "Brauche ich als Anfänger Vollformat?",
+    answer: "Nein, Vollformat ist für Anfänger unnötig. APS-C-Kameras wie Sony ZV-E10 II, Canon R50 und Fujifilm X-T50 sind leichter, günstiger und haben kleinere Objektive. Sie liefern professionelle Ergebnisse. Sparen Sie Vollformat für spezifische Bedürfnisse wie extreme Low-Light-Performance."
+  },
+  {
+    question: "Soll ich ein Kit kaufen oder nur das Gehäuse?",
+    answer: "Kaufen Sie die Kit-Version. Kit-Objektive (meist 16-50mm oder 18-55mm) sind erschwinglich, leicht und perfekt zum Lernen. Sie decken die nützlichsten Brennweiten ab und lassen Sie entdecken, welche Art Fotografie Ihnen gefällt, bevor Sie in Spezialobjektive investieren."
+  },
+  {
+    question: "Wie viele Megapixel brauche ich?",
+    answer: "24 MP sind für Anfänger ausreichend. Das ermöglicht große Drucke bis 50×75 cm und lässt Raum für Beschnitt. Mehr Megapixel (wie Fujifilm X-T50 mit 40 MP) sind schön, aber nicht notwendig. Priorisieren Sie Autofokus-Performance und Benutzerfreundlichkeit vor Megapixel-Anzahl."
+  }
+];
 ---
 
 <BaseLayout title="Beste Kamera für Einsteiger (2026) — Kameraupick" description="Einsteigerfreundliche Kameras für 2026: Wir haben die besten benutzerfreundlichen Kameras von Sony, Canon und Fujifilm getestet. Hier sind unsere Empfehlungen.">
