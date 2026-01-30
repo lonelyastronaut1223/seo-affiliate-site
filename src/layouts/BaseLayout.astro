@@ -101,8 +101,8 @@ const jsonLd = JSON.stringify({
             imagesrcset="/assets/images/guides/main-page-640.webp 640w, /assets/images/guides/main-page-960.webp 960w, /assets/images/guides/main-page-1280.webp 1280w"
             imagesizes="(max-width: 768px) 100vw, 1280px"
             type="image/webp"
+            fetchpriority="high"
         />
-        <link rel="preload" as="style" href="/assets/css/bundle.min.css" />
 
         <!-- CDN preconnect for Anime.js -->
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
@@ -177,11 +177,30 @@ const jsonLd = JSON.stringify({
         <!-- Additional head content slot (for page-specific schemas) -->
         <slot name="head" />
 
-        <!-- CSS - Single bundled file for fewer HTTP requests -->
-        <link rel="stylesheet" href="/assets/css/bundle.min.css" />
+        <!-- Inline Critical CSS for LCP optimization -->
+        <style>
+            /* Critical above-the-fold styles */
+            :root{--bg:#0d1322;--bg-soft:#10182b;--fg:#e9eef9;--muted:#95a1bf;--accent:#4da3ff;--accent-strong:#2b7fe2;--card:rgba(255,255,255,0.03);--shadow:0 24px 70px rgba(6,10,22,0.55);--radius:18px;--radius-sm:12px;--border:1px solid rgba(255,255,255,0.06)}
+            *{box-sizing:border-box}
+            body{margin:0;font-family:"Inter","Segoe UI",system-ui,sans-serif;background:radial-gradient(circle at 20% 20%,rgba(77,163,255,0.18),transparent 32%),var(--bg);color:var(--fg);line-height:1.7;padding-top:70px}
+            .container{width:min(1100px,92vw);margin:0 auto}
+            .hero{position:relative;background:linear-gradient(135deg,rgba(77,163,255,0.1),rgba(16,24,45,0.8));border-radius:16px;padding:28px;border:var(--border);box-shadow:var(--shadow)}
+            .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+            .hero h1{font-size:clamp(22px,3vw,32px);margin-bottom:10px;line-height:1.2;color:#f4f7ff}
+            .hero-sub{font-size:14px;color:#b0b8d1;line-height:1.5}
+            .quiz-card{background:linear-gradient(135deg,rgba(43,127,226,0.1),rgba(16,24,45,0.6));border:1px solid rgba(77,163,255,0.2);display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 24px;border-radius:22px;flex-wrap:wrap}
+            .quiz-title{color:#e9eef9;margin-bottom:6px}
+            .quiz-desc{color:#b0b8d1;margin:0}
+            @media (max-width:768px){.hero-grid{grid-template-columns:1fr}}
+        </style>
 
-        <!-- Shared review page styles -->
-        <link rel="stylesheet" href="/assets/css/review-page.css" />
+        <!-- Non-render-blocking CSS - loads async -->
+        <link rel="preload" href="/assets/css/bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="/assets/css/bundle.min.css" /></noscript>
+
+        <!-- Review page styles - load async -->
+        <link rel="preload" href="/assets/css/review-page.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print" />
+        <noscript><link rel="stylesheet" href="/assets/css/review-page.css" /></noscript>
 
         <!-- Google Analytics - Deferred for performance -->
         <link rel="preconnect" href="https://www.googletagmanager.com" />
