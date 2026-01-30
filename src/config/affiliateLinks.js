@@ -101,6 +101,12 @@ export const affiliateLinks = {
         currency: 'USD',
         url: 'https://amzn.to/4b0w6Ha',
     },
+    'sony-zv-1-ii': {
+        name: 'Sony ZV-1 II',
+        price: 898,
+        currency: 'USD',
+        url: 'https://amzn.to/3VwRzJk',
+    },
 
     // ─────────────────────────────────────────────────────────────────────
     // CANON 佳能相机 (6款)
