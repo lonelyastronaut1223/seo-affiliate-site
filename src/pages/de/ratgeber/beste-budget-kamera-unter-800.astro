@@ -5,352 +5,340 @@ import OrganizationSchema from '../../../components/OrganizationSchema.astro';
 
 const faqs = [
   {
-    question: "Was ist die beste Kamera unter 800 Euro?",
-    answer: "Sony ZV-E10 bietet das beste Preis-Leistungs-Verhältnis unter 800 Euro. Sie hat exzellenten Autofokus, 4K-Video, eine große Objektivauswahl und ist für Content Creator konzipiert. Für 698 Euro bleibt Budget für ein Objektiv."
+    question: "Was ist die beste Kamera unter 800€?",
+    answer: "Sony ZV-E10 bietet den besten Wert unter 800€. Sie hat exzellenten Autofokus, 4K-Video, eine große Objektivauswahl und ist für Content-Creator konzipiert."
   },
   {
-    question: "Kann ich eine Vollformat-Kamera unter 800 Euro bekommen?",
-    answer: "Nein, neue Vollformat-Kameras starten bei ca. 1.500 Euro. Mit 800 Euro Budget bieten APS-C- oder Micro-Four-Thirds-Sensoren besseren Wert mit kleineren, leichteren Objektiven und Gehäusen."
+    question: "Bekomme ich eine Vollformat-Kamera unter 800€?",
+    answer: "Nein, neue Vollformat-Kameras starten bei etwa 1.500€. Bei 800€ Budget bieten APS-C oder Micro-Four-Thirds besseren Wert mit kleineren, leichteren Objektiven und Gehäusen."
   },
   {
-    question: "Soll ich in diesem Budget neu oder gebraucht kaufen?",
-    answer: "Kaufen Sie neu für Garantie und neuesten Autofokus. Gebrauchte Kameras von vor 2-3 Jahren können guten Wert bieten, aber prüfen Sie Auslösezähler und Sensorzustand. Für Anfänger sind neue Kameras wie Canon R100 oder Sony ZV-E10 die sicherere Wahl."
+    question: "Sollte ich bei diesem Budget neu oder gebraucht kaufen?",
+    answer: "Kaufen Sie für Garantie und neuesten Autofokus neu. Gebrauchte Kameras von 2-3 Jahren können großen Wert bieten, aber prüfen Sie Auslösezahl und Sensorzustand."
   },
   {
-    question: "Welche Funktionen sollte ich bei einer Budget-Kamera priorisieren?",
-    answer: "Priorisieren Sie: (1) Zuverlässigen Autofokus mit Gesichtserkennung, (2) Gute Akkulaufzeit, (3) Verfügbare günstige Objektive, (4) Guten Sucher oder Klappbildschirm. Megapixel und Video-Specs sind weniger wichtig zum Lernen der Fotografie."
+    question: "Welche Features sollte ich bei einer Budget-Kamera priorisieren?",
+    answer: "Priorisieren Sie: (1) Zuverlässiger Autofokus mit Gesichtserkennung, (2) Ordentliche Akkulaufzeit, (3) Verfügbare günstige Objektive, (4) Guter Sucher oder Schwenkdisplay."
   }
 ];
 ---
 
-<BaseLayout title="Beste Kamera unter 800 € (2026) – Kameraupick" description="Die besten Budget-Kameras unter 800 € im Test 2026. Profi-Bildqualität zum kleinen Preis. Canon R100, Sony ZV-E10, Panasonic G100D im Vergleich.">
+<BaseLayout title="Beste Budget Kamera unter 800€ (2026) — cameraupick" description="Sie brauchen keine 3.000€ für professionelle Fotos. Wir zeigen Budget-Kameras die 90% der Bildqualität für 20% des Preises bieten.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Beste Budget-Kamera unter 800 € (2026)</h1>
-          <p class="hero-sub">
-            Entgegen der landläufigen Meinung brauchst du keine 3.000 € , um professionelle Fotos zu machen. Diese Kameras bieten 90% der
-            die Bildqualität für 20% des Preises.
-          </p>
-        </div>
-        <div class="hero-media">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Beste Budget Kamera unter 800€ (2026)</h1>
+        <p class="hero-sub">
+          Entgegen der landläufigen Meinung brauchen Sie keine 3.000€ für professionelle Fotos. 
+          Diese Kameras bieten 90% der Bildqualität für 20% des Preises.
+        </p>
+      </div>
+      <div class="hero-media">
+        <picture>
+          <source srcset="/assets/images/guides/budget.webp" type="image/webp">
+          <img src="/assets/images/guides/budget.webp" alt="Budget-Kamera Setup auf Schreibtisch" loading="eager"
+            fetchpriority="high" decoding="async" width="1400" height="900"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
+    <div class="comparison-table-wrapper">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Modell</th>
+            <th>Typ</th>
+            <th>Auflösung</th>
+            <th>Objektiv-Mount</th>
+            <th>Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#canon-r100" class="product-name">Canon EOS R100</a></td>
+            <td>DSLR-Stil</td>
+            <td>24MP APS-C</td>
+            <td>RF-S</td>
+            <td class="price-check"><a href="#" data-product="canon-r100" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#sony-zv-e10" class="product-name">Sony ZV-E10</a></td>
+            <td>Kompakt</td>
+            <td>24MP APS-C</td>
+            <td>E-Mount</td>
+            <td class="price-check"><a href="#" data-product="sony-zv-e10" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#panasonic-g100d" class="product-name">Panasonic Lumix G100D</a></td>
+            <td>Micro 4/3</td>
+            <td>20MP M4/3</td>
+            <td>M4/3</td>
+            <td class="price-check"><a href="#" data-product="panasonic-g100d" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Product 1 -->
+  <section class="section" id="canon-r100">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">💰 Günstigste Option</span>
           <picture>
-            <source srcset="/assets/images/guides/budget.webp" type="image/webp">
-            <img src="/assets/images/guides/budget.webp" alt="Budget Kamera setup on desk"
-              loading="eager" fetchpriority="high" decoding="async" width="1400" height="900"
-              style="width: 100%; height: 100%; object-fit: cover;">
+            <source srcset="/assets/images/guides/canon-r100.webp" type="image/webp">
+            <img src="/assets/images/guides/canon-r100.webp" alt="Canon EOS R100" loading="lazy">
           </picture>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
-      <div class="comparison-table-wrapper">
-        <table class="comparison">
-          <thead>
-            <tr>
-              <th>Modell</th>
-              <th>Typ</th>
-              <th>Auflösung</th>
-              <th>Objektivanschluss</th>
-              <th>Preis</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="#canon-r100" class="product-name">Canon EOS R100</a>
-              </td>
-              <td>DSLR-Stil</td>
-              <td>24MP APS-C</td>
-              <td>RF-S</td>
-              <td class="price-check"><a href="#" data-product="canon-r100" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#sony-zv-e10" class="product-name">Sony ZV-E10</a>
-              </td>
-              <td>Kompakt</td>
-              <td>24MP APS-C</td>
-              <td>E-Halterung</td>
-              <td class="price-check"><a href="#" data-product="sony-zv-e10" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#panasonic-g100d" class="product-name">Panasonic Lumix G100D</a>
-              </td>
-              <td>Micro 4/3</td>
-              <td>20MP M4/3</td>
-              <td>M4/3</td>
-              <td class="price-check"><a href="#" data-product="panasonic-g100d" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Product 1 -->
-    <section class="section" id="canon-r100">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">💰 Günstigste Option</span>
-            <picture>
-              <source srcset="/assets/images/guides/canon-r100.webp" type="image/webp">
-              <img src="/assets/images/guides/canon-r100.webp" alt="Canon EOS R100" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title"><a href="/de/reviews/canon-eos-r100-review">Canon EOS R100</a></h3>
-            <p>
-              Das ist derzeit die günstigste spiegellose Kamera auf dem Markt mit Sucher. Sie verzichtet auf
-              aufwändige Funktionen wie Touchscreens und Klappbildschirme, um sich rein auf Bildqualität zu
-              konzentrieren.
-            </p>
-            <p>
-              Sie nutzt den gleichen 24MP-Sensor wie in viel teureren Canon-Kameras, was bedeutet, dass deine Fotos
-              identisch mit denen eines 1.000-€-Gehäuses. Ideal geeignet für Studenten, die rein Fotografie lernen wollen.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">24MP APS-C</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Bildschirm</span>
-                <span class="spec-value">Fest (Kein Touchscreen)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">AF</span>
-                <span class="spec-value">Augenerkennung</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Gewicht</span>
-                <span class="spec-value">356g</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="canon-r100" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-            <a href="/de/reviews/canon-eos-r100-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
-              Zum vollständigen Test →
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Unglaubliche Bildqualität für den Preis</li>
-              <li>Kompakt und leicht</li>
-              <li>Inklusive elektronischem Sucher (EVF)</li>
-              <li>Großartige Canon-Farben</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Display ist fest und kein Touchscreen</li>
-              <li>4K-Video hat starken Crop und schlechten Autofokus</li>
-              <li>Verwendet ältere, langsamere Technik</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 2 -->
-    <section class="section" id="sony-zv-e10">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🏆 Preis-Leistung King</span>
-            <!-- Reusing ZV-E10 II image but referencing Gen 1 as Budget option concept, or simply using same style image -->
-            <picture>
-              <source srcset="/assets/images/guides/sony-zv-e10-ii.webp" type="image/webp">
-              <img src="/assets/images/guides/sony-zv-e10-ii.webp" alt="Sony ZV-E10" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Sony ZV-E10</h3>
-            <p>
-              Auch mit einem Nachfolger bleibt die originale ZV-E10 die Königin des Preis-Leistungs-Verhältnisses. Du bekommst 4K-Video, einen voll
-              schwenkbaren Bildschirm, Kopfhörerbuchse und Mikrofoneingang – Funktionen, die normalerweise 1.000 €+
-              Kameras vorbehalten sind.
-            </p>
-            <p>
-              Der Autofokus ist immer noch Meilen voraus gegenüber der Konkurrenz in dieser Preisklasse. Er verfolgt Augen und Gesichter zuverlässig und macht sie zum perfekten Budget-Hybrid für YouTuber, die auch fotografieren.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">24MP APS-C</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">4K30 (Uncropped)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Objektiv</span>
-                <span class="spec-value">Sony E-Halterung</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Mic</span>
-                <span class="spec-value">3-Capsule (Gut)</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="sony-zv-e10" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Zugang zu erschwinglichen Sigma/Tamron-Objektiven</li>
-              <li>Voll ausklappbarer Bildschirm für Selfies/Vlogging</li>
-              <li>Zuverlässiger Gesichts-/Augen-Autofokus</li>
-              <li>Kopfhörer- und Mikrofon-Anschlüsse inklusive</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Kein Sucher (nur Bildschirm)</li>
-              <li>Rolling Shutter (Jello-Effekt) bei 4K</li>
-              <li>Menüs im älteren, verwirrenden Stil</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 3 -->
-    <section class="section" id="lumix-g100d">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">📸 Winziger Hybrid</span>
-            <picture>
-              <source srcset="/assets/images/guides/panasonic-g100d.webp" type="image/webp">
-              <img src="/assets/images/guides/panasonic-g100d.webp" alt="Panasonic Lumix G100D" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Panasonic Lumix G100D</h3>
-            <p>
-              Die G100D ist eine winzige Kamera mit großem Herzen. Sie nutzt den kleineren Micro-Four-Thirds-Sensor, wodurch Kamera und Objektive unglaublich tragbar sind. Sie hat einen wunderschönen, hellen elektronischen Sucher – etwas, das der Sony ZV-E10 fehlt.
-            </p>
-            <p>
-              Sie bietet Nokia OZO Audio-Tracking, das den Ton auf den Sprechenden fokussiert. Es ist ein fantastisch,
-              oft übersehene Option für Reise-Vlogging mit kleinem Budget.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">20MP M4/3</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Sucher</span>
-                <span class="spec-value">High Res OLED</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Audio</span>
-                <span class="spec-value">Nokia OZO</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Charge</span>
-                <span class="spec-value">USB-C</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="panasonic-g100d" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Ausgezeichneter Sucher für helle Tage</li>
-              <li>Große Auswahl günstiger Gebraucht-Objektive</li>
-              <li>Erweiterte Audio-Funktionen eingebaut</li>
-              <li>USB-C-Laden (aktualisiertes Modell)</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Starker Crop bei 4K-Video</li>
-              <li>Autofokus pulsiert (sucht) bei Video</li>
-              <li>Kleinerer Sensor als APS-C-Rivalen</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Budget Kaufberatung</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Gebraucht kaufen und 30% sparen</h3>
-          <p>Kameras sind langlebig. Ein gebrauchtes "Wie Neu"-Gehäuse von seriösen Händlern wie MPB oder KEH zu kaufen ist der cleveste Weg, dein Budget zu strecken.</p>
-        </article>
-        <article class="card">
-          <h3>Kit-Objektiv ist in Ordnung</h3>
-          <p>Mach dir noch keinen Stress wegen teurer Objektive. Das 18-50mm (oder ähnliche) Kit-Objektiv, das mit diesen Kameras kommt, ist perfekt zum Erlernen der Grundlagen.</p>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- Related Posts -->
-    <section class="section related-posts">
-      <h2>Das könnte Sie auch interessieren</h2>
-      <div class="grid">
-        <article class="card card-plain">
-          <h3><a href="/de/ratgeber/beste-kamera-fuer-anfaenger-2026">Beste Kamera für Einsteiger</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="beste-Vlog-kamera">Beste Vlog-Kamera</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="/de/reviews/sony-zv-e10-review">Sony ZV-E10 Testbericht</a></h3>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- Author Box -->
-    <section class="section author-box"
-     >
-      <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team"
-          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
-        <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
-          <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras.
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+        <div class="product-info">
+          <h3 class="product-title"><a href="/de/reviews/canon-eos-r100-review">Canon EOS R100</a></h3>
+          <p>
+            Dies ist aktuell die günstigste spiegellose Kamera auf dem Markt mit Sucher. Sie 
+            verzichtet auf fancy Features wie Touchscreens und Schwenkdisplays, um sich rein 
+            auf Bildqualität zu konzentrieren.
           </p>
-          <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren
-            Testprozess erfahren →</a>
+          <p>
+            Sie nutzt den gleichen 24MP-Sensor wie viel teurere Canon-Kameras, was bedeutet, 
+            dass Ihre Fotos identisch aussehen wie von einem 1.000€-Gehäuse. Ideal für Studenten, 
+            die strikt Fotografie lernen wollen.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Display</span>
+              <span class="spec-value">Fix (Kein Touch)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">AF</span>
+              <span class="spec-value">Augenerkennung</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">356g</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="canon-r100" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+          <a href="/de/reviews/canon-eos-r100-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
+            Zum vollständigen Test →
+          </a>
         </div>
       </div>
-    </section>
 
-  </main>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Unglaubliche Bildqualität für den Preis</li>
+            <li>Kompakt und leicht</li>
+            <li>Elektronischer Sucher (EVF) enthalten</li>
+            <li>Tolle Canon-Farben</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Display ist fix und kein Touchscreen</li>
+            <li>4K-Video hat starken Crop & schlechten AF</li>
+            <li>Nutzt ältere, langsamere Technologie</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 2 -->
+  <section class="section" id="sony-zv-e10">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🏆 Preis-Leistungs-König</span>
+          <picture>
+            <source srcset="/assets/images/guides/sony-zv-e10-ii.webp" type="image/webp">
+            <img src="/assets/images/guides/sony-zv-e10-ii.webp" alt="Sony ZV-E10" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Sony ZV-E10</h3>
+          <p>
+            Auch mit einem Nachfolger auf dem Markt bleibt die originale ZV-E10 der König des Preis-Leistungs-Verhältnisses. 
+            Sie bekommen 4K-Video, ein voll schwenkbares Display, einen Kopfhöreranschluss und 
+            Mikrofoneingang—Features, die normalerweise 1.000€+ Kameras vorbehalten sind.
+          </p>
+          <p>
+            Der Autofokus ist immer noch Meilen voraus der Konkurrenz in dieser Preisklasse. 
+            Er trackt Augen und Gesichter zuverlässig—perfekter Budget-Hybrid für YouTuber, die auch fotografieren.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K30 (kein Crop)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Objektiv</span>
+              <span class="spec-value">Sony E-Mount</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Mikro</span>
+              <span class="spec-value">3-Kapsel (Gut)</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="sony-zv-e10" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Zugang zu günstigen Sigma/Tamron-Objektiven</li>
+            <li>Voll schwenkbares Display für Selfies/Vlogging</li>
+            <li>Zuverlässiger Gesichts-/Augen-Autofokus</li>
+            <li>Kopfhörer- und Mikrofon-Ports enthalten</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Kein Sucher (nur Display)</li>
+            <li>Rolling Shutter (Jello-Effekt) in 4K</li>
+            <li>Menüs sind im älteren, verwirrenden Stil</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 3 -->
+  <section class="section" id="panasonic-g100d">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">📸 Tiny Hybrid</span>
+          <picture>
+            <source srcset="/assets/images/guides/panasonic-g100d.webp" type="image/webp">
+            <img src="/assets/images/guides/panasonic-g100d.webp" alt="Panasonic Lumix G100D" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Panasonic Lumix G100D</h3>
+          <p>
+            Die G100D ist eine winzige Kamera mit großem Herz. Sie nutzt den kleineren Micro-Four-Thirds-Sensor, 
+            was der Kamera und den Objektiven unglaubliche Portabilität erlaubt. Sie hat 
+            einen schönen, hellen elektronischen Sucher—etwas, das der Sony ZV-E10 fehlt.
+          </p>
+          <p>
+            Sie bietet Nokia OZO Audio-Tracking, das Audio auf den fokussiert, der spricht. 
+            Eine fantastische, oft übersehene Option für Reise-Vlogging mit kleinem Budget.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">20MP M4/3</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Sucher</span>
+              <span class="spec-value">High-Res OLED</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Audio</span>
+              <span class="spec-value">Nokia OZO</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Laden</span>
+              <span class="spec-value">USB-C</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="panasonic-g100d" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Exzellenter Sucher für helle Tage</li>
+            <li>Riesige Auswahl günstiger Gebrauchtobjektive</li>
+            <li>Fortgeschrittene Audio-Features eingebaut</li>
+            <li>USB-C-Laden (aktualisiertes Modell)</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Starker Crop in 4K-Video</li>
+            <li>Autofokus pulsiert (Hunting) bei Video</li>
+            <li>Kleinerer Sensor als APS-C-Rivalen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Budget-Kaufberatung</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Gebraucht kaufen spart 30%</h3>
+        <p>Kameras sind robust. "Wie neu" Gehäuse von seriösen Händlern wie MPB oder KEH 
+          zu kaufen ist der schlaueste Weg, Ihr Budget zu strecken.</p>
+      </article>
+      <article class="card">
+        <h3>Kit-Objektiv ist okay</h3>
+        <p>Stressen Sie sich noch nicht über teure Objektive. Das 18-50mm (oder ähnliche) 
+          Kit-Objektiv, das mit diesen Kameras kommt, ist perfekt zum Lernen der Basics.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Author Box -->
+  <section class="section author-box">
+    <div style="display: flex; gap: 16px; align-items: flex-start;">
+      <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+      <div>
+        <h4 style="margin: 0 0 8px 0;">Verfasst vom cameraupick Redaktionsteam</h4>
+        <p style="margin: 0; color: var(--muted); font-size: 14px;">
+          Unser Team professioneller Fotografen und Videografen hat 10+ Jahre Erfahrung im Kameratest. 
+          Wir kaufen unsere eigene Ausrüstung und liefern ehrliche, unvoreingenommene Tests.
+        </p>
+        <a href="/de/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Erfahren Sie mehr über unseren Testprozess →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="affiliate">
+    <h2>Partner-Hinweis</h2>
+    <p class="section-sub">
+      Wir kaufen oder leihen unsere eigene Ausrüstung. Kein Hersteller hat für diesen Ratgeber bezahlt. 
+      Wir verdienen eine Provision, wenn Sie unsere Affiliate-Links nutzen.
+    </p>
+  </section>
+
+</main>
 </BaseLayout>

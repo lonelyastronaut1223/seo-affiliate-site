@@ -5,385 +5,353 @@ import OrganizationSchema from '../../../components/OrganizationSchema.astro';
 
 const faqs = [
   {
-    question: "Welche Kamera ist die beste für absolute Anfänger?",
-    answer: "Die Canon EOS R50 ist die beste Wahl für Einsteiger. Sie hat die intuitivste Benutzeroberfläche mit Creative Assist-Modus, der Einstellungen auf Deutsch erklärt, exzellente Farben direkt aus der Kamera und einen Sucher für sonnige Außenaufnahmen."
+    question: "Was ist die beste Kamera für komplette Anfänger?",
+    answer: "Canon EOS R50 ist die beste Wahl für absolute Anfänger. Sie hat die intuitivste Oberfläche mit Creative-Assist-Modus, der Einstellungen verständlich erklärt, exzellente JPEG-Farben und einen Sucher für sonniges Outdoor-Shooting."
   },
   {
-    question: "Brauche ich als Anfänger Vollformat?",
-    answer: "Nein, Vollformat ist für Anfänger unnötig. APS-C-Kameras wie Sony ZV-E10 II, Canon R50 und Fujifilm X-T50 sind leichter, günstiger und haben kleinere Objektive. Sie liefern professionelle Ergebnisse. Sparen Sie Vollformat für spezifische Bedürfnisse wie extreme Low-Light-Performance."
+    question: "Brauche ich Vollformat als Anfänger?",
+    answer: "Nein, Vollformat ist für Anfänger unnötig. APS-C-Kameras wie Sony ZV-E10 II, Canon R50 und Fujifilm X-T50 sind leichter, günstiger und haben kleinere Objektive. Sie liefern professionelle Qualität."
   },
   {
-    question: "Soll ich ein Kit kaufen oder nur das Gehäuse?",
-    answer: "Kaufen Sie die Kit-Version. Kit-Objektive (meist 16-50mm oder 18-55mm) sind erschwinglich, leicht und perfekt zum Lernen. Sie decken die nützlichsten Brennweiten ab und lassen Sie entdecken, welche Art Fotografie Ihnen gefällt, bevor Sie in Spezialobjektive investieren."
+    question: "Sollte ich ein Kit oder nur das Gehäuse kaufen?",
+    answer: "Kaufen Sie die Kit-Version. Kit-Objektive (16-50mm oder 18-55mm) sind erschwinglich, leicht und perfekt zum Lernen. Sie decken die wichtigsten Brennweiten ab."
   },
   {
     question: "Wie viele Megapixel brauche ich?",
-    answer: "24 MP sind für Anfänger ausreichend. Das ermöglicht große Drucke bis 50×75 cm und lässt Raum für Beschnitt. Mehr Megapixel (wie Fujifilm X-T50 mit 40 MP) sind schön, aber nicht notwendig. Priorisieren Sie Autofokus-Performance und Benutzerfreundlichkeit vor Megapixel-Anzahl."
+    answer: "24MP sind für Anfänger völlig ausreichend. Das ermöglicht große Drucke bis 50x75cm und Spielraum zum Zuschneiden. Mehr Megapixel (wie Fujis 40MP) sind nett, aber priorisieren Sie Autofokus und Benutzerfreundlichkeit."
   }
 ];
 ---
 
-<BaseLayout title="Beste Kamera für Einsteiger (2026) — Kameraupick" description="Einsteigerfreundliche Kameras für 2026: Wir haben die besten benutzerfreundlichen Kameras von Sony, Canon und Fujifilm getestet. Hier sind unsere Empfehlungen.">
+<BaseLayout title="Beste Kamera für Anfänger (2026) — cameraupick" description="Einsteigerfreundliche Kamera-Empfehlungen für 2026: Die besten leicht zu bedienenden Kameras von Sony, Canon und Fujifilm.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Beste Kamera für Einsteiger (2026)</h1>
-          <p class="hero-sub">
-            Wir haben über 15 Einsteigerkameras getestet, um diejenigen zu finden, mit denen Fotografie einfach, spaßig
-            und erschwinglich wird.
-          </p>
-        </div>
-        <div class="hero-media">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Beste Kamera für Anfänger (2026)</h1>
+        <p class="hero-sub">
+          Wir haben 15+ Einsteigerkameras getestet, um die zu finden, die Fotografie-Lernen 
+          einfach, spaßig und bezahlbar machen.
+        </p>
+      </div>
+      <div class="hero-media">
+        <picture>
+          <source srcset="/assets/images/guides/beginner.webp" type="image/webp">
+          <img src="/assets/images/guides/beginner.webp" alt="Kamera für Anfänger" loading="eager"
+            fetchpriority="high" decoding="async" width="1400" height="900"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
+    <div class="comparison-table-wrapper">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Modell</th>
+            <th>Geeignet für</th>
+            <th>Stärke</th>
+            <th>Sensor</th>
+            <th>Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#sony-zv-e10-ii" class="product-name">Sony ZV-E10 II</a></td>
+            <td><span class="tag">Gesamt</span></td>
+            <td>Klassenführender AF</td>
+            <td>APS-C (26MP)</td>
+            <td class="price-check"><a href="#" data-product="sony-zv-e10-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#canon-r50" class="product-name">Canon EOS R50</a></td>
+            <td><span class="tag">Bedienung</span></td>
+            <td>Einfache Menüs & Farben</td>
+            <td>APS-C (24MP)</td>
+            <td class="price-check"><a href="#" data-product="canon-r50" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#fujifilm-x-t50" class="product-name">Fujifilm X-T50</a></td>
+            <td><span class="tag">Style / Ästhetik</span></td>
+            <td>Film-Simulationen</td>
+            <td>APS-C (40MP)</td>
+            <td class="price-check"><a href="#" data-product="fujifilm-x-t50" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Product 1 -->
+  <section class="section" id="sony-zv-e10-ii">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🏆 Beste Gesamt</span>
           <picture>
-            <source srcset="/assets/images/guides/beginner.webp" type="image/webp">
-            <img src="/assets/images/guides/beginner.webp" alt="Kamera für Einsteiger" loading="eager"
-              fetchpriority="high" decoding="async" width="1400" height="900"
-              style="width: 100%; height: 100%; object-fit: cover;">
+            <source srcset="/assets/images/guides/sony-zv-e10-ii.webp" type="image/webp">
+            <img src="/assets/images/guides/sony-zv-e10-ii.webp" alt="Sony ZV-E10 II" loading="lazy">
           </picture>
         </div>
-      </div>
-    </section>
-
-    <!-- Schnell Comparison Table -->
-    <section class="section">
-      <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
-      <div class="comparison-table-wrapper">
-        <table class="comparison">
-          <thead>
-            <tr>
-              <th>Modell</th>
-              <th>Beste für</th>
-              <th>Hauptstärke</th>
-              <th>Sensor</th>
-              <th>Preis</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="#sony-zv-e10-ii" class="product-name">Sony ZV-E10 II</a>
-              </td>
-              <td><span class="tag">Gesamtsieger</span></td>
-              <td>Klassenbester Autofokus</td>
-              <td>APS-C (26MP)</td>
-              <td class="price-check"><a href="#" data-product="sony-zv-e10-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#canon-r50" class="product-name">Canon EOS R50</a>
-              </td>
-              <td><span class="tag">Einfachheit</span></td>
-              <td>Einfache Menüs & Farben</td>
-              <td>APS-C (24MP)</td>
-              <td class="price-check"><a href="#" data-product="canon-r50" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#fujifilm-x-t50" class="product-name">Fujifilm X-T50</a>
-              </td>
-              <td><span class="tag">Stil / Vibes</span></td>
-              <td>Filmsimulationen</td>
-              <td>APS-C (40MP)</td>
-              <td class="price-check"><a href="#" data-product="fujifilm-x-t50" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Product 1: Sony ZV-E10 II -->
-    <section class="section" id="sony-zv-e10-ii">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🏆 Bester Allrounder</span>
-            <picture>
-              <source srcset="/assets/images/guides/sony-zv-e10-ii.webp" type="image/webp">
-              <img src="/assets/images/guides/sony-zv-e10-ii.webp" alt="Sony ZV-E10 II Produktbild" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title"><a href="/de/reviews/sony-zv-e10-ii-review">Sony ZV-E10 II</a></h3>
-            <p>
-              Die ursprüngliche ZV-E10 war ein Bestseller, aber die Mark II bringt sie auf ein neues Level. Sie
-              übernimmt den Sensor und
-              das Autofokus-System der High-End A6700, was bedeutet, dass du <strong>Tracking auf Profi-Niveau</strong>
-              in einem
-              Einsteiger-Gehäuse erhältst.
-            </p>
-            <p>
-              Sie ist technisch gesehen "Vlog-First" (kein Sucher), aber lass dich davon nicht täuschen. Um Fotografie
-              zu lernen, ist die
-              Touch-Oberfläche intuitiv, und die Objektivauswahl (E-Halterung) ist die größte und erschwinglichste der Welt.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">26MP APS-C</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">4K60 (10-Bit)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Gewicht</span>
-                <span class="spec-value">377g</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Akku</span>
-                <span class="spec-value">NP-FZ100 (Top)</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="sony-zv-e10-ii" rel="sponsored noopener noreferrer" target="_blank">
-              Preis bei Amazon prüfen &rarr;
-            </a>
-            <a href="/de/reviews/sony-zv-e10-ii-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
-              Zum vollständigen Test →
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Was uns gefällt</h4>
-            <ul>
-              <li>Unglaubliches Motiv-Tracking (Menschen, Tiere, Vögel)</li>
-              <li>Massives Upgrade der Akkulaufzeit (FZ100 Akku)</li>
-              <li>Riesige Auswahl an günstigen, hochwertigen Objektiven</li>
-              <li>Großartiges eingebautes Mikrofon für Video</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Die Nachteile</h4>
-            <ul>
-              <li>Kein elektronischer Sucher (nur Bildschirm)</li>
-              <li>Kein mechanischer Verschluss (Rolling Shutter bei schneller Action)</li>
-              <li>Menüsystem ist tief und kann komplex sein</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 2: Canon R50 -->
-    <section class="section" id="canon-r50">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">💡 Am einfachsten</span>
-            <picture>
-              <source srcset="/assets/images/guides/canon-r50.webp" type="image/webp">
-              <img src="/assets/images/guides/canon-r50.webp" alt="Canon EOS R50 Produktbild" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title"><a href="/de/reviews/canon-eos-r50-review">Canon EOS R50</a></h3>
-            <p>
-              Wenn die Sony zu kompliziert klingt, nimm die Canon R50. Sie wurde speziell für Smartphone-Umsteiger
-              entwickelt.
-              Der "Creative Assist"-Modus erklärt Fachbegriffe in verständlicher Sprache (z.B. "Hintergrundunschärfe"
-              statt "Blende").
-            </p>
-            <p>
-              Sie hat einen Sucher (toll für sonnige Tage) und liefert diese berühmten, angenehmen Canon-Hauttöne direkt
-              aus der Kamera. Sie ist winzig, niedlich und leistungsstark genug, um jahrelang mit dir zu wachsen.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">24MP APS-C</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">4K30 (Ohne Crop)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Gewicht</span>
-                <span class="spec-value">375g</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Sucher</span>
-                <span class="spec-value">Ja (EVF)</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="canon-r50" rel="sponsored noopener noreferrer" target="_blank">
-              Preis bei Amazon prüfen &rarr;
-            </a>
-            <a href="/de/reviews/canon-eos-r50-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
-              Zum vollständigen Test →
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Was uns gefällt</h4>
-            <ul>
-              <li>Beste Benutzeroberfläche für Anfänger</li>
-              <li>Hervorragende JPEG-Farben "direkt aus der Kamera"</li>
-              <li>Vergleichs-Modus hilft beim Lernen der Einstellungen</li>
-              <li>Inklusive Sucher (im Gegensatz zur ZV-E10)</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Die Nachteile</h4>
-            <ul>
-              <li>Objektivauswahl ist begrenzt (RF-S Halterung)</li>
-              <li>Noch keine Autofokus-Objektive von Drittanbietern</li>
-              <li>4K-Video hat ein 60-Minuten-Limit (meistens okay)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 3: Fujifilm X-T50 -->
-    <section class="section" id="fuji-x-t50">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">✨ Bester Stil</span>
-            <picture>
-              <source srcset="/assets/images/guides/fujifilm-x-t50.webp" type="image/webp">
-              <img src="/assets/images/guides/fujifilm-x-t50.webp" alt="Fujifilm X-T50 Produktbild" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title"><a href="/de/reviews/fujifilm-x-t50-review">Fujifilm X-T50</a></h3>
-            <p>
-              Fotografie sollte inspirierend sein, und die X-T50 ist die inspirierendste Kamera auf dieser Liste. Mit
-              speziellen
-              Einstellrädern für Filmsimulationen kannst du sofort zwischen "Kodak Gold" oder "Classic Chrome" Looks
-              wechseln.
-            </p>
-            <p>
-              Sie besitzt denselben hochauflösenden 40MP-Sensor wie die Profi-X-T5. Sie kostet mehr als die anderen,
-              aber du sparst Zeit
-              (und Geld) bei der Nachbearbeitung, weil die Fotos fertig aussehen, sobald du den Auslöser drückst.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">40MP APS-C</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">6.2K Open Gate</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">IBIS</span>
-                <span class="spec-value">Ja (7 Blenden)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Stil</span>
-                <span class="spec-value">Retro-Wahlräder</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="fujifilm-x-t50" rel="sponsored noopener noreferrer" target="_blank">
-              Preis bei Amazon prüfen &rarr;
-            </a>
-            <a href="/de/reviews/fujifilm-x-t50-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
-              Zum vollständigen Test →
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Was uns gefällt</h4>
-            <ul>
-              <li>Filmsimulationen machen Nachbearbeitung optional</li>
-              <li>Eingebaute Stabilisierung (IBIS) für scharfe Low-Light-Aufnahmen</li>
-              <li>Höchste Auflösungsklasse (40MP)</li>
-              <li>Eigenes Filmsimulations-Wahlrad auf der Oberseite</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Die Nachteile</h4>
-            <ul>
-              <li>Teuerste Option auf dieser Liste</li>
-              <li>Akkulaufzeit ist durchschnittlich (W126S Akku)</li>
-              <li>Autofokus ist gut, aber Sony ist zuverlässiger</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>So entscheidest du richtig: Checkliste für Einsteiger</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>1. Autofokus ist König</h3>
-          <p>Schau nicht zuerst auf Megapixel. Schau auf den Autofokus. Eine Kamera, die automatisch auf das Auge
-            fokussieren kann
-            (Augen-AF), stellt sicher, dass deine Porträts zu 99% scharf sind, damit du dich auf die Bildkomposition
-            konzentrieren kannst.</p>
-        </article>
-        <article class="card">
-          <h3>2. Die Objektiv-Falle</h3>
-          <p>Ein Kameragehäuse ist nur so gut wie seine Objektive. Sony (E-Halterung) hat die meisten günstigen Optionen.
-            Canon
-            (RF) ist großartig, aber proprietär/teuer. Fuji (X-Halterung) ist exzellent für Festbrennweiten.</p>
-        </article>
-        <article class="card">
-          <h3>3. Sucher vs. Bildschirm</h3>
-          <p>Wenn du draußen bei hellem Sonnenlicht fotografierst, BRAUCHST du einen Sucher (EVF) wie bei der Canon R50
-            oder Fuji X-T50. Wenn
-            du hauptsächlich Video oder drinnen fotografierst, ist eine Nur-Bildschirm-Kamera wie die ZV-E10 II völlig
-            in Ordnung.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="affiliate">
-      <h2>Warum uns vertrauen?</h2>
-      <p class="section-sub">
-        Wir kaufen unsere Ausrüstung selbst oder mieten sie. Kein Hersteller hat für diese Platzierungen bezahlt. Wir
-        erhalten eine Provision, wenn du unsere
-        Links nutzt, was diese Seite werbefrei hält.
-      </p>
-    </section>
-
-  
-    <!-- Related Posts -->
-    <section class="section related-posts">
-      <h2>Das könnte Sie auch interessieren</h2>
-      <div class="grid">
-        <article class="card card-plain">
-          <h3><a href="beste-Budget-kamera-unter-800">Beste Budget-Kamera unter 800€</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="beste-Vlog-kamera">Beste Vlog-Kamera</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="/de/reviews/canon-eos-r8-review">Canon EOS R8 Testbericht</a></h3>
-        </article>
-      </div>
-    </section>
-
-  
-    <!-- Author Box -->
-    <section class="section author-box">
-      <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
-        <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
-          <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras. 
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+        <div class="product-info">
+          <h3 class="product-title"><a href="/de/reviews/sony-zv-e10-ii-review">Sony ZV-E10 II</a></h3>
+          <p>
+            Die originale ZV-E10 war ein Bestseller, aber die Mark II hebt es auf ein neues Level. 
+            Sie nutzt Sensor und Autofokus-System der High-End A6700—das bedeutet 
+            <strong>Profi-Level-Tracking</strong> in einem Einsteiger-Gehäuse.
           </p>
-          <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren Testprozess erfahren →</a>
+          <p>
+            Sie ist technisch "Vlog-first" (kein Sucher), aber lassen Sie sich nicht täuschen. 
+            Zum Fotografieren-Lernen ist die Touch-Oberfläche intuitiv, und die Objektivauswahl 
+            (E-Mount) ist die größte und günstigste der Welt.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">26MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K60 (10-bit)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">377g</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Akku</span>
+              <span class="spec-value">NP-FZ100 (Top)</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="sony-zv-e10-ii" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+          <a href="/de/reviews/sony-zv-e10-ii-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
+            Zum vollständigen Test →
+          </a>
         </div>
       </div>
-    </section>
 
-  </main>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Kaufgründe</h4>
+          <ul>
+            <li>Unglaubliches Motiv-Tracking (Menschen, Tiere, Vögel)</li>
+            <li>Riesiges Akku-Upgrade (FZ100 Akku)</li>
+            <li>Massive Auswahl günstiger Qualitätsobjektive</li>
+            <li>Tolles eingebautes Mikrofon für Video</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Bedenken</h4>
+          <ul>
+            <li>Kein elektronischer Sucher (nur Display)</li>
+            <li>Kein mechanischer Verschluss (Rolling Shutter bei Action)</li>
+            <li>Menüsystem ist tief und kann komplex sein</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 2 -->
+  <section class="section" id="canon-r50">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">💡 Am einfachsten</span>
+          <picture>
+            <source srcset="/assets/images/guides/canon-r50.webp" type="image/webp">
+            <img src="/assets/images/guides/canon-r50.webp" alt="Canon EOS R50" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="/de/reviews/canon-eos-r50-review">Canon EOS R50</a></h3>
+          <p>
+            Wenn Sony zu kompliziert klingt, nehmen Sie die Canon R50. Sie wurde speziell für 
+            Smartphone-Umsteiger entwickelt. Der "Creative Assist" Modus erklärt Technik-Begriffe 
+            verständlich (z.B. "Hintergrund-Unschärfe" statt "Blende").
+          </p>
+          <p>
+            Sie hat einen Sucher (perfekt für sonnige Tage) und liefert die berühmten, 
+            gefälligen Canon-Hauttöne direkt aus der Kamera. Klein, hübsch und leistungsstark 
+            genug, um Jahre lang mitzuwachsen.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K30 (kein Crop)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">375g</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Sucher</span>
+              <span class="spec-value">Ja (EVF)</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="canon-r50" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+          <a href="/de/reviews/canon-eos-r50-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
+            Zum vollständigen Test →
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Kaufgründe</h4>
+          <ul>
+            <li>Beste Benutzeroberfläche für Anfänger</li>
+            <li>Exzellente JPEG-Farben direkt aus der Kamera</li>
+            <li>Vergleichsmodus hilft beim Lernen</li>
+            <li>Hat einen Sucher (anders als ZV-E10)</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Bedenken</h4>
+          <ul>
+            <li>Objektivauswahl ist begrenzt (RF-S Mount)</li>
+            <li>Noch keine Drittanbieter-AF-Objektive</li>
+            <li>4K-Video hat 60min Limit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 3 -->
+  <section class="section" id="fujifilm-x-t50">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">✨ Bester Style</span>
+          <picture>
+            <source srcset="/assets/images/guides/fujifilm-x-t50.webp" type="image/webp">
+            <img src="/assets/images/guides/fujifilm-x-t50.webp" alt="Fujifilm X-T50" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="/de/reviews/fujifilm-x-t50-review">Fujifilm X-T50</a></h3>
+          <p>
+            Fotografie sollte inspirieren, und die X-T50 ist die inspirierendste Kamera dieser Liste. 
+            Mit dedizierten Drehreglern für Film-Simulationen können Sie zwischen "Kodak Gold" 
+            oder "Classic Chrome" Looks sofort wechseln.
+          </p>
+          <p>
+            Sie hat den gleichen hochauflösenden 40MP-Sensor wie die Profi X-T5. Sie kostet mehr, 
+            aber Sie sparen Zeit (und Geld) beim Bearbeiten, weil die Fotos fertig aussehen, 
+            sobald Sie den Auslöser drücken.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">40MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">6.2K Open Gate</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">IBIS</span>
+              <span class="spec-value">Ja (7 Stufen)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Style</span>
+              <span class="spec-value">Retro-Regler</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="fujifilm-x-t50" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+          <a href="/de/reviews/fujifilm-x-t50-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
+            Zum vollständigen Test →
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Kaufgründe</h4>
+          <ul>
+            <li>Film-Simulationen machen Bearbeitung optional</li>
+            <li>Eingebaute Stabilisierung (IBIS) für scharfe Low-Light-Aufnahmen</li>
+            <li>Höchste Auflösungsklasse (40MP)</li>
+            <li>Dedizierter Film-Simulations-Regler</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Bedenken</h4>
+          <ul>
+            <li>Teuerste Option dieser Liste</li>
+            <li>Akkulaufzeit ist durchschnittlich</li>
+            <li>Autofokus gut, aber Sony ist zuverlässiger</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>So wählen Sie: Anfänger-Checkliste</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>1. Autofokus ist König</h3>
+        <p>Schauen Sie nicht zuerst auf Megapixel. Schauen Sie auf Autofokus. Eine Kamera, die automatisch 
+          ein Auge erfasst (Eye-AF), stellt sicher, dass Ihre Portraits zu 99% scharf sind.</p>
+      </article>
+      <article class="card">
+        <h3>2. Die Objektiv-Falle</h3>
+        <p>Ein Kamera-Gehäuse ist nur so gut wie seine Objektive. Sony (E-Mount) hat die meisten günstigen 
+          Optionen. Canon (RF) ist großartig aber teuer. Fuji (X-Mount) ist exzellent für Festbrennweiten.</p>
+      </article>
+      <article class="card">
+        <h3>3. Sucher vs Display</h3>
+        <p>Wenn Sie draußen bei hellem Sonnenschein fotografieren, BRAUCHEN Sie einen Sucher (EVF) wie bei 
+          Canon R50 oder Fuji X-T50. Für hauptsächlich Video oder Indoor ist eine Display-Kamera wie die ZV-E10 II okay.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Author Box -->
+  <section class="section author-box">
+    <div style="display: flex; gap: 16px; align-items: flex-start;">
+      <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+      <div>
+        <h4 style="margin: 0 0 8px 0;">Verfasst vom cameraupick Redaktionsteam</h4>
+        <p style="margin: 0; color: var(--muted); font-size: 14px;">
+          Unser Team professioneller Fotografen und Videografen hat 10+ Jahre Erfahrung im Kameratest. 
+          Wir kaufen unsere eigene Ausrüstung und liefern ehrliche, unvoreingenommene Tests.
+        </p>
+        <a href="/de/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Erfahren Sie mehr über unseren Testprozess →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="affiliate">
+    <h2>Warum uns vertrauen?</h2>
+    <p class="section-sub">
+      Wir kaufen oder leihen unsere eigene Ausrüstung. Kein Hersteller hat für diese Plätze bezahlt. 
+      Wir verdienen eine Provision, wenn Sie unsere Links nutzen, was diese Seite werbefrei hält.
+    </p>
+  </section>
+
+</main>
 </BaseLayout>

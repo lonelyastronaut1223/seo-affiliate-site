@@ -6,349 +6,336 @@ import OrganizationSchema from '../../../components/OrganizationSchema.astro';
 const faqs = [
   {
     question: "Warum Vollformat statt APS-C für Video wählen?",
-    answer: "Vollformat bietet überlegene Low-Light-Performance (kritisch für Innen-/Abend-Aufnahmen), geringere Schärfentiefe für kinematisches Bokeh und weiteren Bildwinkel. Jedoch ist APS-C oft ausreichend. Wählen Sie Vollformat, wenn Sie professionell drehen oder extreme Low-Light-Fähigkeit (ISO 6400+) benötigen."
+    answer: "Vollformat bietet überlegene Low-Light-Performance (kritisch für Indoor/Abend-Shoots), geringere Schärfentiefe für kinematisches Bokeh und breiteres Sichtfeld. APS-C reicht oft aus. Wählen Sie Vollformat für professionelles Arbeiten oder extreme Low-Light-Fähigkeit (ISO 6400+)."
   },
   {
-    question: "Was ist die beste Vollformat-Kamera für Video unter 3000 Euro?",
-    answer: "Panasonic Lumix S5 IIX (1.999 Euro) bietet das beste Preis-Leistungs-Verhältnis. Sie hat unbegrenzte Aufnahme, exzellentes IBIS, HDMI-Ausgang und professionelle Codecs. Sony FX3 (3.898 Euro) ist besser, überschreitet aber das Budget. Canon R6 II ist gut für Hybrid-Arbeit, kann aber überhitzen."
+    question: "Was ist die beste Vollformat-Kamera für Video unter 3000€?",
+    answer: "Panasonic Lumix S5 IIX (~2.000€) bietet das beste Preis-Leistungs-Verhältnis. Unbegrenzte Aufnahme, exzellenter IBIS, HDMI-Output und professionelle Codecs. Sony FX3 (~4.000€) ist besser, aber übersteigt das Budget."
   },
   {
     question: "Brauche ich LOG-Profile für professionelles Video?",
-    answer: "LOG-Profile (S-Log, V-Log) bieten maximale Bearbeitungsflexibilität und Dynamikbereich, erfordern aber Color-Grading-Kenntnisse. Anfänger sollten Standard-Profile oder Cinema-Modi (S-Cinetone) nutzen. Upgraden Sie zu LOG, wenn Sie Belichtung verstehen und einen Color-Grading-Workflow haben."
+    answer: "LOG-Profile (S-Log, V-Log) bieten maximale Bearbeitungsflexibilität und Dynamikumfang, erfordern aber Color-Grading-Kenntnisse. Anfänger sollten Standard-Profile oder Cinema-Modi (S-Cinetone) nutzen."
   },
   {
     question: "Können Vollformat-Kameras bei langen Takes überhitzen?",
-    answer: "Einige schon, besonders in 4K 60p. Panasonic S5 IIX und Sony FX3 haben aktive Kühlung und überhitzen selten. Canon R6 II hat sich gegenüber R6 verbessert, hat aber bei heißem Wetter noch thermische Limits. Prüfen Sie spezifische Reviews für Ihre Aufnahmebedingungen."
+    answer: "Manche schon, besonders in 4K 60p. Panasonic S5 IIX und Sony FX3 haben aktive Kühlung und überhitzen selten. Canon R6 II verbesserte sich, hat aber bei heißem Wetter Limits."
   }
 ];
 ---
 
-<BaseLayout title="Beste Vollformat-Kamera für Video (2026) — Kameraupick" description="Kino-Qualität im Rucksack. Wir testen die besten Vollformat-Kameras für Filmemacher: Sony FX3, Lumix S5IIX und Canon R6II.">
+<BaseLayout title="Beste Vollformat-Kamera für Video (2026) — cameraupick" description="Kinoqualität im Rucksack. Wir testen die besten Vollformat-Kameras für Filmemacher: Sony FX3, Lumix S5IIX und Canon R6II.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Beste Vollformat für Video (2026)</h1>
-          <p class="hero-sub">
-            Die Grenze zwischen "YouTuber-Kamera" und "Netflix-Kamera" ist verschwunden. Diese Vollformat-Kameras bieten
-            10-Bit Farben, unglaublichen Dynamikumfang und professionelle Codecs.
-          </p>
-        </div>
-        <div class="hero-media">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Beste Vollformat für Video (2026)</h1>
+        <p class="hero-sub">
+          Die Grenze zwischen "YouTuber-Kamera" und "Netflix-Kamera" ist verschwunden. Diese Vollformat-Kraftpakete 
+          bieten 10-bit Farbe, unglaublichen Dynamikumfang und professionelle Codecs.
+        </p>
+      </div>
+      <div class="hero-media">
+        <picture>
+          <source srcset="/assets/images/guides/fullframe-video.webp" type="image/webp">
+          <img src="/assets/images/guides/fullframe-video.webp" alt="Cinema-Kamera-Rig" loading="eager"
+            fetchpriority="high" decoding="async" width="1400" height="900"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
+    <div class="comparison-table-wrapper">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Modell</th>
+            <th>Zielgruppe</th>
+            <th>Max. Auflösung</th>
+            <th>Kühlung</th>
+            <th>Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#sony-fx3" class="product-name">Sony FX3</a></td>
+            <td><span class="tag">Profi-Filmemacher</span></td>
+            <td>4K 120p</td>
+            <td>Lüfter (Aktiv)</td>
+            <td class="price-check"><a href="#" data-product="sony-fx3" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#panasonic-s5-iix" class="product-name">Lumix S5IIX</a></td>
+            <td><span class="tag">Preis-Leistung</span></td>
+            <td>6K Open Gate</td>
+            <td>Lüfter (Aktiv)</td>
+            <td class="price-check"><a href="#" data-product="panasonic-s5-iix" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#canon-r6-ii" class="product-name">Canon R6 Mark II</a></td>
+            <td><span class="tag">Hybrid-Shooter</span></td>
+            <td>4K 60p</td>
+            <td>Passiv</td>
+            <td class="price-check"><a href="#" data-product="canon-r6-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Product 1 -->
+  <section class="section" id="sony-fx3">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🎬 Netflix-zertifiziert</span>
           <picture>
-            <source srcset="/assets/images/guides/fullframe-video.webp" type="image/webp">
-            <img src="/assets/images/guides/fullframe-video.webp" alt="Cinema Kamera-Rig" loading="eager"
-              fetchpriority="high" decoding="async" width="1400" height="900"
-              style="width: 100%; height: 100%; object-fit: cover;">
+            <source srcset="/assets/images/guides/sony-fx3.webp" type="image/webp">
+            <img src="/assets/images/guides/sony-fx3.webp" alt="Sony FX3 Kamera" loading="lazy">
           </picture>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
-      <div class="comparison-table-wrapper">
-        <table class="comparison">
-          <thead>
-            <tr>
-              <th>Modell</th>
-              <th>Zielgruppe</th>
-              <th>Max. Auflösung</th>
-              <th>Kühlung</th>
-              <th>Preis</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="#sony-fx3" class="product-name">Sony FX3</a>
-              </td>
-              <td><span class="tag">Profi-Filmemacher</span></td>
-              <td>4K 120p</td>
-              <td>Lüfter (Aktiv)</td>
-              <td class="price-check"><a href="#" data-product="sony-fx3" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#panasonic-s5-iix" class="product-name">Lumix S5IIX</a>
-              </td>
-              <td><span class="tag">Preis-Leistung Cinema</span></td>
-              <td>6K Open Gate</td>
-              <td>Lüfter (Aktiv)</td>
-              <td class="price-check"><a href="#" data-product="panasonic-s5-iix" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#canon-r6-ii" class="product-name">Canon R6 Mark II</a>
-              </td>
-              <td><span class="tag">Hybrid-Shooter</span></td>
-              <td>4K 60p</td>
-              <td>Passiv</td>
-              <td class="price-check"><a href="#" data-product="canon-r6-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Product 1 -->
-    <section class="section" id="sony-fx3">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🎬 Netflix-zertifiziert</span>
-            <picture>
-              <source srcset="/assets/images/guides/sony-fx3.webp" type="image/webp">
-              <img src="/assets/images/guides/sony-fx3.webp" alt="Sony FX3 Kamera" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Sony FX3</h3>
-            <p>
-              Die FX3 ist im Wesentlichen eine Kinokamera, die auf die Größe einer spiegellosen Kamera geschrumpft
-              wurde. Sie ist offiziell Netflix-zertifiziert. Die direkt ins Gehäuse gebohrten Befestigungspunkte
-              bedeuten, dass du nicht einmal einen Käfig brauchst.
-            </p>
-            <p>
-              Sie teilt den legendären Sensor der A7S III, was bedeutet, dass sie praktisch im Dunkeln sehen kann. Mit
-              dem mitgelieferten XLR-Griff kannst du professionelle Mikrofone direkt an die Kamera anschließen.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">12MP Vollformat</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Zeitlupe</span>
-                <span class="spec-value">4K 120fps</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Audio</span>
-                <span class="spec-value">XLR-Griff inklusive</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Aufnahme</span>
-                <span class="spec-value">Unbegrenzt (Lüfter)</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="sony-fx3" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Unglaubliche Schwachlicht-ISO-Leistung</li>
-              <li>Keine Überhitzung (aktiver Kühlungslüfter)</li>
-              <li>Griff mit XLR-Audioeingängen inklusive</li>
-              <li>Tally-Lichter (vorne/hinten) zeigen Aufnahme an</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Teuer (Cinema-Line-Preisklasse)</li>
-              <li>Kein Sucher (nur Display)</li>
-              <li>12MP zu wenig für ernsthafte Fotografie</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 2 -->
-    <section class="section" id="panasonic-s5iix">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🖤 Der Geheimtipp</span>
-            <picture>
-              <source srcset="/assets/images/guides/panasonic-s5iix.webp" type="image/webp">
-              <img src="/assets/images/guides/panasonic-s5iix.webp" alt="Panasonic Lumix S5IIX" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Panasonic Lumix S5IIX</h3>
-            <p>
-              Das "X" steht für eXtrem (wahrscheinlich). Diese komplett schwarze Stealth-Version der S5II bietet
-              professionelle Video-Merkmale wie RAW-Video-Ausgabe, interne ProRes-Aufnahme und die Möglichkeit, direkt
-              auf günstige USB-C-SSD-Laufwerke aufzunehmen.
-            </p>
-            <p>
-              Sie bietet Merkmale, die in 6.000€-Kameras zu finden sind, für unter 2.500€. Sie ist das beste
-              Preis-Leistungs-Verhältnis für ernsthafte Videografen auf dem Markt.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Auflösung</span>
-                <span class="spec-value">6K Open Gate</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Codecs</span>
-                <span class="spec-value">ProRes / All-Intra</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Speicher</span>
-                <span class="spec-value">SSD über USB-C</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Streaming</span>
-                <span class="spec-value">Kabellos / Kabelgebunden</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="panasonic-s5-iix" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Direkt auf günstige 2TB SSDs aufnehmen</li>
-              <li>Interne ProRes HQ-Aufnahme</li>
-              <li>Komplett schwarzes Design wirkt professionell</li>
-              <li>Klassenbeste Stabilisierung</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Kontinuierlicher AF leicht hinter Sony</li>
-              <li>Akku entlädt schnell mit SSDs</li>
-              <li>4K60 hat einen Crop</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 3 -->
-    <section class="section" id="canon-r6ii">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🎥 Beste Hybrid-Video</span>
-            <picture>
-              <source srcset="/assets/images/guides/canon-r6ii.webp" type="image/webp">
-              <img src="/assets/images/guides/canon-r6ii.webp" alt="Canon EOS R6 Mark II" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Canon EOS R6 Mark II</h3>
-            <p>
-              Während die FX3 eine Kinokamera und die S5IIX ein Video-Werkzeug ist, ist die R6 Mark II die perfekte
-              Kamera für den "Run-and-Gun"-Shooter, der schnell ein Interview oder B-Roll aufnehmen muss, ohne ein Rig
-              aufzubauen.
-            </p>
-            <p>
-              Ihr 4K 60p wird oversampled und hat keinen Crop, was bedeutet, dass Weitwinkelobjektive auch in Zeitlupe
-              weit bleiben. Der Dual Pixel Autofokus ist zuverlässig und funktioniert fast ohne Anpassungen perfekt.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">24MP Vollformat</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">4K60 (Volle Breite)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Wärmelimit</span>
-                <span class="spec-value">~40min bei 4K60</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">AF</span>
-                <span class="spec-value">Dual Pixel II</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="canon-r6-ii" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Kein Crop im 4K 60p Modus (Hauptverkaufsargument)</li>
-              <li>Ausgezeichnete Falschfarben-Tools</li>
-              <li>Großartige Ergonomie für Handaufnahmen</li>
-              <li>Wunderschöne Canon-Farbwiedergabe</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Kann bei langen Drehtagen überhitzen</li>
-              <li>Micro-HDMI-Anschluss ist eine Schwachstelle</li>
-              <li>Fokushilfe-Tools schwächer als Panasonic</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Profi-Video-Beratung</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Die 10-Bit-Regel</h3>
-          <p>Wenn du Color Grading planst (und das solltest du), brauchst du unbedingt 10-Bit 4:2:2 Aufnahme.
-            8-Bit-Material fällt auseinander ("Banding"), wenn du die Farben stark bearbeitest.</p>
-        </article>
-        <article class="card">
-          <h3>Zubehör ist wichtig</h3>
-          <p>Die Kamera ist nur das Gehirn. Du brauchst noch den Körper: Käfig, Griff, Monitor und V-Halterung-Akku. Plane
-            mindestens 500€ für Zubehör ein.</p>
-        </article>
-      </div>
-    </section>
-
-  
-    <!-- Related Posts -->
-    <section class="section related-posts">
-      <h2>Das könnte Sie auch interessieren</h2>
-      <div class="grid">
-        <article class="card card-plain">
-          <h3><a href="/de/ratgeber/beste-hybrid-kamera">Beste Hybrid-Kamera</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="/de/reviews/sony-a7-iv-review">Sony A7 IV Testbericht</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="/de/reviews/panasonic-s5-ii-review">Panasonic S5 II Testbericht</a></h3>
-        </article>
-      </div>
-    </section>
-
-  
-    <!-- Author Box -->
-    <section class="section author-box">
-      <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
-        <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
-          <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras. 
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+        <div class="product-info">
+          <h3 class="product-title">Sony FX3</h3>
+          <p>
+            Die FX3 ist im Wesentlichen eine Cinema-Kamera, geschrumpft auf Spiegellos-Größe. 
+            Sie ist offiziell Netflix-zertifiziert. Die Montage-Punkte direkt im Gehäuse bedeuten, 
+            dass Sie nicht mal einen Käfig brauchen.
           </p>
-          <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren Testprozess erfahren →</a>
+          <p>
+            Sie teilt den legendären Sensor der A7S III, was bedeutet, sie kann praktisch im 
+            Dunkeln sehen. Mit dem mitgelieferten XLR-Handle können Sie professionelle Mikrofone 
+            direkt anschließen.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">12MP Vollformat</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Slow-Mo</span>
+              <span class="spec-value">4K 120fps</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Audio</span>
+              <span class="spec-value">XLR-Handle inkl.</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Aufnahme</span>
+              <span class="spec-value">Unbegrenzt (Lüfter)</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="sony-fx3" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
         </div>
       </div>
-    </section>
 
-  </main>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Unglaubliche Low-Light-ISO-Performance</li>
+            <li>Keine Überhitzung (aktiver Kühllüfter)</li>
+            <li>Top-Handle mit XLR-Audioeingängen inklusive</li>
+            <li>Tally-Lichter (vorne/hinten) zeigen Aufnahme an</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Teuer (Cinema-Line-Preisgestaltung)</li>
+            <li>Kein Sucher (nur Display)</li>
+            <li>12MP zu niedrig für ernsthafte Fotografie</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 2 -->
+  <section class="section" id="panasonic-s5-iix">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🖤 Das Dark Horse</span>
+          <picture>
+            <source srcset="/assets/images/guides/panasonic-s5iix.webp" type="image/webp">
+            <img src="/assets/images/guides/panasonic-s5iix.webp" alt="Panasonic Lumix S5IIX" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Panasonic Lumix S5IIX</h3>
+          <p>
+            Das "X" steht für eXtrem (wahrscheinlich). Diese komplett schwarze Stealth-Version der S5II 
+            fügt professionelle Video-Features hinzu wie RAW-Video-Output, internes ProRes-Recording 
+            und die Möglichkeit, direkt auf günstige USB-C-SSD-Laufwerke aufzunehmen.
+          </p>
+          <p>
+            Sie bietet Features von 6.000€-Kameras für unter 2.500€. Das beste Preis-Leistungs-Angebot 
+            für ernsthafte Videografen auf dem Markt.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Auflösung</span>
+              <span class="spec-value">6K Open Gate</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Codecs</span>
+              <span class="spec-value">ProRes / All-Intra</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Speicher</span>
+              <span class="spec-value">SSD über USB-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Streaming</span>
+              <span class="spec-value">Wireless / Kabel</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="panasonic-s5-iix" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Direkt auf günstige 2TB-SSDs aufnehmen</li>
+            <li>Internes ProRes HQ-Recording</li>
+            <li>Komplett schwarzes Design wirkt professionell</li>
+            <li>Klassenführende Stabilisierung</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Dauer-Autofokus etwas hinter Sony</li>
+            <li>Akku entlädt schnell mit SSDs</li>
+            <li>4K60 hat einen Crop</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 3 -->
+  <section class="section" id="canon-r6-ii">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🎥 Bestes Hybrid-Video</span>
+          <picture>
+            <source srcset="/assets/images/guides/canon-r6ii.webp" type="image/webp">
+            <img src="/assets/images/guides/canon-r6ii.webp" alt="Canon EOS R6 Mark II" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Canon EOS R6 Mark II</h3>
+          <p>
+            Während die FX3 eine Cinema-Kamera ist und die S5IIX ein Video-Tool, ist die R6 Mark II 
+            die perfekte Kamera für "Run and Gun"-Shooter, die schnell ein Interview oder B-Roll 
+            aufnehmen müssen, ohne ein Rig aufzubauen.
+          </p>
+          <p>
+            Ihr 4K 60p ist oversampled und uncropped, was bedeutet, Ihre Weitwinkelobjektive bleiben 
+            auch in Slow-Motion weit. Der Dual-Pixel-Autofokus ist selbstsicher und braucht fast keine Anpassung.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP Vollformat</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K60 (volle Breite)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Wärmelimit</span>
+              <span class="spec-value">~40min bei 4K60</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">AF</span>
+              <span class="spec-value">Dual Pixel II</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="canon-r6-ii" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Kein Crop in 4K 60p Modus (Hauptverkaufsargument)</li>
+            <li>Exzellente False-Color-Tools</li>
+            <li>Tolle Ergonomie für Freihand-Aufnahmen</li>
+            <li>Wunderschöne Canon-Farbwissenschaft</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Kann an langen Drehtagen überhitzen</li>
+            <li>Micro-HDMI-Port ist Schwachstelle</li>
+            <li>Fokus-Hilfstools schwächer als Panasonic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Profi-Video-Tipps</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Die 10-bit-Regel</h3>
+        <p>Wenn Sie Color-Grading planen (und das sollten Sie), brauchen Sie zwingend 10-bit 4:2:2 Aufnahme. 
+          8-bit-Footage zerfällt ("Banding"), wenn Sie die Farben stark bearbeiten.</p>
+      </article>
+      <article class="card">
+        <h3>Rigging ist wichtig</h3>
+        <p>Die Kamera ist nur das Gehirn. Sie brauchen noch den Körper: einen Käfig, Top-Handle, 
+          Monitor und V-Mount-Akku. Budgetieren Sie mindestens 500€ für Rigging.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Author Box -->
+  <section class="section author-box">
+    <div style="display: flex; gap: 16px; align-items: flex-start;">
+      <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+      <div>
+        <h4 style="margin: 0 0 8px 0;">Verfasst vom cameraupick Redaktionsteam</h4>
+        <p style="margin: 0; color: var(--muted); font-size: 14px;">
+          Unser Team professioneller Fotografen und Videografen hat 10+ Jahre Erfahrung im Kameratest. 
+          Wir kaufen unsere eigene Ausrüstung und liefern ehrliche, unvoreingenommene Tests.
+        </p>
+        <a href="/de/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Erfahren Sie mehr über unseren Testprozess →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="affiliate">
+    <h2>Partner-Hinweis</h2>
+    <p class="section-sub">
+      Wir kaufen oder leihen unsere eigene Ausrüstung. Kein Hersteller hat für diesen Ratgeber bezahlt. 
+      Wir verdienen eine Provision, wenn Sie unsere Affiliate-Links nutzen.
+    </p>
+  </section>
+
+</main>
 </BaseLayout>

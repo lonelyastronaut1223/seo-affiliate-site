@@ -6,340 +6,352 @@ import OrganizationSchema from '../../../components/OrganizationSchema.astro';
 const faqs = [
   {
     question: "Was macht eine Kamera gut für Foto und Video?",
-    answer: "Hybrid-Kameras zeichnen sich aus durch: (1) Schnellen kontinuierlichen Autofokus für Video, (2) Gehäusestabilisierung (IBIS) für Handheld-Aufnahmen, (3) Hochauflösender Sensor für detaillierte Fotos, (4) 4K-Video mit mindestens 60fps, (5) Gute Rolling-Shutter-Performance."
+    answer: "Hybrid-Kameras glänzen mit: (1) Schnellem Dauer-Autofokus für Video, (2) In-Body-Stabilisierung (IBIS) für Freihand-Aufnahmen, (3) Hochauflösendem Sensor für detaillierte Fotos, (4) 4K Video bei mind. 60fps."
   },
   {
-    question: "Brauche ich Vollformat für Hybrid-Fotografie?",
-    answer: "Nicht zwingend. APS-C-Hybriden wie Sony A6700 liefern exzellente Ergebnisse für beides. Vollformat (Sony A7 IV, Panasonic S5 II) bietet besseres Low-Light und Hintergrundunschärfe, kostet aber mehr. Starten Sie mit APS-C, außer Sie fotografieren professionell."
+    question: "Brauche ich Vollformat für Hybrid-Shooting?",
+    answer: "Nicht unbedingt. APS-C-Hybrids wie Sony A6700 liefern exzellente Ergebnisse für beides. Vollformat (Sony A7 IV, Panasonic S5 II) bietet besseres Low-Light und Hintergrund-Unschärfe, kostet aber mehr."
   },
   {
-    question: "Was ist wichtiger: IBIS oder Objektivstabilisierung?",
-    answer: "IBIS ist besser für Hybrid-Arbeit. Es stabilisiert jedes Objektiv (auch Vintage-Glas) und funktioniert für Foto und Video. Objektivstabilisierung hilft nur bei diesem spezifischen Objektiv. Canon R6 II und Panasonic S5 II haben exzellente IBIS-Systeme."
+    question: "Was ist wichtiger: IBIS oder Objektiv-Stabilisierung?",
+    answer: "IBIS ist besser für Hybrid-Arbeit. Es stabilisiert jedes Objektiv (inklusive Vintage-Glas) und funktioniert für Foto und Video. Canon R6 II und Panasonic S5 II haben exzellente IBIS-Systeme."
   },
   {
-    question: "Können Spiegellose bei langen Videoaufnahmen überhitzen?",
-    answer: "Einige schon, besonders in 4K 60p. Panasonic S5 II und Sony A7 IV überhitzen dank aktiver Kühlung und effizienter Prozessoren selten. Canon R6 II hat sich gegenüber R6 verbessert, kann aber bei heißen Bedingungen noch Aufnahmen limitieren. Prüfen Sie spezifische Reviews für Ihre Aufnahmebedingungen."
+    question: "Können spiegellose Kameras bei langen Videoaufnahmen überhitzen?",
+    answer: "Manche können das, besonders in 4K 60p. Panasonic S5 II und Sony A7 IV überhitzen dank aktiver Kühlung und effizienter Prozessoren selten. Canon R6 II verbesserte sich, kann aber bei heißem Wetter limitieren."
   }
 ];
 ---
 
-<BaseLayout title="Beste Hybrid-Kamera für Foto & Video (2026) — Kameraupick" description="Die wahren Alleskönner. Wir testen die besten Hybrid-Vollformat-Kameras von Sony, Canon und Panasonic für Creator, die alles fotografieren.">
+<BaseLayout title="Beste Hybrid-Kamera für Foto & Video (2026) — cameraupick" description="Die wahren Alleskönner. Wir testen die besten Hybrid-Vollformat-Kameras von Sony, Canon und Panasonic für Creator, die alles aufnehmen.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Beste Hybrid-Kamera (2026)</h1>
-          <p class="hero-sub">
-            Eine Kamera für alles. Diese Hybrid-Arbeitstiere liefern 33MP+ hochauflösende Fotos für Kunden und 10-Bit 4K Video für YouTube, alles in einem einzigen Gehäuse.
-          </p>
-        </div>
-        <div class="hero-media">
-          <picture>
-  <source srcset="/assets/images/guides/hybrid.webp" type="image/webp">
-  <img src="/assets/images/guides/hybrid.jpg?v=20260111" alt="Hybrid Kamera body" loading="eager"
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Beste Hybrid-Kamera (2026)</h1>
+        <p class="hero-sub">
+          Eine Kamera für alles. Diese Hybrid-Arbeitstiere liefern 33MP+ hochauflösende Stills für Kunden 
+          und 10-bit 4K-Video für YouTube, alles in einem Gehäuse.
+        </p>
+      </div>
+      <div class="hero-media">
+        <picture>
+          <source srcset="/assets/images/guides/hybrid.webp" type="image/webp">
+          <img src="/assets/images/guides/hybrid.jpg" alt="Hybrid-Kamera Gehäuse" loading="eager"
             fetchpriority="high" decoding="async" width="1400" height="900"
             style="width: 100%; height: 100%; object-fit: cover;">
-</picture>
-        </div>
+        </picture>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
-      <div class="comparison-table-wrapper">
-        <table class="comparison">
-          <thead>
-            <tr>
-              <th>Modell</th>
-              <th>Ideal für</th>
-              <th>Megapixel</th>
-              <th>Video-Spezifikationen</th>
-              <th>Preis</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="#sony-a7iv" class="product-name">Sony A7 IV</a>
-              </td>
-              <td><span class="tag">Der Standard</span></td>
-              <td>33 MP</td>
-              <td>4K60 (Crop)</td>
-              <td class="price-check"><a href="#" data-product="sony-a7-iv" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#panasonic-s5-ii" class="product-name">Panasonic S5II</a>
-              </td>
-              <td><span class="tag">Preis-Leistung / Video</span></td>
-              <td>24 MP</td>
-              <td>6K Open Gate</td>
-              <td class="price-check"><a href="#" data-product="panasonic-s5-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#canon-r6-ii" class="product-name">Canon R6 Mark II</a>
-              </td>
-              <td><span class="tag">Geschwindigkeit / Action</span></td>
-              <td>24 MP</td>
-              <td>4K60 (None)</td>
-              <td class="price-check"><a href="#" data-product="canon-r6-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+  <section class="section">
+    <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
+    <div class="comparison-table-wrapper">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Modell</th>
+            <th>Geeignet für</th>
+            <th>Megapixel</th>
+            <th>Video-Specs</th>
+            <th>Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#sony-a7iv" class="product-name">Sony A7 IV</a></td>
+            <td><span class="tag">Der Standard</span></td>
+            <td>33 MP</td>
+            <td>4K60 (Crop)</td>
+            <td class="price-check"><a href="#" data-product="sony-a7-iv" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#panasonic-s5-ii" class="product-name">Panasonic S5II</a></td>
+            <td><span class="tag">Preis-Leistung</span></td>
+            <td>24 MP</td>
+            <td>6K Open Gate</td>
+            <td class="price-check"><a href="#" data-product="panasonic-s5-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#canon-r6-ii" class="product-name">Canon R6 Mark II</a></td>
+            <td><span class="tag">Speed / Action</span></td>
+            <td>24 MP</td>
+            <td>4K60 (kein Crop)</td>
+            <td class="price-check"><a href="#" data-product="canon-r6-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-    <!-- Product 1 -->
-    <section class="section" id="sony-a7iv">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🏆 Der Goldstandard</span>
-            <picture>
-  <source srcset="/assets/images/guides/sony-a7iv.webp" type="image/webp">
-  <img src="/assets/images/guides/sony-a7iv.webp" alt="Sony A7 IV Testbericht" loading="lazy">
-</picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Sony A7 IV</h3>
-            <p>
-              Dies ist die Kamera, die den "modernen Hybrid" definiert. Mit einem 33MP-Sensor bietet sie deutlich mehr Zuschneidespielraum für Fotos als ihre 24MP-Rivalen. Der Autofokus ist legendär – er verfolgt Augen wie ein Magnet.
-            </p>
-            <p>
-              Sie hat ein riesiges Ökosystem an Drittanbieter-Objektiven von Sigma, Tamron und Samyang, was sie zum erschwinglichsten System für den langfristigen Aufbau macht.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">33MP Vollformat</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">4K 60p (S35 Crop)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Fokus</span>
-                <span class="spec-value">Real-time Augen-AF</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Karten-Slots</span>
-                <span class="spec-value">2 (CFExpress A)</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="sony-a7-iv" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
+  <!-- Product 1 -->
+  <section class="section" id="sony-a7iv">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🏆 Der Goldstandard</span>
+          <picture>
+            <source srcset="/assets/images/guides/sony-a7iv.webp" type="image/webp">
+            <img src="/assets/images/guides/sony-a7iv.webp" alt="Sony A7 IV Test" loading="lazy">
+          </picture>
         </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Höchste Auflösung der Klasse (33MP)</li>
-              <li>Unübertroffene Objektivauswahl (E-Halterung)</li>
-              <li>Fokusatmungs-Kompensation ist großartig</li>
-              <li>Zuverlässige Profi-Ergonomie</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>4K 60p hat einen 1,5-fachen Crop (APS-C-Modus)</li>
-              <li>LCD-Bildschirmqualität ist nur okay</li>
-              <li>Rolling Shutter ist beim elektronischen Verschluss spürbar</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 2 -->
-    <section class="section" id="panasonic-s5ii">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🎬 Beste für Video</span>
-            <picture>
-  <source srcset="/assets/images/guides/panasonic-s5ii.webp" type="image/webp">
-  <img src="/assets/images/guides/panasonic-s5ii.webp" alt="Panasonic Lumix S5II Testbericht" loading="lazy">
-</picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Panasonic Lumix S5II</h3>
-            <p>
-              Panasonic hat endlich ihren Autofokus verbessert. Die S5II nutzt Phasen-AF (PDAF), was sie zuverlässig für Solo-Filmer macht. Aber ihre Superkraft ist das "Open Gate" 6K-Video, das die volle Sensorhöhe aufnimmt.
-            </p>
-            <p>
-              Warum ist das wichtig? Es erlaubt dir, ein vertikales 9:16 (TikTok) und ein horizontales 16:9 (YouTube) Video aus dem <em>selben Clip</em> ohne Qualitätsverlust zuzuschneiden. Außerdem hat sie einen integrierten Lüfter für unbegrenzte Aufnahmen.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">24MP Vollformat</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">6K Open Gate</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Kühlung</span>
-                <span class="spec-value">Integrierter Lüfter</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Stabilisierung</span>
-                <span class="spec-value">Klassenbeste (Active IS)</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="panasonic-s5-ii" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>6K Open Gate ist ein Social-Media-Cheatcode</li>
-              <li>Integrierter Lüfter = keine Überhitzungsangst</li>
-              <li>Unglaubliche Stabilisierung (Gimbal-artig)</li>
-              <li>Integrierte LUT-Unterstützung (ECHTZEIT-LUT)</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Akkulaufzeit ist kürzer als bei Sony/Canon</li>
-              <li>L-Halterung-Objektive sind generell schwerer</li>
-              <li>Leichter Crop im 4K60-Modus</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 3 -->
-    <section class="section" id="canon-r6ii">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">⚡ Schnellste</span>
-            <picture>
-  <source srcset="/assets/images/guides/canon-r6ii.webp" type="image/webp">
-  <img src="/assets/images/guides/canon-r6ii.webp" alt="Canon EOS R6 Mark II Testbericht" loading="lazy">
-</picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Canon EOS R6 Mark II</h3>
-            <p>
-              Brauchst du Geschwindigkeit? Die R6 Mark II schießt atemberaubende 40 Bilder pro Sekunde elektronisch. It’s a monster for
-              Sport and Wildlife. For Video, it’s the only Kamera in this price range that shoots 4K 60p using the
-              <em>full width</em> of the sensor (no Crop).
-            </p>
-            <p>
-              Die Ergonomie ist fantastisch, und der Autofokus klebt hartnäckig an Motiven. It’s a pure joy to use if
-              du Geschwindigkeit und Bedienbarkeit priorisierst.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">24MP Vollformat</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Serienbildgeschwindigkeit</span>
-                <span class="spec-value">40 FPS</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Video</span>
-                <span class="spec-value">4K60 (Kein Crop)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">AF</span>
-                <span class="spec-value">Dual Pixel II</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="canon-r6-ii" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>4K 60p OHNE Crop (selten in dieser Klasse)</li>
-              <li>Wahnsinnige 40fps Serienbilder</li>
-              <li>Ausgezeichnete Ergonomie und Wetterdichtung</li>
-              <li>Falschfarben-Tools für Videobelichtung</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Keine Autofokus-Objektive von Drittanbietern</li>
-              <li>Micro-HDMI-Anschluss (zerbrechlich)</li>
-              <li>Dynamikumfang etwas geringer als bei Sony</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Hybrid Kaufberatung</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Das Objektiv-Ökosystem</h3>
-          <p>Wenn du Sony wählst, bekommst du günstige Drittanbieter-Objektive. Wenn du Canon wählst, bekommst du teure, aber brillante hauseigene Objektive. Wähle das System, nicht nur das Gehäuse.</p>
-        </article>
-        <article class="card">
-          <h3>Brauchst du 33MP?</h3>
-          <p>24MP reichen für 4K-Video und Social Media völlig aus. Zahle nur den Aufpreis für die 33MP der Sony A7 IV, wenn du stark zuschneidest oder riesige Plakate druckst.</p>
-        </article>
-      </div>
-    </section>
-
-  
-    <!-- Related Posts -->
-    <section class="section related-posts">
-      <h2>Das könnte Sie auch interessieren</h2>
-      <div class="grid">
-        <article class="card card-plain">
-          <h3><a href="beste-Vlog-kamera">Beste Vlog-Kamera</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="beste-vollformat-fuer-Video">Beste Vollformat für Video</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="/de/ratgeber/beste-reisekamera">Beste Reisekamera</a></h3>
-        </article>
-      </div>
-    </section>
-
-  
-    <!-- Author Box -->
-    <section class="section author-box">
-      <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
-        <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
-          <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras. 
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+        <div class="product-info">
+          <h3 class="product-title">Sony A7 IV</h3>
+          <p>
+            Das ist die Kamera, die "moderner Hybrid" definiert. Mit einem 33MP-Sensor bietet sie 
+            deutlich mehr Crop-Spielraum für Fotos als ihre 24MP-Rivalen. Der Autofokus ist 
+            legendär—er trackt Augen wie ein Magnet.
           </p>
-          <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren Testprozess erfahren →</a>
+          <p>
+            Sie hat ein riesiges Ökosystem an Drittanbieter-Objektiven von Sigma, Tamron und Samyang, 
+            was sie zum günstigsten System für den langfristigen Aufbau macht.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">33MP Vollformat</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K 60p (S35 Crop)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Fokus</span>
+              <span class="spec-value">Echtzeit-Augen-AF</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Kartenslots</span>
+              <span class="spec-value">2 (CFExpress A)</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="sony-a7-iv" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
         </div>
       </div>
-    </section>
 
-  </main>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Höchste Auflösung der Klasse (33MP)</li>
+            <li>Unübertroffene Objektivauswahl (E-Mount)</li>
+            <li>Focus-Breathing-Kompensation ist großartig</li>
+            <li>Zuverlässige Profi-Ergonomie</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>4K 60p hat 1,5x Crop (APS-C-Modus)</li>
+            <li>LCD-Displayqualität nur okay</li>
+            <li>Rolling Shutter im elektronischen Verschluss bemerkbar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 2 -->
+  <section class="section" id="panasonic-s5-ii">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🎬 Beste für Video</span>
+          <picture>
+            <source srcset="/assets/images/guides/panasonic-s5ii.webp" type="image/webp">
+            <img src="/assets/images/guides/panasonic-s5ii.webp" alt="Panasonic Lumix S5II Test" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Panasonic Lumix S5II</h3>
+          <p>
+            Panasonic hat endlich ihren Autofokus gefixt. Die S5II nutzt Phase-Detect-AF (PDAF) und ist 
+            zuverlässig für Solo-Shooter. Ihre Superkraft ist "Open Gate" 6K-Video, das die volle 
+            Sensorhöhe aufzeichnet.
+          </p>
+          <p>
+            Warum ist das wichtig? Es ermöglicht, ein vertikales 9:16 (TikTok) und horizontales 16:9 
+            (YouTube) Video aus dem <em>gleichen Clip</em> ohne Qualitätsverlust zu croppen. 
+            Eingebauter Lüfter für unbegrenzte Aufnahme.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP Vollformat</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">6K Open Gate</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Kühlung</span>
+              <span class="spec-value">Eingebauter Lüfter</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Stabilisierung</span>
+              <span class="spec-value">Klassenführend</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="panasonic-s5-ii" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>6K Open Gate ist ein Social-Media-Cheatcode</li>
+            <li>Eingebauter Lüfter = keine Überhitzungsangst</li>
+            <li>Unglaubliche Stabilisierung (Gimbal-artig)</li>
+            <li>Eingebaute LUT-Unterstützung (Echtzeit-LUT)</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Akkulaufzeit kürzer als Sony/Canon</li>
+            <li>L-Mount-Objektive sind generell schwerer</li>
+            <li>Leichter Crop im 4K60 Modus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 3 -->
+  <section class="section" id="canon-r6-ii">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">⚡ Schnellste</span>
+          <picture>
+            <source srcset="/assets/images/guides/canon-r6ii.webp" type="image/webp">
+            <img src="/assets/images/guides/canon-r6ii.webp" alt="Canon EOS R6 Mark II Test" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Canon EOS R6 Mark II</h3>
+          <p>
+            Brauchen Sie Speed? Die R6 Mark II schießt rasante 40 Bilder pro Sekunde elektronisch. 
+            Ein Monster für Sport und Wildlife. Für Video ist sie die einzige Kamera in dieser Preisklasse, 
+            die 4K 60p mit der <em>vollen Breite</em> des Sensors aufnimmt (kein Crop).
+          </p>
+          <p>
+            Die Ergonomie ist fantastisch, und der Autofokus klebt hartnäckig an Motiven. 
+            Eine pure Freude, wenn Sie Speed und Bedienbarkeit priorisieren.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP Vollformat</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Burst</span>
+              <span class="spec-value">40 FPS</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K60 (kein Crop)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">AF</span>
+              <span class="spec-value">Dual Pixel II</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="canon-r6-ii" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>4K 60p OHNE Crop (selten in dieser Klasse)</li>
+            <li>Wahnsinnige 40fps Serienaufnahme</li>
+            <li>Exzellente Ergonomie und Wetterdichtung</li>
+            <li>False-Color-Tools für Video-Belichtung</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Keine Drittanbieter-AF-Objektive verfügbar</li>
+            <li>Micro-HDMI-Port (zerbrechlich)</li>
+            <li>Dynamikumfang etwas geringer als Sony</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Hybrid-Kaufberatung</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Das Objektiv-Ökosystem</h3>
+        <p>Wählen Sie Sony, bekommen Sie günstige Drittanbieter-Objektive. Wählen Sie Canon, 
+          bekommen Sie teure, aber brillante Eigenmarken-Objektive. Wählen Sie das System, nicht nur das Gehäuse.</p>
+      </article>
+      <article class="card">
+        <h3>Brauchen Sie 33MP?</h3>
+        <p>24MP sind für 4K-Video und Social Media völlig ausreichend. Zahlen Sie nur für die 33MP 
+          der Sony A7 IV extra, wenn Sie stark croppen oder riesige Poster drucken.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Related Posts -->
+  <section class="section related-posts">
+    <h2>Das könnte Sie auch interessieren</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3><a href="/de/ratgeber/beste-vlog-kamera">Beste Vlog-Kamera</a></h3>
+      </article>
+      <article class="card card-plain">
+        <h3><a href="/de/ratgeber/beste-vollformat-fuer-video">Beste Vollformat für Video</a></h3>
+      </article>
+      <article class="card card-plain">
+        <h3><a href="/de/ratgeber/beste-reisekamera">Beste Reisekamera</a></h3>
+      </article>
+    </div>
+  </section>
+
+  <!-- Author Box -->
+  <section class="section author-box">
+    <div style="display: flex; gap: 16px; align-items: flex-start;">
+      <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+      <div>
+        <h4 style="margin: 0 0 8px 0;">Verfasst vom cameraupick Redaktionsteam</h4>
+        <p style="margin: 0; color: var(--muted); font-size: 14px;">
+          Unser Team professioneller Fotografen und Videografen hat 10+ Jahre Erfahrung im Kameratest. 
+          Wir kaufen unsere eigene Ausrüstung und liefern ehrliche, unvoreingenommene Tests.
+        </p>
+        <a href="/de/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Erfahren Sie mehr über unseren Testprozess →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="affiliate">
+    <h2>Partner-Hinweis</h2>
+    <p class="section-sub">
+      Wir kaufen oder leihen unsere eigene Ausrüstung. Kein Hersteller hat für diesen Ratgeber bezahlt. 
+      Wir verdienen eine Provision, wenn Sie unsere Affiliate-Links nutzen.
+    </p>
+  </section>
+
+</main>
 </BaseLayout>

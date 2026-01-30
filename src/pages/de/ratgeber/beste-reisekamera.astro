@@ -6,357 +6,332 @@ import OrganizationSchema from '../../../components/OrganizationSchema.astro';
 const faqs = [
   {
     question: "Was ist die beste Kompaktkamera für Reisen?",
-    answer: "Fujifilm X100VI ist die beste kompakte Reisekamera. Sie hat ein festes 23mm-Objektiv, wunderschöne Film-Simulationen, exzellente Bildqualität und passt in eine Jackentasche. Für 1.599 Euro ist sie Premium, eliminiert aber Objektivwechsel-Probleme."
+    answer: "Fujifilm X100VI ist die beste kompakte Reisekamera. Sie hat ein festes 23mm-Objektiv, wunderschöne Film-Simulationen, exzellente Bildqualität und passt in eine Jackentasche."
   },
   {
-    question: "Soll ich mehrere Objektive auf Reisen mitnehmen?",
-    answer: "Nehmen Sie ein vielseitiges Zoom-Objektiv (18-135mm oder 24-105mm) statt mehrerer Festbrennweiten. Es deckt Landschaften, Porträts und Straßenfotografie ab ohne ständige Objektivwechsel. Spart Gewicht und reduziert Sensor-Staub-Risiko."
+    question: "Sollte ich mehrere Objektive auf Reisen mitnehmen?",
+    answer: "Nehmen Sie ein vielseitiges Zoom-Objektiv (18-135mm oder 24-105mm) statt mehrerer Festbrennweiten mit. Es deckt Landschaften, Portraits und Street-Fotografie ab ohne ständigen Objektivwechsel."
   },
   {
-    question: "Brauche ich Wetterschutz für Reisefotografie?",
-    answer: "Sehr empfohlen, aber nicht zwingend. Wetter-versiegelte Kameras (OM System OM-5, Sony A6700) handhaben Regen und Staub besser. Bei Reisen in tropische oder staubige Regionen gibt Wetterschutz Sicherheit. Sonst funktioniert eine Regenhülle."
+    question: "Brauche ich Wetterdichtung für Reisefotografie?",
+    answer: "Sehr empfohlen aber nicht zwingend. Wetterdichte Kameras (OM System OM-5, Sony A6700) handhaben Regen und Staub besser. In tropischen oder staubigen Regionen gibt Wetterdichtung Ruhe."
   },
   {
     question: "Was ist besser für Reisen: Spiegellose oder Smartphone?",
-    answer: "Spiegellose Kameras bieten besseren Zoom, Low-Light-Performance und Bildqualität. Moderne Smartphones (iPhone 15 Pro) sind für Gelegenheitsreisen unglaublich fähig. Upgraden Sie zu Spiegellos, wenn Sie kreative Kontrolle, bessere Tele-Reichweite (100mm+) oder große Drucke möchten."
+    answer: "Spiegellose Kameras bieten besseren Zoom, Low-Light-Performance und Bildqualität. Moderne Smartphones sind für Casual-Reisen stark. Upgraden Sie auf Spiegellos für kreative Kontrolle und Tele-Reichweite."
   }
 ];
 ---
 
-<BaseLayout title="Beste Reisekamera (2026) — Kameraupick" description="Die besten Reisekameras 2026: Kompakt, leicht, mit stabilisiertem 4K und scharfen Fotos für unterwegs.">
+<BaseLayout title="Beste Reisekamera (2026) — cameraupick" description="Die besten leichten Reisekameras für 2026. Wir haben portable Optionen von Sony, Fujifilm und OM System für Street, Landschaft und Urlaubsfotos getestet.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Beste Reisekamera (2026)</h1>
-          <p class="hero-sub">
-            Die goldene Regel der Reisefotografie: Die beste Kamera ist die, die du tatsächlich dabei hast. Wir haben
-            Kameras ausgewählt, die Profi-Bildqualität in Gehäuse packen, die klein genug für die Jackentasche sind.
-          </p>
-        </div>
-        <div class="hero-media">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Beste Reisekamera (2026)</h1>
+        <p class="hero-sub">
+          Die goldene Regel der Reisefotografie: Die beste Kamera ist die, die Sie tatsächlich mitnehmen. 
+          Wir haben Kameras ausgewählt, die Profi-Bildqualität in jacktaschengroße Gehäuse packen.
+        </p>
+      </div>
+      <div class="hero-media">
+        <picture>
+          <source srcset="/assets/images/guides/travel.webp" type="image/webp">
+          <img src="/assets/images/guides/travel.webp" alt="Kompakte Reisekamera unterwegs"
+            loading="eager" fetchpriority="high" decoding="async" width="1400" height="900"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
+    <div class="comparison-table-wrapper">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Modell</th>
+            <th>Geeignet für</th>
+            <th>Gewicht</th>
+            <th>Typ</th>
+            <th>Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#sony-a6700" class="product-name">Sony A6700</a></td>
+            <td><span class="tag">Allrounder</span></td>
+            <td>493g</td>
+            <td>Wechselobjektiv</td>
+            <td class="price-check"><a href="#" data-product="sony-a6700" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#fujifilm-x100vi" class="product-name">Fujifilm X100VI</a></td>
+            <td><span class="tag">Street / City</span></td>
+            <td>521g</td>
+            <td>Festbrennweite</td>
+            <td class="price-check"><a href="#" data-product="fujifilm-x100vi" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#om-system-om-5" class="product-name">OM System OM-5</a></td>
+            <td><span class="tag">Landschaft / Wandern</span></td>
+            <td>414g</td>
+            <td>Micro 4/3</td>
+            <td class="price-check"><a href="#" data-product="om-system-om-5" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Product 1 -->
+  <section class="section" id="sony-a6700">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🏆 Bester Allrounder</span>
           <picture>
-            <source srcset="/assets/images/guides/travel.webp" type="image/webp">
-            <img src="/assets/images/guides/travel.webp?v=20260111" alt="Kompakte Reisekamera auf der Straße"
-              loading="eager" fetchpriority="high" decoding="async" width="1400" height="900"
-              style="width: 100%; height: 100%; object-fit: cover;">
+            <source srcset="/assets/images/guides/sony-a6700.webp" type="image/webp">
+            <img src="/assets/images/guides/sony-a6700.webp" alt="Sony A6700 Test" loading="lazy">
           </picture>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
-      <div class="comparison-table-wrapper">
-        <table class="comparison">
-          <thead>
-            <tr>
-              <th>Modell</th>
-              <th>Ideal für</th>
-              <th>Gewicht</th>
-              <th>Typ</th>
-              <th>Preis</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="#sony-a6700" class="product-name">Sony A6700</a>
-              </td>
-              <td><span class="tag">Allrounder</span></td>
-              <td>493g</td>
-              <td>Wechselobjektiv</td>
-              <td class="price-check"><a href="#" data-product="sony-a6700" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#fujifilm-x100vi" class="product-name">Fujifilm X100VI</a>
-              </td>
-              <td><span class="tag">Straße / Stadt</span></td>
-              <td>521g</td>
-              <td>Festobjektiv</td>
-              <td class="price-check"><a href="#" data-product="fujifilm-x100vi" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#om-system-om-5" class="product-name">OM System OM-5</a>
-              </td>
-              <td><span class="tag">Landschaft / Wandern</span></td>
-              <td>414g</td>
-              <td>Micro 4/3</td>
-              <td class="price-check"><a href="#" data-product="om-system-om-5" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Product 1 -->
-    <section class="section" id="sony-a6700">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🏆 Bester Allrounder</span>
-            <picture>
-              <source srcset="/assets/images/guides/sony-a6700.webp" type="image/webp">
-              <img src="/assets/images/guides/sony-a6700.webp" alt="Sony A6700 Testbericht" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Sony A6700</h3>
-            <p>
-              Die A6700 ist ein Reise-Kraftpaket. Sie passt in eine kleine Umhängetasche, hat aber das gleiche
-              KI-Autofokus-Gehirn wie Sonys 4.000 € Profi-Kameras. Sie verfolgt Autos, Züge, Insekten und Menschen
-              sofort.
-            </p>
-            <p>
-              Kombiniere sie mit dem Sigma 18-50mm f/2.8 Objektiv, und du hast ein Kit, das Landschaften, Porträts und
-              Straßenfotografie abdeckt und dabei weniger wiegt als eine Wasserflasche.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">26MP APS-C</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Akku</span>
-                <span class="spec-value">Ausgezeichnet (FZ100)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">IBIS</span>
-                <span class="spec-value">5-Axis</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Wetterdicht</span>
-                <span class="spec-value">Ja</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="sony-a6700" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Branchenführender KI-Autofokus</li>
-              <li>Großartige Akkulaufzeit für Reisetage</li>
-              <li>Umfassende Touch-Oberfläche</li>
-              <li>Riesige Auswahl an kompakten Reise-Objektiven</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Sucher ist klein/durchschnittlich</li>
-              <li>Kein Joystick für Fokuspunkt-Auswahl</li>
-              <li>Rolling Shutter in 4K24p-Video ist spürbar</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 2 -->
-    <section class="section" id="fuji-x100vi">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">✨ Premium-Kompakt</span>
-            <picture>
-              <source srcset="/assets/images/guides/fujifilm-x100vi.webp" type="image/webp">
-              <img src="/assets/images/guides/fujifilm-x100vi.webp" alt="Fujifilm X100VI Testbericht"
-                loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title"><a href="/de/reviews/fujifilm-x100vi-review">Fujifilm X100VI</a></h3>
-            <p>
-              Die virale Sensation. Die X100VI ist eine Festobjektiv-Kamera (du kannst das Objektiv nicht wechseln), was
-              dich zu Kreativität zwingt. Sie ist wunderschön, macht Spaß und produziert Fotos, die wie Erinnerungen
-              aussehen statt digitale Dateien.
-            </p>
-            <p>
-              Der neue 40MP-Sensor erlaubt dir, sicher zu croppen, was dir "digitalen Zoom"-Flexibilität gibt. Sie hat
-              endlich IBIS (Stabilisierung), was sie für Nacht-Straßenaufnahmen aus der Hand und schnelle Videos
-              geeignet macht.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Objektiv</span>
-                <span class="spec-value">23mm f/2 Fixed</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">40MP APS-C</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">ND Filter</span>
-                <span class="spec-value">Eingebaut (4-Blenden)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Größe</span>
-                <span class="spec-value">Jackentasche</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="fujifilm-x100vi" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-            <a href="/de/reviews/fujifilm-x100vi-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
-              Zum vollständigen Test →
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Absolut atemberaubendes Design und Haptik</li>
-              <li>Filmsimulationen = sofort teilbare JPEGs</li>
-              <li>Zentralverschluss erlaubt Hochgeschwindigkeits-Blitzsync</li>
-              <li>Hybrid Optischer/Elektronischer Sucher</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Festbrennweite begrenzt Zoom-Reichweite</li>
-              <li>Oft ausverkauft / schwer zu finden</li>
-              <li>Akkulaufzeit ist nur okay</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 3 -->
-    <section class="section" id="om-system-om5">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🏔️ Robust / Wandern</span>
-            <picture>
-              <source srcset="/assets/images/guides/om-5.webp" type="image/webp">
-              <img src="/assets/images/guides/om-5.webp" alt="OM System OM-5" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">OM System OM-5</h3>
-            <p>
-              Wenn du bei Regen, Schnee oder Staub wanderst, nimm diese. Sie hat überlegene Wetterdichtung
-              (IP53-zertifiziert). Der Micro-Four-Thirds-Sensor bedeutet, dass die Objektive winzig sind. Du kannst ein
-              Tele-Objektiv tragen, das in deine Handfläche passt.
-            </p>
-            <p>
-              Sie bietet Computational-Photography-Magie wie "Live ND" (simuliert lange Belichtungen ohne Filter) und
-              wohl die beste Bildstabilisierung der Branche, sodass du das Stativ zu Hause lassen kannst.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">20MP M4/3</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Dichtung</span>
-                <span class="spec-value">IP53 Rated</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Stabilisierung</span>
-                <span class="spec-value">7.5 Stops</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Besonderes</span>
-                <span class="spec-value">Handheld-Hi-Res</span>
-              </div>
-            </div>
-
-            <a href="#" class="btn-buy" data-product="om-system-om-5" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Unglaubliche Wetterdichtung für Abenteuer</li>
-              <li>Klassenbeste Stabilisierung</li>
-              <li>Winzige, leichte Objektive</li>
-              <li>Klassisches DSLR-Styling</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Micro-USB-Laden (veraltet)</li>
-              <li>Menüsystem ist alter Olympus-Stil</li>
-              <li>Motivverfolgung ist nicht so gut wie bei Sony</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="affiliate">
-      <h2>Reisetipps</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Ein-Objektiv-Regel</h3>
-          <p>Versuche mit nur einem vielseitigen Zoom zu reisen (wie einem 24-70mm-Äquivalent). Objektivwechsel auf
-            einem staubigen Markt oder am windigen Strand ist ein Rezept für schmutzige Sensoren.</p>
-        </article>
-        <article class="card">
-          <h3>Täglich sichern</h3>
-          <p>SD-Karten können versagen. Bring eine kleine SSD mit oder nutze WLAN, um deine besten Aufnahmen jeden Abend
-            auf dein Handy zu übertragen.</p>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- Related Posts -->
-    <section class="section related-posts">
-      <h2>Das könnte Sie auch interessieren</h2>
-      <div class="grid">
-        <article class="card card-plain">
-          <h3><a href="/de/ratgeber/beste-hybrid-kamera">Beste Hybrid-Kamera</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="/de/ratgeber/beste-action-360-kamera">Beste Action- & 360-Kamera</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="/de/reviews/dji-osmo-pocket-3-review">DJI Osmo Pocket 3 Testbericht</a></h3>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- Author Box -->
-    <section class="section author-box"
-     >
-      <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team"
-          style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
-        <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
-          <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras.
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+        <div class="product-info">
+          <h3 class="product-title">Sony A6700</h3>
+          <p>
+            Die A6700 ist ein Reise-Kraftpaket. Sie passt in eine kleine Sling-Bag, teilt aber 
+            das KI-Autofokus-Gehirn von Sonys 4.000€ Profi-Kameras. Sie trackt Autos, Züge, 
+            Insekten und Menschen sofort.
           </p>
-          <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren
-            Testprozess erfahren →</a>
+          <p>
+            Kombinieren Sie sie mit dem Sigma 18-50mm f/2.8 Objektiv, und Sie haben ein Kit, 
+            das Landschaften, Portraits und Street-Fotografie abdeckt—und weniger wiegt als 
+            eine Wasserflasche.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">26MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Akku</span>
+              <span class="spec-value">Exzellent (FZ100)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">IBIS</span>
+              <span class="spec-value">5-Achsen</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Wetterdicht</span>
+              <span class="spec-value">Ja</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="sony-a6700" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
         </div>
       </div>
-    </section>
 
-  </main>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Branchenführender KI-Autofokus</li>
+            <li>Tolle Akkulaufzeit für Reisetage</li>
+            <li>Umfassende Touch-Oberfläche</li>
+            <li>Riesige Auswahl kompakter Reiseobjektive</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Sucher ist klein/durchschnittlich</li>
+            <li>Kein Joystick für Fokuspunktwahl</li>
+            <li>Rolling Shutter in 4K24p Video bemerkbar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 2 -->
+  <section class="section" id="fujifilm-x100vi">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">✨ Premium Kompakt</span>
+          <picture>
+            <source srcset="/assets/images/guides/fujifilm-x100vi.webp" type="image/webp">
+            <img src="/assets/images/guides/fujifilm-x100vi.webp" alt="Fujifilm X100VI Test" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="/de/reviews/fujifilm-x100vi-review">Fujifilm X100VI</a></h3>
+          <p>
+            Die virale Sensation. Die X100VI ist eine Festbrennweiten-Kamera (Sie können das 
+            Objektiv nicht wechseln), was Sie zur Kreativität zwingt. Sie ist wunderschön, 
+            macht Spaß und produziert Fotos, die wie Erinnerungen aussehen statt digitaler Dateien.
+          </p>
+          <p>
+            Der neue 40MP-Sensor ermöglicht sicheres Cropping und gibt Ihnen "Digital-Zoom" 
+            Vielseitigkeit. Er hat endlich IBIS (Stabilisierung), was handgehaltene Nacht-Street-Shots 
+            und schnelle Videos ermöglicht.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Objektiv</span>
+              <span class="spec-value">23mm f/2 fest</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">40MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">ND-Filter</span>
+              <span class="spec-value">Eingebaut (4-Stufen)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Größe</span>
+              <span class="spec-value">Jackentasche</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="fujifilm-x100vi" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+          <a href="/de/reviews/fujifilm-x100vi-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
+            Zum vollständigen Test →
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Absolut atemberaubendes Design und Gefühl</li>
+            <li>Film-Simulationen = sofort teilbare JPEGs</li>
+            <li>Leaf-Shutter für High-Speed-Blitzsync</li>
+            <li>Hybrid Optischer/Elektronischer Sucher</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Festbrennweite limitiert Zoom-Reichweite</li>
+            <li>Oft ausverkauft / schwer zu finden</li>
+            <li>Akkulaufzeit ist nur okay</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 3 -->
+  <section class="section" id="om-system-om-5">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🏔️ Robust / Wandern</span>
+          <picture>
+            <source srcset="/assets/images/guides/om-5.webp" type="image/webp">
+            <img src="/assets/images/guides/om-5.webp" alt="OM System OM-5" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">OM System OM-5</h3>
+          <p>
+            Wenn Sie bei Regen, Schnee oder Staub wandern, nehmen Sie diese. Sie hat überlegene 
+            Wetterdichtung (IP53-zertifiziert). Der Micro-Four-Thirds-Sensor bedeutet, dass die 
+            Objektive winzig sind. Sie können ein Tele-Objektiv mitbringen, das in Ihre Handfläche passt.
+          </p>
+          <p>
+            Sie bietet computergestützte Fotografie-Magie wie "Live ND" (simuliert Langzeit­belichtungen 
+            ohne Filter) und die wohl beste Bildstabilisierung der Branche—Sie können das Stativ zu Hause lassen.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">20MP M4/3</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Dichtung</span>
+              <span class="spec-value">IP53-zertifiziert</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Stabilisierung</span>
+              <span class="spec-value">7,5 Stufen</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Special</span>
+              <span class="spec-value">Handheld Hi-Res</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="om-system-om-5" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Unglaubliche Wetterdichtung für Abenteuer</li>
+            <li>Klassenführende Stabilisierung</li>
+            <li>Winzige, leichte Objektive</li>
+            <li>Klassisches DSLR-Styling</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Micro-USB-Laden (veraltet)</li>
+            <li>Menüsystem ist alter Olympus-Stil</li>
+            <li>Motiv-Tracking nicht so gut wie Sony</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="affiliate">
+    <h2>Reisetipps</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Ein-Objektiv-Regel</h3>
+        <p>Versuchen Sie, nur mit einem vielseitigen Zoom zu reisen (wie 24-70mm Äquivalent). 
+          Objektive in einem staubigen Markt oder windigen Strand zu wechseln ist ein Rezept für schmutzige Sensoren.</p>
+      </article>
+      <article class="card">
+        <h3>Täglich sichern</h3>
+        <p>SD-Karten können ausfallen. Bringen Sie eine kleine SSD mit oder nutzen Sie WLAN, 
+          um Ihre besten Aufnahmen jeden Abend auf Ihr Handy zu übertragen.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Author Box -->
+  <section class="section author-box">
+    <div style="display: flex; gap: 16px; align-items: flex-start;">
+      <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+      <div>
+        <h4 style="margin: 0 0 8px 0;">Verfasst vom cameraupick Redaktionsteam</h4>
+        <p style="margin: 0; color: var(--muted); font-size: 14px;">
+          Unser Team professioneller Fotografen und Videografen hat 10+ Jahre Erfahrung im Kameratest. 
+          Wir kaufen unsere eigene Ausrüstung und liefern ehrliche, unvoreingenommene Tests.
+        </p>
+        <a href="/de/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Erfahren Sie mehr über unseren Testprozess →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
 </BaseLayout>

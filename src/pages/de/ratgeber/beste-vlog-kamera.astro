@@ -5,464 +5,432 @@ import OrganizationSchema from '../../../components/OrganizationSchema.astro';
 
 const faqs = [
   {
-    question: "Was ist die wichtigste Eigenschaft für Vlogging?",
-    answer: "Zuverlässiger Autofokus mit Gesichts-/Augenerkennung ist essentiell. Solo-Vlogger brauchen eine Kamera, die sie automatisch scharf hält während sie sich bewegen und sprechen. Sony ZV-E1 und DJI Pocket 3 sind hier mit KI-gestütztem Subject Tracking hervorragend."
+    question: "Was ist das wichtigste Feature für Vlogging?",
+    answer: "Zuverlässiger Autofokus mit Gesichts-/Augen-Tracking ist essenziell. Solo-Vlogger brauchen eine Kamera, die sie automatisch scharf hält. Sony ZV-E1 und DJI Pocket 3 glänzen hier mit KI-gestütztem Motiv-Tracking."
   },
   {
     question: "Brauche ich einen Gimbal zum Vloggen?",
-    answer: "Nicht unbedingt. DJI Pocket 3 hat einen eingebauten mechanischen Gimbal. Kameras mit gutem IBIS (Sony ZV-E1, OM-1 Mark II) liefern ruhiges Handheld-Material. Für Walk-and-Talk ist IBIS oder Gimbal sehr empfehlenswert. Stativ-Vlogs brauchen keine Stabilisierung."
+    answer: "Nicht unbedingt. DJI Pocket 3 hat einen eingebauten mechanischen Gimbal. Kameras mit gutem IBIS (Sony ZV-E1, OM-1 Mark II) liefern flüssiges Freihand-Footage. Für Walk-and-Talk wird IBIS oder Gimbal empfohlen."
   },
   {
-    question: "Sollten Vlog-Kameras einen Klappbildschirm haben?",
-    answer: "Absolut essentiell. Ein voll schwenkbarer Klappbildschirm (nicht nur neigbar) lässt Sie das Framing während der Aufnahme kontrollieren. Alle von uns empfohlenen Vlog-Kameras haben Klappbildschirme, außer Action-Kameras, die Companion-Apps nutzen."
+    question: "Sollten Vlog-Kameras ein Schwenkdisplay haben?",
+    answer: "Absolut essenziell. Ein voll schwenkbares Display (nicht nur neigbar) lässt Sie die Bildkomposition beim Selbstaufnehmen überwachen. Alle unsere Vlog-Empfehlungen haben Schwenkdisplays außer Action-Cams."
   },
   {
-    question: "Ist 4K notwendig für YouTube-Vlogs?",
-    answer: "1080p ist für YouTube akzeptabel, aber 4K ist empfohlen. Es erlaubt Cropping in der Nachbearbeitung für besseres Framing, liefert schärfere Details auf modernen Displays und macht Ihren Content zukunftssicher. Die meisten Zuschauer sehen in 1080p, aber 4K gibt Bearbeitungsflexibilität."
+    question: "Ist 4K für YouTube-Vlogs notwendig?",
+    answer: "1080p ist akzeptabel für YouTube, aber 4K wird empfohlen. Es ermöglicht Cropping in der Nachbearbeitung, liefert schärfere Details und macht Ihren Content zukunftssicher."
   }
 ];
 ---
 
-<BaseLayout title="Beste Vlog-Kamera (2026) — Kameraupick" description="Beste Vlog-Kamera 2026: DJI Pocket 3 für perfekte Stabilisierung, Sony ZV-E1 für Profi-Qualität. Mit Kaufberatung für YouTube, TikTok & Instagram Creator.">
+<BaseLayout title="Beste Vlog-Kamera für YouTube (2026) — cameraupick" description="Top Vlogging-Kameras für 2026 bewertet nach Videoqualität, Stabilisierung und Benutzerfreundlichkeit. Von DJI Pocket bis Vollformat-Sony.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Beste Vlog-Kamera (2026)</h1>
-          <p class="hero-sub">
-            Großartige Vlogging-Ausrüstung sollte unsichtbar sein. Sie muss dich im Fokus halten, verwackelte Aufnahmen stabilisieren und großartig klingen – ohne einen Doktortitel in Audiotechnik.
-          </p>
-          <p style="color: var(--muted); font-size: 14px; margin-top: 8px;">
-            Zuletzt aktualisiert: 26. Januar 2026
-          </p>
-        </div>
-        <div class="hero-media">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Beste Vlog-Kamera (2026)</h1>
+        <p class="hero-sub">
+          Großartiges Vlogging-Equipment sollte unsichtbar sein. Es muss Sie scharf halten, 
+          wackeliges Footage glätten und großartig klingen—ohne Ingenieursstudium.
+        </p>
+      </div>
+      <div class="hero-media">
+        <picture>
+          <source srcset="/assets/images/guides/vlog.webp" type="image/webp">
+          <img src="/assets/images/guides/vlog.webp" alt="Vlog-Kamera Setup" loading="eager"
+            fetchpriority="high" decoding="async" width="1400" height="900"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Auf einen Blick: Top 4 Empfehlungen</h2>
+    <div class="comparison-table-wrapper">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th>Modell</th>
+            <th>Typ</th>
+            <th>Stabilisierung</th>
+            <th>Max. Qualität</th>
+            <th>Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#dji-pocket-3" class="product-name">DJI Osmo Pocket 3</a></td>
+            <td>Gimbal-Kamera</td>
+            <td>Mechanisch (Perfekt)</td>
+            <td>4K120</td>
+            <td class="price-check"><a href="#" data-product="dji-osmo-pocket-3" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#sony-zv-e1" class="product-name">Sony ZV-E1</a></td>
+            <td>Vollformat</td>
+            <td>Active Digital</td>
+            <td>4K60 (10-bit)</td>
+            <td class="price-check"><a href="#" data-product="sony-zv-e1" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#gopro-13" class="product-name">GoPro Hero 13</a></td>
+            <td>Action-Cam</td>
+            <td>HyperSmooth 7.0</td>
+            <td>5.3K60</td>
+            <td class="price-check"><a href="#" data-product="gopro-13" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#sony-zv-1-ii" class="product-name">Sony ZV-1 II</a></td>
+            <td>Kompakt</td>
+            <td>Digital (Gut)</td>
+            <td>4K30</td>
+            <td class="price-check"><a href="#" data-product="sony-zv-1-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Product 1 -->
+  <section class="section" id="dji-pocket-3">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🏆 Beste für die meisten</span>
           <picture>
-            <source srcset="/assets/images/guides/vlog.webp" type="image/webp">
-            <img src="/assets/images/guides/vlog.webp" alt="Vlog Kamera setup" loading="eager"
-              fetchpriority="high" decoding="async" width="1400" height="900"
-              style="width: 100%; height: 100%; object-fit: cover;">
+            <source srcset="/assets/images/guides/dji-osmo-pocket-3.webp" type="image/webp">
+            <img src="/assets/images/guides/dji-osmo-pocket-3.webp" alt="DJI Osmo Pocket 3 Test" loading="lazy">
           </picture>
         </div>
-      </div>
-    </section>
+        <div class="product-info">
+          <h3 class="product-title">DJI Osmo Pocket 3</h3>
+          <p>
+            Das ist nicht nur eine Kamera; das ist ein Cheat-Code. Der mechanische Gimbal sorgt dafür, 
+            dass Ihre Lauf-Aufnahmen aussehen wie Hollywood-Dolly-Fahrten. Der große 1-Zoll-Sensor 
+            funktioniert auch bei schwachem Licht in Restaurants oder nachts.
+          </p>
+          <p>
+            Das Wireless-Mikrofon (DJI Mic 2) verbindet sich sofort. Display aufklappen, an. 
+            Zuklappen, aus. Der schnellste Workflow überhaupt.
+          </p>
 
-    <section class="section">
-      <h2>Auf einen Blick: Top 3 Empfehlungen</h2>
-      <div class="comparison-table-wrapper">
-        <table class="comparison">
-          <thead>
-            <tr>
-              <th>Modell</th>
-              <th>Typ</th>
-              <th>Stabilisierung</th>
-              <th>Max. Qualität</th>
-              <th>Preis</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="#dji-pocket-3" class="product-name">DJI Osmo Pocket 3</a>
-              </td>
-              <td>Gimbal-Kamera</td>
-              <td>Mechanisch (Perfekt)</td>
-              <td>4K120</td>
-              <td class="price-check"><a href="#" data-product="dji-osmo-pocket-3" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#sony-zv-e1" class="product-name">Sony ZV-E1</a>
-              </td>
-              <td>Vollformat</td>
-              <td>Aktiv Digital</td>
-              <td>4K60 (10-Bit)</td>
-              <td class="price-check"><a href="#" data-product="sony-zv-e1" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#gopro-13" class="product-name">GoPro Hero 13</a>
-              </td>
-              <td>Action-Kamera</td>
-              <td>HyperSmooth 7.0</td>
-              <td>5.3K60</td>
-              <td class="price-check"><a href="#" data-product="gopro-13" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Product 1 -->
-    <section class="section" id="dji-pocket-3">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🏆 Beste für die Meisten</span>
-            <picture>
-              <source srcset="/assets/images/guides/dji-osmo-pocket-3.webp" type="image/webp">
-              <img src="/assets/images/guides/dji-osmo-pocket-3.webp" alt="DJI Osmo Pocket 3 Testbericht" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">DJI Osmo Pocket 3</h3>
-            <p>
-              Das ist nicht nur eine Kamera – es ist ein Cheat-Code. Der mechanische Gimbal bedeutet, dass deine Laufaufnahmen aussehen, als wären sie auf einer Hollywood-Dolly-Schiene gedreht. Mit dem großen 1-Zoll-Sensor funktioniert sie auch in dunklen Restaurants oder nachts.
-            </p>
-            <p>
-              Das kabellose Mikrofon (DJI Mic 2) verbindet sich sofort direkt mit ihr. Klappe den Bildschirm auf, sie schaltet sich ein. Klappe ihn zurück, sie schaltet sich aus. Der schnellste Workflow, den es gibt.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">1-inch CMOS</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Gimbal</span>
-                <span class="spec-value">3-Achsen Mechanisch</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Audio</span>
-                <span class="spec-value">Funk-fähig</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Größe</span>
-                <span class="spec-value">Smartphone-Größe</span>
-              </div>
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">1-Zoll CMOS</span>
             </div>
-
-            <a href="#" class="btn-buy" data-product="dji-osmo-pocket-3" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Unschlagbare mechanische Stabilisierung</li>
-              <li>Großer 1-Zoll-Sensor hervorragend bei Schwachlicht</li>
-              <li>Unglaubliche Gesichtsverfolgung</li>
-              <li>In 2 Sekunden aufnahmebereit</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Festbrennweite (20mm äquivalent)</li>
-              <li>Nicht robust/wasserdicht ohne Hülle</li>
-              <li>Akku ist eingebaut (nicht wechselbar)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 2 -->
-    <section class="section" id="sony-zv-e1">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">💎 Ultimative Qualität</span>
-            <picture>
-              <source srcset="/assets/images/guides/sony-zv-e1.webp" type="image/webp">
-              <img src="/assets/images/guides/sony-zv-e1.webp" alt="Sony ZV-E1 Testbericht" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title"><a href="/de/reviews/sony-zv-e1-review">Sony ZV-E1</a></h3>
-            <p>
-              Wenn deine Vlogs wie Netflix-Dokumentationen aussehen sollen, brauchst du Vollformat. Die ZV-E1 nutzt den gleichen Sensor wie die Cinema-Line FX3, kostet aber nur die Hälfte. Die Hintergrundunschärfe (Bokeh) ist echt und cremig.
-            </p>
-            <p>
-              Die KI-Funktion "Automatische Bildausrichtung" kann dich digital verfolgen, während du dich im Raum bewegst – als hättest du einen Kameramann. Die beste Schwachlichtleistung aller Consumer-Kameras, Punkt.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Sensor</span>
-                <span class="spec-value">12MP Vollformat</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">ISO</span>
-                <span class="spec-value">409,600 Max</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">KI-Funktionen</span>
-                <span class="spec-value">Automatische Bildausrichtung</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Objektiv</span>
-                <span class="spec-value">Wechselbar</span>
-              </div>
+            <div class="spec-item">
+              <span class="spec-label">Gimbal</span>
+              <span class="spec-value">3-Achsen Mechanisch</span>
             </div>
-
-            <a href="#" class="btn-buy" data-product="sony-zv-e1" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
-            <a href="/de/reviews/sony-zv-e1-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
-              Zum vollständigen Test →
-            </a>
-          </div>
-        </div>
-
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Wahnsinnige Schwachlichtfähigkeit</li>
-              <li>Filmreifer Vollformat-Look</li>
-              <li>Fortschrittliche KI-Stabilisierung und Bildausrichtung</li>
-              <li>Produkt-Präsentationsmodus (sofortiger Fokuswechsel)</li>
-            </ul>
-          </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Teures Gehäuse und Objektive</li>
-              <li>Kann bei 4K60 überhitzen, wenn nicht aufgepasst wird</li>
-              <li>Einzelner SD-Kartensteckplatz</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product 3 -->
-    <section class="section" id="gopro-13">
-      <div class="product-review-card">
-        <div class="product-review-header">
-          <div class="product-image-container">
-            <span class="badge-best">🏄‍♂️ Action-Feeling</span>
-            <picture>
-              <source srcset="/assets/images/guides/gopro-hero-13.webp" type="image/webp">
-              <img src="/assets/images/guides/gopro-hero-13.webp" alt="GoPro Hero 13 Testbericht" loading="lazy">
-            </picture>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">GoPro Hero 13</h3>
-            <p>
-              Manchmal ist Vloggen gefährlich. Beim Surfen, Skifahren oder bei schlechtem Wetter ist die Hero 13 unzerstörbar. HyperSmooth 7.0 ist wie Magie – es hält den Horizont gerade, selbst wenn du die Kamera um 360 Grad drehst.
-            </p>
-            <p>
-              Der Frontbildschirm hilft beim Bildaufbau, und die neuen 10-Bit-Farboptionen ermöglichen ernsthafte Farbkorrektur, wenn du ein Profi-Editor bist.
-            </p>
-
-            <div class="specs-list">
-              <div class="spec-item">
-                <span class="spec-label">Auflösung</span>
-                <span class="spec-value">5.3K 60fps</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Wasserdicht</span>
-                <span class="spec-value">10m (native)</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Displays</span>
-                <span class="spec-value">Vorne + Hinten</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Stabilisierung</span>
-                <span class="spec-value">HyperSmooth 7.0</span>
-              </div>
+            <div class="spec-item">
+              <span class="spec-label">Audio</span>
+              <span class="spec-value">Wireless-Ready</span>
             </div>
-
-            <a href="#" class="btn-buy" data-product="gopro-13" rel="sponsored noopener noreferrer" target="_blank">
-              Preis auf Amazon prüfen &rarr;
-            </a>
+            <div class="spec-item">
+              <span class="spec-label">Größe</span>
+              <span class="spec-value">Schokoriegel</span>
+            </div>
           </div>
-        </div>
 
-        <div class="pros-cons">
-          <div class="pros">
-            <h4>Vorteile</h4>
-            <ul>
-              <li>Unzerstörbar und wasserdicht</li>
-              <li>Weitestes Sichtfeld (großartig für POV)</li>
-              <li>Horizontsperre ist ein Game-Changer</li>
-              <li>Klein genug zum Montieren überall</li>
-            </ul>
+          <a href="#" class="btn-buy" data-product="dji-osmo-pocket-3" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Unschlagbare mechanische Stabilisierung</li>
+            <li>Großer 1-Zoll-Sensor für Low-Light</li>
+            <li>Unglaubliches Face-Tracking</li>
+            <li>Aufnahmebereit in 2 Sekunden</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Festbrennweite (20mm äquivalent)</li>
+            <li>Nicht robust/wasserdicht ohne Case</li>
+            <li>Akku eingebaut (nicht wechselbar)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 2 -->
+  <section class="section" id="sony-zv-e1">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">💎 Ultimate Qualität</span>
+          <picture>
+            <source srcset="/assets/images/guides/sony-zv-e1.webp" type="image/webp">
+            <img src="/assets/images/guides/sony-zv-e1.webp" alt="Sony ZV-E1 Test" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title"><a href="/de/reviews/sony-zv-e1-review">Sony ZV-E1</a></h3>
+          <p>
+            Wenn Ihre Vlogs wie Netflix-Dokus aussehen sollen, brauchen Sie Vollformat. Die ZV-E1 nutzt 
+            den gleichen Sensor wie die Cinema-Line FX3, kostet aber die Hälfte. Die Hintergrund-Unschärfe 
+            (Bokeh) ist echt und cremig.
+          </p>
+          <p>
+            Das KI "Auto Framing" Feature kann digital croppen und Ihnen durch den Raum folgen wie ein 
+            virtueller Kameramann. Beste Low-Light-Performance aller Consumer-Kameras.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">12MP Vollformat</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">ISO</span>
+              <span class="spec-value">409.600 Max</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">KI-Features</span>
+              <span class="spec-value">Auto Framing</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Objektive</span>
+              <span class="spec-value">Wechselbar</span>
+            </div>
           </div>
-          <div class="cons">
-            <h4>Nachteile</h4>
-            <ul>
-              <li>Schwachlichtleistung funktioniert, aber ist verrauscht</li>
-              <li>Audio braucht Windschutz (Media Mod empfohlen)</li>
-              <li>Festfokus (keine unscharfen Hintergründe möglich)</li>
-            </ul>
+
+          <a href="#" class="btn-buy" data-product="sony-zv-e1" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+          <a href="/de/reviews/sony-zv-e1-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
+            Zum vollständigen Test →
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Wahnsinnige Low-Light-Fähigkeit</li>
+            <li>Kinematischer Vollformat-Look</li>
+            <li>Fortschrittliche KI-Stabilisierung und Framing</li>
+            <li>Product-Showcase-Modus</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Teures Gehäuse und Objektive</li>
+            <li>Kann in 4K60 überhitzen</li>
+            <li>Nur ein SD-Kartenslot</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product 3 -->
+  <section class="section" id="gopro-13">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🏄‍♂️ Action Vibes</span>
+          <picture>
+            <source srcset="/assets/images/guides/gopro-hero-13.webp" type="image/webp">
+            <img src="/assets/images/guides/gopro-hero-13.webp" alt="GoPro Hero 13 Test" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">GoPro Hero 13</h3>
+          <p>
+            Manchmal ist Vloggen gefährlich. Für Surfen, Skifahren oder schlechtes Wetter ist die 
+            Hero 13 unzerstörbar. HyperSmooth 7.0 ist wie Magie—es hält den Horizont gerade, 
+            selbst wenn Sie die Kamera 360 Grad drehen.
+          </p>
+          <p>
+            Der Frontbildschirm hilft beim Framing, und die neuen 10-bit-Farboptionen ermöglichen 
+            seriöses Color-Grading für Profi-Editoren.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Auflösung</span>
+              <span class="spec-value">5.3K 60fps</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Wasserdicht</span>
+              <span class="spec-value">10m (nativ)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Displays</span>
+              <span class="spec-value">Front + Rück</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Stabilisierung</span>
+              <span class="spec-value">HyperSmooth 7.0</span>
+            </div>
           </div>
+
+          <a href="#" class="btn-buy" data-product="gopro-13" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <h2>Vlogging-Grundlagen 101</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Audio > Video</h3>
-          <p>Leute schauen unscharfes 720p-Video, wenn die Geschichte gut ist, aber sie klicken sofort weg bei kratzigem Audio. Investiere in ein Mikrofon.</p>
-        </article>
-        <article class="card">
-          <h3>Beleuchtung</h3>
-          <p>Ein 50 € Ringlicht oder einfach dem Fenster zugewandt sein macht einen größeren Unterschied als ein Upgrade von einer 500 € Kamera auf eine 2000 € Kamera.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section">
-      <h2>Häufig gestellte Fragen</h2>
-      
-      <div class="faq" style="display: flex; flex-direction: column; gap: 20px;">
-        <div class="faq-item">
-          <h3 style="margin-top: 0; color: var(--accent);">Was ist die beste Vlog-Kamera für Anfänger?</h3>
-          <p style="margin-bottom: 0;">
-            Die <strong>DJI Osmo Pocket 3</strong> ist ideal für Anfänger, da sie sofort einsatzbereit ist, perfekte mechanische Stabilisierung bietet und keinen manuellen Fokus erfordert. Der große 1-Zoll-Sensor funktioniert auch bei Schwachlicht hervorragend. Mit dem integrierten 3-Achsen-Gimbal sind verwackelte Aufnahmen Geschichte.
-          </p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Unzerstörbar und wasserdicht</li>
+            <li>Weitestes Sichtfeld (perfekt für POV)</li>
+            <li>Horizon Lock ist ein Game-Changer</li>
+            <li>Klein genug für jede Montage</li>
+          </ul>
         </div>
-
-        <div class="faq-item">
-          <h3 style="margin-top: 0; color: var(--accent);">Brauche ich Vollformat zum Vloggen?</h3>
-          <p style="margin-bottom: 0;">
-            Nein. Vollformat-Kameras wie die Sony ZV-E1 bieten zwar bessere Schwachlicht-Performance und schöneres Bokeh, sind aber nicht notwendig. Die meisten erfolgreichen YouTuber nutzen APS-C-Sensoren oder 1-Zoll-Kameras. Wichtiger sind guter Autofokus, ein Klappbildschirm und ordentliche Audio-Optionen.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 style="margin-top: 0; color: var(--accent);">Wie wichtig ist ein Klappbildschirm beim Vloggen?</h3>
-          <p style="margin-bottom: 0;">
-            Sehr wichtig für Solo-Vlogger. Ein nach vorne klappbarer Bildschirm (wie bei Sony ZV-E1) oder Frontbildschirm (GoPro Hero 13) ermöglicht es, sich selbst zu filmen und den Bildausschnitt zu kontrollieren. Ohne Klappbildschirm musst du raten oder ständig die Aufnahme überprüfen.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 style="margin-top: 0; color: var(--accent);">Welche Bildstabilisierung ist am besten?</h3>
-          <p style="margin-bottom: 0;">
-            Mechanische Gimbal-Stabilisierung (DJI Pocket 3) ist die beste Lösung für butterweiche Aufnahmen. Für Wechselobjektiv-Kameras ist aktive digitale Stabilisierung (Sony ZV-E1) oder HyperSmooth (GoPro Hero 13) sehr effektiv. Standard-IBIS (In-Body Image Stabilization) reicht für statische Aufnahmen, aber nicht für Laufaufnahmen.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 style="margin-top: 0; color: var(--accent);">Ist 4K wirklich nötig für Vlogs?</h3>
-          <p style="margin-bottom: 0;">
-            Ja, aus drei Gründen: 1) Du kannst in 4K filmen und in 1080p hochladen – das gibt dir Raum zum Croppen ohne Qualitätsverlust. 2) YouTube komprimiert Videos stark; 4K-Uploads sehen in 1080p besser aus. 3) Zukunftssicher – deine Inhalte sind auch in 5 Jahren noch hochwertig.
-          </p>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Low-Light-Performance funktioniert, aber verrauscht</li>
+            <li>Audio braucht Windschutz (Media Mod empfohlen)</li>
+            <li>Fixfokus (kein unscharfer Hintergrund möglich)</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  
-    <!-- Related Posts -->
-    <section class="section related-posts">
-      <h2>Das könnte Sie auch interessieren</h2>
-      <div class="grid">
-        <article class="card card-plain">
-          <h3><a href="/de/ratgeber/beste-hybrid-kamera">Beste Hybrid-Kamera</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="/de/ratgeber/beste-kamera-fuer-anfaenger-2026">Beste Kamera für Einsteiger</a></h3>
-        </article>
-        <article class="card card-plain">
-          <h3><a href="/de/reviews/sony-zv-e10-review">Sony ZV-E10 Testbericht</a></h3>
-        </article>
-      </div>
-    </section>
-
-  
-    <!-- Author Box -->
-    <section class="section author-box">
-      <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <img src="/assets/images/team-avatar.webp" alt="Kameraupick Editorial Team" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
-        <div>
-          <h4 style="margin: 0 0 8px 0;">Geschrieben vom Kameraupick Redaktionsteam</h4>
-          <p style="margin: 0; color: var(--muted); font-size: 14px;">
-            Unser Team aus professionellen Fotografen und Videografen hat über 10 Jahre Erfahrung im Testen von Kameras. 
-            Wir kaufen unsere eigene Ausrüstung und bieten ehrliche, unvoreingenommene Tests.
+  <!-- Product 4 - Sony ZV-1 II -->
+  <section class="section" id="sony-zv-1-ii">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">📱 Beste Kompaktoption</span>
+          <picture>
+            <source srcset="/assets/images/guides/sony-zv-1-ii.webp" type="image/webp">
+            <img src="/assets/images/guides/sony-zv-1-ii.webp" alt="Sony ZV-1 II Test" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Sony ZV-1 II</h3>
+          <p>
+            Die ZV-1 II ist die ultimative "Point-and-Vlog"-Kamera. Das eingebaute 18-50mm Zoom-Objektiv 
+            bedeutet keine separaten Objektiv-Käufe, kein sperriges Kit—einfach greifen und los. 
+            Das ultraweitwinkel 18mm Ende ist perfekt für Selfie-Vlogging.
           </p>
-          <a href="/de/ueber-uns" style="font-size: 14px; margin-top: 8px; display: inline-block;">Mehr über unseren Testprozess erfahren →</a>
+          <p>
+            Alle ZV-Serie Vlogging-Features sind dabei: Product Showcase, Hintergrund-Defokus-Taste 
+            und Sonys exzellentes Face-Tracking. Perfekt für Reise-Vlogger.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">20MP 1-Zoll</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Objektiv</span>
+              <span class="spec-value">18-50mm f/1.8-4</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K30 / 1080p120</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Display</span>
+              <span class="spec-value">Schwenk-Touch</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="sony-zv-1-ii" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
         </div>
       </div>
-    </section>
 
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Ultra-kompakte All-in-One-Lösung</li>
+            <li>Weites 18mm Objektiv perfekt fürs Vloggen</li>
+            <li>Exzellenter Autofokus und Face-Tracking</li>
+            <li>Eingebauter ND-Filter</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>4K auf 30fps limitiert</li>
+            <li>Keine Wechselobjektive</li>
+            <li>Kleiner Sensor limitiert Low-Light</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Schema Markup for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Was ist die beste Vlog-Kamera für Anfänger?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Die DJI Osmo Pocket 3 ist ideal für Anfänger, da sie sofort einsatzbereit ist, perfekte mechanische Stabilisierung bietet und keinen manuellen Fokus erfordert. Der große 1-Zoll-Sensor funktioniert auch bei Schwachlicht hervorragend. Mit dem integrierten 3-Achsen-Gimbal sind verwackelte Aufnahmen Geschichte."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Brauche ich Vollformat zum Vloggen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nein. Vollformat-Kameras wie die Sony ZV-E1 bieten zwar bessere Schwachlicht-Performance und schöneres Bokeh, sind aber nicht notwendig. Die meisten erfolgreichen YouTuber nutzen APS-C-Sensoren oder 1-Zoll-Kameras. Wichtiger sind guter Autofokus, ein Klappbildschirm und ordentliche Audio-Optionen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wie wichtig ist ein Klappbildschirm beim Vloggen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sehr wichtig für Solo-Vlogger. Ein nach vorne klappbarer Bildschirm (wie bei Sony ZV-E1) oder Frontbildschirm (GoPro Hero 13) ermöglicht es, sich selbst zu filmen und den Bildausschnitt zu kontrollieren. Ohne Klappbild schirm musst du raten oder ständig die Aufnahme überprüfen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Welche Bildstabilisierung ist am besten?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Mechanische Gimbal-Stabilisierung (DJI Pocket 3) ist die beste Lösung für butterweiche Aufnahmen. Für Wechselobjektiv-Kameras ist aktive digitale Stabilisierung (Sony ZV-E1) oder HyperSmooth (GoPro Hero 13) sehr effektiv. Standard-IBIS (In-Body Image Stabilization) reicht für statische Aufnahmen, aber nicht für Laufaufnahmen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Ist 4K wirklich nötig für Vlogs?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja, aus drei Gründen: 1) Du kannst in 4K filmen und in 1080p hochladen – das gibt dir Raum zum Croppen ohne Qualitätsverlust. 2) YouTube komprimiert Videos stark; 4K-Uploads sehen in 1080p besser aus. 3) Zukunftssicher – deine Inhalte sind auch in 5 Jahren noch hochwertig."
-        }
-      }
-    ]
-  }
-  </script>
+  <section class="section">
+    <h2>Vlogging Grundlagen 101</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Audio > Video</h3>
+        <p>Leute schauen unscharfes 720p-Video wenn die Story gut ist, aber klicken sofort weg 
+          bei kratzendem Audio. Investieren Sie in ein Mikrofon.</p>
+      </article>
+      <article class="card">
+        <h3>Beleuchtung</h3>
+        <p>Ein 50€ Ringlicht oder einfach ein Fenster vor sich macht mehr Unterschied als ein 
+          Upgrade von einer 500€ auf eine 2000€ Kamera.</p>
+      </article>
+    </div>
+  </section>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://cameraupick.com/de"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Ratgeber",
-        "item": "https://cameraupick.com/de/ratgeber"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Beste Vlog-Kamera",
-        "item": "https://cameraupick.com/de/ratgeber/beste-vlog-kamera"
-      }
-    ]
-  }
-  </script>
+  <!-- Related Posts -->
+  <section class="section related-posts">
+    <h2>Das könnte Sie auch interessieren</h2>
+    <div class="grid">
+      <article class="card card-plain">
+        <h3><a href="/de/ratgeber/beste-hybrid-kamera">Beste Hybrid-Kamera</a></h3>
+      </article>
+      <article class="card card-plain">
+        <h3><a href="/de/ratgeber/beste-kamera-fuer-anfaenger-2026">Beste Kamera für Anfänger</a></h3>
+      </article>
+      <article class="card card-plain">
+        <h3><a href="/de/reviews/sony-zv-e10-ii-review">Sony ZV-E10 II Test</a></h3>
+      </article>
+    </div>
+  </section>
 
-  </main>
+  <!-- Author Box -->
+  <section class="section author-box">
+    <div style="display: flex; gap: 16px; align-items: flex-start;">
+      <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+      <div>
+        <h4 style="margin: 0 0 8px 0;">Verfasst vom cameraupick Redaktionsteam</h4>
+        <p style="margin: 0; color: var(--muted); font-size: 14px;">
+          Unser Team professioneller Fotografen und Videografen hat 10+ Jahre Erfahrung im Kameratest. 
+          Wir kaufen unsere eigene Ausrüstung und liefern ehrliche, unvoreingenommene Tests.
+        </p>
+        <a href="/de/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Erfahren Sie mehr über unseren Testprozess →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="affiliate">
+    <h2>Partner-Hinweis</h2>
+    <p class="section-sub">
+      Wir kaufen oder leihen unsere eigene Ausrüstung. Kein Hersteller hat für diesen Ratgeber bezahlt. 
+      Wir verdienen eine Provision, wenn Sie unsere Affiliate-Links nutzen.
+    </p>
+  </section>
+
+</main>
 </BaseLayout>
