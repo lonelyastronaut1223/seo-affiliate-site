@@ -55,10 +55,11 @@ class CodeAuditor:
             if imgs_without_alt:
                 self.issues['images_without_alt'].append(f"{rel_path} ({len(imgs_without_alt)} images)")
             
-            # Check for external links without rel="noopener"
+            # Check for external links without rel containing "noopener"
             external_links = re.findall(r'<a[^>]+href="https?://[^"]*"[^>]*target="_blank"[^>]*>', content)
             for link in external_links:
-                if 'rel="noopener"' not in link and 'rel=\'noopener\'' not in link:
+                # Check if noopener appears anywhere in rel attribute
+                if 'noopener' not in link.lower():
                     self.issues['external_links_no_noopener'].append(str(rel_path))
                     break
             
