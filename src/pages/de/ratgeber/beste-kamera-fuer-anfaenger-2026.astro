@@ -38,9 +38,20 @@ const faqs = [
       </div>
       <div class="hero-media">
         <picture>
-          <source srcset="/assets/images/guides/beginner.webp" type="image/webp">
-          <img src="/assets/images/guides/beginner.webp" alt="Kamera für Anfänger" loading="eager"
-            fetchpriority="high" decoding="async" width="1400" height="900"
+          <source 
+            srcset="/assets/images/guides/beginner-sm.webp 600w, /assets/images/guides/beginner.webp 1200w" 
+            sizes="(max-width: 768px) 100vw, 1200px"
+            type="image/webp">
+          <img 
+            src="/assets/images/guides/beginner.webp" 
+            srcset="/assets/images/guides/beginner-sm.webp 600w, /assets/images/guides/beginner.webp 1200w"
+            sizes="(max-width: 768px) 100vw, 1200px"
+            alt="Kamera für Anfänger" 
+            loading="eager"
+            fetchpriority="high" 
+            decoding="async" 
+            width="1400" 
+            height="900"
             style="width: 100%; height: 100%; object-fit: cover;">
         </picture>
       </div>
