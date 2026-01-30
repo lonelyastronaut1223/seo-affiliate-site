@@ -1,7 +1,7 @@
 /**
  * AUTO-GENERATED FILE - DO NOT MODIFY DIRECTLY
  * This file is generated from src/config/affiliateLinks.js by scripts/core/sync_links.js
- * Last Updated: 2026-01-29T12:48:36.347Z
+ * Last Updated: 2026-01-30T23:21:44.862Z
  */
 
 const affiliateLinks = {
@@ -13,6 +13,7 @@ const affiliateLinks = {
     "sony-zv-e10-ii": "https://amzn.to/49HqAH3",
     "sony-zv-e1": "https://amzn.to/3Le0oMc",
     "sony-fx3": "https://amzn.to/4b0w6Ha",
+    "sony-zv-1-ii": "https://amzn.to/3VwRzJk",
     "canon-eos-r8": "https://amzn.to/3Lvm06M",
     "canon-r50": "https://amzn.to/3YBJTwt",
     "canon-r100": "https://amzn.to/45FQ6eA",
