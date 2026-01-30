@@ -6,27 +6,29 @@ import OrganizationSchema from '../../../components/OrganizationSchema.astro';
 const faqs = [
   {
     question: "Sollte ich eine Vlog-Kamera kaufen oder mein Smartphone nutzen?",
-    answer: "Moderne Smartphones (iPhone 15 Pro, Samsung S24) produzieren exzellente Videoqualität. Ein Upgrade zur Kamera lohnt sich, wenn Sie benötigen: (1) Besseren Autofokus für bewegte Motive, (2) Wechselobjektive für kreative Kontrolle, (3) Überlegene Low-Light-Performance, oder (4) Professionelle Audio-Eingänge. Für Anfänger: Nutzen Sie Ihr Smartphone und investieren Sie zuerst in Licht und Audio."
+    answer: "Moderne Smartphones (iPhone 15 Pro, Samsung S24) produzieren exzellente Videoqualität. Ein Upgrade zur Kamera lohnt sich, wenn Sie benötigen: (1) Besseren Autofokus für bewegte Motive, (2) Wechselobjektive für kreative Kontrolle, (3) Überlegene Low-Light-Performance, oder (4) Professionelle Audio-Eingänge."
   },
   {
     question: "Was ist wichtiger: 4K-Auflösung oder Bildrate?",
-    answer: "Für YouTube ist 4K mit 30p der Sweet Spot. Es sieht auf modernen Displays scharf aus und lässt sich gut bearbeiten. 4K 60p ist sinnvoll für Zeitlupen-Content oder extra-flüssige Bewegungen. Die meisten Zuschauer bemerken keinen Unterschied zwischen 30p und 60p bei Talking-Head-Content. Priorisieren Sie guten Autofokus und Stabilisierung vor höheren Bildraten."
+    answer: "Für YouTube ist 4K mit 30p der Sweet Spot. Es sieht auf modernen Displays scharf aus und lässt sich gut bearbeiten. 4K 60p ist sinnvoll für Zeitlupen-Content. Die meisten Zuschauer bemerken keinen Unterschied zwischen 30p und 60p bei Talking-Head-Content."
   },
   {
     question: "Brauche ich Vollformat oder reicht APS-C?",
-    answer: "APS-C reicht für 95% aller YouTuber. Vollformat-Vorteile: (1) Bessere Low-Light-Performance, (2) Geringere Schärfentiefe für kinematischen Look, (3) Weiterer Bildwinkel mit gleichem Objektiv. Aber Vollformat-Kameras und -Objektive kosten deutlich mehr. Starten Sie mit APS-C (Sony ZV-E10 II, Canon R50) und upgraden Sie zu Vollformat (Canon R8, Sony ZV-E1), wenn Low-Light oder Ästhetik limitierend wird."
+    answer: "APS-C reicht für 95% aller YouTuber. Vollformat-Vorteile: bessere Low-Light-Performance, geringere Schärfentiefe für kinematischen Look. Aber Vollformat-Kameras und -Objektive kosten deutlich mehr. Starten Sie mit APS-C (Sony ZV-E10 II, Canon R50)."
   },
   {
-    question: "Was ist die beste Kamera unter 500 Euro für YouTube?",
-    answer: "DJI Osmo Pocket 3 (520€) ist knapp über Budget, aber lohnenswert für die mechanische Gimbal-Stabilisierung und den 1-Zoll-Sensor. Keine andere Kamera in dieser Preisklasse bietet vergleichbare Videoqualität und Stabilisierung. Für Wechselobjektive mit kleinerem Budget suchen Sie nach gebrauchter Sony ZV-E10 (Gen 1) um 500-600€."
+    question: "Was ist die beste Kamera unter 500€ für YouTube?",
+    answer: "Canon EOS R100 (480€) ist die beste Wechselobjektiv-Kamera unter 500€. Sie hat zuverlässigen Autofokus, 4K-Video und Zugang zu Canons RF-Objektivsystem."
   }
 ];
 ---
 
 <BaseLayout 
   title="Beste Kamera für YouTube & Vlogs 2026 | Expertenratgeber" 
-  description="Top YouTube-Kameras nach Budget vergleichen. DJI Pocket 3, Sony ZV-E10 II, Canon R50 getestet. Klicken Sie für detaillierte Specs, Videotests & Kaufberatung."
+  description="Top YouTube-Kameras nach Budget vergleichen. Sony ZV-E10 II, Canon R50, Panasonic S5 II getestet. Klicken Sie für detaillierte Specs & Kaufberatung."
 >
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
 <main class="container">
   <section class="hero">
     <div class="hero-grid">
@@ -34,552 +36,391 @@ const faqs = [
         <h1>Beste Kamera für YouTube & Vlogs (2026)</h1>
         <p class="hero-sub">
           Großartige YouTube-Inhalte erfordern Kameras, die bei Autofokus, Audio 
-          und Stabilisierung glänzen. Wir haben 15+ Kameras für Solo-Creator getestet—hier 
-          sind die besten Picks nach Budget sortiert. Klicken Sie auf eine Kamera für unseren vollständigen Test.
+          und Stabilisierung glänzen. Wir haben 12+ Kameras für Solo-Creator getestet—hier 
+          sind die besten Picks nach Budget sortiert.
         </p>
-        <div class="meta">
-          Letzte Aktualisierung: 30. Januar 2026 · 9 Kameras getestet
-        </div>
       </div>
       <div class="hero-media">
         <picture>
-          <img
-            src="/assets/images/guides/vlog.webp"
-            alt="YouTube Vlogging-Kamera Setup"
-            loading="eager"
-            fetchpriority="high"
-            width="1400"
-            height="900"
-          />
+          <source srcset="/assets/images/guides/youtube-creator.webp" type="image/webp">
+          <img src="/assets/images/guides/youtube-creator.webp" alt="YouTube Creator Setup" loading="eager"
+            fetchpriority="high" decoding="async" width="1400" height="900"
+            style="width: 100%; height: 100%; object-fit: cover;">
         </picture>
       </div>
     </div>
   </section>
 
-  <!-- Quick Comparison Table -->
   <section class="section">
-    <h2>Auf einen Blick: Top-Picks nach Budget</h2>
+    <h2>Auf einen Blick: Top 4 Empfehlungen</h2>
     <div class="comparison-table-wrapper">
       <table class="comparison">
         <thead>
           <tr>
-            <th>Kamera</th>
+            <th>Modell</th>
+            <th>Typ</th>
+            <th>Geeignet für</th>
+            <th>Max. Qualität</th>
             <th>Preis</th>
-            <th>Best For</th>
-            <th>Autofokus</th>
-            <th>Stabilisierung</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>DJI Pocket 3</strong></td>
-            <td>520€</td>
-            <td>Reise-Vlogs</td>
-            <td>Exzellent</td>
-            <td>Mechanischer Gimbal</td>
-            <td><a href="#dji-pocket-3" class="link-arrow">Details</a></td>
+            <td>
+              <a href="#sony-zv-e10-ii" class="product-name">Sony ZV-E10 II</a>
+            </td>
+            <td>APS-C</td>
+            <td>Die meisten Creator</td>
+            <td>4K60</td>
+            <td class="price-check"><a href="#" data-product="sony-zv-e10-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
           </tr>
           <tr>
-            <td><strong>Sony ZV-E10 II</strong></td>
-            <td>1.098€</td>
-            <td>Studio & Outdoor</td>
-            <td>Klassenführend</td>
-            <td>Active Mode</td>
-            <td><a href="#sony-zv-e10-ii" class="link-arrow">Details</a></td>
-          </tr>
-          <tr>
-            <td><strong>Canon R50</strong></td>
-            <td>679€</td>
+            <td>
+              <a href="#canon-r50" class="product-name">Canon EOS R50</a>
+            </td>
+            <td>APS-C</td>
             <td>Einsteiger</td>
-            <td>Sehr gut</td>
-            <td>Digital</td>
-            <td><a href="#canon-r50" class="link-arrow">Details</a></td>
+            <td>4K30</td>
+            <td class="price-check"><a href="#" data-product="canon-r50" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
           </tr>
           <tr>
-            <td><strong>Sony ZV-E1</strong></td>
-            <td>2.198€</td>
+            <td>
+              <a href="#panasonic-s5-ii" class="product-name">Panasonic S5 II</a>
+            </td>
+            <td>Vollformat</td>
             <td>Profi-Creator</td>
-            <td>Cinema-Level</td>
-            <td>AI + IBIS</td>
-            <td><a href="#sony-zv-e1" class="link-arrow">Details</a></td>
+            <td>6K30 / 4K60</td>
+            <td class="price-check"><a href="#" data-product="panasonic-s5-ii" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
+          </tr>
+          <tr>
+            <td>
+              <a href="#sony-a6700" class="product-name">Sony A6700</a>
+            </td>
+            <td>APS-C Premium</td>
+            <td>Hybrid-Creator</td>
+            <td>4K120</td>
+            <td class="price-check"><a href="#" data-product="sony-a6700" rel="sponsored noopener noreferrer" target="_blank">Preis prüfen &rarr;</a></td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- Budget: Under 800€ -->
-  <section class="section">
-    <h2 class="section-title-budget">
-      <span class="budget-badge budget-low">💰 Unter 800€</span>
-      Beste Kameras für budgetbewusste Creator
-    </h2>
-
-    <!-- DJI Pocket 3 -->
-    <article class="product-card-interactive" id="dji-pocket-3">
-      <a href="/de/reviews/dji-osmo-pocket-3-review" class="card-link">
-        <div class="card-header">
-          <div class="card-image">
-            <span class="badge-best">🏆 Bestes Preis-Leistungs-Verhältnis</span>
-            <img 
-              src="/assets/images/guides/dji-osmo-pocket-3.webp" 
-              alt="DJI Osmo Pocket 3"
-              loading="lazy"
-            />
-          </div>
-          <div class="card-info">
-            <h3>DJI Osmo Pocket 3</h3>
-            <p class="tagline">"Point-and-Shoot-Perfektion mit eingebautem Gimbal"</p>
-            <div class="price-badge">520€</div>
-            
-            <div class="key-specs">
-              <span class="spec-chip">1" Sensor</span>
-              <span class="spec-chip">4K 120p</span>
-              <span class="spec-chip">Gimbal</span>
-              <span class="spec-chip">2h Akku</span>
-            </div>
-          </div>
+  <!-- Product 1 -->
+  <section class="section" id="sony-zv-e10-ii">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🏆 Beste für die meisten Creator</span>
+          <picture>
+            <source srcset="/assets/images/guides/sony-zv-e10-ii.webp" type="image/webp">
+            <img src="/assets/images/guides/sony-zv-e10-ii.webp" alt="Sony ZV-E10 II Test" loading="lazy">
+          </picture>
         </div>
-
-        <div class="card-body">
-          <p class="quick-verdict">
-            Die Pocket 3 ist ein Cheat-Code für flüssiges Footage. Ihr mechanischer 3-Achsen-Gimbal  lässt Gehaufnahmen wie Hollywood-Produktionen aussehen. Der 1-Zoll-Sensor funktioniert überraschend gut bei wenig Licht, und das Wireless-Mikrofon verbindet sich sofort. Perfekt für Reise-Vlogger, die Cinema-Qualität ohne Rucksack wollen.
+        <div class="product-info">
+          <h3 class="product-title"><a href="/de/reviews/sony-zv-e10-ii-review">Sony ZV-E10 II</a></h3>
+          <p>
+            Die ZV-E10 II wurde speziell für Content-Creator entwickelt. Sie hat dedizierte Vlogging-Features 
+            wie Product-Showcase-Modus (sofortiger Fokuswechsel beim Hochhalten von Objekten), Hintergrund-Defokus-Taste 
+            und ein voll schwenkbares Display.
+          </p>
+          <p>
+            Der KI-gestützte Autofokus verfolgt Gesichter und Augen zuverlässig—auch beim Laufen. 
+            4K 60p Video, 10-bit Farbe und S-Log3 für Farbkorrektur machen sie professionell.
           </p>
 
-          <div class="pros-cons-inline">
-            <div class="pros-mini">
-              <strong>✓ Kaufgrund:</strong> Unschlagbare Stabilisierung, sofortiges Setup, Taschenformat, exzellentes Face-Tracking
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">26MP APS-C</span>
             </div>
-            <div class="cons-mini">
-              <strong>✗ Nachteile:</strong> Feste 20mm-Linse, nicht wasserdicht, eingebauter Akku (nicht wechselbar)
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K60 10-bit</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Autofokus</span>
+              <span class="spec-value">KI-Motivverfolgung</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Display</span>
+              <span class="spec-value">Schwenk-Touchscreen</span>
             </div>
           </div>
 
-          <div class="card-cta">
-            <span class="cta-text">Vollständigen Test lesen</span>
-            <span class="arrow">→</span>
-          </div>
+          <a href="#" class="btn-buy" data-product="sony-zv-e10-ii" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+          <a href="/de/reviews/sony-zv-e10-ii-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
+            Zum vollständigen Test →
+          </a>
         </div>
-      </a>
-    </article>
+      </div>
 
-    <!-- Canon R50 -->
-    <article class="product-card-interactive" id="canon-r50">
-      <a href="/de/reviews/canon-r50-review" class="card-link">
-        <div class="card-header">
-          <div class="card-image">
-            <span class="badge-best">🎓 Beste für Anfänger</span>
-            <img 
-              src="/assets/images/guides/canon-r50.webp" 
-              alt="Canon EOS R50"
-              loading="lazy"
-            />
-          </div>
-          <div class="card-info">
-            <h3>Canon EOS R50</h3>
-            <p class="tagline">"Am einfachsten zu bedienende Spiegellose mit RF-Objektiven"</p>
-            <div class="price-badge">679€</div>
-            
-            <div class="key-specs">
-              <span class="spec-chip">24MP APS-C</span>
-              <span class="spec-chip">4K 30p</span>
-              <span class="spec-chip">Dual Pixel AF</span>
-              <span class="spec-chip">Schwenkdisplay</span>
-            </div>
-          </div>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Speziell für Content-Creator entwickelt</li>
+            <li>Klassenführender KI-Autofokus</li>
+            <li>4K60 mit voller Sensorauslesung</li>
+            <li>Exzellenter Product-Showcase-Modus</li>
+          </ul>
         </div>
-
-        <div class="card-body">
-          <p class="quick-verdict">
-            Canons anfängerfreundlichste Kamera mit professionellen Features. Die Touchscreen-Oberfläche ist intuitiv, und der Dual-Pixel-Autofokus verfolgt Gesichter magisch. Leichtes Gehäuse macht sie komfortabel für lange Drehs. Hervorragende Akkulaufzeit und Zugang zu Canons exzellentem RF-Objektivsystem.
-          </p>
-
-          <div class="pros-cons-inline">
-            <div class="pros-mini">
-              <strong>✓ Kaufgrund:</strong> Benutzerfreundlich, zuverlässiger AF, RF-Kompatibilität, kompakte Größe
-            </div>
-            <div class="cons-mini">
-              <strong>✗ Nachteile:</strong> Kein IBIS, 4K-Crop, Single-Card-Slot, begrenzte Video-Optionen
-            </div>
-          </div>
-
-          <div class="card-cta">
-            <span class="cta-text">Vollständigen Test lesen</span>
-            <span class="arrow">→</span>
-          </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Kein Sucher (EVF)</li>
+            <li>Kein IBIS (nur Objektiv-Stabilisierung)</li>
+            <li>Rolling Shutter in 4K60</li>
+          </ul>
         </div>
-      </a>
-    </article>
+      </div>
+    </div>
   </section>
 
-  <!-- Budget: 800-1500€ -->
-  <section class="section">
-    <h2 class="section-title-budget">
-      <span class="budget-badge budget-mid">💼 800-1.500€</span>
-      Beste Mittelklasse-Kameras für ernsthafte Creator
-    </h2>
-
-    <!-- Sony ZV-E10 II -->
-    <article class="product-card-interactive" id="sony-zv-e10-ii">
-      <a href="/de/reviews/sony-zv-e10-review" class="card-link">
-        <div class="card-header">
-          <div class="card-image">
-            <span class="badge-best">⭐ Redaktions-Favorit</span>
-            <img 
-              src="/assets/images/guides/sony-zv-e10-ii.webp" 
-              alt="Sony ZV-E10 II"
-              loading="lazy"
-            />
-          </div>
-          <div class="card-info">
-            <h3>Sony ZV-E10 II</h3>
-            <p class="tagline">"Speziell entwickelte Vlog-Maschine mit Profi-Features"</p>
-            <div class="price-badge">1.098€</div>
-            
-            <div class="key-specs">
-              <span class="spec-chip">26MP APS-C</span>
-              <span class="spec-chip">4K 60p</span>
-              <span class="spec-chip">Product Showcase</span>
-              <span class="spec-chip">KI-Autofokus</span>
-            </div>
-          </div>
+  <!-- Product 2 -->
+  <section class="section" id="canon-r50">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🎓 Beste für Einsteiger</span>
+          <picture>
+            <source srcset="/assets/images/guides/canon-r50.webp" type="image/webp">
+            <img src="/assets/images/guides/canon-r50.webp" alt="Canon EOS R50 Test" loading="lazy">
+          </picture>
         </div>
-
-        <div class="card-body">
-          <p class="quick-verdict">
-            Die ultimative Vlog-First-Kamera. Sony hat diese speziell für Content-Creator entwickelt mit Features wie Product-Showcase-Modus (sofortiger Fokuswechsel), Hintergrund-Unschärfe-Taste und KI-gestütztem Subject-Tracking. Der neue KI-Prozessor liefert klassenführenden Autofokus für menschliche Motive. Flip-Screen und Touchscreen machen Solo-Shooting mühelos.
+        <div class="product-info">
+          <h3 class="product-title"><a href="/de/reviews/canon-eos-r50-review">Canon EOS R50</a></h3>
+          <p>
+            Canons einsteigerfreundlichste Spiegellose. Das Menüsystem ist intuitiv, der Touchscreen 
+            reagiert zuverlässig, und Dual-Pixel-Autofokus hält Sie mühelos scharf.
+          </p>
+          <p>
+            Unter 700€ ist sie der beste Einstieg in Canons RF-Objektivsystem. 4K-Video, exzellente Fotos 
+            und ein kompaktes, leichtes Gehäuse, das den ganzen Tag bequem bleibt.
           </p>
 
-          <div class="pros-cons-inline">
-            <div class="pros-mini">
-              <strong>✓ Kaufgrund:</strong> Vlog-optimierte Features, unglaublicher AF, 4K 60p, große Objektivauswahl, Echtzeit-Eye-Tracking
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP APS-C</span>
             </div>
-            <div class="cons-mini">
-              <strong>✗ Nachteile:</strong> Kein Sucher, Menü-Komplexität, Rolling Shutter in 4K
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K30 (Crop)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Autofokus</span>
+              <span class="spec-value">Dual Pixel CMOS</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gewicht</span>
+              <span class="spec-value">375g Gehäuse</span>
             </div>
           </div>
 
-          <div class="card-cta">
-            <span class="cta-text">Vollständigen Test lesen</span>
-            <span class="arrow">→</span>
-          </div>
+          <a href="#" class="btn-buy" data-product="canon-r50" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+          <a href="/de/reviews/canon-eos-r50-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
+            Zum vollständigen Test →
+          </a>
         </div>
-      </a>
-    </article>
+      </div>
 
-    <!-- Canon R8 -->
-    <article class="product-card-interactive" id="canon-r8">
-      <a href="/de/reviews/canon-r8-review" class="card-link">
-        <div class="card-header">
-          <div class="card-image">
-            <span class="badge-best">📸 Vollformat-Einstieg</span>
-            <img 
-              src="/assets/images/guides/canon-eos-r8.webp" 
-              alt="Canon EOS R8"
-              loading="lazy"
-            />
-          </div>
-          <div class="card-info">
-            <h3>Canon EOS R8</h3>
-            <p class="tagline">"Erschwingliches Vollformat mit Cinema-Quality-AF"</p>
-            <div class="price-badge">1.499€</div>
-            
-            <div class="key-specs">
-              <span class="spec-chip">24MP Vollformat</span>
-              <span class="spec-chip">4K 60p</span>
-              <span class="spec-chip">DIGIC X</span>
-              <span class="spec-chip">461g Gehäuse</span>
-            </div>
-          </div>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Sehr einfach zu bedienen für Anfänger</li>
+            <li>Zuverlässiger Dual-Pixel-Autofokus</li>
+            <li>Kompakt und leicht</li>
+            <li>Zugang zum Canon RF-Objektivsystem</li>
+          </ul>
         </div>
-
-        <div class="card-body">
-          <p class="quick-verdict">
-            Die leichteste Vollformat-Kamera verfügbar. Vollformat-Sensor liefert wunderschöne Hintergrund-Unschärfe und exzellente Low-Light-Performance—kritisch für Indoor-Vlogs. Das gleiche Autofokus-System wie Canons 2.500€ R6 II. Kompakte Größe macht sie komfortabel für ganztägige Drehs. Kompromisse: kein IBIS und kleinerer Akku.
-          </p>
-
-          <div class="pros-cons-inline">
-            <div class="pros-mini">
-              <strong>✓ Kaufgrund:</strong> Vollformat-Look, professioneller AF, leicht, Canon-Farbwissenschaft
-            </div>
-            <div class="cons-mini">
-              <strong>✗ Nachteile:</strong> Kein IBIS, kleinerer Akku, Single-Card-Slot, Überhitzungslimits
-            </div>
-          </div>
-
-          <div class="card-cta">
-            <span class="cta-text">Vollständigen Test lesen</span>
-            <span class="arrow">→</span>
-          </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Kein IBIS</li>
+            <li>4K hat deutlichen Crop</li>
+            <li>Nur ein Kartenslot</li>
+          </ul>
         </div>
-      </a>
-    </article>
-
-    <!-- Fujifilm X-T50 -->
-    <article class="product-card-interactive" id="fujifilm-xt50">
-      <a href="/de/reviews/fujifilm-x-t50-review" class="card-link">
-        <div class="card-header">
-          <div class="card-image">
-            <span class="badge-best">🎨 Beste Farben</span>
-            <img 
-              src="/assets/images/guides/fujifilm-x-t50.webp" 
-              alt="Fujifilm X-T50"
-              loading="lazy"
-            />
-          </div>
-          <div class="card-info">
-            <h3>Fujifilm X-T50</h3>
-            <p class="tagline">"Film-Simulationen für sofortige Ästhetik"</p>
-            <div class="price-badge">1.399€</div>
-            
-            <div class="key-specs">
-              <span class="spec-chip">40MP APS-C</span>
-              <span class="spec-chip">6.2K 30p</span>
-              <span class="spec-chip">Film-Sims</span>
-              <span class="spec-chip">IBIS</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-body">
-          <p class="quick-verdict">
-            Fujfilms legendäre Film-Simulationen geben Ihnen wunderschöne Farben direkt aus der Kamera—kein Grading nötig. Das Retro-Design hat physische Drehregler für schnelle Anpassungen. 40MP-Sensor bietet unglaubliche Details für Produktaufnahmen und Fotografie. IBIS hilft bei Freihand-Video. Perfekt für ästhetik-fokussierte Creator.
-          </p>
-
-          <div class="pros-cons-inline">
-            <div class="pros-mini">
-              <strong>✓ Kaufgrund:</strong> Wunderschöne Film-Simulationen, 40MP-Auflösung, IBIS, taktile Bedienung, Hybrid-Vielseitigkeit
-            </div>
-            <div class="cons-mini">
-              <strong>✗ Nachteile:</strong> AF nicht so zuverlässig wie Sony/Canon, kleinere Objektivauswahl, Crop in 4K60
-            </div>
-          </div>
-
-          <div class="card-cta">
-            <span class="cta-text">Vollständigen Test lesen</span>
-            <span class="arrow">→</span>
-          </div>
-        </div>
-      </a>
-    </article>
+      </div>
+    </div>
   </section>
 
-  <!-- Budget: Premium 1500€+ -->
-  <section class="section">
-    <h2 class="section-title-budget">
-      <span class="budget-badge budget-high">💎 Premium (1.500€+)</span>
-      Beste Kameras für professionelle YouTube-Creator
-    </h2>
-
-    <!-- Sony ZV-E1 -->
-    <article class="product-card-interactive" id="sony-zv-e1">
-      <a href="/de/reviews/sony-zv-e1-review" class="card-link">
-        <div class="card-header">
-          <div class="card-image">
-            <span class="badge-best">👑 Ultimative Vlog-Kamera</span>
-            <img 
-              src="/assets/images/guides/sony-zv-e1.webp" 
-              alt="Sony ZV-E1"
-              loading="lazy"
-            />
-          </div>
-          <div class="card-info">
-            <h3>Sony ZV-E1</h3>
-            <p class="tagline">"Cinema-Grade-Sensor im vlog-freundlichen Gehäuse"</p>
-            <div class="price-badge">2.198€</div>
-            
-            <div class="key-specs">
-              <span class="spec-chip">12MP Vollformat</span>
-              <span class="spec-chip">4K 120p</span>
-              <span class="spec-chip">KI Auto-Framing</span>
-              <span class="spec-chip">ISO 409.600</span>
-            </div>
-          </div>
+  <!-- Product 3 -->
+  <section class="section" id="panasonic-s5-ii">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">💎 Beste Preis-Leistung Vollformat</span>
+          <picture>
+            <source srcset="/assets/images/guides/panasonic-s5ii.webp" type="image/webp">
+            <img src="/assets/images/guides/panasonic-s5ii.webp" alt="Panasonic S5 II Test" loading="lazy">
+          </picture>
         </div>
-
-        <div class="card-body">
-          <p class="quick-verdict">
-            Der gleiche Sensor wie Sonys 3.900€ FX3 Cinema-Kamera. Unübertroffene Low-Light-Performance—Aufnahmen in nahezu völliger Dunkelheit ohne Rauschen. KI-Auto-Framing folgt Ihnen digital wie ein virtueller Kameramann. Vollformat-Hintergrund-Unschärfe rivalisiert mit Netflix-Dokumentationen. S-Cinetone-Profil liefert kinematische Farben ohne Grading.
+        <div class="product-info">
+          <h3 class="product-title"><a href="/de/reviews/panasonic-s5-ii-review">Panasonic S5 II</a></h3>
+          <p>
+            Die S5 II ist ein Game-Changer für YouTube-Creator, die Vollformat-Qualität ohne Sony-Preise wollen. 
+            Sie hat endlich Phasen-Erkennungs-Autofokus, der Gesichter zuverlässig verfolgt.
+          </p>
+          <p>
+            Beeindruckende Video-Specs: 6K 30p, 4K 60p ohne Crop, unbegrenzte Aufnahme und V-Log für 
+            professionelle Farbkorrektur. Der IBIS ist herausragend für Freihand-Arbeit.
           </p>
 
-          <div class="pros-cons-inline">
-            <div class="pros-mini">
-              <strong>✓ Kaufgrund:</strong> Cinema-Level Low-Light, KI-Features, Vollformat-Bokeh, professionelle Codecs, vlog-optimiert
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">24MP Vollformat</span>
             </div>
-            <div class="cons-mini">
-              <strong>✗ Nachteile:</strong> Teures Objektivsystem, kann in 4K60 überhitzen, Single-Card-Slot
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">6K30 / 4K60</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">IBIS</span>
+              <span class="spec-value">5-Achsen (6,5 Stufen)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Aufnahme</span>
+              <span class="spec-value">Unbegrenzt</span>
             </div>
           </div>
 
-          <div class="card-cta">
-            <span class="cta-text">Vollständigen Test lesen</span>
-            <span class="arrow">→</span>
-          </div>
+          <a href="#" class="btn-buy" data-product="panasonic-s5-ii" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+          <a href="/de/reviews/panasonic-s5-ii-review" class="btn-outline" style="margin-top: 8px; display: inline-block;">
+            Zum vollständigen Test →
+          </a>
         </div>
-      </a>
-    </article>
+      </div>
 
-    <!-- Sony FX3 -->
-    <article class="product-card-interactive" id="sony-fx3">
-      <a href="/de/reviews/sony-fx3-review" class="card-link">
-        <div class="card-header">
-          <div class="card-image">
-            <span class="badge-best">🎬 Cinema Line</span>
-            <img 
-              src="/assets/images/guides/sony-fx3.webp" 
-              alt="Sony FX3"
-              loading="lazy"
-            />
-          </div>
-          <div class="card-info">
-            <h3>Sony FX3</h3>
-            <p class="tagline">"Professionelle Cinema-Kamera für YouTuber"</p>
-            <div class="price-badge">3.898€</div>
-            
-            <div class="key-specs">
-              <span class="spec-chip">12MP Vollformat</span>
-              <span class="spec-chip">4K 120p 10-bit</span>
-              <span class="spec-chip">Dual ISO</span>
-              <span class="spec-chip">Timecode</span>
-            </div>
-          </div>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Beste Preis-Leistung bei Vollformat</li>
+            <li>Unbegrenzte Aufnahme (keine Überhitzungslimits)</li>
+            <li>Exzellenter IBIS</li>
+            <li>6K-Video für Crop-Flexibilität</li>
+          </ul>
         </div>
-
-        <div class="card-body">
-          <p class="quick-verdict">
-            Sonys kleinste Cinema-Line-Kamera mit professionellen Features wie Timecode, XLR-Audio und Tally-Lichtern. Dual Native ISO (800/12.800) liefert sauberes Footage bei jeder Lichtbedingung. Aktive Kühlung verhindert Überhitzung bei langen Aufnahmen. Gebaut für YouTuber, die Cinema-Qualität und professionelle Zuverlässigkeit brauchen.
-          </p>
-
-          <div class="pros-cons-inline">
-            <div class="pros-mini">
-              <strong>✓ Kaufgrund:</strong> Cinema-Grade-Features, unbegrenzte Aufnahme, Dual ISO, professionelles Audio, aktive Kühlung
-            </div>
-            <div class="cons-mini">
-              <strong>✗ Nachteile:</strong> Teuer, schwerer als Hybrids, eingeschränkte Foto-Features, steile Lernkurve
-            </div>
-          </div>
-
-          <div class="card-cta">
-            <span class="cta-text">Vollständigen Test lesen</span>
-            <span class="arrow">→</span>
-          </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Autofokus gut, aber nicht Sony-Level</li>
+            <li>Schwerer als APS-C-Optionen</li>
+            <li>Kleinere L-Mount-Objektivauswahl</li>
+          </ul>
         </div>
-      </a>
-    </article>
+      </div>
+    </div>
   </section>
 
-  <!-- Buying Guide Section -->
+  <!-- Product 4 - Sony A6700 -->
+  <section class="section" id="sony-a6700">
+    <div class="product-review-card">
+      <div class="product-review-header">
+        <div class="product-image-container">
+          <span class="badge-best">🚀 Premium APS-C</span>
+          <picture>
+            <source srcset="/assets/images/guides/sony-a6700.webp" type="image/webp">
+            <img src="/assets/images/guides/sony-a6700.webp" alt="Sony A6700 Test" loading="lazy">
+          </picture>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Sony A6700</h3>
+          <p>
+            Die A6700 ist Sonys fortschrittlichste APS-C-Kamera. Sie kombiniert den KI-gestützten 
+            Autofokus der A7R V mit einem kompakten, leichten Gehäuse. 4K 120fps für butterweiche 
+            Zeitlupen, 5-Achsen-IBIS und 10-bit 4:2:2 interne Aufnahme.
+          </p>
+          <p>
+            Perfekt für Creator, die Flaggschiff-Features ohne Vollformat-Gewicht oder -Kosten wollen. 
+            Der 26MP-Sensor liefert auch exzellente Fotos—eine echte Hybrid-Allzweckwaffe.
+          </p>
+
+          <div class="specs-list">
+            <div class="spec-item">
+              <span class="spec-label">Sensor</span>
+              <span class="spec-value">26MP APS-C</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Video</span>
+              <span class="spec-value">4K120 10-bit</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">IBIS</span>
+              <span class="spec-value">5-Achsen (5 Stufen)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Autofokus</span>
+              <span class="spec-value">KI-Motivverfolgung</span>
+            </div>
+          </div>
+
+          <a href="#" class="btn-buy" data-product="sony-a6700" rel="sponsored noopener noreferrer" target="_blank">
+            Preis auf Amazon prüfen &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Vorteile</h4>
+          <ul>
+            <li>Bester APS-C-Autofokus verfügbar</li>
+            <li>4K120 für Zeitlupen-Content</li>
+            <li>Eingebauter 5-Achsen-IBIS</li>
+            <li>Exzellente Foto- und Video-Hybrid</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Nachteile</h4>
+          <ul>
+            <li>Höherer Preis als ZV-E10 II</li>
+            <li>Kein Schwenkdisplay (nur neigbar)</li>
+            <li>4K60 hat 1,1x Crop</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
-    <h2>Was macht eine großartige YouTube-Kamera aus?</h2>
-    <div class="guide-grid">
-      <article class="guide-card">
-        <h3>1. Autofokus-Performance</h3>
-        <p>
-          Das kritischste Feature für Solo-Creator. Suchen Sie nach Gesichts-/Augen-Tracking, das zuverlässig funktioniert, wenn Sie sich bewegen. Sony und Canon führen hier mit KI-gesteuerter Motiverkennung.
-        </p>
+    <h2>YouTube-Kamera Grundlagen</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Autofokus ist König</h3>
+        <p>Solo-Creator brauchen zuverlässiges Gesichts-/Augen-Tracking. Wenn Sie sich beim Sprechen bewegen, 
+          muss die Kamera Sie automatisch scharf halten. Sony und Canon führen hier.</p>
       </article>
-
-      <article class="guide-card">
-        <h3>2. Schwenkdisplay</h3>
-        <p>
-          Sie müssen sich beim Aufnehmen sehen können. Vollständig schwenkbare Displays (nicht nur neigbar) lassen Sie die Bildkomposition aus jedem Winkel überwachen—unverzichtbar fürs Vlogging.
-        </p>
-      </article>
-
-      <article class="guide-card">
-        <h3>3. Gute Audio-Optionen</h3>
-        <p>
-          Eingebaute Mikrofone sind okay für Backup, aber Sie sollten externe Mikrofon-Unterstützung haben. 3,5mm-Klinke ist Minimum; Audio-Interfaces oder XLR (FX3) sind Premium-Optionen.
-        </p>
-      </article>
-
-      <article class="guide-card">
-        <h3>4. Stabilisierung</h3>
-        <p>
-          Mechanische Gimbals (DJI Pocket 3) sind am besten. IBIS (In-Body-Stabilisierung) hilft für Freihand-Arbeit. Mindestens gute digitale Stabilisierung verhindert wackeliges Footage.
-        </p>
+      <article class="card">
+        <h3>Audio ist wichtiger</h3>
+        <p>Zuschauer tolerieren schlechtes Video, aber klicken bei schlechtem Audio sofort weg. Holen Sie sich eine 
+          Kamera mit Mikrofon-Eingang und investieren Sie früh in ein gutes Mikrofon.</p>
       </article>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section">
-    <h2>Häufig gestellte Fragen</h2>
-    <div class="faq-container">
-      <details class="faq-item">
-        <summary>
-          <h3>Sollte ich eine Vlog-Kamera kaufen oder mein Smartphone nutzen?</h3>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Moderne Smartphones (iPhone 15 Pro, Samsung S24) produzieren exzellente Video-Qualität. Upgraden Sie auf eine dedizierte Kamera, wenn Sie benötigen: (1) Besseren Autofokus für bewegte Motive, (2) Wechselobjektive für kreative Kontrolle, (3) Überlegene Low-Light-Performance, oder (4) Professionelle Audio-Eingänge.
-          </p>
-          <p>
-            Wenn Sie gerade anfangen, nutzen Sie Ihr Handy und investieren Sie zuerst in Beleuchtung und Audio.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <h3>Was ist wichtiger: 4K-Auflösung oder Bildrate?</h3>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Für YouTube ist 4K 30p der Sweet Spot. Es sieht scharf auf modernen Displays aus und ist einfach zu bearbeiten. 4K 60p ist nützlich, wenn Sie Slow-Motion-Inhalte erstellen oder extra-flüssige Bewegung wollen. Die meisten Zuschauer werden den Unterschied zwischen 30p und 60p bei Talking-Head-Content nicht bemerken.
-          </p>
-          <p>
-            Priorisieren Sie guten Autofokus und Stabilisierung über das Jagen höherer Bildraten.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <h3>Brauche ich Vollformat oder reicht APS-C?</h3>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            APS-C ist für 95% der YouTuber ausreichend. Vollformat-Vorteile: (1) Bessere Low-Light-Performance, (2) Flachere Schärfentiefe für kinematischen Look, (3) Weiterer Bildwinkel mit gleichem Objektiv. Aber Vollformat-Kameras und ​​-Objektive kosten deutlich mehr.
-          </p>
-          <p>
-            Starten Sie mit APS-C (Sony ZV-E10 II, Canon R50). Upgraden Sie auf Vollformat (Canon R8, Sony ZV-E1), wenn Low-Light oder Ästhetik limitierend werden.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <h3>Was ist die beste Kamera unter 500€ für YouTube?</h3>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <strong>DJI Osmo Pocket 3 (520€).</strong> Leicht über Budget, aber es lohnt sich für die mechanische Gimbal-Stabilisierung und den 1"-Sensor. Keine andere Kamera in dieser Preisklasse bietet vergleichbare Videoqualität und Stabilisierung.
-          </p>
-          <p>
-            Wenn Sie Wechselobjektive mit kleinerem Budget brauchen, suchen Sie nach gebrauchter Sony ZV-E10 (Gen 1) für etwa 500-600€.
-          </p>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- Related Guides -->
+  <!-- Related Posts -->
   <section class="section related-posts">
-    <h2>Verwandte Kaufratgeber</h2>
+    <h2>Das könnte Sie auch interessieren</h2>
     <div class="grid">
       <article class="card card-plain">
         <h3><a href="/de/ratgeber/beste-vlog-kamera">Beste Vlog-Kamera</a></h3>
-        <p>Kameras speziell für Vlogging optimiert</p>
       </article>
       <article class="card card-plain">
-        <h3><a href="/de/ratgeber/beste-einsteiger-kamera">Beste Einsteiger-Kamera</a></h3>
-        <p>Entry-Level-Kameras für Fotografie-Lernende</p>
+        <h3><a href="/de/ratgeber/beste-kamera-fuer-anfaenger-2026">Beste Kamera für Anfänger</a></h3>
       </article>
       <article class="card card-plain">
-        <h3><a href="/de/ratgeber/beste-reisekamera">Beste Reisekamera</a></h3>
-        <p>Kompakte Kameras für unterwegs</p>
+        <h3><a href="/de/reviews/sony-zv-e10-ii-review">Sony ZV-E10 II Test</a></h3>
       </article>
     </div>
   </section>
@@ -587,362 +428,25 @@ const faqs = [
   <!-- Author Box -->
   <section class="section author-box">
     <div style="display: flex; gap: 16px; align-items: flex-start;">
-      <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" 
-        style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
+      <img src="/assets/images/team-avatar.webp" alt="cameraupick Redaktionsteam" style="width: 64px; height: 64px; border-radius: 50%; object-fit: contain; background: white; border: 2px solid var(--accent); padding: 4px;">
       <div>
         <h4 style="margin: 0 0 8px 0;">Verfasst vom cameraupick Redaktionsteam</h4>
         <p style="margin: 0; color: var(--muted); font-size: 14px;">
-          Unser Team testet Kameras für reale YouTube- und Vlogging-Szenarien. 
-          Wir kaufen unsere eigene Ausrüstung und geben ehrliche, unvoreingenommene 
-          Empfehlungen basierend auf 10+ Jahren Content-Creation-Erfahrung.
+          Unser Team professioneller Fotografen und Videografen hat 10+ Jahre Erfahrung im Kameratest. 
+          Wir kaufen unsere eigene Ausrüstung und liefern ehrliche, unvoreingenommene Tests.
         </p>
-        <a href="/de/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">
-          Erfahren Sie mehr über unseren Testprozess →
-        </a>
+        <a href="/de/about" style="font-size: 14px; margin-top: 8px; display: inline-block;">Erfahren Sie mehr über unseren Testprozess →</a>
       </div>
     </div>
   </section>
+
+  <section class="section" id="affiliate">
+    <h2>Partner-Hinweis</h2>
+    <p class="section-sub">
+      Wir kaufen oder leihen unsere eigene Ausrüstung. Kein Hersteller hat für diesen Ratgeber bezahlt. Wir verdienen 
+      eine Provision, wenn Sie unsere Affiliate-Links nutzen, was diese Seite werbefrei hält.
+    </p>
+  </section>
+
 </main>
 </BaseLayout>
-
-<style>
-/* Interactive Product Cards */
-.product-card-interactive {
-  background: var(--surface);
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 32px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid transparent;
-}
-
-.product-card-interactive:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  border-color: var(--accent);
-}
-
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.card-header {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 32px;
-  padding: 32px;
-  background: var(--background);
-}
-
-@media (max-width: 768px) {
-  .card-header {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
-
-.card-image {
-  position: relative;
-}
-
-.card-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  display: block;
-}
-
-.badge-best {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: var(--accent);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 700;
-  z-index: 1;
-}
-
-.card-info h3 {
-  margin: 0 0 8px 0;
-  font-size: 28px;
-  color: var(--foreground);
-}
-
-.tagline {
-  color: var(--muted);
-  font-style: italic;
-  margin: 0 0 16px 0;
-  font-size: 16px;
-}
-
-.price-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--accent) 0%, #e74c3c 100%);
-  color: white;
-  padding: 8px 20px;
-  border-radius: 24px;
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-.key-specs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.spec-chip {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 13px;
-  color: var(--foreground);
-  font-weight: 500;
-}
-
-.card-body {
-  padding: 0 32px 32px 32px;
-}
-
-.quick-verdict {
-  color: var(--foreground);
-  line-height: 1.7;
-  margin-bottom: 24px;
-  font-size: 16px;
-}
-
-.pros-cons-inline {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 24px;
-  padding: 20px;
-  background: var(--background);
-  border-radius: 12px;
-}
-
-@media (max-width: 768px) {
-  .pros-cons-inline {
-    grid-template-columns: 1fr;
-  }
-}
-
-.pros-mini, .cons-mini {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.pros-mini strong {
-  color: #27ae60;
-}
-
-.cons-mini strong {
-  color: #e74c3c;
-}
-
-.card-cta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 24px;
-  background: var(--accent);
-  border-radius: 12px;
-  color: white;
-  font-weight: 700;
-  transition: all 0.2s;
-}
-
-.product-card-interactive:hover .card-cta {
-  background: #e74c3c;
-  padding-right: 32px;
-}
-
-.card-cta .arrow {
-  font-size: 24px;
-  transition: transform 0.2s;
-}
-
-.product-card-interactive:hover .arrow {
-  transform: translateX(4px);
-}
-
-/* Budget Section Headers */
-.section-title-budget {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 32px;
-  font-size: 28px;
-}
-
-.budget-badge {
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.budget-low {
-  background: #27ae60;
-  color: white;
-}
-
-.budget-mid {
-  background: #3498db;
-  color: white;
-}
-
-.budget-high {
-  background: #9b59b6;
-  color: white;
-}
-
-/* Guide Grid */
-.guide-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.guide-card {
-  background: var(--surface);
-  padding: 24px;
-  border-radius: 12px;
-  border-left: 4px solid var(--accent);
-}
-
-.guide-card h3 {
-  margin-top: 0;
-  color: var(--accent);
-}
-
-/* FAQ Styling */
-.faq-container {
-  max-width: 800px;
-}
-
-.faq-item {
-  background: var(--surface);
-  margin-bottom: 16px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-
-.faq-item summary {
-  padding: 20px 24px;
-  cursor: pointer;
-  font-weight: 600;
-  list-style: none;
-  transition: background 0.2s;
-}
-
-.faq-item summary:hover {
-  background: var(--background);
-}
-
-.faq-item summary h3 {
-  margin: 0;
-  font-size: 18px;
-  display: inline;
-}
-
-.faq-answer {
-  padding: 0 24px 20px 24px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.faq-answer p {
-  margin-bottom: 12px;
-}
-
-.faq-answer strong {
-  color: var(--foreground);
-}
-
-/* Comparison Table */
-.comparison-table-wrapper {
-  overflow-x: auto;
-}
-
-.comparison {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--surface);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.comparison thead {
-  background: var(--background);
-}
-
-.comparison th {
-  padding: 16px;
-  text-align: left;
-  font-weight: 700;
-  color: var(--accent);
-  border-bottom: 2px solid var(--border);
-}
-
-.comparison td {
-  padding: 16px;
-  border-bottom: 1px solid var(--border);
-}
-
-.comparison tbody tr:hover {
-  background: var(--background);
-}
-
-.link-arrow {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.2s;
-  display: inline-block;
-}
-
-.link-arrow:hover {
-  transform: translateX(4px);
-}
-
-/* Meta Badge */
-.meta {
-  color: var(--muted);
-  font-size: 14px;
-  margin-top: 16px;
-}
-</style>
-
-<script>
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-// Track card clicks
-document.querySelectorAll('.product-card-interactive').forEach(card => {
-  card.addEventListener('click', () => {
-    const productName = card.querySelector('h3').textContent;
-    console.log(`Clicked: ${productName}`);
-  });
-});
-</script>
