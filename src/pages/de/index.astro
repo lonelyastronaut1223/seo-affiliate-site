@@ -360,8 +360,30 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <p class="section-sub">
         Praxis-Eindrücke, Vor- und Nachteile sowie klare Kaufempfehlungen.
       </p>
-      <div class="grid">
-        <article class="card">
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="review-filters">
+        <button class="filter-tab active" data-filter="all">Alle</button>
+        <button class="filter-tab filter-tab-logo" data-filter="sony" aria-label="Sony">
+          <img src="/assets/images/brands/sony.svg" alt="Sony" width="60" height="20" />
+        </button>
+        <button class="filter-tab filter-tab-logo" data-filter="canon" aria-label="Canon">
+          <img src="/assets/images/brands/canon.svg" alt="Canon" width="60" height="20" />
+        </button>
+        <button class="filter-tab filter-tab-logo" data-filter="nikon" aria-label="Nikon">
+          <img src="/assets/images/brands/nikon.svg" alt="Nikon" width="60" height="20" />
+        </button>
+        <button class="filter-tab filter-tab-logo" data-filter="fujifilm" aria-label="Fujifilm">
+          <img src="/assets/images/brands/fujifilm.svg" alt="Fujifilm" width="70" height="20" />
+        </button>
+        <button class="filter-tab filter-tab-logo" data-filter="panasonic" aria-label="Panasonic">
+          <img src="/assets/images/brands/panasonic.svg" alt="Panasonic" width="75" height="20" />
+        </button>
+        <button class="filter-tab" data-filter="other">Andere</button>
+      </div>
+
+      <div class="grid" id="reviews-grid">
+        <article class="card" data-brand="sony">
           <div class="card-thumb">
             <img
               loading="lazy"
@@ -384,7 +406,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Kompakte Vollformat · Hybrid</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="sony">
           <div class="card-thumb">
             <img
               loading="lazy"
@@ -407,7 +429,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Vollformat · Hybrid</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="fujifilm">
           <div class="card-thumb">
             <img
               loading="lazy"
@@ -429,7 +451,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
           <div class="meta">APS-C · Foto-First</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="canon">
           <div class="card-thumb">
             <img
               loading="lazy"
@@ -451,7 +473,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Preis-Leistung · Video-freundlich</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="sony">
           <div class="card-thumb">
             <img
               loading="lazy"
@@ -473,7 +495,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Vlog · Budget</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="nikon">
           <div class="card-thumb">
             <img
               loading="lazy"
@@ -494,7 +516,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Profi · Hybrid</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="panasonic">
           <div class="card-thumb">
             <img
               loading="lazy"
@@ -516,7 +538,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </p>
           <div class="meta">Vollformat · Hybrid</div>
         </article>
-        <article class="card">
+        <article class="card" data-brand="other">
           <div class="card-thumb">
             <img
               loading="lazy"
@@ -1016,4 +1038,26 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </div>
     </section>
   </main>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".filter-tab");
+      const cards = document.querySelectorAll("#reviews-grid .card");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          buttons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const filter = btn.dataset.filter || "all";
+          cards.forEach((card) => {
+            if (filter === "all" || card.dataset.brand === filter) {
+              card.style.display = "";
+              card.style.opacity = "1";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    });
+  </script>
 </BaseLayout>
