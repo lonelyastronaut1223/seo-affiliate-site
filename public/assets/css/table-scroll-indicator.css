@@ -85,22 +85,27 @@
         position: relative;
     }
 
-    /* 添加"向右滑动查看更多"提示 */
+    /* 添加小箭头提示 */
     .comparison-table-wrapper[data-scroll-hint]::after {
-        content: '→ 向右滑动';
+        content: '→';
         position: absolute;
-        right: 12px;
+        right: 16px;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(77, 163, 255, 0.9);
+        background: rgba(77, 163, 255, 0.85);
         color: white;
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 12px;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 18px;
         font-weight: 600;
         pointer-events: none;
         animation: pulse-hint 2s ease infinite;
         z-index: 2;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
     /* 滚动后隐藏提示 */
