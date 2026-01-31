@@ -194,12 +194,11 @@ const jsonLd = JSON.stringify({
             @media (max-width:768px){.hero-grid{grid-template-columns:1fr}}
         </style>
 
-        <!-- Non-render-blocking CSS - loads async -->
-        <link rel="preload" href="/assets/css/bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-        <noscript><link rel="stylesheet" href="/assets/css/bundle.min.css" /></noscript>
+        <!-- Main CSS - Render-blocking for stability (51KB, acceptable) -->
+        <link rel="stylesheet" href="/assets/css/bundle.min.css" />
 
-        <!-- Review page styles - load async -->
-        <link rel="preload" href="/assets/css/review-page.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print" />
+        <!-- Review page styles - Load async (non-critical) -->
+        <link rel="preload" href="/assets/css/review-page.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="/assets/css/review-page.css" /></noscript>
 
         <!-- Google Analytics - Deferred for performance -->
