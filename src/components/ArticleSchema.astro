@@ -1,0 +1,65 @@
+---
+/**
+ * Article Schema Component
+ * Generates Article structured data for guide/blog pages
+ * Helps Google understand the page as editorial content
+ */
+
+interface Props {
+    headline: string;
+    description: string;
+    image?: string;
+    datePublished?: string;
+    dateModified?: string;
+    authorName?: string;
+    url: string;
+}
+
+const {
+    headline,
+    description,
+    image = "/assets/images/guides/main-page-1280.webp",
+    datePublished = "2025-12-15",
+    dateModified = new Date().toISOString().split("T")[0],
+    authorName = "cameraupick Editorial Team",
+    url,
+} = Astro.props;
+
+// Full image URL
+const fullImageUrl = image.startsWith("http")
+    ? image
+    : `https://cameraupick.com${image}`;
+
+const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: headline,
+    description: description,
+    image: fullImageUrl,
+    datePublished: datePublished,
+    dateModified: dateModified,
+    author: {
+        "@type": "Organization",
+        name: authorName,
+        url: "https://cameraupick.com/about",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "cameraupick",
+        url: "https://cameraupick.com",
+        logo: {
+            "@type": "ImageObject",
+            url: "https://cameraupick.com/assets/images/team-avatar.webp",
+        },
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://cameraupick.com${url}`,
+    },
+};
+
+const articleJsonLd = JSON.stringify(articleSchema);
+---
+
+<!-- Article Schema -->
+<script type="application/ld+json" set:html={articleJsonLd} />

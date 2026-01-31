@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import OrganizationSchema from '../../components/OrganizationSchema.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
 
 const faqs = [
   {
@@ -23,7 +24,16 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title="Best Travel Camera (2026) — cameraupick" description="The best lightweight travel cameras for 2026. We tested portable options from Sony, Fujifilm, and OM System for street, landscape, and vacation photos.">
+<BaseLayout title="Best Travel Camera (2026) — cameraupick" description="Best travel cameras 2026: 6 compact, lightweight picks tested worldwide. Full-frame & APS-C options from $800-$3000. Perfect image quality, minimal packing space.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
+<ArticleSchema 
+  slot="head"
+  headline="Best Travel Camera 2026 - Compact & Lightweight Picks"
+  description="Expert guide to the best travel cameras for 2026, tested in real-world conditions worldwide."
+  url="/guides/best-travel-camera"
+  datePublished="2025-12-10"
+/>
 <main class="container">
     <section class="hero">
       <div class="hero-grid">

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import OrganizationSchema from '../../components/OrganizationSchema.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
 
 const faqs = [
   {
@@ -24,6 +25,15 @@ const faqs = [
 ---
 
 <BaseLayout title="Best Hybrid Camera for Photo & Video (2026) — cameraupick" description="The true do-it-all cameras. We review the top hybrid full-frame mirrorless cameras from Sony, Canon, and Panasonic for creators who shoot everything.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
+<ArticleSchema 
+  slot="head"
+  headline="Best Hybrid Camera for Photo & Video 2026"
+  description="Expert comparison of the best hybrid cameras that excel at both photography and videography."
+  url="/guides/best-hybrid-camera"
+  datePublished="2025-12-05"
+/>
 <main class="container">
     <section class="hero">
       <div class="hero-grid">

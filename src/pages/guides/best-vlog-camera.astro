@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import OrganizationSchema from '../../components/OrganizationSchema.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
 
 const faqs = [
   {
@@ -23,7 +24,16 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title="Best Vlog Camera for YouTube (2026) — cameraupick" description="Top vlogging cameras for 2026 rated by video quality, stabilization, and ease of use. From DJI Pocket to full-frame Sony cameras.">
+<BaseLayout title="Best Vlog Camera for YouTube (2026) — cameraupick" description="Best vlog cameras 2026: 8 tested picks with flip screens & great autofocus. Compare DJI, Sony & Canon from $400-$1500. Start creating professional content today.">
+<FAQSchema slot="head" faqs={faqs} />
+<OrganizationSchema slot="head" />
+<ArticleSchema 
+  slot="head"
+  headline="Best Vlog Camera for YouTube 2026 - Expert Reviews"
+  description="Comprehensive guide to the best vlogging cameras for YouTube creators in 2026, tested for autofocus and stabilization."
+  url="/guides/best-vlog-camera"
+  datePublished="2025-12-08"
+/>
 <main class="container">
     <section class="hero">
       <div class="hero-grid">

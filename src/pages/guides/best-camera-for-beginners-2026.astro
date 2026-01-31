@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import OrganizationSchema from '../../components/OrganizationSchema.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
 
 const faqs = [
   {
@@ -23,9 +24,16 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title="Best Camera for Beginners (2026) — cameraupick" description="Beginner-friendly camera picks for 2026: we tested the best easy-to-use cameras from Sony, Canon, and Fujifilm. See our top picks.">
+<BaseLayout title="Best Camera for Beginners (2026) — cameraupick" description="Best beginner cameras 2026: 7 tested picks from $400-$1200. Sony, Canon & Fujifilm models with simple controls, great autofocus. Start your photography journey today.">
 <FAQSchema slot="head" faqs={faqs} />
 <OrganizationSchema slot="head" />
+<ArticleSchema 
+  slot="head"
+  headline="Best Camera for Beginners 2026 - Expert Guide"
+  description="Comprehensive guide to the best beginner cameras for 2026, tested and reviewed by professional photographers."
+  url="/guides/best-camera-for-beginners-2026"
+  datePublished="2025-12-15"
+/>
 <main class="container">
     <section class="hero">
       <div class="hero-grid">
