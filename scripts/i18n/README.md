@@ -1,81 +1,89 @@
-# Internationalization (i18n) System
+# i18n Translation Scripts
 
-Multi-language translation infrastructure for the camera review website.
+Tools for maintaining English-German translation parity for the SEO affiliate site.
 
-## Supported Languages
+## Quick Start
 
-| Code | Language | Status |
-|------|----------|--------|
-| de | Deutsch (German) | ✅ Complete |
-| es | Español (Spanish) | 📝 Placeholder |
-| it | Italiano (Italian) | 📝 Placeholder |
-| fr | Français (French) | 📝 Placeholder |
-
-## Directory Structure
-
-```
-scripts/i18n/
-├── translate.py          # Main translation engine
-├── complete_german.py    # Full German content translator
-├── deep_translate.py     # Dictionary-based translator
-└── locales/
-    ├── de.json           # German translations (complete)
-    ├── es.json           # Spanish translations (placeholder)
-    ├── it.json           # Italian translations (placeholder)
-    └── fr.json           # French translations (placeholder)
-```
-
-## Usage
-
-### Translate Pages
 ```bash
-# Translate all pages to German
-python scripts/i18n/complete_german.py
+# Check translation status
+python3 scripts/i18n/audit_german_v2.py
 
-# Use the translation engine (with locale file)
-python scripts/i18n/translate.py --lang de
+# Sync DE homepage with EN
+python3 scripts/i18n/translate_de_index.py
+python3 scripts/i18n/translate_de_descriptions.py
 ```
 
-### Adding a New Language
+---
 
-1. **Create locale file**: Copy `de.json` as template, translate all values
-   ```bash
-   cp scripts/i18n/locales/de.json scripts/i18n/locales/[lang].json
-   ```
+## Available Scripts
 
-2. **Create language directory**: 
-   ```bash
-   mkdir -p [lang]/ratgeber [lang]/bewertungen [lang]/vergleiche
-   ```
+| Script | Purpose | When to Use |
+|--------|---------|-------------|
+| `audit_german_v2.py` | Scan DE pages for English content | Before every deployment |
+| `translate_de_index.py` | Translate homepage structure | After EN homepage update |
+| `translate_de_descriptions.py` | Translate descriptions, FAQ, alt text | After EN homepage update |
+| `complete_german_v3.py` | Fix FAQ Schema translations | When FAQ audit fails |
+| `complete_german_v4.py` | Fix product descriptions | When product audit fails |
+| `complete_german_v5.py` | Fix review page content | When review audit fails |
+| `complete_german_v6.py` | Batch translate review pages | For new review pages |
+| `fix_de_review_imports.py` | Fix import paths in DE reviews | After bulk page creation |
+| `translate.py` | General translation utilities | As base for other scripts |
 
-3. **Update translation engine**: Add language config to `translate.py`
+---
 
-4. **Run translation**:
-   ```bash
-   python scripts/i18n/translate.py --lang [lang]
-   ```
+## Workflow
 
-## Locale File Structure
-
-```json
-{
-  "meta": {
-    "language": "de",
-    "name": "Deutsch",
-    "locale": "de_DE"
-  },
-  "navigation": { ... },
-  "buttons": { ... },
-  "headings": { ... },
-  "table_headers": { ... },
-  "badges": { ... },
-  "camera_terms": { ... },
-  "video_terms": { ... }
-}
+### 1. Homepage Sync
+```bash
+cp src/pages/index.astro src/pages/de/index.astro
+python3 scripts/i18n/translate_de_index.py
+python3 scripts/i18n/translate_de_descriptions.py
 ```
 
-## Notes
+### 2. Review Page Translation
+```bash
+python3 scripts/i18n/complete_german_v6.py
+```
 
-- Manual translation provides best quality for product descriptions
-- Locale files handle UI elements, buttons, labels
-- For full content translation, extend `complete_german.py` with page-specific content
+### 3. Audit & Verify
+```bash
+python3 scripts/i18n/audit_german_v2.py
+npm run build 2>&1 | grep -i error
+```
+
+---
+
+## Adding New Translations
+
+### To translate_de_index.py:
+Add new string replacements to the `translations` list:
+```python
+content = content.replace('English Text', 'German Text')
+```
+
+### To translate_de_descriptions.py:
+Add to the `translations` list for review descriptions:
+```python
+translations = [
+    ("English description text", "German description text"),
+    # Add more...
+]
+```
+
+---
+
+## False Positives
+
+These English terms are acceptable in German pages:
+- Technical: APS-C, IBIS, PDAF, EVF, OLED, CMOS
+- Brands: Sony, Canon, Nikon, GoPro
+- Loan words: Video, Vlog, Streaming, Podcast
+
+---
+
+## Related Resources
+
+- [i18n Skill](.agent/skills/i18n/SKILL.md)
+- [DE Page Checklist](.agent/rules/de-page-checklist.md)
+- [EN-DE SEO Rules](.agent/rules/en-de-seo-rules.md)
+- [Multilingual Parity Workflow](.agent/workflows/maintain_multilingual_parity.md)

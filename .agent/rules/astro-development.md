@@ -156,20 +156,52 @@ const canonical = "https://cameraupick.com/path";
 
 ## Internationalization (i18n)
 
-### German Pages
+### German Pages Structure
 - All German pages go in `src/pages/de/`
 - URL structure: `/de/path` mirrors English `/path`
-- Use absolute paths in language switcher:
-  ```astro
-  <a href="/">EN</a>
-  <a href="/de/">DE</a>
-  ```
+
+### Import Path Rules (CRITICAL)
+DE pages are nested deeper, so require additional `../`:
+
+| Page Location | Import Path |
+|--------------|-------------|
+| `src/pages/*.astro` | `../layouts/BaseLayout.astro` |
+| `src/pages/de/*.astro` | `../../layouts/BaseLayout.astro` |
+| `src/pages/reviews/*.astro` | `../../layouts/BaseLayout.astro` |
+| `src/pages/de/reviews/*.astro` | `../../../layouts/BaseLayout.astro` ⚠️ |
+
+```astro
+// ❌ Wrong (in src/pages/de/reviews/)
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// ✅ Correct (in src/pages/de/reviews/)
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+```
+
+### URL Path Rules
+All internal links in DE pages must include `/de/` prefix:
+```astro
+// ❌ Wrong (links to EN page)
+href="/reviews/sony-a7c-ii-review"
+
+// ✅ Correct
+href="/de/reviews/sony-a7c-ii-review"
+```
+
+### Language Switcher
+Use absolute paths in language switcher:
+```astro
+<a href="/">EN</a>
+<a href="/de/">DE</a>
+```
 
 ### Translation Rules
 - Refer to `.agent/rules/en-de-seo-rules.md`
+- Refer to `.agent/rules/de-page-checklist.md`
 - Never translate word-for-word
 - Adapt keywords for German search behavior
 - Keep structure parallel between EN and DE
+- Use translation scripts in `scripts/i18n/`
 
 ---
 
