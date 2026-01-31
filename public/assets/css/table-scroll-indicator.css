@@ -90,8 +90,7 @@
         content: '→';
         position: absolute;
         right: 16px;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: 16px;
         background: rgba(77, 163, 255, 0.85);
         color: white;
         width: 32px;
@@ -103,7 +102,6 @@
         font-size: 18px;
         font-weight: 600;
         pointer-events: none;
-        animation: pulse-hint 2s ease infinite;
         z-index: 2;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
