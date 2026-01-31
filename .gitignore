@@ -5,7 +5,12 @@ node_modules
 dist/
 .astro/
 
-
 # Archive folder
 _archive/
-.DS_Store
+
+# Python virtual environment
+.venv/
+
+# IDE files
+.idea/
+.vscode/

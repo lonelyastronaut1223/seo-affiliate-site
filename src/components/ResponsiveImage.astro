@@ -1,0 +1,54 @@
+---
+// Responsive image component with automatic srcset generation
+interface Props {
+  src: string;          // Base image path (e.g., "/assets/images/guides/beginner.webp")
+  alt: string;
+  width?: number;
+  height?: number;
+  loading?: "lazy" | "eager";
+  fetchpriority?: "high" | "low" | "auto";
+  sizes?: string;       // CSS sizes attribute
+  hasSmallVersion?: boolean; // If true, assumes a -sm version exists
+}
+
+const { 
+  src, 
+  alt, 
+  width, 
+  height, 
+  loading = "lazy", 
+  fetchpriority = "auto",
+  sizes = "(max-width: 768px) 100vw, 50vw",
+  hasSmallVersion = true
+} = Astro.props;
+
+// Generate -sm version path
+const getSmallVersion = (path: string) => {
+  const parts = path.split('.');
+  const ext = parts.pop();
+  return `${parts.join('.')}-sm.${ext}`;
+};
+
+const smallSrc = hasSmallVersion ? getSmallVersion(src) : src;
+---
+
+<picture>
+  {hasSmallVersion && (
+    <source 
+      srcset={`${smallSrc} 600w, ${src} 1200w`}
+      sizes={sizes}
+      type="image/webp"
+    />
+  )}
+  <img 
+    src={src}
+    srcset={hasSmallVersion ? `${smallSrc} 600w, ${src} 1200w` : src}
+    sizes={sizes}
+    alt={alt}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
+    width={width}
+    height={height}
+  />
+</picture>

@@ -1,0 +1,51 @@
+---
+// Author bio component for review pages
+---
+<div class="author-bio">
+  <img 
+    src="/assets/images/team-avatar.webp" 
+    alt="cameraupick Editorial Team" 
+    class="author-avatar"
+  >
+  <div class="author-info">
+    <h4>Written by cameraupick Editorial Team</h4>
+    <p>
+      Camera gear experts since 2024. Real tests, honest reviews, no sponsored placements.
+    </p>
+    <a href="/about">Learn more about our testing process →</a>
+  </div>
+</div>
+
+<style>
+  .author-bio {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .author-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: white;
+    border: 2px solid var(--accent);
+    padding: 4px;
+  }
+
+  .author-info h4 {
+    margin: 0 0 8px 0;
+  }
+
+  .author-info p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .author-info a {
+    font-size: 14px;
+    margin-top: 8px;
+    display: inline-block;
+  }
+</style>
