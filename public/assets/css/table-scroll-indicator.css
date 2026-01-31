@@ -1,0 +1,132 @@
+/* Mobile Table Scroll Indicator Improvements */
+
+/* 1. 强制显示滚动条（iOS/Android友好） */
+.comparison-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* iOS smooth scrolling */
+    scrollbar-width: thin;
+    /* Firefox: thin scrollbar */
+    scrollbar-color: rgba(77, 163, 255, 0.6) rgba(255, 255, 255, 0.08);
+    /* Firefox */
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.comparison-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+    /* 可见的滚动条高度 */
+}
+
+.comparison-table-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+}
+
+.comparison-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(77, 163, 255, 0.6);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.comparison-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(77, 163, 255, 0.8);
+}
+
+/* 2. 添加右侧渐变阴影提示 */
+.comparison-table-wrapper {
+    position: relative;
+}
+
+.comparison-table-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 8px;
+    /* 留出滚动条空间 */
+    width: 40px;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(13, 19, 34, 0.95) 80%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* 当滚动到最右边时隐藏渐变 */
+.comparison-table-wrapper.scrolled-end::after {
+    opacity: 0;
+}
+
+/* 3. 添加左侧渐变（滚动后显示） */
+.comparison-table-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 8px;
+    width: 40px;
+    background: linear-gradient(to left,
+            transparent,
+            rgba(13, 19, 34, 0.95) 80%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.comparison-table-wrapper.scrolled-start::before {
+    opacity: 1;
+}
+
+/* 4. 移动端：显示滚动提示文字（可选） */
+@media (max-width: 768px) {
+    .comparison-table-wrapper {
+        position: relative;
+    }
+
+    /* 添加"向右滑动查看更多"提示 */
+    .comparison-table-wrapper[data-scroll-hint]::after {
+        content: '→ 向右滑动';
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(77, 163, 255, 0.9);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        pointer-events: none;
+        animation: pulse-hint 2s ease infinite;
+        z-index: 2;
+    }
+
+    /* 滚动后隐藏提示 */
+    .comparison-table-wrapper.has-scrolled[data-scroll-hint]::after {
+        display: none;
+    }
+}
+
+@keyframes pulse-hint {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(5px);
+    }
+}
+
+/* 5. 确保表格在移动端可以正常滚动 */
+@media (max-width: 768px) {
+    table.comparison {
+        min-width: 600px;
+        /* 保持最小宽度 */
+    }
+}

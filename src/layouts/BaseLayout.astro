@@ -201,6 +201,9 @@ const jsonLd = JSON.stringify({
         <link rel="preload" href="/assets/css/review-page.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="/assets/css/review-page.css" /></noscript>
 
+        <!-- Table scroll indicators for mobile UX -->
+        <link rel="stylesheet" href="/assets/css/table-scroll-indicator.css" />
+
         <!-- Google Analytics - Deferred for performance -->
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -223,6 +226,7 @@ const jsonLd = JSON.stringify({
         <script is:inline src="/assets/js/links.min.js?v=20260120" defer
         ></script>
         <script is:inline src="/assets/js/mega-menu.min.js" defer></script>
+        <script is:inline src="/assets/js/table-scroll.js" defer></script>
 
         <!-- Main script - deferred and idle-loaded for minimal TBT -->
         <script is:inline>
