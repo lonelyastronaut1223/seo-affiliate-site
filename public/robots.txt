@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+# TODO: Update with your actual domain after deployment
+Sitemap: https://cameraupick.com/sitemap-index.xml
+
+# Optional: Disallow paths if needed
+# Disallow: /admin/
+# Disallow: /*.json$
