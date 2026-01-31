@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductSchema from "../../../components/ProductSchema.astro";
+import AuthorBio from "../../../components/AuthorBio.astro";
+import "../../../styles/review-page.css";
+---
+
+<BaseLayout
+  title="OM System OM-5 Testbericht 2026: Best Rugged Travel Camera?"
+  description="OM System OM-5 review: Weather-sealed MFT, computational photography, 8.5-stop IBIS tested. Adventure camera worth $1,199?"
+>
+  <ProductSchema
+    slot="head"
+    productName="OM System OM-5"
+    brand="OM System"
+    image="/assets/images/guides/om-system-om-5.png"
+    description="OM System OM-5 delivers professional weather-sealing, class-leading 8.5-stop image stabilization, and computational photography features in a compact Micro Four Thirds body."
+    price={1199}
+    priceCurrency="EUR"
+    rating={4.7}
+    reviewCount={1}
+    url="/de/reviews/om-system-om-5-review"
+    breadcrumbs={[
+      { name: "OM System OM-5", url: "/reviews/om-system-om-5-review" }
+    ]}
+  />
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>OM System OM-5 Testbericht</h1>
+          <p class="hero-sub">
+            The OM System OM-5 is the rugged adventure camera that refuses to quit. With IP53 dust/splash resistance, freeze-proof design to -10°C, and industry-leading 8.5-stop image stabilization, it's built for hikers, climbers, and outdoor photographers who need gear that survives harsh conditions.
+          </p>
+          <div class="meta review-price-badge">Rugged MFT · $1,199</div>
+        </div>
+        <div class="hero-media">
+          <picture>
+            <img src="/assets/images/guides/om-system-om-5.png" alt="OM System OM-5" loading="eager" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="product-review-card">
+        <div class="product-review-header-v2">
+          <span class="badge-best">⛰️ Adventure Proof</span>
+          <h2 class="product-title">Das Urteil</h2>
+          <p>
+            The OM-5 (formerly Olympus, now OM System) combines Micro Four Thirds' compact size advantage with professional-grade weather-sealing. The 20MP sensor is paired with 8.5-stop IBIS—the best in-body stabilization in any camera under $2,000. This means sharp handheld shots down to 1-2 second exposures without a tripod.
+          </p>
+          <p>
+            At $1,199, it's a niche pick but unbeatable for outdoor adventure. Computational photography features like 50MP handheld high-res shot, Live ND (simulated neutral density filter), and starry sky AF make it a creative powerhouse. The compact MFT lenses mean you can pack a full kit (body + 3 lenses) in a small sling bag.
+          </p>
+        </div>
+
+        <a href="#" class="btn-buy" data-product="om-system-om-5" rel="sponsored noopener noreferrer" target="_blank">
+          Check Price on Amazon &rarr;
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Key Features</h2>
+
+      <div class="content-block">
+        <h3>Unmatched Weather-Sealing</h3>
+        <p>
+          IP53-rated body resists dust, splashes, and freezes down to -10°C. Pair it with weather-sealed PRO lenses (12-40mm f/2.8, 40-150mm f/2.8) and you can shoot in rain, snow, desert sandstorms, or humid jungles without worry. This is gear built for real adventures, not just marketed as such.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>8.5-Stop Image Stabilization</h3>
+        <p>
+          OM System's IBIS is legendary. The 5-axis sensor-shift system compensates for shake so effectively that you can shoot handheld at shutter speeds that would normally require a tripod. Example: 1/4 second handheld with a 40mm lens (80mm equiv.) produces sharp results. This is transformative for low-light and landscape photography.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Computational Photography</h3>
+        <p>
+          Handheld Hi-Res Shot captures 8 images and merges them into a 50MP photo—perfect for landscape details. Live ND simulates 5-stop neutral density filters in-camera (no physical filter needed). Starry Sky AF locks onto stars for astrophotography. These computational features leverage the camera's processing power brilliantly.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="final-verdict">
+        <h2>Abschließende Empfehlung</h2>
+        <p>
+          The OM System OM-5 is the best rugged travel camera for outdoor photographers in 2026. The weather-sealing and stabilization are unmatched at this price, and the compact MFT ecosystem makes it perfect for hiking and adventure where every gram counts.
+        </p>
+        <p>
+          <strong>Kaufe sie, wenn:</strong> You hike/travel frequently, shoot in harsh weather, need class-leading IBIS, or want a compact kit with pro durability.
+        </p>
+        <p>
+          <strong>Überspringe sie, wenn:</strong> You need the best low-light/ISO performance (full-frame wins), shoot primarily video (autofocus is photo-focused), or want the absolute sharpest files (larger sensors offer more detail).
+        </p>
+      </div>
+    </section>
+
+    <section class="section author-box">
+      <AuthorBio />
+    </section>
+  </main>
+</BaseLayout>

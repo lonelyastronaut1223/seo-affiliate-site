@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="404 - Seite nicht gefunden | CameraUPick" 
+  description="Die gesuchte Seite konnte nicht gefunden werden. Kehren Sie zur Startseite zurück oder durchsuchen Sie unsere Kamera-Testberichte und Kaufberatungen."
+>
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>404 - Seite nicht gefunden</h1>
+          <p class="hero-sub">
+            Die Seite, die Sie suchen, existiert leider nicht oder wurde verschoben.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Beliebte Seiten</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="/de/">Startseite</a></h3>
+          <p>Zurück zur Hauptseite mit allen Kamera-Testberichten und Kaufberatungen.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/de/ratgeber/beste-kamera-fuer-anfaenger-2026">Beste Kamera für Anfänger</a></h3>
+          <p>Finden Sie die perfekte Kamera für Ihren Einstieg in die Fotografie.</p>
+        </article>
+        <article class="card">
+          <h3><a href="/de/ratgeber/beste-hybrid-kamera">Beste Hybrid-Kamera</a></h3>
+          <p>Top-Kameras für Foto und Video kombiniert.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <div>
+          <h2>Problem melden?</h2>
+          <p>Wenn Sie glauben, dass diese Seite fälschlicherweise nicht gefunden wurde, kontaktieren Sie uns bitte.</p>
+        </div>
+        <a class="btn" href="/de/kontakt">Kontakt aufnehmen</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

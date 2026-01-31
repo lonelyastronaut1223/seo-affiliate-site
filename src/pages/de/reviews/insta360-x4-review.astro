@@ -1,0 +1,251 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductSchema from "../../../components/ProductSchema.astro";
+import AuthorBio from "../../../components/AuthorBio.astro";
+import "../../../styles/review-page.css";
+---
+
+<BaseLayout
+  title="Insta360 X4 Testbericht 2026: Beste 360-Kamera?"
+  description="Insta360 X4 Testbericht: 8K 360-Video, unsichtbarer Selfie-Stick, KI-Neurahmung getestet. Lohnt sich 499 €? Vollständige Spezifikationen für Content Creator."
+>
+  <ProductSchema
+    slot="head"
+    productName="Insta360 X4"
+    brand="Insta360"
+    image="/assets/images/guides/insta360-x4.png"
+    description="Insta360 X4 delivers 8K 360-degree video with AI-powered reframing and the iconic invisible selfie stick effect for immersive content creation."
+    price={499}
+    priceCurrency="EUR"
+    rating={4.9}
+    reviewCount={1}
+    url="/de/reviews/insta360-x4-review"
+    breadcrumbs={[
+      { name: "Insta360 X4", url: "/reviews/insta360-x4-review" }
+    ]}
+  />
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Insta360 X4 Testbericht</h1>
+          <p class="hero-sub">
+            Die Insta360 X4 löst das größte Problem with 360 video: resolution. With 8K capture, when you reframe into standard 16:9 video, it actually looks crisp and 4K-quality. The "invisible selfie stick" effect makes it look like a drone is following you 3 feet away—pure magic for solo travelers and content creators.
+          </p>
+          <div class="meta review-price-badge">360-Kamera · 499 €</div>
+        </div>
+        <div class="hero-media">
+          <picture>
+            <img src="/assets/images/guides/insta360-x4.png" alt="Insta360 X4" loading="eager" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="product-review-card" id="insta360-x4">
+        <div class="product-review-header-v2">
+          <span class="badge-best">👑 360-König</span>
+          <h2 class="product-title">Das Urteil</h2>
+          <p>
+            The X4 is Insta360's flagship 360 camera, shooting 8K (7680×3840) at 30fps. Why does 8K matter for 360? Because when you reframe (crop) into standard HD or 4K video, you're using a fraction of the full sphere. 8K gives you enough pixels to extract sharp, detailed footage after reframing.
+          </p>
+          <p>
+            At $499, it's pric ier than action cams but offers creative possibilities no flat camera can match. The AI-powered app makes editing intuitive—you literally just tap where you want the camera to look, and it creates smooth pans automatically.
+          </p>
+        </div>
+
+        <table class="specs-table">
+          <tr><th colspan="2" class="specs-group-header">Video</th></tr>
+          <tr><th>Max Resolution</th><td>8K30 (360°) / 5.7K60 (360°)</td></tr>
+          <tr><th>Single Lens Mode</th><td>4K60 (170° ultra-wide)</td></tr>
+          <tr><th>Slow Motion</th><td>4K100 / 1080p200</td></tr>
+          <tr><th>Bitrate</th><td>200 Mbps</td></tr>
+          <tr><th>Stabilization</th><td>FlowState + 360° Horizon Lock</td></tr>
+
+          <tr><th colspan="2" class="specs-group-header">Funktionen</th></tr>
+          <tr><th>Invisible Stick</th><td>Yes (auto-removal in stitching)</td></tr>
+          <tr><th>Me Mode</th><td>Third-person follow (drone effect)</td></tr>
+          <tr><th>Timelapse</th><td>8K / 11K photo timelapse</td></tr>
+          <tr><th>Voice Control</th><td>Yes (12 languages)</td></tr>
+
+          <tr><th colspan="2" class="specs-group-header">Gehäuse</th></tr>
+          <tr><th>Wasserdicht</th><td>10m (33ft) without case</td></tr>
+          <tr><th>Bildschirm</th><td>2.5" touchscreen (front)</td></tr>
+          <tr><th>Akku</th><td>135 min (5.7K30), removable</td></tr>
+          <tr><th>Speicher</th><td>microSD (up to 1TB)</td></tr>
+          <tr><th>Gewicht</th><td>203g</td></tr>
+        </table>
+
+        <a href="#" class="btn-buy" data-product="insta360-x4" rel="sponsored noopener noreferrer" target="_blank">
+          Check Price on Amazon &rarr;
+        </a>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Was uns gefällt</h4>
+          <ul>
+            <li>8K resolution makes reframed footage usable</li>
+            <li>Invisible selfie stick = drone-like third-person shots</li>
+            <li>Incredible AI-powered mobile app for editing</li>
+            <li>Removable lens guards (finally!)</li>
+            <li>Wasserdicht to 10m without extra case</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Die Nachteile</h4>
+          <ul>
+            <li>8K files are massive (200GB per hour)</li>
+            <li>Editing requires fast phone/computer</li>
+            <li>Learning curve for 360 workflow</li>
+            <li>Lenses still vulnerable without guards</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">What Makes 360 Special</h2>
+
+      <div class="content-block">
+        <h3>The Invisible Selfie Stick Magic</h3>
+        <p>
+          This is the killer feature. Mount the X4 to Insta360's extended selfie stick (sold separately), and the stitching algorithm automatically removes it from the footage. The result: it looks like a drone or cameraman is following you from 3-6 feet away, completely hands-free.
+        </p>
+        <p>
+          For solo travelers, motorcyclists, and adventure vloggers, this is game-changing. You get cinematic third-person shots without hiring a crew. The stick disappears completely—no weird artifacts or gaps. It's genuinely magical technology.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>8K Resolution & Reframing</h3>
+        <p>
+          360 cameras capture everything around you simultaneously. In post-production (on the Insta360 app), you "reframe" by choosing what part of the sphere to show. This is like having an AI cameraman who can look anywhere after the fact. Miss the action? No problem—it's all recorded.
+        </p>
+        <p>
+          The 8K resolution is crucial here. When you crop a 16:9 frame from the full 360° sphere, you're using maybe 20% of the total pixels. At 8K, that 20% is still 4K-quality. Lower-res 360 cams (5.7K or below) produce soft, mushy reframed footage.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>FlowState Stabilization</h3>
+        <p>
+          360 cameras have an advantage over traditional cams: they see in all directions, so they can use that data for incredibly smooth stabilization. Flow State keeps the horizon perfectly level even when you're spinning, jumping, or skiing down a mountain. It's gimbal-smooth without a gimbal.
+        </p>
+        <p>
+          The "Me Mode" feature locks the camera on you as you move around. Combined with the invisible stick, you get shots that look like you hired a professional follow-cam operator. For YouTube intros, travel vlogs, and action sequences, this is unbeatable.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Real-World Usage</h3>
+        <p>
+          The X4 is surprisingly practical. Akku lasts 2+ hours of 5.7K shooting (135 min rated). The removable lens guards are a huge upgrade—previous models had permanently at tached guards that got scratched. Now you can pop them off for cleaning or replace if damaged.
+        </p>
+        <p>
+          Wasserdichting to 10m without a case is excellent for snorkeling, surfing, or rainy weather. The 2.5" touchscreen on the front lets you preview and control settings easily. Voice control works well for hands-free recording ("Insta, start recording").
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Ideal Accessories</h2>
+      <div class="recommendations-grid">
+        <div class="recommendation-card">
+          <h4>Insta360 Extended Selfie Stick (114cm)</h4>
+          <p>Essential for the invisible stick effect. Extends to 114cm for perfect third-person framing. Aluminum construction, folds to 38cm.</p>
+        </div>
+        <div class="recommendation-card">
+          <h4>Lens Cap + Protection Case</h4>
+          <p>The lenses are the most vulnerable part. Always use the lens cap when not shooting. Hard case protects during transport.</p>
+        </div>
+        <div class="recommendation-card">
+          <h4>Extra Batteries (2-pack)</h4>
+          <p>8K recording drains power quickly. Having 2-3 spare batteries ensures you never miss a shot on all-day adventures.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Insta360 X4 FAQ</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <h3>
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon"></span>
+              Do I need a powerful computer to edit 360 video?
+            </button>
+          </h3>
+          <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+            <p>
+              The Insta360 app (iOS/Android) does most of the heavy lifting. It's optimized for 8K playback and reframing even on mid-range phones. For advanced editing in desktop software (Premiere/Final Cut), you'll need a modern GPU. But for 95% of users, the mobile app is enough.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon"></span>
+              Can I use it as a regular action cam (non-360)?
+            </button>
+          </h3>
+          <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+            <p>
+              Yes! Single-lens mode shoots 4K60 ultra-wide (170°) like a GoPro. You lose the 360 magic but gain simpler workflows and smaller file sizes. It's not as good as a dedicated action cam, but it's a handy backup mode.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon"></span>
+              How fragile are the lenses?
+            </button>
+          </h3>
+          <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+            <p>
+              The dual fish-eye lenses protrude significantly, making them vulnerable. ALWAYS use the removable lens guards during shooting and the lens cap during transport. One scratch ruins the stitching. With proper care, they're durable, but treat them carefully.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon"></span>
+              Who should buy the Insta360 X4?
+            </button>
+          </h3>
+          <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+            <p>
+              Solo travelers, adventure vloggers, motorcyclists, skiers, surfers, and anyone who wants third-person footage without a cameraman. If you're willing to learn a new workflow for creative shots impossible with traditional cameras, the X4 is incredible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="final-verdict">
+        <h2>Abschließende Empfehlung</h2>
+        <p>
+          The Insta360 X4 is the best 360 camera for content creators in 2026. The 8K resolution finally delivers reframed footage sharp enough for professional use, and the invisible selfie stick creates shots that simply aren't possible with traditional cameras. The AI-powered editing app makes the 360 workflow accessible to everyone.
+        </p>
+        <p>
+          <strong>Kaufe sie, wenn:</strong> You create solo content, travel frequently, or want third-person shots without hiring a crew. You're willing to embrace a new creative workflow for unique perspectives.
+        </p>
+        <p>
+          <strong>Überspringe sie, wenn:</strong> You only want standard flat video (get GoPro Hero 13), need tiny file sizes, or aren't comfortable with app-based editing workflows.
+        </p>
+      </div>
+    </section>
+
+    <section class="section author-box">
+      <AuthorBio />
+    </section>
+  </main>
+<script is:inline src="/assets/js/faq-accordion.js"></script>
+</BaseLayout>

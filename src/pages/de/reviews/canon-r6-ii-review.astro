@@ -1,0 +1,344 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductSchema from "../../../components/ProductSchema.astro";
+import AuthorBio from "../../../components/AuthorBio.astro";
+import "../../../styles/review-page.css";
+---
+
+<BaseLayout
+  title="Canon EOS R6 Mark II Review 2026: 40fps Hybrid Beast"
+  description="Canon R6 II review: 24MP full-frame tested for speed. 40fps burst, 4K60 uncropped, dual card slots. Perfect for sports/events. Worth $2499? Read our verdict."
+>
+  <ProductSchema
+    slot="head"
+    productName="Canon EOS R6 Mark II"
+    brand="Canon"
+    image="/assets/images/guides/canon-r6ii.png"
+    description="Canon EOS R6 Mark II combines 24MP full-frame speed with exceptional autofocus and hybrid video capabilities."
+    price={2499}
+    priceCurrency="EUR"
+    rating={4.7}
+    reviewCount={1}
+    url="/de/reviews/canon-r6-ii-review"
+    breadcrumbs={[
+      { name: "Canon R6 Mark II", url: "/reviews/canon-r6-ii-review" }
+    ]}
+  />
+  <main id="main" class="container">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Canon EOS R6 Mark II Review</h1>
+          <p class="hero-sub">
+            The R6 Mark II is Canon's speed demon. With 40fps continuous shooting, pre-capture RAW burst, and 4K60 uncropped, it's the ultimate camera for sports, wildlife, and fast-paced events. This is what professional hybrid photographers have been waiting for.
+          </p>
+          <div class="meta review-price-badge">Pro Hybrid · $2499</div>
+        </div>
+        <div class="hero-media">
+          <picture>
+            <img
+              src="/assets/images/guides/canon-r6ii.png"
+              alt="Canon EOS R6 Mark II camera"
+              loading="eager"
+            />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT CARD -->
+    <section class="section">
+      <div class="product-review-card" id="canon-r6-ii">
+        <div class="product-review-header-v2">
+          <span class="badge-best">⚡ Fastest Hybrid</span>
+          <h2 class="product-title">Das Urteil</h2>
+          <p>
+            The Canon R6 Mark II is the second generation of Canon's speed-focused full-frame hybrid. It packs a 24MP sensor optimized for responsiveness, not resolution. With 40fps electronic burst and pre-capture RAW, you'll never miss the decisive moment.
+          </p>
+          <p>
+            At $2,499, it sits between enthusiast and pro territory. It's perfect for sports photographers, wedding shooters, and wildlife enthusiasts who need Canon's color science and lens ecosystem without the high-resolution overhead of the R5 II.
+          </p>
+        </div>
+
+        <!-- Rich Specs Table -->
+        <table class="specs-table">
+          <tr>
+            <th colspan="2" class="specs-group-header">Imaging</th>
+          </tr>
+          <tr>
+            <th>Sensor</th>
+            <td>24.2MP Full-Frame CMOS</td>
+          </tr>
+          <tr>
+            <th>Processor</th>
+            <td>DIGIC X</td>
+          </tr>
+          <tr>
+            <th>Stabilization</th>
+            <td>5-axis IBIS (8 stops)</td>
+          </tr>
+          <tr>
+            <th>ISO Range</th>
+            <td>100-102,400 (expandable to 204,800)</td>
+          </tr>
+
+          <tr>
+            <th colspan="2" class="specs-group-header">Autofocus</th>
+          </tr>
+          <tr>
+            <th>AF Points</th>
+            <td>1,053 Dual Pixel CMOS AF II zones</td>
+          </tr>
+          <tr>
+            <th>AF System</th>
+            <td>Deep Learning AF (People, Animals, Vehicles)</td>
+          </tr>
+          <tr>
+            <th>Burst Speed</th>
+            <td>40fps Electronic / 12fps Mechanical</td>
+          </tr>
+
+          <tr>
+            <th colspan="2" class="specs-group-header">Video</th>
+          </tr>
+          <tr>
+            <th>Max Resolution</th>
+            <td>4K60 (Uncropped) / 4K120 (1.2x crop)</td>
+          </tr>
+          <tr>
+            <th>Internal Rec</th>
+            <td>10-bit 4:2:2 C-Log3 / HDR PQ</td>
+          </tr>
+         <tr>
+            <th>Profiles</th>
+            <td>C-Log3, HDR PQ, Custom Picture</td>
+          </tr>
+          <tr>
+            <th>Video Features</th>
+            <td>Focus Breathing Comp., False Color, Waveform</td>
+          </tr>
+
+          <tr>
+            <th colspan="2" class="specs-group-header">Build & Connectivity</th>
+          </tr>
+          <tr>
+            <th>Viewfinder</th>
+            <td>0.5" OLED EVF (3.69M dots, 120fps)</td>
+          </tr>
+          <tr>
+            <th>Screen</th>
+            <td>3.2" vari-angle touchscreen (1.62M dots)</td>
+          </tr>
+          <tr>
+            <th>Card Slots</th>
+            <td>2x SD UHS-II (Dual Backup)</td>
+          </tr>
+          <tr>
+            <th>Ports</th>
+            <td>USB-C 3.2, Micro HDMI, 3.5mm Mic/Headphone</td>
+          </tr>
+          <tr>
+            <th>Weather Sealing</th>
+            <td>Yes (dust and weather resistant)</td>
+          </tr>
+          <tr>
+            <th>Weight</th>
+            <td>670g (body only)</td>
+          </tr>
+        </table>
+
+        <a
+          href="#"
+          class="btn-buy"
+          data-product="canon-r6-ii"
+          rel="sponsored noopener noreferrer"
+          target="_blank"
+        >
+          Check Price on Amazon &rarr;
+        </a>
+      </div>
+
+      <!-- PROS/CONS -->
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Was uns gefällt</h4>
+          <ul>
+            <li>40fps burst speed with full AF tracking</li>
+            <li>Pre-capture RAW (captures 0.5s before shutter press)</li>
+            <li>4K60 uncropped with minimal rolling shutter</li>
+            <li>Best-in-class autofocus for sports/wildlife</li>
+            <li>Dual SD card slots for backup security</li>
+          </ul>
+        </div>
+
+        <div class="cons">
+          <h4>Die Nachteile</h4>
+          <ul>
+            <li>24MP limits large print size vs R5 II (45MP)</li>
+            <li>No CFexpress Type B (SD only)</li>
+            <li>4K120 has a 1.2x crop</li>
+            <li>Battery life shorter than R6 original</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- IN-DEPTH PERFORMANCE -->
+    <section class="section">
+      <h2 class="section-title">In-Depth Performance</h2>
+
+      <div class="content-block">
+        <h3>Speed & Autofocus</h3>
+        <p>
+          The R6 II's 40fps electronic shutter is absurdly fast. Paired with Canon's Dual Pixel CMOS AF II, it locks onto subjects with near-perfect accuracy. The Deep Learning AF recognizes people, animals (dogs, cats, birds), and vehicles (cars, motorcycles). Eye detection works even when subjects are tiny in the frame.
+        </p>
+        <p>
+          The pre-capture RAW feature is game-changing for unpredictable action. Half-press the shutter, and the camera buffers 0.5 seconds of RAW frames. When you fully press, you get shots from *before* you reacted. It's like time travel for wildlife and sports photography.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Image Quality</h3>
+        <p>
+          The 24MP sensor might seem modest compared to high-res competitors, but it delivers. Dynamic range is excellent—about 14 stops in RAW. Colors are classic Canon: warm, pleasing skin tones straight out of camera. High-ISO performance is stellar—ISO 6400 is totally usable, and ISO 12,800 is acceptable with minimal noise reduction.
+        </p>
+        <p>
+          The lower resolution means larger photosites, which translates to better low-light sensitivity. If you're shooting events, concerts, or indoor sports, the R6 II punches above its megapixel weight. Just don't expect massive crops or billboard-sized prints.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Video Capabilities</h3>
+        <p>
+          Canon fixed the R6's biggest weakness: 4K60 is now fully uncropped with oversampled 6K quality. Rolling shutter is minimal—far better than Sony A7 IV. You get 10-bit 4:2:2 internal recording with C-Log3 for maximum grading flexibility. The focus breathing compensation is clutch for video work.
+        </p>
+        <p>
+          4K120 for slow motion is available but crops to 1.2x (APS-C mode). Heat management is solid—no overheating in normal conditions, though long 4K60 sessions on hot days may trigger limits. The dual SD card slots can record simultaneously for instant backups.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Ergonomics & Build</h3>
+        <p>
+          Canon nailed the ergonomics. The R6 II has a deep, secure grip, well-placed controls, and a joystick that's perfect for quick AF point selection. The vari-angle LCD is ideal for vlogging and high/low angles. The EVF refresh rate goes up to 120fps for smooth tracking.
+       </p>
+        <p>
+          Weather sealing is robust—this camera can handle rain, dust, and snow. Battery life (CIPA rated 760 shots) is decent but drops significantly with 40fps bursts enabled. Carry spares if you're shooting all day. The dual SD slots use UHS-II for fast write speeds, though CFexpress would've been nice for 40fps bursts.
+        </p>
+      </div>
+    </section>
+
+    <!-- IDEAL LENSES -->
+    <section class="section">
+      <h2 class="section-title">Ideal Lenses for the Canon R6 Mark II</h2>
+      <div class="recommendations-grid">
+        <div class="recommendation-card">
+          <h4>Canon RF 24-70mm f/2.8L IS USM</h4>
+          <p>
+            The ultimate walk-around lens. Constant f/2.8, fast AF, and built-in stabilization complement the R6 II's speed. Perfect for events, weddings, and general shooting.
+          </p>
+        </div>
+
+        <div class="recommendation-card">
+          <h4>Canon RF 70-200mm f/2.8L IS USM</h4>
+          <p>
+            Sports and wildlife powerhouse. Incredibly sharp, fast focusing, and lightweight for a 70-200 f/2.8. The R6 II's 40fps makes this combo unstoppable for action.
+          </p>
+        </div>
+
+        <div class="recommendation-card">
+          <h4>Canon RF 85mm f/1.2L USM</h4>
+          <p>
+            Portrait perfection. The insane bokeh and sharpness pair beautifully with the R6 II's subject tracking. Eye-AF never loses lock, even wide open at f/1.2.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section">
+      <h2>Canon R6 Mark II FAQ</h2>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <h3>
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon"></span>
+              How does the R6 II compare to the Sony A7 IV?
+            </button>
+          </h3>
+          <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+            <p>
+              The R6 II is faster (40fps vs 10fps) with better autofocus tracking and superior video rolling shutter. The A7 IV has higher resolution (33MP vs 24MP) and better lens ecosystem value. Choose R6 II for speed/action, A7 IV for resolution/versatility.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon"></span>
+              Is 24MP enough in 2026?
+            </button>
+          </h3>
+          <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+            <p>
+              Yes, for most use cases. 24MP prints beautifully up to 16x20 inches and allows moderate cropping. The lower resolution enables faster burst speeds, better low-light performance, and smaller file sizes. Only landscape photographers printing huge need more MP.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon"></span>
+              Does the R6 II overheat like the original R6?
+            </button>
+          </h3>
+          <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+            <p>
+              Much improved. Canon redesigned the heat management. You can record 4K60 for 30+ minutes in normal conditions without overheating. The original R6 would overheat in 15-20 minutes. Still not as robust as Panasonic's active cooling, but totally viable for professional video work.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="faq-icon"></span>
+              Who should buy the Canon R6 Mark II?
+            </button>
+          </h3>
+          <div class="faq-answer" style="max-height: 0; overflow: hidden;">
+            <p>
+              Sports photographers, wildlife shooters, wedding/event pros, and action videographers. Anyone who values speed, autofocus reliability, and hybrid performance over massive resolution. If you're shooting landscapes or need huge prints, look at the R5 II instead.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL RECOMMENDATION -->
+    <section class="section">
+      <div class="final-verdict">
+        <h2>Abschließende Empfehlung</h2>
+        <p>
+          The Canon R6 Mark II is the ultimate speed-focused hybrid camera. With 40fps burst, pre-capture RAW, and 4K60 uncropped video, it's built for professionals who can't afford to miss the shot. Canon's autofocus is industry-leading, and the RF lens lineup is maturing beautifully.
+        </p>
+        <p>
+          <strong>Kaufe sie, wenn:</strong> You shoot sports, wildlife, events, or action-heavy content. You need Canon's color science and want the fastest hybrid camera on the market under $3000.
+        </p>
+        <p>
+          <strong>Überspringe sie, wenn:</strong> You prioritize resolution over speed (get R5 II), want smaller file sizes (get R8), or need the absolute best value (Sony A7 IV offers more MP for less money).
+        </p>
+      </div>
+    </section>
+
+    <!-- AUTHOR BOX -->
+    <section class="section author-box">
+      <AuthorBio />
+    </section>
+  </main>
+<script is:inline src="/assets/js/faq-accordion.js"></script>
+</BaseLayout>

@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProductSchema from "../../../components/ProductSchema.astro";
+import AuthorBio from "../../../components/AuthorBio.astro";
+import "../../../styles/review-page.css";
+---
+
+<BaseLayout
+  title="DJI Osmo Action 5 Pro Testbericht 2026: GoPro-Killer?"
+  description="DJI Osmo Action 5 Pro review: Magnetic ecosystem, 4K120, extreme battery life tested. Worth $349 vs GoPro Hero 13?"
+>
+  <ProductSchema
+    slot="head"
+    productName="DJI Osmo Action 5 Pro"
+    brand="DJI"
+    image="/assets/images/guides/dji-action-5-pro.png"
+    description="DJI Osmo Action 5 Pro delivers 4K120 recording with magnetic accessory ecosystem, extreme battery life, and dual touchscreens for pro-level action capture."
+    price={349}
+    priceCurrency="EUR"
+    rating={4.8}
+    reviewCount={1}
+    url="/de/reviews/dji-osmo-action-5-pro-review"
+    breadcrumbs={[
+      { name: "DJI Action 5 Pro", url: "/reviews/dji-osmo-action-5-pro-review" }
+    ]}
+  />
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>DJI Osmo Action 5 Pro Testbericht</h1>
+          <p class="hero-sub">
+            The DJI Osmo Action 5 Pro is DJI's serious challenge to GoPro's throne. With magnetic quick-release mounting, 4-hour battery life (4x longer than GoPro), dual touchscreens, and 4K120 recording, it matches or beats the Hero 13 in almost every category—while costing $50 less.
+          </p>
+          <div class="meta review-price-badge">Action Cam · $349</div>
+        </div>
+        <div class="hero-media">
+          <picture>
+            <img src="/assets/images/guides/dji-action-5-pro.png" alt="DJI Action 5 Pro" loading="eager" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="product-review-card">
+        <div class="product-review-header-v2">
+          <span class="badge-best">⚡ Innovation King</span>
+          <h2 class="product-title">Das Urteil</h2>
+          <p>
+            The Action 5 Pro's standout innovation is the magnetic mounting system. Attach magnetically, twist to lock—takes 1 second vs GoPro's fiddly fingers system. The 1950 mAh battery lasts 4 hours of 1080p recording (vs Hero 13's ~70 minutes), making it viable for all-day adventures without battery swaps.
+          </p>
+          <p>
+            At $349, it undercuts the Hero 13 ($399) while offering comparable stabilization, dual screens (front OLED + rear touch), and 4K120. DJI's RockSteady 3.0+ stabilization is excellent, and the 155° ultra-wide FOV captures more of the scene. For users not locked into GoPro's ecosystem, the Action 5 Pro is the better value.
+          </p>
+        </div>
+
+        <a href="#" class="btn-buy" data-product="dji-action-5-pro" rel="sponsored noopener noreferrer" target="_blank">
+          Check Price on Amazon &rarr;
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Key Features</h2>
+
+      <div class="content-block">
+        <h3>Magnetic Mounting System</h3>
+        <p>
+          DJI's quick-release magnetic mount is transformative. Slap the camera onto a mount, twist 90° to lock. Remove with a twist. No fumbling with GoPro's fingers in cold weather or with gloves. The magnetic ecosystem (chest mount, helmet, handlebar) all work instantly. This alone is reason to switch.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Extreme Battery Life</h3>
+        <p>
+          4 hours of 1080p60 recording from a single 1950 mAh battery is unprecedented for action cams. Even 4K60 lasts ~2 hours. This means all-day skiing, surfing, or biking without carrying 5 spare batteries like GoPro users. The battery charges via USB-C and can charge while recording (power bank support).
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Dual Screens & Stabilization</h3>
+        <p>
+          Front OLED screen (for vlogging self-framing) + rear 2.4" touchscreen. RockSteady 3.0+ stabilization with HorizonSteady (keeps horizon level like GoPro's Horizon Lock). 10-bit D-Log M for color grading flexibility. Waterproof to 20m without case (vs GoPro's 10m). It's a feature-packed beast.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="final-verdict">
+        <h2>Abschließende Empfehlung</h2>
+        <p>
+          The DJI Osmo Action 5 Pro is the best action camera value in 2026. The magnetic mounting, extreme battery life, and dual screens make it more practical than the GoPro Hero 13 for real-world use. Unless you're invested in GoPro's ecosystem, the Action 5 Pro is the smarter choice.
+        </p>
+        <p>
+          <strong>Kaufe sie, wenn:</strong> You want the longest battery life, prefer magnetic mounting, need dual screens, or value innovation over brand loyalty.
+        </p>
+        <p>
+          <strong>Überspringe sie, wenn:</strong> You already own GoPro mounts (not compatible), need the absolute best stabilization (Hero 13 edges ahead), or want the most tested/proven platform.
+        </p>
+      </div>
+    </section>
+
+    <section class="section author-box">
+      <AuthorBio />
+    </section>
+  </main>
+</BaseLayout>
