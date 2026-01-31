@@ -36,12 +36,13 @@ const jsonLd = JSON.stringify({
     inLanguage: lang,
     isPartOf: {
         "@type": "WebSite",
-        name: "cameraupick",
+        name: "CameraUPick",
         url: baseUrl,
         description: "Camera reviews, comparisons, and buying guides",
         publisher: {
             "@type": "Organization",
-            name: "cameraupick",
+            name: "CameraUPick",
+            alternateName: ["Camera U Pick", "CameraPick", "Camera Pick"],
             url: baseUrl,
             logo: {
                 "@type": "ImageObject",
@@ -142,7 +143,7 @@ const jsonLd = JSON.stringify({
 
         <!-- Open Graph / Twitter -->
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="cameraupick" />
+        <meta property="og:site_name" content="CameraUPick" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta
@@ -153,7 +154,7 @@ const jsonLd = JSON.stringify({
         <meta property="og:image:height" content="630" />
         <meta
             property="og:image:alt"
-            content="cameraupick - Camera Reviews, Comparisons & Buying Guides"
+            content="CameraUPick - Camera Reviews, Comparisons & Buying Guides"
         />
         <meta
             property="og:url"
@@ -170,7 +171,7 @@ const jsonLd = JSON.stringify({
         />
         <meta
             name="twitter:image:alt"
-            content="cameraupick - Camera Reviews, Comparisons & Buying Guides"
+            content="CameraUPick - Camera Reviews, Comparisons & Buying Guides"
         />
 
         <title>{title}</title>
