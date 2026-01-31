@@ -1,179 +1,160 @@
 #!/usr/bin/env python3
 """
-Simplified image optimization focusing on JPEG and WebP only
-PNG requires specialized tools - skip for now
+Image Optimization Script - Using PIL/Pillow
+Optimizes guide images with responsive variants
 """
 
-import sys
-import io
-from pathlib import Path
 from PIL import Image
+from pathlib import Path
+import sys
 
-BASE_DIR = Path(__file__).parent.parent.parent
-IMAGE_DIR = BASE_DIR / 'assets' / 'images'
+# Configuration
+GUIDES_DIR = Path("public/assets/images/guides")
+MAIN_DIR = Path("public/assets/images")
 
-# Quality settings
-JPEG_QUALITY = 82  # Slightly lower for better compression
-WEBP_QUALITY = 82
+# Responsive sizes: (width, quality)
+SIZES = {
+    'sm': (600, 80),   # Mobile
+    'md': (900, 80),   # Tablet
+    'lg': (1200, 85),  # Desktop
+}
 
-def optimize_jpeg(image_path: Path) -> dict:
-    """Optimize JPEG images"""
+# Priority images to optimize
+GUIDE_IMAGES = [
+    'panasonic-g100d.webp',
+    'fujifilm-x-t5.webp',
+    'fullframe-video.webp',
+    'nikon-z6-iii.webp',
+    'canon-r100.webp',
+    'sony-fx3.webp',
+    'canon-r6ii.webp',
+    'canon-r5-ii.webp',
+    'youtube-creator.webp',
+]
+
+# Super large images to compress
+LARGE_IMAGES = [
+    'pexels-robert-nagy-512974-4083514.webp',
+    'pexels-huysuzkadraj-19239809.webp',
+]
+
+def optimize_image(src_path, dest_path, max_width=None, quality=85):
+    """Optimize a single image"""
     try:
-        original_size = image_path.stat().st_size / 1024
-        
-        img = Image.open(image_path)
+        img = Image.open(src_path)
         
         # Convert RGBA to RGB if needed
-        if img.mode == 'RGBA':
-            img = img.convert('RGB')
+        if img.mode in ('RGBA', 'LA'):
+            background = Image.new('RGB', img.size, (255, 255, 255))
+            if img.mode == 'RGBA':
+                background.paste(img, mask=img.split()[3])
+            else:
+                background.paste(img, mask=img.split()[1])
+            img = background
         
-        # Save optimized version to buffer first
-        buffer = io.BytesIO()
-        img.save(buffer, 'JPEG', quality=JPEG_QUALITY, optimize=True, progressive=True)
-        new_size = buffer.tell() / 1024
+        # Resize if max_width specified
+        if max_width and img.width > max_width:
+            ratio = max_width / img.width
+            new_height = int(img.height * ratio)
+            img = img.resize((max_width, new_height), Image.LANCZOS)
         
-        if new_size < original_size:
-            with open(image_path, 'wb') as f:
-                f.write(buffer.getvalue())
-            
-            reduction = ((original_size - new_size) / original_size) * 100
-            
-            return {
-                'success': True,
-                'original_kb': original_size,
-                'new_kb': new_size,
-                'reduction_percent': reduction
-            }
-        else:
-            return {
-                'success': False,
-                'skipped': True,
-                'reason': f'optimized size larger ({new_size:.1f}KB > {original_size:.1f}KB)'
-            }
+        # Save as WebP with specified quality
+        img.save(dest_path, 'WEBP', quality=quality, method=6)
+        
+        # Get file sizes
+        src_size = src_path.stat().st_size if src_path.exists() else 0
+        dest_size = dest_path.stat().st_size
+        
+        return src_size, dest_size
+        
     except Exception as e:
-        return {'error': str(e)}
+        print(f"❌ Error processing {src_path.name}: {e}")
+        return 0, 0
 
-def optimize_webp(image_path: Path) -> dict:
-    """Optimize WebP images"""
-    try:
-        original_size = image_path.stat().st_size / 1024
-        
-        img = Image.open(image_path)
-        # Save to buffer
-        buffer = io.BytesIO()
-        img.save(buffer, 'WEBP', quality=WEBP_QUALITY, method=4)
-        new_size = buffer.tell() / 1024
-        
-        if new_size < original_size:
-            with open(image_path, 'wb') as f:
-                f.write(buffer.getvalue())
-            
-            reduction = ((original_size - new_size) / original_size) * 100
-            
-            return {
-                'success': True,
-                'original_kb': original_size,
-                'new_kb': new_size,
-                'reduction_percent': reduction
-            }
-        else:
-            return {
-                'success': False,
-                'skipped': True,
-                'reason': f'optimized size larger ({new_size:.1f}KB > {original_size:.1f}KB)'
-            }
-    except Exception as e:
-        return {'error': str(e)}
-
-def convert_png_to_webp(png_path: Path) -> bool:
-    """Convert team-avatar.png to WebP"""
-    try:
-        webp_path = png_path.with_suffix('.webp')
-        
-        if webp_path.exists():
-            print(f"⏭️  WebP already exists: {webp_path.name}")
-            return False
-        
-        img = Image.open(png_path)
-        img.save(webp_path, 'WEBP', quality=90, method=6)
-        
-        webp_size = webp_path.stat().st_size / 1024
-        png_size = png_path.stat().st_size / 1024
-        print(f"✅ Created {webp_path.name}: {png_size:.0f}KB → {webp_size:.0f}KB")
-        return True
-    except Exception as e:
-        print(f"❌ Error: {e}")
-        return False
+def format_size(bytes):
+    """Format bytes to human readable"""
+    for unit in ['B', 'KB', 'MB']:
+        if bytes < 1024:
+            return f"{bytes:.1f}{unit}"
+        bytes /= 1024
+    return f"{bytes:.1f}GB"
 
 def main():
-    print("🖼️  Image Optimization (JPEG/WebP only)\n")
+    total_saved = 0
+    files_processed = 0
     
-    # Large JPEG images to optimize
-    jpeg_images = [
-        'guides/beginner.jpg',
-        'Vlog.jpg',
-        'guides/action-360.jpg',
-        'guides/travel.jpg',
-        'pexels-huysuzkadraj-19239809.jpg',
-        'pexels-robert-nagy-512974-4083514.jpg',
-    ]
+    print("=" * 60)
+    print("🖼️  IMAGE OPTIMIZATION SCRIPT")
+    print("=" * 60)
     
-    # Large WebP images to optimize
-    webp_images = [
-        'guides/beginner.webp',
-        'Vlog.webp',
-        'guides/action-360.webp',
-        'guides/travel.webp',
-        'pexels-huysuzkadraj-19239809.webp',
-        'pexels-robert-nagy-512974-4083514.webp',
-    ]
+    # Phase 1: Optimize super large pexels images
+    print("\n📦 Phase 1: Compressing Large Images")
+    print("-" * 60)
     
-    total_original = 0
-    total_new = 0
-    optimized = 0
-    
-    print("📸 Optimizing JPEG images...")
-    for img_name in jpeg_images:
-        img_path = IMAGE_DIR / img_name
-        if not img_path.exists():
+    for img_name in LARGE_IMAGES:
+        src = MAIN_DIR / img_name
+        if not src.exists():
+            print(f"⏭️  {img_name} not found, skipping")
             continue
-            
-        result = optimize_jpeg(img_path)
-        if result.get('success'):
-            total_original += result['original_kb']
-            total_new += result['new_kb']
-            optimized += 1
-            print(f"  ✅ {img_name}: {result['original_kb']:.0f}KB → {result['new_kb']:.0f}KB ({result['reduction_percent']:.1f}%)")
-    
-    print("\n🌐 Optimizing WebP images...")
-    for img_name in webp_images:
-        img_path = IMAGE_DIR / img_name
-        if not img_path.exists():
+        
+        # Compress to max 1200px width, quality 75
+        dest = src.with_stem(f"{src.stem}-opt")
+        
+        if dest.exists():
+            print(f"⏭️  {dest.name} already exists")
             continue
-            
-        result = optimize_webp(img_path)
-        if result.get('success'):
-            total_original += result['original_kb']
-            total_new += result['new_kb']
-            optimized += 1
-            print(f"  ✅ {img_name}: {result['original_kb']:.0f}KB → {result['new_kb']:.0f}KB ({result['reduction_percent']:.1f}%)")
+        
+        src_size, dest_size = optimize_image(src, dest, max_width=1200, quality=75)
+        
+        if dest_size > 0:
+            saved = src_size - dest_size
+            total_saved += saved
+            files_processed += 1
+            print(f"✅ {img_name}")
+            print(f"   {format_size(src_size)} → {format_size(dest_size)} "
+                  f"(saved {format_size(saved)})")
     
-    print("\n🔄 Converting PNG to WebP...")
-    team_avatar = IMAGE_DIR / 'team-avatar.png'
-    if team_avatar.exists():
-        convert_png_to_webp(team_avatar)
+    # Phase 2: Create responsive variants for guide images
+    print("\n📱 Phase 2: Creating Responsive Variants")
+    print("-" * 60)
+    
+    for img_name in GUIDE_IMAGES:
+        src = GUIDES_DIR / img_name
+        if not src.exists():
+            print(f"⏭️  {img_name} not found, skipping")
+            continue
+        
+        base_name = img_name.replace('.webp', '')
+        print(f"\n🔧 Processing {img_name}...")
+        
+        for suffix, (width, quality) in SIZES.items():
+            dest = GUIDES_DIR / f"{base_name}-{suffix}.webp"
+            
+            if dest.exists():
+                print(f"   ⏭️  {dest.name} exists")
+                continue
+            
+            src_size, dest_size = optimize_image(src, dest, max_width=width, quality=quality)
+            
+            if dest_size > 0:
+                saved = src_size - dest_size
+                total_saved += saved
+                files_processed += 1
+                print(f"   ✅ {suffix}: {format_size(dest_size)}")
     
     # Summary
-    if optimized > 0:
-        total_saved = (total_original - total_new) / 1024
-        total_reduction = ((total_original - total_new) / total_original) * 100
-        print("\n" + "="*60)
-        print(f"✅ Optimized {optimized} images")
-        print(f"💾 Saved {total_saved:.2f}MB ({total_reduction:.1f}% reduction)")
-        print("="*60)
-    
-    print("\n💡 Note: PNG camera images not optimized (require specialized tools)")
-    print("   They're already reasonably sized and won't significantly impact performance")
+    print("\n" + "=" * 60)
+    print("📊 OPTIMIZATION SUMMARY")
+    print("=" * 60)
+    print(f"Files processed: {files_processed}")
+    print(f"Total saved: {format_size(total_saved)}")
+    print(f"Average per file: {format_size(total_saved / files_processed if files_processed > 0 else 0)}")
+    print("=" * 60)
+    print("✅ Done! Remember to:")
+    print("   1. Update Astro pages with responsive srcset")
+    print("   2. Build and test")
+    print("   3. Deploy and verify Lighthouse scores")
+    print("=" * 60)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
