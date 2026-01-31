@@ -1653,9 +1653,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </style>
 
   <!-- Filter Tabs Script -->
-  <script>
-    import { animate, stagger } from "animejs";
-
+  <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
       const filterContainer = document.getElementById("review-filters");
       const grid = document.getElementById("reviews-grid");
@@ -1664,12 +1662,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
       if (!filterContainer || !grid) return;
 
-      const buttons = filterContainer.querySelectorAll(
-        ".filter-tab",
-      ) as NodeListOf<HTMLElement>;
-      const cards = grid.querySelectorAll(
-        ".card[data-brand]",
-      ) as NodeListOf<HTMLElement>;
+      const buttons = filterContainer.querySelectorAll(".filter-tab");
+      const cards = grid.querySelectorAll(".card[data-brand]");
 
       // Responsive Limit Logic
       const isMobile = window.innerWidth <= 640;
@@ -1688,20 +1682,27 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       }
 
       function animateCards(elements) {
-        animate(elements, {
-          opacity: [0, 1],
-          translateY: [20, 0],
-          delay: stagger(100),
-          easing: "outQuad",
-          duration: 600,
-        });
+        // Use global anime object loaded via CDN
+        if (typeof anime !== 'undefined') {
+          anime({
+            targets: elements,
+            opacity: [0, 1],
+            translateY: [20, 0],
+            delay: anime.stagger(100),
+            easing: "easeOutQuad",
+            duration: 600,
+          });
+        } else {
+          // Fallback: just show cards without animation
+          elements.forEach(el => el.style.opacity = '1');
+        }
       }
 
       function render(shouldAnimate = true) {
         if (!grid) return;
         let visibleCount = 0;
         let matchingCount = 0;
-        const cardsToShow: HTMLElement[] = [];
+        const cardsToShow = [];
 
         cards.forEach((card) => {
           const brand = card.dataset.brand;
@@ -1710,8 +1711,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           if (matches) {
             matchingCount++;
             if (matchingCount <= currentLimit) {
-              if (card.classList.contains("hidden")) {
-                card.classList.remove("hidden");
+              card.classList.remove("hidden");
+              // Always add to animation queue when shouldAnimate is true
+              if (shouldAnimate) {
                 cardsToShow.push(card);
               }
               visibleCount++;
