@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
+import AuthorBio from "../../components/AuthorBio.astro";
+import "../../styles/review-page.css";
+---
+
+<BaseLayout
+  title="Sony ZV-1 II Review 2026: Best Pocket Vlog Camera?"
+  description="Sony ZV-1 II review: 1-inch sensor, ultra-wide 18mm lens, Product Showcase mode tested. Compact vlog solution worth $898?"
+>
+  <ProductSchema
+    slot="head"
+    productName="Sony ZV-1 II"
+    brand="Sony"
+    image="/assets/images/guides/sony-zv-1-ii.png"
+    description="Sony ZV-1 II combines 1-inch sensor with ultra-wide 18mm lens in a truly pocketable vlogging camera with flip-up screen and outstanding autofocus."
+    price={898}
+    priceCurrency="USD"
+    rating={4.6}
+    reviewCount={1}
+    url="/reviews/sony-zv-1-ii-review"
+    breadcrumbs={[
+      { name: "Sony ZV-1 II", url: "/reviews/sony-zv-1-ii-review" }
+    ]}
+  />
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Sony ZV-1 II Review</h1>
+          <p class="hero-sub">
+            The Sony ZV-1 II is the ultimate pocket vlog camera. With a 1-inch sensor (same size as premium compacts), ultra-wide 18mm lens, and flip-up screen, it's designed specifically for solo content creators who need professional quality in a device small enough for everyday carry.
+          </p>
+          <div class="meta review-price-badge">Compact Vlog · $898</div>
+        </div>
+        <div class="hero-media">
+          <picture>
+            <img src="/assets/images/guides/sony-zv-1-ii.png" alt="Sony ZV-1 II" loading="eager" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="product-review-card">
+        <div class="product-review-header-v2">
+          <span class="badge-best">📷 Pocket King</span>
+          <h2 class="product-title">The Verdict</h2>
+          <p>
+            The ZV-1 II improves on the original ZV-1 with a dramatically wider 18-28mm lens (vs the original's 24-70mm). For vlogging, this makes framing yourself much easier without an extended selfie stick. The 1-inch sensor delivers excellent low-light performance and background blur impossible from phone cameras.
+          </p>
+          <p>
+            At $898, it's expensive for a fixed-lens compact, but delivers features tailored for content creators: Product Showcase mode (autofocus switches from face to product instantly), background defocus button, directional microphone, and wind screen included. For travel vloggers who can't carry mirrorless gear everywhere, this is perfection.
+          </p>
+        </div>
+
+        <a href="#" class="btn-buy" data-product="sony-zv-1-ii" rel="sponsored noopener noreferrer" target="_blank">
+          Check Price on Amazon &rarr;
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Key Features</h2>
+
+      <div class="content-block">
+        <h3>Ultra-Wide 18mm Lens</h3>
+        <p>
+          The shift from 24mm (ZV-1) to 18mm (ZV-1 II) is transformative for vlogging. You can hold the camera at arm's length and still get a natural-looking frame with proper composition. The electronic stabilization crops slightly, so the extra width is essential.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Product Showcase Mode</h3>
+        <p>
+          Press the button, the camera instantly switches autofocus from your face to whatever you're holding up. Perfect for unboxing videos, product reviews, or showcasing food/items without menu diving. It's a marquee feature that justifies the "ZV" (vlogging) designation.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Truly Pocketable</h3>
+        <p>
+          At just 292g and genuinely jacket-pocketable, the ZV-1 II goes anywhere. The flip-up 3" screen makes self-framing effortless. Built-in ND filter handles bright outdoor scenes. Real-time Eye AF ensures you stay sharp even when moving. It's a complete vlogging solution in a compact package.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="final-verdict">
+        <h2>Final Recommendation</h2>
+        <p>
+          The Sony ZV-1 II is the best compact vlog camera in 2026. The ultra-wide lens, 1-inch sensor, and vlog-specific features make it perfect for content creators who prioritize portability without sacrificing quality. If you can only carry one camera everywhere, this is it.
+        </p>
+        <p>
+          <strong>Buy it if:</strong> You vlog daily, travel light, need instant Product Showcase mode, or want pro quality in a pocket-sized package.
+        </p>
+        <p>
+          <strong>Skip it if:</strong> You need interchangeable lenses (get Sony ZV-E10 II), want 4K60 (it's 4K30 only), or are on a tight budget.
+        </p>
+      </div>
+    </section>
+
+    <section class="section author-box">
+      <AuthorBio />
+    </section>
+  </main>
+</BaseLayout>

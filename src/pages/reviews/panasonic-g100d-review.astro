@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductSchema from "../../components/ProductSchema.astro";
+import AuthorBio from "../../components/AuthorBio.astro";
+import "../../styles/review-page.css";
+---
+
+<BaseLayout
+  title="Panasonic Lumix G100D Review 2026: Best Budget Vlog Camera?"
+  description="Panasonic G100D review: Micro Four Thirds, OZO Audio, ultra-portable tested. Budget vlogging solution worth $597?"
+>
+  <ProductSchema
+    slot="head"
+    productName="Panasonic Lumix G100D"
+    brand="Panasonic"
+    image="/assets/images/guides/panasonic-g100d.png"
+    description="Panasonic Lumix G100D delivers ultra-portable Micro Four Thirds vlogging with Nokia OZO Audio, flip-out screen, and wireless streaming in an entry-level package."
+    price={597}
+    priceCurrency="USD"
+    rating={4.3}
+    reviewCount={1}
+    url="/reviews/panasonic-g100d-review"
+    breadcrumbs={[
+      { name: "Panasonic G100D", url: "/reviews/panasonic-g100d-review" }
+    ]}
+  />
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Panasonic Lumix G100D Review</h1>
+          <p class="hero-sub">
+            The Panasonic G100D is the budget vlogger's dream: an ultra-lightweight Micro Four Thirds camera with interchangeable lenses, flip-out touchscreen, and Nokia OZO Audio for directional sound. At just 412g and $597 with kit lens, it's the most affordable entry into serious vlogging.
+          </p>
+          <div class="meta review-price-badge">Budget Vlog · $597</div>
+        </div>
+        <div class="hero-media">
+          <picture>
+            <img src="/assets/images/guides/panasonic-g100d.png" alt="Panasonic G100D" loading="eager" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="product-review-card">
+        <div class="product-review-header-v2">
+          <span class="badge-best">💰 Budget Champ</span>
+          <h2 class="product-title">The Verdict</h2>
+          <p>
+            The G100D (refresh of the G100) is Panasonic's answer to "I need a vlog camera but can't spend $1,000+". The 20.3MP Micro Four Thirds sensor is smaller than APS-C but still miles ahead of phone cameras. The standout feature is Nokia OZO Audio—intelligent directional recording that adapts based on what you're filming (selfie, landscape, interview).
+          </p>
+          <p>
+            At $597, it's the cheapest way to get into interchangeable-lens vlogging. The flip-out screen, headphone jack, and mic input check all the essentials. Video is capped at 4K30 and autofocus is decent but not class-leading. For beginners prioritizing value over cutting-edge specs, the G100D delivers.
+          </p>
+        </div>
+
+        <a href="#" class="btn-buy" data-product="panasonic-g100d" rel="sponsored noopener noreferrer" target="_blank">
+          Check Price on Amazon &rarr;
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Key Features</h2>
+
+      <div class="content-block">
+        <h3>Nokia OZO Audio</h3>
+        <p>
+          This computational audio system uses multiple microphones to track audio direction. Point the camera at yourself: audio from behind is suppressed. Point it at a subject: their voice is isolated. Point it at a landscape: ambient sound is captured in stereo. It's remarkably effective for a budget camera.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Ultra-Portable Design</h3>
+        <p>
+          Weighing just 412g with the 12-32mm kit lens, the G100D disappears into a small bag. Micro Four Thirds lenses are dramatically smaller/lighter than full-frame equivalents, making this perfect for all-day carry. The retro styling with physical dials is a nice touch for an entry-level camera.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h3>Wireless Streaming</h3>
+        <p>
+          Built-in Wi-Fi and USB webcam mode (no capture card needed) make it great for live streaming or Zoom calls. The flip-out screen, Frame Marker overlay, and V-Log L profile (sold separately) show Panasonic took vloggers seriously when designing this camera.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="final-verdict">
+        <h2>Final Recommendation</h2>
+        <p>
+          The Panasonic G100D is the best budget vlog camera for beginners in 2026. It prioritizes the features vloggers actually need—flip screen, good audio, portability—at a price that won't break the bank. The OZO Audio alone is worth the admission.
+        </p>
+        <p>
+          <strong>Buy it if:</strong> You're starting vlogging, want interchangeable lenses on a budget, need excellent audio, or prioritize ultra-light weight.
+        </p>
+        <p>
+          <strong>Skip it if:</strong> You need 4K60 (it's 4K30 only), want the best autofocus (Sony ZV-E10 II wins), or shoot primarily photos (image quality is just okay).
+        </p>
+      </div>
+    </section>
+
+    <section class="section author-box">
+      <AuthorBio />
+    </section>
+  </main>
+</BaseLayout>
